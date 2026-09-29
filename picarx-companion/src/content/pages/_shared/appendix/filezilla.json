@@ -1,0 +1,316 @@
+{
+  "id": "_shared/appendix/filezilla",
+  "title": "FileZilla Software",
+  "sections": [
+    {
+      "id": "filezilla-software",
+      "level": 1,
+      "title": "FileZilla Software",
+      "anchors": [
+        "filezilla"
+      ],
+      "blocks": [
+        {
+          "t": "image",
+          "src": "/content/img/_shared/appendix/img/filezilla_icon.png",
+          "width": "20%"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "File Transfer Protocol (FTP) is commonly used to transfer files between computers over a network. "
+            },
+            {
+              "t": "strong",
+              "v": "FileZilla"
+            },
+            {
+              "t": "text",
+              "v": " is an open-source client that supports FTP, FTPS, and "
+            },
+            {
+              "t": "strong",
+              "v": "SFTP"
+            },
+            {
+              "t": "text",
+              "v": " (recommended for Raspberry Pi). With FileZilla, you can easily upload files (such as images, audio, and scripts) from your computer to the Raspberry Pi, or download files from the Pi back to your computer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "download-filezilla",
+      "level": 2,
+      "title": "Download FileZilla",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Visit the "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://filezilla-project.org/",
+                    "v": "FileZilla"
+                  },
+                  {
+                    "t": "text",
+                    "v": " official website and download "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "FileZilla Client"
+                  },
+                  {
+                    "t": "text",
+                    "v": " for your operating system."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Install and launch the program."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/filezilla_install.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open FileZilla and enter the following information:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Host:"
+                        },
+                        {
+                          "t": "text",
+                          "v": " "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "<hostname>.local"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or the Raspberry Pi’s IP address"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Username:"
+                        },
+                        {
+                          "t": "text",
+                          "v": " your Pi username"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Password:"
+                        },
+                        {
+                          "t": "text",
+                          "v": " the password set in Raspberry Pi Imager"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Port:"
+                        },
+                        {
+                          "t": "text",
+                          "v": " "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "22"
+                        },
+                        {
+                          "t": "text",
+                          "v": " (for SFTP)"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Click "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Quickconnect"
+                        },
+                        {
+                          "t": "text",
+                          "v": " (or press "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Enter"
+                        },
+                        {
+                          "t": "text",
+                          "v": ") to establish a connection."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/filezilla_connect.png",
+                "align": "center"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Once connected, the left panel shows your "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "local files"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and the right panel shows the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Raspberry Pi files"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/filezilla_in.png",
+                "align": "center"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You can:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Upload"
+                        },
+                        {
+                          "t": "text",
+                          "v": " a file: drag from the left panel → right panel"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Download"
+                        },
+                        {
+                          "t": "text",
+                          "v": " a file: drag from the right panel → left panel"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "FileZilla will immediately start the transfer, and the status will appear in the panel at the bottom."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

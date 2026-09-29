@@ -1,0 +1,361 @@
+{
+  "id": "python/install_all_modules",
+  "title": "Install All the Modules (Important)",
+  "sections": [
+    {
+      "id": "install-all-the-modules-important",
+      "level": 1,
+      "title": "Install All the Modules (Important)",
+      "anchors": [
+        "install_all_modules"
+      ],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Prepare the system"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Make sure your Raspberry Pi is connected to the Internet, then update the system:"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "::"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "sudo apt update sudo apt upgrade"
+                  }
+                ]
+              },
+              {
+                "t": "admonition",
+                "kind": "note",
+                "blocks": [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "If you are using Raspberry Pi OS Lite, install the required Python 3 packages first:"
+                      }
+                    ]
+                  },
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "::"
+                      }
+                    ]
+                  },
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "sudo apt install git python3-pip python3-setuptools python3-smbus"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Install robot-hat"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Download and install the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "robot-hat"
+                  },
+                  {
+                    "t": "text",
+                    "v": " module:"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "::"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "cd ~/ git clone -b 2.5.x "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://github.com/sunfounder/robot-hat.git",
+                    "v": "https://github.com/sunfounder/robot-hat.git"
+                  },
+                  {
+                    "t": "text",
+                    "v": " --depth 1 cd robot-hat sudo python3 install.py"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Install vilib"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Download and install the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "vilib"
+                  },
+                  {
+                    "t": "text",
+                    "v": " module:"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "::"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "cd ~/ git clone "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://github.com/sunfounder/vilib.git",
+                    "v": "https://github.com/sunfounder/vilib.git"
+                  },
+                  {
+                    "t": "text",
+                    "v": " --depth 1 cd vilib sudo python3 install.py"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Install picar-x"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Download and install the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picar-x"
+                  },
+                  {
+                    "t": "text",
+                    "v": " module:"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "::"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "cd ~/ git clone -b 2.1.x "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://github.com/sunfounder/picar-x.git",
+                    "v": "https://github.com/sunfounder/picar-x.git"
+                  },
+                  {
+                    "t": "text",
+                    "v": " --depth 1 cd picar-x sudo pip3 install . --break"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "This step may take a little while. Please be patient."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Enable sound (I2S amplifier)"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "To enable audio output, run the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "i2samp.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": " script to install the required I2S amplifier components:"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "::"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "cd ~/robot-hat sudo bash i2samp.sh"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Follow the on-screen prompts by typing "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "y"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and pressing Enter to continue, run "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "/dev/zero"
+                  },
+                  {
+                    "t": "text",
+                    "v": " in the background, and restart the Picar-X."
+                  }
+                ]
+              },
+              {
+                "t": "admonition",
+                "kind": "note",
+                "blocks": [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "If there is no sound after restarting, try running the "
+                      },
+                      {
+                        "t": "lit",
+                        "v": "i2samp.sh"
+                      },
+                      {
+                        "t": "text",
+                        "v": " script several times."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,834 @@
+{
+  "id": "ai_interaction/python_treasure_hunt",
+  "title": "20. Treasure Hunt",
+  "sections": [
+    {
+      "id": "20-treasure-hunt",
+      "level": 1,
+      "title": "20. Treasure Hunt",
+      "anchors": [
+        "py_treasure"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In this lesson, you will turn your PiCar-X into a "
+            },
+            {
+              "t": "strong",
+              "v": "treasure hunter robot"
+            },
+            {
+              "t": "text",
+              "v": ". Arrange a maze in your room and place six different color cards in different corners. Your PiCar-X will "
+            },
+            {
+              "t": "strong",
+              "v": "search, recognize, and celebrate"
+            },
+            {
+              "t": "text",
+              "v": " when it finds the target color."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This project combines three skills you've learned so far:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Computer Vision"
+                  },
+                  {
+                    "t": "text",
+                    "v": " – detecting colored cards with the Pi camera."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Keyboard Control"
+                  },
+                  {
+                    "t": "text",
+                    "v": " – driving the robot manually through the maze."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Speech Feedback"
+                  },
+                  {
+                    "t": "text",
+                    "v": " – Pico2Wave announces the target color and success."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "It's a fun game that shows how robots can "
+            },
+            {
+              "t": "strong",
+              "v": "see, think, and act"
+            },
+            {
+              "t": "text",
+              "v": " just like treasure hunters!"
+            }
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "You can download and print the "
+                },
+                {
+                  "t": "link",
+                  "href": "https://github.com/sunfounder/sf-pdf/raw/master/prop_card/object_detection/color-cards.pdf",
+                  "v": "PDF Color Cards"
+                },
+                {
+                  "t": "text",
+                  "v": " for reliable color detection."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-you-start",
+      "level": 2,
+      "title": "Before You Start",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Make sure you‘ve completed:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "python/install_all_modules",
+                    "section": "install-all-the-modules-important",
+                    "v": "Install All the Modules (Important)"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Install "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "robot-hat"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "vilib"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picar-x"
+                  },
+                  {
+                    "t": "text",
+                    "v": " modules, then run the script "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "i2samp.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "run-the-code",
+      "level": 2,
+      "title": "Run the Code",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "cd ~/picar-x/example\nsudo python3 20.treasure_hunt.py",
+          "runnable": true,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 20.treasure_hunt.py</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "After running, you'll see a message like this:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "* Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>* Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Then, open "
+            },
+            {
+              "t": "lit",
+              "v": "http://<your IP>:9000/mjpg"
+            },
+            {
+              "t": "text",
+              "v": " in your browser to view the live video feed. Example: "
+            },
+            {
+              "t": "lit",
+              "v": "http://192.168.18.113:9000/mjpg"
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/ai_interaction/img/display.png"
+        }
+      ]
+    },
+    {
+      "id": "game-rules",
+      "level": 2,
+      "title": "Game Rules",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The robot randomly selects a "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "target color"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and says:  "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "“Look for red!”"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You drive PiCar-X with the keyboard:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "w"
+                        },
+                        {
+                          "t": "text",
+                          "v": " = forward"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "a"
+                        },
+                        {
+                          "t": "text",
+                          "v": " = turn left"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "s"
+                        },
+                        {
+                          "t": "text",
+                          "v": " = backward"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "d"
+                        },
+                        {
+                          "t": "text",
+                          "v": " = turn right"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "space"
+                        },
+                        {
+                          "t": "text",
+                          "v": " = repeat target"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "Ctrl+C"
+                        },
+                        {
+                          "t": "text",
+                          "v": " = quit"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "When the camera sees the target color card, PiCar-X says "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "“Well done!”"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "A new target color is chosen, and the hunt continues!"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "level": 2,
+      "title": "Code",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "#!/usr/bin/env python3\n\nfrom picarx import Picarx\nfrom vilib import Vilib\nfrom picarx.tts import Pico2Wave\n\nfrom time import sleep\nimport threading\nimport readchar\nimport random\n\n# -----------------------\n# Settings\n# -----------------------\nCOLORS = [\"red\", \"orange\", \"yellow\", \"green\", \"blue\", \"purple\"]\nDETECTION_WIDTH_THRESHOLD = 100  # how wide the color blob must be\nDRIVE_SPEED = 80\nTURN_ANGLE = 30\n\nMANUAL = \"\"\"\nPress keys to control PiCar-X:\n  w: forward    a: turn left    s: backward    d: turn right\n  space: repeat target          Ctrl+C: quit\n\"\"\"\n\n# -----------------------\n# Init\n# -----------------------\npx = Picarx()\n\ntts = Pico2Wave()\ntts.set_lang(\"en-US\")\n\ncurrent_color = \"red\"\nkey = None\nlock = threading.Lock()\n\ndef say(line: str):\n    print(f\"[SAY] {line}\")\n    tts.say(line)\n\ndef renew_color_detect():\n    \"\"\"Choose a new target color and start detection.\"\"\"\n    global current_color\n    current_color = random.choice(COLORS)\n    Vilib.color_detect(current_color)\n    say(f\"Look for {current_color}!\")\n\ndef key_scan_thread():\n    \"\"\"Background thread reading keys.\"\"\"\n    global key\n    while True:\n        k = readchar.readkey()\n        # Map special keys before lowercasing\n        if k == readchar.key.SPACE:\n            mapped = \"space\"\n        elif k == readchar.key.CTRL_C:\n            mapped = \"quit\"\n        else:\n            mapped = k.lower()\n\n        with lock:\n            key = mapped\n\n        if mapped == \"quit\":\n            return\n        sleep(0.01)\n\ndef car_move(k: str):\n    if k == \"w\":\n        px.set_dir_servo_angle(0)\n        px.forward(DRIVE_SPEED)\n    elif k == \"s\":\n        px.set_dir_servo_angle(0)\n        px.backward(DRIVE_SPEED)\n    elif k == \"a\":\n        px.set_dir_servo_angle(-TURN_ANGLE)\n        px.forward(DRIVE_SPEED)\n    elif k == \"d\":\n        px.set_dir_servo_angle(TURN_ANGLE)\n        px.forward(DRIVE_SPEED)\n\ndef main():\n    global key\n\n    # Start camera and web preview\n    Vilib.camera_start(vflip=False, hflip=False)\n    Vilib.display(local=False, web=True)\n    sleep(0.8)\n\n    print(MANUAL.strip())\n    say(\"Game start!\")\n    sleep(0.1)\n    renew_color_detect()\n\n    # Start keyboard thread (modern style)\n    key_thread = threading.Thread(target=key_scan_thread, daemon=True)\n    key_thread.start()\n\n    try:\n        while True:\n            # Check detection: if target color present and wide enough\n            if (Vilib.detect_obj_parameter.get(\"color_n\", 0) != 0 and\n                Vilib.detect_obj_parameter.get(\"color_w\", 0) > DETECTION_WIDTH_THRESHOLD):\n                say(\"Well done!\")\n                sleep(0.1)\n                renew_color_detect()\n\n            # Take a snapshot of the last key (and clear it)\n            with lock:\n                k = key\n                key = None\n\n            # Handle movement / actions\n            if k in (\"w\", \"a\", \"s\", \"d\"):\n                car_move(k)\n                sleep(0.5)\n                px.stop()\n            elif k == \"space\":\n                say(f\"Look for {current_color}!\")\n            elif k == \"quit\":\n                print(\"\\n[INFO] Quit requested.\")\n                break\n\n            sleep(0.05)\n\n    except KeyboardInterrupt:\n        print(\"\\n[INFO] Stopped by user.\")\n    finally:\n        try:\n            Vilib.camera_close()\n        except Exception:\n            pass\n        px.stop()\n        say(\"Goodbye!\")\n        sleep(0.2)\n\nif __name__ == \"__main__\":\n    main()",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">#!/usr/bin/env python3</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> vilib </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Vilib</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Pico2Wave</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> time </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> sleep</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> threading</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> readchar</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> random</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># -----------------------</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Settings</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># -----------------------</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">COLORS</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> [</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"red\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"orange\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"yellow\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"green\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"blue\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"purple\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">]</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">DETECTION_WIDTH_THRESHOLD</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 100</span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">  # how wide the color blob must be</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">DRIVE_SPEED</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 80</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">TURN_ANGLE</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 30</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">MANUAL</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"\"\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Press keys to control PiCar-X:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">  w: forward    a: turn left    s: backward    d: turn right</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">  space: repeat target          Ctrl+C: quit</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># -----------------------</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Init</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># -----------------------</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Pico2Wave()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.set_lang(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"en-US\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">current_color </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"red\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">key </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> None</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">lock </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> threading.Lock()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> say</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(line: </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">str</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">    print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">f</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"[SAY] </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">{</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">line</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">}</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    tts.say(line)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> renew_color_detect</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">():</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">    \"\"\"Choose a new target color and start detection.\"\"\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    global</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> current_color</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    current_color </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> random.choice(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">COLORS</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    Vilib.color_detect(current_color)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    say(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">f</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Look for </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">{</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">current_color</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">}</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> key_scan_thread</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">():</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">    \"\"\"Background thread reading keys.\"\"\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    global</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> key</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    while</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> readchar.readkey()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">        # Map special keys before lowercasing</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> readchar.key.</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">SPACE</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            mapped </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"space\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> readchar.key.</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">CTRL_C</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            mapped </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"quit\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        else</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            mapped </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k.lower()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        with</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> lock:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            key </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> mapped</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> mapped </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"quit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            return</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> car_move</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(k: </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">str</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"w\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.set_dir_servo_angle(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">DRIVE_SPEED</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"s\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.set_dir_servo_angle(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.backward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">DRIVE_SPEED</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"a\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.set_dir_servo_angle(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">TURN_ANGLE</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">DRIVE_SPEED</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"d\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.set_dir_servo_angle(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">TURN_ANGLE</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">DRIVE_SPEED</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> main</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">():</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    global</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> key</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">    # Start camera and web preview</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    Vilib.camera_start(</span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">vflip</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">False</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">hflip</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">False</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    Vilib.display(</span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">local</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">False</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">web</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.8</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">    print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">MANUAL</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">.strip())</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Game start!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    renew_color_detect()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">    # Start keyboard thread (modern style)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    key_thread </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> threading.Thread(</span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">target</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">key_scan_thread, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">daemon</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    key_thread.start()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    try</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        while</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # Check detection: if target color present and wide enough</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> (Vilib.detect_obj_parameter.get(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"color_n\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">) </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">!=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 0</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> and</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                Vilib.detect_obj_parameter.get(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"color_w\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">) </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> DETECTION_WIDTH_THRESHOLD</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Well done!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                renew_color_detect()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # Take a snapshot of the last key (and clear it)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            with</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> lock:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> key</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                key </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> None</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # Handle movement / actions</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> (</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"w\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"a\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"s\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"d\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                car_move(k)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.5</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"space\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                say(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">f</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Look for </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">{</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">current_color</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">}</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> k </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"quit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">                print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">\\n</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">[INFO] Quit requested.\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">                break</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.05</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    except</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> KeyboardInterrupt</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">        print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">\\n</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">[INFO] Stopped by user.\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    finally</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        try</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            Vilib.camera_close()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        except</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> Exception</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            pass</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Goodbye!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.2</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">if</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> __name__</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> ==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"__main__\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    main()</span></span></code></pre>"
+        }
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "level": 2,
+      "title": "How It Works",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Initialization"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Import modules and configure PiCar-X, camera, and TTS."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Set color list, speed, and steering angle."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Target Selection"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "renew_color_detect()"
+                        },
+                        {
+                          "t": "text",
+                          "v": " randomly picks a target color."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "The robot announces the target with Pico2Wave."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Keyboard Control"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "key_scan_thread()"
+                        },
+                        {
+                          "t": "text",
+                          "v": " runs in the background to capture keys."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Keys "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "w, a, s, d"
+                        },
+                        {
+                          "t": "text",
+                          "v": " control motion; "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "space"
+                        },
+                        {
+                          "t": "text",
+                          "v": " repeats target."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Color Detection"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Camera constantly checks if the target color is visible."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If the detected blob is large enough, PiCar-X celebrates."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Main Loop"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Continuously handles movement, detection, and feedback."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Cleanly stops the robot and camera when quitting."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "level": 2,
+      "title": "Troubleshooting",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Camera feed not working?"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "libcamera-hello"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to check if the Pi camera is connected properly."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Robot doesn't detect colors?"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Ensure the cards are printed clearly and placed in good lighting. Try adjusting "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "DETECTION_WIDTH_THRESHOLD"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "No voice feedback?"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Check that "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "pico2wave"
+                  },
+                  {
+                    "t": "text",
+                    "v": " is installed and your audio output is configured."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Car doesn't move?"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Verify PiCar-X power is on and the motor calibration is correct."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "By completing this lesson, you've built a "
+            },
+            {
+              "t": "strong",
+              "v": "mini treasure hunt game"
+            },
+            {
+              "t": "text",
+              "v": " with PiCar-X, combining "
+            },
+            {
+              "t": "strong",
+              "v": "vision, control, and interaction"
+            },
+            {
+              "t": "text",
+              "v": " into one project!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

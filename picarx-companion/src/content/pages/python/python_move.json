@@ -1,0 +1,266 @@
+{
+  "id": "python/python_move",
+  "title": "2. Let PiCar-X Move",
+  "sections": [
+    {
+      "id": "2-let-picar-x-move",
+      "level": 1,
+      "title": "2. Let PiCar-X Move",
+      "anchors": [
+        "py_move"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This is the first project, let’s test the basic movement of Picar-X."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Run the Code"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "cd ~/picar-x/example\nsudo python3 2.move.py",
+          "runnable": true,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~/picar-x/example</span></span>\n<span class=\"line\"><span>sudo python3 2.move.py</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "After running the code, PiCar-X will move forward, turn in an S-shape, stop and shake its head."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Code"
+            }
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "You can "
+                },
+                {
+                  "t": "strong",
+                  "v": "Modify/Reset/Copy/Run/Stop"
+                },
+                {
+                  "t": "text",
+                  "v": " the code below. But before that, you need to go to  source code path like "
+                },
+                {
+                  "t": "lit",
+                  "v": "picar-x/example"
+                },
+                {
+                  "t": "text",
+                  "v": ". After modifying the code, you can run it directly to see the effect."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "from picarx import Picarx\nimport time\n\n\nif __name__ == \"__main__\":\n    try:\n        px = Picarx()\n        px.forward(30)\n        time.sleep(0.5)\n        for angle in range(0,35):\n            px.set_dir_servo_angle(angle)\n            time.sleep(0.01)\n        for angle in range(35,-35,-1):\n            px.set_dir_servo_angle(angle)\n            time.sleep(0.01)\n        for angle in range(-35,0):\n            px.set_dir_servo_angle(angle)\n            time.sleep(0.01)\n        px.forward(0)\n        time.sleep(1)\n\n        for angle in range(0,35):\n            px.set_camera_servo1_angle(angle)\n            time.sleep(0.01)\n        for angle in range(35,-35,-1):\n            px.set_camera_servo1_angle(angle)\n            time.sleep(0.01)\n        for angle in range(-35,0):\n            px.set_camera_servo1_angle(angle)\n            time.sleep(0.01)\n        for angle in range(0,35):\n            px.set_camera_servo2_angle(angle)\n            time.sleep(0.01)\n        for angle in range(35,-35,-1):\n            px.set_camera_servo2_angle(angle)\n            time.sleep(0.01)\n        for angle in range(-35,0):\n            px.set_camera_servo2_angle(angle)\n            time.sleep(0.01)\n\n    finally:\n        px.forward(0)",
+          "runnable": true,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> time</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">if</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> __name__</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> ==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"__main__\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    try</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">30</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.5</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_dir_servo_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_dir_servo_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_dir_servo_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_camera_servo1_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_camera_servo1_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_camera_servo1_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_camera_servo2_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_camera_servo2_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> range</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_camera_servo2_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.01</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    finally</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "How it works?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The basic functionality of PiCar-X is in the "
+            },
+            {
+              "t": "lit",
+              "v": "picarx"
+            },
+            {
+              "t": "text",
+              "v": " module, Can be used to control steering gear and wheels, and will make the PiCar-X move forward, turn in an S-shape, or shake its head."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Now, the libraries to support the basic functionality of PiCar-X are imported. These lines will appear in all the examples that involve PiCar-X movement."
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "from picarx import Picarx\nimport time",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> time</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The following function with the "
+            },
+            {
+              "t": "lit",
+              "v": "for"
+            },
+            {
+              "t": "text",
+              "v": " loop is then used to make PiCar-X move forward, change directions, and move the camera's pan/tilt."
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "px.forward(speed)\npx.set_dir_servo_angle(angle)\npx.set_camera_servo1_angle(angle)\npx.set_camera_servo2_angle(angle)",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px.forward(speed)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px.set_dir_servo_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px.set_camera_servo1_angle(angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px.set_camera_servo2_angle(angle)</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "forward()"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Orders the PiCar-X go forward at a given "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "speed"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "set_dir_servo_angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Turns the Steering servo to a specific "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "set_cam_pan_angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Turns the Pan servo to a specific "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "set_cam_tilt_angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Turns the Tilt servo to a specific "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/python/img/pan_tilt_servo.png",
+          "width": "400"
+        }
+      ]
+    }
+  ]
+}

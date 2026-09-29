@@ -1,0 +1,195 @@
+{
+  "id": "python/py_servo_adjust",
+  "title": "Servo Adjust(Important)",
+  "sections": [
+    {
+      "id": "servo-adjust-important",
+      "level": 1,
+      "title": "Servo Adjust(Important)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "If your Robot HAT is version V44 or higher (with the speaker located at the top of the board) and includes an onboard "
+                },
+                {
+                  "t": "strong",
+                  "v": "Zero"
+                },
+                {
+                  "t": "text",
+                  "v": " button, you can skip this step and simply press the "
+                },
+                {
+                  "t": "strong",
+                  "v": "Zero"
+                },
+                {
+                  "t": "text",
+                  "v": " button to activate the servo zeroing program."
+                }
+              ]
+            },
+            {
+              "t": "image",
+              "src": "/content/img/python/img/robot_hat_v44.png",
+              "width": "500",
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The angle range of the servo is -90~90, but the angle set at the factory is random, maybe 0°, maybe 45°; if we assemble it with such an angle directly, it will lead to a chaotic state after the robot runs the code, or worse, it will cause the servo to block and burn out."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "So here we need to set all the servo angles to 0° and then install them, so that the servo angle is in the middle, no matter which direction to turn."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "To ensure that the servo has been properly set to 0°, first insert the servo arm into the servo shaft and then gently rotate the rocker arm to a different angle. This servo arm is just to allow you to clearly see that the servo is rotating."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/servo_arm.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Now, run "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "servo_zeroing.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": " in the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "example/"
+                  },
+                  {
+                    "t": "text",
+                    "v": " folder."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "cd ~/picar-x/example\nsudo python3 servo_zeroing.py",
+                "runnable": true,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~/picar-x/example</span></span>\n<span class=\"line\"><span>sudo python3 servo_zeroing.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Next, plug the servo cable into the P11 port as follows, at the same time you will see the servo arm rotate to a position(This is the 0° position, which is a random location and may not be vertical or parallel.)."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/Z_P11.jpg"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Now, remove the servo arm, ensuring the servo wire remains connected, and do not turn off the power. Then continue the assembly following the paper instructions."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "list",
+              "ordered": false,
+              "items": [
+                [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "Do not unplug this servo cable before fixing it with the servo screw, you can unplug it after fixing it."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "Do not rotate the servo while it is powered on to avoid damage; if the servo shaft is not inserted at the right angle, pull the servo out and reinsert it."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "Before assembling each servo, you need to plug the servo cable into P11 and turn on the power to set its angle to 0°."
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

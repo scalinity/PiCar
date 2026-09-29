@@ -1,0 +1,98 @@
+{
+  "id": "_shared/pi_start/power_supply_robot_hat",
+  "title": "Power Supply for Raspberry Pi (Important)",
+  "sections": [
+    {
+      "id": "power-supply-for-raspberry-pi-important",
+      "level": 1,
+      "title": "Power Supply for Raspberry Pi (Important)",
+      "anchors": [],
+      "blocks": []
+    },
+    {
+      "id": "charge",
+      "level": 2,
+      "title": "Charge",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Insert the battery cable. Next, insert the USB-C cable to charge the battery. You will need to provide your own charger; we recommend a 5V 3A charger, or your commonly used smartphone charger will suffice."
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/_shared/pi_start/img/robot_hat_charge.png",
+          "width": "600",
+          "align": "center"
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "Connect an external Type-C power source to the Type-C port on the robot hat; it will immediately start charging the battery, and a red indicator light will illuminate.When the battery is fully charged, the red light will automatically turn off."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "power-on",
+      "level": 2,
+      "title": "Power ON",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Turn on the power switch. The Power indicator light and the battery level indicator light will illuminate."
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/_shared/pi_start/img/robot_hat_power.png",
+          "width": "600",
+          "align": "center"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Wait for a few seconds, and you will hear a slight beep, indicating that the Raspberry Pi has successfully booted."
+            }
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "If both battery level indicator lights are off, please charge the battery. When you need extended programming or debugging sessions, you can keep the Raspberry Pi operational by inserting the USB-C cable to charge the battery simultaneously."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

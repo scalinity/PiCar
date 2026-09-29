@@ -1,0 +1,2746 @@
+{
+  "id": "openclaw",
+  "title": "22. Using OpenClaw to Control PiCar-X",
+  "sections": [
+    {
+      "id": "22-using-openclaw-to-control-picar-x",
+      "level": 1,
+      "title": "22. Using OpenClaw to Control PiCar-X",
+      "anchors": [
+        "picarx_skill"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "What is OpenClaw?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Think of it as an upgraded version of ChatGPT. While traditional chatbots can only talk (generate text), OpenClaw can take action. It understands your natural language instructions and can actually perform operations on your computer, such as running commands, managing files, and calling various tools."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Here are some fantastic application scenarios:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Personal All-around Assistant:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Let it help you manage your schedule, set reminders, and track tasks. You just need to tell it in a chat app (like Telegram, WhatsApp), and it will remember and execute."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Automation \"Glue\":"
+                  },
+                  {
+                    "t": "text",
+                    "v": " It can act as a binder for your various services. For example, you can have it monitor a website for price changes. Once a price drop is detected, it can automatically trigger an n8n automation workflow to send you an email notification."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Dedicated Development Assistant:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Have it help you manage servers, run scripts, and check logs. You can simply say, \"Check the system load for me,\" and it can SSH into your server, execute the command, and return the results."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Hardware \"Playmate\":"
+                  },
+                  {
+                    "t": "text",
+                    "v": " This is a very interesting use case. You can have OpenClaw control hardware connected to a Raspberry Pi. For example, a developer used it to control a robotic vacuum cleaner with a mechanical arm, or even had it help analyze racing simulator data and display it on an LED screen. The official Raspberry Pi team even used it to build an automatic photo booth for a wedding, just through conversation, without writing a single line of code!"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "important",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "The Raspberry Pi Zero 2W has only 512MB of RAM, while OpenClaw requires a minimum of 1GB. Therefore, it cannot run properly. A Raspberry Pi 4/5 or higher is recommended."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quick-start-openclaw",
+      "level": 2,
+      "title": "Quick Start OpenClaw",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If you want to experience the power of OpenClaw as quickly as possible, use this method. It will automatically install and launch an interactive setup wizard."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open the terminal on your Raspberry Pi and run the following command directly. This command downloads the installation script from the official website and executes it:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "curl -fsSL https://openclaw.ai/install.sh | bash",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">curl</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -fsSL</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> https://openclaw.ai/install.sh</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> |</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> bash</span></span></code></pre>"
+              },
+              {
+                "t": "admonition",
+                "kind": "note",
+                "blocks": []
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The script will automatically download and install OpenClaw."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/install_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You will then see a security prompt asking if you trust OpenClaw. Once you are sure it is safe and reliable, use the arrow keys to navigate to \"Yes\" and press Enter."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/security_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Select Quick Start, and then press Enter."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/quickstart_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Select your Model, and then press Enter. Here we use OpenAI as an example."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/model_provider_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Select OpenAI API Key."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/api_key_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Paste API key now."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/paste_api_key_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Go to "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://platform.openai.com/settings/organization/api-keys",
+                    "v": "OpenAI Platform"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and log in. On the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "API keys"
+                  },
+                  {
+                    "t": "text",
+                    "v": " page, click "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Create new secret key"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/llm_openai_create.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Fill in the details (Owner, Name, Project, and permissions if needed), then click "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Create secret key"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/llm_openai_create_confirm.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Once the key is created, copy it right away — you won't be able to see it again. If you lose it, you'll need to generate a new one."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/llm_openai_copy.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Paste the key into the OpenClaw configuration."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/paste_api_key_enter_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Select the Model you want to use. In this example, we will use "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Keep current"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/model_config_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Next is the channel selection. Channels refer to the communication services supported by OpenClaw, such as Telegram, WhatsApp, Discord, and more. Use the down arrow key to select the \"Skip for now\" option, then press Enter."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/channel_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Next, you will be prompted to configure skills immediately. Select \"Yes\" and press Enter."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/config_skill_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Install the skills you need. In the following example, we select the \"Skip for now\" option (press the spacebar to select), then press Enter."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/install_skill_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Next are Hooks; we will check \"command-logger\" and \"session-memory\"."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/img/openclaw/hooks2_open_claw.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The installation is now complete. You can start OpenClaw by Selecting \"Hatch in TUI\" and pressing Enter."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/img/openclaw/hatch_open_claw.png"
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "You can start OpenClaw by entering the following command:"
+                }
+              ]
+            },
+            {
+              "t": "code",
+              "lang": "bash",
+              "code": "openclaw tui",
+              "runnable": false,
+              "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">openclaw</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> tui</span></span></code></pre>"
+            },
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "And You can press ctrl+c twice to exit the tui interface."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "making-openclaw-operate-the-picar-x",
+      "level": 2,
+      "title": "Making OpenClaw Operate the PiCar-X",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "What is PiCar-X Skill?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "PiCar-X Skill is an extension for OpenClaw that allows you to control your SunFounder PiCar-X robot car through natural language. Instead of writing Python scripts or remembering servo angles, you can simply tell OpenClaw what you want PiCar-X to do — like \"drive forward\", \"check what's ahead\", or \"turn left\" — and OpenClaw will execute the appropriate Python code automatically."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Here are some things you can do with PiCar-X Skill:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Driving:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Drive forward, backward, turn left/right with steering servo control"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Camera Gimbal:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Pan left/right, tilt up/down via the 2-axis camera gimbal"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Sensors:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Read ultrasonic distance, grayscale sensor data for line tracking and cliff detection"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Sound:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Play sound effects and music through the car's speaker"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Camera Vision:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Take photos, detect faces, track colors, recognize QR codes, gestures, and traffic signs"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "level": 2,
+      "title": "Prerequisites",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before you can use PiCar-X Skill with OpenClaw, make sure you have:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "PiCar-X"
+                  },
+                  {
+                    "t": "text",
+                    "v": " properly assembled and connected to your Raspberry Pi"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "OpenClaw"
+                  },
+                  {
+                    "t": "text",
+                    "v": " installed and running"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The following Python libraries installed:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "picarx"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "robot_hat"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "vilib"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can verify the installation by running:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 -c \"import picarx\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -c</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"import picarx\"</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If this command runs without errors, you're ready to proceed."
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "installing-picar-x-skill",
+      "level": 2,
+      "title": "Installing PiCar-X Skill",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Follow these steps to install the PiCar-X Skill for OpenClaw:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Copy the PiCar-X skill files"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to the OpenClaw skills directory:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cp -r ~/picar-x/picarx-control ~/.openclaw/workspace/skills/",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">cp</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -r</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/picarx-control</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Verify the installation"
+                  },
+                  {
+                    "t": "text",
+                    "v": " by checking the skill files:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "ls ~/.openclaw/workspace/skills/picarx-control/",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ls</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/</span></span></code></pre>"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You should see "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "SKILL.md"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "install.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "scripts/"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "references/"
+                  },
+                  {
+                    "t": "text",
+                    "v": " in the output."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The skill's "
+            },
+            {
+              "t": "lit",
+              "v": "SKILL.md"
+            },
+            {
+              "t": "text",
+              "v": " file contains all the instructions OpenClaw needs — safety rules, code templates for each capability, and a mapping from natural language requests to Python code. OpenClaw reads this file and uses it to decide what code to execute on your PiCar-X."
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "testing-picar-x-skill-from-the-cli",
+      "level": 2,
+      "title": "Testing PiCar-X Skill from the CLI",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before using the skill with OpenClaw, you may want to test basic functionality directly from the terminal using the included CLI tool."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Check ultrasonic distance:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py sensor distance",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sensor</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> distance</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Drive forward:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py move forward --speed 60",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> move</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> forward</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --speed</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 60</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Drive backward:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py move backward --speed 60",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> move</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> backward</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --speed</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 60</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Turn left:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py turn left --angle 30",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> turn</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> left</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --angle</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 30</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Turn right:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py turn right --angle 30",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> turn</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> right</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --angle</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 30</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Set camera pan angle:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py cam pan --angle 30",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> cam</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> pan</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --angle</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 30</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Set camera tilt angle:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py cam tilt --angle 20",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> cam</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> tilt</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --angle</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 20</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Play a sound effect:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py sound play /path/to/sound.wav --volume 80",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sound</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> play</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> /path/to/sound.wav</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --volume</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 80</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Read grayscale sensor data (line tracking):"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py sensor grayscale",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sensor</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> grayscale</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Run servo calibration:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py calibrate",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> calibrate</span></span></code></pre>"
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "using-picar-x-skill-in-openclaw",
+      "level": 2,
+      "title": "Using PiCar-X Skill in OpenClaw",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Once you've verified that PiCar-X Skill works from the command line, you can start using it within OpenClaw."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Launch OpenClaw TUI"
+                  },
+                  {
+                    "t": "text",
+                    "v": ":"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "openclaw tui",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">openclaw</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> tui</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Send natural language commands"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to control PiCar-X. Here are some examples:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Drive forward\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Go backward\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Turn left\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Turn right\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Check if there's something ahead\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Look to the left\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Look up\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Look down\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Take a photo\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Detect faces\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Find the color red\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Follow the line\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Check if there's a cliff ahead\""
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "OpenClaw will automatically"
+                  },
+                  {
+                    "t": "text",
+                    "v": " translate your request into the appropriate Python code and execute it on PiCar-X."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "available-actions-and-commands",
+      "level": 2,
+      "title": "Available Actions and Commands",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Here is the complete list of capabilities supported by PiCar-X Skill:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "driving-pc-py-move",
+      "level": 3,
+      "title": "Driving (pc.py move)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Action"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "forward"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Drive forward"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "backward"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Drive backward"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turning-pc-py-turn",
+      "level": 3,
+      "title": "Turning (pc.py turn)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Action"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "left"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Turn left by adjusting steering angle"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "right"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Turn right by adjusting steering angle"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "camera-gimbal-pc-py-cam",
+      "level": 3,
+      "title": "Camera Gimbal (pc.py cam)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Capability"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Pan camera"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Rotate camera horizontally (-90° to 90°)"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Tilt camera"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Tilt camera vertically (-35° to 65°)"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sensors",
+      "level": 3,
+      "title": "Sensors",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Command"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "sensor distance"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Read ultrasonic distance sensor (returns cm)"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "sensor grayscale"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Read 3-channel grayscale module values (for line tracking & cliff detection)"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sound-pc-py-sound",
+      "level": 3,
+      "title": "Sound (pc.py sound)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Command"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "sound play <file>"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Play a sound effect file"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "sound music <file>"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Play background music"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "sound volume <0-100>"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Set speaker volume"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "sound stop"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Stop playback"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "The sound files can be any "
+                },
+                {
+                  "t": "lit",
+                  "v": ".wav"
+                },
+                {
+                  "t": "text",
+                  "v": " format audio file accessible on your Raspberry Pi. You can also use "
+                },
+                {
+                  "t": "lit",
+                  "v": "sound music"
+                },
+                {
+                  "t": "text",
+                  "v": " to play background music files."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "camera-vision-via-natural-language-exec",
+      "level": 3,
+      "title": "Camera & Vision (via natural language / exec)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Capability"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Take photo"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Capture and save a photo to "
+                    },
+                    {
+                      "t": "lit",
+                      "v": "~/Pictures/"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Face detection"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Detect human faces and report position"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Color detection"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Locate objects by color (red, blue, green, etc.)"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Gesture recognition"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Recognize rock/paper/scissor gestures"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Traffic sign detection"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Recognize stop/left/right/forward signs"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "QR code scanning"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Read QR code data and position"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "line-tracking-cliff-detection",
+      "level": 3,
+      "title": "Line Tracking & Cliff Detection",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            30,
+            70
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Capability"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Description"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Line tracking"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Follow a black line on a light surface using 3-channel grayscale"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Cliff detection"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Detect edges/drops using grayscale threshold values"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "level": 2,
+      "title": "Troubleshooting",
+      "anchors": [],
+      "blocks": []
+    },
+    {
+      "id": "openclaw-issues",
+      "level": 3,
+      "title": "OpenClaw Issues",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. During installation, I get the error "
+            },
+            {
+              "t": "lit",
+              "v": "Error: systemctl is-enabled unavailable: Command failed: systemctl --user is-enabled openclaw-gateway.service"
+            },
+            {
+              "t": "text",
+              "v": ". What should I do?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can ignore this for now, but you might encounter issues in the next steps. Please refer to them one by one at that time."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. When I run "
+            },
+            {
+              "t": "lit",
+              "v": "openclaw tui"
+            },
+            {
+              "t": "text",
+              "v": ", I get the error "
+            },
+            {
+              "t": "lit",
+              "v": "-bash: openclaw: command not found"
+            },
+            {
+              "t": "text",
+              "v": ". What should I do?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Execute the following command:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "echo 'export PATH=\"$HOME/.npm-global/bin:$PATH\"' >> ~/.bashrc\nsource ~/.bashrc",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">echo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 'export PATH=\"$HOME/.npm-global/bin:$PATH\"'</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> >></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.bashrc</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">source</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.bashrc</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You should now be able to start the tui interface with "
+            },
+            {
+              "t": "lit",
+              "v": "openclaw tui"
+            },
+            {
+              "t": "text",
+              "v": "."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. In "
+            },
+            {
+              "t": "lit",
+              "v": "openclaw tui"
+            },
+            {
+              "t": "text",
+              "v": ", I encounter "
+            },
+            {
+              "t": "lit",
+              "v": "not connected to gateway — message not sent"
+            },
+            {
+              "t": "text",
+              "v": " or the message "
+            },
+            {
+              "t": "lit",
+              "v": "gateway disconnected: closed"
+            },
+            {
+              "t": "text",
+              "v": "."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This is because your OpenClaw Gateway service is not started. Open another terminal and execute the following command to start the OpenClaw Gateway:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "openclaw gateway",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">openclaw</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> gateway</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Then restart "
+            },
+            {
+              "t": "lit",
+              "v": "openclaw tui"
+            },
+            {
+              "t": "text",
+              "v": ", and you can use it directly."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. I want to set the OpenClaw Gateway service to run in the background / start automatically on boot. How do I do that?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Normally, your OpenClaw Gateway service should start automatically on boot. If it doesn't, you can manually start it with the following command."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Create the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "~/.config/systemd/user"
+                  },
+                  {
+                    "t": "text",
+                    "v": " directory:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "mkdir -p ~/.config/systemd/user",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">mkdir</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -p</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.config/systemd/user</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 2,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Create the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "openclaw-gateway.service"
+                  },
+                  {
+                    "t": "text",
+                    "v": " file:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "cat > ~/.config/systemd/user/openclaw-gateway.service << EOF\n[Unit]\nDescription=OpenClaw Gateway\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=$HOME/.npm-global/bin/openclaw gateway run\nRestart=on-failure\nRestartSec=10\nEnvironment=\"PATH=$HOME/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin\"\nEnvironment=\"NODE_ENV=production\"\n\n[Install]\nWantedBy=default.target\nEOF",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">cat</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> ></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.config/systemd/user/openclaw-gateway.service</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> &#x3C;&#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> EOF</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">[Unit]</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Description=OpenClaw Gateway</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">After=network.target</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">[Service]</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Type=simple</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">ExecStart=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">$HOME</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">/.npm-global/bin/openclaw gateway run</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Restart=on-failure</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">RestartSec=10</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Environment=\"PATH=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">$HOME</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Environment=\"NODE_ENV=production\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">[Install]</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">WantedBy=default.target</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">EOF</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 3,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Then reload the systemd configuration:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "systemctl --user daemon-reload",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">systemctl</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --user</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> daemon-reload</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 4,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Start the service:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "systemctl --user start openclaw-gateway",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">systemctl</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --user</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> start</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> openclaw-gateway</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "At this point, restart "
+            },
+            {
+              "t": "lit",
+              "v": "openclaw tui"
+            },
+            {
+              "t": "text",
+              "v": ", and you can use it directly."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 5,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Enable it to start on boot:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "systemctl --user enable openclaw-gateway",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">systemctl</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --user</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> enable</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> openclaw-gateway</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. My OpenClaw can not operate the system, what should I do?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "A newly installed OpenClaw may not have permission to operate your Raspberry Pi system by default; it can only chat. We need to manually configure the permissions."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open the OpenClaw configuration file:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "nano ~/.openclaw/openclaw.json",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">nano</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/openclaw.json</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 2,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Find the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "tools"
+                  },
+                  {
+                    "t": "text",
+                    "v": " option and change the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "profile"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "exec"
+                  },
+                  {
+                    "t": "text",
+                    "v": " as shown."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "json",
+          "code": "\"tools\": {\n    \"profile\": \"coding\",\n    \"exec\": {\n        \"secrity\": \"full\"\n    }\n},",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"tools\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">: {</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">    \"profile\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">: </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"coding\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">    \"exec\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">: {</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">        \"secrity\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">: </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"full\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    }</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">},</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 3,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Save and exit."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Enter the following command in the terminal to restart the OpenClaw Gateway:"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "openclaw gateway restart",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">openclaw</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> gateway</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> restart</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Now, OpenClaw should have read and write permissions and be able to operate your Raspberry Pi system."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "picar-x-issues",
+      "level": 3,
+      "title": "PiCar-X Issues",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. PiCar-X doesn't respond to commands. What should I do?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "First, verify that PiCar-X is properly connected and powered on. Then test basic functionality:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py sensor distance",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sensor</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> distance</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If this fails, ensure the required Python libraries are installed:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 -c \"import picarx; import robot_hat; import vilib\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -c</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"import picarx; import robot_hat; import vilib\"</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. The "
+            },
+            {
+              "t": "lit",
+              "v": "import picarx"
+            },
+            {
+              "t": "text",
+              "v": " test fails."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This means the PiCar-X Python library is not properly installed. Please refer to the PiCar-X official installation guide to install the necessary libraries. You can also run the included install script:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "bash ~/.openclaw/workspace/skills/picarx-control/install.sh",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">bash</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/install.sh</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. OpenClaw doesn't recognize the PiCar-X skill."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Remind OpenClaw to sync the skills by saying in the TUI: "
+            },
+            {
+              "t": "em",
+              "v": "\"Please rsync my skills\""
+            },
+            {
+              "t": "text",
+              "v": " or restart OpenClaw gateway:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "openclaw gateway restart",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">openclaw</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> gateway</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> restart</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. PiCar-X movements seem jerky or the steering is off-center."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This is usually caused by servo calibration values being incorrect. Run the calibration script to adjust the steering servo and camera gimbal:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py calibrate",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.openclaw/workspace/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> calibrate</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can also adjust the speed parameter (e.g., use "
+            },
+            {
+              "t": "lit",
+              "v": "--speed 40"
+            },
+            {
+              "t": "text",
+              "v": ") for smoother movement, or add short delays between consecutive commands."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. The grayscale or line tracking doesn't work properly."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Make sure the grayscale module is properly calibrated for your surface. You can set the line reference values using the configuration. Refer to the main PiCar-X documentation for grayscale calibration procedures."
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,698 @@
+{
+  "id": "_shared/appendix/remote_desktop",
+  "title": "Remote Desktop",
+  "sections": [
+    {
+      "id": "remote-desktop",
+      "level": 1,
+      "title": "Remote Desktop",
+      "anchors": [
+        "remote_desktop"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can access and control the Raspberry Pi desktop remotely from another computer. The recommended method is "
+            },
+            {
+              "t": "strong",
+              "v": "VNC"
+            },
+            {
+              "t": "text",
+              "v": ", which is officially supported on Raspberry Pi OS and provides a reliable and consistent desktop experience."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The following section explains how to enable VNC on your Raspberry Pi and connect to it using "
+            },
+            {
+              "t": "link",
+              "href": "https://www.realvnc.com/en/connect/download/viewer/",
+              "v": "RealVNC® Viewer"
+            },
+            {
+              "t": "text",
+              "v": "."
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "enable-the-vnc-service",
+      "level": 2,
+      "title": "Enable the VNC Service",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "RealVNC Server is preinstalled on Raspberry Pi OS, but it is "
+            },
+            {
+              "t": "strong",
+              "v": "disabled by default"
+            },
+            {
+              "t": "text",
+              "v": ". You must enable it through the configuration tool."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open a terminal on your computer (Windows: "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "PowerShell"
+                  },
+                  {
+                    "t": "text",
+                    "v": "; macOS/Linux: "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Terminal"
+                  },
+                  {
+                    "t": "text",
+                    "v": ") and connect to your Raspberry Pi:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "ssh <username>@<hostname>.local",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ssh</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> &#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">usernam</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">e</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">@</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">&#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">hostnam</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">e</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">.local</span></span></code></pre>"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "or"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "ssh <username>@<ip_address>",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ssh</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> &#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">usernam</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">e</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">@</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">&#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">ip_addres</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">s</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the configuration tool:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "sudo raspi-config",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> raspi-config</span></span></code></pre>"
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_raspi_config.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Select "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Interfacing Options"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and press "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Enter"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_interface.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Select "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "VNC"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_vnc_vnc.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Choose "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Yes"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "OK"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and finally "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Finish"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to exit."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_vnc_enable.png"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "log-in-with-realvnc-viewer",
+      "level": 2,
+      "title": "Log in with RealVNC® Viewer",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Download and install "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://www.realvnc.com/en/connect/download/viewer/",
+                    "v": "RealVNC® Viewer"
+                  },
+                  {
+                    "t": "text",
+                    "v": " for your operating system."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_vnc_download.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "RealVNC Viewer"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then enter your Raspberry Pi's IP address or "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "<hostname>.local"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and press "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Enter"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_vnc_login.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Enter your Raspberry Pi's "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "username"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "password"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then select "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "OK"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "admonition",
+                "kind": "note",
+                "blocks": [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "When connecting for the first time, you may see a message such as “VNC Server not recognized”. Select "
+                      },
+                      {
+                        "t": "strong",
+                        "v": "Continue"
+                      },
+                      {
+                        "t": "text",
+                        "v": " to proceed."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_vnc_username.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You should now see the Raspberry Pi desktop:"
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/ssh_vnc_desktop.png"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This completes the VNC setup process."
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "additional-notes",
+      "level": 2,
+      "title": "Additional Notes",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Desktop version required"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "VNC requires the Raspberry Pi to be running the full desktop version of Raspberry Pi OS."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If you are using "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi OS Lite"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", install VNC Server manually: "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "sudo apt install realvnc-vnc-server"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Network performance tips"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If you experience lag or slow refresh rates, check your network quality."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Wired Ethernet generally offers the best performance."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Fixing display resolution issues"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If the VNC window appears too small or the resolution is incorrect, set a fixed resolution via: "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "sudo raspi-config"
+                        },
+                        {
+                          "t": "text",
+                          "v": " → "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Display Options"
+                        },
+                        {
+                          "t": "text",
+                          "v": " → "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "VNC Resolution"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Ensure VNC is enabled"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "If VNC fails to connect, verify that it is enabled in: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "sudo raspi-config"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Interfacing Options"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "VNC"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Stopping the VNC service"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "To manually stop the VNC Server: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "sudo systemctl stop vncserver-x11-serviced"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Security reminder"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "VNC is designed for trusted local networks."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Do "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "not"
+                        },
+                        {
+                          "t": "text",
+                          "v": " expose VNC directly to the internet."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "For secure remote access from outside your network, use "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi Connect"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or a VPN."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,548 @@
+{
+  "id": "python/python_bull_fight",
+  "title": "10. Bull Fight",
+  "sections": [
+    {
+      "id": "10-bull-fight",
+      "level": 1,
+      "title": "10. Bull Fight",
+      "anchors": [
+        "py_bull_fight"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Make PiCar-X an angry bull! Use its camera to track and rush the red cloth!"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Run the Code"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "cd ~/picar-x/example\nsudo python3 10.bull_fight.py",
+          "runnable": true,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~/picar-x/example</span></span>\n<span class=\"line\"><span>sudo python3 10.bull_fight.py</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "View the Image"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "After the code runs, the terminal will display the following prompt:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "No desktop !\n* Serving Flask app \"vilib.vilib\" (lazy loading)\n* Environment: production\nWARNING: Do not use the development server in a production environment.\nUse a production WSGI server instead.\n* Debug mode: off\n* Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>No desktop !</span></span>\n<span class=\"line\"><span>* Serving Flask app \"vilib.vilib\" (lazy loading)</span></span>\n<span class=\"line\"><span>* Environment: production</span></span>\n<span class=\"line\"><span>WARNING: Do not use the development server in a production environment.</span></span>\n<span class=\"line\"><span>Use a production WSGI server instead.</span></span>\n<span class=\"line\"><span>* Debug mode: off</span></span>\n<span class=\"line\"><span>* Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Then you can enter "
+            },
+            {
+              "t": "lit",
+              "v": "http://<your IP>:9000/mjpg"
+            },
+            {
+              "t": "text",
+              "v": " in the browser to view the video screen. such as:  "
+            },
+            {
+              "t": "lit",
+              "v": "https://192.168.18.113:9000/mjpg"
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/python/img/display.png"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Code"
+            }
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "You can "
+                },
+                {
+                  "t": "strong",
+                  "v": "Modify/Reset/Copy/Run/Stop"
+                },
+                {
+                  "t": "text",
+                  "v": " the code below. But before that, you need to go to source code path like "
+                },
+                {
+                  "t": "lit",
+                  "v": "picar-x\\examples"
+                },
+                {
+                  "t": "text",
+                  "v": ". After modifying the code, you can run it directly to see the effect."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "from picarx import Picarx\nfrom time import sleep\nfrom vilib import Vilib\n\npx = Picarx()\n\ndef clamp_number(num,a,b):\nreturn max(min(num, max(a, b)), min(a, b))\n\ndef main():\n    Vilib.camera_start()\n    Vilib.display()\n    Vilib.color_detect(\"red\")\n    speed = 50\n    dir_angle=0\n    x_angle =0\n    y_angle =0\n    while True:\n        if Vilib.detect_obj_parameter['color_n']!=0:\n            coordinate_x = Vilib.detect_obj_parameter['color_x']\n            coordinate_y = Vilib.detect_obj_parameter['color_y']\n\n            # change the pan-tilt angle for track the object\n            x_angle +=(coordinate_x*10/640)-5\n            x_angle = clamp_number(x_angle,-35,35)\n            px.set_cam_pan_angle(x_angle)\n\n            y_angle -=(coordinate_y*10/480)-5\n            y_angle = clamp_number(y_angle,-35,35)\n            px.set_cam_tilt_angle(y_angle)\n\n            # move\n            # The movement direction will change slower than the pan/tilt direction\n            # change to avoid confusion when the picture changes at high speed.\n            if dir_angle > x_angle:\n                dir_angle -= 1\n            elif dir_angle < x_angle:\n                dir_angle += 1\n            px.set_dir_servo_angle(x_angle)\n            px.forward(speed)\n            sleep(0.05)\n\n        else :\n            px.forward(0)\n            sleep(0.05)\n\n\nif __name__ == \"__main__\":\n    try:\n    main()\n\n    finally:\n        px.stop()\n        print(\"stop and exit\")\n        sleep(0.1)",
+          "runnable": true,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> time </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> sleep</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> vilib </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Vilib</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> clamp_number</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(num,a,b):</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">return</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> max</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">min</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(num, </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">max</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(a, b)), </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">min</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(a, b))</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> main</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">():</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    Vilib.camera_start()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    Vilib.display()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    Vilib.color_detect(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"red\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    speed </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 50</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    dir_angle</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    x_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    y_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    while</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Vilib.detect_obj_parameter[</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">'color_n'</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">]</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">!=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            coordinate_x </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Vilib.detect_obj_parameter[</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">'color_x'</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">]</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            coordinate_y </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Vilib.detect_obj_parameter[</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">'color_y'</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">]</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # change the pan-tilt angle for track the object</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            x_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">+=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(coordinate_x</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">*</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">10</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">/</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">640</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">5</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            x_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> clamp_number(x_angle,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_cam_pan_angle(x_angle)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            y_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(coordinate_y</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">*</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">10</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">/</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">480</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">5</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            y_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> clamp_number(y_angle,</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">35</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_cam_tilt_angle(y_angle)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # move</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # The movement direction will change slower than the pan/tilt direction</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">            # change to avoid confusion when the picture changes at high speed.</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> dir_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> x_angle:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                dir_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">-=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">            elif</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> dir_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">&#x3C;</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> x_angle:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">                dir_angle </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">+=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.set_dir_servo_angle(x_angle)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.forward(speed)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.05</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        else</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> :</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">            sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.05</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">if</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> __name__</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> ==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"__main__\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    try</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    main()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    finally</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">        print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"stop and exit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0.1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "How it works?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You need to pay attention to the following three parts of this example:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Define the main function:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Start the camera using "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "Vilib.camera_start()"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Display the camera feed using "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "Vilib.display()"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Enable color detection and specify the target color as \"red\" using "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "Vilib.color_detect(\"red\")"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Initialize variables: "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "speed"
+                        },
+                        {
+                          "t": "text",
+                          "v": " for car movement speed, "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "dir_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " for the direction angle of the car's movement, "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "x_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " for the camera's pan angle, and "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "y_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " for the camera's tilt angle."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Enter a continuous loop (while True) to track the red-colored object:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check if there is a detected red-colored object ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": "Vilib.detect_obj_parameter['color_n'] != 0"
+                        },
+                        {
+                          "t": "text",
+                          "v": ")."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If a red-colored object is detected, obtain its coordinates ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": "coordinate_x"
+                        },
+                        {
+                          "t": "text",
+                          "v": " and "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "coordinate_y"
+                        },
+                        {
+                          "t": "text",
+                          "v": ")."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Calculate new pan and tilt angles ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": "x_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " and "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "y_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": ") based on the detected object's position and adjust them to track the object."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Limit the pan and tilt angles within the specified range using the "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "clamp_number"
+                        },
+                        {
+                          "t": "text",
+                          "v": " function."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Set the camera's pan and tilt angles using "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "px.set_cam_pan_angle()"
+                        },
+                        {
+                          "t": "text",
+                          "v": " and "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "px.set_cam_tilt_angle()"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to keep the object in view."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Control the car's movement based on the difference between dir_angle and "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "x_angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": ":"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "dir_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " is greater than "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "x_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", decrement "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "dir_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " by 1 to gradually change the direction angle."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "dir_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " is less than "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "x_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", increment "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "dir_angle"
+                        },
+                        {
+                          "t": "text",
+                          "v": " by 1."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Set the direction servo angle using "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "px.set_dir_servo_angle()"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to steer the car's wheels accordingly."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Move the car forward at the specified speed using "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "px.forward(speed)"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1650 @@
+{
+  "id": "ai_interaction/python_storytelling_robot",
+  "title": "15. AI Storytelling Robot with Piper and OpenAI",
+  "sections": [
+    {
+      "id": "15-ai-storytelling-robot-with-piper-and-openai",
+      "level": 1,
+      "title": "15. AI Storytelling Robot with Piper and OpenAI",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In the previous lesson, we tried two built-in TTS engines on Raspberry Pi ("
+            },
+            {
+              "t": "strong",
+              "v": "Espeak"
+            },
+            {
+              "t": "text",
+              "v": " and "
+            },
+            {
+              "t": "strong",
+              "v": "Pico2Wave"
+            },
+            {
+              "t": "text",
+              "v": "). Now let's explore two more powerful options: "
+            },
+            {
+              "t": "strong",
+              "v": "Piper"
+            },
+            {
+              "t": "text",
+              "v": " (offline, neural network-based) and "
+            },
+            {
+              "t": "strong",
+              "v": "OpenAI TTS"
+            },
+            {
+              "t": "text",
+              "v": " (online, cloud-based)."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Piper"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": a local TTS engine that runs offline on Raspberry Pi."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "OpenAI TTS"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": an online service that provides very natural, human-like voices."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "At the end, your PiCar-X will drive around and tell jokes like a little storyteller."
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "before-you-start",
+      "level": 2,
+      "title": "Before You Start",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Make sure you‘ve completed:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "python/install_all_modules",
+                    "section": "install-all-the-modules-important",
+                    "v": "Install All the Modules (Important)"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Install "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "robot-hat"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "vilib"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picar-x"
+                  },
+                  {
+                    "t": "text",
+                    "v": " modules, then run the script "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "i2samp.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "1-testing-piper",
+      "level": 2,
+      "title": "1. Testing Piper",
+      "anchors": [
+        "test_piper"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Steps to try it out"
+            },
+            {
+              "t": "text",
+              "v": ":"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Create a new file:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cd ~/picar-x/example\nsudo nano test_tts_piper.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> nano</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_tts_piper.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Copy the example code below into the file. Press "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Ctrl+X"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Y"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and finally "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Enter"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to save and exit."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "python",
+                "code": "from picarx.tts import Piper\n\ntts = Piper()\n\n# List supported languages\nprint(tts.available_countrys())\n\n# List models for English (en_us)\nprint(tts.available_models('en_us'))\n\n# Set a voice model (auto-download if not already present)\ntts.set_model(\"en_US-amy-low\")\n\n# Say something\ntts.say(\"Hello! I'm Piper TTS.\")",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Piper</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Piper()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># List supported languages</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(tts.available_countrys())</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># List models for English (en_us)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(tts.available_models(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">'en_us'</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">))</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Set a voice model (auto-download if not already present)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.set_model(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"en_US-amy-low\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Say something</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Hello! I'm Piper TTS.\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "available_countrys()"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": print supported languages."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "available_models()"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": list available models for that language."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "set_model()"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": set the voice model (downloads automatically if missing)."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "say()"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": convert text to speech and play it."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the program:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "sudo python3 test_tts_piper.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_tts_piper.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The first time you run it, the selected voice model will be downloaded automatically."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "You should then hear the PiCar-X say: "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "Hello! I'm Piper TTS."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "You can change to another language model by calling "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "set_model()"
+                        },
+                        {
+                          "t": "text",
+                          "v": " with a different name."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Testing OpenAI TTS"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Get and save your API Key"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Go to "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://platform.openai.com/settings/organization/api-keys",
+                    "v": "OpenAI Platform"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and log in. On the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "API keys"
+                  },
+                  {
+                    "t": "text",
+                    "v": " page, click "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Create new secret key"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_openai_create.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Fill in the details (Owner, Name, Project, and permissions if needed), then click "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Create secret key"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_openai_create_confirm.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Once the key is created, copy it right away — you won't be able to see it again. If you lose it, you must generate a new one."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_openai_copy.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "In your project folder (for example: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "/picar-x/example"
+                  },
+                  {
+                    "t": "text",
+                    "v": "), create a file called "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "secret.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": ":"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cd ~/picar-x/example\nsudo nano secret.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> nano</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> secret.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Paste your key into the file like this:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "python",
+                "code": "# secret.py\n# Store secrets here. Never commit this file to Git.\nOPENAI_API_KEY = \"sk-xxx\"",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># secret.py</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Store secrets here. Never commit this file to Git.</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">OPENAI_API_KEY</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"sk-xxx\"</span></span></code></pre>"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Write and Run a Test Program"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Create a new file:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cd ~/picar-x/example\nsudo nano test_tts_openai.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> nano</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_tts_openai.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Copy the example code below into the file. Press "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Ctrl+X"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Y"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and finally "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Enter"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to save and exit."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "python",
+                "code": "from picarx.tts import OpenAI_TTS\nfrom secret import OPENAI_API_KEY   # or use the try/except version shown above\n\n# Initialize OpenAI TTS\ntts = OpenAI_TTS(api_key=OPENAI_API_KEY)\ntts.set_model('gpt-4o-mini-tts')  # low-latency TTS model\ntts.set_voice('alloy')            # pick a voice\n\n# Quick hello (sanity check)\ntts.say(\"Hello! I'm OpenAI TTS.\")",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> OpenAI_TTS</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> secret </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> OPENAI_API_KEY</span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">   # or use the try/except version shown above</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Initialize OpenAI TTS</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> OpenAI_TTS(</span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">api_key</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">OPENAI_API_KEY</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.set_model(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">'gpt-4o-mini-tts'</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)  </span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># low-latency TTS model</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.set_voice(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">'alloy'</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)            </span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># pick a voice</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Quick hello (sanity check)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Hello! I'm OpenAI TTS.\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the program:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "sudo python3 test_tts_openai.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_tts_openai.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You should hear the PiCar-X say:"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "Hello! I'm OpenAI TTS."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Storytelling Robot"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Now that we have tested both "
+            },
+            {
+              "t": "strong",
+              "v": "Piper"
+            },
+            {
+              "t": "text",
+              "v": " and "
+            },
+            {
+              "t": "strong",
+              "v": "OpenAI TTS"
+            },
+            {
+              "t": "text",
+              "v": ", let’s use them in a real project: a "
+            },
+            {
+              "t": "strong",
+              "v": "storytelling robot car"
+            },
+            {
+              "t": "text",
+              "v": " that drives around while telling jokes."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In this program, the PiCar-X will:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Greet you with TTS when it starts."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Move forward and tell a first joke."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Move forward again and tell a second joke."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Finally drive backward, return “home,” and say goodbye."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "It’s like having a little robot storyteller on wheels!"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Run the code"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "cd ~/picar-x/example\nsudo python3 15.storytelling_robot.py",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 15.storytelling_robot.py</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Code"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "from picarx import Picarx\nimport time\n\n# === TTS Configuration ===\n# Default: Piper\nfrom picarx.tts import Piper\ntts = Piper()\ntts.set_model(\"en_US-amy-low\")  # use the voice model you installed\n\n# Optional: switch to OpenAI TTS\n# from picarx.tts import OpenAI_TTS\n# from secret import OPENAI_API_KEY\n# tts = OpenAI_TTS(api_key=OPENAI_API_KEY)\n# tts.set_model(\"gpt-4o-mini-tts\")  # low-latency TTS model\n# tts.set_voice(\"alloy\")            # choose a voice\n\n# === PiCar-X Setup ===\npx = Picarx()\n\n# Quick hello (sanity check)\ntts.say(\"Hello! I'm PiCar-X speaking with Piper.\")\n\ndef main():\n    try:\n        # Leg 1\n        px.forward(30)\n        time.sleep(3)\n        px.stop()\n        tts.say(\"Why can't your nose be twelve inches long? Because then it would be a foot!\")\n\n        # Leg 2\n        px.forward(30)\n        time.sleep(3)\n        px.stop()\n        tts.say(\"Why did the cow go to outer space? To see the moooon!\")\n\n        # Wrap-up\n        tts.say(\"That's all for today. Goodbye, let's go home and sleep.\")\n        px.backward(30)\n        time.sleep(6)\n        px.stop()\n\n    except KeyboardInterrupt:\n        px.stop()\n    finally:\n        px.stop()\n        px.set_dir_servo_angle(0)\n\nif __name__ == \"__main__\":\n    main()",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> time</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># === TTS Configuration ===</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Default: Piper</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Piper</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Piper()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.set_model(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"en_US-amy-low\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)  </span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># use the voice model you installed</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Optional: switch to OpenAI TTS</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># from picarx.tts import OpenAI_TTS</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># from secret import OPENAI_API_KEY</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># tts = OpenAI_TTS(api_key=OPENAI_API_KEY)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># tts.set_model(\"gpt-4o-mini-tts\")  # low-latency TTS model</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># tts.set_voice(\"alloy\")            # choose a voice</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># === PiCar-X Setup ===</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">px </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picarx()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Quick hello (sanity check)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Hello! I'm PiCar-X speaking with Piper.\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">def</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> main</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">():</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    try</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">        # Leg 1</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">30</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">3</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        tts.say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Why can't your nose be twelve inches long? Because then it would be a foot!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">        # Leg 2</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.forward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">30</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">3</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        tts.say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"Why did the cow go to outer space? To see the moooon!\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">        # Wrap-up</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        tts.say(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"That's all for today. Goodbye, let's go home and sleep.\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.backward(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">30</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">6</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    except</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> KeyboardInterrupt</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    finally</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.stop()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">        px.set_dir_servo_angle(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">0</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">if</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> __name__</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> ==</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"__main__\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    main()</span></span></code></pre>"
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "level": 2,
+      "title": "Troubleshooting",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "No module named 'secret'"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "This means "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "secret.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": " is not in the same folder as your Python file. Move "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "secret.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": " into the same directory where you run the script, e.g.:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "ls ~/picar-x/example\n# Make sure you see both: secret.py and your .py file",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ls</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Make sure you see both: secret.py and your .py file</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "OpenAI: Invalid API key / 401"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check that you pasted the full key (starts with "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "sk-"
+                        },
+                        {
+                          "t": "text",
+                          "v": ") and there are no extra spaces/newlines."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Ensure your code imports it correctly:"
+                        }
+                      ]
+                    },
+                    {
+                      "t": "code",
+                      "lang": "python",
+                      "code": "from secret import OPENAI_API_KEY",
+                      "runnable": false,
+                      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> secret </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> OPENAI_API_KEY</span></span></code></pre>"
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Confirm network access on your Pi (try "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "ping api.openai.com"
+                        },
+                        {
+                          "t": "text",
+                          "v": ")."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "OpenAI: Quota exceeded / billing error"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "You may need to add billing or increase quota in the OpenAI dashboard."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Try again after resolving the account/billing issue."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Piper: tts.say() runs but no sound"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Make sure a voice model is actually present:"
+                        }
+                      ]
+                    },
+                    {
+                      "t": "code",
+                      "lang": "bash",
+                      "code": "ls ~/.local/share/piper/voices",
+                      "runnable": false,
+                      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ls</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.local/share/piper/voices</span></span></code></pre>"
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Confirm your model name matches exactly in code:"
+                        }
+                      ]
+                    },
+                    {
+                      "t": "code",
+                      "lang": "python",
+                      "code": "tts.set_model(\"en_US-amy-low\")",
+                      "runnable": false,
+                      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">tts.set_model(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"en_US-amy-low\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check the audio output device/volume on your Pi ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": "alsamixer"
+                        },
+                        {
+                          "t": "text",
+                          "v": "), and that speakers are connected and powered."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "ALSA / sound device errors (e.g., “Audio device busy” or “No such file or directory”)"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Close other programs using audio."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Reboot the Pi if the device stays busy."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "For HDMI vs. headphone jack output, select the correct device in Raspberry Pi OS audio settings."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Permission denied when running Python"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Try with "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "sudo"
+                        },
+                        {
+                          "t": "text",
+                          "v": " if your environment requires it:"
+                        }
+                      ]
+                    },
+                    {
+                      "t": "code",
+                      "lang": "bash",
+                      "code": "sudo python3 test_tts_piper.py",
+                      "runnable": false,
+                      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_tts_piper.py</span></span></code></pre>"
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparison-of-tts-engines",
+      "level": 2,
+      "title": "Comparison of TTS Engines",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            18,
+            18,
+            20,
+            22,
+            22
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Item"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Espeak"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Pico2Wave"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Piper"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "OpenAI TTS"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Runs on"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Built-in on Raspberry Pi (offline)"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Built-in on Raspberry Pi (offline)"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Raspberry Pi / PC (offline, needs model)"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Cloud (online, needs API key)"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Voice quality"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Robotic"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "More natural than Espeak"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Natural (neural TTS)"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Very natural / human-like"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Controls"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Speed, pitch, volume"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Limited controls"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Choose different voices/models"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Choose model and voices"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Languages"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Many (quality varies)"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Limited set"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Many voices/languages available"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Best in English (others vary by availability)"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Latency / speed"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Very fast"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Fast"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Real-time on Pi 4/5 with “low” models"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Network-dependent (usually low latency)"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Setup"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Minimal"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Minimal"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Download "
+                    },
+                    {
+                      "t": "lit",
+                      "v": ".onnx"
+                    },
+                    {
+                      "t": "text",
+                      "v": " + "
+                    },
+                    {
+                      "t": "lit",
+                      "v": ".onnx.json"
+                    },
+                    {
+                      "t": "text",
+                      "v": " models"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Create API key, install client"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Best for"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Quick tests, basic prompts"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Slightly better offline voice"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Local projects with better quality"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Highest quality, rich voice options"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

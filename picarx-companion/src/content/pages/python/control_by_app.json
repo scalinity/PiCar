@@ -1,0 +1,558 @@
+{
+  "id": "python/control_by_app",
+  "title": "12. Controlled by the APP",
+  "sections": [
+    {
+      "id": "12-controlled-by-the-app",
+      "level": 1,
+      "title": "12. Controlled by the APP",
+      "anchors": [
+        "control_by_app"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The SunFounder controller is used to control Raspberry Pi/Pico based robots."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The APP integrates Button, Switch, Joystick, D-pad, Slider and Throttle Slider widgets; Digital Display, Ultrasonic Radar, Grayscale Detection and Speedometer input widgets."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "There are 17 areas A-Q , where you can place different widgets to customize your own controller."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In addition, this application provides a live video streaming service."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Let's customize a PiCar-X controller using this app."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "How to do?"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Install the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "sunfounder-controller"
+                  },
+                  {
+                    "t": "text",
+                    "v": " module."
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "robot-hat"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "vilib"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picar-x"
+                  },
+                  {
+                    "t": "text",
+                    "v": " modules need to be installed first, for details see: "
+                  },
+                  {
+                    "t": "xref",
+                    "page": "python/install_all_modules",
+                    "section": "install-all-the-modules-important",
+                    "v": "Install All the Modules (Important)"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "cd ~\ngit clone https://github.com/sunfounder/sunfounder-controller.git\ncd ~/sunfounder-controller\nsudo python3 setup.py install",
+                "runnable": true,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~</span></span>\n<span class=\"line\"><span>git clone https://github.com/sunfounder/sunfounder-controller.git</span></span>\n<span class=\"line\"><span>cd ~/sunfounder-controller</span></span>\n<span class=\"line\"><span>sudo python3 setup.py install</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the code."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "cd ~/picar-x/example\nsudo python3 12.app_control.py",
+                "runnable": true,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~/picar-x/example</span></span>\n<span class=\"line\"><span>sudo python3 12.app_control.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Install "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://docs.sunfounder.com/projects/sf-controller/en/latest/",
+                    "v": "SunFounder Controller"
+                  },
+                  {
+                    "t": "text",
+                    "v": " from "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "APP Store(iOS)"
+                  },
+                  {
+                    "t": "text",
+                    "v": " or "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Google Play(Android)"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open and create a new controller."
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Create a new controller by clicking on the + sign in the SunFounder Controller APP."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/app1.PNG"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "There are preset controllers for some products in the Preset section, which you can use as needed. Here, we select "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "PiCar-X"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/app_control_preset.jpg"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Connect to PiCar-x."
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "When you click the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Connect"
+                  },
+                  {
+                    "t": "text",
+                    "v": " button, it will automatically search for robots nearby. Its name is defined in "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picarx_control.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and it must be running at all times."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/app9.PNG"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Once you click on the product name, the message \"Connected Successfully\" will appear and the product name will appear in the upper right corner."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/app10.PNG"
+              },
+              {
+                "t": "admonition",
+                "kind": "note",
+                "blocks": [
+                  {
+                    "t": "list",
+                    "ordered": false,
+                    "items": [
+                      [
+                        {
+                          "t": "p",
+                          "inlines": [
+                            {
+                              "t": "text",
+                              "v": "You need to make sure that your mobile device is connected to the same LAN as PiCar-X."
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "t": "p",
+                          "inlines": [
+                            {
+                              "t": "text",
+                              "v": "If it doesn't search automatically, you can also manually enter the IP to connect."
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  {
+                    "t": "image",
+                    "src": "/content/img/python/img/app11.PNG"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run this controller."
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Click the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Run"
+                  },
+                  {
+                    "t": "text",
+                    "v": " button to start the controller, you will see the footage of the car shooting, and now you can control your PiCar-X with these widgets."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/app12.PNG"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Here are the functions of the widgets."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "A"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Show the current speed of the car."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "E"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": turn on the obstacle avoidance function."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "I"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": turn on the line following function."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "J"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": voice recognition, press and hold this widget to start speaking, and it will show the recognized voice when you release it. We have set "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "forward"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "backard"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "left"
+                        },
+                        {
+                          "t": "text",
+                          "v": " and "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "right"
+                        },
+                        {
+                          "t": "text",
+                          "v": " 4 commands in the code to control the car."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "K"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Control forward, backward, left, and right motions of the car."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Q"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": turn the head(Camera) up, down, left and right."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "N"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Turn on the color recognition function."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "O"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Turn on the face recognition function."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "P"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Turn on the object recognition function, it can recognize nearly 90 kinds of objects, for the list of models, please refer to: "
+                        },
+                        {
+                          "t": "link",
+                          "href": "https://github.com/sunfounder/vilib/blob/master/workspace/coco_labels.txt",
+                          "v": "https://github.com/sunfounder/vilib/blob/master/workspace/coco_labels.txt"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

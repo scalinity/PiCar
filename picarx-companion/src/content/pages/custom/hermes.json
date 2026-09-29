@@ -1,0 +1,1566 @@
+{
+  "id": "custom/hermes",
+  "title": "23. Using Hermes Agent to Control PiCar-X",
+  "sections": [
+    {
+      "id": "23-using-hermes-agent-to-control-picar-x",
+      "level": 1,
+      "title": "23. Using Hermes Agent to Control PiCar-X",
+      "anchors": [
+        "hermes_picarx_skill"
+      ],
+      "blocks": [
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "This chapter is a PiCar-X Companion addition — it is not part of SunFounder's official documentation. Every Hermes command below comes from the official "
+                },
+                {
+                  "t": "link",
+                  "href": "https://hermes-agent.nousresearch.com/docs/getting-started/installation",
+                  "v": "Hermes Agent documentation"
+                },
+                {
+                  "t": "text",
+                  "v": ", and the PiCar-X skill and test tool are the same ones SunFounder ships for OpenClaw (see "
+                },
+                {
+                  "t": "xref",
+                  "page": "openclaw",
+                  "section": "22-using-openclaw-to-control-picar-x",
+                  "v": "22. Using OpenClaw to Control PiCar-X"
+                },
+                {
+                  "t": "text",
+                  "v": ")."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "What is Hermes Agent?"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Hermes Agent is an open-source AI agent from "
+            },
+            {
+              "t": "link",
+              "href": "https://nousresearch.com",
+              "v": "Nous Research"
+            },
+            {
+              "t": "text",
+              "v": ". Like OpenClaw, it goes beyond chat: it understands natural language instructions and can actually run commands, manage files, and call tools on your Raspberry Pi. Two things set it apart:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Self-learning skills:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Hermes automatically creates new skills from your conversations and refines them over time, building an agent that gets better at the tasks you actually give it."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Long-term memory:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " It builds memory that persists across sessions — tell it once how you like your PiCar-X driven, and it remembers."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Many channels:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " You can talk to it through the CLI on the Pi itself, or connect it to Telegram, Discord, email, and other messaging platforms via its gateway."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "important",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "Hermes Agent requires a model with at least a "
+                },
+                {
+                  "t": "strong",
+                  "v": "64,000-token context window"
+                },
+                {
+                  "t": "text",
+                  "v": " — smaller models are rejected at startup. Community Raspberry Pi guides recommend a "
+                },
+                {
+                  "t": "strong",
+                  "v": "Pi 4 or Pi 5 with 4 GB+ RAM"
+                },
+                {
+                  "t": "text",
+                  "v": ", pointed at a hosted LLM provider (the model runs in the cloud; the Pi only runs the agent loop). Like OpenClaw, the Pi Zero 2W (512 MB) is not enough."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quick-start-hermes-agent",
+      "level": 2,
+      "title": "Quick Start Hermes Agent",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open the terminal on your Raspberry Pi and run the official install script. It handles all dependencies (Python 3.11, Node.js 22, ripgrep, ffmpeg) automatically:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">curl</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -fsSL</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> https://hermes-agent.nousresearch.com/install.sh</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> |</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> bash</span></span></code></pre>"
+              },
+              {
+                "t": "admonition",
+                "kind": "note",
+                "blocks": [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "On a headless Pi you don't need browser automation — the installer supports a "
+                      },
+                      {
+                        "t": "lit",
+                        "v": "--skip-browser"
+                      },
+                      {
+                        "t": "text",
+                        "v": " flag that skips the Playwright/Chromium download. See the official installation guide for details. Because new versions are updated rapidly, it's normal if your installation steps differ slightly."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Reload your shell so the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "hermes"
+                  },
+                  {
+                    "t": "text",
+                    "v": " command is found:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "source ~/.bashrc",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">source</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.bashrc</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the setup wizard:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "hermes setup",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> setup</span></span></code></pre>"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The wizard offers three modes:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Quick Setup (Nous Portal)"
+                        },
+                        {
+                          "t": "text",
+                          "v": " — log in with OAuth, no API keys needed. The easiest path."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Full Setup"
+                        },
+                        {
+                          "t": "text",
+                          "v": " — configure your own provider and tools manually."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Blank Slate"
+                        },
+                        {
+                          "t": "text",
+                          "v": " — a minimal agent where every feature is an explicit opt-in."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "If you would rather use your own API key (for example an OpenRouter key), you can skip the portal and configure a provider directly:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "hermes model",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> model</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Verify the installation. "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "hermes doctor"
+                  },
+                  {
+                    "t": "text",
+                    "v": " checks dependencies and configuration and tells you exactly what is missing and how to fix it:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "hermes doctor",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> doctor</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Start chatting — plain CLI or the TUI interface:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "hermes --tui",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --tui</span></span></code></pre>"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "making-hermes-agent-operate-the-picar-x",
+      "level": 2,
+      "title": "Making Hermes Agent Operate the PiCar-X",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "The same PiCar-X Skill, a different agent."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The PiCar-X skill that SunFounder ships for OpenClaw is a portable skill bundle: a "
+            },
+            {
+              "t": "lit",
+              "v": "SKILL.md"
+            },
+            {
+              "t": "text",
+              "v": " file (safety rules, code templates, and the mapping from natural language to Python code) plus a "
+            },
+            {
+              "t": "lit",
+              "v": "scripts/pc.py"
+            },
+            {
+              "t": "text",
+              "v": " command-line tool. Hermes Agent reads the same "
+            },
+            {
+              "t": "lit",
+              "v": "SKILL.md"
+            },
+            {
+              "t": "text",
+              "v": " format, so the identical bundle teaches Hermes to drive your car:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Driving:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Drive forward, backward, turn left/right with steering servo control"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Camera Gimbal:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Pan left/right, tilt up/down via the 2-axis camera gimbal"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Sensors:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Read ultrasonic distance and grayscale data for line tracking and cliff detection"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Sound:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Play sound effects and music through the car's speaker"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Camera Vision:"
+                  },
+                  {
+                    "t": "text",
+                    "v": " Take photos, detect faces, track colors, recognize QR codes, gestures, and traffic signs"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "level": 2,
+      "title": "Prerequisites",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before you can use the PiCar-X skill with Hermes, make sure you have:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "PiCar-X"
+                  },
+                  {
+                    "t": "text",
+                    "v": " properly assembled and connected to your Raspberry Pi"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Hermes Agent"
+                  },
+                  {
+                    "t": "text",
+                    "v": " installed and set up (previous section)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The following Python libraries installed (see "
+                  },
+                  {
+                    "t": "xref",
+                    "page": "python/install_all_modules",
+                    "section": "install-all-the-modules-important",
+                    "v": "Install All the Modules (Important)"
+                  },
+                  {
+                    "t": "text",
+                    "v": "):"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "picarx"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "robot_hat"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "lit",
+                          "v": "vilib"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can verify the libraries by running:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 -c \"import picarx\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -c</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"import picarx\"</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If this command runs without errors, you're ready to proceed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "installing-the-picar-x-skill-for-hermes",
+      "level": 2,
+      "title": "Installing the PiCar-X Skill for Hermes",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Hermes keeps user skills in "
+            },
+            {
+              "t": "lit",
+              "v": "~/.hermes/skills/"
+            },
+            {
+              "t": "text",
+              "v": ". Installing the skill is one copy:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Copy the PiCar-X skill bundle"
+                  },
+                  {
+                    "t": "text",
+                    "v": " into the Hermes skills directory:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cp -r ~/picar-x/picarx-control ~/.hermes/skills/",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">cp</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -r</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/picarx-control</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Verify the files"
+                  },
+                  {
+                    "t": "text",
+                    "v": " are in place:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "ls ~/.hermes/skills/picarx-control/",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ls</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/</span></span></code></pre>"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You should see "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "SKILL.md"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "install.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "scripts/"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "references/"
+                  },
+                  {
+                    "t": "text",
+                    "v": " in the output."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Confirm Hermes discovered the skill:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "hermes skills list",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> skills</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> list</span></span></code></pre>"
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "You can also validate installed skills with "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "hermes skills check"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "Hermes exposes installed skills as slash commands automatically, and its skills hub ("
+                },
+                {
+                  "t": "lit",
+                  "v": "hermes skills browse"
+                },
+                {
+                  "t": "text",
+                  "v": " / "
+                },
+                {
+                  "t": "lit",
+                  "v": "hermes skills search"
+                },
+                {
+                  "t": "text",
+                  "v": ") offers many more community skills."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testing-the-picar-x-skill-from-the-cli",
+      "level": 2,
+      "title": "Testing the PiCar-X Skill from the CLI",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before handing control to the agent, test the skill's command-line tool directly — the commands are identical to the OpenClaw chapter, only the path differs."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Check ultrasonic distance:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py sensor distance",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sensor</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> distance</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Drive forward:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py move forward --speed 60",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> move</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> forward</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --speed</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 60</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Turn left:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py turn left --angle 30",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> turn</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> left</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --angle</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 30</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Set camera pan angle:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py cam pan --angle 30",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> cam</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> pan</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --angle</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> 30</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Read grayscale sensor data:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py sensor grayscale",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sensor</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> grayscale</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Run servo calibration:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py calibrate",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> calibrate</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The full command set ("
+            },
+            {
+              "t": "lit",
+              "v": "move"
+            },
+            {
+              "t": "text",
+              "v": ", "
+            },
+            {
+              "t": "lit",
+              "v": "turn"
+            },
+            {
+              "t": "text",
+              "v": ", "
+            },
+            {
+              "t": "lit",
+              "v": "cam"
+            },
+            {
+              "t": "text",
+              "v": ", "
+            },
+            {
+              "t": "lit",
+              "v": "sensor"
+            },
+            {
+              "t": "text",
+              "v": ", "
+            },
+            {
+              "t": "lit",
+              "v": "sound"
+            },
+            {
+              "t": "text",
+              "v": ", "
+            },
+            {
+              "t": "lit",
+              "v": "calibrate"
+            },
+            {
+              "t": "text",
+              "v": ") is documented in the action tables of the "
+            },
+            {
+              "t": "xref",
+              "page": "openclaw",
+              "section": "22-using-openclaw-to-control-picar-x",
+              "v": "22. Using OpenClaw to Control PiCar-X"
+            },
+            {
+              "t": "text",
+              "v": " chapter — the skill is the same, so every table there applies here unchanged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "using-the-picar-x-skill-in-hermes-agent",
+      "level": 2,
+      "title": "Using the PiCar-X Skill in Hermes Agent",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Launch the Hermes TUI:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "hermes --tui",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --tui</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Send natural language commands"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to control PiCar-X. The same phrases from the OpenClaw chapter work here:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Drive forward\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Go backward\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Turn left\" / \"Turn right\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Check if there's something ahead\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Look to the left\" / \"Look up\" / \"Look down\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Take a photo\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Detect faces\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Find the color red\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Follow the line\""
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "\"Check if there's a cliff ahead\""
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Hermes will translate"
+                  },
+                  {
+                    "t": "text",
+                    "v": " your request into the appropriate "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "pc.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": " invocation or Python code and execute it on the car. Thanks to its learning loop, sequences you ask for repeatedly (say, a patrol route) can become new skills of their own."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "level": 2,
+      "title": "Troubleshooting",
+      "anchors": [],
+      "blocks": []
+    },
+    {
+      "id": "hermes-agent-issues",
+      "level": 3,
+      "title": "Hermes Agent Issues",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. "
+            },
+            {
+              "t": "lit",
+              "v": "hermes: command not found"
+            },
+            {
+              "t": "text",
+              "v": " after installation."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Reload your shell configuration, which adds "
+            },
+            {
+              "t": "lit",
+              "v": "~/.local/bin"
+            },
+            {
+              "t": "text",
+              "v": " to your PATH:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "source ~/.bashrc",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">source</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.bashrc</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. I get an \"API key not set\" error."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Configure a provider with "
+            },
+            {
+              "t": "lit",
+              "v": "hermes model"
+            },
+            {
+              "t": "text",
+              "v": ", or set the key directly, for example:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "hermes config set OPENROUTER_API_KEY your_key",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> config</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> set</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> OPENROUTER_API_KEY</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> your_key</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. Something seems broken and I'm not sure what."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The doctor diagnoses configuration and dependency issues, and can auto-repair many of them:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "hermes doctor --fix",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> doctor</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> --fix</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. My configuration seems missing after an update."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Run "
+            },
+            {
+              "t": "lit",
+              "v": "hermes config check"
+            },
+            {
+              "t": "text",
+              "v": " and then "
+            },
+            {
+              "t": "lit",
+              "v": "hermes config migrate"
+            },
+            {
+              "t": "text",
+              "v": "."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. I want Hermes to run 24/7 and answer from Telegram or Discord."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Configure a messaging platform with "
+            },
+            {
+              "t": "lit",
+              "v": "hermes gateway setup"
+            },
+            {
+              "t": "text",
+              "v": ", then install the gateway as a service with "
+            },
+            {
+              "t": "lit",
+              "v": "hermes gateway install"
+            },
+            {
+              "t": "text",
+              "v": ". Check it with "
+            },
+            {
+              "t": "lit",
+              "v": "hermes gateway status"
+            },
+            {
+              "t": "text",
+              "v": ". On systems where systemd is unreliable (such as WSL), run it in the foreground with "
+            },
+            {
+              "t": "lit",
+              "v": "hermes gateway run"
+            },
+            {
+              "t": "text",
+              "v": " instead."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "picar-x-issues",
+      "level": 3,
+      "title": "PiCar-X Issues",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. PiCar-X doesn't respond to commands."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "First verify that PiCar-X is properly connected and powered on, then test basic functionality directly:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py sensor distance",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> sensor</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> distance</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If this fails, ensure the required Python libraries are installed:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 -c \"import picarx; import robot_hat; import vilib\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -c</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"import picarx; import robot_hat; import vilib\"</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. The "
+            },
+            {
+              "t": "lit",
+              "v": "import picarx"
+            },
+            {
+              "t": "text",
+              "v": " test fails."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The PiCar-X libraries are not installed — see "
+            },
+            {
+              "t": "xref",
+              "page": "python/install_all_modules",
+              "section": "install-all-the-modules-important",
+              "v": "Install All the Modules (Important)"
+            },
+            {
+              "t": "text",
+              "v": ", or run the skill's included install script:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "bash ~/.hermes/skills/picarx-control/install.sh",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">bash</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/install.sh</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. Hermes doesn't recognize the PiCar-X skill."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Verify the skill with "
+            },
+            {
+              "t": "lit",
+              "v": "hermes skills check"
+            },
+            {
+              "t": "text",
+              "v": ", and if it still isn't picked up, restart the gateway:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "hermes gateway restart",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">hermes</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> gateway</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> restart</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Q. PiCar-X movements seem jerky or the steering is off-center."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This usually means servo calibration values are off. Run the calibration tool, or use a lower speed (for example "
+            },
+            {
+              "t": "lit",
+              "v": "--speed 40"
+            },
+            {
+              "t": "text",
+              "v": ") for smoother movement:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "python3 ~/.hermes/skills/picarx-control/scripts/pc.py calibrate",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/.hermes/skills/picarx-control/scripts/pc.py</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> calibrate</span></span></code></pre>"
+        },
+        {
+          "t": "admonition",
+          "kind": "tip",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "OpenClaw and Hermes Agent can coexist on the same Raspberry Pi — they install to different locations and each reads its own copy of the skill bundle. If you try both, just remember only one of them should drive the car at a time."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

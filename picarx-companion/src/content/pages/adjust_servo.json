@@ -1,0 +1,95 @@
+{
+  "id": "adjust_servo",
+  "title": "Adjust Servo for Assembly",
+  "sections": [
+    {
+      "id": "adjust-servo-for-assembly",
+      "level": 1,
+      "title": "Adjust Servo for Assembly",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before assembling the servo, it is essential to set the angle to zero. Since servo motors have a limited range of motion, setting the angle to zero degrees ensures that the servo starts in its initial position and avoids exceeding its range when powered on. Failing to set the servo to zero beforehand may cause it to attempt to move beyond its allowed range when powered, potentially damaging both the servo and the mechanical system it's attached to. This step is crucial to guarantee safe and proper operation of the servo motor."
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/img/IMG_9897.png"
+        }
+      ]
+    },
+    {
+      "id": "for-python-users",
+      "level": 2,
+      "title": "For Python Users",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Refer to "
+            },
+            {
+              "t": "xref",
+              "page": "python/play_with_python",
+              "section": "1-quick-guide-on-python",
+              "v": "1. Quick Guide on Python"
+            },
+            {
+              "t": "text",
+              "v": " to complete the installation of Raspberry Pi OS and adjust the servo angles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "for-ezblock-users",
+      "level": 2,
+      "title": "For Ezblock Users",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "If you are using a Raspberry Pi 5, our graphical programming software, EzBlock, is not supported."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Once you have installed the Ezblock system, the P11 pin can be used to adjust the servo. For more details, please refer to "
+            },
+            {
+              "t": "link",
+              "href": "https://docs.sunfounder.com/projects/picar-x-v20/en/latest/ezblock/play_with_ezblock.html",
+              "v": "Servo Adjust (Ezblock docs)"
+            },
+            {
+              "t": "text",
+              "v": "."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

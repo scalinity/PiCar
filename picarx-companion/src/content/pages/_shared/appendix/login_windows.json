@@ -1,0 +1,269 @@
+{
+  "id": "_shared/appendix/login_windows",
+  "title": "PuTTY",
+  "sections": [
+    {
+      "id": "putty",
+      "level": 1,
+      "title": "PuTTY",
+      "anchors": [
+        "login_windows"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "PuTTY is a simple and reliable SSH client for Windows users to remotely access the Raspberry Pi."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Download PuTTY from "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html",
+                    "v": "PuTTY"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and install it on your computer."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/putty_download.png",
+                "width": "70%"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open PuTTY and prepare the connection:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Enter your Raspberry Pi’s "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "hostname or IP address"
+                        },
+                        {
+                          "t": "text",
+                          "v": " in "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Host Name"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Set the "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Port"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "22"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Click "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Open"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to connect."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/putty_open.png",
+                "width": "70%"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "If a security warning appears on first use, click "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Accept"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to continue."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/putty_accept.png",
+                "width": "70%"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Log in to the Raspberry Pi:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "When you see "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "login as:"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", enter the username you set in "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi Imager"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Enter your password (it will not appear while typing—this is normal)."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "After logging in, the terminal is ready for you to enter commands and operate your Raspberry Pi remotely."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/putty_login.png",
+                "width": "70%"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "If PuTTY shows "
+                },
+                {
+                  "t": "strong",
+                  "v": "inactive"
+                },
+                {
+                  "t": "text",
+                  "v": ", the connection was lost and needs to be reconnected."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

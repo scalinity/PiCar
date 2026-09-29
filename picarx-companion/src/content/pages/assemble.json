@@ -1,0 +1,128 @@
+{
+  "id": "assemble",
+  "title": "Assemble the PiCar-X",
+  "sections": [
+    {
+      "id": "assemble-the-picar-x",
+      "level": 1,
+      "title": "Assemble the PiCar-X",
+      "anchors": [
+        "assembly_instructions"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before assembling the PiCar-X, please first verify that all parts and components have been included. If there are any missing or damaged components, please contact SunFounder immediately at service@sunfounder.com to resolve the issue as soon as possible."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This video will walk you through the process of assembling your robot from scratch."
+            }
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "The assembly steps in the video may differ slightly from the printed instructions you have. Please prioritize following the printed instructions. If any steps are unclear, you can refer to the video for further clarification."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In this tutorial, you will learn:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Preparation"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": We'll introduce you to all the tools and parts needed, ensuring you're fully equipped before starting the assembly."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Assembly Steps"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": We'll demonstrate each assembly step in a systematic manner."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Tips and Considerations"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Throughout the process, we'll share essential tips and tricks to help you avoid common mistakes and ensure your car operates smoothly."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Zeroing a Servo"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Before fixing each servo, it needs to be zeroed first. The steps for zeroing are to first install the Raspberry Pi OS, then install the required modules, and then run a script (set the angle of all PWM pins to 0). After that, plug in the servo wire to zero the servo."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "video",
+          "youtubeId": "1QBgcmwnC3U"
+        }
+      ]
+    }
+  ]
+}

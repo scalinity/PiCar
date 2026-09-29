@@ -1,0 +1,484 @@
+{
+  "id": "_shared/pi_start/need_components",
+  "title": "What Else Do You Need?",
+  "sections": [
+    {
+      "id": "what-else-do-you-need",
+      "level": 1,
+      "title": "What Else Do You Need?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Before we start playing with this kit, let’s prepare the essential hardware."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "required-components",
+      "level": 2,
+      "title": "Required Components",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Raspberry Pi"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The Raspberry Pi acts as the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "brain"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", handling all computing, sensing, and control tasks."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Compatible models"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Raspberry Pi 5, Raspberry Pi 4, 3, or Raspberry Pi Zero 2W"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/pi_start/img/need_pi.jpg"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Power Adapter"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Prepare a suitable power supply based on your Raspberry Pi model:"
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/pi_start/img/need_power.png",
+                "width": "400"
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi 5"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": 5V 5A USB-C (recommended: official 27W PD power supply)."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi 4"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": 5V 3A USB-C."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi 3B/3B+"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": 5V 2.5A Micro-USB."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi Zero 2W"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": 5V 2A Micro-USB."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Using a stable power source helps prevent undervoltage and ensures reliable operation."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Micro SD Card"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The Raspberry Pi does not have a built-in hard drive. It boots and stores all files on a "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Micro SD card"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/pi_start/img/need_sd.jpg",
+                "width": "200"
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Minimum: "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "16GB"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Recommended: "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "32GB"
+                        },
+                        {
+                          "t": "text",
+                          "v": " for better stability"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Brand: Use reliable options such as "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "SanDisk"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Samsung"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to avoid read/write errors"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "optional-components",
+      "level": 2,
+      "title": "Optional Components",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Although not strictly required, the following peripherals will greatly improve your learning and debugging experience:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Monitor (HDMI or TV)"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "For beginners, we strongly recommend a display with an HDMI input, so you can easily configure Raspberry Pi OS and run graphical programs."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/pi_start/img/need_screen.png",
+                "width": "400"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "HDMI Cable (Standard / Mini / Micro)"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Different Raspberry Pi models use different HDMI connectors, be sure to check your Pi model and prepare the correct cable."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi 4 / 5"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Micro HDMI"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi 3"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Standard HDMI"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Raspberry Pi Zero 2W"
+                        },
+                        {
+                          "t": "text",
+                          "v": ": Mini HDMI"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/pi_start/img/need_hdmi.png",
+                "width": "400"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Keyboard & Mouse"
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Very useful during the initial setup of Raspberry Pi OS. Later, you may switch to remote access (SSH/VNC), but for beginners we recommend preparing a basic USB or wireless set."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/pi_start/img/need_keyboard_mouse.png",
+                "width": "500"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Tips for Preparation"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "If you purchased this kit, most accessories are included, but you still need to prepare the Raspberry Pi board, Micro SD card, and power adapter separately."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Not sure what to buy? The most stable and universal choice is: "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Raspberry Pi 4/5 (2GB) + Official Power Supply + 32GB Micro SD card"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

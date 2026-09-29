@@ -1,0 +1,248 @@
+{
+  "id": "hardware/cpn_camera",
+  "title": "Camera Module",
+  "sections": [
+    {
+      "id": "camera-module",
+      "level": 1,
+      "title": "Camera Module",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Description"
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/hardware/img/camera_module_pic.png",
+          "width": "200",
+          "align": "center"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This is a 5MP Raspberry Pi camera module with OV5647 sensor. It's plug and play, connect the included ribbon cable to the CSI (Camera Serial Interface) port on your Raspberry Pi and you're ready to go."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "The board is small, about 25mm x 23mm x 9mm, and weighs 3g, making it ideal for mobile or other size and weight-critical applications. The camera module has a native resolution of 5 megapixels and has an on-board fixed focus lens that captures still images at 2592 x 1944 pixels, and also supports 1080p30, 720p60 and 640x480p90 video."
+            }
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "The module is only capable of capturing pictures and videos, not sound."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Specification"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Static Images Resolution"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": 2592×1944"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Supported Video Resolution"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": 1080p/30 fps, 720p/ 60fps and 640 x480p 60/90 video recording"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Aperture (F)"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": 1.8"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Visual Angle"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": 65 degree"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Dimension"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": 24mmx23.5mmx8mm"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Weight"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": 3g"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Interface"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": CSI connector"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Supported OS"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": Raspberry Pi OS(latest version recommended)"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Assemble the Camera Module"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "On the camera module or Raspberry Pi, you will find a flat plastic connector. Carefully pull out the black fixing switch until the fixing switch is partially pulled out. Insert the FFC cable into the plastic connector in the direction shown and push the fixing switch back into place."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If the FFC wire is installed correctly, it will be straight and will not pull out when you gently pull on it. If not, reinstall it again."
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/hardware/img/connect_ffc.png"
+        },
+        {
+          "t": "image",
+          "src": "/content/img/hardware/img/1.10_camera.png",
+          "width": "700"
+        },
+        {
+          "t": "admonition",
+          "kind": "warning",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "Do not install the camera with the power on, it may damage your camera."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

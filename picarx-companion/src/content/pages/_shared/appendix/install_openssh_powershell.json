@@ -1,0 +1,235 @@
+{
+  "id": "_shared/appendix/install_openssh_powershell",
+  "title": "Install OpenSSH via PowerShell",
+  "sections": [
+    {
+      "id": "install-openssh-via-powershell",
+      "level": 1,
+      "title": "Install OpenSSH via PowerShell",
+      "anchors": [
+        "openssh_powershell"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If you see the following error when running "
+            },
+            {
+              "t": "lit",
+              "v": "ssh <username>@<hostname>.local"
+            },
+            {
+              "t": "text",
+              "v": " or "
+            },
+            {
+              "t": "lit",
+              "v": "ssh <username>@<IP>"
+            },
+            {
+              "t": "text",
+              "v": ":"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program.",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>ssh: The term 'ssh' is not recognized as the name of a cmdlet, function, script file, or operable program.</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "It means your Windows system does not have OpenSSH installed. Follow the steps below to install it manually."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open the Windows Start Menu, type "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "powershell"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", right-click "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Windows PowerShell"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and select "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Run as administrator"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/powershell_ssh.png",
+                "align": "center"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Install the OpenSSH Client:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">Add-WindowsCapability</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -Online</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -Name</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> OpenSSH.Client~~~~0.0.1.0</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "After installation, you should see output similar to:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "Path          :\nOnline        : True\nRestartNeeded : False",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>Path          :</span></span>\n<span class=\"line\"><span>Online        : True</span></span>\n<span class=\"line\"><span>RestartNeeded : False</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Verify the installation:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">Get-WindowsCapability</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -Online</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> |</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> Where-Object</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> Name</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -like</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 'OpenSSH*'</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "If OpenSSH is installed, the output will include:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "Name  : OpenSSH.Client~~~~0.0.1.0\nState : Installed\nName  : OpenSSH.Server~~~~0.0.1.0\nState : NotPresent",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>Name  : OpenSSH.Client~~~~0.0.1.0</span></span>\n<span class=\"line\"><span>State : Installed</span></span>\n<span class=\"line\"><span>Name  : OpenSSH.Server~~~~0.0.1.0</span></span>\n<span class=\"line\"><span>State : NotPresent</span></span></code></pre>"
+              },
+              {
+                "t": "admonition",
+                "kind": "warning",
+                "blocks": [
+                  {
+                    "t": "p",
+                    "inlines": [
+                      {
+                        "t": "text",
+                        "v": "If "
+                      },
+                      {
+                        "t": "lit",
+                        "v": "Installed"
+                      },
+                      {
+                        "t": "text",
+                        "v": " does not appear, your Windows system may be too old. In this case, we recommend using a third-party SSH tool. See: "
+                      },
+                      {
+                        "t": "xref",
+                        "page": "_shared/appendix/login_windows",
+                        "section": "putty",
+                        "v": "PuTTY"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Close PowerShell, reopen it (no need to run as administrator this time), and use the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "ssh"
+                  },
+                  {
+                    "t": "text",
+                    "v": " command to log in:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "ssh <username>@<hostname>.local",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ssh</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> &#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">usernam</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">e</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">@</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">&#x3C;</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">hostnam</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">e</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">></span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">.local</span></span></code></pre>"
+              },
+              {
+                "t": "image",
+                "src": "/content/img/_shared/appendix/img/powershell_login.png",
+                "align": "center"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

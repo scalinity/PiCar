@@ -1,0 +1,1507 @@
+{
+  "id": "ai_interaction/python_text_vision_talk",
+  "title": "17. Text Vision Talk with Ollama",
+  "sections": [
+    {
+      "id": "17-text-vision-talk-with-ollama",
+      "level": 1,
+      "title": "17. Text Vision Talk with Ollama",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In this lesson, you will learn how to use "
+            },
+            {
+              "t": "strong",
+              "v": "Ollama"
+            },
+            {
+              "t": "text",
+              "v": ", a tool for running large language and vision models locally. We will show you how to install Ollama, download a model, and connect PiCar-X to it."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "With this setup, PiCar-X can take a camera snapshot and the model will "
+            },
+            {
+              "t": "strong",
+              "v": "see and tell"
+            },
+            {
+              "t": "text",
+              "v": " — you can ask any question about the image, and the model will reply in natural language."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-you-start",
+      "level": 2,
+      "title": "Before You Start",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Make sure you‘ve completed:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "python/install_all_modules",
+                    "section": "install-all-the-modules-important",
+                    "v": "Install All the Modules (Important)"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Install "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "robot-hat"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "vilib"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picar-x"
+                  },
+                  {
+                    "t": "text",
+                    "v": " modules, then run the script "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "i2samp.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1-install-ollama-llm-and-download-model",
+      "level": 2,
+      "title": "1. Install Ollama (LLM) and Download Model",
+      "anchors": [
+        "download_ollama"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can choose where to install "
+            },
+            {
+              "t": "strong",
+              "v": "Ollama"
+            },
+            {
+              "t": "text",
+              "v": ":"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "On your Raspberry Pi (local run)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Or on another computer (Mac/Windows/Linux) in the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "same local network"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Recommended models vs hardware"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can choose any model available on "
+            },
+            {
+              "t": "link",
+              "href": "https://ollama.com/library",
+              "v": "Ollama Hub"
+            },
+            {
+              "t": "text",
+              "v": ". Models come in different sizes (3B, 7B, 13B, 70B...). Smaller models run faster and require less memory, while larger models provide better quality but need powerful hardware."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Check the table below to decide which model size fits your device."
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "widths": [
+            20,
+            20,
+            40
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Model size"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Min RAM Required"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Recommended Hardware"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "~3B parameters"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "8GB (16GB better)"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Raspberry Pi 5 (16GB) or mid-range PC/Mac"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "~7B parameters"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "16GB+"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Pi 5 (16GB, just usable) or mid-range PC/Mac"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "~13B parameters"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "32GB+"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Desktop PC / Mac with high RAM"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "30B+ parameters"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "64GB+"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Workstation / Server / GPU recommended"
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "70B+ parameters"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "128GB+"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "High-end server with multiple GPUs"
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Install on Raspberry Pi"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If you want to run Ollama directly on your Raspberry Pi:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Use a "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "64-bit Raspberry Pi OS"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Strongly recommended: "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Raspberry Pi 5 (16GB RAM)"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Run the following commands:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "# Install Ollama\ncurl -fsSL https://ollama.com/install.sh | sh\n\n# Pull a lightweight model (good for testing)\nollama pull llama3.2:3b\n\n# Quick run test (type 'hi' and press Enter)\nollama run llama3.2:3b\n\n# Serve the API (default port 11434)\n# Tip: set OLLAMA_HOST=0.0.0.0 to allow access from LAN\nOLLAMA_HOST=0.0.0.0 ollama serve",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Install Ollama</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">curl</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> -fsSL</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> https://ollama.com/install.sh</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> |</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> sh</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Pull a lightweight model (good for testing)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ollama</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> pull</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> llama3.2:3b</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Quick run test (type 'hi' and press Enter)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">ollama</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> run</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> llama3.2:3b</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Serve the API (default port 11434)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Tip: set OLLAMA_HOST=0.0.0.0 to allow access from LAN</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">OLLAMA_HOST</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">0.0.0.0</span><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\"> ollama</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> serve</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Install on Mac / Windows / Linux (Desktop App)"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Download and install Ollama from "
+                  },
+                  {
+                    "t": "link",
+                    "href": "https://ollama.com/download",
+                    "v": "Ollama Download Page"
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_ollama_download.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open the Ollama app, go to the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Model Selector"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", and use the search bar to find a model. For example, type "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "llama3.2:3b"
+                  },
+                  {
+                    "t": "text",
+                    "v": " (a small and lightweight model to start with)."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_ollama_choose.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "After the download is complete, type something simple like “Hi” in the chat window, Ollama will automatically start downloading it when you first use it."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_olama_llama_download.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Go to "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Settings"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → enable "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Expose Ollama to the network"
+                  },
+                  {
+                    "t": "text",
+                    "v": ". This allows your Raspberry Pi to connect to it over LAN."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_olama_windows_enable.png"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "admonition",
+          "kind": "warning",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "If you see an error like:"
+                }
+              ]
+            },
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "lit",
+                  "v": "Error: model requires more system memory ..."
+                }
+              ]
+            },
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "The model is too large for your machine. Use a "
+                },
+                {
+                  "t": "strong",
+                  "v": "smaller model"
+                },
+                {
+                  "t": "text",
+                  "v": " or switch to a computer with more RAM."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2-test-ollama",
+      "level": 2,
+      "title": "2. Test Ollama",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Once Ollama is installed and your model is ready, you can quickly test it with a minimal chat loop."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Steps"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Create a new file:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cd ~/picar-x/example\nnano test_llm_ollama.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">nano</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_llm_ollama.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Paste the following code and save ("
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Ctrl+X"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Y"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Enter"
+                  },
+                  {
+                    "t": "text",
+                    "v": "):"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "python",
+                "code": "from picarx.llm import Ollama\n\nINSTRUCTIONS = \"You are a helpful assistant.\"\nWELCOME = \"Hello, I am a helpful assistant. How can I help you?\"\n\n# If Ollama runs on the same Raspberry Pi, use \"localhost\".\n# If it runs on another computer in your LAN, replace with that computer's IP address.\nllm = Ollama(\n    ip=\"localhost\",\n    model=\"llama3.2:3b\"   # you can replace with any model\n)\n\n# Basic configuration\nllm.set_max_messages(20)\nllm.set_instructions(INSTRUCTIONS)\nllm.set_welcome(WELCOME)\n\nprint(WELCOME)\n\nwhile True:\n    text = input(\">>> \")\n    if text.strip().lower() in {\"exit\", \"quit\"}:\n        break\n\n    # Response with streaming output\n    response = llm.prompt(text, stream=True)\n    for token in response:\n        if token:\n            print(token, end=\"\", flush=True)\n    print(\"\")",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.llm </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Ollama</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">INSTRUCTIONS</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"You are a helpful assistant.\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">WELCOME</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"Hello, I am a helpful assistant. How can I help you?\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># If Ollama runs on the same Raspberry Pi, use \"localhost\".</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># If it runs on another computer in your LAN, replace with that computer's IP address.</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Ollama(</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">    ip</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"localhost\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">    model</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"llama3.2:3b\"</span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">   # you can replace with any model</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Basic configuration</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm.set_max_messages(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">20</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm.set_instructions(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">INSTRUCTIONS</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm.set_welcome(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">WELCOME</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">WELCOME</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">while</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    text </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> input</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\">>> \"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> text.strip().lower() </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> {</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"exit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"quit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">}:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        break</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">    # Response with streaming output</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    response </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> llm.prompt(text, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">stream</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> token </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> response:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> token:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">            print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(token, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">end</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">flush</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">    print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the program:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "python3 test_llm_ollama.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> test_llm_ollama.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Now you can chat with PiCar-X directly from the terminal."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "You can choose "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "any model"
+                        },
+                        {
+                          "t": "text",
+                          "v": " available on "
+                        },
+                        {
+                          "t": "link",
+                          "href": "https://ollama.com/library",
+                          "v": "Ollama Hub"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", but smaller models (e.g. "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "moondream:1.8b"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "phi3:mini"
+                        },
+                        {
+                          "t": "text",
+                          "v": ") are recommended if you only have 8–16GB RAM."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Make sure the model you specify in the code matches the model you have already pulled in Ollama."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Type "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "exit"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "quit"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to stop the program."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If you cannot connect, ensure that Ollama is running and that both devices are on the same LAN if you are using a remote host."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Vision Talk with Ollama"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In this demo, the Pi camera takes a snapshot "
+            },
+            {
+              "t": "strong",
+              "v": "each time you type a question"
+            },
+            {
+              "t": "text",
+              "v": ". The program sends "
+            },
+            {
+              "t": "strong",
+              "v": "your typed text + the new photo"
+            },
+            {
+              "t": "text",
+              "v": " to a local vision model via Ollama, and then streams the model’s reply in plain English. This is a minimal “see & tell” baseline you can later extend with color/face/QR checks."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Before You Start"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Open the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Ollama"
+                  },
+                  {
+                    "t": "text",
+                    "v": " app (or run the service) and make sure a "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "vision-capable model"
+                  },
+                  {
+                    "t": "text",
+                    "v": " is pulled."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If you have enough memory (≥16GB RAM), you may try "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "llava:7b"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If you only have "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "8GB RAM"
+                        },
+                        {
+                          "t": "text",
+                          "v": ", prefer a smaller model such as "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "moondream:1.8b"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "granite3.2-vision:2b"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/ai_interaction/img/llm_ollama_image_model.png"
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Run the Demo"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Go to the example folder and run the script:"
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "bash",
+                "code": "cd ~/picar-x/example\npython3 17.text_vision_talk.py",
+                "runnable": false,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 17.text_vision_talk.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "What happens when it runs:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "The program prints a welcome line and waits for your input ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": ">>>"
+                        },
+                        {
+                          "t": "text",
+                          "v": ")."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Every time you type anything"
+                        },
+                        {
+                          "t": "text",
+                          "v": " (e.g., “hello”, “Is there yellow?”, “Any faces?”, “What is on the desk?”), it:"
+                        }
+                      ]
+                    },
+                    {
+                      "t": "list",
+                      "ordered": false,
+                      "items": [
+                        [
+                          {
+                            "t": "p",
+                            "inlines": [
+                              {
+                                "t": "strong",
+                                "v": "captures a photo"
+                              },
+                              {
+                                "t": "text",
+                                "v": " from the Pi camera (saved to "
+                              },
+                              {
+                                "t": "lit",
+                                "v": "/tmp/llm-img.jpg"
+                              },
+                              {
+                                "t": "text",
+                                "v": "),"
+                              }
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "t": "p",
+                            "inlines": [
+                              {
+                                "t": "strong",
+                                "v": "sends your text + the photo"
+                              },
+                              {
+                                "t": "text",
+                                "v": " to the vision model via Ollama,"
+                              }
+                            ]
+                          }
+                        ],
+                        [
+                          {
+                            "t": "p",
+                            "inlines": [
+                              {
+                                "t": "strong",
+                                "v": "streams back"
+                              },
+                              {
+                                "t": "text",
+                                "v": " the model’s answer to the terminal."
+                              }
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Type "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "exit"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "quit"
+                        },
+                        {
+                          "t": "text",
+                          "v": " to end the program."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Code"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "from picarx.llm import Ollama\nfrom picamera2 import Picamera2\nimport time\n\n\"\"\"\nYou need to set up Ollama first.\n\nNote: At least 8GB RAM is recommended for small vision models (e.g., moondream:1.8b).\n      For llava:7b, more memory is preferred (≥16GB).\n\"\"\"\n\nINSTRUCTIONS = \"You are a helpful assistant.\"\nWELCOME = \"Hello, I am a helpful assistant. How can I help you?\"\n\n# If Ollama runs on the same Pi, use \"localhost\".\n# If it runs on another computer in your LAN, replace with that computer's IP.\nllm = Ollama(\n    ip=\"localhost\",          # e.g., \"192.168.100.145\" if remote\n    model=\"llava:7b\"         # change to \"moondream:1.8b\" or \"granite3.2-vision:2b\" for 8GB RAM\n)\n\n# Basic configuration\nllm.set_max_messages(20)\nllm.set_instructions(INSTRUCTIONS)\nllm.set_welcome(WELCOME)\n\n# Init camera\ncamera = Picamera2()\nconfig = camera.create_still_configuration(\n    main={\"size\": (1280, 720)},\n)\ncamera.configure(config)\ncamera.start()\ntime.sleep(2)\n\nprint(WELCOME)\n\nwhile True:\n    input_text = input(\">>> \")\n    if input_text.strip().lower() in {\"exit\", \"quit\"}:\n        break\n\n    # Capture image\n    img_path = \"/tmp/llm-img.jpg\"\n    camera.capture_file(img_path)\n\n    # Response with stream (text + image)\n    response = llm.prompt(input_text, stream=True, image_path=img_path)\n    for next_word in response:\n        if next_word:\n            print(next_word, end=\"\", flush=True)\n    print(\"\")",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.llm </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Ollama</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picamera2 </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picamera2</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> time</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">You need to set up Ollama first.</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">Note: At least 8GB RAM is recommended for small vision models (e.g., moondream:1.8b).</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">      For llava:7b, more memory is preferred (≥16GB).</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">INSTRUCTIONS</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"You are a helpful assistant.\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">WELCOME</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"Hello, I am a helpful assistant. How can I help you?\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># If Ollama runs on the same Pi, use \"localhost\".</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># If it runs on another computer in your LAN, replace with that computer's IP.</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Ollama(</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">    ip</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"localhost\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">,          </span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># e.g., \"192.168.100.145\" if remote</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">    model</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"llava:7b\"</span><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">         # change to \"moondream:1.8b\" or \"granite3.2-vision:2b\" for 8GB RAM</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Basic configuration</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm.set_max_messages(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">20</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm.set_instructions(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">INSTRUCTIONS</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm.set_welcome(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">WELCOME</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Init camera</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">camera </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Picamera2()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">config </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> camera.create_still_configuration(</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">    main</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">{</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"size\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">: (</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">1280</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">720</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)},</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">camera.configure(config)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">camera.start()</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">time.sleep(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">2</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">WELCOME</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">while</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    input_text </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> input</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\">>> \"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> input_text.strip().lower() </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> {</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"exit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"quit\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">}:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        break</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">    # Capture image</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    img_path </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"/tmp/llm-img.jpg\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    camera.capture_file(img_path)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\">    # Response with stream (text + image)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">    response </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> llm.prompt(input_text, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">stream</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">image_path</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">img_path)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">    for</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> next_word </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">in</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> response:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">        if</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> next_word:</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">            print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(next_word, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">end</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">flush</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">True</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">    print</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">(</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span></code></pre>"
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "level": 2,
+      "title": "Troubleshooting",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "I get an error like: `model requires more system memory ...`."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "This means the model is too large for your device."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Use a smaller model such as "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "moondream:1.8b"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "granite3.2-vision:2b"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Or switch to a machine with more RAM and expose Ollama to the network."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "The code cannot connect to Ollama (connection refused)."
+                  }
+                ]
+              },
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Check the following:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Make sure Ollama is running ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": "ollama serve"
+                        },
+                        {
+                          "t": "text",
+                          "v": " or the desktop app is open)."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "If using a remote computer, enable "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "Expose to network"
+                        },
+                        {
+                          "t": "text",
+                          "v": " in Ollama settings."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Double-check that the "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "ip=\"...\""
+                        },
+                        {
+                          "t": "text",
+                          "v": " in your code matches the correct LAN IP."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Confirm both devices are on the same local network."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "My Pi camera does not capture anything."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Verify that "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "Picamera2"
+                        },
+                        {
+                          "t": "text",
+                          "v": " is installed and working with a simple test script."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check that the camera cable is properly connected and enabled in "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "raspi-config"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Ensure your script has permission to write to the target path ("
+                        },
+                        {
+                          "t": "lit",
+                          "v": "/tmp/llm-img.jpg"
+                        },
+                        {
+                          "t": "text",
+                          "v": ")."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "The output is too slow."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Smaller models reply faster, but with simpler answers."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "You can lower the camera resolution (e.g., 640×480 instead of 1280×720) to speed up image processing."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Close other programs on your Pi to free up CPU and RAM."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

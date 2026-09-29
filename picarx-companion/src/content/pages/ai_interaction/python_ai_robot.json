@@ -1,0 +1,2260 @@
+{
+  "id": "ai_interaction/python_ai_robot",
+  "title": "21. AI Voice Assistant Car",
+  "sections": [
+    {
+      "id": "21-ai-voice-assistant-car",
+      "level": 1,
+      "title": "21. AI Voice Assistant Car",
+      "anchors": [
+        "ai_voice_assistant_car"
+      ],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This lesson turns your PiCar-X into an "
+            },
+            {
+              "t": "strong",
+              "v": "AI-powered voice assistant on wheels"
+            },
+            {
+              "t": "text",
+              "v": ". The robot can wake up to your voice, recognize what you say, talk back with emotion, and act out its “feelings” through movements, gestures, and lights."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You'll build a "
+            },
+            {
+              "t": "strong",
+              "v": "fully interactive voice assistant car"
+            },
+            {
+              "t": "text",
+              "v": " using:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "LLM"
+                  },
+                  {
+                    "t": "text",
+                    "v": " - Large Language Model (OpenAI GPT or Doubao)."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "STT"
+                  },
+                  {
+                    "t": "text",
+                    "v": " - Speech-to-Text (voice to text)."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "TTS"
+                  },
+                  {
+                    "t": "text",
+                    "v": " - Text-to-Speech (text to voice)."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Sensors + Actions"
+                  },
+                  {
+                    "t": "text",
+                    "v": " - Ultrasonic, camera, and built-in expressive actions."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "before-you-start",
+      "level": 2,
+      "title": "Before You Start",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Make sure you‘ve completed:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "python/install_all_modules",
+                    "section": "install-all-the-modules-important",
+                    "v": "Install All the Modules (Important)"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Install "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "robot-hat"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "vilib"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "picar-x"
+                  },
+                  {
+                    "t": "text",
+                    "v": " modules, then run the script "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "i2samp.sh"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "ai_interaction/python_storytelling_robot",
+                    "section": "1-testing-piper",
+                    "v": "1. Testing Piper"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Check the supported languages of "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Piper TTS"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "ai_interaction/python_voice_control",
+                    "section": "2-test-vosk",
+                    "v": "2. Test Vosk"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Check the supported languages of "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Vosk STT"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "ai_interaction/python_online_llms",
+                    "section": "18-connecting-to-online-llms",
+                    "v": "18. Connecting to Online LLMs"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — This step is "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "very important"
+                  },
+                  {
+                    "t": "text",
+                    "v": ": obtain your "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "OpenAI"
+                  },
+                  {
+                    "t": "text",
+                    "v": " or "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Doubao"
+                  },
+                  {
+                    "t": "text",
+                    "v": " API key, or the API key for any other supported LLM."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You should already have:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "A working "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "microphone"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "speaker"
+                  },
+                  {
+                    "t": "text",
+                    "v": " on your PiCar-X."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "A "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "valid API key"
+                  },
+                  {
+                    "t": "text",
+                    "v": " stored in "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "secret.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "A stable network connection (a "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "wired connection"
+                  },
+                  {
+                    "t": "text",
+                    "v": " is recommended for better stability)."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "run-the-example",
+      "level": 2,
+      "title": "Run the Example",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Both language versions are placed in the same directory:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "cd ~/picar-x/example",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">cd</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> ~/picar-x/example</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "English version"
+            },
+            {
+              "t": "text",
+              "v": " (OpenAI GPT, instructions in English):"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "sudo python3 21.voice_active_car_gpt.py",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 21.voice_active_car_gpt.py</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "LLM: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "OpenAI GPT-4o-mini"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "TTS: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "en_US-ryan-low"
+                  },
+                  {
+                    "t": "text",
+                    "v": " (Piper)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "STT: Vosk ("
+                  },
+                  {
+                    "t": "lit",
+                    "v": "en-us"
+                  },
+                  {
+                    "t": "text",
+                    "v": ")"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Wake word:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "\"Hey buddy\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>\"Hey buddy\"</span></span></code></pre>"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "---"
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Chinese version"
+            },
+            {
+              "t": "text",
+              "v": " (Doubao, instructions in Chinese):"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "bash",
+          "code": "sudo python3 21.voice_active_car_doubao_cn.py",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#6F42C1, #B392F0);--shiki-light:#6F42C1;--shiki-dark:#B392F0\">sudo</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> python3</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> 21.voice_active_car_doubao_cn.py</span></span></code></pre>"
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "LLM: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Doubao-seed-1-6-250615"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "TTS: "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "zh_CN-huayan-x_low"
+                  },
+                  {
+                    "t": "text",
+                    "v": " (Piper)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "STT: Vosk ("
+                  },
+                  {
+                    "t": "lit",
+                    "v": "cn"
+                  },
+                  {
+                    "t": "text",
+                    "v": ")"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Wake word:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "\"你好 滴滴\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>\"你好 滴滴\"</span></span></code></pre>"
+        },
+        {
+          "t": "admonition",
+          "kind": "note",
+          "blocks": [
+            {
+              "t": "p",
+              "inlines": [
+                {
+                  "t": "text",
+                  "v": "You can modify the "
+                },
+                {
+                  "t": "strong",
+                  "v": "wake word"
+                },
+                {
+                  "t": "text",
+                  "v": " and "
+                },
+                {
+                  "t": "strong",
+                  "v": "robot name"
+                },
+                {
+                  "t": "text",
+                  "v": " in the code: "
+                },
+                {
+                  "t": "lit",
+                  "v": "NAME = \"Buddy\""
+                },
+                {
+                  "t": "text",
+                  "v": " or "
+                },
+                {
+                  "t": "lit",
+                  "v": "NAME = \"滴滴\""
+                },
+                {
+                  "t": "text",
+                  "v": " "
+                },
+                {
+                  "t": "lit",
+                  "v": "WAKE_WORD = [\"hey buddy\"]"
+                },
+                {
+                  "t": "text",
+                  "v": " or "
+                },
+                {
+                  "t": "lit",
+                  "v": "WAKE_WORD = [\"你好 滴滴\"]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "what-will-happen",
+      "level": 2,
+      "title": "What Will Happen",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "When you run this example successfully:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The robot "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "waits for the wake word"
+                  },
+                  {
+                    "t": "text",
+                    "v": " (e.g., “Hey Buddy” / “你好 滴滴”)."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "When it hears the wake word:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "LEDs will "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "blink"
+                        },
+                        {
+                          "t": "text",
+                          "v": " and stay on."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "The robot "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "greets you"
+                        },
+                        {
+                          "t": "text",
+                          "v": " with a cheerful voice."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "It then starts "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "listening to your voice"
+                  },
+                  {
+                    "t": "text",
+                    "v": " in real time."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "After recognizing what you said, it:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Sends your speech to the "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "LLM"
+                        },
+                        {
+                          "t": "text",
+                          "v": " (OpenAI or Doubao)."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "strong",
+                          "v": "Thinks"
+                        },
+                        {
+                          "t": "text",
+                          "v": " and blinks LED while processing."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Replies with "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "TTS voice"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Executes "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "corresponding actions"
+                        },
+                        {
+                          "t": "text",
+                          "v": " (e.g., nodding, turning, celebrating)."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "If you approach it too closely, the ultrasonic sensor:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Triggers an auto "
+                        },
+                        {
+                          "t": "strong",
+                          "v": "backward"
+                        },
+                        {
+                          "t": "text",
+                          "v": " move for safety."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Interrupts the current round with a warning response."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Example interaction"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "You: Hey Buddy\nRobot: Hi there!\n\nYou: Turn left and look around.\nRobot: Roger that, turning my head left like a curious cat!\nACTIONS: turn_left, look_left",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>You: Hey Buddy</span></span>\n<span class=\"line\"><span>Robot: Hi there!</span></span>\n<span class=\"line\"><span></span></span>\n<span class=\"line\"><span>You: Turn left and look around.</span></span>\n<span class=\"line\"><span>Robot: Roger that, turning my head left like a curious cat!</span></span>\n<span class=\"line\"><span>ACTIONS: turn_left, look_left</span></span></code></pre>"
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "switching-to-other-llms-or-tts",
+      "level": 2,
+      "title": "Switching to Other LLMs or TTS",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can easily switch to other LLMs, TTS, or STT languages with just a few edits:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Supported LLMs:"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "OpenAI"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Doubao"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Deepseek"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Gemini"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Qwen"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Grok"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "ai_interaction/python_storytelling_robot",
+                    "section": "1-testing-piper",
+                    "v": "1. Testing Piper"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Check the supported languages of "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Piper TTS"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "xref",
+                    "page": "ai_interaction/python_voice_control",
+                    "section": "2-test-vosk",
+                    "v": "2. Test Vosk"
+                  },
+                  {
+                    "t": "text",
+                    "v": " — Check the supported languages of "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Vosk STT"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "To switch, simply modify the initialization part in the code:"
+            }
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "python",
+          "code": "from picarx.llm import Gemini as LLM\nllm = LLM(api_key=\"YOUR_KEY\", model=\"gemini-pro\")\n\n# Set models and languages\nTTS_MODEL = \"en_US-ryan-low\"\nSTT_LANGUAGE = \"en-us\"",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">from</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> picarx.llm </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">import</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> Gemini </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">as</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> LLM</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">llm </span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> LLM(</span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">api_key</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"YOUR_KEY\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#E36209, #FFAB70);--shiki-light:#E36209;--shiki-dark:#FFAB70\">model</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">=</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\">\"gemini-pro\"</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">)</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#6A737D, #6A737D);--shiki-light:#6A737D;--shiki-dark:#6A737D\"># Set models and languages</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">TTS_MODEL</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"en_US-ryan-low\"</span></span>\n<span class=\"line\"><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">STT_LANGUAGE</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#032F62, #9ECBFF);--shiki-light:#032F62;--shiki-dark:#9ECBFF\"> \"en-us\"</span></span></code></pre>"
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "action-sound-reference",
+      "level": 2,
+      "title": "Action & Sound Reference",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Below are the "
+            },
+            {
+              "t": "strong",
+              "v": "action keywords"
+            },
+            {
+              "t": "text",
+              "v": " the LLM can return (after the "
+            },
+            {
+              "t": "lit",
+              "v": "ACTIONS:"
+            },
+            {
+              "t": "text",
+              "v": " line) and what they do on the robot."
+            }
+          ]
+        },
+        {
+          "t": "table",
+          "widths": [
+            20,
+            55,
+            25
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Action"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "What it does (per preset_actions.py)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Effect / Notes"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "shake head"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Quickly swings camera pan angle right↔left in diminishing steps, then centers."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "“No” gesture; wheels remain stopped."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "nod"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Bobs camera tilt up↔down twice, then centers."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "“Yes” gesture; wheels remain stopped."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "wave hands"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Tilts camera, then steers left/right twice (±25°) and centers."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Playful wave (uses steering servo as “arms”)."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "resist"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Small tilt; alternates (steer ±15°, pan ±15°) 3 times; stops and centers."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "“Refuse”/defensive motion."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "act cute"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Head tilt down; quick forward/back micro-shuffles (short motor pulses), then reset."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Bouncy “cute” move; very short motions."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "rub hands"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Repeated small steering oscillation (±6°) five times; reset."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Mimics “rubbing hands together”."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "think"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Smooth pan right + tilt down + steer right sweep; brief hold; small poised pose; reset."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Used as a single “thinking” animation."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "twist body"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Three cycles of short forward/stop/pan-left/steer-left, then short backward/stop/pan-right/steer-right."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Gives a body “twist” vibe."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "celebrate"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Tilt up; two right pan/steer flourishes, then two left flourishes; returns to center."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Festive, symmetrical flourish."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "depressed"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Series of downward tilt pulses with varying angles and pauses; ends after a long beat and resets."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "“Sad” posture sequence."
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "movement-utility",
+      "level": 3,
+      "title": "Movement & Utility",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            22,
+            58,
+            20
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Action"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "What it does"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Notes"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "forward"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Drive forward at low speed for ~1 second, then stop."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Implemented by "
+                    },
+                    {
+                      "t": "lit",
+                      "v": "forward(car)"
+                    },
+                    {
+                      "t": "text",
+                      "v": " (5% speed + 1s)."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "backward"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Drive backward at low speed for ~1 second, then stop."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Implemented by "
+                    },
+                    {
+                      "t": "lit",
+                      "v": "backward(car)"
+                    },
+                    {
+                      "t": "text",
+                      "v": " (5% speed + 1s)."
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sound-effects",
+      "level": 3,
+      "title": "Sound Effects",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "table",
+          "widths": [
+            24,
+            56,
+            20
+          ],
+          "header": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Sound"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "What it does"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Notes"
+                  }
+                ]
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "honking"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Plays "
+                    },
+                    {
+                      "t": "lit",
+                      "v": "car-double-horn.wav"
+                    },
+                    {
+                      "t": "text",
+                      "v": " asynchronously (volume ~100)."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Triggered via "
+                    },
+                    {
+                      "t": "lit",
+                      "v": "Music.sound_play_threading"
+                    },
+                    {
+                      "t": "text",
+                      "v": "."
+                    }
+                  ]
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "lit",
+                      "v": "start engine"
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Plays "
+                    },
+                    {
+                      "t": "lit",
+                      "v": "car-start-engine.wav"
+                    },
+                    {
+                      "t": "text",
+                      "v": " asynchronously (volume ~50)."
+                    }
+                  ]
+                }
+              ],
+              [
+                {
+                  "t": "p",
+                  "inlines": [
+                    {
+                      "t": "text",
+                      "v": "Boot/ready cue."
+                    }
+                  ]
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sensor-triggers-automatic",
+      "level": 3,
+      "title": "Sensor Triggers (Automatic)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Ultrasonic proximity"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Trigger: distance < 10 cm"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Side effect: auto "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "backward"
+                        },
+                        {
+                          "t": "text",
+                          "v": " + disable image for this round"
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Injected message: "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "<<<Ultrasonic sense too close: {distance}cm>>>"
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifecycle-hooks-led-indicators",
+      "level": 3,
+      "title": "Lifecycle Hooks (LED Indicators)",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "before_listen"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → blink twice (ready to listen)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "before_think"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → blinking (thinking)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "before_say"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → LED on (speaking)"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "after_say"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → wait for actions → LED off"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "lit",
+                    "v": "on_stop"
+                  },
+                  {
+                    "t": "text",
+                    "v": " → stop actions, close devices"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "transition"
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "level": 2,
+      "title": "Troubleshooting",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "The robot doesn’t respond to wake word"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check if the microphone works."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Ensure "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "WAKE_ENABLE = True"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Adjust wake word to match your pronunciation."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "No sound from the speaker"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Verify TTS model setup."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Test Piper or Espeak manually."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check speaker connection and volume."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "API Key error or timeout"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check your key in "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "secret.py"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Ensure network connection."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Confirm the LLM is supported."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Picar-X doesn't move or act"
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check that the action name matches "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "actions_dict"
+                        },
+                        {
+                          "t": "text",
+                          "v": "."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Verify motor and servo connections."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "strong",
+                    "v": "Ultrasonic sensor keeps triggering unexpectedly."
+                  }
+                ]
+              },
+              {
+                "t": "list",
+                "ordered": false,
+                "items": [
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Check sensor installation height and angle."
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "t": "p",
+                      "inlines": [
+                        {
+                          "t": "text",
+                          "v": "Adjust the "
+                        },
+                        {
+                          "t": "lit",
+                          "v": "TOO_CLOSE"
+                        },
+                        {
+                          "t": "text",
+                          "v": " distance threshold in code."
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

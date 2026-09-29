@@ -1,0 +1,68 @@
+# Agent state, sessions, and browser automation artifacts (at any depth)
+.claude/
+.codex/
+.agents/
+.playwright-mcp/
+.cursor/
+.aider*
+
+# Credentials and machine-local configuration
+.env
+.env.*
+*.local
+.npmrc
+.pypirc
+.netrc
+.aws/
+.ssh/
+credentials.json
+secrets.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Dependencies, build products, and caches
+node_modules/
+target/
+dist/
+dist-ssr/
+coverage/
+.cache/
+.vite/
+.pnpm-store/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+/picarx-companion/src-tauri/gen/
+
+# Logs, editor state, and operating-system files
+logs/
+*.log
+.DS_Store
+._*
+Thumbs.db
+.idea/
+*.swp
+*.swo
+*~
+
+# Separate local upstream checkout; provenance is documented in README.md
+/sunfounder-docs/
+
+# Upstream tutorial media containing credentials, account details, or auth flows.
+# Preserve local originals, but do not redistribute these files.
+/picarx-companion/public/content/img/ai_interaction/img/llm_*copy*.png
+/picarx-companion/public/content/img/ai_interaction/img/llm_qwen_api_key.png
+/picarx-companion/public/content/img/_shared/pi_start/img/imager_custom_connect_token.png
+/picarx-companion/public/content/img/_shared/pi_start/img/imager_custom_authkey.png
+/picarx-companion/public/content/img/_shared/pi_start/img/imager_custom_wifi.png
+/picarx-companion/public/content/img/img/openclaw/llm_openai_copy.png
+/picarx-companion/public/content/img/img/openclaw/paste_api_key_enter_open_claw.png
+/picarx-companion/public/content/video/rpi_connect1.mp4

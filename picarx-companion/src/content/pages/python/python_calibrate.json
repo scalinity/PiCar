@@ -1,0 +1,421 @@
+{
+  "id": "python/python_calibrate",
+  "title": "1. Calibrating the PiCar-X",
+  "sections": [
+    {
+      "id": "1-calibrating-the-picar-x",
+      "level": 1,
+      "title": "1. Calibrating the PiCar-X",
+      "anchors": [
+        "py_calibrate"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "calibrate-motors-servo",
+      "level": 2,
+      "title": "Calibrate Motors & Servo",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Some servo angles may be slightly tilted due to possible deviations during PiCar-X installation or limitations of the servos themselves, so you can calibrate them."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Of course, you can skip this chapter if you think the assembly is perfect and doesn't require calibration."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "calibration.py"
+                  },
+                  {
+                    "t": "text",
+                    "v": "."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "cd ~/picar-x/example\nsudo python3 1.cali_servo_motor.py",
+                "runnable": true,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~/picar-x/example</span></span>\n<span class=\"line\"><span>sudo python3 1.cali_servo_motor.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "After running the code, you will see the following interface displayed in the terminal."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate1.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "The "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "R"
+                  },
+                  {
+                    "t": "text",
+                    "v": " key is used to test if the 3 servos are working properly."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Press the number key "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "1"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to select the front wheel servo, and then press the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "W/S"
+                  },
+                  {
+                    "t": "text",
+                    "v": " key to let the front wheel looks as forward as possible without skewing left and right."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate2.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Press the number key "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "2"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to select the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "Pan servo"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then press the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "W/S"
+                  },
+                  {
+                    "t": "text",
+                    "v": " key to make the pan/tilt platform look straight ahead and not tilt left or right."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate3.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Press the number key "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "3"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to select the "
+                  },
+                  {
+                    "t": "strong",
+                    "v": "tilt servo"
+                  },
+                  {
+                    "t": "text",
+                    "v": ", then press the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "W/S"
+                  },
+                  {
+                    "t": "text",
+                    "v": " key to make the pan/tilt platform look straight ahead and not tilt up and down."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate4.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Since the wiring of the motors may be reversed during installation, you can press "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "E"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to test whether the car can move forward normally. If not, use the number keys "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "4"
+                  },
+                  {
+                    "t": "text",
+                    "v": " and "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "5"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to select the left and right motors, then press the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Q"
+                  },
+                  {
+                    "t": "text",
+                    "v": " key to calibrate the rotation direction."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate6.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "When the calibration is completed, press the "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Spacebar"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to save the calibration parameters. There will be a prompt to enter "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "y"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to confirm, and then press "
+                  },
+                  {
+                    "t": "lit",
+                    "v": "Ctrl+C"
+                  },
+                  {
+                    "t": "text",
+                    "v": " to exit the program to complete the calibration."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate5.png"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calibrate-grayscale-module",
+      "level": 2,
+      "title": "Calibrate Grayscale Module",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "Due to varying environmental conditions and lighting situations, the preset parameters for the greyscale module might not be optimal. You can fine-tune these settings through this program to achieve better results."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Lay down a strip of black electrical tape, about 15cm long, on a light-colored floor. Center your PiCar-X so that it straddles the tape. In this setup, the middle sensor of the greyscale module should be directly above the tape, while the two flanking sensors should hover over the lighter surface."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Run the code."
+                  }
+                ]
+              },
+              {
+                "t": "code",
+                "lang": "text",
+                "code": "cd ~/picar-x/example\nsudo python3 1.cali_grayscale.py",
+                "runnable": true,
+                "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>cd ~/picar-x/example</span></span>\n<span class=\"line\"><span>sudo python3 1.cali_grayscale.py</span></span></code></pre>"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "After running the code, you will see the following interface displayed in the terminal."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate_g1.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Press the \"Q\" key to initiate the greyscale calibration. You'll then observe the PiCar-X make minor movements to both the left and the right. During this process, each of the three sensors should sweep across the electrical tape at least once."
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Additionally, you will notice three pairs of significantly different values appearing in the \"threshold value\" section, while the \"line reference\" will display two intermediate values, each representing the average of one of these pairs."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate_g2.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Next, suspend the PiCar-X in mid-air (or position it over a cliff edge) and press the \"E\" key. You'll observe that the \"cliff reference\" values are also updated accordingly."
+                  }
+                ]
+              },
+              {
+                "t": "image",
+                "src": "/content/img/python/img/calibrate_g3.png"
+              }
+            ],
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Once you've verified that all the values are accurate, press the \"space\" key to save the data. You can then exit the program by pressing Ctrl+C."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

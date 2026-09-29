@@ -1,0 +1,277 @@
+{
+  "id": "faq",
+  "title": "FAQ",
+  "sections": [
+    {
+      "id": "faq",
+      "level": 1,
+      "title": "FAQ",
+      "anchors": [],
+      "blocks": []
+    },
+    {
+      "id": "q1-after-installing-ezblock-os-the-servo-can-t-turn-to-0",
+      "level": 2,
+      "title": "Q1: After installing Ezblock OS, the servo can't turn to 0°?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "1) Check if the servo cable is properly connected and if the Robot HAT power is on. 2) Press Reset button. 3) If you have already run the program in Ezblock Studio, the custom program for P11 is no longer available. You can refer to the picture below to manually write a program in Ezblock Studio to set the servo angle to 0."
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/img/faq_servo.png"
+        }
+      ]
+    },
+    {
+      "id": "q2-when-using-vnc-i-am-prompted-that-the-desktop-cannot-be-displayed-at-the-moment",
+      "level": 2,
+      "title": "Q2: When using VNC, I am prompted that the desktop cannot be displayed at the moment?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "In Terminal, type "
+            },
+            {
+              "t": "lit",
+              "v": "sudo raspi-config"
+            },
+            {
+              "t": "text",
+              "v": " to change the resolution."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q3-why-does-the-servo-sometimes-return-to-the-middle-position-for-no-reason",
+      "level": 2,
+      "title": "Q3: Why does the servo sometimes return to the middle position for no reason?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "When the servo is blocked by a structure or other object and cannot reach its intended position, the servo will enter the power-off protection mode in order to prevent the servo from being burned out by too much current."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "After a period of power failure, if no PWM signal is given to the servo, the servo will automatically return to its original position."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q4-about-the-robot-hat-detailed-tutorial",
+      "level": 2,
+      "title": "Q4: About the Robot HAT Detailed Tutorial?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "You can find a comprehensive tutorial about the Robot HAT here, including information on its hardware and API."
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": false,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "link",
+                    "href": "https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/robot_hat_v4/hardware_introduction.html",
+                    "v": "SunFounder Robot HAT V4"
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q5-about-the-battery-charger",
+      "level": 2,
+      "title": "Q5: About the Battery Charger?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "To charge the battery, simply connect a 5V/2A Type-C power supply to the Robot Hat's power port. There's no need to turn on the Robot Hat's power switch during charging. You can also use the device while charging the battery."
+            }
+          ]
+        },
+        {
+          "t": "image",
+          "src": "/content/img/img/robot_hat_pic.png",
+          "width": "500",
+          "align": "center"
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "During charging, the input power is boosted by the charging chip to charge the battery and simultaneously supply the DC-DC converter for external use, with a charging power of approximately 10W. If external power consumption remains high for an extended period, the battery may supplement the power supply, similar to using a phone while charging. However, be mindful of the battery's capacity to avoid completely depleting it during simultaneous charging and usage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q6-camera-not-working",
+      "level": 2,
+      "title": "Q6: Camera Not Working?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "If the camera is not displaying or displaying incorrectly, follow these troubleshooting steps:"
+            }
+          ]
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Ensure the FPC cable of the camera is securely connected. It is recommended to reconnect the camera and then power on the device."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "localVideo",
+          "src": "/content/video/rpi_connect1.mp4"
+        },
+        {
+          "t": "list",
+          "ordered": true,
+          "start": 2,
+          "items": [
+            [
+              {
+                "t": "p",
+                "inlines": [
+                  {
+                    "t": "text",
+                    "v": "Use the following command to check if the camera is recognized."
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "t": "code",
+          "lang": "text",
+          "code": "libcamera-hello",
+          "runnable": false,
+          "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span>libcamera-hello</span></span></code></pre>"
+        }
+      ]
+    },
+    {
+      "id": "q7-error-no-matching-distribution-found-for-piper-tts-1-3-0-during-installation",
+      "level": 2,
+      "title": "Q7: ERROR: No matching distribution found for piper-tts==1.3.0 during installation?",
+      "anchors": [],
+      "blocks": [
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "text",
+              "v": "This error occurs because you are using a "
+            },
+            {
+              "t": "strong",
+              "v": "32-bit"
+            },
+            {
+              "t": "text",
+              "v": " operating system, while "
+            },
+            {
+              "t": "lit",
+              "v": "piper-tts==1.3.0"
+            },
+            {
+              "t": "text",
+              "v": " only provides pre-built wheels for "
+            },
+            {
+              "t": "strong",
+              "v": "64-bit"
+            },
+            {
+              "t": "text",
+              "v": " systems."
+            }
+          ]
+        },
+        {
+          "t": "p",
+          "inlines": [
+            {
+              "t": "strong",
+              "v": "Solution"
+            },
+            {
+              "t": "text",
+              "v": ": Please install a "
+            },
+            {
+              "t": "strong",
+              "v": "64-bit"
+            },
+            {
+              "t": "text",
+              "v": " version of Raspberry Pi OS (or your respective operating system) and try the installation again."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
