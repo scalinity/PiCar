@@ -9,3 +9,5 @@ Current exact G-GRAPH: PASS. Read M2_REPORT.md, the single M2_G_GRAPH_REPORT.jso
 M2_START_SHA = fd8e954eaf731af95cf117b8ea4227fab88a12c7; branch codex/m2-semantic-graph. The acceptance SHA and M3 authorization are recorded only after the local acceptance commit, in the subsequent M2 report receipt and HANDOFF_M3.md. No M3 implementation, remote change, app/native build, hardware action or private evidence publication occurred.
 
 Before any continuation, run node digital-twin/tools/compiler/upstream.mjs --check and node digital-twin/tools/compiler/gate.mjs --check. Original node digital-twin/tools/gate.mjs --check verifies the original M1 bytes and correctly detects the prospectively adopted drift; do not regenerate the accepted M1 report to hide that drift. Follow the post-acceptance M3 handoff only after its recorded SHA and exact gate bindings verify.
+
+Accepted local SHA: 8d8d30d0c7b077504916a26d80c211e2fc52c4e2. M3 implementation authorization YES under HANDOFF_M3.md; native acceptance/build prerequisite remains explicit. M2 remediation is closed.
