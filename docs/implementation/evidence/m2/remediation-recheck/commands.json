@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "node",
+      "digital-twin/tools/gate.mjs",
+      "--check"
+    ],
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/g-data-check.txt"
+  },
+  {
+    "command": [
+      "node",
+      "docs/implementation/evidence/m2/remediation-recheck/verify-preflight.mjs"
+    ],
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/preflight-command.txt"
+  }
+]

@@ -1,0 +1,694 @@
+TAP version 13
+# Subtest: rpi4: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+ok 1 - rpi4: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+  ---
+  duration_ms: 16.86225
+  type: 'test'
+  ...
+# Subtest: rpi4: complete 29-step orientation/tools/procedure/source binding
+ok 2 - rpi4: complete 29-step orientation/tools/procedure/source binding
+  ---
+  duration_ms: 0.216709
+  type: 'test'
+  ...
+# Subtest: rpi4: closed additive step and part search destination contract
+ok 3 - rpi4: closed additive step and part search destination contract
+  ---
+  duration_ms: 2.588667
+  type: 'test'
+  ...
+# Subtest: rpi5: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+ok 4 - rpi5: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+  ---
+  duration_ms: 11.033667
+  type: 'test'
+  ...
+# Subtest: rpi5: complete 29-step orientation/tools/procedure/source binding
+ok 5 - rpi5: complete 29-step orientation/tools/procedure/source binding
+  ---
+  duration_ms: 0.16875
+  type: 'test'
+  ...
+# Subtest: rpi5: closed additive step and part search destination contract
+ok 6 - rpi5: closed additive step and part search destination contract
+  ---
+  duration_ms: 1.654167
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+ok 7 - rpi-zero-2-w: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+  ---
+  duration_ms: 10.136708
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: complete 29-step orientation/tools/procedure/source binding
+ok 8 - rpi-zero-2-w: complete 29-step orientation/tools/procedure/source binding
+  ---
+  duration_ms: 0.100917
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: closed additive step and part search destination contract
+ok 9 - rpi-zero-2-w: closed additive step and part search destination contract
+  ---
+  duration_ms: 2.134209
+  type: 'test'
+  ...
+# Subtest: contract owner text is exactly bound; original audited contract unchanged
+ok 10 - contract owner text is exactly bound; original audited contract unchanged
+  ---
+  duration_ms: 0.618167
+  type: 'test'
+  ...
+# Subtest: normative value changes invalidate graph; appearance labels remain excluded
+ok 11 - normative value changes invalidate graph; appearance labels remain excluded
+  ---
+  duration_ms: 6212.154042
+  type: 'test'
+  ...
+# Subtest: stock and state preimages distinguish every serialized mutable surface
+ok 12 - stock and state preimages distinguish every serialized mutable surface
+  ---
+  duration_ms: 9.262208
+  type: 'test'
+  ...
+# Subtest: reject: unsupported variant
+ok 13 - reject: unsupported variant
+  ---
+  duration_ms: 4.552417
+  type: 'test'
+  ...
+# Subtest: reject: missing printed step
+ok 14 - reject: missing printed step
+  ---
+  duration_ms: 91.540458
+  type: 'test'
+  ...
+# Subtest: reject: duplicated printed number
+ok 15 - reject: duplicated printed number
+  ---
+  duration_ms: 11.556583
+  type: 'test'
+  ...
+# Subtest: reject: empty filler step
+ok 16 - reject: empty filler step
+  ---
+  duration_ms: 10.557958
+  type: 'test'
+  ...
+# Subtest: reject: duplicate typed graph ID
+ok 17 - reject: duplicate typed graph ID
+  ---
+  duration_ms: 9.835458
+  type: 'test'
+  ...
+# Subtest: reject: reversed step prerequisite
+ok 18 - reject: reversed step prerequisite
+  ---
+  duration_ms: 11.660542
+  type: 'test'
+  ...
+# Subtest: reject: missing initial lot declaration
+ok 19 - reject: missing initial lot declaration
+  ---
+  duration_ms: 12.30975
+  type: 'test'
+  ...
+# Subtest: reject: initial stock capacity contradicts canonical lot
+ok 20 - reject: initial stock capacity contradicts canonical lot
+  ---
+  duration_ms: 11.692042
+  type: 'test'
+  ...
+# Subtest: reject: wrong instance-qualified endpoint
+ok 21 - reject: wrong instance-qualified endpoint
+  ---
+  duration_ms: 19.061709
+  type: 'test'
+  ...
+# Subtest: reject: overlapping variant patches
+ok 22 - reject: overlapping variant patches
+  ---
+  duration_ms: 10.399833
+  type: 'test'
+  ...
+# Subtest: reject: discontiguous patch replacement
+ok 23 - reject: discontiguous patch replacement
+  ---
+  duration_ms: 11.101916
+  type: 'test'
+  ...
+# Subtest: reject: dangling branch operation
+ok 24 - reject: dangling branch operation
+  ---
+  duration_ms: 10.376292
+  type: 'test'
+  ...
+# Subtest: reject: active inactive intersection
+ok 25 - reject: active inactive intersection
+  ---
+  duration_ms: 10.9185
+  type: 'test'
+  ...
+# Subtest: reject: unknown patch instance
+ok 26 - reject: unknown patch instance
+  ---
+  duration_ms: 10.110208
+  type: 'test'
+  ...
+# Subtest: reject: foreign patch connection
+ok 27 - reject: foreign patch connection
+  ---
+  duration_ms: 10.121292
+  type: 'test'
+  ...
+# Subtest: reject: wrong selected board
+ok 28 - reject: wrong selected board
+  ---
+  duration_ms: 134.353
+  type: 'test'
+  ...
+# Subtest: reject: S10 missing one screw
+ok 29 - reject: S10 missing one screw
+  ---
+  duration_ms: 1454.95075
+  type: 'test'
+  ...
+# Subtest: reject: S19 Washer B substitution
+ok 30 - reject: S19 Washer B substitution
+  ---
+  duration_ms: 15.402083
+  type: 'test'
+  ...
+# Subtest: reject: S19 wrong scoped servo zero
+ok 31 - reject: S19 wrong scoped servo zero
+  ---
+  duration_ms: 988.139667
+  type: 'test'
+  ...
+# Subtest: reject: S21 rigid weld replaces free pivot
+ok 32 - reject: S21 rigid weld replaces free pivot
+  ---
+  duration_ms: 1612.990542
+  type: 'test'
+  ...
+# Subtest: reject: S25 wrong handed identity
+ok 33 - reject: S25 wrong handed identity
+  ---
+  duration_ms: 14.561417
+  type: 'test'
+  ...
+# Subtest: reject: S25 duplicate upper pivot instead of A D G incidence
+ok 34 - reject: S25 duplicate upper pivot instead of A D G incidence
+  ---
+  duration_ms: 1467.603292
+  type: 'test'
+  ...
+# Subtest: reject: S26 five Washer B stack
+ok 35 - reject: S26 five Washer B stack
+  ---
+  duration_ms: 1509.060084
+  type: 'test'
+  ...
+# Subtest: reject: S26 front rear wheel substitution
+ok 36 - reject: S26 front rear wheel substitution
+  ---
+  duration_ms: 16.718167
+  type: 'test'
+  ...
+# Subtest: reject: S27 steering front parent
+ok 37 - reject: S27 steering front parent
+  ---
+  duration_ms: 1519.566666
+  type: 'test'
+  ...
+# Subtest: reject: S27 wrong motor shaft role
+ok 38 - reject: S27 wrong motor shaft role
+  ---
+  duration_ms: 1472.835625
+  type: 'test'
+  ...
+# Subtest: reject: S29 wrong servo port role
+ok 39 - reject: S29 wrong servo port role
+  ---
+  duration_ms: 1448.359667
+  type: 'test'
+  ...
+# Subtest: reject: invented certified pin map
+ok 40 - reject: invented certified pin map
+  ---
+  duration_ms: 1422.404417
+  type: 'test'
+  ...
+# Subtest: reject: ultrasonic conflict silently closed
+ok 41 - reject: ultrasonic conflict silently closed
+  ---
+  duration_ms: 1426.467833
+  type: 'test'
+  ...
+# Subtest: reject: wrong rule operand phase
+ok 42 - reject: wrong rule operand phase
+  ---
+  duration_ms: 12.968208
+  type: 'test'
+  ...
+# Subtest: reject: wrong rule target family
+ok 43 - reject: wrong rule target family
+  ---
+  duration_ms: 12.528125
+  type: 'test'
+  ...
+# Subtest: reject: printed designation promoted to exact OEM identity
+ok 44 - reject: printed designation promoted to exact OEM identity
+  ---
+  duration_ms: 13.350209
+  type: 'test'
+  ...
+# Subtest: reject: PROBABLE source promoted through dependency
+ok 45 - reject: PROBABLE source promoted through dependency
+  ---
+  duration_ms: 12.387709
+  type: 'test'
+  ...
+# Subtest: reject: source limitation removed
+ok 46 - reject: source limitation removed
+  ---
+  duration_ms: 12.758541
+  type: 'test'
+  ...
+# Subtest: reject: dangling known solution
+ok 47 - reject: dangling known solution
+  ---
+  duration_ms: 12.243416
+  type: 'test'
+  ...
+# Subtest: reject: unresolved numeric payload sneaks in value
+ok 48 - reject: unresolved numeric payload sneaks in value
+  ---
+  duration_ms: 9.669125
+  type: 'test'
+  ...
+# Subtest: reject: duplicate introduction
+ok 49 - reject: duplicate introduction
+  ---
+  duration_ms: 8.56125
+  type: 'test'
+  ...
+# Subtest: reject: unstaged attachment
+ok 50 - reject: unstaged attachment
+  ---
+  duration_ms: 8.463542
+  type: 'test'
+  ...
+# Subtest: reject: undeclared installation neighbor
+ok 51 - reject: undeclared installation neighbor
+  ---
+  duration_ms: 6.474459
+  type: 'test'
+  ...
+# Subtest: reject: missing explicit fastener parent
+ok 52 - reject: missing explicit fastener parent
+  ---
+  duration_ms: 6.801084
+  type: 'test'
+  ...
+# Subtest: reject: concurrent double fastener use
+ok 53 - reject: concurrent double fastener use
+  ---
+  duration_ms: 7.524625
+  type: 'test'
+  ...
+# Subtest: reject: wrong ordered stack
+ok 54 - reject: wrong ordered stack
+  ---
+  duration_ms: 6.983792
+  type: 'test'
+  ...
+# Subtest: reject: rivet pin locks before body insertion
+ok 55 - reject: rivet pin locks before body insertion
+  ---
+  duration_ms: 7.953084
+  type: 'test'
+  ...
+# Subtest: reject: rivet pin is not an extra purchased item
+ok 56 - reject: rivet pin is not an extra purchased item
+  ---
+  duration_ms: 7.197625
+  type: 'test'
+  ...
+# Subtest: reject: duplicate owned element state
+ok 57 - reject: duplicate owned element state
+  ---
+  duration_ms: 4.602459
+  type: 'test'
+  ...
+# Subtest: reject: orphan physical stock
+ok 58 - reject: orphan physical stock
+  ---
+  duration_ms: 5.257833
+  type: 'test'
+  ...
+# Subtest: reject: simultaneous P11 occupants
+ok 59 - reject: simultaneous P11 occupants
+  ---
+  duration_ms: 9.745833
+  type: 'test'
+  ...
+# Subtest: reject: wrong qualified cable endpoint owner
+ok 60 - reject: wrong qualified cable endpoint owner
+  ---
+  duration_ms: 8.495542
+  type: 'test'
+  ...
+# Subtest: reject: wrong cable target port owner
+ok 61 - reject: wrong cable target port owner
+  ---
+  duration_ms: 8.84425
+  type: 'test'
+  ...
+# Subtest: reject: metric route without admitted solution
+ok 62 - reject: metric route without admitted solution
+  ---
+  duration_ms: 7.137
+  type: 'test'
+  ...
+# Subtest: reject: duplicate consumable allocation
+ok 63 - reject: duplicate consumable allocation
+  ---
+  duration_ms: 8.263167
+  type: 'test'
+  ...
+# Subtest: reject: wrong consumable source lot
+ok 64 - reject: wrong consumable source lot
+  ---
+  duration_ms: 6.643834
+  type: 'test'
+  ...
+# Subtest: reject: consumable count cannot replace length
+ok 65 - reject: consumable count cannot replace length
+  ---
+  duration_ms: 8.610333
+  type: 'test'
+  ...
+# Subtest: reject: negative consumable amount
+ok 66 - reject: negative consumable amount
+  ---
+  duration_ms: 8.684084
+  type: 'test'
+  ...
+# Subtest: reject: apply without allocated piece
+ok 67 - reject: apply without allocated piece
+  ---
+  duration_ms: 7.67675
+  type: 'test'
+  ...
+# Subtest: reject: group parent membership mismatch
+ok 68 - reject: group parent membership mismatch
+  ---
+  duration_ms: 7.420875
+  type: 'test'
+  ...
+# Subtest: reject: nested group cycle
+ok 69 - reject: nested group cycle
+  ---
+  duration_ms: 4.85025
+  type: 'test'
+  ...
+# Subtest: reject: undeclared group cannot be invented
+ok 70 - reject: undeclared group cannot be invented
+  ---
+  duration_ms: 7.398458
+  type: 'test'
+  ...
+# Subtest: reject: undeclared joint DOF
+ok 71 - reject: undeclared joint DOF
+  ---
+  duration_ms: 6.937792
+  type: 'test'
+  ...
+# Subtest: reject: wrong rotational coordinate unit
+ok 72 - reject: wrong rotational coordinate unit
+  ---
+  duration_ms: 9.039208
+  type: 'test'
+  ...
+# Subtest: reject: duplicate qualified joint coordinate
+ok 73 - reject: duplicate qualified joint coordinate
+  ---
+  duration_ms: 6.762334
+  type: 'test'
+  ...
+# Subtest: reject: missing scoped zero requirement
+ok 74 - reject: missing scoped zero requirement
+  ---
+  duration_ms: 8.610625
+  type: 'test'
+  ...
+# Subtest: reject: zero condition without P11 connection
+ok 75 - reject: zero condition without P11 connection
+  ---
+  duration_ms: 8.513209
+  type: 'test'
+  ...
+# Subtest: reject: backing removal cannot spend another owner element
+ok 76 - reject: backing removal cannot spend another owner element
+  ---
+  duration_ms: 6.998667
+  type: 'test'
+  ...
+# Subtest: reject: stale serialized undo
+ok 77 - reject: stale serialized undo
+  ---
+  duration_ms: 2.730625
+  type: 'test'
+  ...
+# Subtest: reject: non-top serialized undo
+ok 78 - reject: non-top serialized undo
+  ---
+  duration_ms: 3.217625
+  type: 'test'
+  ...
+# Subtest: reject: forged prior-state inverse
+ok 79 - reject: forged prior-state inverse
+  ---
+  duration_ms: 13.541791
+  type: 'test'
+  ...
+# Subtest: reject: hash-inconsistent state
+ok 80 - reject: hash-inconsistent state
+  ---
+  duration_ms: 1.735625
+  type: 'test'
+  ...
+# Subtest: reject: direct hash input cycle
+ok 81 - reject: direct hash input cycle
+  ---
+  duration_ms: 2.521916
+  type: 'test'
+  ...
+# Subtest: reject: transitive hash input cycle
+ok 82 - reject: transitive hash input cycle
+  ---
+  duration_ms: 1.600834
+  type: 'test'
+  ...
+# Subtest: reject: generated output as own input
+ok 83 - reject: generated output as own input
+  ---
+  duration_ms: 1.967083
+  type: 'test'
+  ...
+# Subtest: reject: unclassified graph input
+ok 84 - reject: unclassified graph input
+  ---
+  duration_ms: 1.621042
+  type: 'test'
+  ...
+# Subtest: reject: downstream toolchain identity used upstream
+ok 85 - reject: downstream toolchain identity used upstream
+  ---
+  duration_ms: 1.427333
+  type: 'test'
+  ...
+# Subtest: positive: explicit reused endpoint omission has no location write
+ok 86 - positive: explicit reused endpoint omission has no location write
+  ---
+  duration_ms: 12.076375
+  type: 'test'
+  ...
+# Subtest: positive: attachment can explicitly install one reused participant
+ok 87 - positive: attachment can explicitly install one reused participant
+  ---
+  duration_ms: 11.915584
+  type: 'test'
+  ...
+# Subtest: positive: integral lead connection and disconnection never promote owner
+ok 88 - positive: integral lead connection and disconnection never promote owner
+  ---
+  duration_ms: 23.365208
+  type: 'test'
+  ...
+# Subtest: positive: grouping tray members changes membership only
+ok 89 - positive: grouping tray members changes membership only
+  ---
+  duration_ms: 12.192958
+  type: 'test'
+  ...
+# Subtest: positive: known consumable capacity bound and overflow rejection
+ok 90 - positive: known consumable capacity bound and overflow rejection
+  ---
+  duration_ms: 16.434459
+  type: 'test'
+  ...
+# Subtest: positive: setJointReference full serialized fixture without invented production angle
+ok 91 - positive: setJointReference full serialized fixture without invented production angle
+  ---
+  duration_ms: 43.846916
+  type: 'test'
+  ...
+# Subtest: positive: authored order affects graph while set and appearance order does not
+ok 92 - positive: authored order affects graph while set and appearance order does not
+  ---
+  duration_ms: 61.308958
+  type: 'test'
+  ...
+# Subtest: positive: rule phases keep physical and engineering proof BLOCKED
+ok 93 - positive: rule phases keep physical and engineering proof BLOCKED
+  ---
+  duration_ms: 0.158666
+  type: 'test'
+  ...
+# Subtest: save exact mutation outcomes
+ok 94 - save exact mutation outcomes
+  ---
+  duration_ms: 0.335333
+  type: 'test'
+  ...
+# Subtest: rpi4: complete serialized operation corpus and full reverse
+ok 95 - rpi4: complete serialized operation corpus and full reverse
+  ---
+  duration_ms: 7735.077542
+  type: 'test'
+  ...
+# Subtest: rpi4: all 29 step boundaries and arbitrary prefix derivation
+ok 96 - rpi4: all 29 step boundaries and arbitrary prefix derivation
+  ---
+  duration_ms: 9003.593959
+  type: 'test'
+  ...
+# Subtest: rpi4: independent fresh process knows no expected snapshots
+ok 97 - rpi4: independent fresh process knows no expected snapshots
+  ---
+  duration_ms: 7124.241083
+  type: 'test'
+  ...
+# Subtest: rpi4: complete inventory and owned/source conservation
+ok 98 - rpi4: complete inventory and owned/source conservation
+  ---
+  duration_ms: 39.995875
+  type: 'test'
+  ...
+# Subtest: rpi4: grouped camera moves preserve connected ribbon, routing and members
+ok 99 - rpi4: grouped camera moves preserve connected ribbon, routing and members
+  ---
+  duration_ms: 0.214541
+  type: 'test'
+  ...
+# Subtest: rpi4: typed unknown firewall and physical condition separation
+ok 100 - rpi4: typed unknown firewall and physical condition separation
+  ---
+  duration_ms: 0.127834
+  type: 'test'
+  ...
+# Subtest: rpi5: complete serialized operation corpus and full reverse
+ok 101 - rpi5: complete serialized operation corpus and full reverse
+  ---
+  duration_ms: 7147.905416
+  type: 'test'
+  ...
+# Subtest: rpi5: all 29 step boundaries and arbitrary prefix derivation
+ok 102 - rpi5: all 29 step boundaries and arbitrary prefix derivation
+  ---
+  duration_ms: 8613.031709
+  type: 'test'
+  ...
+# Subtest: rpi5: independent fresh process knows no expected snapshots
+ok 103 - rpi5: independent fresh process knows no expected snapshots
+  ---
+  duration_ms: 7395.378125
+  type: 'test'
+  ...
+# Subtest: rpi5: complete inventory and owned/source conservation
+ok 104 - rpi5: complete inventory and owned/source conservation
+  ---
+  duration_ms: 42.168292
+  type: 'test'
+  ...
+# Subtest: rpi5: grouped camera moves preserve connected ribbon, routing and members
+ok 105 - rpi5: grouped camera moves preserve connected ribbon, routing and members
+  ---
+  duration_ms: 0.143583
+  type: 'test'
+  ...
+# Subtest: rpi5: typed unknown firewall and physical condition separation
+ok 106 - rpi5: typed unknown firewall and physical condition separation
+  ---
+  duration_ms: 0.037458
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: complete serialized operation corpus and full reverse
+ok 107 - rpi-zero-2-w: complete serialized operation corpus and full reverse
+  ---
+  duration_ms: 6772.014584
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: all 29 step boundaries and arbitrary prefix derivation
+ok 108 - rpi-zero-2-w: all 29 step boundaries and arbitrary prefix derivation
+  ---
+  duration_ms: 8778.2255
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: independent fresh process knows no expected snapshots
+ok 109 - rpi-zero-2-w: independent fresh process knows no expected snapshots
+  ---
+  duration_ms: 7601.350167
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: complete inventory and owned/source conservation
+ok 110 - rpi-zero-2-w: complete inventory and owned/source conservation
+  ---
+  duration_ms: 32.831625
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: grouped camera moves preserve connected ribbon, routing and members
+ok 111 - rpi-zero-2-w: grouped camera moves preserve connected ribbon, routing and members
+  ---
+  duration_ms: 0.274416
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: typed unknown firewall and physical condition separation
+ok 112 - rpi-zero-2-w: typed unknown firewall and physical condition separation
+  ---
+  duration_ms: 0.062209
+  type: 'test'
+  ...
+# Subtest: compiler determinism under registry set ordering
+ok 113 - compiler determinism under registry set ordering
+  ---
+  duration_ms: 3141.78575
+  type: 'test'
+  ...
+# Subtest: serialized fixtures cover every source-used tag
+ok 114 - serialized fixtures cover every source-used tag
+  ---
+  duration_ms: 6.456542
+  type: 'test'
+  ...
+1..114
+# tests 114
+# suites 0
+# pass 114
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 73617.356917

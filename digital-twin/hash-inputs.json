@@ -3,7 +3,10 @@
   "domainPrefix": "picar-v2:<kind>\\n",
   "canonicalization": "RFC8785 UTF-8; strict input validation before canonicalization",
   "setLikeIdFields": [
+    "activeCableConnectionIds",
     "activeInstanceIds",
+    "activeMechanicalConnectionIds",
+    "activeOwnedElements",
     "affectedFeatureIds",
     "affectedStepIds",
     "applicabilityRuleIds",
@@ -23,11 +26,16 @@
     "inputClaimIds",
     "inputMeasurementIds",
     "interfaceRefs",
+    "introducedInstanceIds",
     "invalidationDependencyIds",
     "keyingClaimIds",
     "matingRuleIds",
     "measurementRefs",
+    "memberInstanceIds",
     "netClaimIds",
+    "postconditionRuleIds",
+    "preconditionRuleIds",
+    "requiredConditionIds",
     "requiredFeatureIds",
     "resolutionEvidenceRefs",
     "sourceRefs",
@@ -35,8 +43,13 @@
     "supersedes",
     "targetIds",
     "toleranceRefs",
+    "toolRequirementIds",
     "triggerRuleIds",
-    "variantIds"
+    "usedInstanceIds",
+    "variantIds",
+    "verificationRuleIds",
+    "warningIds",
+    "zeroingConditionIds"
   ],
   "authoredOrderArrays": [
     "operations",
@@ -45,7 +58,11 @@
     "guideEndpoints",
     "motionSegments",
     "replaceOperationIds",
-    "withOperationIds"
+    "withOperationIds",
+    "orderedContactStack",
+    "completedOperationIds",
+    "endpointIndices",
+    "endpoints"
   ],
   "inputs": [
     {
@@ -469,6 +486,16 @@
       ]
     },
     {
+      "path": "schemas/m2-search-index.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
       "path": "schemas/planning-step-seed.schema.json",
       "family": "schema",
       "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
@@ -805,6 +832,586 @@
       "role": "generated",
       "stage": "M1",
       "hashKinds": []
+    },
+    {
+      "path": "assemblies/v40/connections/cables.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/connections/mechanical.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/operations/groups.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/operations/initial-states.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/operations/operations.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/operations/verification-rules.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/steps/base.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/steps/source-intents.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/variants/patches.json",
+      "family": "v40CanonicalAuthoring",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
+    },
+    {
+      "path": "assemblies/v40/presentation/SEARCH_CONTRACT.md",
+      "family": "m2ConsumerContract",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/author-v40.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/classify.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/compile.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/gate.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/hash-conformance.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/hash.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/inputs.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/regression.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/replay.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/compiler/upstream.mjs",
+      "family": "m2AuthoringValidationImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "../picarx-companion/src/domain/assembly/compiler.ts",
+      "family": "pureTypeScriptDomainImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "../picarx-companion/src/domain/assembly/reducer.ts",
+      "family": "pureTypeScriptDomainImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "../picarx-companion/src/domain/assembly/references.ts",
+      "family": "pureTypeScriptDomainImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/tests/contracts.test.mjs",
+      "family": "m2TestImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/tests/mutations.test.mjs",
+      "family": "m2TestImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/tests/replay.test.mjs",
+      "family": "m2TestImplementation",
+      "projection": "Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/adopted-evidence-input.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/adopted-g-data.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/adopted-model-input.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/adopted-schema-input.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/hash-conformance.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/mutation-corpus.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/operation-corpus.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/operation-fixtures.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/compiled-graph.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/expected-prefixes.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/final-state.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/fresh-process-receipt.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/fresh-replay-command.txt",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/fresh-replay.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/graph-input.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/initial-state.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/inventory-proof.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/search-index.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi-zero-2-w/typed-reference-index.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/compiled-graph.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/expected-prefixes.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/final-state.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/fresh-process-receipt.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/fresh-replay-command.txt",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/fresh-replay.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/graph-input.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/initial-state.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/inventory-proof.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/search-index.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi4/typed-reference-index.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/compiled-graph.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/expected-prefixes.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/final-state.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/fresh-process-receipt.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/fresh-replay-command.txt",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/fresh-replay.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/graph-input.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/initial-state.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/inventory-proof.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/search-index.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/rpi5/typed-reference-index.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/runtime-registry.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/m2/set-joint-fixture.json",
+      "family": "m2ReplayArtifact",
+      "projection": "Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.",
+      "role": "generated",
+      "stage": "M2",
+      "hashKinds": []
+    },
+    {
+      "path": "../docs/digital-twin/SEMANTIC_LOCATION_REVISION.md",
+      "family": "ownerContractRevision",
+      "projection": "Exact prospective owner text and receipt; descriptor binds raw bytes; graph-input copies the entire revision.",
+      "role": "authored",
+      "stage": "M2",
+      "hashKinds": [
+        "graphHash"
+      ]
     }
   ],
   "identities": [
@@ -857,6 +1464,7 @@
         "schemas/m0-gate-report.schema.json",
         "schemas/m1-g-data-report.schema.json",
         "schemas/m1-inventory.schema.json",
+        "schemas/m2-search-index.schema.json",
         "schemas/planning-step-seed.schema.json",
         "schemas/semantic-registry.json"
       ],
@@ -908,9 +1516,44 @@
         "modelHash"
       ],
       "projection": "H(graph, variant graph-input: ordered operations/steps, connections, copied referenced rule/measurement/procedure/warning/motion values, semantic initialState excluding graphHash/modelHash/stateHash/stockDispositionHash).",
-      "status": "contractOnly",
-      "sourceFiles": [],
-      "outputPath": null
+      "status": "implemented",
+      "sourceFiles": [
+        "assemblies/v40/connections/cables.json",
+        "assemblies/v40/connections/mechanical.json",
+        "assemblies/v40/operations/groups.json",
+        "assemblies/v40/operations/initial-states.json",
+        "assemblies/v40/operations/operations.json",
+        "assemblies/v40/operations/verification-rules.json",
+        "assemblies/v40/steps/base.json",
+        "assemblies/v40/steps/source-intents.json",
+        "assemblies/v40/variants/patches.json",
+        "../docs/digital-twin/SEMANTIC_LOCATION_REVISION.md",
+        "components/inventory/planned-uses.json",
+        "evidence/records/claims.json",
+        "evidence/conflicts/conflicts.json",
+        "components/measurements/derivations.json",
+        "components/definitions/parts.json",
+        "components/instances/planned-stock.json",
+        "components/measurements/measurements.json",
+        "components/interfaces/mechanical.json",
+        "components/interfaces/connection-points.json",
+        "components/definitions/fasteners.json",
+        "components/definitions/cables.json",
+        "components/definitions/geometry-sources.json",
+        "components/interfaces/frames.json",
+        "components/inventory/variants.json",
+        "components/interfaces/verification-rules.json",
+        "components/inventory/lots.json",
+        "components/inventory/allocations.json",
+        "tools/evidence/sum-v1.json",
+        "schemas/semantic-registry.json"
+      ],
+      "outputPath": null,
+      "outputPaths": [
+        "validation/m2/rpi4/graph-input.json",
+        "validation/m2/rpi5/graph-input.json",
+        "validation/m2/rpi-zero-2-w/graph-input.json"
+      ]
     },
     {
       "name": "toolchainHash",
@@ -989,9 +1632,17 @@
       "stage": 2,
       "dependsOn": [],
       "projection": "H(stock, complete instance ID/location/parent/owned-state, lots and allocations sorted by ID).",
-      "status": "contractOnly",
-      "sourceFiles": [],
-      "outputPath": null
+      "status": "implemented",
+      "sourceFiles": [
+        "assemblies/v40/operations/initial-states.json",
+        "assemblies/v40/operations/operations.json"
+      ],
+      "outputPath": null,
+      "outputPaths": [
+        "validation/m2/rpi4/inventory-proof.json",
+        "validation/m2/rpi5/inventory-proof.json",
+        "validation/m2/rpi-zero-2-w/inventory-proof.json"
+      ]
     },
     {
       "name": "stateHash",
@@ -1002,10 +1653,52 @@
         "stockDispositionHash"
       ],
       "projection": "H(state, complete AssemblyState omitting only top-level stateHash after stock recomputation).",
-      "status": "contractOnly",
-      "sourceFiles": [],
-      "outputPath": null
+      "status": "implemented",
+      "sourceFiles": [
+        "assemblies/v40/operations/initial-states.json",
+        "assemblies/v40/operations/operations.json"
+      ],
+      "outputPath": null,
+      "outputPaths": [
+        "validation/m2/rpi4/expected-prefixes.json",
+        "validation/m2/rpi5/expected-prefixes.json",
+        "validation/m2/rpi-zero-2-w/expected-prefixes.json"
+      ]
     }
   ],
-  "laterArtifactPolicy": "No later milestone artifact generated merely to fill a hash slot."
+  "laterArtifactPolicy": "No later milestone artifact generated merely to fill a hash slot.",
+  "setLikeRecordCollections": [
+    "allocations",
+    "cableConnections",
+    "cableDefinitions",
+    "claims",
+    "conflicts",
+    "connectionPoints",
+    "consumableAllocations",
+    "consumableLots",
+    "definitions",
+    "derivations",
+    "evidence",
+    "fastenerDefinitions",
+    "frames",
+    "geometrySources",
+    "instances",
+    "interfaces",
+    "inventoryLots",
+    "jointCoordinates",
+    "measurements",
+    "mechanicalConnections",
+    "ownedElementStates",
+    "subassemblies",
+    "tools",
+    "unresolvedItems",
+    "variants",
+    "verificationRules",
+    "warnings"
+  ],
+  "m2ScanDirectories": [
+    "assemblies",
+    "tools/compiler",
+    "validation/m2"
+  ]
 }

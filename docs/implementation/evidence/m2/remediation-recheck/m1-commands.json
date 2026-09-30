@@ -1,0 +1,25 @@
+[
+  {
+    "command": [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "digital-twin/validation/tests/attestations.test.mjs",
+      "digital-twin/validation/tests/audited-semantics.test.mjs",
+      "digital-twin/validation/tests/hash.test.mjs",
+      "digital-twin/validation/tests/schema.test.mjs",
+      "digital-twin/validation/tests/semantic.test.mjs"
+    ],
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/m1-tests.tap"
+  },
+  {
+    "command": [
+      "node",
+      "digital-twin/tools/types.mjs",
+      "--check"
+    ],
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/types-check.txt"
+  }
+]

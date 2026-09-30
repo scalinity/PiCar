@@ -1,0 +1,22 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {twin,root} from '../evidence/semantic.mjs';
+import {createHashPolicy,validateHashInputs} from '../evidence/identity.mjs';
+import {collections,idSets} from './hash.mjs';
+const walk=p=>fs.existsSync(p)?fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(p,e.name)):[path.relative(twin,path.join(p,e.name))]):[];
+const p=createHashPolicy();
+const source=walk(path.join(twin,'assemblies')).filter(f=>f.endsWith('.json'));
+const documents=walk(path.join(twin,'assemblies')).filter(f=>f.endsWith('.md'));
+const tools=walk(path.join(twin,'tools/compiler')).filter(f=>f.endsWith('.mjs'));
+const generated=walk(path.join(twin,'validation/m2')).filter(f=>/\.(json|tap|txt|mjs)$/.test(f));
+const domain=walk(path.join(root,'picarx-companion/src/domain/assembly')).filter(f=>f.endsWith('.ts'));
+for(const [paths,family,role,kinds] of [[source,'v40CanonicalAuthoring','authored',['graphHash']],[documents,'m2ConsumerContract','authored',[]],[tools,'m2AuthoringValidationImplementation','authored',[]],[domain,'pureTypeScriptDomainImplementation','authored',[]],[generated.filter(f=>f.includes('/tests/')),'m2TestImplementation','authored',[]],[generated.filter(f=>!f.includes('/tests/')),'m2ReplayArtifact','generated',[]]])for(const f of paths)p.inputs.push({path:f,family,projection:role==='authored'?'Exact bound source bytes; graph projection copies canonical values according to graph-input, preserving authored order. Implementation bytes bind the gate separately.':'Generated cache/result; never an upstream source or its own preimage. Replay consumes explicitly bound graph and registry only.',role,stage:'M2',hashKinds:kinds});
+p.inputs.push({path:'../docs/digital-twin/SEMANTIC_LOCATION_REVISION.md',family:'ownerContractRevision',projection:'Exact prospective owner text and receipt; descriptor binds raw bytes; graph-input copies the entire revision.',role:'authored',stage:'M2',hashKinds:['graphHash']});
+p.setLikeRecordCollections=[...collections].sort();
+p.setLikeIdFields=[...new Set([...p.setLikeIdFields,...idSets])].sort();
+p.authoredOrderArrays=[...new Set([...p.authoredOrderArrays,'orderedContactStack','completedOperationIds','endpointIndices','endpoints'])];
+for(const name of ['graphHash','stockDispositionHash','stateHash']){const i=p.identities.find(i=>i.name===name);i.status='implemented';i.sourceFiles=name==='graphHash'?[...p.inputs.filter(i=>i.hashKinds.includes('graphHash')).map(i=>i.path),...p.identities.find(i=>i.name==='modelHash').sourceFiles,'schemas/semantic-registry.json']:['assemblies/v40/operations/initial-states.json','assemblies/v40/operations/operations.json'];i.outputPaths=['rpi4','rpi5','rpi-zero-2-w'].map(v=>'validation/m2/'+v+(name==='graphHash'?'/graph-input.json':name==='stateHash'?'/expected-prefixes.json':'/inventory-proof.json'));}
+p.m2ScanDirectories=['assemblies','tools/compiler','validation/m2'];
+validateHashInputs(p);
+fs.writeFileSync(path.join(twin,'hash-inputs.json'),JSON.stringify(p,null,2)+'\n');
+console.log('M2 hash policy: '+p.inputs.length+' classified paths; acyclic staged identities.');

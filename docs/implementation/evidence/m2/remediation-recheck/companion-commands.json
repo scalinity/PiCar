@@ -1,0 +1,38 @@
+[
+  {
+    "command": [
+      "pnpm",
+      "test:unit"
+    ],
+    "cwd": "picarx-companion",
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/companion-unit.txt"
+  },
+  {
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "cwd": "picarx-companion",
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/companion-typecheck.txt"
+  },
+  {
+    "command": [
+      "pnpm",
+      "content:check"
+    ],
+    "cwd": "picarx-companion",
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/companion-content.txt"
+  },
+  {
+    "command": [
+      "pnpm",
+      "package:check"
+    ],
+    "cwd": "picarx-companion",
+    "exitCode": 0,
+    "log": "docs/implementation/evidence/m2/remediation-recheck/companion-package.txt"
+  }
+]

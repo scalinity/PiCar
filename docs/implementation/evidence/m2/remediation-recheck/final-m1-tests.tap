@@ -1,0 +1,1534 @@
+TAP version 13
+# Subtest: positive: zeroing attestation binding without consumption
+ok 1 - positive: zeroing attestation binding without consumption
+  ---
+  duration_ms: 7.912209
+  type: 'test'
+  ...
+# Subtest: negative: attestation different session
+ok 2 - negative: attestation different session
+  ---
+  duration_ms: 0.44025
+  type: 'test'
+  ...
+# Subtest: negative: attestation different model
+ok 3 - negative: attestation different model
+  ---
+  duration_ms: 0.157542
+  type: 'test'
+  ...
+# Subtest: negative: attestation different variant
+ok 4 - negative: attestation different variant
+  ---
+  duration_ms: 0.107583
+  type: 'test'
+  ...
+# Subtest: negative: attestation different servo epoch
+ok 5 - negative: attestation different servo epoch
+  ---
+  duration_ms: 0.096667
+  type: 'test'
+  ...
+# Subtest: negative: attestation missing epoch
+ok 6 - negative: attestation missing epoch
+  ---
+  duration_ms: 0.148084
+  type: 'test'
+  ...
+# Subtest: negative: attestation wrong operation scope
+ok 7 - negative: attestation wrong operation scope
+  ---
+  duration_ms: 0.095
+  type: 'test'
+  ...
+# Subtest: negative: attestation invalid creation time
+ok 8 - negative: attestation invalid creation time
+  ---
+  duration_ms: 0.076625
+  type: 'test'
+  ...
+# Subtest: negative: attestation missing dependency scope
+ok 9 - negative: attestation missing dependency scope
+  ---
+  duration_ms: 0.086792
+  type: 'test'
+  ...
+# Subtest: positive: ProcedureAcknowledgment binding without storage
+ok 10 - positive: ProcedureAcknowledgment binding without storage
+  ---
+  duration_ms: 4.815166
+  type: 'test'
+  ...
+# Subtest: negative: ProcedureAcknowledgment without procedure revision
+ok 11 - negative: ProcedureAcknowledgment without procedure revision
+  ---
+  duration_ms: 0.100292
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: zero-quaternion-rejected
+ok 12 - audited finite semantic fixture: zero-quaternion-rejected
+  ---
+  duration_ms: 0.713625
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: unit-runtime-quaternion
+ok 13 - audited finite semantic fixture: unit-runtime-quaternion
+  ---
+  duration_ms: 0.04675
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: duplicate-ids
+ok 14 - audited finite semantic fixture: duplicate-ids
+  ---
+  duration_ms: 0.032041
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: unique-ids
+ok 15 - audited finite semantic fixture: unique-ids
+  ---
+  duration_ms: 0.025959
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: qualified-left-instance
+ok 16 - audited finite semantic fixture: qualified-left-instance
+  ---
+  duration_ms: 0.069417
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: wrong-definition-interface
+ok 17 - audited finite semantic fixture: wrong-definition-interface
+  ---
+  duration_ms: 0.04025
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: patch-contiguous
+ok 18 - audited finite semantic fixture: patch-contiguous
+  ---
+  duration_ms: 0.061792
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: patch-discontiguous
+ok 19 - audited finite semantic fixture: patch-discontiguous
+  ---
+  duration_ms: 0.032292
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: variant-active-inactive-overlap
+ok 20 - audited finite semantic fixture: variant-active-inactive-overlap
+  ---
+  duration_ms: 0.038959
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: m0-unique-gates
+ok 21 - audited finite semantic fixture: m0-unique-gates
+  ---
+  duration_ms: 0.072667
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: m0-duplicate-gate-does-not-pass
+ok 22 - audited finite semantic fixture: m0-duplicate-gate-does-not-pass
+  ---
+  duration_ms: 0.041875
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: m0-permission-exact-equivalence
+ok 23 - audited finite semantic fixture: m0-permission-exact-equivalence
+  ---
+  duration_ms: 0.028834
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: source-lock-branch-map
+ok 24 - audited finite semantic fixture: source-lock-branch-map
+  ---
+  duration_ms: 0.068917
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: source-lock-missing-zero-branch
+ok 25 - audited finite semantic fixture: source-lock-missing-zero-branch
+  ---
+  duration_ms: 0.04475
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: source-lock-inverted-rect
+ok 26 - audited finite semantic fixture: source-lock-inverted-rect
+  ---
+  duration_ms: 0.031625
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: admission-complete-context-closure
+ok 27 - audited finite semantic fixture: admission-complete-context-closure
+  ---
+  duration_ms: 0.054458
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: missing-context-part-blocks-admission
+ok 28 - audited finite semantic fixture: missing-context-part-blocks-admission
+  ---
+  duration_ms: 0.018333
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: official-approximate-is-not-exact
+ok 29 - audited finite semantic fixture: official-approximate-is-not-exact
+  ---
+  duration_ms: 0.0225
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: printed-transcription-scope-retained
+ok 30 - audited finite semantic fixture: printed-transcription-scope-retained
+  ---
+  duration_ms: 0.021166
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: fixture-receipt-cannot-admit-real-part
+ok 31 - audited finite semantic fixture: fixture-receipt-cannot-admit-real-part
+  ---
+  duration_ms: 0.014
+  type: 'test'
+  ...
+# Subtest: audited finite semantic fixture: fixture-receipt-in-fixture-lane
+ok 32 - audited finite semantic fixture: fixture-receipt-in-fixture-lane
+  ---
+  duration_ms: 0.01275
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: exponents
+ok 33 - positive JCS vector: exponents
+  ---
+  duration_ms: 0.964917
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: unicode-utf16-order
+ok 34 - positive JCS vector: unicode-utf16-order
+  ---
+  duration_ms: 0.161542
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: sorted-id-set
+ok 35 - positive JCS vector: sorted-id-set
+  ---
+  duration_ms: 0.12225
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: safe-integer-count
+ok 36 - positive JCS vector: safe-integer-count
+  ---
+  duration_ms: 0.093
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: strings-and-authored-order
+ok 37 - positive JCS vector: strings-and-authored-order
+  ---
+  duration_ms: 0.085958
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: large-non-count-number
+ok 38 - positive JCS vector: large-non-count-number
+  ---
+  duration_ms: 0.056708
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: ieee754-non-count-rounding
+ok 39 - positive JCS vector: ieee754-non-count-rounding
+  ---
+  duration_ms: 0.061792
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-zero
+ok 40 - negative JCS vector: negative-zero
+  ---
+  duration_ms: 0.260041
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-zero-exponent
+ok 41 - negative JCS vector: negative-zero-exponent
+  ---
+  duration_ms: 0.085291
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-underflow
+ok 42 - negative JCS vector: negative-underflow
+  ---
+  duration_ms: 0.088667
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: infinity
+ok 43 - negative JCS vector: infinity
+  ---
+  duration_ms: 0.076
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-infinity
+ok 44 - negative JCS vector: negative-infinity
+  ---
+  duration_ms: 0.043083
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: nan
+ok 45 - negative JCS vector: nan
+  ---
+  duration_ms: 0.073
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: duplicate-key
+ok 46 - negative JCS vector: duplicate-key
+  ---
+  duration_ms: 0.057125
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: escaped-duplicate-key
+ok 47 - negative JCS vector: escaped-duplicate-key
+  ---
+  duration_ms: 0.040625
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: nested-duplicate
+ok 48 - negative JCS vector: nested-duplicate
+  ---
+  duration_ms: 0.042542
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: lone-surrogate
+ok 49 - negative JCS vector: lone-surrogate
+  ---
+  duration_ms: 0.051833
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: lone-surrogate-key
+ok 50 - negative JCS vector: lone-surrogate-key
+  ---
+  duration_ms: 0.0885
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: unsafe-revision
+ok 51 - negative JCS vector: unsafe-revision
+  ---
+  duration_ms: 0.041041
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: unsafe-count
+ok 52 - negative JCS vector: unsafe-count
+  ---
+  duration_ms: 0.0375
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: fractional-revision
+ok 53 - negative JCS vector: fractional-revision
+  ---
+  duration_ms: 0.025583
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: fractional-predicate-version
+ok 54 - negative JCS vector: fractional-predicate-version
+  ---
+  duration_ms: 0.025584
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: unsafe-contract-version
+ok 55 - negative JCS vector: unsafe-contract-version
+  ---
+  duration_ms: 0.026834
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: NaN
+ok 56 - negative programmatic numeric: NaN
+  ---
+  duration_ms: 0.059625
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: Infinity
+ok 57 - negative programmatic numeric: Infinity
+  ---
+  duration_ms: 0.037459
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: -Infinity
+ok 58 - negative programmatic numeric: -Infinity
+  ---
+  duration_ms: 0.022
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: negative zero
+ok 59 - negative programmatic numeric: negative zero
+  ---
+  duration_ms: 0.018666
+  type: 'test'
+  ...
+# Subtest: domain separation and raw bytes are distinct
+ok 60 - domain separation and raw bytes are distinct
+  ---
+  duration_ms: 0.275667
+  type: 'test'
+  ...
+# Subtest: cross-language results match exact canonical bytes, hashes and rejection reasons
+ok 61 - cross-language results match exact canonical bytes, hashes and rejection reasons
+  ---
+  duration_ms: 0.924667
+  type: 'test'
+  ...
+# Subtest: hash inputs are exhaustively classified and acyclic
+ok 62 - hash inputs are exhaustively classified and acyclic
+  ---
+  duration_ms: 1.317083
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: AdmissionReport.schema.json
+ok 63 - production schema meta-validation: AdmissionReport.schema.json
+  ---
+  duration_ms: 0.738125
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: AssemblyOperation.schema.json
+ok 64 - production schema meta-validation: AssemblyOperation.schema.json
+  ---
+  duration_ms: 0.0635
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: AssemblySession.schema.json
+ok 65 - production schema meta-validation: AssemblySession.schema.json
+  ---
+  duration_ms: 0.043
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: AssemblySolution.schema.json
+ok 66 - production schema meta-validation: AssemblySolution.schema.json
+  ---
+  duration_ms: 0.05
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: AssemblyState.schema.json
+ok 67 - production schema meta-validation: AssemblyState.schema.json
+  ---
+  duration_ms: 0.042833
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: AssemblyStep.schema.json
+ok 68 - production schema meta-validation: AssemblyStep.schema.json
+  ---
+  duration_ms: 0.841209
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: CableConnection.schema.json
+ok 69 - production schema meta-validation: CableConnection.schema.json
+  ---
+  duration_ms: 0.050792
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: CableDefinition.schema.json
+ok 70 - production schema meta-validation: CableDefinition.schema.json
+  ---
+  duration_ms: 0.02875
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: CameraInstruction.schema.json
+ok 71 - production schema meta-validation: CameraInstruction.schema.json
+  ---
+  duration_ms: 0.034708
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: Claim.schema.json
+ok 72 - production schema meta-validation: Claim.schema.json
+  ---
+  duration_ms: 0.058084
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: CompiledGraph.schema.json
+ok 73 - production schema meta-validation: CompiledGraph.schema.json
+  ---
+  duration_ms: 0.031666
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: ConflictRecord.schema.json
+ok 74 - production schema meta-validation: ConflictRecord.schema.json
+  ---
+  duration_ms: 0.024708
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: ConnectionPoint.schema.json
+ok 75 - production schema meta-validation: ConnectionPoint.schema.json
+  ---
+  duration_ms: 0.01725
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: DerivationRecord.schema.json
+ok 76 - production schema meta-validation: DerivationRecord.schema.json
+  ---
+  duration_ms: 0.015125
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: EvidenceRecord.schema.json
+ok 77 - production schema meta-validation: EvidenceRecord.schema.json
+  ---
+  duration_ms: 0.027583
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: FastenerDefinition.schema.json
+ok 78 - production schema meta-validation: FastenerDefinition.schema.json
+  ---
+  duration_ms: 0.019333
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: FrameRecord.schema.json
+ok 79 - production schema meta-validation: FrameRecord.schema.json
+  ---
+  duration_ms: 0.016959
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: GeometrySource.schema.json
+ok 80 - production schema meta-validation: GeometrySource.schema.json
+  ---
+  duration_ms: 0.013583
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: Measurement.schema.json
+ok 81 - production schema meta-validation: Measurement.schema.json
+  ---
+  duration_ms: 0.021208
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: MechanicalConnection.schema.json
+ok 82 - production schema meta-validation: MechanicalConnection.schema.json
+  ---
+  duration_ms: 0.020959
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: MechanicalInterface.schema.json
+ok 83 - production schema meta-validation: MechanicalInterface.schema.json
+  ---
+  duration_ms: 0.015958
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: MotionInstruction.schema.json
+ok 84 - production schema meta-validation: MotionInstruction.schema.json
+  ---
+  duration_ms: 0.017083
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: OperationUndo.schema.json
+ok 85 - production schema meta-validation: OperationUndo.schema.json
+  ---
+  duration_ms: 0.015625
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: PartDefinition.schema.json
+ok 86 - production schema meta-validation: PartDefinition.schema.json
+  ---
+  duration_ms: 0.01275
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: PartInstance.schema.json
+ok 87 - production schema meta-validation: PartInstance.schema.json
+  ---
+  duration_ms: 0.012709
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: ProcedureAcknowledgment.schema.json
+ok 88 - production schema meta-validation: ProcedureAcknowledgment.schema.json
+  ---
+  duration_ms: 0.013166
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: RuntimeManifest.schema.json
+ok 89 - production schema meta-validation: RuntimeManifest.schema.json
+  ---
+  duration_ms: 0.015041
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: RuntimeRegistry.schema.json
+ok 90 - production schema meta-validation: RuntimeRegistry.schema.json
+  ---
+  duration_ms: 0.013292
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: RuntimeTransform.schema.json
+ok 91 - production schema meta-validation: RuntimeTransform.schema.json
+  ---
+  duration_ms: 0.012333
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: ToolRequirement.schema.json
+ok 92 - production schema meta-validation: ToolRequirement.schema.json
+  ---
+  duration_ms: 0.0185
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: UnresolvedEvidenceItem.schema.json
+ok 93 - production schema meta-validation: UnresolvedEvidenceItem.schema.json
+  ---
+  duration_ms: 0.01375
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: VariantPatch.schema.json
+ok 94 - production schema meta-validation: VariantPatch.schema.json
+  ---
+  duration_ms: 0.015917
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: VariantRule.schema.json
+ok 95 - production schema meta-validation: VariantRule.schema.json
+  ---
+  duration_ms: 0.027917
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: VerificationRule.schema.json
+ok 96 - production schema meta-validation: VerificationRule.schema.json
+  ---
+  duration_ms: 0.027208
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: VisibilityRule.schema.json
+ok 97 - production schema meta-validation: VisibilityRule.schema.json
+  ---
+  duration_ms: 0.013916
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: Warning.schema.json
+ok 98 - production schema meta-validation: Warning.schema.json
+  ---
+  duration_ms: 0.013667
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: ZeroingAttestation.schema.json
+ok 99 - production schema meta-validation: ZeroingAttestation.schema.json
+  ---
+  duration_ms: 0.0115
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: digital-twin.schema.json
+ok 100 - production schema meta-validation: digital-twin.schema.json
+  ---
+  duration_ms: 1.174375
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: documentation-source-lock.schema.json
+ok 101 - production schema meta-validation: documentation-source-lock.schema.json
+  ---
+  duration_ms: 0.097
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: m0-gate-report.schema.json
+ok 102 - production schema meta-validation: m0-gate-report.schema.json
+  ---
+  duration_ms: 0.070459
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: m1-g-data-report.schema.json
+ok 103 - production schema meta-validation: m1-g-data-report.schema.json
+  ---
+  duration_ms: 0.094917
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: m1-inventory.schema.json
+ok 104 - production schema meta-validation: m1-inventory.schema.json
+  ---
+  duration_ms: 0.103917
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: m2-search-index.schema.json
+ok 105 - production schema meta-validation: m2-search-index.schema.json
+  ---
+  duration_ms: 0.061792
+  type: 'test'
+  ...
+# Subtest: production schema meta-validation: planning-step-seed.schema.json
+ok 106 - production schema meta-validation: planning-step-seed.schema.json
+  ---
+  duration_ms: 0.080917
+  type: 'test'
+  ...
+# Subtest: audited current shape: full-state-can-store-routes-and-allocations
+ok 107 - audited current shape: full-state-can-store-routes-and-allocations
+  ---
+  duration_ms: 10.946709
+  type: 'test'
+  ...
+# Subtest: audited current shape: hash-only-stock-state-no-longer-complete
+ok 108 - audited current shape: hash-only-stock-state-no-longer-complete
+  ---
+  duration_ms: 0.111125
+  type: 'test'
+  ...
+# Subtest: audited current shape: truthful-pre-export-cad-without-mesh
+ok 109 - audited current shape: truthful-pre-export-cad-without-mesh
+  ---
+  duration_ms: 15.707208
+  type: 'test'
+  ...
+# Subtest: audited current shape: pass-with-blocker-rejected
+ok 110 - audited current shape: pass-with-blocker-rejected
+  ---
+  duration_ms: 0.124084
+  type: 'test'
+  ...
+# Subtest: audited current shape: geometry-final-stage-shape
+ok 111 - audited current shape: geometry-final-stage-shape
+  ---
+  duration_ms: 0.066625
+  type: 'test'
+  ...
+# Subtest: audited current shape: geometry-empty-step-scope-rejected
+ok 112 - audited current shape: geometry-empty-step-scope-rejected
+  ---
+  duration_ms: 0.067125
+  type: 'test'
+  ...
+# Subtest: audited current shape: geometry-pass-missing-mesh-rejected
+ok 113 - audited current shape: geometry-pass-missing-mesh-rejected
+  ---
+  duration_ms: 0.0625
+  type: 'test'
+  ...
+# Subtest: audited current shape: blocked-missing-artifact-is-representable
+ok 114 - audited current shape: blocked-missing-artifact-is-representable
+  ---
+  duration_ms: 0.055917
+  type: 'test'
+  ...
+# Subtest: audited current shape: variant-patch-has-addressable-id
+ok 115 - audited current shape: variant-patch-has-addressable-id
+  ---
+  duration_ms: 2.539084
+  type: 'test'
+  ...
+# Subtest: audited current shape: variant-patch-without-id-rejected
+ok 116 - audited current shape: variant-patch-without-id-rejected
+  ---
+  duration_ms: 0.117667
+  type: 'test'
+  ...
+# Subtest: audited current shape: empty-unanchored-replacement-rejected
+ok 117 - audited current shape: empty-unanchored-replacement-rejected
+  ---
+  duration_ms: 0.055084
+  type: 'test'
+  ...
+# Subtest: audited current shape: bare-physical-guide-id-rejected
+ok 118 - audited current shape: bare-physical-guide-id-rejected
+  ---
+  duration_ms: 11.632041
+  type: 'test'
+  ...
+# Subtest: audited current shape: qualified-guide-reference-accepted
+ok 119 - audited current shape: qualified-guide-reference-accepted
+  ---
+  duration_ms: 0.063125
+  type: 'test'
+  ...
+# Subtest: audited current shape: bare-joint-interface-key-rejected
+ok 120 - audited current shape: bare-joint-interface-key-rejected
+  ---
+  duration_ms: 0.424958
+  type: 'test'
+  ...
+# Subtest: audited current shape: joint-key-is-connection-and-dof
+ok 121 - audited current shape: joint-key-is-connection-and-dof
+  ---
+  duration_ms: 0.0335
+  type: 'test'
+  ...
+# Subtest: audited current shape: runtime-metres-not-cad-mm
+ok 122 - audited current shape: runtime-metres-not-cad-mm
+  ---
+  duration_ms: 1.813209
+  type: 'test'
+  ...
+# Subtest: audited current shape: runtime-rejects-cad-frame
+ok 123 - audited current shape: runtime-rejects-cad-frame
+  ---
+  duration_ms: 0.036917
+  type: 'test'
+  ...
+# Subtest: audited current shape: runtime-translationMm-not-allowed
+ok 124 - audited current shape: runtime-translationMm-not-allowed
+  ---
+  duration_ms: 0.024792
+  type: 'test'
+  ...
+# Subtest: audited current shape: zero-quaternion-is-semantic-not-schema-error
+ok 125 - audited current shape: zero-quaternion-is-semantic-not-schema-error
+  ---
+  duration_ms: 0.016917
+  type: 'test'
+  ...
+# Subtest: audited current shape: structured-zeroing-attestation
+ok 126 - audited current shape: structured-zeroing-attestation
+  ---
+  duration_ms: 3.187916
+  type: 'test'
+  ...
+# Subtest: audited current shape: movement-not-denied-is-not-valid-attestation
+ok 127 - audited current shape: movement-not-denied-is-not-valid-attestation
+  ---
+  duration_ms: 0.059125
+  type: 'test'
+  ...
+# Subtest: audited current shape: attestation-missing-servo-is-rejected
+ok 128 - audited current shape: attestation-missing-servo-is-rejected
+  ---
+  duration_ms: 0.046833
+  type: 'test'
+  ...
+# Subtest: audited current shape: typed-rule-expected-operand
+ok 129 - audited current shape: typed-rule-expected-operand
+  ---
+  duration_ms: 7.344667
+  type: 'test'
+  ...
+# Subtest: audited current shape: rule-without-expected-operand-rejected
+ok 130 - audited current shape: rule-without-expected-operand-rejected
+  ---
+  duration_ms: 0.062916
+  type: 'test'
+  ...
+# Subtest: audited current shape: compiled-graph-explicit-operation-registry
+ok 131 - audited current shape: compiled-graph-explicit-operation-registry
+  ---
+  duration_ms: 23.41
+  type: 'test'
+  ...
+# Subtest: audited current shape: compiled-graph-missing-operations
+ok 132 - audited current shape: compiled-graph-missing-operations
+  ---
+  duration_ms: 0.061416
+  type: 'test'
+  ...
+# Subtest: audited current shape: solution-stable-id-and-runtime-unit
+ok 133 - audited current shape: solution-stable-id-and-runtime-unit
+  ---
+  duration_ms: 4.273042
+  type: 'test'
+  ...
+# Subtest: audited current shape: runtime-asset-complete-synthetic-shape
+ok 134 - audited current shape: runtime-asset-complete-synthetic-shape
+  ---
+  duration_ms: 3.250083
+  type: 'test'
+  ...
+# Subtest: audited current shape: unsafe-path-28
+ok 135 - audited current shape: unsafe-path-28
+  ---
+  duration_ms: 0.0535
+  type: 'test'
+  ...
+# Subtest: audited current shape: unsafe-path-29
+ok 136 - audited current shape: unsafe-path-29
+  ---
+  duration_ms: 0.028667
+  type: 'test'
+  ...
+# Subtest: audited current shape: unsafe-path-30
+ok 137 - audited current shape: unsafe-path-30
+  ---
+  duration_ms: 0.027166
+  type: 'test'
+  ...
+# Subtest: audited current shape: unsafe-path-31
+ok 138 - audited current shape: unsafe-path-31
+  ---
+  duration_ms: 0.023542
+  type: 'test'
+  ...
+# Subtest: audited current shape: unsafe-path-32
+ok 139 - audited current shape: unsafe-path-32
+  ---
+  duration_ms: 0.052375
+  type: 'test'
+  ...
+# Subtest: audited current shape: unsafe-path-33
+ok 140 - audited current shape: unsafe-path-33
+  ---
+  duration_ms: 0.0305
+  type: 'test'
+  ...
+# Subtest: audited current shape: manifest-has-explicit-graph-artifact
+ok 141 - audited current shape: manifest-has-explicit-graph-artifact
+  ---
+  duration_ms: 15.756292
+  type: 'test'
+  ...
+# Subtest: audited current shape: manifest-missing-graph-artifact-rejected
+ok 142 - audited current shape: manifest-missing-graph-artifact-rejected
+  ---
+  duration_ms: 0.060375
+  type: 'test'
+  ...
+# Subtest: audited current shape: manifest-rejects-mm-interface-frame
+ok 143 - audited current shape: manifest-rejects-mm-interface-frame
+  ---
+  duration_ms: 0.039917
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-introduce
+ok 144 - audited current shape: operation-tag-introduce
+  ---
+  duration_ms: 0.033583
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-attachRigid
+ok 145 - audited current shape: operation-tag-attachRigid
+  ---
+  duration_ms: 0.036125
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-attachJoint
+ok 146 - audited current shape: operation-tag-attachJoint
+  ---
+  duration_ms: 0.021125
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-installFastener
+ok 147 - audited current shape: operation-tag-installFastener
+  ---
+  duration_ms: 0.025
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-insertRivet
+ok 148 - audited current shape: operation-tag-insertRivet
+  ---
+  duration_ms: 0.022667
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-lockRivet
+ok 149 - audited current shape: operation-tag-lockRivet
+  ---
+  duration_ms: 0.036583
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-connectCableEnd
+ok 150 - audited current shape: operation-tag-connectCableEnd
+  ---
+  duration_ms: 0.035083
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-disconnectCableEnd
+ok 151 - audited current shape: operation-tag-disconnectCableEnd
+  ---
+  duration_ms: 0.023292
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-routeCable
+ok 152 - audited current shape: operation-tag-routeCable
+  ---
+  duration_ms: 0.017833
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-allocateConsumable
+ok 153 - audited current shape: operation-tag-allocateConsumable
+  ---
+  duration_ms: 0.304083
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-applyConsumable
+ok 154 - audited current shape: operation-tag-applyConsumable
+  ---
+  duration_ms: 0.0185
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-acknowledgeProcedure
+ok 155 - audited current shape: operation-tag-acknowledgeProcedure
+  ---
+  duration_ms: 0.01525
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-confirmZeroing
+ok 156 - audited current shape: operation-tag-confirmZeroing
+  ---
+  duration_ms: 0.014916
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-groupSubassembly
+ok 157 - audited current shape: operation-tag-groupSubassembly
+  ---
+  duration_ms: 0.016083
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-moveSubassembly
+ok 158 - audited current shape: operation-tag-moveSubassembly
+  ---
+  duration_ms: 0.014541
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-setJointReference
+ok 159 - audited current shape: operation-tag-setJointReference
+  ---
+  duration_ms: 0.021584
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-tag-removeOwnedBacking
+ok 160 - audited current shape: operation-tag-removeOwnedBacking
+  ---
+  duration_ms: 0.015583
+  type: 'test'
+  ...
+# Subtest: audited current shape: operation-hidden-payload-field-rejected
+ok 161 - audited current shape: operation-hidden-payload-field-rejected
+  ---
+  duration_ms: 0.029459
+  type: 'test'
+  ...
+# Subtest: audited current shape: source-lock-template-stays-blocked
+ok 162 - audited current shape: source-lock-template-stays-blocked
+  ---
+  duration_ms: 3.330667
+  type: 'test'
+  ...
+# Subtest: audited current shape: verified-source-lock-complete-shape-only
+ok 163 - audited current shape: verified-source-lock-complete-shape-only
+  ---
+  duration_ms: 0.492708
+  type: 'test'
+  ...
+# Subtest: audited current shape: verified-source-lock-missing-pdf-hash
+ok 164 - audited current shape: verified-source-lock-missing-pdf-hash
+  ---
+  duration_ms: 0.433166
+  type: 'test'
+  ...
+# Subtest: audited current shape: verified-source-lock-missing-panels
+ok 165 - audited current shape: verified-source-lock-missing-panels
+  ---
+  duration_ms: 0.342125
+  type: 'test'
+  ...
+# Subtest: audited current shape: m0-required-pass-native-explicitly-blocked
+ok 166 - audited current shape: m0-required-pass-native-explicitly-blocked
+  ---
+  duration_ms: 1.7055
+  type: 'test'
+  ...
+# Subtest: audited current shape: m0-source-blocked-cannot-allow-m1
+ok 167 - audited current shape: m0-source-blocked-cannot-allow-m1
+  ---
+  duration_ms: 0.329958
+  type: 'test'
+  ...
+# Subtest: audited current shape: runtime-registry-closed-families
+ok 168 - audited current shape: runtime-registry-closed-families
+  ---
+  duration_ms: 35.856125
+  type: 'test'
+  ...
+# Subtest: audited current shape: runtime-registry-no-undeclared-map
+ok 169 - audited current shape: runtime-registry-no-undeclared-map
+  ---
+  duration_ms: 0.063417
+  type: 'test'
+  ...
+# Subtest: audited example: mechanical-interface.valid.json
+ok 170 - audited example: mechanical-interface.valid.json
+  ---
+  duration_ms: 3.382625
+  type: 'test'
+  ...
+# Subtest: audited example: numeric-derived-schema-only.valid.json
+ok 171 - audited example: numeric-derived-schema-only.valid.json
+  ---
+  duration_ms: 2.854625
+  type: 'test'
+  ...
+# Subtest: audited example: numeric-derived-without-method.invalid.json
+ok 172 - audited example: numeric-derived-without-method.invalid.json
+  ---
+  duration_ms: 0.31525
+  type: 'test'
+  ...
+# Subtest: audited example: numeric-unresolved-with-value.invalid.json
+ok 173 - audited example: numeric-unresolved-with-value.invalid.json
+  ---
+  duration_ms: 0.109625
+  type: 'test'
+  ...
+# Subtest: audited example: numeric-unresolved.valid.json
+ok 174 - audited example: numeric-unresolved.valid.json
+  ---
+  duration_ms: 0.073042
+  type: 'test'
+  ...
+# Subtest: audited example: part-definition.valid.json
+ok 175 - audited example: part-definition.valid.json
+  ---
+  duration_ms: 3.35025
+  type: 'test'
+  ...
+# Subtest: audited example: printed-designation-claim.valid.json
+ok 176 - audited example: printed-designation-claim.valid.json
+  ---
+  duration_ms: 3.720875
+  type: 'test'
+  ...
+# Subtest: audited example: unknown-field-definition.invalid.json
+ok 177 - audited example: unknown-field-definition.invalid.json
+  ---
+  duration_ms: 0.229666
+  type: 'test'
+  ...
+# Subtest: audited example: verified-claim-without-evidence.invalid.json
+ok 178 - audited example: verified-claim-without-evidence.invalid.json
+  ---
+  duration_ms: 0.113375
+  type: 'test'
+  ...
+# Subtest: audited v2 production schema and wrappers are byte-preserved
+ok 179 - audited v2 production schema and wrappers are byte-preserved
+  ---
+  duration_ms: 1.962458
+  type: 'test'
+  ...
+# Subtest: negative: unknown numeric with payload
+ok 180 - negative: unknown numeric with payload
+  ---
+  duration_ms: 6.086917
+  type: 'test'
+  ...
+# Subtest: negative: unresolved numeric wrong confidence
+ok 181 - negative: unresolved numeric wrong confidence
+  ---
+  duration_ms: 0.120291
+  type: 'test'
+  ...
+# Subtest: negative: known numeric unresolved confidence
+ok 182 - negative: known numeric unresolved confidence
+  ---
+  duration_ms: 0.056792
+  type: 'test'
+  ...
+# Subtest: negative: VERIFIED claim without evidence
+ok 183 - negative: VERIFIED claim without evidence
+  ---
+  duration_ms: 20.099417
+  type: 'test'
+  ...
+# Subtest: negative: unknown reference
+ok 184 - negative: unknown reference
+  ---
+  duration_ms: 16.897292
+  type: 'test'
+  ...
+# Subtest: negative: wrong reference type
+ok 185 - negative: wrong reference type
+  ---
+  duration_ms: 4.429208
+  type: 'test'
+  ...
+# Subtest: negative: duplicate stable ID
+ok 186 - negative: duplicate stable ID
+  ---
+  duration_ms: 2.388291
+  type: 'test'
+  ...
+# Subtest: negative: DERIVED numeric without record
+ok 187 - negative: DERIVED numeric without record
+  ---
+  duration_ms: 14.578
+  type: 'test'
+  ...
+# Subtest: negative: derivation unresolved method artifact
+ok 188 - negative: derivation unresolved method artifact
+  ---
+  duration_ms: 144.493958
+  type: 'test'
+  ...
+# Subtest: negative: derivation unsupported method
+ok 189 - negative: derivation unsupported method
+  ---
+  duration_ms: 7.800291
+  type: 'test'
+  ...
+# Subtest: negative: derivation changed immutable method hash
+ok 190 - negative: derivation changed immutable method hash
+  ---
+  duration_ms: 8.058875
+  type: 'test'
+  ...
+# Subtest: negative: derivation reproduction mismatch
+ok 191 - negative: derivation reproduction mismatch
+  ---
+  duration_ms: 7.234209
+  type: 'test'
+  ...
+# Subtest: negative: derivation lost uncertainty
+ok 192 - negative: derivation lost uncertainty
+  ---
+  duration_ms: 7.217916
+  type: 'test'
+  ...
+# Subtest: negative: derivation incompatible units
+ok 193 - negative: derivation incompatible units
+  ---
+  duration_ms: 6.650875
+  type: 'test'
+  ...
+# Subtest: negative: derivation source limitation lost
+ok 194 - negative: derivation source limitation lost
+  ---
+  duration_ms: 7.13025
+  type: 'test'
+  ...
+# Subtest: negative: duplicate physical allocation
+ok 195 - negative: duplicate physical allocation
+  ---
+  duration_ms: 7.576792
+  type: 'test'
+  ...
+# Subtest: negative: owned rivet pin double-counted as supplied stock
+ok 196 - negative: owned rivet pin double-counted as supplied stock
+  ---
+  duration_ms: 3.727167
+  type: 'test'
+  ...
+# Subtest: negative: invalid variant reference
+ok 197 - negative: invalid variant reference
+  ---
+  duration_ms: 3.700083
+  type: 'test'
+  ...
+# Subtest: negative: wrong definition revision
+ok 198 - negative: wrong definition revision
+  ---
+  duration_ms: 4.271625
+  type: 'test'
+  ...
+# Subtest: negative: probable generic HAT identity promoted without proof
+ok 199 - negative: probable generic HAT identity promoted without proof
+  ---
+  duration_ms: 3.15775
+  type: 'test'
+  ...
+# Subtest: negative: official reference approximation promoted to exact
+ok 200 - negative: official reference approximation promoted to exact
+  ---
+  duration_ms: 3.311833
+  type: 'test'
+  ...
+# Subtest: negative: source limitations silently discarded
+ok 201 - negative: source limitations silently discarded
+  ---
+  duration_ms: 3.020042
+  type: 'test'
+  ...
+# Subtest: negative: open conflict treated as resolved
+ok 202 - negative: open conflict treated as resolved
+  ---
+  duration_ms: 3.15475
+  type: 'test'
+  ...
+# Subtest: negative: resolved conflict lacking resolution
+ok 203 - negative: resolved conflict lacking resolution
+  ---
+  duration_ms: 3.323125
+  type: 'test'
+  ...
+# Subtest: negative: resolved conflict loses competing claims
+ok 204 - negative: resolved conflict loses competing claims
+  ---
+  duration_ms: 4.548167
+  type: 'test'
+  ...
+# Subtest: negative: rule incompatible comparator
+ok 205 - negative: rule incompatible comparator
+  ---
+  duration_ms: 6.231167
+  type: 'test'
+  ...
+# Subtest: negative: rule incompatible operand
+ok 206 - negative: rule incompatible operand
+  ---
+  duration_ms: 7.154708
+  type: 'test'
+  ...
+# Subtest: negative: rule incompatible unit
+ok 207 - negative: rule incompatible unit
+  ---
+  duration_ms: 5.586292
+  type: 'test'
+  ...
+# Subtest: negative: rule incompatible phase
+ok 208 - negative: rule incompatible phase
+  ---
+  duration_ms: 5.229167
+  type: 'test'
+  ...
+# Subtest: negative: supersession deletes closure with dangling history
+ok 209 - negative: supersession deletes closure with dangling history
+  ---
+  duration_ms: 3.257292
+  type: 'test'
+  ...
+# Subtest: negative: supersession cycle
+ok 210 - negative: supersession cycle
+  ---
+  duration_ms: 7.614333
+  type: 'test'
+  ...
+# Subtest: negative: one screw allocated to two final uses
+ok 211 - negative: one screw allocated to two final uses
+  ---
+  duration_ms: 0.5725
+  type: 'test'
+  ...
+# Subtest: negative: printed stock arithmetic mismatch
+ok 212 - negative: printed stock arithmetic mismatch
+  ---
+  duration_ms: 0.349917
+  type: 'test'
+  ...
+# Subtest: negative: printed stock promoted to observed stock
+ok 213 - negative: printed stock promoted to observed stock
+  ---
+  duration_ms: 0.330125
+  type: 'test'
+  ...
+# Subtest: positive: valid qualified instance endpoint
+ok 214 - positive: valid qualified instance endpoint
+  ---
+  duration_ms: 0.047583
+  type: 'test'
+  ...
+# Subtest: negative: ambiguous bare interface for repeated instances
+ok 215 - negative: ambiguous bare interface for repeated instances
+  ---
+  duration_ms: 0.034167
+  type: 'test'
+  ...
+# Subtest: negative: wrong-definition qualified endpoint
+ok 216 - negative: wrong-definition qualified endpoint
+  ---
+  duration_ms: 0.033959
+  type: 'test'
+  ...
+# Subtest: positive: contiguous VariantPatch
+ok 217 - positive: contiguous VariantPatch
+  ---
+  duration_ms: 0.074083
+  type: 'test'
+  ...
+# Subtest: negative: discontiguous VariantPatch
+ok 218 - negative: discontiguous VariantPatch
+  ---
+  duration_ms: 0.045625
+  type: 'test'
+  ...
+# Subtest: negative: overlapping active/inactive VariantPatch
+ok 219 - negative: overlapping active/inactive VariantPatch
+  ---
+  duration_ms: 0.038875
+  type: 'test'
+  ...
+# Subtest: positive: evidence record
+ok 220 - positive: evidence record
+  ---
+  duration_ms: 8.132292
+  type: 'test'
+  ...
+# Subtest: positive: PartDefinition
+ok 221 - positive: PartDefinition
+  ---
+  duration_ms: 5.652291
+  type: 'test'
+  ...
+# Subtest: positive: PartInstance
+ok 222 - positive: PartInstance
+  ---
+  duration_ms: 6.254834
+  type: 'test'
+  ...
+# Subtest: positive: printed designation
+ok 223 - positive: printed designation
+  ---
+  duration_ms: 4.416334
+  type: 'test'
+  ...
+# Subtest: positive: open conflict
+ok 224 - positive: open conflict
+  ---
+  duration_ms: 4.265833
+  type: 'test'
+  ...
+# Subtest: positive: derived measurement with reproducible method
+ok 225 - positive: derived measurement with reproducible method
+  ---
+  duration_ms: 4.376125
+  type: 'test'
+  ...
+# Subtest: positive: cuttable consumable identity
+ok 226 - positive: cuttable consumable identity
+  ---
+  duration_ms: 4.295875
+  type: 'test'
+  ...
+# Subtest: positive: source-scoped inventory allocation
+ok 227 - positive: source-scoped inventory allocation
+  ---
+  duration_ms: 4.423708
+  type: 'test'
+  ...
+# Subtest: positive: variant-scoped allocation
+ok 228 - positive: variant-scoped allocation
+  ---
+  duration_ms: 4.120125
+  type: 'test'
+  ...
+# Subtest: positive: unresolved measurement has no numeric payload
+ok 229 - positive: unresolved measurement has no numeric payload
+  ---
+  duration_ms: 0.108
+  type: 'test'
+  ...
+# Subtest: positive: owned subelements are not supplied stock
+ok 230 - positive: owned subelements are not supplied stock
+  ---
+  duration_ms: 0.040083
+  type: 'test'
+  ...
+# Subtest: positive: blocker graph link closes
+ok 231 - positive: blocker graph link closes
+  ---
+  duration_ms: 4.665583
+  type: 'test'
+  ...
+# Subtest: positive: resolved conflict retains both source claims and rationale
+ok 232 - positive: resolved conflict retains both source claims and rationale
+  ---
+  duration_ms: 9.785458
+  type: 'test'
+  ...
+# Subtest: positive: known nominal synthetic measurement; no PiCar dimension
+ok 233 - positive: known nominal synthetic measurement; no PiCar dimension
+  ---
+  duration_ms: 16.944334
+  type: 'test'
+  ...
+# Subtest: positive: supersession impact includes transitive dependents
+ok 234 - positive: supersession impact includes transitive dependents
+  ---
+  duration_ms: 9.622584
+  type: 'test'
+  ...
+# Subtest: positive: all 29 planning steps and three variants retained
+ok 235 - positive: all 29 planning steps and three variants retained
+  ---
+  duration_ms: 0.364333
+  type: 'test'
+  ...
+# Subtest: positive: printed hardware arithmetic and separate physical BLOCKED
+ok 236 - positive: printed hardware arithmetic and separate physical BLOCKED
+  ---
+  duration_ms: 0.763833
+  type: 'test'
+  ...
+# Subtest: positive: mechanical input change deterministic, presentation alone excluded
+ok 237 - positive: mechanical input change deterministic, presentation alone excluded
+  ---
+  duration_ms: 40.301125
+  type: 'test'
+  ...
+# Subtest: positive: process maturity never promotes identity confidence
+ok 238 - positive: process maturity never promotes identity confidence
+  ---
+  duration_ms: 18.466083
+  type: 'test'
+  ...
+# Subtest: negative: unclassified hash input
+ok 239 - negative: unclassified hash input
+  ---
+  duration_ms: 1.012708
+  type: 'test'
+  ...
+# Subtest: negative: hash input direct cycle
+ok 240 - negative: hash input direct cycle
+  ---
+  duration_ms: 0.172916
+  type: 'test'
+  ...
+# Subtest: negative: hash input transitive cycle
+ok 241 - negative: hash input transitive cycle
+  ---
+  duration_ms: 0.121792
+  type: 'test'
+  ...
+# Subtest: negative: output as own input
+ok 242 - negative: output as own input
+  ---
+  duration_ms: 0.120333
+  type: 'test'
+  ...
+# Subtest: negative: downstream hash in upstream artifact
+ok 243 - negative: downstream hash in upstream artifact
+  ---
+  duration_ms: 0.120459
+  type: 'test'
+  ...
+# Subtest: negative: wrong source-scoped ribbon variant rejected
+ok 244 - negative: wrong source-scoped ribbon variant rejected
+  ---
+  duration_ms: 8.067708
+  type: 'test'
+  ...
+# Subtest: negative: two patches overlap same variant and step
+ok 245 - negative: two patches overlap same variant and step
+  ---
+  duration_ms: 6.019167
+  type: 'test'
+  ...
+# Subtest: negative: missing immutable method bytes
+ok 246 - negative: missing immutable method bytes
+  ---
+  duration_ms: 9.561958
+  type: 'test'
+  ...
+# Subtest: positive: model-input canonicalization is independent of registry array order and set order
+ok 247 - positive: model-input canonicalization is independent of registry array order and set order
+  ---
+  duration_ms: 22.141208
+  type: 'test'
+  ...
+# Subtest: positive: retrieval timestamps excluded from evidence identity
+ok 248 - positive: retrieval timestamps excluded from evidence identity
+  ---
+  duration_ms: 36.223042
+  type: 'test'
+  ...
+# Subtest: negative: duplicate fastener subtype definition
+ok 249 - negative: duplicate fastener subtype definition
+  ---
+  duration_ms: 8.080416
+  type: 'test'
+  ...
+# Subtest: negative: duplicate cable subtype definition
+ok 250 - negative: duplicate cable subtype definition
+  ---
+  duration_ms: 5.376292
+  type: 'test'
+  ...
+# Subtest: negative: integrated cable misclassified as loose stock
+ok 251 - negative: integrated cable misclassified as loose stock
+  ---
+  duration_ms: 5.852375
+  type: 'test'
+  ...
+# Subtest: negative: integrated cable endpoint on another owner
+ok 252 - negative: integrated cable endpoint on another owner
+  ---
+  duration_ms: 6.329417
+  type: 'test'
+  ...
+# Subtest: positive: integrated lead has owner-bound endpoint without extra stock
+ok 253 - positive: integrated lead has owner-bound endpoint without extra stock
+  ---
+  duration_ms: 4.786834
+  type: 'test'
+  ...
+# Subtest: negative: VERIFIED metric source lacks subject applicability
+ok 254 - negative: VERIFIED metric source lacks subject applicability
+  ---
+  duration_ms: 4.084375
+  type: 'test'
+  ...
+1..254
+# tests 254
+# suites 0
+# pass 254
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 717.863416

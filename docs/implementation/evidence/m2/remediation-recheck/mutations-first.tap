@@ -1,0 +1,532 @@
+TAP version 13
+# Subtest: reject: unsupported variant
+ok 1 - reject: unsupported variant
+  ---
+  duration_ms: 4.259667
+  type: 'test'
+  ...
+# Subtest: reject: missing printed step
+ok 2 - reject: missing printed step
+  ---
+  duration_ms: 88.83575
+  type: 'test'
+  ...
+# Subtest: reject: duplicated printed number
+ok 3 - reject: duplicated printed number
+  ---
+  duration_ms: 11.124666
+  type: 'test'
+  ...
+# Subtest: reject: empty filler step
+not ok 4 - reject: empty filler step
+  ---
+  duration_ms: 10.135042
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/mutations.test.mjs:18:39'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /EMPTY_STEP/. Input:
+    
+    'SCHEMA_AssemblyStep: data/operationIds must NOT have fewer than 1 items'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'SCHEMA_AssemblyStep: data/operationIds must NOT have fewer than 1 items'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/mutations.test.mjs:18:159)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: reject: duplicate typed graph ID
+ok 5 - reject: duplicate typed graph ID
+  ---
+  duration_ms: 9.421875
+  type: 'test'
+  ...
+# Subtest: reject: reversed step prerequisite
+ok 6 - reject: reversed step prerequisite
+  ---
+  duration_ms: 10.870208
+  type: 'test'
+  ...
+# Subtest: reject: wrong instance-qualified endpoint
+ok 7 - reject: wrong instance-qualified endpoint
+  ---
+  duration_ms: 17.144667
+  type: 'test'
+  ...
+# Subtest: reject: overlapping variant patches
+ok 8 - reject: overlapping variant patches
+  ---
+  duration_ms: 10.325667
+  type: 'test'
+  ...
+# Subtest: reject: discontiguous patch replacement
+ok 9 - reject: discontiguous patch replacement
+  ---
+  duration_ms: 10.662625
+  type: 'test'
+  ...
+# Subtest: reject: dangling branch operation
+ok 10 - reject: dangling branch operation
+  ---
+  duration_ms: 10.244209
+  type: 'test'
+  ...
+# Subtest: reject: active inactive intersection
+ok 11 - reject: active inactive intersection
+  ---
+  duration_ms: 10.588792
+  type: 'test'
+  ...
+# Subtest: reject: unknown patch instance
+ok 12 - reject: unknown patch instance
+  ---
+  duration_ms: 9.883334
+  type: 'test'
+  ...
+# Subtest: reject: foreign patch connection
+ok 13 - reject: foreign patch connection
+  ---
+  duration_ms: 9.775417
+  type: 'test'
+  ...
+# Subtest: reject: wrong selected board
+ok 14 - reject: wrong selected board
+  ---
+  duration_ms: 130.491666
+  type: 'test'
+  ...
+# Subtest: reject: S10 missing one screw
+ok 15 - reject: S10 missing one screw
+  ---
+  duration_ms: 1455.679875
+  type: 'test'
+  ...
+# Subtest: reject: S19 Washer B substitution
+ok 16 - reject: S19 Washer B substitution
+  ---
+  duration_ms: 15.50675
+  type: 'test'
+  ...
+# Subtest: reject: S19 wrong scoped servo zero
+ok 17 - reject: S19 wrong scoped servo zero
+  ---
+  duration_ms: 871.711125
+  type: 'test'
+  ...
+# Subtest: reject: S21 rigid weld replaces free pivot
+ok 18 - reject: S21 rigid weld replaces free pivot
+  ---
+  duration_ms: 1424.020042
+  type: 'test'
+  ...
+# Subtest: reject: S25 wrong handed identity
+ok 19 - reject: S25 wrong handed identity
+  ---
+  duration_ms: 12.752625
+  type: 'test'
+  ...
+# Subtest: reject: S25 duplicate upper pivot instead of A D G incidence
+ok 20 - reject: S25 duplicate upper pivot instead of A D G incidence
+  ---
+  duration_ms: 1436.4575
+  type: 'test'
+  ...
+# Subtest: reject: S26 five Washer B stack
+ok 21 - reject: S26 five Washer B stack
+  ---
+  duration_ms: 1426.936
+  type: 'test'
+  ...
+# Subtest: reject: S26 front rear wheel substitution
+ok 22 - reject: S26 front rear wheel substitution
+  ---
+  duration_ms: 13.344916
+  type: 'test'
+  ...
+# Subtest: reject: S27 steering front parent
+ok 23 - reject: S27 steering front parent
+  ---
+  duration_ms: 1426.738167
+  type: 'test'
+  ...
+# Subtest: reject: S27 wrong motor shaft role
+ok 24 - reject: S27 wrong motor shaft role
+  ---
+  duration_ms: 1424.456209
+  type: 'test'
+  ...
+# Subtest: reject: S29 wrong servo port role
+ok 25 - reject: S29 wrong servo port role
+  ---
+  duration_ms: 1440.242125
+  type: 'test'
+  ...
+# Subtest: reject: invented certified pin map
+not ok 26 - reject: invented certified pin map
+  ---
+  duration_ms: 10.090875
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/mutations.test.mjs:18:39'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /UNSUPPORTED_PIN_MAPPING/. Input:
+    
+    "SCHEMA_CableConnection: data/pinMapping must have required property 'pairs', data/pinMapping must have required property 'evidenceRefs', data/pinMapping must NOT have additional properties, data/pinMapping must have required property 'blockerIds', data/pinMapping must NOT have additional properties, data/pinMapping/state must be equal to constant, data/pinMapping must match exactly one schema in oneOf"
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: "SCHEMA_CableConnection: data/pinMapping must have required property 'pairs', data/pinMapping must have required property 'evidenceRefs', data/pinMapping must NOT have additional properties, data/pinMapping must have required property 'blockerIds', data/pinMapping must NOT have additional properties, data/pinMapping/state must be equal to constant, data/pinMapping must match exactly one schema in oneOf"
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/mutations.test.mjs:18:159)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: reject: ultrasonic conflict silently closed
+ok 27 - reject: ultrasonic conflict silently closed
+  ---
+  duration_ms: 1428.811917
+  type: 'test'
+  ...
+# Subtest: reject: wrong rule operand phase
+ok 28 - reject: wrong rule operand phase
+  ---
+  duration_ms: 12.608625
+  type: 'test'
+  ...
+# Subtest: reject: wrong rule target family
+ok 29 - reject: wrong rule target family
+  ---
+  duration_ms: 11.29525
+  type: 'test'
+  ...
+# Subtest: reject: dangling known solution
+ok 30 - reject: dangling known solution
+  ---
+  duration_ms: 11.518333
+  type: 'test'
+  ...
+# Subtest: reject: unresolved numeric payload sneaks in value
+ok 31 - reject: unresolved numeric payload sneaks in value
+  ---
+  duration_ms: 9.633708
+  type: 'test'
+  ...
+# Subtest: reject: duplicate introduction
+ok 32 - reject: duplicate introduction
+  ---
+  duration_ms: 8.53575
+  type: 'test'
+  ...
+# Subtest: reject: unstaged attachment
+ok 33 - reject: unstaged attachment
+  ---
+  duration_ms: 7.332875
+  type: 'test'
+  ...
+# Subtest: reject: undeclared installation neighbor
+ok 34 - reject: undeclared installation neighbor
+  ---
+  duration_ms: 7.08425
+  type: 'test'
+  ...
+# Subtest: reject: missing explicit fastener parent
+ok 35 - reject: missing explicit fastener parent
+  ---
+  duration_ms: 6.352792
+  type: 'test'
+  ...
+# Subtest: reject: concurrent double fastener use
+ok 36 - reject: concurrent double fastener use
+  ---
+  duration_ms: 7.971542
+  type: 'test'
+  ...
+# Subtest: reject: wrong ordered stack
+ok 37 - reject: wrong ordered stack
+  ---
+  duration_ms: 6.385333
+  type: 'test'
+  ...
+# Subtest: reject: rivet pin locks before body insertion
+ok 38 - reject: rivet pin locks before body insertion
+  ---
+  duration_ms: 8.429541
+  type: 'test'
+  ...
+# Subtest: reject: rivet pin is not an extra purchased item
+ok 39 - reject: rivet pin is not an extra purchased item
+  ---
+  duration_ms: 6.792875
+  type: 'test'
+  ...
+# Subtest: reject: duplicate owned element state
+ok 40 - reject: duplicate owned element state
+  ---
+  duration_ms: 5.020417
+  type: 'test'
+  ...
+# Subtest: reject: orphan physical stock
+ok 41 - reject: orphan physical stock
+  ---
+  duration_ms: 4.76725
+  type: 'test'
+  ...
+# Subtest: reject: simultaneous P11 occupants
+ok 42 - reject: simultaneous P11 occupants
+  ---
+  duration_ms: 10.382334
+  type: 'test'
+  ...
+# Subtest: reject: wrong qualified cable endpoint owner
+ok 43 - reject: wrong qualified cable endpoint owner
+  ---
+  duration_ms: 8.540792
+  type: 'test'
+  ...
+# Subtest: reject: wrong cable target port owner
+ok 44 - reject: wrong cable target port owner
+  ---
+  duration_ms: 8.078416
+  type: 'test'
+  ...
+# Subtest: reject: metric route without admitted solution
+ok 45 - reject: metric route without admitted solution
+  ---
+  duration_ms: 7.267875
+  type: 'test'
+  ...
+# Subtest: reject: duplicate consumable allocation
+ok 46 - reject: duplicate consumable allocation
+  ---
+  duration_ms: 7.824208
+  type: 'test'
+  ...
+# Subtest: reject: wrong consumable source lot
+ok 47 - reject: wrong consumable source lot
+  ---
+  duration_ms: 7.072583
+  type: 'test'
+  ...
+# Subtest: reject: consumable count cannot replace length
+ok 48 - reject: consumable count cannot replace length
+  ---
+  duration_ms: 8.207792
+  type: 'test'
+  ...
+# Subtest: reject: negative consumable amount
+ok 49 - reject: negative consumable amount
+  ---
+  duration_ms: 8.292666
+  type: 'test'
+  ...
+# Subtest: reject: apply without allocated piece
+ok 50 - reject: apply without allocated piece
+  ---
+  duration_ms: 8.209292
+  type: 'test'
+  ...
+# Subtest: reject: group parent membership mismatch
+ok 51 - reject: group parent membership mismatch
+  ---
+  duration_ms: 6.803584
+  type: 'test'
+  ...
+# Subtest: reject: nested group cycle
+ok 52 - reject: nested group cycle
+  ---
+  duration_ms: 5.254416
+  type: 'test'
+  ...
+# Subtest: reject: undeclared group cannot be invented
+ok 53 - reject: undeclared group cannot be invented
+  ---
+  duration_ms: 7.0355
+  type: 'test'
+  ...
+# Subtest: reject: undeclared joint DOF
+ok 54 - reject: undeclared joint DOF
+  ---
+  duration_ms: 7.307
+  type: 'test'
+  ...
+# Subtest: reject: wrong rotational coordinate unit
+ok 55 - reject: wrong rotational coordinate unit
+  ---
+  duration_ms: 8.559541
+  type: 'test'
+  ...
+# Subtest: reject: duplicate qualified joint coordinate
+ok 56 - reject: duplicate qualified joint coordinate
+  ---
+  duration_ms: 7.245458
+  type: 'test'
+  ...
+# Subtest: reject: missing scoped zero requirement
+ok 57 - reject: missing scoped zero requirement
+  ---
+  duration_ms: 8.263208
+  type: 'test'
+  ...
+# Subtest: reject: zero condition without P11 connection
+ok 58 - reject: zero condition without P11 connection
+  ---
+  duration_ms: 8.599208
+  type: 'test'
+  ...
+# Subtest: reject: backing removal cannot spend another owner element
+ok 59 - reject: backing removal cannot spend another owner element
+  ---
+  duration_ms: 7.678083
+  type: 'test'
+  ...
+# Subtest: reject: stale serialized undo
+ok 60 - reject: stale serialized undo
+  ---
+  duration_ms: 2.587042
+  type: 'test'
+  ...
+# Subtest: reject: non-top serialized undo
+ok 61 - reject: non-top serialized undo
+  ---
+  duration_ms: 2.803459
+  type: 'test'
+  ...
+# Subtest: reject: forged prior-state inverse
+ok 62 - reject: forged prior-state inverse
+  ---
+  duration_ms: 13.781791
+  type: 'test'
+  ...
+# Subtest: reject: hash-inconsistent state
+ok 63 - reject: hash-inconsistent state
+  ---
+  duration_ms: 1.796333
+  type: 'test'
+  ...
+# Subtest: reject: direct hash input cycle
+ok 64 - reject: direct hash input cycle
+  ---
+  duration_ms: 4.070209
+  type: 'test'
+  ...
+# Subtest: reject: transitive hash input cycle
+ok 65 - reject: transitive hash input cycle
+  ---
+  duration_ms: 0.899708
+  type: 'test'
+  ...
+# Subtest: reject: generated output as own input
+ok 66 - reject: generated output as own input
+  ---
+  duration_ms: 0.859958
+  type: 'test'
+  ...
+# Subtest: reject: unclassified graph input
+ok 67 - reject: unclassified graph input
+  ---
+  duration_ms: 0.860791
+  type: 'test'
+  ...
+# Subtest: reject: downstream pack identity used upstream
+not ok 68 - reject: downstream pack identity used upstream
+  ---
+  duration_ms: 0.893667
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/mutations.test.mjs:18:39'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /DOWNSTREAM_HASH_DEPENDENCY/. Input:
+    
+    'HASH_INPUT_CYCLE'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'HASH_INPUT_CYCLE'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/mutations.test.mjs:18:159)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: positive: explicit reused endpoint omission has no location write
+ok 69 - positive: explicit reused endpoint omission has no location write
+  ---
+  duration_ms: 12.286333
+  type: 'test'
+  ...
+# Subtest: positive: attachment can explicitly install one reused participant
+ok 70 - positive: attachment can explicitly install one reused participant
+  ---
+  duration_ms: 11.773625
+  type: 'test'
+  ...
+# Subtest: positive: integral lead connection and disconnection never promote owner
+ok 71 - positive: integral lead connection and disconnection never promote owner
+  ---
+  duration_ms: 22.874917
+  type: 'test'
+  ...
+# Subtest: positive: grouping tray members changes membership only
+ok 72 - positive: grouping tray members changes membership only
+  ---
+  duration_ms: 12.453666
+  type: 'test'
+  ...
+# Subtest: positive: known consumable capacity bound and overflow rejection
+ok 73 - positive: known consumable capacity bound and overflow rejection
+  ---
+  duration_ms: 16.59625
+  type: 'test'
+  ...
+# Subtest: positive: setJointReference full serialized fixture without invented production angle
+ok 74 - positive: setJointReference full serialized fixture without invented production angle
+  ---
+  duration_ms: 43.027875
+  type: 'test'
+  ...
+# Subtest: positive: authored order affects graph while set and appearance order does not
+ok 75 - positive: authored order affects graph while set and appearance order does not
+  ---
+  duration_ms: 56.295375
+  type: 'test'
+  ...
+# Subtest: positive: rule phases keep physical and engineering proof BLOCKED
+ok 76 - positive: rule phases keep physical and engineering proof BLOCKED
+  ---
+  duration_ms: 0.140542
+  type: 'test'
+  ...
+# Subtest: save exact mutation outcomes
+ok 77 - save exact mutation outcomes
+  ---
+  duration_ms: 0.382542
+  type: 'test'
+  ...
+1..77
+# tests 77
+# suites 0
+# pass 74
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14839.087291

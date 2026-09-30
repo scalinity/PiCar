@@ -29,7 +29,7 @@ export function identities(registry){return {schemaHash:H('schema',schemaInput()
 export function validateHashInputs(policy,{scan=true}={}){
  const edges=Object.fromEntries(policy.identities.map(i=>[i.name,i.dependsOn]));acyclic(edges,'HASH_INPUT_CYCLE');
  const stageByName=Object.fromEntries(policy.identities.map(i=>[i.name,i.stage]));
- for(const i of policy.identities){if(i.dependsOn.some(dep=>stageByName[dep]>i.stage))throw Error('DOWNSTREAM_HASH_DEPENDENCY');if(i.sourceFiles.includes(i.outputPath))throw Error('OUTPUT_AS_OWN_INPUT');}
+ for(const i of policy.identities){if(i.dependsOn.some(dep=>stageByName[dep]===undefined))throw Error('UNKNOWN_HASH_DEPENDENCY');if(i.dependsOn.some(dep=>stageByName[dep]>i.stage))throw Error('DOWNSTREAM_HASH_DEPENDENCY');if(i.sourceFiles.some(p=>[i.outputPath,...(i.outputPaths??[])].includes(p)))throw Error('OUTPUT_AS_OWN_INPUT');}
  const classified=new Set(policy.inputs.map(i=>i.path));
  if(classified.size!==policy.inputs.length)throw Error('DUPLICATE_HASH_CLASSIFICATION');
  for(const i of policy.inputs){if(!i.family||!i.projection||!i.stage||!['authored','generated'].includes(i.role))throw Error('UNCLASSIFIED_HASH_INPUT');if(i.role==='generated'&&i.hashKinds.some(k=>['schemaHash','evidenceHash','modelHash'].includes(k)))throw Error('OUTPUT_AS_OWN_INPUT');}
@@ -37,6 +37,7 @@ export function validateHashInputs(policy,{scan=true}={}){
  if(scan){const walk=p=>fs.readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(p,e.name)):[path.relative(twin,path.join(p,e.name))]);
   const actual=['schemas','components','evidence/records','evidence/conflicts'].flatMap(d=>walk(path.join(twin,d))).filter(p=>p.endsWith('.json'));actual.push('evidence/sources.lock.json');
   for(const p of actual)if(!classified.has(p))throw Error('UNCLASSIFIED_HASH_INPUT: '+p);
+  for(const dir of policy.m2ScanDirectories??[])for(const p of walk(path.join(twin,dir)).filter(p=>/\.(json|md|mjs|tap|txt)$/.test(p)))if(!classified.has(p))throw Error('UNCLASSIFIED_HASH_INPUT: '+p);
  }
  return true;
 }

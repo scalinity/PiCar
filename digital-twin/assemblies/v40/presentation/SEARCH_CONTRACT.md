@@ -1,0 +1,7 @@
+# M2 search destinations
+
+The closed `digital-twin/schemas/m2-search-index.schema.json` owns this additive contract. Each generated variant index binds its exact graphHash and contains all 29 ordered step results and all 159 accounted instance results, including reserves, accessories, tools, unresolved allocations and inactive board alternatives. Destination constructors are tagged data: assemblyStep names (variantId, stepId); assemblyPart names (variantId, instanceId). No filename, display name, DOM selector or renderer ID is a lookup key.
+
+A consumer validates the index schema, graph/variant identity, uniqueness, typed target ownership, step links, definition ownership and evidence closure before adopting it. Selection of an unused/accessory result must show its explicit disposition rather than imply installation. Local text matching may search label, canonical ID and source-backed role; equal rank is resolved by step number and then ASCII ID. Existing Reference page/section results and their ordering are retained by the later integration adapter. This milestone supplies data and destination contracts only; durable bookmarks, routes, UI and legacy reconciliation belong to M3.
+
+All source orientation, tool, cable, zeroing, camera and motion intent remains bound verbatim in steps/source-intents.json. Step warning/tool IDs are typed registries. Metric motion/camera/path instructions are not fabricated from textual intent: all metric geometry, exact frames and solution references remain unresolved. No private image bytes appear in these indexes.

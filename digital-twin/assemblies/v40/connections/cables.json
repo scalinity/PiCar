@@ -1,0 +1,532 @@
+[
+  {
+    "id": "PX-V40-CONN-03-PI4-RIBBON-PI",
+    "cableInstanceId": "PX-V40-INS-RIBBON-FFC-001",
+    "endpointLabel": "PX-V40-CP-RIBBON-FFC-END-A",
+    "targetInstanceId": "PX-V40-INS-PI4-001",
+    "connectionPointId": "PX-V40-CP-PI4-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-03-PI4-RIBBON-PI",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "blockerIds": [
+      "Q-09",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-07-COMMON-BATTERY",
+    "cableInstanceId": "PX-V40-INS-BATTERY-001",
+    "endpointLabel": "PX-V40-CP-BATTERY-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-BATTERY",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-07-COMMON-BATTERY",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-09",
+      "Q-11"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-11-FFC-RIBBON-CAMERA",
+    "cableInstanceId": "PX-V40-INS-RIBBON-FFC-001",
+    "endpointLabel": "PX-V40-CP-RIBBON-FFC-END-B",
+    "targetInstanceId": "PX-V40-INS-CAMERA-001",
+    "connectionPointId": "PX-V40-CP-CAMERA-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-11-FFC-RIBBON-CAMERA",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-18-COMMON-P11-TILT",
+    "cableInstanceId": "PX-V40-INS-SERVO-TILT-001",
+    "endpointLabel": "PX-V40-CP-SERVO-TILT-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-P11",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "temporaryZeroing",
+    "powerPrecondition": "onForZeroing",
+    "activationOperationId": "PX-V40-OP-18-COMMON-P11-TILT",
+    "deactivationOperationRef": {
+      "state": "known",
+      "ref": "PX-V40-OP-18-COMMON-P11-DISCONNECT"
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-19-COMMON-P11-PAN",
+    "cableInstanceId": "PX-V40-INS-SERVO-PAN-001",
+    "endpointLabel": "PX-V40-CP-SERVO-PAN-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-P11",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "temporaryZeroing",
+    "powerPrecondition": "onForZeroing",
+    "activationOperationId": "PX-V40-OP-19-COMMON-P11-PAN",
+    "deactivationOperationRef": {
+      "state": "known",
+      "ref": "PX-V40-OP-19-COMMON-P11-DISCONNECT"
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-22-COMMON-P11-STEERING",
+    "cableInstanceId": "PX-V40-INS-SERVO-STEERING-001",
+    "endpointLabel": "PX-V40-CP-SERVO-STEERING-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-P11",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "temporaryZeroing",
+    "powerPrecondition": "onForZeroing",
+    "activationOperationId": "PX-V40-OP-22-COMMON-P11-STEERING",
+    "deactivationOperationRef": {
+      "state": "known",
+      "ref": "PX-V40-OP-22-COMMON-P11-DISCONNECT"
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-12",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-28-COMMON-ULTRASONIC-SENSOR",
+    "cableInstanceId": "PX-V40-INS-CABLE-4PIN-001",
+    "endpointLabel": "PX-V40-CP-CABLE-4PIN-END-A",
+    "targetInstanceId": "PX-V40-INS-ULTRASONIC-001",
+    "connectionPointId": "PX-V40-CP-ULTRASONIC-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09",
+        "Q-08"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-28-COMMON-ULTRASONIC-SENSOR",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-28-COMMON-GRAYSCALE-SENSOR",
+    "cableInstanceId": "PX-V40-INS-CABLE-5PIN-001",
+    "endpointLabel": "PX-V40-CP-CABLE-5PIN-END-A",
+    "targetInstanceId": "PX-V40-INS-GRAYSCALE-001",
+    "connectionPointId": "PX-V40-CP-GRAYSCALE-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-28-COMMON-GRAYSCALE-SENSOR",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-PAN-FINAL",
+    "cableInstanceId": "PX-V40-INS-SERVO-PAN-001",
+    "endpointLabel": "PX-V40-CP-SERVO-PAN-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-P0",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-PAN-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-TILT-FINAL",
+    "cableInstanceId": "PX-V40-INS-SERVO-TILT-001",
+    "endpointLabel": "PX-V40-CP-SERVO-TILT-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-P1",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-TILT-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-STEERING-FINAL",
+    "cableInstanceId": "PX-V40-INS-SERVO-STEERING-001",
+    "endpointLabel": "PX-V40-CP-SERVO-STEERING-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-P2",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-STEERING-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-LEFT-FINAL",
+    "cableInstanceId": "PX-V40-INS-MOTOR-LEFT-001",
+    "endpointLabel": "PX-V40-CP-MOTOR-LEFT-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-MOTOR1",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-LEFT-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-RIGHT-FINAL",
+    "cableInstanceId": "PX-V40-INS-MOTOR-RIGHT-001",
+    "endpointLabel": "PX-V40-CP-MOTOR-RIGHT-CONNECTOR",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-MOTOR2",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-RIGHT-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-ULTRASONIC-FINAL",
+    "cableInstanceId": "PX-V40-INS-CABLE-4PIN-001",
+    "endpointLabel": "PX-V40-CP-CABLE-4PIN-END-B",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-ULTRASONIC",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09",
+        "Q-08"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-ULTRASONIC-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-29-COMMON-GRAYSCALE-FINAL",
+    "cableInstanceId": "PX-V40-INS-CABLE-5PIN-001",
+    "endpointLabel": "PX-V40-CP-CABLE-5PIN-END-B",
+    "targetInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+    "connectionPointId": "PX-V40-CP-ROBOT-HAT-GRAYSCALE",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-29-COMMON-GRAYSCALE-FINAL",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-03-PI5-RIBBON-PI",
+    "cableInstanceId": "PX-V40-INS-RIBBON-FPC-001",
+    "endpointLabel": "PX-V40-CP-RIBBON-FPC-END-A",
+    "targetInstanceId": "PX-V40-INS-PI5-001",
+    "connectionPointId": "PX-V40-CP-PI5-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-03-PI5-RIBBON-PI",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "blockerIds": [
+      "Q-09",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-11-FPC-RIBBON-CAMERA",
+    "cableInstanceId": "PX-V40-INS-RIBBON-FPC-001",
+    "endpointLabel": "PX-V40-CP-RIBBON-FPC-END-B",
+    "targetInstanceId": "PX-V40-INS-CAMERA-001",
+    "connectionPointId": "PX-V40-CP-CAMERA-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-11-FPC-RIBBON-CAMERA",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-CONN-03-ZERO2W-RIBBON-PI",
+    "cableInstanceId": "PX-V40-INS-RIBBON-FPC-001",
+    "endpointLabel": "PX-V40-CP-RIBBON-FPC-END-A",
+    "targetInstanceId": "PX-V40-INS-ZERO2W-001",
+    "connectionPointId": "PX-V40-CP-ZERO2W-CONNECTOR",
+    "pinMapping": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-09"
+      ]
+    },
+    "purpose": "permanent",
+    "powerPrecondition": "off",
+    "activationOperationId": "PX-V40-OP-03-ZERO2W-RIBBON-PI",
+    "deactivationOperationRef": {
+      "state": "notApplicable",
+      "reason": "Permanent connection remains active in final projection."
+    },
+    "routingState": "endpointConnected",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "blockerIds": [
+      "Q-09",
+      "Q-10"
+    ]
+  }
+]

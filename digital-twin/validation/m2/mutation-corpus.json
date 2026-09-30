@@ -1,0 +1,444 @@
+{
+  "status": "PASS",
+  "mutations": [
+    {
+      "name": "unsupported variant",
+      "expected": "UNSUPPORTED_VARIANT",
+      "actualReason": "UNSUPPORTED_VARIANT",
+      "status": "PASS"
+    },
+    {
+      "name": "missing printed step",
+      "expected": "PRINTED_STEP_ORDER",
+      "actualReason": "PRINTED_STEP_ORDER",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicated printed number",
+      "expected": "PRINTED_STEP_ORDER",
+      "actualReason": "PRINTED_STEP_ORDER",
+      "status": "PASS"
+    },
+    {
+      "name": "empty filler step",
+      "expected": "SCHEMA_AssemblyStep",
+      "actualReason": "SCHEMA_AssemblyStep: data/operationIds must NOT have fewer than 1 items",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate typed graph ID",
+      "expected": "DUPLICATE_TYPED_ID",
+      "actualReason": "DUPLICATE_TYPED_ID",
+      "status": "PASS"
+    },
+    {
+      "name": "reversed step prerequisite",
+      "expected": "STEP_PREREQUISITE",
+      "actualReason": "STEP_PREREQUISITE",
+      "status": "PASS"
+    },
+    {
+      "name": "missing initial lot declaration",
+      "expected": "INITIAL_LOT_DECLARATION",
+      "actualReason": "INITIAL_LOT_DECLARATION",
+      "status": "PASS"
+    },
+    {
+      "name": "initial stock capacity contradicts canonical lot",
+      "expected": "INITIAL_LOT_DECLARATION",
+      "actualReason": "INITIAL_LOT_DECLARATION",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong instance-qualified endpoint",
+      "expected": "ENDPOINT_OWNER",
+      "actualReason": "ENDPOINT_OWNER",
+      "status": "PASS"
+    },
+    {
+      "name": "overlapping variant patches",
+      "expected": "PATCH_OVERLAP",
+      "actualReason": "PATCH_OVERLAP",
+      "status": "PASS"
+    },
+    {
+      "name": "discontiguous patch replacement",
+      "expected": "NONCONTIGUOUS_PATCH",
+      "actualReason": "NONCONTIGUOUS_PATCH",
+      "status": "PASS"
+    },
+    {
+      "name": "dangling branch operation",
+      "expected": "PATCH_OPERATION",
+      "actualReason": "PATCH_OPERATION",
+      "status": "PASS"
+    },
+    {
+      "name": "active inactive intersection",
+      "expected": "VARIANT_OVERLAP",
+      "actualReason": "VARIANT_OVERLAP",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown patch instance",
+      "expected": "PATCH_INSTANCE",
+      "actualReason": "PATCH_INSTANCE",
+      "status": "PASS"
+    },
+    {
+      "name": "foreign patch connection",
+      "expected": "PATCH_CONNECTION",
+      "actualReason": "PATCH_CONNECTION",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong selected board",
+      "expected": "WRONG_BRANCH_INSTANCE|UNSTAGED_INSTALLATION|FINAL_INSTALLED_INVENTORY",
+      "actualReason": "WRONG_BRANCH_INSTANCE",
+      "status": "PASS"
+    },
+    {
+      "name": "S10 missing one screw",
+      "expected": "FINAL_INSTALLED_INVENTORY|S10_S23_SCREW_COUNTS",
+      "actualReason": "FINAL_INSTALLED_INVENTORY",
+      "status": "PASS"
+    },
+    {
+      "name": "S19 Washer B substitution",
+      "expected": "ENDPOINT_OWNER|S19_WASHER_A",
+      "actualReason": "ENDPOINT_OWNER",
+      "status": "PASS"
+    },
+    {
+      "name": "S19 wrong scoped servo zero",
+      "expected": "ZEROING_SCOPE",
+      "actualReason": "ZEROING_SCOPE",
+      "status": "PASS"
+    },
+    {
+      "name": "S21 rigid weld replaces free pivot",
+      "expected": "S21_FREE_PIVOT",
+      "actualReason": "S21_FREE_PIVOT",
+      "status": "PASS"
+    },
+    {
+      "name": "S25 wrong handed identity",
+      "expected": "ENDPOINT_OWNER|S25_HANDEDNESS",
+      "actualReason": "ENDPOINT_OWNER",
+      "status": "PASS"
+    },
+    {
+      "name": "S25 duplicate upper pivot instead of A D G incidence",
+      "expected": "S25_INCIDENCE",
+      "actualReason": "S25_INCIDENCE",
+      "status": "PASS"
+    },
+    {
+      "name": "S26 five Washer B stack",
+      "expected": "FINAL_INSTALLED_INVENTORY|S26_STACK",
+      "actualReason": "FINAL_INSTALLED_INVENTORY",
+      "status": "PASS"
+    },
+    {
+      "name": "S26 front rear wheel substitution",
+      "expected": "ENDPOINT_OWNER|S26_FRONT_IDENTITY",
+      "actualReason": "ENDPOINT_OWNER",
+      "status": "PASS"
+    },
+    {
+      "name": "S27 steering front parent",
+      "expected": "S27_TARGET",
+      "actualReason": "S27_TARGET",
+      "status": "PASS"
+    },
+    {
+      "name": "S27 wrong motor shaft role",
+      "expected": "S27_SHAFT",
+      "actualReason": "S27_SHAFT",
+      "status": "PASS"
+    },
+    {
+      "name": "S29 wrong servo port role",
+      "expected": "S29_PORT_ROLE",
+      "actualReason": "S29_PORT_ROLE",
+      "status": "PASS"
+    },
+    {
+      "name": "invented certified pin map",
+      "expected": "UNSUPPORTED_PIN_MAPPING",
+      "actualReason": "UNSUPPORTED_PIN_MAPPING",
+      "status": "PASS"
+    },
+    {
+      "name": "ultrasonic conflict silently closed",
+      "expected": "OPEN_CONFLICTS|SCHEMA",
+      "actualReason": "OPEN_CONFLICTS",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong rule operand phase",
+      "expected": "RULE_OPERAND_COMPARATOR_PHASE",
+      "actualReason": "RULE_OPERAND_COMPARATOR_PHASE",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong rule target family",
+      "expected": "RULE_TARGET_TYPE",
+      "actualReason": "RULE_TARGET_TYPE",
+      "status": "PASS"
+    },
+    {
+      "name": "printed designation promoted to exact OEM identity",
+      "expected": "SOURCE_SCOPE_PROMOTION",
+      "actualReason": "SOURCE_SCOPE_PROMOTION",
+      "status": "PASS"
+    },
+    {
+      "name": "PROBABLE source promoted through dependency",
+      "expected": "CONFIDENCE_PROMOTION",
+      "actualReason": "CONFIDENCE_PROMOTION",
+      "status": "PASS"
+    },
+    {
+      "name": "source limitation removed",
+      "expected": "SOURCE_LIMITATION_DROPPED",
+      "actualReason": "SOURCE_LIMITATION_DROPPED",
+      "status": "PASS"
+    },
+    {
+      "name": "dangling known solution",
+      "expected": "UNKNOWN_TYPED_REFERENCE",
+      "actualReason": "UNKNOWN_TYPED_REFERENCE",
+      "status": "PASS"
+    },
+    {
+      "name": "unresolved numeric payload sneaks in value",
+      "expected": "SCHEMA",
+      "actualReason": "SCHEMA_AssemblyOperation: data/payload/jointCoordinates/0/coordinate must have required property 'evidenceRefs', data/payload/jointCoordinates/0/coordinate must have required property 'uncertainty', data/payload/jointCoordinates/0/coordinate must NOT have additional properties, data/payload/jointCoordinates/0/coordinate/state must be equal to constant, data/payload/jointCoordinates/0/coordinate/confidence must be equal to one of the allowed values, data/payload/jointCoordinates/0/coordinate must NOT have additional properties, data/payload/jointCoordinates/0/coordinate must match exactly one schema in oneOf, data must match \"then\" schema",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate introduction",
+      "expected": "DUPLICATE_INTRODUCTION",
+      "actualReason": "DUPLICATE_INTRODUCTION",
+      "status": "PASS"
+    },
+    {
+      "name": "unstaged attachment",
+      "expected": "UNSTAGED_INSTALLATION",
+      "actualReason": "UNSTAGED_INSTALLATION",
+      "status": "PASS"
+    },
+    {
+      "name": "undeclared installation neighbor",
+      "expected": "INSTALLATION_PARTICIPANT",
+      "actualReason": "INSTALLATION_PARTICIPANT",
+      "status": "PASS"
+    },
+    {
+      "name": "missing explicit fastener parent",
+      "expected": "INSTALLATION_PARENT",
+      "actualReason": "INSTALLATION_PARENT",
+      "status": "PASS"
+    },
+    {
+      "name": "concurrent double fastener use",
+      "expected": "DOUBLE_FASTENER_USE",
+      "actualReason": "DOUBLE_FASTENER_USE",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong ordered stack",
+      "expected": "CONTACT_STACK",
+      "actualReason": "CONTACT_STACK",
+      "status": "PASS"
+    },
+    {
+      "name": "rivet pin locks before body insertion",
+      "expected": "RIVET_NOT_INSERTED",
+      "actualReason": "RIVET_NOT_INSERTED",
+      "status": "PASS"
+    },
+    {
+      "name": "rivet pin is not an extra purchased item",
+      "expected": "RIVET_PARTICIPANT|NOT_RIVET",
+      "actualReason": "RIVET_PARTICIPANT",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate owned element state",
+      "expected": "DUPLICATE_OWNED_ELEMENT",
+      "actualReason": "DUPLICATE_OWNED_ELEMENT",
+      "status": "PASS"
+    },
+    {
+      "name": "orphan physical stock",
+      "expected": "ORPHAN_INVENTORY",
+      "actualReason": "ORPHAN_INVENTORY",
+      "status": "PASS"
+    },
+    {
+      "name": "simultaneous P11 occupants",
+      "expected": "PORT_OCCUPANCY",
+      "actualReason": "PORT_OCCUPANCY",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong qualified cable endpoint owner",
+      "expected": "CABLE_ENDPOINT",
+      "actualReason": "CABLE_ENDPOINT",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong cable target port owner",
+      "expected": "PORT_OWNER",
+      "actualReason": "PORT_OWNER",
+      "status": "PASS"
+    },
+    {
+      "name": "metric route without admitted solution",
+      "expected": "METRIC_ROUTE_BLOCKED",
+      "actualReason": "METRIC_ROUTE_BLOCKED",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate consumable allocation",
+      "expected": "DUPLICATE_ALLOCATION",
+      "actualReason": "DUPLICATE_ALLOCATION",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong consumable source lot",
+      "expected": "PIECE_SOURCE_LOT",
+      "actualReason": "PIECE_SOURCE_LOT",
+      "status": "PASS"
+    },
+    {
+      "name": "consumable count cannot replace length",
+      "expected": "CONSUMABLE_UNIT",
+      "actualReason": "CONSUMABLE_UNIT",
+      "status": "PASS"
+    },
+    {
+      "name": "negative consumable amount",
+      "expected": "NEGATIVE_ALLOCATION",
+      "actualReason": "NEGATIVE_ALLOCATION",
+      "status": "PASS"
+    },
+    {
+      "name": "apply without allocated piece",
+      "expected": "MISSING_ALLOCATION",
+      "actualReason": "MISSING_ALLOCATION",
+      "status": "PASS"
+    },
+    {
+      "name": "group parent membership mismatch",
+      "expected": "GROUP_ASSIGNMENTS",
+      "actualReason": "GROUP_ASSIGNMENTS",
+      "status": "PASS"
+    },
+    {
+      "name": "nested group cycle",
+      "expected": "GROUP_CYCLE",
+      "actualReason": "GROUP_CYCLE",
+      "status": "PASS"
+    },
+    {
+      "name": "undeclared group cannot be invented",
+      "expected": "GROUP_ID",
+      "actualReason": "GROUP_ID",
+      "status": "PASS"
+    },
+    {
+      "name": "undeclared joint DOF",
+      "expected": "UNDECLARED_DOF",
+      "actualReason": "UNDECLARED_DOF",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong rotational coordinate unit",
+      "expected": "JOINT_UNIT",
+      "actualReason": "JOINT_UNIT",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate qualified joint coordinate",
+      "expected": "DUPLICATE_DOF",
+      "actualReason": "DUPLICATE_DOF",
+      "status": "PASS"
+    },
+    {
+      "name": "missing scoped zero requirement",
+      "expected": "MISSING_REQUIRED_CONDITION",
+      "actualReason": "MISSING_REQUIRED_CONDITION",
+      "status": "PASS"
+    },
+    {
+      "name": "zero condition without P11 connection",
+      "expected": "ZEROING_P11_REQUIRED",
+      "actualReason": "ZEROING_P11_REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "name": "backing removal cannot spend another owner element",
+      "expected": "OWNED_ROLE",
+      "actualReason": "OWNED_ROLE",
+      "status": "PASS"
+    },
+    {
+      "name": "stale serialized undo",
+      "expected": "STALE_UNDO",
+      "actualReason": "STALE_UNDO",
+      "status": "PASS"
+    },
+    {
+      "name": "non-top serialized undo",
+      "expected": "NON_TOP_UNDO",
+      "actualReason": "NON_TOP_UNDO",
+      "status": "PASS"
+    },
+    {
+      "name": "forged prior-state inverse",
+      "expected": "UNDO_BEFORE_STATE",
+      "actualReason": "UNDO_BEFORE_STATE",
+      "status": "PASS"
+    },
+    {
+      "name": "hash-inconsistent state",
+      "expected": "STATE_HASH",
+      "actualReason": "STATE_HASH",
+      "status": "PASS"
+    },
+    {
+      "name": "direct hash input cycle",
+      "expected": "HASH_INPUT_CYCLE",
+      "actualReason": "HASH_INPUT_CYCLE",
+      "status": "PASS"
+    },
+    {
+      "name": "transitive hash input cycle",
+      "expected": "HASH_INPUT_CYCLE",
+      "actualReason": "HASH_INPUT_CYCLE",
+      "status": "PASS"
+    },
+    {
+      "name": "generated output as own input",
+      "expected": "OUTPUT_AS_OWN_INPUT",
+      "actualReason": "OUTPUT_AS_OWN_INPUT",
+      "status": "PASS"
+    },
+    {
+      "name": "unclassified graph input",
+      "expected": "UNCLASSIFIED_HASH_INPUT",
+      "actualReason": "UNCLASSIFIED_HASH_INPUT: assemblies/v40/missing.json",
+      "status": "PASS"
+    },
+    {
+      "name": "downstream toolchain identity used upstream",
+      "expected": "DOWNSTREAM_HASH_DEPENDENCY",
+      "actualReason": "DOWNSTREAM_HASH_DEPENDENCY",
+      "status": "PASS"
+    }
+  ],
+  "rejected": 73
+}

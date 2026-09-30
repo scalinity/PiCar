@@ -1,0 +1,671 @@
+[
+  {
+    "id": "PX-V40-RULE-03-PI4-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-04-PI4-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-07-COMMON-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-11-FFC-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+    "predicate": "zeroingAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-SERVO-TILT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06",
+      "PX-V40-OP-18-COMMON-SPLINE"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+    "predicate": "zeroingAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-SERVO-PAN-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06",
+      "PX-V40-OP-19-COMMON-SPLINE"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+    "predicate": "zeroingAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-SERVO-STEERING-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06",
+      "PX-V40-OP-22-COMMON-SPLINE"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-28-COMMON-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-29-COMMON-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-06"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-03-PI5-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-04-PI5-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-11-FPC-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-05"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-03-ZERO2W-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  },
+  {
+    "id": "PX-V40-RULE-04-ZERO2W-POWER-OFF",
+    "predicate": "powerAcknowledgment",
+    "predicateVersion": 1,
+    "evaluationPhase": "physicalCommand",
+    "targetIds": [
+      "PX-V40-INS-ROBOT-HAT-001"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "User statement only; no sensed power, angle, electrical or geometry certification."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "comparator": "allTrue",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Procedure condition; no numeric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "required",
+    "invalidationDependencyIds": [
+      "PX-EV-PHOTO-04"
+    ],
+    "expected": {
+      "kind": "boolean",
+      "value": true
+    }
+  }
+]

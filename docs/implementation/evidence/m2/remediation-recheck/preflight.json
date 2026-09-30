@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "m0BaselineSha": "2a934710501d71aecbd8da827925c92e49378661",
+  "m1AcceptedSha": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+  "m2StartSha": "fd8e954eaf731af95cf117b8ea4227fab88a12c7",
+  "branch": "codex/m2-semantic-graph",
+  "checkedAtUtc": "2026-09-30T01:33:17.953Z",
+  "entryTrackedAndUntrackedStatus": "?? docs/implementation/HANDOFF_M2_REMEDIATION.md\n?? docs/implementation/M2_G_GRAPH_REPORT.json\n?? docs/implementation/M2_REPORT.md\n?? docs/implementation/evidence/m2/",
+  "verifierOrigin": "Inspected prior diagnostic verifier; new invocation and receipt, original diagnostics preserved.",
+  "descendantClassification": "One documentation-only receipt: HANDOFF_M2.md added; M1_REPORT.md acceptance receipt appended.",
+  "reportRawSha256": "ddbdad1c00372e670b674bbc6d6bf2170b6f2b0d08a034b715e522029b644f0f",
+  "identities": {
+    "schemaHash": "efc43a7ae4126687d5b0dadaf924494af619ffa1a3072323960e6ea75fbcf487",
+    "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+    "modelHash": "0764cf8879767dbc31ae1b780ace239da88a6febf69ee51b0841dbac3df7c82a"
+  },
+  "m0MandatoryGates": [
+    {
+      "id": "A",
+      "status": "PASS"
+    },
+    {
+      "id": "B",
+      "status": "PASS"
+    },
+    {
+      "id": "C",
+      "status": "PASS"
+    },
+    {
+      "id": "D",
+      "status": "PASS"
+    },
+    {
+      "id": "E",
+      "status": "PASS"
+    },
+    {
+      "id": "F",
+      "status": "PASS"
+    },
+    {
+      "id": "G",
+      "status": "PASS"
+    }
+  ],
+  "m1Allowed": true,
+  "acceptedBindings": {
+    "files": 124,
+    "byteLengthMismatches": 0,
+    "rawHashMismatches": 0,
+    "acceptedCommitByteMismatches": 0
+  },
+  "m0Manifest": {
+    "files": 388,
+    "mismatches": 0
+  },
+  "specificationAllocation": {
+    "files": 118,
+    "privateBinaryFiles": 9,
+    "mismatches": 0,
+    "originalArchiveVerified": true
+  },
+  "documentarySource": {
+    "panels": 29,
+    "variants": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "pdfRawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "pdfGitBlobSha1": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+    "sourceLockRawSha256": "3f715ec18946e022a1b5633a15e3b3ae3d31576e1fa378d77c375d61c291b06e"
+  },
+  "privacy": {
+    "localFiles": 10,
+    "ignoredFiles": 10,
+    "trackedFiles": 0,
+    "stagedFiles": 0,
+    "publicCopies": 0,
+    "ignoreRules": [
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/crops/hardware-crop.png",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/crops/s04-pi45-crop.png",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/crops/s04-zero-crop.png",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/originals/01_IMG_0526.jpeg",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/originals/02_IMG_0527.jpeg",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/originals/03_IMG_0528.jpeg",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/originals/04_IMG_0529.jpeg",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/originals/05_IMG_0530.jpeg",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-audit-v2/originals/06_IMG_0531.jpeg",
+      ".gitignore:71:/digital-twin/evidence/private/\tdigital-twin/evidence/private/spec-packages/PiCar-X-Z0104V40-Implementation-Spec-AUDITED.zip"
+    ]
+  },
+  "sourceBindings": [
+    {
+      "path": "docs/implementation/M1_G_DATA_REPORT.json",
+      "rawSha256": "ddbdad1c00372e670b674bbc6d6bf2170b6f2b0d08a034b715e522029b644f0f",
+      "byteLength": 30477
+    },
+    {
+      "path": "M0_GATE_REPORT.json",
+      "rawSha256": "881e499d6d0321377233630da21d0dbea2c5d76c667390e950a88a79372c2a24",
+      "byteLength": 4498
+    },
+    {
+      "path": "docs/implementation/M0_CHECKPOINT_VERIFICATION.json",
+      "rawSha256": "ee6d07c92f199b248e048b05b4e4770c8ef338036e97fc523c596b3344979d64",
+      "byteLength": 2233
+    },
+    {
+      "path": "docs/digital-twin/SEMANTIC_CONTRACT.md",
+      "rawSha256": "82969ee52a7adb9593158a0089d7d51c9fb2bd069020be90d7f22629ec2b8f13",
+      "byteLength": 14708
+    },
+    {
+      "path": "docs/digital-twin/V40_ASSEMBLY_LEDGER.md",
+      "rawSha256": "65e66d256d53fad48e086d44f99b8a91492f722734037d20a125660077a7657a",
+      "byteLength": 37909
+    },
+    {
+      "path": "docs/digital-twin/GATE_CONTRACTS.md",
+      "rawSha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad",
+      "byteLength": 10265
+    },
+    {
+      "path": "digital-twin/schemas/digital-twin.schema.json",
+      "rawSha256": "075dda03f82851b24566e22e121b246f9cd3273de058ddafbaea86033480e1c4",
+      "byteLength": 161617
+    },
+    {
+      "path": "digital-twin/components/definitions/parts.json",
+      "rawSha256": "26989c518f0d234728af4527310d334b23855f7bb9e09c17eb8722febf3dffb0",
+      "byteLength": 46852
+    },
+    {
+      "path": "digital-twin/components/definitions/fasteners.json",
+      "rawSha256": "ebcb057b4e52470c67840e0f714dbe99731b0b154da616db83e3023363a7c69a",
+      "byteLength": 24529
+    },
+    {
+      "path": "digital-twin/components/instances/planned-stock.json",
+      "rawSha256": "9dc38dc8bac4b829d02e6d662c1391afb0e423bfc3efcc02415d869dbf51dec1",
+      "byteLength": 112035
+    }
+  ],
+  "scope": "Upstream M0/M1 verification only; no compiled M2 graph or M2 replay/inverse acceptance."
+}

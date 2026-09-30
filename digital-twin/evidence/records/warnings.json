@@ -21,5 +21,753 @@
     "blockerIds": [
       "Q-08"
     ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-01",
+    "severity": "caution",
+    "text": "Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-02",
+    "severity": "caution",
+    "text": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-10",
+      "Q-14"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-03",
+    "severity": "caution",
+    "text": "Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-09",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-04",
+    "severity": "caution",
+    "text": "No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-07",
+      "Q-09",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-05",
+    "severity": "caution",
+    "text": "Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-04",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-06",
+    "severity": "caution",
+    "text": "Hook on battery, loop on chassis underside as printed.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-11"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-07",
+    "severity": "caution",
+    "text": "Connector orientation must match its keyed interface; connected does not mean switch ON.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-09",
+      "Q-11"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-08",
+    "severity": "caution",
+    "text": "Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-09",
+    "severity": "caution",
+    "text": "Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-08"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-10",
+    "severity": "caution",
+    "text": "Supports extend under the front car. This is printed step 10, not step 11.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-11",
+    "severity": "caution",
+    "text": "Follow the printed blue-plastic-side orientation at the camera itself; source inset remains available.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-12",
+    "severity": "caution",
+    "text": "Lens faces outward through the intended opening; ribbon remains connected and untrapped.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-08",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-13",
+    "severity": "caution",
+    "text": "Horn on the printed side of C; do not mirror it or assume it is the same arm shape as steering.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-14",
+    "severity": "caution",
+    "text": "Servo wire exits on the side shown in panel 14. Label the physical role Pan.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-15",
+    "severity": "caution",
+    "text": "Wire exit follows panel 15; preserve distinct pan and tilt role labels.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-16",
+    "severity": "caution",
+    "text": "The ribbon passes through the printed gap rather than outside the future articulation path.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-17",
+    "severity": "caution",
+    "text": "Use the exact depicted HAT interface when applicable; do not infer actual board revision from this drawing.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-05",
+      "Q-07"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-18",
+    "severity": "caution",
+    "text": "Middle/zero orientation as printed; do not force an arbitrary horn index.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-19",
+    "severity": "caution",
+    "text": "Pan zero orientation and large-bore Washer A correspond to the printed callout.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-20",
+    "severity": "caution",
+    "text": "Wire exits on the printed side; label this instance Steering.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-21",
+    "severity": "caution",
+    "text": "Do not overtighten: printed instruction explicitly requires free rotation between G and the horn.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-22",
+    "severity": "caution",
+    "text": "Nominal steering center as printed; distinguish spline fixation from the separate G pivot.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-23",
+    "severity": "caution",
+    "text": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-24",
+    "severity": "caution",
+    "text": "Sensor and connector orientation must match panel 24 and expose the sensing face toward the intended ground-facing work area.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-08"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-25",
+    "severity": "caution",
+    "text": "E is robot-right and F robot-left; viewed from in front, E appears on the viewer left. Do not create mirrored copies without geometry evidence.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-26",
+    "severity": "caution",
+    "text": "Use small-bore Washer B, not A. Remove protective paper as the panel instructs; distinguish the removed backing from washer material.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-27",
+    "severity": "caution",
+    "text": "Rear-wheel definition and hub orientation must match the motor-shaft arrangement. Do not reuse front-wheel geometry just because diameter looks similar.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-04",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-28",
+    "severity": "caution",
+    "text": "Keying/contact orientation from each exact connector; cable color is supplementary evidence, not definitive pin mapping.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-STEP-29",
+    "severity": "caution",
+    "text": "Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "metricMotion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-WARN-ZERO2W-HEADER",
+    "severity": "critical",
+    "text": "Zero2W GPIO header readiness and supplied microphone compatibility remain unresolved under Q-14. No header or adapter installation is inferred; reference projection does not authorize physical electrical completion.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "physicalCompletion",
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-14"
+    ]
   }
 ]

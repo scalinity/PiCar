@@ -1,0 +1,1679 @@
+{
+  "contractVersion": 2,
+  "gate": "G-GRAPH",
+  "milestone": "M2",
+  "status": "PASS",
+  "scope": "All 29 printed Z0104V40 steps across exactly rpi4, rpi5 and rpi-zero-2-w; digital reference semantics only.",
+  "m0BaselineSha": "2a934710501d71aecbd8da827925c92e49378661",
+  "m1AcceptedSha": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+  "m2StartSha": "fd8e954eaf731af95cf117b8ea4227fab88a12c7",
+  "branch": "codex/m2-semantic-graph",
+  "baselineIdentities": {
+    "schemaHash": "efc43a7ae4126687d5b0dadaf924494af619ffa1a3072323960e6ea75fbcf487",
+    "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+    "modelHash": "0764cf8879767dbc31ae1b780ace239da88a6febf69ee51b0841dbac3df7c82a",
+    "sourceLockRawSha256": "3f715ec18946e022a1b5633a15e3b3ae3d31576e1fa378d77c375d61c291b06e",
+    "semanticValidatorRawSha256": "c4488f9c37f437d8bd226c0a43a5fa795702a6cc6ec3481659d8032f4fb42609",
+    "hashPolicyRawSha256": "19530138a14bf148a03d7c1bc55985ab4490efde78d34a08e79209d35f6fcadd",
+    "vectorsRawSha256": "653c300d75185a402a451dcb85a85e9cb6bbbea8841297dfe00d3a40ba66a9da"
+  },
+  "identities": {
+    "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+    "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+    "sourceLockRawSha256": "3f715ec18946e022a1b5633a15e3b3ae3d31576e1fa378d77c375d61c291b06e",
+    "semanticValidatorRawSha256": "980749983845369e24d77b7aad22774012ac480f2668319ab0ddb3c8589b931b",
+    "hashPolicyRawSha256": "a799b9b5161c1cee501a7667ac56e8ca4466172b876fb832e9b3ae1be3649c62",
+    "compilerRawSha256": "e09f7a90f5618ca24bfe16436e4b69ac418f0a2f4dde9e5f452f09c1d2248ed0",
+    "reducerRawSha256": "48a2cc4e5919cbb784c6a7fed314ba6b1829c16337b7398dc99ffffb382dee4d",
+    "gatePolicyRawSha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad"
+  },
+  "upstreamAdoption": {
+    "path": "digital-twin/validation/m2/adopted-g-data.json",
+    "rawSha256": "e884e72364851b91f67921359cdc9b7ad610df8472a62f689fda874d2fbf7485"
+  },
+  "contractRevision": {
+    "id": "PX-V40-CONTRACT-LOCATION-01",
+    "path": "docs/digital-twin/SEMANTIC_LOCATION_REVISION.md",
+    "rawSha256": "9906beba00637ca051f43b05c38112e6a9dbded51ec575cdb14cd51d459bfd3a",
+    "authority": "Explicit project-owner instruction received 2026-09-29 America/New_York; prospective M2 revision only",
+    "supersedes": "Original section 3 location effects only; accepted M1 objects and original audited package preserved"
+  },
+  "checks": [
+    {
+      "id": "G-DATA-ADOPTION",
+      "status": "PASS"
+    },
+    {
+      "id": "ALL-29-X-3",
+      "status": "PASS"
+    },
+    {
+      "id": "ALL-564-SERIALIZED-UNDO",
+      "status": "PASS"
+    },
+    {
+      "id": "ALL-87-STEP-BOUNDARIES",
+      "status": "PASS"
+    },
+    {
+      "id": "ALL-567-PREFIXES",
+      "status": "PASS"
+    },
+    {
+      "id": "FRESH-PROCESS-REPLAY",
+      "status": "PASS"
+    },
+    {
+      "id": "REVERSE-TO-INITIAL",
+      "status": "PASS"
+    },
+    {
+      "id": "17-ATOMIC-TAGS",
+      "status": "PASS"
+    },
+    {
+      "id": "TYPED-REFERENCE-CLOSURE",
+      "status": "PASS"
+    },
+    {
+      "id": "VARIANT-PATCHES",
+      "status": "PASS"
+    },
+    {
+      "id": "159-INSTANCE-61-LOT-INVENTORY",
+      "status": "PASS"
+    },
+    {
+      "id": "OWNED-ELEMENTS",
+      "status": "PASS"
+    },
+    {
+      "id": "SYMBOLIC-CONSUMABLES",
+      "status": "PASS"
+    },
+    {
+      "id": "S21-FREE-DOF",
+      "status": "PASS"
+    },
+    {
+      "id": "S25-HANDEDNESS-INCIDENCE",
+      "status": "PASS"
+    },
+    {
+      "id": "S26-SIX-WASHER-B",
+      "status": "PASS"
+    },
+    {
+      "id": "S27-EXPLICIT-REAR-DRIVE",
+      "status": "PASS"
+    },
+    {
+      "id": "P11-EXCLUSIVE-NO-FINAL",
+      "status": "PASS"
+    },
+    {
+      "id": "FINAL-PORT-ROLES",
+      "status": "PASS"
+    },
+    {
+      "id": "CONDITION-SEPARATION",
+      "status": "PASS"
+    },
+    {
+      "id": "UNKNOWN-FIREWALL",
+      "status": "PASS"
+    },
+    {
+      "id": "HASH-PREIMAGES-CLASSIFICATION",
+      "status": "PASS"
+    },
+    {
+      "id": "SEARCH-CONTRACT",
+      "status": "PASS"
+    },
+    {
+      "id": "REGRESSION",
+      "status": "PASS"
+    },
+    {
+      "id": "PRIVACY-PRESERVATION",
+      "status": "PASS"
+    }
+  ],
+  "testCounts": {
+    "m1Original": 253,
+    "newSearchSchemaMeta": 1,
+    "m1Current": 254,
+    "companionUnit": 40,
+    "m2": 114,
+    "m2RejectingMutants": 73,
+    "sourceUsedOperationFamilies": 16,
+    "supportedOperationFamilies": 17,
+    "serializedOperationRounds": 564,
+    "operationPrefixesIncludingInitials": 567,
+    "stepBoundaries": 87,
+    "crossLanguageAcceptedPerLanguage": 7,
+    "crossLanguageRejectedPerLanguage": 16
+  },
+  "variants": [
+    {
+      "variantId": "rpi4",
+      "steps": 29,
+      "operations": 189,
+      "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+      "graphInput": {
+        "path": "digital-twin/validation/m2/rpi4/graph-input.json",
+        "rawSha256": "47f9eac8e5734f0ca8bbf010f74876b366ed612b70e09728f231986e149e2c79",
+        "byteLength": 1236519
+      },
+      "compiledGraph": {
+        "path": "digital-twin/validation/m2/rpi4/compiled-graph.json",
+        "rawSha256": "b6d39dca86efd9fdb3fbaa5a1ac5054bc12ff4ff8bbbfc929a3787761591b17b",
+        "byteLength": 636669
+      },
+      "initialState": {
+        "path": "digital-twin/validation/m2/rpi4/initial-state.json",
+        "rawSha256": "7240ec875efb77e7d59f1ac1566efde1f863e4c624aae378bd91b26a283db867",
+        "byteLength": 78469
+      },
+      "finalState": {
+        "path": "digital-twin/validation/m2/rpi4/final-state.json",
+        "rawSha256": "38fbb7221dea7e6cb5d9a8658ef6ec8e02af88645f4044a577557e365a4e3d2c",
+        "byteLength": 103497
+      },
+      "prefixes": {
+        "path": "digital-twin/validation/m2/rpi4/expected-prefixes.json",
+        "rawSha256": "ef305abe35ef71c0d781560b617d82717804e29e8baf5839435260f065451f6e",
+        "byteLength": 103749
+      },
+      "freshProcess": {
+        "path": "digital-twin/validation/m2/rpi4/fresh-replay.json",
+        "rawSha256": "1eb3df38c43ffd593cc94514cb4b04398be6f6a1384d5003916ff616e0c218b3",
+        "byteLength": 215579
+      },
+      "inventory": {
+        "path": "digital-twin/validation/m2/rpi4/inventory-proof.json",
+        "rawSha256": "ea1e94c259b7ef6454b138e4bf13a3cad62cc687ed18ca2b3f423d517c7dd058",
+        "byteLength": 6070
+      },
+      "referenceIndex": {
+        "path": "digital-twin/validation/m2/rpi4/typed-reference-index.json",
+        "rawSha256": "64754f8f41a8069c02a4a6f3891aeb6c7e84a39b6e7b77223c998c61c9038131",
+        "byteLength": 127770
+      },
+      "searchIndex": {
+        "path": "digital-twin/validation/m2/rpi4/search-index.json",
+        "rawSha256": "a63db82dba185298c3c5bc4546956d3ce126b180f5b188f6861296961eb14f1b",
+        "byteLength": 85835
+      },
+      "initialStateHash": "eace83fe6b2ee0700e3129f7a1b85127f1e6491c03b65f916440ef8bb083d82d",
+      "initialStockDispositionHash": "e50f6738c435b622bd40e1628550f9a09c64a34a49943c5e0a419ead4f30ae8c",
+      "finalStateHash": "bc39de5cf7a0d5808d575ccd857840a3edb71106c098ec86aa5be6e6a6052222",
+      "finalStockDispositionHash": "745d32dd96c057a15598d6d832069298a7408a09df147821bc660c9827849db1",
+      "prefixCount": 190,
+      "serializedUndoRounds": 189,
+      "installedPrinted": 72
+    },
+    {
+      "variantId": "rpi5",
+      "steps": 29,
+      "operations": 189,
+      "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+      "graphInput": {
+        "path": "digital-twin/validation/m2/rpi5/graph-input.json",
+        "rawSha256": "049494a3ea9fe63f762e913bbcefc6eb57434e72caf0f5ffd6dbb84e21237766",
+        "byteLength": 1236519
+      },
+      "compiledGraph": {
+        "path": "digital-twin/validation/m2/rpi5/compiled-graph.json",
+        "rawSha256": "832c7b4cda68a069574f5555a6ad5969224ab35565dab79c91125bf8fd5eb82b",
+        "byteLength": 636669
+      },
+      "initialState": {
+        "path": "digital-twin/validation/m2/rpi5/initial-state.json",
+        "rawSha256": "3d2440f5fd713c89c98084ebc3d0cb81021b8409e6df54d2309beb4369f3f14b",
+        "byteLength": 78469
+      },
+      "finalState": {
+        "path": "digital-twin/validation/m2/rpi5/final-state.json",
+        "rawSha256": "a4edc0c96ada82b9f53af8500ba25632b44685b2bea61269329a762dda9581f8",
+        "byteLength": 103497
+      },
+      "prefixes": {
+        "path": "digital-twin/validation/m2/rpi5/expected-prefixes.json",
+        "rawSha256": "f9cc5ff475920c37e26dc110220bb22d7d88e005fef2d2b9c6bc019b8fffa2d1",
+        "byteLength": 103749
+      },
+      "freshProcess": {
+        "path": "digital-twin/validation/m2/rpi5/fresh-replay.json",
+        "rawSha256": "8f916efd068a7e09f6a54cf8ab6c96819e6a8c8c0330c4b42f409766159cb579",
+        "byteLength": 215579
+      },
+      "inventory": {
+        "path": "digital-twin/validation/m2/rpi5/inventory-proof.json",
+        "rawSha256": "74fa8d2c3880b0f7a1697c2505cf80098f72377a8f7cdc43217a81b0c5b8e237",
+        "byteLength": 6070
+      },
+      "referenceIndex": {
+        "path": "digital-twin/validation/m2/rpi5/typed-reference-index.json",
+        "rawSha256": "37a292da6b22d0bdc79b3221566c8c781772771cb8168af6a251c4fb35722657",
+        "byteLength": 127770
+      },
+      "searchIndex": {
+        "path": "digital-twin/validation/m2/rpi5/search-index.json",
+        "rawSha256": "c2036f2f990a1642d08c91d65d127d3e316cfb695e4024a0f681fd1456b65cc1",
+        "byteLength": 85835
+      },
+      "initialStateHash": "185340058c10b04453c17a4a6a65f83e4827aad4924a4ae9a2cbde019385c537",
+      "initialStockDispositionHash": "cc659a165c42c0e7505751a8b3ec82444aad1249c4ed9c1b69b422333ac6ffb9",
+      "finalStateHash": "f79802f57251f3bb8b574cf6dbc5f93aef96d051f422c4721608312deec163e1",
+      "finalStockDispositionHash": "0da46646d30907be152648ab92fd2a0f1ceafd95cc95dfae08901b88e5c0a7b0",
+      "prefixCount": 190,
+      "serializedUndoRounds": 189,
+      "installedPrinted": 72
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "steps": 29,
+      "operations": 186,
+      "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+      "graphInput": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/graph-input.json",
+        "rawSha256": "585aeb5104f6bd33435a2b8557ed43b74b528385a4a0f7463f3674dd64ad4c9d",
+        "byteLength": 1228522
+      },
+      "compiledGraph": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json",
+        "rawSha256": "257e045b191fdff4ec7b04565c17d73231af3efc1f1cf47e837b9b928584f91e",
+        "byteLength": 627180
+      },
+      "initialState": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/initial-state.json",
+        "rawSha256": "16cce54e67c2b15ca2efb5165e647fd46253bfe6ab2818ef91cfd286c138d0c7",
+        "byteLength": 78485
+      },
+      "finalState": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/final-state.json",
+        "rawSha256": "e7b960e6b3856fe89d8826711f473b50d588f0a1064fbb69f8e28827470f99ec",
+        "byteLength": 103054
+      },
+      "prefixes": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/expected-prefixes.json",
+        "rawSha256": "eb8a4875657864833ebb6773261c5b42c81739b5cb5cfb1e5524566ffe900f14",
+        "byteLength": 102416
+      },
+      "freshProcess": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/fresh-replay.json",
+        "rawSha256": "50d5b63b9fc03437a024b2fd46a432e57d9dc0fe47db7d1581c5dfbfcdd32ac1",
+        "byteLength": 213779
+      },
+      "inventory": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/inventory-proof.json",
+        "rawSha256": "fd765fc675becf31fa8f167740c740f54741e9f8719e84cd53fbb3fb7feccc69",
+        "byteLength": 5959
+      },
+      "referenceIndex": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/typed-reference-index.json",
+        "rawSha256": "f2232371a4fb38bcb948c05672161652f7c14acd5be393c115aa2b63e3e45d66",
+        "byteLength": 126967
+      },
+      "searchIndex": {
+        "path": "digital-twin/validation/m2/rpi-zero-2-w/search-index.json",
+        "rawSha256": "9a967d09f5fd61f9463f55bff93976f47026d6012fe8a836e79575ed8fc99ca0",
+        "byteLength": 87186
+      },
+      "initialStateHash": "a73e2333cee75aed0be9ce81f9d2ddfe10cf13e444b731d516cbde8621c8d93f",
+      "initialStockDispositionHash": "dfe3d609a8d5d47dfcbf750042d8e8d3fe7539c94ac6e1c15ba17067989c7e4b",
+      "finalStateHash": "565d8f849b6c8e258c2c150f459f4423dc9ed3485d66fe512668394d1b5997fe",
+      "finalStockDispositionHash": "f1da6a85518dae29dcac63974e3faa604fe8fba5aae9a5199fc799a03a12964e",
+      "prefixCount": 187,
+      "serializedUndoRounds": 186,
+      "installedPrinted": 70
+    }
+  ],
+  "commands": {
+    "regression": "docs/implementation/evidence/m2/remediation-recheck/final-regression-commands.json",
+    "m2TestCommand": [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "digital-twin/validation/m2/tests/contracts.test.mjs",
+      "digital-twin/validation/m2/tests/mutations.test.mjs",
+      "digital-twin/validation/m2/tests/replay.test.mjs"
+    ],
+    "m2TestExitCode": 0,
+    "m2TestLog": "docs/implementation/evidence/m2/remediation-recheck/final-m2-tests-v4.tap",
+    "hashConformanceCommand": [
+      "node",
+      "digital-twin/tools/compiler/hash-conformance.mjs"
+    ],
+    "hashConformanceExitCode": 0
+  },
+  "sourceLock": {
+    "contractVersion": 2,
+    "m0BaselineSha": "2a934710501d71aecbd8da827925c92e49378661",
+    "m0GateReport": {
+      "state": "available",
+      "path": "M0_GATE_REPORT.json",
+      "sha256": "881e499d6d0321377233630da21d0dbea2c5d76c667390e950a88a79372c2a24",
+      "byteLength": 4498,
+      "mediaType": "application/json"
+    },
+    "documentaryLock": {
+      "state": "available",
+      "path": "picarx-companion/tools/content-pipeline/documentation-source-lock.json",
+      "sha256": "8ca58014ece62abf765ebdbd767d72611d69eaac39440e06b78769505fd6d0b3",
+      "byteLength": 16644,
+      "mediaType": "application/json"
+    },
+    "kitRevision": "Z0104V40",
+    "pdfRawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "pdfGitBlobSha1": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+    "sourceEvidenceIds": [
+      "PX-EV-DOC-CAMERA",
+      "PX-EV-DOC-HAT",
+      "PX-EV-DOC-ULTRASONIC",
+      "PX-EV-M0-SOURCE-LOCK",
+      "PX-EV-PHOTO-01",
+      "PX-EV-PHOTO-02",
+      "PX-EV-PHOTO-03",
+      "PX-EV-PHOTO-04",
+      "PX-EV-PHOTO-05",
+      "PX-EV-PHOTO-06",
+      "PX-EV-V40-PDF",
+      "PX-EV-W01",
+      "PX-EV-W02",
+      "PX-EV-W03",
+      "PX-EV-W04",
+      "PX-EV-W05",
+      "PX-EV-W06",
+      "PX-EV-W07",
+      "PX-EV-W08",
+      "PX-EV-W09",
+      "PX-EV-W10",
+      "PX-EV-W11",
+      "PX-EV-W12",
+      "PX-EV-W13",
+      "PX-EV-W14",
+      "PX-EV-W15",
+      "PX-EV-W16"
+    ],
+    "packageRawSha256": "7a01cc81d68e2a12c641e9d3dfe0b00636476dee1df8de17e442cc127178b411",
+    "planningSeed": {
+      "state": "available",
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/v40-step-seed.json",
+      "sha256": "f9d90846627c658ef1856cb880eb140f5525c9f6149761a5cb2851db7f2c6304",
+      "byteLength": 47037,
+      "mediaType": "application/json"
+    },
+    "printedLedger": {
+      "state": "available",
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/printed-hardware-ledger.json",
+      "sha256": "b23342d414fba85574cb2d32338c3158d65f63c27561c620cd348855c2b7160d",
+      "byteLength": 5106,
+      "mediaType": "application/json"
+    },
+    "privatePolicy": "Private bytes remain ignored; local hash/locator metadata only."
+  },
+  "limitations": [
+    {
+      "scope": "Actual owner stock / physical match",
+      "status": "BLOCKED",
+      "blockerIds": [
+        "Q-01",
+        "Q-13"
+      ],
+      "reason": "NOT OBSERVED; printed planning equality is not actual physical equality."
+    },
+    {
+      "scope": "Mechanical/electrical engineering and metric geometry",
+      "status": "BLOCKED",
+      "blockerIds": [
+        "Q-01",
+        "Q-03",
+        "Q-04",
+        "Q-05",
+        "Q-06",
+        "Q-07",
+        "Q-08",
+        "Q-09",
+        "Q-10",
+        "Q-11",
+        "Q-12",
+        "Q-13",
+        "Q-14",
+        "Q-15",
+        "Q-16",
+        "Q-17",
+        "Q-18"
+      ],
+      "reason": "Unresolved dimensions, identities, applicability and source conflicts remain explicit."
+    },
+    {
+      "scope": "Metric geometry, motion/path/fit, measured joint values and electrical applicability",
+      "status": "BLOCKED",
+      "blockerIds": [
+        "Q-01",
+        "Q-03",
+        "Q-04",
+        "Q-05",
+        "Q-06",
+        "Q-07",
+        "Q-08",
+        "Q-09",
+        "Q-10",
+        "Q-11",
+        "Q-12",
+        "Q-13",
+        "Q-14",
+        "Q-15",
+        "Q-16",
+        "Q-17",
+        "Q-18"
+      ],
+      "reason": "No measured frames/poses, admitted solutions, certified supply/pin map or physical equality inferred."
+    },
+    {
+      "scope": "Quantitative consumable capacity/length conservation",
+      "status": "BLOCKED",
+      "blockerIds": [
+        "Q-11",
+        "Q-13"
+      ],
+      "reason": "Source capacities and cut amounts remain typed unresolved; only symbolic allocation/application is proved."
+    },
+    {
+      "scope": "Actual power, zeroing, physical completion and reversibility",
+      "status": "BLOCKED",
+      "blockerIds": [
+        "Q-01",
+        "Q-05",
+        "Q-07"
+      ],
+      "reason": "Requirements only. No acknowledgments/attestations, servo epochs, hardware actions or physical undo produced."
+    },
+    {
+      "scope": "M3 durable persistence, browser/native integration and app builds",
+      "status": "NOT APPLICABLE",
+      "blockerIds": [
+        "Q-15",
+        "Q-16"
+      ],
+      "reason": "Later milestone; no M3 implementation or native qualification in M2."
+    }
+  ],
+  "openConflicts": [
+    "PX-CONFLICT-CAMERA-DIMENSIONS",
+    "PX-CONFLICT-ULTRASONIC-SUPPLY"
+  ],
+  "invalidationConditions": [
+    "Any bound source, validator/compiler/reducer/test/result byte changes invalidate this gate and require affected tests and renewed acceptance.",
+    "Operation order/effect, patch, allocation, dependency/rule, source scope, revision or hash policy changes require fresh graph/preimage/stock/state/replay proofs.",
+    "Generated outputs are caches, never their own identity inputs; exact initial/registry declarations are bound.",
+    "Geometry-only presentation/solutions cannot upgrade physical or engineering limitations; changed mechanical inputs require model/G-DATA adoption."
+  ],
+  "bindings": [
+    {
+      "path": "M0_GATE_REPORT.json",
+      "rawSha256": "881e499d6d0321377233630da21d0dbea2c5d76c667390e950a88a79372c2a24",
+      "byteLength": 4498
+    },
+    {
+      "path": "digital-twin/assemblies/v40/connections/cables.json",
+      "rawSha256": "df846346c918cd2ad5fbeafa30b4743ff9e3e549e402640c6cb45f47cf24100f",
+      "byteLength": 14452
+    },
+    {
+      "path": "digital-twin/assemblies/v40/connections/mechanical.json",
+      "rawSha256": "1842d8dcdf516a6d2f2ef39e3710f36dd72241a0402613bf74fbb1ca53faeb4f",
+      "byteLength": 205774
+    },
+    {
+      "path": "digital-twin/assemblies/v40/operations/groups.json",
+      "rawSha256": "7a39b42a77789cd052f7d896e2f063906645d268fed50c7d14dca54013b13392",
+      "byteLength": 2508
+    },
+    {
+      "path": "digital-twin/assemblies/v40/operations/initial-states.json",
+      "rawSha256": "77090266dda37e4b59ff80d2c68124e7f57bd2df9f5b3be30262105158d90674",
+      "byteLength": 254962
+    },
+    {
+      "path": "digital-twin/assemblies/v40/operations/operations.json",
+      "rawSha256": "0cdaa95d6a9eb498f467dcc1c257889e9707a5a850b2978ea1fc12f32cef6ef6",
+      "byteLength": 217264
+    },
+    {
+      "path": "digital-twin/assemblies/v40/operations/verification-rules.json",
+      "rawSha256": "e6cbdfdb4cfaf0a3a7a7fa13adf12336f6949ca071746aefd74ec3b64f3d6bb8",
+      "byteLength": 17876
+    },
+    {
+      "path": "digital-twin/assemblies/v40/presentation/SEARCH_CONTRACT.md",
+      "rawSha256": "51e032b86e136cf8d46e3cae2f1783d859b79d46aca4bffeb42272d00f2e88a3",
+      "byteLength": 1570
+    },
+    {
+      "path": "digital-twin/assemblies/v40/steps/base.json",
+      "rawSha256": "48a79523ebcc04795054fdcb3d5ecf0d243ea36172ceb56a5c82160b03db1471",
+      "byteLength": 34024
+    },
+    {
+      "path": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "rawSha256": "4a499e80ee93c616637785ded22d4b28fc811a657ca6350b23f9deed64a6de7f",
+      "byteLength": 44896
+    },
+    {
+      "path": "digital-twin/assemblies/v40/variants/patches.json",
+      "rawSha256": "1682bec1e7afddc41fdce72474083b333b260f78d2d27ef15cdce7587dcffe01",
+      "byteLength": 9924
+    },
+    {
+      "path": "digital-twin/components/definitions/cables.json",
+      "rawSha256": "59a1e90ab15da2f3b36c9f45c171759c866e9834127c5fbf1f0721649208da28",
+      "byteLength": 11081
+    },
+    {
+      "path": "digital-twin/components/definitions/fasteners.json",
+      "rawSha256": "ebcb057b4e52470c67840e0f714dbe99731b0b154da616db83e3023363a7c69a",
+      "byteLength": 24529
+    },
+    {
+      "path": "digital-twin/components/definitions/geometry-sources.json",
+      "rawSha256": "fcf28d1efc738faaf49226f29b78a111aa0b02de6d15824adb0d57f82b8e0cf8",
+      "byteLength": 35950
+    },
+    {
+      "path": "digital-twin/components/definitions/parts.json",
+      "rawSha256": "530ff54294ebf363de6fccd188878959ffa4c8766b8fc6769fdfb2c69022d5f3",
+      "byteLength": 51692
+    },
+    {
+      "path": "digital-twin/components/instances/planned-stock.json",
+      "rawSha256": "9dc38dc8bac4b829d02e6d662c1391afb0e423bfc3efcc02415d869dbf51dec1",
+      "byteLength": 112035
+    },
+    {
+      "path": "digital-twin/components/interfaces/connection-points.json",
+      "rawSha256": "95e195b4f214eb3136777ed6929660341bf3f6cda05f9cf8f7ec210f0799acd8",
+      "byteLength": 13861
+    },
+    {
+      "path": "digital-twin/components/interfaces/frames.json",
+      "rawSha256": "69e5f596e3bfa82cc49e9ab2fac4649e1ae042238332581199f35e5db635b3ef",
+      "byteLength": 11794
+    },
+    {
+      "path": "digital-twin/components/interfaces/mechanical.json",
+      "rawSha256": "0d6900dfc59e0e9f01dfacce62b9ba699549dab75679de69e1ca6c45c5023fa6",
+      "byteLength": 74385
+    },
+    {
+      "path": "digital-twin/components/interfaces/verification-rules.json",
+      "rawSha256": "aca44cec802009b3092dc38e230396407abb72e5ab0e3c08c82daebfa34780b2",
+      "byteLength": 25601
+    },
+    {
+      "path": "digital-twin/components/inventory/allocations.json",
+      "rawSha256": "3700f848e35b184b0749b7f2fa7263fe799e6fb1a95af48030d4bf135a068904",
+      "byteLength": 87339
+    },
+    {
+      "path": "digital-twin/components/inventory/lots.json",
+      "rawSha256": "5e642bcb3d4190e9d83247b0f192428bba8738f4f67c600a93d4bd3143008812",
+      "byteLength": 25931
+    },
+    {
+      "path": "digital-twin/components/inventory/planned-uses.json",
+      "rawSha256": "2082dd2df6318b74cceab3041932eda45ea889c118acfee8b2b7fb8dcd0eab16",
+      "byteLength": 44722
+    },
+    {
+      "path": "digital-twin/components/inventory/planning-steps.json",
+      "rawSha256": "f9d90846627c658ef1856cb880eb140f5525c9f6149761a5cb2851db7f2c6304",
+      "byteLength": 47037
+    },
+    {
+      "path": "digital-twin/components/inventory/printed-hardware.json",
+      "rawSha256": "435caf4b0becb2cf13c5844fac097ff00af4e21a4fe87ef17f6c9e7ab2a6ecea",
+      "byteLength": 55049
+    },
+    {
+      "path": "digital-twin/components/inventory/registry-index.json",
+      "rawSha256": "9a36499fe4991341e24d808b58e4cd6de1b7e6aac11de29101cdf610338f9c59",
+      "byteLength": 1339
+    },
+    {
+      "path": "digital-twin/components/inventory/tools.json",
+      "rawSha256": "0710de2deda782c3c632e8de0a645d31d2b607ca27df3facfb5bf79ddcd84dc8",
+      "byteLength": 1067
+    },
+    {
+      "path": "digital-twin/components/inventory/unresolved-allocations.json",
+      "rawSha256": "a680d117f9e2fa053a89c8e038d7387dd622300a2925b41e6f371f004b46a4c1",
+      "byteLength": 2103
+    },
+    {
+      "path": "digital-twin/components/inventory/variants.json",
+      "rawSha256": "4f550fd58906f1ab8830259e5c437462aa502edcb86bb4428b56f2d25d923915",
+      "byteLength": 1006
+    },
+    {
+      "path": "digital-twin/components/measurements/derivations.json",
+      "rawSha256": "df05c1b48db068ed49ff2b95eb35ff5835589a955ce6061e5b611941ecd557eb",
+      "byteLength": 18580
+    },
+    {
+      "path": "digital-twin/components/measurements/measurements.json",
+      "rawSha256": "74eafaaa5e54413463458ed8bf970649507e0d981ef017ea2e4494fa640b5e2d",
+      "byteLength": 133006
+    },
+    {
+      "path": "digital-twin/evidence/conflicts/conflicts.json",
+      "rawSha256": "38842b3e03900e693ae30355993308585d8029375e540349c6f25bf7829de9e5",
+      "byteLength": 903
+    },
+    {
+      "path": "digital-twin/evidence/records/blocker-source-records.json",
+      "rawSha256": "527da4ca6443c7ae848fdbfc7d2841f72041881de68c860e11016c4550b30349",
+      "byteLength": 17097
+    },
+    {
+      "path": "digital-twin/evidence/records/blockers.json",
+      "rawSha256": "13f795633397a8359c649192e7904d196272f81caca0b2b0a8bf18fbf56c9391",
+      "byteLength": 23609
+    },
+    {
+      "path": "digital-twin/evidence/records/claims.json",
+      "rawSha256": "3dadce3c762fba63f727d501c8003fb636d72e66abbd1810ae9ad513483c1603",
+      "byteLength": 81133
+    },
+    {
+      "path": "digital-twin/evidence/records/evidence.json",
+      "rawSha256": "854a95924c3506af6d33cbdd75e20a846f93b1fcdb6515818dbc6b0f400c46ce",
+      "byteLength": 24828
+    },
+    {
+      "path": "digital-twin/evidence/records/warnings.json",
+      "rawSha256": "e47a04ffd2f082a556f84ff72a8d5089d2d027970513c5a47b0ecf695e4aa69a",
+      "byteLength": 16954
+    },
+    {
+      "path": "digital-twin/evidence/sources.lock.json",
+      "rawSha256": "3f715ec18946e022a1b5633a15e3b3ae3d31576e1fa378d77c375d61c291b06e",
+      "byteLength": 2063
+    },
+    {
+      "path": "digital-twin/hash-inputs.json",
+      "rawSha256": "a799b9b5161c1cee501a7667ac56e8ca4466172b876fb832e9b3ae1be3649c62",
+      "byteLength": 61002
+    },
+    {
+      "path": "digital-twin/package.json",
+      "rawSha256": "ce1e6c9efd3309161aef053c1275bcc43992ee67dd488a371a477806000616fd",
+      "byteLength": 489
+    },
+    {
+      "path": "digital-twin/pnpm-lock.yaml",
+      "rawSha256": "8bd6ad3c3e90aeb0b2a2d64072080d77757bd20e7320849b2a0c703017887a57",
+      "byteLength": 5883
+    },
+    {
+      "path": "digital-twin/pyproject.toml",
+      "rawSha256": "ac8198750cdeca2b6c893a7c7df2d348eef78f04eecbcf87bb0f89d29193fc00",
+      "byteLength": 153
+    },
+    {
+      "path": "digital-twin/schemas/AdmissionReport.schema.json",
+      "rawSha256": "cf40f7e5b5efb4e1ea6aabb6d372ee4b740c012b581798580626524b3eb85e0b",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/AssemblyOperation.schema.json",
+      "rawSha256": "ab88a2c53eb5613b02a6c112a9727523f41d51f1db7881adc50ad37d82131aa0",
+      "byteLength": 197
+    },
+    {
+      "path": "digital-twin/schemas/AssemblySession.schema.json",
+      "rawSha256": "50aa4716ffe72311b30eb685a3855753a5cd527be020fbc29585ae216e7f817d",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/AssemblySolution.schema.json",
+      "rawSha256": "fd616f37e58c39a5539c173bf95dba51a88a077b95db849f995033afd0759ff0",
+      "byteLength": 195
+    },
+    {
+      "path": "digital-twin/schemas/AssemblyState.schema.json",
+      "rawSha256": "477d4eec84f3c5a14fdfe4dbac9d1843da69899d2fbdc9dc27871904a2390c23",
+      "byteLength": 189
+    },
+    {
+      "path": "digital-twin/schemas/AssemblyStep.schema.json",
+      "rawSha256": "181c68ed9511ba977b46440a0059c32daa2b3bba8debd1db009b5cb55b1616b7",
+      "byteLength": 187
+    },
+    {
+      "path": "digital-twin/schemas/CableConnection.schema.json",
+      "rawSha256": "3596c5caa89945ea9b0fd4bf5f111856cc0ca768c92b9a1360ea32855be3c4bd",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/CableDefinition.schema.json",
+      "rawSha256": "f7f3482b1ce1e0ad85c6ba9aa4d12f93d0125ddf3c00b44357ec76f80653fa75",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/CameraInstruction.schema.json",
+      "rawSha256": "bee1f943afa68bd0e2b56793ed6652e17eb9b3e921127a4c47e6119865b8031f",
+      "byteLength": 197
+    },
+    {
+      "path": "digital-twin/schemas/Claim.schema.json",
+      "rawSha256": "cb2880c95752b8c859c2bf95a5ddeeb676bd4d63935abb1b2ba02669106b1f46",
+      "byteLength": 173
+    },
+    {
+      "path": "digital-twin/schemas/CompiledGraph.schema.json",
+      "rawSha256": "9f163355e9714b267b2a1c32198d6ae2724ee2b16f294f79bac8bf22309681b2",
+      "byteLength": 189
+    },
+    {
+      "path": "digital-twin/schemas/ConflictRecord.schema.json",
+      "rawSha256": "45cba2695392cef58e362e80eabcb93233470ffe48e130771f410f33441b6c79",
+      "byteLength": 191
+    },
+    {
+      "path": "digital-twin/schemas/ConnectionPoint.schema.json",
+      "rawSha256": "1063819313a90bbd6878ab10576bb7c8136a6547ae36785189ae37b2af960666",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/DerivationRecord.schema.json",
+      "rawSha256": "1f2d6829e3603673e45d2e2b0ad0c0636bfad5abe2bf1e2ecfc64ef353ff196e",
+      "byteLength": 195
+    },
+    {
+      "path": "digital-twin/schemas/EvidenceRecord.schema.json",
+      "rawSha256": "0902b3ae7f3b004ce26255b82a7062c22fa29d5af05e03bdb8575954696d7354",
+      "byteLength": 191
+    },
+    {
+      "path": "digital-twin/schemas/FastenerDefinition.schema.json",
+      "rawSha256": "0bdefd5f495c2e3e465bc79c8c4b1d8590f77ed7b8348ec971d28e39d7d0fdb5",
+      "byteLength": 199
+    },
+    {
+      "path": "digital-twin/schemas/FrameRecord.schema.json",
+      "rawSha256": "e2a862417e958a0d73fee9dbdf77c4aa8d734bd8880fa73193f75c09a5778c24",
+      "byteLength": 185
+    },
+    {
+      "path": "digital-twin/schemas/GeometrySource.schema.json",
+      "rawSha256": "8bf28c0b28100e0121e6d833cf75f3d74b3815d9aec54589b015507be56fe0ec",
+      "byteLength": 191
+    },
+    {
+      "path": "digital-twin/schemas/Measurement.schema.json",
+      "rawSha256": "f46074f8b9915b8adafeba292324a79fa0ce13cef34271ad38badb3640788494",
+      "byteLength": 185
+    },
+    {
+      "path": "digital-twin/schemas/MechanicalConnection.schema.json",
+      "rawSha256": "3005520caaad45179b015cf3959666929d67d6f864d2813827919236fe74b222",
+      "byteLength": 203
+    },
+    {
+      "path": "digital-twin/schemas/MechanicalInterface.schema.json",
+      "rawSha256": "f7170e7d263aa8ea35d87cc11944d3356ea7adf478ac2ee8ce4d3edd09913412",
+      "byteLength": 201
+    },
+    {
+      "path": "digital-twin/schemas/MotionInstruction.schema.json",
+      "rawSha256": "3336ea2d233d17db3a4b1d557cfc46075e8fb53fb8a9bd098d817cfd39cb3b02",
+      "byteLength": 197
+    },
+    {
+      "path": "digital-twin/schemas/OperationUndo.schema.json",
+      "rawSha256": "b313c3d26f70908d80ef87535de8d8bdc3727fb3f84813113673b3551cc2e65f",
+      "byteLength": 189
+    },
+    {
+      "path": "digital-twin/schemas/PartDefinition.schema.json",
+      "rawSha256": "b4cc002ad92216c6c8c6ea29a5f7db2d7a40f349f01cdf45c545f8c24d370516",
+      "byteLength": 191
+    },
+    {
+      "path": "digital-twin/schemas/PartInstance.schema.json",
+      "rawSha256": "6563e3f03c61b54b2e47e321b02cf6bb42bbb2a49c0e622bcc693c994ee5731e",
+      "byteLength": 187
+    },
+    {
+      "path": "digital-twin/schemas/ProcedureAcknowledgment.schema.json",
+      "rawSha256": "83a01c715c63e6e3c95033e1fbd0a59c133419bd45a3073d231065e04ad4cf9a",
+      "byteLength": 209
+    },
+    {
+      "path": "digital-twin/schemas/RuntimeManifest.schema.json",
+      "rawSha256": "e960b2edbd239cd67bb48497491b0df54b13320d6a12fb4218cae6dcdb873a08",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/RuntimeRegistry.schema.json",
+      "rawSha256": "be7a0f3e4e5cfd7041b0099ed4e27f9061a4f879c67d63b9227e51af814b74c4",
+      "byteLength": 194
+    },
+    {
+      "path": "digital-twin/schemas/RuntimeTransform.schema.json",
+      "rawSha256": "8d9e26e780f243864e1b0862e9a14af6a8f18e2117f6e6a93eaf77b9b1ee5adf",
+      "byteLength": 195
+    },
+    {
+      "path": "digital-twin/schemas/ToolRequirement.schema.json",
+      "rawSha256": "33a6ee1584272d4805551ba1d44481111336786a09772b3adef205c974df1eab",
+      "byteLength": 193
+    },
+    {
+      "path": "digital-twin/schemas/UnresolvedEvidenceItem.schema.json",
+      "rawSha256": "3f8973b3b75dce01f2e508d618935a5fba6f86b51bb26268fb91956c5cd85883",
+      "byteLength": 207
+    },
+    {
+      "path": "digital-twin/schemas/VariantPatch.schema.json",
+      "rawSha256": "65a948a47c125fe1b069b1afb598e62daad96d488e572306821cfe769b6e67bd",
+      "byteLength": 187
+    },
+    {
+      "path": "digital-twin/schemas/VariantRule.schema.json",
+      "rawSha256": "cb1b4f03421733dd49afa9ca4c80581479526faf942df0c9f92ff2c7ea678d5e",
+      "byteLength": 185
+    },
+    {
+      "path": "digital-twin/schemas/VerificationRule.schema.json",
+      "rawSha256": "1999c569694e56b33cf53e951bcdeef65ba6ecdb17093fdc1e131d5ab10d339d",
+      "byteLength": 195
+    },
+    {
+      "path": "digital-twin/schemas/VisibilityRule.schema.json",
+      "rawSha256": "e7731187830fecffb0ace117b85fadec3e6663d1eff48424c9175e2faacaf564",
+      "byteLength": 191
+    },
+    {
+      "path": "digital-twin/schemas/Warning.schema.json",
+      "rawSha256": "247f67aae21aca4c13923d018734115808bf185b95af145fd03feacfbf7fbc0d",
+      "byteLength": 177
+    },
+    {
+      "path": "digital-twin/schemas/ZeroingAttestation.schema.json",
+      "rawSha256": "35cf6229923357f9d2fbf5ec0604b6c18f33c11d5c5769d627636854025ff6d3",
+      "byteLength": 199
+    },
+    {
+      "path": "digital-twin/schemas/digital-twin.schema.json",
+      "rawSha256": "075dda03f82851b24566e22e121b246f9cd3273de058ddafbaea86033480e1c4",
+      "byteLength": 161617
+    },
+    {
+      "path": "digital-twin/schemas/documentation-source-lock.schema.json",
+      "rawSha256": "01c22fd10f6505844879e792e624ba01b0e122b05cf0208c3f66522f8ef95a8c",
+      "byteLength": 5849
+    },
+    {
+      "path": "digital-twin/schemas/m0-gate-report.schema.json",
+      "rawSha256": "4a491d5768b506ef15b0e7fad635224601ebeb8b0eedc82f10312f8df78237e3",
+      "byteLength": 3048
+    },
+    {
+      "path": "digital-twin/schemas/m1-g-data-report.schema.json",
+      "rawSha256": "91806b3a32616a7ab3caa6450dfa8c3ea5e9b92cf87294a5af83329ae7242b01",
+      "byteLength": 3468
+    },
+    {
+      "path": "digital-twin/schemas/m1-inventory.schema.json",
+      "rawSha256": "12fd940260c43aaba23c4be19364cd474d7a8a3f65127b9fdab8a299125855e0",
+      "byteLength": 3030
+    },
+    {
+      "path": "digital-twin/schemas/m2-search-index.schema.json",
+      "rawSha256": "8ce0ea44e363cd5afc0c7e86b8edeed03bdb812bce5428a66073293d23913361",
+      "byteLength": 2241
+    },
+    {
+      "path": "digital-twin/schemas/planning-step-seed.schema.json",
+      "rawSha256": "b56667420055983668968a90f3f97480a2e82b25a11b82842b8b01f2cded324a",
+      "byteLength": 4728
+    },
+    {
+      "path": "digital-twin/schemas/semantic-registry.json",
+      "rawSha256": "30d7507712f31d89fed63250336c2acb78f8ee6d7f622ffdc5e9ab969f14cf90",
+      "byteLength": 1598
+    },
+    {
+      "path": "digital-twin/tools/cli.mjs",
+      "rawSha256": "32cb5bd99f1b3881ee10f2af228a7afad5a685c0e05e7bc70de7250222c657d2",
+      "byteLength": 4222
+    },
+    {
+      "path": "digital-twin/tools/compiler/author-v40.mjs",
+      "rawSha256": "b52eb4823a7a06d6d6210db0039977fdd1aebcee2c3a2417ad1f1ce06a157d54",
+      "byteLength": 22852
+    },
+    {
+      "path": "digital-twin/tools/compiler/classify.mjs",
+      "rawSha256": "dc1b6cad88f233666777406c4c30df5dd2902d7d48059897a6ca61a523b919a1",
+      "byteLength": 3147
+    },
+    {
+      "path": "digital-twin/tools/compiler/compile.mjs",
+      "rawSha256": "4983f3a380f67988e56dc3a84e056794f49acc6a2908d2a88b9fcc9c278262fd",
+      "byteLength": 2436
+    },
+    {
+      "path": "digital-twin/tools/compiler/gate.mjs",
+      "rawSha256": "7fd4bb351d09c7cfb92fa37031bcb13f7ed430988df1dbe95b6baf260c13728f",
+      "byteLength": 11453
+    },
+    {
+      "path": "digital-twin/tools/compiler/hash-conformance.mjs",
+      "rawSha256": "501bad21d9c35a16e8a6ea40b4eee6ea5b0b03d7388f7d12fae13d7e5d6e72b1",
+      "byteLength": 2152
+    },
+    {
+      "path": "digital-twin/tools/compiler/hash.mjs",
+      "rawSha256": "37c3627cb3730883803d82e0e087212951eadbc310812e05cee3d72141e7c8ee",
+      "byteLength": 1608
+    },
+    {
+      "path": "digital-twin/tools/compiler/inputs.mjs",
+      "rawSha256": "10a915a4f690592d8d7936ade4584ed5229dc8a306da1c6c4fa2bdd02693a8fc",
+      "byteLength": 1535
+    },
+    {
+      "path": "digital-twin/tools/compiler/regression.mjs",
+      "rawSha256": "e03e7af6daaaa2fba82e34bc224ea8eb1034e97fc18411bdae896183c9e8f8f0",
+      "byteLength": 1216
+    },
+    {
+      "path": "digital-twin/tools/compiler/replay.mjs",
+      "rawSha256": "c7fe66b688029b03786a660a111e5c0817f61cb77e883f3fe785b5571b7e743c",
+      "byteLength": 2192
+    },
+    {
+      "path": "digital-twin/tools/compiler/upstream.mjs",
+      "rawSha256": "d903f48361f71d31ac98c2061a804f0e6ece2910e8d98bc97f204fbb313d2237",
+      "byteLength": 6276
+    },
+    {
+      "path": "digital-twin/tools/cross-language.mjs",
+      "rawSha256": "0947285e34ae7ab22abdd8e9e709e64f8428b3d483047b02ab58e545dc031bc4",
+      "byteLength": 2079
+    },
+    {
+      "path": "digital-twin/tools/evidence/allocate.mjs",
+      "rawSha256": "2e3e74dacc8211a2737a2a9c615ee024b471475ac7cbb967a0c477e37867bd98",
+      "byteLength": 25985
+    },
+    {
+      "path": "digital-twin/tools/evidence/hash.mjs",
+      "rawSha256": "02bcb9fbb16d1e11538aba5c6fadb1dfce8a4d816768c8237ad617987bc3b0df",
+      "byteLength": 2584
+    },
+    {
+      "path": "digital-twin/tools/evidence/identity.mjs",
+      "rawSha256": "0701a05c67d91ecc967e499417f959067c99292f6a8996d17d16cef50ff75410",
+      "byteLength": 10043
+    },
+    {
+      "path": "digital-twin/tools/evidence/semantic.mjs",
+      "rawSha256": "980749983845369e24d77b7aad22774012ac480f2668319ab0ddb3c8589b931b",
+      "byteLength": 21967
+    },
+    {
+      "path": "digital-twin/tools/evidence/sum-v1.json",
+      "rawSha256": "4b954bd717bb3e2172d01d843998e68a90238b7f5a12ec0ed74bc1cfb0ef1543",
+      "byteLength": 412
+    },
+    {
+      "path": "digital-twin/tools/gate.mjs",
+      "rawSha256": "c823a3f6e6e30e7aca1b58312e4d04406154a3f430416a452b9f12488852390a",
+      "byteLength": 13448
+    },
+    {
+      "path": "digital-twin/tools/types.mjs",
+      "rawSha256": "1ba1ba062a2e145f6ea5de284f424304c3670ae01d210dcef74fa4c2401bbaa1",
+      "byteLength": 1261
+    },
+    {
+      "path": "digital-twin/uv.lock",
+      "rawSha256": "97e6877d35570239e5f27ec48eb11c8e6f8985627c254e354bb3adade9580e19",
+      "byteLength": 964
+    },
+    {
+      "path": "digital-twin/validation/baseline.json",
+      "rawSha256": "bfd12fba2999ab78ad027d2891fbb0f1276e2a6f7deff194de4a9ec0fd5873bb",
+      "byteLength": 159
+    },
+    {
+      "path": "digital-twin/validation/commands.json",
+      "rawSha256": "5780f01624fc8675f1fc0c2a6ff3b212d6d1839d3a0bcd6c204e4b4ed8ed0a38",
+      "byteLength": 964
+    },
+    {
+      "path": "digital-twin/validation/companion-package-command.txt",
+      "rawSha256": "ea77ab9acb3d1e202e871c624c2b2b97b1262ecb07e598cb4c699b158fd9a51a",
+      "byteLength": 198
+    },
+    {
+      "path": "digital-twin/validation/companion-source-command.txt",
+      "rawSha256": "438e53e160f63310c924bebb8d32a5aedf24f9e8b3fede454c72e5fcaf6a46df",
+      "byteLength": 167
+    },
+    {
+      "path": "digital-twin/validation/companion-typecheck-command.txt",
+      "rawSha256": "85e8b38eb6c2d7053f5bdf05213b6739eb41874e9de10c832c7a3da986bf6d7e",
+      "byteLength": 141
+    },
+    {
+      "path": "digital-twin/validation/companion-unit-command.txt",
+      "rawSha256": "7a50f85eb350968771b78f3b274b8904f2e00b55cb2c561ba2829dad3a2c1f5f",
+      "byteLength": 302
+    },
+    {
+      "path": "digital-twin/validation/evidence-input.json",
+      "rawSha256": "f1bbfb9ef0ac256a0cb9c6fbf9d3a3a0fc583c72dae6c4ba800cdb1ce5779c18",
+      "byteLength": 23937
+    },
+    {
+      "path": "digital-twin/validation/fixtures/hash-vectors.json",
+      "rawSha256": "653c300d75185a402a451dcb85a85e9cb6bbbea8841297dfe00d3a40ba66a9da",
+      "byteLength": 3511
+    },
+    {
+      "path": "digital-twin/validation/fixtures/synthetic-nominal.json",
+      "rawSha256": "cbc650e4cee6aa701113dbce9c7fbc9f9a613a1ff5bd3d309730db182345cd02",
+      "byteLength": 33
+    },
+    {
+      "path": "digital-twin/validation/hash-command.txt",
+      "rawSha256": "ea9467c083f599e76ca7fd8ec4f2de326dc2a0be67c89c5ac95d7b6d88aa2762",
+      "byteLength": 78
+    },
+    {
+      "path": "digital-twin/validation/hash-cross-language-report.json",
+      "rawSha256": "53103d192d2ef47bbbc79cb7aa57d3fcb29dac5e65ceed6f39399f3d080bf202",
+      "byteLength": 11203
+    },
+    {
+      "path": "digital-twin/validation/hash-python.py",
+      "rawSha256": "9a31208fee05ac294a5864302fd862f8384ffe583581d109740f86b4c1f72db6",
+      "byteLength": 3032
+    },
+    {
+      "path": "digital-twin/validation/hash-rust/Cargo.lock",
+      "rawSha256": "2544a8c4dd969928be946ed5f5e088c55e3137213a9392b2283539487be0515e",
+      "byteLength": 5380
+    },
+    {
+      "path": "digital-twin/validation/hash-rust/Cargo.toml",
+      "rawSha256": "d9e418636ad0b445a3b1ee48eb9471a139d11bf755be6fc837f7e1d13a5d1dae",
+      "byteLength": 287
+    },
+    {
+      "path": "digital-twin/validation/hash-rust/src/main.rs",
+      "rawSha256": "69332fbd6f0f321c1a7db9314f8b421ff98f2cfae47dcbf6edd7453474fc4e5e",
+      "byteLength": 4312
+    },
+    {
+      "path": "digital-twin/validation/m2/adopted-evidence-input.json",
+      "rawSha256": "f1bbfb9ef0ac256a0cb9c6fbf9d3a3a0fc583c72dae6c4ba800cdb1ce5779c18",
+      "byteLength": 23937
+    },
+    {
+      "path": "digital-twin/validation/m2/adopted-g-data.json",
+      "rawSha256": "e884e72364851b91f67921359cdc9b7ad610df8472a62f689fda874d2fbf7485",
+      "byteLength": 37079
+    },
+    {
+      "path": "digital-twin/validation/m2/adopted-model-input.json",
+      "rawSha256": "830c769a7ff2cfb11fa62af582b0f9e517bed13d115ac1be9f5ce7093f3e1554",
+      "byteLength": 760196
+    },
+    {
+      "path": "digital-twin/validation/m2/adopted-schema-input.json",
+      "rawSha256": "2431f7021b35e4ac8bfa0e81f3de1cdbd2fa9abc267ffb95b02386b6be6d9cd7",
+      "byteLength": 6340
+    },
+    {
+      "path": "digital-twin/validation/m2/hash-conformance.json",
+      "rawSha256": "53103d192d2ef47bbbc79cb7aa57d3fcb29dac5e65ceed6f39399f3d080bf202",
+      "byteLength": 11203
+    },
+    {
+      "path": "digital-twin/validation/m2/mutation-corpus.json",
+      "rawSha256": "df2d334276a66fed872f299147a549a4c573daf6c0e91f71976575828688d89b",
+      "byteLength": 12972
+    },
+    {
+      "path": "digital-twin/validation/m2/operation-corpus.json",
+      "rawSha256": "8cf1dd4285174c6689be300d23698e9233b1ae2b63aadfb362de5be2c8c40a6b",
+      "byteLength": 241830
+    },
+    {
+      "path": "digital-twin/validation/m2/operation-fixtures.json",
+      "rawSha256": "4f6c5e67a14e0fbd57286e7eaea05b01fa3a82cd8363197761f8fc853c34cd41",
+      "byteLength": 5070532
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json",
+      "rawSha256": "257e045b191fdff4ec7b04565c17d73231af3efc1f1cf47e837b9b928584f91e",
+      "byteLength": 627180
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/expected-prefixes.json",
+      "rawSha256": "eb8a4875657864833ebb6773261c5b42c81739b5cb5cfb1e5524566ffe900f14",
+      "byteLength": 102416
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/final-state.json",
+      "rawSha256": "e7b960e6b3856fe89d8826711f473b50d588f0a1064fbb69f8e28827470f99ec",
+      "byteLength": 103054
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/fresh-process-receipt.json",
+      "rawSha256": "b1e35eb269c45cc9101487d970d521e1217767554f02dc2d4d94a4718c89d09c",
+      "byteLength": 765
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/fresh-replay-command.txt",
+      "rawSha256": "a6fec2fe294483ab95f2d5229c5c7fcb227952cc9637146dcb2f3198680df8d6",
+      "byteLength": 94
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/fresh-replay.json",
+      "rawSha256": "50d5b63b9fc03437a024b2fd46a432e57d9dc0fe47db7d1581c5dfbfcdd32ac1",
+      "byteLength": 213779
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/graph-input.json",
+      "rawSha256": "585aeb5104f6bd33435a2b8557ed43b74b528385a4a0f7463f3674dd64ad4c9d",
+      "byteLength": 1228522
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/initial-state.json",
+      "rawSha256": "16cce54e67c2b15ca2efb5165e647fd46253bfe6ab2818ef91cfd286c138d0c7",
+      "byteLength": 78485
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/inventory-proof.json",
+      "rawSha256": "fd765fc675becf31fa8f167740c740f54741e9f8719e84cd53fbb3fb7feccc69",
+      "byteLength": 5959
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/search-index.json",
+      "rawSha256": "9a967d09f5fd61f9463f55bff93976f47026d6012fe8a836e79575ed8fc99ca0",
+      "byteLength": 87186
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi-zero-2-w/typed-reference-index.json",
+      "rawSha256": "f2232371a4fb38bcb948c05672161652f7c14acd5be393c115aa2b63e3e45d66",
+      "byteLength": 126967
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/compiled-graph.json",
+      "rawSha256": "b6d39dca86efd9fdb3fbaa5a1ac5054bc12ff4ff8bbbfc929a3787761591b17b",
+      "byteLength": 636669
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/expected-prefixes.json",
+      "rawSha256": "ef305abe35ef71c0d781560b617d82717804e29e8baf5839435260f065451f6e",
+      "byteLength": 103749
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/final-state.json",
+      "rawSha256": "38fbb7221dea7e6cb5d9a8658ef6ec8e02af88645f4044a577557e365a4e3d2c",
+      "byteLength": 103497
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/fresh-process-receipt.json",
+      "rawSha256": "51e86819523e8a01dd631e16458ae325ebff541651ae25020e2edbe54805626c",
+      "byteLength": 749
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/fresh-replay-command.txt",
+      "rawSha256": "2a104ff2bb9aea35f566d387b20ec05efa08e13261005b3b308ad363e06dee72",
+      "byteLength": 86
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/fresh-replay.json",
+      "rawSha256": "1eb3df38c43ffd593cc94514cb4b04398be6f6a1384d5003916ff616e0c218b3",
+      "byteLength": 215579
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/graph-input.json",
+      "rawSha256": "47f9eac8e5734f0ca8bbf010f74876b366ed612b70e09728f231986e149e2c79",
+      "byteLength": 1236519
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/initial-state.json",
+      "rawSha256": "7240ec875efb77e7d59f1ac1566efde1f863e4c624aae378bd91b26a283db867",
+      "byteLength": 78469
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/inventory-proof.json",
+      "rawSha256": "ea1e94c259b7ef6454b138e4bf13a3cad62cc687ed18ca2b3f423d517c7dd058",
+      "byteLength": 6070
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/search-index.json",
+      "rawSha256": "a63db82dba185298c3c5bc4546956d3ce126b180f5b188f6861296961eb14f1b",
+      "byteLength": 85835
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi4/typed-reference-index.json",
+      "rawSha256": "64754f8f41a8069c02a4a6f3891aeb6c7e84a39b6e7b77223c998c61c9038131",
+      "byteLength": 127770
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/compiled-graph.json",
+      "rawSha256": "832c7b4cda68a069574f5555a6ad5969224ab35565dab79c91125bf8fd5eb82b",
+      "byteLength": 636669
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/expected-prefixes.json",
+      "rawSha256": "f9cc5ff475920c37e26dc110220bb22d7d88e005fef2d2b9c6bc019b8fffa2d1",
+      "byteLength": 103749
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/final-state.json",
+      "rawSha256": "a4edc0c96ada82b9f53af8500ba25632b44685b2bea61269329a762dda9581f8",
+      "byteLength": 103497
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/fresh-process-receipt.json",
+      "rawSha256": "9005926007d658d99b7987e06c7783f48f8f0d98513a543269b65a1bd2e61c3e",
+      "byteLength": 749
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/fresh-replay-command.txt",
+      "rawSha256": "f01a885a4be0d63d9445b8c47b49e5e2016d87e34b3cf85ec94cacb778d0f2b9",
+      "byteLength": 86
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/fresh-replay.json",
+      "rawSha256": "8f916efd068a7e09f6a54cf8ab6c96819e6a8c8c0330c4b42f409766159cb579",
+      "byteLength": 215579
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/graph-input.json",
+      "rawSha256": "049494a3ea9fe63f762e913bbcefc6eb57434e72caf0f5ffd6dbb84e21237766",
+      "byteLength": 1236519
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/initial-state.json",
+      "rawSha256": "3d2440f5fd713c89c98084ebc3d0cb81021b8409e6df54d2309beb4369f3f14b",
+      "byteLength": 78469
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/inventory-proof.json",
+      "rawSha256": "74fa8d2c3880b0f7a1697c2505cf80098f72377a8f7cdc43217a81b0c5b8e237",
+      "byteLength": 6070
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/search-index.json",
+      "rawSha256": "c2036f2f990a1642d08c91d65d127d3e316cfb695e4024a0f681fd1456b65cc1",
+      "byteLength": 85835
+    },
+    {
+      "path": "digital-twin/validation/m2/rpi5/typed-reference-index.json",
+      "rawSha256": "37a292da6b22d0bdc79b3221566c8c781772771cb8168af6a251c4fb35722657",
+      "byteLength": 127770
+    },
+    {
+      "path": "digital-twin/validation/m2/runtime-registry.json",
+      "rawSha256": "231b5df34360f923428db992afa2595185c610f0862353c715955e8fbdd05214",
+      "byteLength": 568187
+    },
+    {
+      "path": "digital-twin/validation/m2/set-joint-fixture.json",
+      "rawSha256": "2cbb205876905e81aa80bb84f28839f0ef975cd7b87a7680cb1765cba3cb0bbe",
+      "byteLength": 344939
+    },
+    {
+      "path": "digital-twin/validation/m2/tests/contracts.test.mjs",
+      "rawSha256": "5378cb4ed2f22f4a276fb0fad6d67f83219c52494f833f5cbf33af328198c895",
+      "byteLength": 6387
+    },
+    {
+      "path": "digital-twin/validation/m2/tests/mutations.test.mjs",
+      "rawSha256": "c197f3f3ea5e323d8ab3835fded7aab2d176b8da0308dd281562778714730721",
+      "byteLength": 22132
+    },
+    {
+      "path": "digital-twin/validation/m2/tests/replay.test.mjs",
+      "rawSha256": "7586f22f582800c1ba6f074957d0764387cebfa669292f851478448ca2a4b1a1",
+      "byteLength": 9472
+    },
+    {
+      "path": "digital-twin/validation/model-input.json",
+      "rawSha256": "b42c92fc550b6f5a5a36f88abafbaa208f3b6db3d63e3033bac749d8894e17f8",
+      "byteLength": 703000
+    },
+    {
+      "path": "digital-twin/validation/printed-inventory-report.json",
+      "rawSha256": "e6bf0e549bc3eed21b78894d9eaac91a8b90a07944205051e32f1caade5dc012",
+      "byteLength": 98119
+    },
+    {
+      "path": "digital-twin/validation/schema-semantic-report.json",
+      "rawSha256": "fafa5ebd8a7cd42f6ae63c87b6a83b5d66ae50f1e51261c8abf89e3adc22278e",
+      "byteLength": 1491
+    },
+    {
+      "path": "digital-twin/validation/test-results.tap",
+      "rawSha256": "b7bbe620343c10672a3ef18f8f2b959dd1fc9438d5025113c2f496593c498c7a",
+      "byteLength": 44337
+    },
+    {
+      "path": "digital-twin/validation/tests/attestations.test.mjs",
+      "rawSha256": "785c69f539ef06aaa9fd642dec40470cf53b6c96dab4454d4017460fc0423f34",
+      "byteLength": 1999
+    },
+    {
+      "path": "digital-twin/validation/tests/audited-semantics.test.mjs",
+      "rawSha256": "d5ea8402b5e7ab11f6ea735448f260aafb74e909a4e7bfc3dc391169caf39795",
+      "byteLength": 2794
+    },
+    {
+      "path": "digital-twin/validation/tests/hash.test.mjs",
+      "rawSha256": "c6b771b79b0e3361fc75e7d7ab81efd2f8bfe20e70edf680e21af1a44cedafd5",
+      "byteLength": 1515
+    },
+    {
+      "path": "digital-twin/validation/tests/schema.test.mjs",
+      "rawSha256": "2d9075a6e7c2bf1851007e3d6e8659d4e5c11e54d13091c6003ddeb14b5f71ce",
+      "byteLength": 2227
+    },
+    {
+      "path": "digital-twin/validation/tests/semantic.test.mjs",
+      "rawSha256": "34c0f30363cbc365a6243557a8619386690cf8a79164b4a5db52e8f944d686e1",
+      "byteLength": 15005
+    },
+    {
+      "path": "digital-twin/validation/typed-reference-index.json",
+      "rawSha256": "13b0925db57a4f69973a3c184d00a8e07e29f1ab6abfb4a50ab9b39de421e655",
+      "byteLength": 84931
+    },
+    {
+      "path": "digital-twin/validation/types-command.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "byteLength": 94
+    },
+    {
+      "path": "digital-twin/validation/unresolved-impact.json",
+      "rawSha256": "47716732e39eef9e65cdc0991a54be86c1b7f76599d8b3a73d9847017667f49e",
+      "byteLength": 994505
+    },
+    {
+      "path": "digital-twin/validation/validation-command.txt",
+      "rawSha256": "fafa5ebd8a7cd42f6ae63c87b6a83b5d66ae50f1e51261c8abf89e3adc22278e",
+      "byteLength": 1491
+    },
+    {
+      "path": "docs/digital-twin/ASSEMBLY_ENGINE_SPEC.md",
+      "rawSha256": "94835d49c3371deb776d3a9014033fce90c8c987b74f8ce4e84b29515b9155b2",
+      "byteLength": 19305
+    },
+    {
+      "path": "docs/digital-twin/GATE_CONTRACTS.md",
+      "rawSha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad",
+      "byteLength": 10265
+    },
+    {
+      "path": "docs/digital-twin/HASH_AND_PACK_CONTRACT.md",
+      "rawSha256": "1083bf837a1bc5528ddeb2952e94f79953051904db760985cc8ffe9c347d6681",
+      "byteLength": 11641
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/printed-hardware-ledger.json",
+      "rawSha256": "b23342d414fba85574cb2d32338c3158d65f63c27561c620cd348855c2b7160d",
+      "byteLength": 5106
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/v40-step-seed.json",
+      "rawSha256": "f9d90846627c658ef1856cb880eb140f5525c9f6149761a5cb2851db7f2c6304",
+      "byteLength": 47037
+    },
+    {
+      "path": "docs/digital-twin/SEMANTIC_CONTRACT.md",
+      "rawSha256": "82969ee52a7adb9593158a0089d7d51c9fb2bd069020be90d7f22629ec2b8f13",
+      "byteLength": 14708
+    },
+    {
+      "path": "docs/digital-twin/SEMANTIC_LOCATION_REVISION.md",
+      "rawSha256": "9906beba00637ca051f43b05c38112e6a9dbded51ec575cdb14cd51d459bfd3a",
+      "byteLength": 6003
+    },
+    {
+      "path": "docs/digital-twin/SPEC_PACKAGE_RECEIPT.md",
+      "rawSha256": "2bfd0aab080dca092fa5642516163bf5f90e2515286e49e5e3624a80022ddb61",
+      "byteLength": 2373
+    },
+    {
+      "path": "docs/implementation/M0_CHECKPOINT_VERIFICATION.json",
+      "rawSha256": "ee6d07c92f199b248e048b05b4e4770c8ef338036e97fc523c596b3344979d64",
+      "byteLength": 2233
+    },
+    {
+      "path": "docs/implementation/M1_G_DATA_REPORT.json",
+      "rawSha256": "ddbdad1c00372e670b674bbc6d6bf2170b6f2b0d08a034b715e522029b644f0f",
+      "byteLength": 30477
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/commands.json",
+      "rawSha256": "3f2dd68391b901559fbd65155d8c696a3bd4ffe4d8cabeab669cc0f3890b5437",
+      "byteLength": 438
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/companion-commands.json",
+      "rawSha256": "2650242b6c86a09c9157b385f142b1d3f16b45c98f93e21bc2e16025cec9745b",
+      "byteLength": 818
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/companion-content.txt",
+      "rawSha256": "438e53e160f63310c924bebb8d32a5aedf24f9e8b3fede454c72e5fcaf6a46df",
+      "byteLength": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/companion-package.txt",
+      "rawSha256": "ea77ab9acb3d1e202e871c624c2b2b97b1262ecb07e598cb4c699b158fd9a51a",
+      "byteLength": 198
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/companion-typecheck.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "byteLength": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/companion-unit.txt",
+      "rawSha256": "ebc913e374809ee9b8bf424e43b92fa973364dd6892f0c5c0e3a9b049ea1918f",
+      "byteLength": 317
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/contracts-first.tap",
+      "rawSha256": "66a5ea18a468bf5aa5e903b491a14e20b4996f466c5a2fbafda6a768f8905d90",
+      "byteLength": 7806
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/diagnostic-preservation.json",
+      "rawSha256": "f869dfd441f07a522412b8c3045a4fca4ac313f0e53ad0187d54a69089ecf100",
+      "byteLength": 3822
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-companion-content-check.txt",
+      "rawSha256": "438e53e160f63310c924bebb8d32a5aedf24f9e8b3fede454c72e5fcaf6a46df",
+      "byteLength": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-companion-package-check.txt",
+      "rawSha256": "ea77ab9acb3d1e202e871c624c2b2b97b1262ecb07e598cb4c699b158fd9a51a",
+      "byteLength": 198
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-companion-test-unit.txt",
+      "rawSha256": "9695ce44d2c81c46da46d3307452310086127bf56cdceaf91ec45e0676bc46db",
+      "byteLength": 317
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-companion-typecheck.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "byteLength": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-m1-tests.tap",
+      "rawSha256": "a71333aa3ca612d9de3b8b4d51dda01f94c0c40ac0450712d9912f46dc13e642",
+      "byteLength": 44524
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-m2-tests-v2.tap",
+      "rawSha256": "1284574668a1e88550ea8e18f3b8b2f804e9f163817aa87811bcd3eae7f32a79",
+      "byteLength": 18986
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-m2-tests-v3.tap",
+      "rawSha256": "44a686f8a3032a1e48053f5dc081cc8132220e7256cab6a0ae9fb7899b8cfa5e",
+      "byteLength": 18980
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-m2-tests-v4.tap",
+      "rawSha256": "d196e287f8accb2df0e6b9bff6eb76b976024d667198f7be5f78a070c13eae2a",
+      "byteLength": 19330
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-m2-tests.tap",
+      "rawSha256": "f5be597098a656cd3d902de54af8dd4814c1908c09b42e2401af5e997b1939d1",
+      "byteLength": 18463
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-regression-commands.json",
+      "rawSha256": "03c2ac4a79d22abbe0f89346e0cff6c487a972ab116ce4d30bfb1a842e159e2d",
+      "byteLength": 1608
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/final-types-check.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "byteLength": 94
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/g-data-check.txt",
+      "rawSha256": "0aec99dfb9d752aa6bfb317fef3dbde3ea350ca7f73fe1d158707f3710a49e68",
+      "byteLength": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/git-preflight.json",
+      "rawSha256": "3aa942cd5d3b658431988e940cf6ea2f260d0cdfc19873425fc08f8f0cdfd8dd",
+      "byteLength": 3855
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/m1-commands.json",
+      "rawSha256": "9b6643838656190b712d91aab962d48f362a40c7e26ae6fb6dc82f9202b5f781",
+      "byteLength": 684
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/m1-tests.tap",
+      "rawSha256": "87e9a553e10f59144b06193526b7b6787bfa4deeac0e25e47e8f53a950d88615",
+      "byteLength": 44341
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/m2-hash-conformance.txt",
+      "rawSha256": "ea9467c083f599e76ca7fd8ec4f2de326dc2a0be67c89c5ac95d7b6d88aa2762",
+      "byteLength": 78
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/m2-replay-first.tap",
+      "rawSha256": "9e0550f278976e1bf6a2ff221beea58e83157e9e4ed3e6da8397fe6352c175f6",
+      "byteLength": 1751
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/mutations-first.tap",
+      "rawSha256": "d162b94b6357813c6ec6ef12bd2b263be8b5889772b444f43150f15a03fa1709",
+      "byteLength": 15322
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/mutations-second.tap",
+      "rawSha256": "c50a7b8de7768714217e2ccdce30d8bf230a25190f3a070005affb6ba22d5f69",
+      "byteLength": 11787
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/original-blocked/HANDOFF_M2_REMEDIATION.md",
+      "rawSha256": "511590edc631425e618ef04d7d8ccd58b55aa39375256fe1360d75bf8a9ff069",
+      "byteLength": 36294
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/original-blocked/M2_G_GRAPH_REPORT.json",
+      "rawSha256": "2b21f3d00f198897ed5728d0068a31692603db113b55e3de9fadd654d2e154ba",
+      "byteLength": 37501
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/original-blocked/M2_REPORT.md",
+      "rawSha256": "245e66a3d369adddb66707d3a7e36b72800ecdc49d7953a00aa81e8b21170aac",
+      "byteLength": 10240
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/preflight-command.txt",
+      "rawSha256": "706df5435c800615b570f78780d6194c5d53a1fa1113951b67648f7c74f195de",
+      "byteLength": 123
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/preflight.json",
+      "rawSha256": "9d5e18db889fca3ba9d0f2795ccf932586dfae16cdc0791c1510708b7c74c863",
+      "byteLength": 5684
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/preserved-diagnostics.json",
+      "rawSha256": "3ca9ac95fe8a41fb117b3984fa10f96112fb0b956ce4e54680096206286d37b5",
+      "byteLength": 2719
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/types-check.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "byteLength": 94
+    },
+    {
+      "path": "docs/implementation/evidence/m2/remediation-recheck/verify-preflight.mjs",
+      "rawSha256": "ce9d0871de6e8857f6e551e4c15cd639576fa3c295b289633812ff7b2bc2ca99",
+      "byteLength": 9082
+    },
+    {
+      "path": "picarx-companion/src/domain/assembly/compiler.ts",
+      "rawSha256": "e09f7a90f5618ca24bfe16436e4b69ac418f0a2f4dde9e5f452f09c1d2248ed0",
+      "byteLength": 16690
+    },
+    {
+      "path": "picarx-companion/src/domain/assembly/reducer.ts",
+      "rawSha256": "48a2cc4e5919cbb784c6a7fed314ba6b1829c16337b7398dc99ffffb382dee4d",
+      "byteLength": 25127
+    },
+    {
+      "path": "picarx-companion/src/domain/assembly/references.ts",
+      "rawSha256": "4c035f14c1e95cb92511921e9380899a60669e828fca01c9f9ab31b7afc00d30",
+      "byteLength": 9279
+    },
+    {
+      "path": "picarx-companion/src/generated/twin/contracts.d.ts",
+      "rawSha256": "6547ee8f1bde30456e40a99458b5fe9417c66ad4c705a3f00b1034f2b8f3f3a2",
+      "byteLength": 33997
+    },
+    {
+      "path": "picarx-companion/src/generated/twin/inventory.d.ts",
+      "rawSha256": "a0dda9a984abbe6dfaf76689cf818a795e9d8b40f4a5b4cf2236fa353e1b90f5",
+      "byteLength": 1421
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/documentation-source-lock.json",
+      "rawSha256": "8ca58014ece62abf765ebdbd767d72611d69eaac39440e06b78769505fd6d0b3",
+      "byteLength": 16644
+    }
+  ],
+  "m3AllowedAfterCommit": true
+}

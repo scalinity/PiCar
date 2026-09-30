@@ -1,0 +1,150 @@
+TAP version 13
+# Subtest: rpi4: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+ok 1 - rpi4: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+  ---
+  duration_ms: 16.442375
+  type: 'test'
+  ...
+# Subtest: rpi4: complete 29-step orientation/tools/procedure/source binding
+ok 2 - rpi4: complete 29-step orientation/tools/procedure/source binding
+  ---
+  duration_ms: 0.16475
+  type: 'test'
+  ...
+# Subtest: rpi4: closed additive step and part search destination contract
+not ok 3 - rpi4: closed additive step and part search destination contract
+  ---
+  duration_ms: 1.968834
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:26:2'
+  failureType: 'testCodeFailure'
+  error: `[{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf/0/required","keyword":"required","params":{"missingProperty":"printedNumber"},"message":"must have required property 'printedNumber'"},{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf/1/required","keyword":"required","params":{"missingProperty":"sourceRefs"},"message":"must have required property 'sourceRefs'"},{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf","keyword":"oneOf","params":{"passingSchemas":null},"message":"must match exactly one schema in oneOf"}]`
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:27:56)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: rpi5: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+ok 4 - rpi5: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+  ---
+  duration_ms: 11.144208
+  type: 'test'
+  ...
+# Subtest: rpi5: complete 29-step orientation/tools/procedure/source binding
+ok 5 - rpi5: complete 29-step orientation/tools/procedure/source binding
+  ---
+  duration_ms: 0.08675
+  type: 'test'
+  ...
+# Subtest: rpi5: closed additive step and part search destination contract
+not ok 6 - rpi5: closed additive step and part search destination contract
+  ---
+  duration_ms: 1.269084
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:26:2'
+  failureType: 'testCodeFailure'
+  error: `[{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf/0/required","keyword":"required","params":{"missingProperty":"printedNumber"},"message":"must have required property 'printedNumber'"},{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf/1/required","keyword":"required","params":{"missingProperty":"sourceRefs"},"message":"must have required property 'sourceRefs'"},{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf","keyword":"oneOf","params":{"passingSchemas":null},"message":"must match exactly one schema in oneOf"}]`
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:27:56)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: rpi-zero-2-w: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+ok 7 - rpi-zero-2-w: graph preimage contains complete canonical values and excludes exactly four initial hash fields
+  ---
+  duration_ms: 8.988708
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: complete 29-step orientation/tools/procedure/source binding
+ok 8 - rpi-zero-2-w: complete 29-step orientation/tools/procedure/source binding
+  ---
+  duration_ms: 0.089166
+  type: 'test'
+  ...
+# Subtest: rpi-zero-2-w: closed additive step and part search destination contract
+not ok 9 - rpi-zero-2-w: closed additive step and part search destination contract
+  ---
+  duration_ms: 1.152333
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:26:2'
+  failureType: 'testCodeFailure'
+  error: `[{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf/0/required","keyword":"required","params":{"missingProperty":"printedNumber"},"message":"must have required property 'printedNumber'"},{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf/1/required","keyword":"required","params":{"missingProperty":"sourceRefs"},"message":"must have required property 'sourceRefs'"},{"instancePath":"/results/29","schemaPath":"#/properties/results/items/oneOf","keyword":"oneOf","params":{"passingSchemas":null},"message":"must match exactly one schema in oneOf"}]`
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:27:56)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: contract owner text is exactly bound; original audited contract unchanged
+not ok 10 - contract owner text is exactly bound; original audited contract unchanged
+  ---
+  duration_ms: 1.526208
+  type: 'test'
+  location: '/Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:34:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(source.includes('This is a prospective semantic revision'))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/validation/m2/tests/contracts.test.mjs:34:190)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: normative value changes invalidate graph; appearance labels remain excluded
+ok 11 - normative value changes invalidate graph; appearance labels remain excluded
+  ---
+  duration_ms: 4129.181
+  type: 'test'
+  ...
+# Subtest: stock and state preimages distinguish every serialized mutable surface
+ok 12 - stock and state preimages distinguish every serialized mutable surface
+  ---
+  duration_ms: 8.016042
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 8
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4401.665417

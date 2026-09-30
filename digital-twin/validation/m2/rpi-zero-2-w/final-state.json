@@ -1,0 +1,4037 @@
+{
+  "contractVersion": 2,
+  "variantId": "rpi-zero-2-w",
+  "completedOperationIds": [
+    "PX-V40-OP-01-ZERO2W-INTRODUCE",
+    "PX-V40-OP-01-ZERO2W-SUPPORTS",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X6-SCREW-001",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X6-SCREW-002",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X6-SCREW-003",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X6-SCREW-004",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X11-STANDOFF-001",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X11-STANDOFF-002",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X30-STANDOFF-001",
+    "PX-V40-OP-01-ZERO2W-HARDWARE-M25X30-STANDOFF-002",
+    "PX-V40-OP-02-ZERO2W-INTRODUCE",
+    "PX-V40-OP-02-ZERO2W-BOARD",
+    "PX-V40-OP-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-001",
+    "PX-V40-OP-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-002",
+    "PX-V40-OP-03-ZERO2W-INTRODUCE",
+    "PX-V40-OP-03-ZERO2W-POWER-OFF",
+    "PX-V40-OP-03-ZERO2W-RIBBON-PI",
+    "PX-V40-OP-04-ZERO2W-INTRODUCE",
+    "PX-V40-OP-04-ZERO2W-POWER-OFF",
+    "PX-V40-OP-04-ZERO2W-HAT",
+    "PX-V40-OP-04-ZERO2W-HARDWARE-M25X6-SCREW-005",
+    "PX-V40-OP-04-ZERO2W-HARDWARE-M25X6-SCREW-006",
+    "PX-V40-OP-04-ZERO2W-HARDWARE-M25X6-SCREW-007",
+    "PX-V40-OP-04-ZERO2W-HARDWARE-M25X6-SCREW-008",
+    "PX-V40-OP-05-COMMON-INTRODUCE",
+    "PX-V40-OP-05-COMMON-MOTOR-LEFT",
+    "PX-V40-OP-05-COMMON-MOTOR-RIGHT",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-001",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-002",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-003",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-004",
+    "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-001",
+    "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-002",
+    "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-003",
+    "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-004",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-001",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-002",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-003",
+    "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-004",
+    "PX-V40-OP-06-COMMON-INTRODUCE",
+    "PX-V40-OP-06-COMMON-ALLOCATE-HOOK",
+    "PX-V40-OP-06-COMMON-APPLY-HOOK",
+    "PX-V40-OP-06-COMMON-ALLOCATE-LOOP",
+    "PX-V40-OP-06-COMMON-APPLY-LOOP",
+    "PX-V40-OP-07-COMMON-BATTERY-MOUNT",
+    "PX-V40-OP-07-COMMON-POWER-OFF",
+    "PX-V40-OP-07-COMMON-BATTERY",
+    "PX-V40-OP-08-COMMON-INTRODUCE",
+    "PX-V40-OP-08-COMMON-MOUNT",
+    "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-001",
+    "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-002",
+    "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-003",
+    "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-004",
+    "PX-V40-OP-09-COMMON-INTRODUCE",
+    "PX-V40-OP-09-COMMON-MOUNT",
+    "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-001",
+    "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-001-LOCK",
+    "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-002",
+    "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-002-LOCK",
+    "PX-V40-OP-10-COMMON-INTRODUCE",
+    "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+    "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+    "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+    "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+    "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002",
+    "PX-V40-OP-11-FPC-INTRODUCE",
+    "PX-V40-OP-11-FPC-POWER-OFF",
+    "PX-V40-OP-11-FPC-RIBBON-CAMERA",
+    "PX-V40-OP-12-COMMON-INTRODUCE",
+    "PX-V40-OP-12-COMMON-MOUNT",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-001",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-001-LOCK",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-002",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-002-LOCK",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-003",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-003-LOCK",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-004",
+    "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-004-LOCK",
+    "PX-V40-OP-12-COMMON-GROUP",
+    "PX-V40-OP-13-COMMON-INTRODUCE",
+    "PX-V40-OP-13-COMMON-MOUNT",
+    "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-005",
+    "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-006",
+    "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-007",
+    "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-008",
+    "PX-V40-OP-13-COMMON-GROUP",
+    "PX-V40-OP-14-COMMON-INTRODUCE",
+    "PX-V40-OP-14-COMMON-MOUNT",
+    "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-001",
+    "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-001-LOCK",
+    "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-002",
+    "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-002-LOCK",
+    "PX-V40-OP-14-COMMON-GROUP",
+    "PX-V40-OP-15-COMMON-INTRODUCE",
+    "PX-V40-OP-15-COMMON-MOUNT",
+    "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-003",
+    "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-003-LOCK",
+    "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-004",
+    "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-004-LOCK",
+    "PX-V40-OP-15-COMMON-GROUP",
+    "PX-V40-OP-16-FPC-RIBBON-GAP",
+    "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+    "PX-V40-OP-18-COMMON-INTRODUCE",
+    "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+    "PX-V40-OP-18-COMMON-P11-TILT",
+    "PX-V40-OP-18-COMMON-ZERO-TILT",
+    "PX-V40-OP-18-COMMON-MOVE-GROUP",
+    "PX-V40-OP-18-COMMON-SPLINE",
+    "PX-V40-OP-18-COMMON-P11-DISCONNECT",
+    "PX-V40-OP-18-COMMON-HARDWARE-SERVO-RETAINER-TILT-001",
+    "PX-V40-OP-19-COMMON-INTRODUCE",
+    "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+    "PX-V40-OP-19-COMMON-P11-PAN",
+    "PX-V40-OP-19-COMMON-ZERO-PAN",
+    "PX-V40-OP-19-COMMON-MOVE-GROUP",
+    "PX-V40-OP-19-COMMON-SPLINE",
+    "PX-V40-OP-19-COMMON-P11-DISCONNECT",
+    "PX-V40-OP-19-COMMON-HARDWARE-WASHER-A-001",
+    "PX-V40-OP-19-COMMON-HARDWARE-SERVO-RETAINER-PAN-001",
+    "PX-V40-OP-20-COMMON-INTRODUCE",
+    "PX-V40-OP-20-COMMON-MOUNT",
+    "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-005",
+    "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-005-LOCK",
+    "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-006",
+    "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-006-LOCK",
+    "PX-V40-OP-21-COMMON-INTRODUCE",
+    "PX-V40-OP-21-COMMON-G-HORN-PIVOT",
+    "PX-V40-OP-21-COMMON-HARDWARE-M15X3-SCREW-009",
+    "PX-V40-OP-21-COMMON-GROUP",
+    "PX-V40-OP-22-COMMON-INTRODUCE",
+    "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+    "PX-V40-OP-22-COMMON-P11-STEERING",
+    "PX-V40-OP-22-COMMON-ZERO-STEERING",
+    "PX-V40-OP-22-COMMON-MOVE-GROUP",
+    "PX-V40-OP-22-COMMON-SPLINE",
+    "PX-V40-OP-22-COMMON-P11-DISCONNECT",
+    "PX-V40-OP-22-COMMON-HARDWARE-SERVO-RETAINER-STEERING-001",
+    "PX-V40-OP-23-COMMON-INTRODUCE",
+    "PX-V40-OP-23-COMMON-PLATE-D",
+    "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+    "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004",
+    "PX-V40-OP-24-COMMON-INTRODUCE",
+    "PX-V40-OP-24-COMMON-MOUNT",
+    "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-001",
+    "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-001-LOCK",
+    "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-002",
+    "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-002-LOCK",
+    "PX-V40-OP-25-COMMON-INTRODUCE",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-001",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-001-LOCK",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-002",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-002-LOCK",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-003",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-003-LOCK",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-004",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-004-LOCK",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-005",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-005-LOCK",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-006",
+    "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-006-LOCK",
+    "PX-V40-OP-26-COMMON-INTRODUCE",
+    "PX-V40-OP-26-COMMON-BACKING-1",
+    "PX-V40-OP-26-COMMON-BACKING-2",
+    "PX-V40-OP-26-COMMON-BACKING-3",
+    "PX-V40-OP-26-COMMON-BACKING-4",
+    "PX-V40-OP-26-COMMON-BACKING-5",
+    "PX-V40-OP-26-COMMON-BACKING-6",
+    "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-001",
+    "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-001-LOCK",
+    "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-002",
+    "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-002-LOCK",
+    "PX-V40-OP-27-COMMON-INTRODUCE",
+    "PX-V40-OP-27-COMMON-REAR-WHEEL-LEFT",
+    "PX-V40-OP-27-COMMON-REAR-WHEEL-RIGHT",
+    "PX-V40-OP-28-COMMON-INTRODUCE",
+    "PX-V40-OP-28-COMMON-POWER-OFF",
+    "PX-V40-OP-28-COMMON-ULTRASONIC-SENSOR",
+    "PX-V40-OP-28-COMMON-GRAYSCALE-SENSOR",
+    "PX-V40-OP-29-COMMON-POWER-OFF",
+    "PX-V40-OP-29-COMMON-PAN-FINAL",
+    "PX-V40-OP-29-COMMON-TILT-FINAL",
+    "PX-V40-OP-29-COMMON-STEERING-FINAL",
+    "PX-V40-OP-29-COMMON-LEFT-FINAL",
+    "PX-V40-OP-29-COMMON-RIGHT-FINAL",
+    "PX-V40-OP-29-COMMON-ULTRASONIC-FINAL",
+    "PX-V40-OP-29-COMMON-GRAYSCALE-FINAL"
+  ],
+  "instances": [
+    {
+      "instanceId": "PX-V40-INS-BATTERY-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-07",
+          "Q-09",
+          "Q-11"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-BATTERY-LEAD"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-BATTERY-LEAD",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-CABLE-4PIN-001",
+      "location": "assembly",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-09",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-CABLE-5PIN-001",
+      "location": "assembly",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-09",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-CABLE-WRAP-001",
+      "location": "accessory",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-11",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-CAMERA-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-08",
+          "Q-09"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-ELECTRICAL-TAPE-001",
+      "location": "accessory",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-11",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-GRAYSCALE-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-08"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-HOOK-001",
+      "location": "accessory",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-11",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-HOOK-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-11",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-HORN-PAN-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-HORN-STEERING-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-G-HORN",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06",
+          "Q-12"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-HORN-TILT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-LOOP-001",
+      "location": "accessory",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-11",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-LOOP-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-11",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-005",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-006",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-007",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-008",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-009",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-G-HORN",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-010",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M15X3-SCREW-011",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X11-STANDOFF-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X11-STANDOFF-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X11-STANDOFF-003",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X11-STANDOFF-004",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18-STANDOFF-001",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18-STANDOFF-002",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18-STANDOFF-003",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18-STANDOFF-004",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18-STANDOFF-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18-STANDOFF-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X30-STANDOFF-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X30-STANDOFF-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X30-STANDOFF-003",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X30-STANDOFF-004",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-009",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M25X6-SCREW-010",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3-NUT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3-NUT-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3-NUT-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3-NUT-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3-NUT-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3-NUT-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X25-SCREW-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X25-SCREW-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X25-SCREW-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X25-SCREW-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X25-SCREW-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X25-SCREW-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X26-STANDOFF-003",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X26-STANDOFF-004",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X6-SCREW-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X6-SCREW-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X6-SCREW-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X6-SCREW-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X6-SCREW-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-M3X6-SCREW-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-MOTOR-LEFT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-04",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-MOTOR-LEFT-LEAD"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-MOTOR-LEFT-LEAD",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-MOTOR-RIGHT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-04",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-MOTOR-RIGHT-LEAD"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-MOTOR-RIGHT-LEAD",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-PI4-001",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PI5-001",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-A-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-B-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-C-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-08",
+          "Q-09"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-D-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-E-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-F-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-G-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-G-HORN",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06",
+          "Q-12"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-PLATE-H-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-08"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-R2048-RIVET-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2048-RIVET-BODY",
+        "PX-V40-EL-R2048-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2048-RIVET-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2048-RIVET-BODY",
+        "PX-V40-EL-R2048-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2048-RIVET-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2048-RIVET-BODY",
+        "PX-V40-EL-R2048-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2048-RIVET-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CAMERA-C",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2048-RIVET-BODY",
+        "PX-V40-EL-R2048-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2048-RIVET-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2048-RIVET-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R2048-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2056-RIVET-BODY",
+        "PX-V40-EL-R2056-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2056-RIVET-BODY",
+        "PX-V40-EL-R2056-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2056-RIVET-BODY",
+        "PX-V40-EL-R2056-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2056-RIVET-BODY",
+        "PX-V40-EL-R2056-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-005",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2056-RIVET-BODY",
+        "PX-V40-EL-R2056-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-006",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R2056-RIVET-BODY",
+        "PX-V40-EL-R2056-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-007",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R2056-RIVET-008",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R2056-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R30185-RIVET-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R30185-RIVET-BODY",
+        "PX-V40-EL-R30185-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R30185-RIVET-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R30185-RIVET-BODY",
+        "PX-V40-EL-R30185-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R30185-RIVET-003",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R30185-RIVET-004",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R30185-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3055-RIVET-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3055-RIVET-BODY",
+        "PX-V40-EL-R3055-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3055-RIVET-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3055-RIVET-BODY",
+        "PX-V40-EL-R3055-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3055-RIVET-003",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3055-RIVET-004",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R3055-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3065-RIVET-BODY",
+        "PX-V40-EL-R3065-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3065-RIVET-BODY",
+        "PX-V40-EL-R3065-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3065-RIVET-BODY",
+        "PX-V40-EL-R3065-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3065-RIVET-BODY",
+        "PX-V40-EL-R3065-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-005",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3065-RIVET-BODY",
+        "PX-V40-EL-R3065-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-006",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3065-RIVET-BODY",
+        "PX-V40-EL-R3065-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-007",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3065-RIVET-008",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R3065-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3080-RIVET-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3080-RIVET-BODY",
+        "PX-V40-EL-R3080-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3080-RIVET-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-R3080-RIVET-BODY",
+        "PX-V40-EL-R3080-RIVET-PIN"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-BODY",
+          "state": "inserted"
+        },
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-PIN",
+          "state": "locked"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3080-RIVET-003",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-R3080-RIVET-004",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-BODY",
+          "state": "loose"
+        },
+        {
+          "elementId": "PX-V40-EL-R3080-RIVET-PIN",
+          "state": "loose"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-RIBBON-FFC-001",
+      "location": "variantUnused",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-09",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-RIBBON-FPC-001",
+      "location": "assembly",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-09",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-ROBOT-HAT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-07",
+          "Q-09",
+          "Q-10"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+      "location": "tool",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+      "location": "tool",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SERVO-PAN-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-SERVO-PAN-LEAD"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-SERVO-PAN-LEAD",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-SERVO-RETAINER-PAN-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SERVO-RETAINER-STEERING-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SERVO-RETAINER-TILT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SERVO-STEERING-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-SERVO-STEERING-LEAD"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-SERVO-STEERING-LEAD",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-SERVO-TILT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-SERVO-TILT-LEAD"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-SERVO-TILT-LEAD",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-SPRING-WASHER-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SPRING-WASHER-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SPRING-WASHER-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SPRING-WASHER-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SPRING-WASHER-005",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-SPRING-WASHER-006",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-ULTRASONIC-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-08"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-USB-CABLE-001",
+      "location": "accessory",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-09",
+          "Q-13"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+      "location": "accessory",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-14"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-A-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-A-002",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "removed"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "removed"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-003",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "removed"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-004",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "removed"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-005",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "removed"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-006",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "removed"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-007",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-WASHER-B-BACKING"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WASHER-B-008",
+      "location": "backup",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [
+        "PX-V40-EL-WASHER-B-BACKING"
+      ],
+      "ownedElementStates": [
+        {
+          "elementId": "PX-V40-EL-WASHER-B-BACKING",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "instanceId": "PX-V40-INS-WHEEL-FRONT-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-12"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WHEEL-FRONT-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-12"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WHEEL-REAR-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CHASSIS-REAR-DRIVE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-04",
+          "Q-12"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WHEEL-REAR-002",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-CHASSIS-REAR-DRIVE",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-04",
+          "Q-12"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-WRENCH-001",
+      "location": "tool",
+      "parentAssemblyId": null,
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    },
+    {
+      "instanceId": "PX-V40-INS-ZERO2W-001",
+      "location": "assembly",
+      "parentAssemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-06",
+          "Q-10",
+          "Q-14"
+        ]
+      },
+      "activeOwnedElements": [],
+      "ownedElementStates": []
+    }
+  ],
+  "activeMechanicalConnectionIds": [
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X11-STANDOFF-001",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X11-STANDOFF-002",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X30-STANDOFF-001",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X30-STANDOFF-002",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X6-SCREW-001",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X6-SCREW-002",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X6-SCREW-003",
+    "PX-V40-CONN-01-ZERO2W-HARDWARE-M25X6-SCREW-004",
+    "PX-V40-CONN-01-ZERO2W-SUPPORTS",
+    "PX-V40-CONN-02-ZERO2W-BOARD",
+    "PX-V40-CONN-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-001",
+    "PX-V40-CONN-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-002",
+    "PX-V40-CONN-04-ZERO2W-HARDWARE-M25X6-SCREW-005",
+    "PX-V40-CONN-04-ZERO2W-HARDWARE-M25X6-SCREW-006",
+    "PX-V40-CONN-04-ZERO2W-HARDWARE-M25X6-SCREW-007",
+    "PX-V40-CONN-04-ZERO2W-HARDWARE-M25X6-SCREW-008",
+    "PX-V40-CONN-04-ZERO2W-HAT",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3-NUT-001",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3-NUT-002",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3-NUT-003",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3-NUT-004",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3X25-SCREW-001",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3X25-SCREW-002",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3X25-SCREW-003",
+    "PX-V40-CONN-05-COMMON-HARDWARE-M3X25-SCREW-004",
+    "PX-V40-CONN-05-COMMON-HARDWARE-SPRING-WASHER-001",
+    "PX-V40-CONN-05-COMMON-HARDWARE-SPRING-WASHER-002",
+    "PX-V40-CONN-05-COMMON-HARDWARE-SPRING-WASHER-003",
+    "PX-V40-CONN-05-COMMON-HARDWARE-SPRING-WASHER-004",
+    "PX-V40-CONN-05-COMMON-MOTOR-LEFT",
+    "PX-V40-CONN-05-COMMON-MOTOR-RIGHT",
+    "PX-V40-CONN-06-COMMON-APPLY-HOOK",
+    "PX-V40-CONN-06-COMMON-APPLY-LOOP",
+    "PX-V40-CONN-07-COMMON-BATTERY-MOUNT",
+    "PX-V40-CONN-08-COMMON-HARDWARE-M15X3-SCREW-001",
+    "PX-V40-CONN-08-COMMON-HARDWARE-M15X3-SCREW-002",
+    "PX-V40-CONN-08-COMMON-HARDWARE-M15X3-SCREW-003",
+    "PX-V40-CONN-08-COMMON-HARDWARE-M15X3-SCREW-004",
+    "PX-V40-CONN-08-COMMON-MOUNT",
+    "PX-V40-CONN-09-COMMON-HARDWARE-R3080-RIVET-001",
+    "PX-V40-CONN-09-COMMON-HARDWARE-R3080-RIVET-002",
+    "PX-V40-CONN-09-COMMON-MOUNT",
+    "PX-V40-CONN-10-COMMON-FRONT-SUPPORTS",
+    "PX-V40-CONN-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+    "PX-V40-CONN-10-COMMON-HARDWARE-M3X26-STANDOFF-002",
+    "PX-V40-CONN-10-COMMON-HARDWARE-M3X6-SCREW-001",
+    "PX-V40-CONN-10-COMMON-HARDWARE-M3X6-SCREW-002",
+    "PX-V40-CONN-12-COMMON-HARDWARE-R2048-RIVET-001",
+    "PX-V40-CONN-12-COMMON-HARDWARE-R2048-RIVET-002",
+    "PX-V40-CONN-12-COMMON-HARDWARE-R2048-RIVET-003",
+    "PX-V40-CONN-12-COMMON-HARDWARE-R2048-RIVET-004",
+    "PX-V40-CONN-12-COMMON-MOUNT",
+    "PX-V40-CONN-13-COMMON-HARDWARE-M15X3-SCREW-005",
+    "PX-V40-CONN-13-COMMON-HARDWARE-M15X3-SCREW-006",
+    "PX-V40-CONN-13-COMMON-HARDWARE-M15X3-SCREW-007",
+    "PX-V40-CONN-13-COMMON-HARDWARE-M15X3-SCREW-008",
+    "PX-V40-CONN-13-COMMON-MOUNT",
+    "PX-V40-CONN-14-COMMON-HARDWARE-R2056-RIVET-001",
+    "PX-V40-CONN-14-COMMON-HARDWARE-R2056-RIVET-002",
+    "PX-V40-CONN-14-COMMON-MOUNT",
+    "PX-V40-CONN-15-COMMON-HARDWARE-R2056-RIVET-003",
+    "PX-V40-CONN-15-COMMON-HARDWARE-R2056-RIVET-004",
+    "PX-V40-CONN-15-COMMON-MOUNT",
+    "PX-V40-CONN-18-COMMON-HARDWARE-SERVO-RETAINER-TILT-001",
+    "PX-V40-CONN-18-COMMON-SPLINE",
+    "PX-V40-CONN-19-COMMON-HARDWARE-SERVO-RETAINER-PAN-001",
+    "PX-V40-CONN-19-COMMON-HARDWARE-WASHER-A-001",
+    "PX-V40-CONN-19-COMMON-SPLINE",
+    "PX-V40-CONN-20-COMMON-HARDWARE-R2056-RIVET-005",
+    "PX-V40-CONN-20-COMMON-HARDWARE-R2056-RIVET-006",
+    "PX-V40-CONN-20-COMMON-MOUNT",
+    "PX-V40-CONN-21-COMMON-G-HORN-PIVOT",
+    "PX-V40-CONN-21-COMMON-HARDWARE-M15X3-SCREW-009",
+    "PX-V40-CONN-22-COMMON-HARDWARE-SERVO-RETAINER-STEERING-001",
+    "PX-V40-CONN-22-COMMON-SPLINE",
+    "PX-V40-CONN-23-COMMON-HARDWARE-M3X6-SCREW-003",
+    "PX-V40-CONN-23-COMMON-HARDWARE-M3X6-SCREW-004",
+    "PX-V40-CONN-23-COMMON-PLATE-D",
+    "PX-V40-CONN-24-COMMON-HARDWARE-R3055-RIVET-001",
+    "PX-V40-CONN-24-COMMON-HARDWARE-R3055-RIVET-002",
+    "PX-V40-CONN-24-COMMON-MOUNT",
+    "PX-V40-CONN-25-COMMON-HARDWARE-R3065-RIVET-001",
+    "PX-V40-CONN-25-COMMON-HARDWARE-R3065-RIVET-002",
+    "PX-V40-CONN-25-COMMON-HARDWARE-R3065-RIVET-003",
+    "PX-V40-CONN-25-COMMON-HARDWARE-R3065-RIVET-004",
+    "PX-V40-CONN-25-COMMON-HARDWARE-R3065-RIVET-005",
+    "PX-V40-CONN-25-COMMON-HARDWARE-R3065-RIVET-006",
+    "PX-V40-CONN-26-COMMON-HARDWARE-R30185-RIVET-001",
+    "PX-V40-CONN-26-COMMON-HARDWARE-R30185-RIVET-002",
+    "PX-V40-CONN-27-COMMON-REAR-WHEEL-LEFT",
+    "PX-V40-CONN-27-COMMON-REAR-WHEEL-RIGHT"
+  ],
+  "activeCableConnectionIds": [
+    "PX-V40-CONN-03-ZERO2W-RIBBON-PI",
+    "PX-V40-CONN-07-COMMON-BATTERY",
+    "PX-V40-CONN-11-FPC-RIBBON-CAMERA",
+    "PX-V40-CONN-28-COMMON-GRAYSCALE-SENSOR",
+    "PX-V40-CONN-28-COMMON-ULTRASONIC-SENSOR",
+    "PX-V40-CONN-29-COMMON-GRAYSCALE-FINAL",
+    "PX-V40-CONN-29-COMMON-LEFT-FINAL",
+    "PX-V40-CONN-29-COMMON-PAN-FINAL",
+    "PX-V40-CONN-29-COMMON-RIGHT-FINAL",
+    "PX-V40-CONN-29-COMMON-STEERING-FINAL",
+    "PX-V40-CONN-29-COMMON-TILT-FINAL",
+    "PX-V40-CONN-29-COMMON-ULTRASONIC-FINAL"
+  ],
+  "jointCoordinates": [
+    {
+      "connectionId": "PX-V40-CONN-21-COMMON-G-HORN-PIVOT",
+      "dof": "rz",
+      "coordinate": {
+        "state": "unresolved",
+        "unit": "rad",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06",
+          "Q-12"
+        ]
+      }
+    }
+  ],
+  "requiredConditionIds": [
+    "PX-V40-RULE-03-ZERO2W-POWER-OFF",
+    "PX-V40-RULE-04-ZERO2W-POWER-OFF",
+    "PX-V40-RULE-07-COMMON-POWER-OFF",
+    "PX-V40-RULE-11-FPC-POWER-OFF",
+    "PX-V40-RULE-17-COMMON-POWER-ZERO-P11",
+    "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE",
+    "PX-V40-RULE-18-COMMON-ZERO-TILT",
+    "PX-V40-RULE-19-COMMON-ZERO-PAN",
+    "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE",
+    "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE",
+    "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+    "PX-V40-RULE-28-COMMON-POWER-OFF",
+    "PX-V40-RULE-29-COMMON-POWER-OFF"
+  ],
+  "cableRoutes": [
+    {
+      "cableInstanceId": "PX-V40-INS-RIBBON-FPC-001",
+      "representation": "schematic",
+      "guideEndpoints": [
+        {
+          "instanceId": "PX-V40-INS-PLATE-B-001",
+          "interfaceId": "PX-V40-IF-PLATE-B-PAN-TILT-GIMBAL-GAP"
+        }
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-09"
+        ]
+      }
+    }
+  ],
+  "consumableLots": [
+    {
+      "lotId": "PX-V40-LOT-BATTERY",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-CABLE-4PIN",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-CABLE-5PIN",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-CABLE-WRAP",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "mm",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-CAMERA",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-ELECTRICAL-TAPE",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "mm",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-GRAYSCALE",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-HOOK",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "mm",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-HORN-PAN",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-HORN-STEERING",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-HORN-TILT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-LOOP",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "mm",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M15X3-SCREW",
+      "capacity": {
+        "state": "known",
+        "value": 11,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M15X3-SCREW-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M25X11-STANDOFF",
+      "capacity": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X11-STANDOFF-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M25X18-STANDOFF",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X18-STANDOFF-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M25X18PLUS6-STANDOFF",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X18PLUS6-STANDOFF-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M25X30-STANDOFF",
+      "capacity": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X30-STANDOFF-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M25X6-SCREW",
+      "capacity": {
+        "state": "known",
+        "value": 10,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X6-SCREW-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M3-NUT",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3-NUT-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M3X25-SCREW",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3X25-SCREW-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M3X26-STANDOFF",
+      "capacity": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3X26-STANDOFF-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-M3X6-SCREW",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3X6-SCREW-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-MOTOR-LEFT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-MOTOR-RIGHT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PI4",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PI5",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-A",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-B",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-C",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-D",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-E",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-F",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-G",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-PLATE-H",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-R2048-RIVET",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R2048-RIVET-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-R2056-RIVET",
+      "capacity": {
+        "state": "known",
+        "value": 8,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R2056-RIVET-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-R30185-RIVET",
+      "capacity": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R30185-RIVET-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-R3055-RIVET",
+      "capacity": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R3055-RIVET-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-R3065-RIVET",
+      "capacity": {
+        "state": "known",
+        "value": 8,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R3065-RIVET-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-R3080-RIVET",
+      "capacity": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R3080-RIVET-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-RIBBON-FFC",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-RIBBON-FPC",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-ROBOT-HAT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SCREWDRIVER-01",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SCREWDRIVER-02",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SERVO-PAN",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SERVO-RETAINER-PAN",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SERVO-RETAINER-STEERING",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SERVO-RETAINER-TILT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SERVO-STEERING",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SERVO-TILT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-SPRING-WASHER",
+      "capacity": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-SPRING-WASHER-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-ULTRASONIC",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-USB-CABLE",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-USB-MICROPHONE",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-WASHER-A",
+      "capacity": {
+        "state": "known",
+        "value": 2,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-WASHER-A-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-WASHER-B",
+      "capacity": {
+        "state": "known",
+        "value": 8,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-WASHER-B-PRINTED-TOTAL"
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-WHEEL-FRONT",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-WHEEL-REAR",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-WRENCH",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    },
+    {
+      "lotId": "PX-V40-LOT-ZERO2W",
+      "capacity": {
+        "state": "unresolved",
+        "unit": "count",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    }
+  ],
+  "consumableAllocations": [
+    {
+      "sourceLotId": "PX-V40-LOT-HOOK",
+      "pieceInstanceId": "PX-V40-INS-HOOK-002",
+      "allocatedAmount": {
+        "state": "unresolved",
+        "unit": "mm",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-11"
+        ]
+      },
+      "allocationOperationId": "PX-V40-OP-06-COMMON-ALLOCATE-HOOK",
+      "appliedConnectionRef": {
+        "state": "known",
+        "ref": "PX-V40-CONN-06-COMMON-APPLY-HOOK"
+      }
+    },
+    {
+      "sourceLotId": "PX-V40-LOT-LOOP",
+      "pieceInstanceId": "PX-V40-INS-LOOP-002",
+      "allocatedAmount": {
+        "state": "unresolved",
+        "unit": "mm",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-11"
+        ]
+      },
+      "allocationOperationId": "PX-V40-OP-06-COMMON-ALLOCATE-LOOP",
+      "appliedConnectionRef": {
+        "state": "known",
+        "ref": "PX-V40-CONN-06-COMMON-APPLY-LOOP"
+      }
+    }
+  ],
+  "subassemblies": [
+    {
+      "assemblyId": "PX-V40-GROUP-BASE-ELECTRONICS",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [
+        "PX-V40-INS-M25X11-STANDOFF-001",
+        "PX-V40-INS-M25X11-STANDOFF-002",
+        "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+        "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+        "PX-V40-INS-M25X30-STANDOFF-001",
+        "PX-V40-INS-M25X30-STANDOFF-002",
+        "PX-V40-INS-M25X6-SCREW-001",
+        "PX-V40-INS-M25X6-SCREW-002",
+        "PX-V40-INS-M25X6-SCREW-003",
+        "PX-V40-INS-M25X6-SCREW-004",
+        "PX-V40-INS-M25X6-SCREW-005",
+        "PX-V40-INS-M25X6-SCREW-006",
+        "PX-V40-INS-M25X6-SCREW-007",
+        "PX-V40-INS-M25X6-SCREW-008",
+        "PX-V40-INS-PLATE-A-001",
+        "PX-V40-INS-ROBOT-HAT-001",
+        "PX-V40-INS-ZERO2W-001"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-CAMERA-C",
+      "parentAssemblyId": "PX-V40-GROUP-PAN-TILT",
+      "memberInstanceIds": [
+        "PX-V40-INS-CAMERA-001",
+        "PX-V40-INS-HORN-TILT-001",
+        "PX-V40-INS-M15X3-SCREW-005",
+        "PX-V40-INS-M15X3-SCREW-006",
+        "PX-V40-INS-M15X3-SCREW-007",
+        "PX-V40-INS-M15X3-SCREW-008",
+        "PX-V40-INS-PLATE-C-001",
+        "PX-V40-INS-R2048-RIVET-001",
+        "PX-V40-INS-R2048-RIVET-002",
+        "PX-V40-INS-R2048-RIVET-003",
+        "PX-V40-INS-R2048-RIVET-004"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06",
+          "Q-09"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-CHASSIS-REAR-DRIVE",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [
+        "PX-V40-INS-WHEEL-REAR-001",
+        "PX-V40-INS-WHEEL-REAR-002"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-DRIVE-BASE",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [
+        "PX-V40-INS-BATTERY-001",
+        "PX-V40-INS-HOOK-002",
+        "PX-V40-INS-LOOP-002",
+        "PX-V40-INS-M3-NUT-001",
+        "PX-V40-INS-M3-NUT-002",
+        "PX-V40-INS-M3-NUT-003",
+        "PX-V40-INS-M3-NUT-004",
+        "PX-V40-INS-M3X25-SCREW-001",
+        "PX-V40-INS-M3X25-SCREW-002",
+        "PX-V40-INS-M3X25-SCREW-003",
+        "PX-V40-INS-M3X25-SCREW-004",
+        "PX-V40-INS-MOTOR-LEFT-001",
+        "PX-V40-INS-MOTOR-RIGHT-001",
+        "PX-V40-INS-SPRING-WASHER-001",
+        "PX-V40-INS-SPRING-WASHER-002",
+        "PX-V40-INS-SPRING-WASHER-003",
+        "PX-V40-INS-SPRING-WASHER-004"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-FRONT-BASE",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [
+        "PX-V40-INS-HORN-PAN-001",
+        "PX-V40-INS-M15X3-SCREW-001",
+        "PX-V40-INS-M15X3-SCREW-002",
+        "PX-V40-INS-M15X3-SCREW-003",
+        "PX-V40-INS-M15X3-SCREW-004",
+        "PX-V40-INS-M3X26-STANDOFF-001",
+        "PX-V40-INS-M3X26-STANDOFF-002",
+        "PX-V40-INS-M3X6-SCREW-001",
+        "PX-V40-INS-M3X6-SCREW-002",
+        "PX-V40-INS-PLATE-H-001",
+        "PX-V40-INS-R3080-RIVET-001",
+        "PX-V40-INS-R3080-RIVET-002",
+        "PX-V40-INS-ULTRASONIC-001"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-G-HORN",
+      "parentAssemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "memberInstanceIds": [
+        "PX-V40-INS-HORN-STEERING-001",
+        "PX-V40-INS-M15X3-SCREW-009",
+        "PX-V40-INS-PLATE-G-001"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06",
+          "Q-12"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-PAN-TILT",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [
+        "PX-V40-INS-PLATE-B-001",
+        "PX-V40-INS-R2056-RIVET-001",
+        "PX-V40-INS-R2056-RIVET-002",
+        "PX-V40-INS-R2056-RIVET-003",
+        "PX-V40-INS-R2056-RIVET-004",
+        "PX-V40-INS-SERVO-PAN-001",
+        "PX-V40-INS-SERVO-RETAINER-PAN-001",
+        "PX-V40-INS-SERVO-RETAINER-TILT-001",
+        "PX-V40-INS-SERVO-TILT-001",
+        "PX-V40-INS-WASHER-A-001"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03",
+          "Q-05",
+          "Q-06",
+          "Q-09"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-ROBOT",
+      "parentAssemblyId": null,
+      "memberInstanceIds": [],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-STEERING-FRONT",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [
+        "PX-V40-INS-GRAYSCALE-001",
+        "PX-V40-INS-M3X6-SCREW-003",
+        "PX-V40-INS-M3X6-SCREW-004",
+        "PX-V40-INS-PLATE-D-001",
+        "PX-V40-INS-PLATE-E-001",
+        "PX-V40-INS-PLATE-F-001",
+        "PX-V40-INS-R2056-RIVET-005",
+        "PX-V40-INS-R2056-RIVET-006",
+        "PX-V40-INS-R30185-RIVET-001",
+        "PX-V40-INS-R30185-RIVET-002",
+        "PX-V40-INS-R3055-RIVET-001",
+        "PX-V40-INS-R3055-RIVET-002",
+        "PX-V40-INS-R3065-RIVET-001",
+        "PX-V40-INS-R3065-RIVET-002",
+        "PX-V40-INS-R3065-RIVET-003",
+        "PX-V40-INS-R3065-RIVET-004",
+        "PX-V40-INS-R3065-RIVET-005",
+        "PX-V40-INS-R3065-RIVET-006",
+        "PX-V40-INS-SERVO-RETAINER-STEERING-001",
+        "PX-V40-INS-SERVO-STEERING-001",
+        "PX-V40-INS-WASHER-B-001",
+        "PX-V40-INS-WASHER-B-002",
+        "PX-V40-INS-WASHER-B-003",
+        "PX-V40-INS-WASHER-B-004",
+        "PX-V40-INS-WASHER-B-005",
+        "PX-V40-INS-WASHER-B-006",
+        "PX-V40-INS-WHEEL-FRONT-001",
+        "PX-V40-INS-WHEEL-FRONT-002"
+      ],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-TRAY",
+      "parentAssemblyId": null,
+      "memberInstanceIds": [],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    },
+    {
+      "assemblyId": "PX-V40-GROUP-WIRING",
+      "parentAssemblyId": "PX-V40-GROUP-ROBOT",
+      "memberInstanceIds": [],
+      "solutionRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ]
+      }
+    }
+  ],
+  "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+  "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+  "stateHash": "565d8f849b6c8e258c2c150f459f4423dc9ed3485d66fe512668394d1b5997fe",
+  "stockDispositionHash": "f1da6a85518dae29dcac63974e3faa604fe8fba5aae9a5199fc799a03a12964e"
+}

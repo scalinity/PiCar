@@ -79,6 +79,11 @@ export function ruleCheck(rule,index) {
  if(rule.expected.kind==='idSet')for(const id of rule.expected.ids){const r=index.get(id);if(!r)throw Error('UNKNOWN_REFERENCE');if(rule.predicate==='cableEndpoint'&&r.type!=='CableConnection')throw Error('RULE_EXPECTED_TYPE');}
 }
 export function validateRegistry(registry,{steps=[],artifacts=true}={}) {
+ const descriptor=read(path.join(twin,'schemas/semantic-registry.json'));
+ if(descriptor.semanticVersion===2){
+  const revision=descriptor.installationLocationRevision;
+  if(revision?.id!=='PX-V40-CONTRACT-LOCATION-01'||revision.path!=='docs/digital-twin/SEMANTIC_LOCATION_REVISION.md'||fileHash(path.join(root,revision.path))!==revision.rawSha256)throw Error('SEMANTIC_REVISION_BINDING');
+ }else if(descriptor.semanticVersion!==1)throw Error('UNSUPPORTED_SEMANTIC_VERSION');
  const index=typedIndex(registry,steps);const edges=Object.fromEntries([...index.keys()].map(k=>[k,[]]));let referenceCount=0;
  const resolve=(id,allowed,owner)=>{const r=index.get(id);if(!r)throw Error('UNKNOWN_REFERENCE: '+id);if(allowed?.length&&!allowed.includes(r.type))throw Error('REFERENCE_TYPE: '+id+' expected '+allowed.join('/'));edges[id].push(owner);referenceCount++;return r.record;};
  const walk=(r,owner,type,key='')=>{

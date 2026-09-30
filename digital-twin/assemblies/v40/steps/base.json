@@ -1,0 +1,1365 @@
+[
+  {
+    "id": "PX-V40-STEP-01",
+    "printedNumber": 1,
+    "title": "Prepare Plate A mounting supports",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "sourcePanel": "printed step 1",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [
+      "PX-V40-PATCH-ZERO2W-01"
+    ],
+    "prerequisites": [],
+    "operationIds": [
+      "PX-V40-OP-01-PI45-INTRODUCE",
+      "PX-V40-OP-01-PI45-SUPPORTS",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X6-SCREW-001",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X6-SCREW-002",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X6-SCREW-003",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X6-SCREW-004",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X18PLUS6-STANDOFF-003",
+      "PX-V40-OP-01-PI45-HARDWARE-M25X18PLUS6-STANDOFF-004"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-01"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#01"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-02",
+    "printedNumber": 2,
+    "title": "Mount the selected Raspberry Pi",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "sourcePanel": "printed step 2",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [
+      "PX-V40-PATCH-PI5-02",
+      "PX-V40-PATCH-ZERO2W-02"
+    ],
+    "prerequisites": [
+      "PX-V40-STEP-01"
+    ],
+    "operationIds": [
+      "PX-V40-OP-02-PI4-INTRODUCE",
+      "PX-V40-OP-02-PI4-BOARD",
+      "PX-V40-OP-02-PI4-MICROPHONE",
+      "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-001",
+      "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-002",
+      "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-003",
+      "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-004"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-02"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#02"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-10",
+      "Q-14"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-03",
+    "printedNumber": 3,
+    "title": "Connect the Pi end of the camera ribbon",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "sourcePanel": "printed step 3",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [
+      "PX-V40-PATCH-PI5-03",
+      "PX-V40-PATCH-ZERO2W-03"
+    ],
+    "prerequisites": [
+      "PX-V40-STEP-02"
+    ],
+    "operationIds": [
+      "PX-V40-OP-03-PI4-INTRODUCE",
+      "PX-V40-OP-03-PI4-POWER-OFF",
+      "PX-V40-OP-03-PI4-RIBBON-PI"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-03"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#03"
+    ],
+    "blockerIds": [
+      "Q-09",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-04",
+    "printedNumber": 4,
+    "title": "Mount the Robot HAT",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "sourcePanel": "printed step 4",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [
+      "PX-V40-PATCH-PI5-04",
+      "PX-V40-PATCH-ZERO2W-04"
+    ],
+    "prerequisites": [
+      "PX-V40-STEP-03"
+    ],
+    "operationIds": [
+      "PX-V40-OP-04-PI4-INTRODUCE",
+      "PX-V40-OP-04-PI4-POWER-OFF",
+      "PX-V40-OP-04-PI4-HAT",
+      "PX-V40-OP-04-PI4-HARDWARE-M25X6-SCREW-005",
+      "PX-V40-OP-04-PI4-HARDWARE-M25X6-SCREW-006",
+      "PX-V40-OP-04-PI4-HARDWARE-M25X6-SCREW-007",
+      "PX-V40-OP-04-PI4-HARDWARE-M25X6-SCREW-008"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-04",
+      "PX-V40-WARN-ZERO2W-HEADER"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#04"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-07",
+      "Q-09",
+      "Q-10"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-05",
+    "printedNumber": 5,
+    "title": "Install the two drive motors",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "sourcePanel": "printed step 5",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-04"
+    ],
+    "operationIds": [
+      "PX-V40-OP-05-COMMON-INTRODUCE",
+      "PX-V40-OP-05-COMMON-MOTOR-LEFT",
+      "PX-V40-OP-05-COMMON-MOTOR-RIGHT",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-001",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-002",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-003",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3X25-SCREW-004",
+      "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-001",
+      "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-002",
+      "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-003",
+      "PX-V40-OP-05-COMMON-HARDWARE-SPRING-WASHER-004",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-001",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-002",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-003",
+      "PX-V40-OP-05-COMMON-HARDWARE-M3-NUT-004"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER",
+      "PX-V40-TOOL-WRENCH"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-05"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#05"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-04",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-06",
+    "printedNumber": 6,
+    "title": "Prepare battery hook-and-loop mounting",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 6",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-05"
+    ],
+    "operationIds": [
+      "PX-V40-OP-06-COMMON-INTRODUCE",
+      "PX-V40-OP-06-COMMON-ALLOCATE-HOOK",
+      "PX-V40-OP-06-COMMON-APPLY-HOOK",
+      "PX-V40-OP-06-COMMON-ALLOCATE-LOOP",
+      "PX-V40-OP-06-COMMON-APPLY-LOOP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-06"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#06"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-11"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-07",
+    "printedNumber": 7,
+    "title": "Secure and connect the battery",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 7",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-06"
+    ],
+    "operationIds": [
+      "PX-V40-OP-07-COMMON-BATTERY-MOUNT",
+      "PX-V40-OP-07-COMMON-POWER-OFF",
+      "PX-V40-OP-07-COMMON-BATTERY"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-07"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#07"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-09",
+      "Q-11"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-08",
+    "printedNumber": 8,
+    "title": "Attach the pan horn to the front chassis",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 8",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-07"
+    ],
+    "operationIds": [
+      "PX-V40-OP-08-COMMON-INTRODUCE",
+      "PX-V40-OP-08-COMMON-MOUNT",
+      "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-001",
+      "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-002",
+      "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-003",
+      "PX-V40-OP-08-COMMON-HARDWARE-M15X3-SCREW-004"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-08"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#08"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-09",
+    "printedNumber": 9,
+    "title": "Install the ultrasonic module and Plate H",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 9",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-08"
+    ],
+    "operationIds": [
+      "PX-V40-OP-09-COMMON-INTRODUCE",
+      "PX-V40-OP-09-COMMON-MOUNT",
+      "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-001",
+      "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-001-LOCK",
+      "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-002",
+      "PX-V40-OP-09-COMMON-HARDWARE-R3080-RIVET-002-LOCK"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-09"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#09"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-08"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-10",
+    "printedNumber": 10,
+    "title": "Fit the two front support standoffs",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 10",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-09"
+    ],
+    "operationIds": [
+      "PX-V40-OP-10-COMMON-INTRODUCE",
+      "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+      "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+      "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+      "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+      "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-10"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#10"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-11",
+    "printedNumber": 11,
+    "title": "Connect the camera end of the ribbon",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 11",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [
+      "PX-V40-PATCH-PI5-11",
+      "PX-V40-PATCH-ZERO2W-11"
+    ],
+    "prerequisites": [
+      "PX-V40-STEP-10"
+    ],
+    "operationIds": [
+      "PX-V40-OP-11-FFC-INTRODUCE",
+      "PX-V40-OP-11-FFC-POWER-OFF",
+      "PX-V40-OP-11-FFC-RIBBON-CAMERA"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-11"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#11"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-12",
+    "printedNumber": 12,
+    "title": "Mount the camera on Plate C",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 12",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-11"
+    ],
+    "operationIds": [
+      "PX-V40-OP-12-COMMON-INTRODUCE",
+      "PX-V40-OP-12-COMMON-MOUNT",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-001",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-001-LOCK",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-002",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-002-LOCK",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-003",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-003-LOCK",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-004",
+      "PX-V40-OP-12-COMMON-HARDWARE-R2048-RIVET-004-LOCK",
+      "PX-V40-OP-12-COMMON-GROUP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-12"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#12"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-08",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-13",
+    "printedNumber": 13,
+    "title": "Attach the tilt horn to Plate C",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 13",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-12"
+    ],
+    "operationIds": [
+      "PX-V40-OP-13-COMMON-INTRODUCE",
+      "PX-V40-OP-13-COMMON-MOUNT",
+      "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-005",
+      "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-006",
+      "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-007",
+      "PX-V40-OP-13-COMMON-HARDWARE-M15X3-SCREW-008",
+      "PX-V40-OP-13-COMMON-GROUP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-13"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#13"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-14",
+    "printedNumber": 14,
+    "title": "Install the pan servo on Plate B",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 14",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-13"
+    ],
+    "operationIds": [
+      "PX-V40-OP-14-COMMON-INTRODUCE",
+      "PX-V40-OP-14-COMMON-MOUNT",
+      "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-001",
+      "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-001-LOCK",
+      "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-002",
+      "PX-V40-OP-14-COMMON-HARDWARE-R2056-RIVET-002-LOCK",
+      "PX-V40-OP-14-COMMON-GROUP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-14"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#14"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-15",
+    "printedNumber": 15,
+    "title": "Install the tilt servo on Plate B",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 15",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-14"
+    ],
+    "operationIds": [
+      "PX-V40-OP-15-COMMON-INTRODUCE",
+      "PX-V40-OP-15-COMMON-MOUNT",
+      "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-003",
+      "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-003-LOCK",
+      "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-004",
+      "PX-V40-OP-15-COMMON-HARDWARE-R2056-RIVET-004-LOCK",
+      "PX-V40-OP-15-COMMON-GROUP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-15"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#15"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-16",
+    "printedNumber": 16,
+    "title": "Route the camera ribbon through the gimbal gap",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 16",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [
+      "PX-V40-PATCH-PI5-16",
+      "PX-V40-PATCH-ZERO2W-16"
+    ],
+    "prerequisites": [
+      "PX-V40-STEP-15"
+    ],
+    "operationIds": [
+      "PX-V40-OP-16-FFC-RIBBON-GAP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-16"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#16"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-17",
+    "printedNumber": 17,
+    "title": "Introduce the servo-zeroing procedure",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-05"
+    ],
+    "sourcePanel": "printed step 17",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-16"
+    ],
+    "operationIds": [
+      "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-17"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#17"
+    ],
+    "blockerIds": [
+      "Q-05",
+      "Q-07"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-18",
+    "printedNumber": 18,
+    "title": "Mate the camera/Plate-C assembly to tilt",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 18",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-17"
+    ],
+    "operationIds": [
+      "PX-V40-OP-18-COMMON-INTRODUCE",
+      "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+      "PX-V40-OP-18-COMMON-P11-TILT",
+      "PX-V40-OP-18-COMMON-ZERO-TILT",
+      "PX-V40-OP-18-COMMON-MOVE-GROUP",
+      "PX-V40-OP-18-COMMON-SPLINE",
+      "PX-V40-OP-18-COMMON-P11-DISCONNECT",
+      "PX-V40-OP-18-COMMON-HARDWARE-SERVO-RETAINER-TILT-001"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-18"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#18"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-19",
+    "printedNumber": 19,
+    "title": "Mate the pan-tilt assembly to the chassis",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 19",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-18"
+    ],
+    "operationIds": [
+      "PX-V40-OP-19-COMMON-INTRODUCE",
+      "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+      "PX-V40-OP-19-COMMON-P11-PAN",
+      "PX-V40-OP-19-COMMON-ZERO-PAN",
+      "PX-V40-OP-19-COMMON-MOVE-GROUP",
+      "PX-V40-OP-19-COMMON-SPLINE",
+      "PX-V40-OP-19-COMMON-P11-DISCONNECT",
+      "PX-V40-OP-19-COMMON-HARDWARE-WASHER-A-001",
+      "PX-V40-OP-19-COMMON-HARDWARE-SERVO-RETAINER-PAN-001"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-19"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#19"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-09"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-20",
+    "printedNumber": 20,
+    "title": "Install the steering servo",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 20",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-19"
+    ],
+    "operationIds": [
+      "PX-V40-OP-20-COMMON-INTRODUCE",
+      "PX-V40-OP-20-COMMON-MOUNT",
+      "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-005",
+      "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-005-LOCK",
+      "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-006",
+      "PX-V40-OP-20-COMMON-HARDWARE-R2056-RIVET-006-LOCK"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-20"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#20"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-21",
+    "printedNumber": 21,
+    "title": "Connect Plate G to the steering horn",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 21",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-20"
+    ],
+    "operationIds": [
+      "PX-V40-OP-21-COMMON-INTRODUCE",
+      "PX-V40-OP-21-COMMON-G-HORN-PIVOT",
+      "PX-V40-OP-21-COMMON-HARDWARE-M15X3-SCREW-009",
+      "PX-V40-OP-21-COMMON-GROUP"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-21"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#21"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-22",
+    "printedNumber": 22,
+    "title": "Attach the steering horn assembly to its servo",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 22",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-21"
+    ],
+    "operationIds": [
+      "PX-V40-OP-22-COMMON-INTRODUCE",
+      "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+      "PX-V40-OP-22-COMMON-P11-STEERING",
+      "PX-V40-OP-22-COMMON-ZERO-STEERING",
+      "PX-V40-OP-22-COMMON-MOVE-GROUP",
+      "PX-V40-OP-22-COMMON-SPLINE",
+      "PX-V40-OP-22-COMMON-P11-DISCONNECT",
+      "PX-V40-OP-22-COMMON-HARDWARE-SERVO-RETAINER-STEERING-001"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-22"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#22"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-05",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-23",
+    "printedNumber": 23,
+    "title": "Install Plate D on the front supports",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 23",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-22"
+    ],
+    "operationIds": [
+      "PX-V40-OP-23-COMMON-INTRODUCE",
+      "PX-V40-OP-23-COMMON-PLATE-D",
+      "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+      "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [
+      "PX-V40-TOOL-SCREWDRIVER"
+    ],
+    "warningIds": [
+      "PX-V40-WARN-STEP-23"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#23"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-24",
+    "printedNumber": 24,
+    "title": "Attach the grayscale module to Plate D",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 24",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-23"
+    ],
+    "operationIds": [
+      "PX-V40-OP-24-COMMON-INTRODUCE",
+      "PX-V40-OP-24-COMMON-MOUNT",
+      "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-001",
+      "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-001-LOCK",
+      "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-002",
+      "PX-V40-OP-24-COMMON-HARDWARE-R3055-RIVET-002-LOCK"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-24"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#24"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-08"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-25",
+    "printedNumber": 25,
+    "title": "Install right and left front wheel carriers",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 25",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-24"
+    ],
+    "operationIds": [
+      "PX-V40-OP-25-COMMON-INTRODUCE",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-001",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-001-LOCK",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-002",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-002-LOCK",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-003",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-003-LOCK",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-004",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-004-LOCK",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-005",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-005-LOCK",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-006",
+      "PX-V40-OP-25-COMMON-HARDWARE-R3065-RIVET-006-LOCK"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-25"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#25"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-26",
+    "printedNumber": 26,
+    "title": "Install the front wheels",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 26",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-25"
+    ],
+    "operationIds": [
+      "PX-V40-OP-26-COMMON-INTRODUCE",
+      "PX-V40-OP-26-COMMON-BACKING-1",
+      "PX-V40-OP-26-COMMON-BACKING-2",
+      "PX-V40-OP-26-COMMON-BACKING-3",
+      "PX-V40-OP-26-COMMON-BACKING-4",
+      "PX-V40-OP-26-COMMON-BACKING-5",
+      "PX-V40-OP-26-COMMON-BACKING-6",
+      "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-001",
+      "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-001-LOCK",
+      "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-002",
+      "PX-V40-OP-26-COMMON-HARDWARE-R30185-RIVET-002-LOCK"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-26"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#26"
+    ],
+    "blockerIds": [
+      "Q-03",
+      "Q-06",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-27",
+    "printedNumber": 27,
+    "title": "Fit the rear wheels to motor shafts",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 27",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-26"
+    ],
+    "operationIds": [
+      "PX-V40-OP-27-COMMON-INTRODUCE",
+      "PX-V40-OP-27-COMMON-REAR-WHEEL-LEFT",
+      "PX-V40-OP-27-COMMON-REAR-WHEEL-RIGHT"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-27"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#27"
+    ],
+    "blockerIds": [
+      "Q-04",
+      "Q-12"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-28",
+    "printedNumber": 28,
+    "title": "Connect the sensor ends of their cables",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 28",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-27"
+    ],
+    "operationIds": [
+      "PX-V40-OP-28-COMMON-INTRODUCE",
+      "PX-V40-OP-28-COMMON-POWER-OFF",
+      "PX-V40-OP-28-COMMON-ULTRASONIC-SENSOR",
+      "PX-V40-OP-28-COMMON-GRAYSCALE-SENSOR"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-28",
+      "PX-V40-WARN-ELECTRICAL-CONFLICT"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#28"
+    ],
+    "blockerIds": [
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  },
+  {
+    "id": "PX-V40-STEP-29",
+    "printedNumber": 29,
+    "title": "Complete the Robot HAT wiring",
+    "revision": "Z0104V40",
+    "sourceRefs": [
+      "PX-EV-PHOTO-06"
+    ],
+    "sourcePanel": "printed step 29",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "variantPatchRefs": [],
+    "prerequisites": [
+      "PX-V40-STEP-28"
+    ],
+    "operationIds": [
+      "PX-V40-OP-29-COMMON-POWER-OFF",
+      "PX-V40-OP-29-COMMON-PAN-FINAL",
+      "PX-V40-OP-29-COMMON-TILT-FINAL",
+      "PX-V40-OP-29-COMMON-STEERING-FINAL",
+      "PX-V40-OP-29-COMMON-LEFT-FINAL",
+      "PX-V40-OP-29-COMMON-RIGHT-FINAL",
+      "PX-V40-OP-29-COMMON-ULTRASONIC-FINAL",
+      "PX-V40-OP-29-COMMON-GRAYSCALE-FINAL"
+    ],
+    "introducedInstanceIds": [],
+    "usedInstanceIds": [],
+    "toolRequirementIds": [],
+    "warningIds": [
+      "PX-V40-WARN-STEP-29",
+      "PX-V40-WARN-ELECTRICAL-CONFLICT"
+    ],
+    "zeroingConditionIds": [],
+    "motionInstructionIds": [],
+    "cameraInstructionIds": [],
+    "verificationRuleIds": [],
+    "referenceLinks": [
+      "docs/digital-twin/V40_ASSEMBLY_LEDGER.md#29"
+    ],
+    "blockerIds": [
+      "Q-07",
+      "Q-08",
+      "Q-09",
+      "Q-13"
+    ]
+  }
+]

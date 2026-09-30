@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://picarx.local/spec/v2/m2-search-index.schema.json",
+  "type": "object",
+  "properties": {
+    "contractVersion": {"const": 2},
+    "variantId": {"enum": ["rpi4", "rpi5", "rpi-zero-2-w"]},
+    "graphHash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "results": {"type": "array", "minItems": 188, "maxItems": 188, "items": {"oneOf": [
+      {"type": "object", "properties": {
+        "kind": {"const": "assemblyStep"}, "id": {"$ref": "#/$defs/id"}, "label": {"type": "string", "minLength": 1},
+        "printedNumber": {"type": "integer", "minimum": 1, "maximum": 29}, "sourceRefs": {"$ref": "#/$defs/ids"},
+        "destination": {"type": "object", "properties": {"kind": {"const": "assemblyStep"}, "variantId": {"$ref": "#/$defs/variant"}, "stepId": {"$ref": "#/$defs/id"}}, "required": ["kind", "variantId", "stepId"], "additionalProperties": false}
+      }, "required": ["kind", "id", "label", "printedNumber", "sourceRefs", "destination"], "additionalProperties": false},
+      {"type": "object", "properties": {
+        "kind": {"const": "assemblyPart"}, "id": {"$ref": "#/$defs/id"}, "label": {"type": "string", "minLength": 1}, "definitionId": {"$ref": "#/$defs/id"},
+        "disposition": {"enum": ["plannedInstalled", "backup", "variantUnused", "accessory", "tool", "consumable", "unresolved"]}, "stepRefs": {"$ref": "#/$defs/ids"}, "sourceRefs": {"$ref": "#/$defs/ids"},
+        "destination": {"type": "object", "properties": {"kind": {"const": "assemblyPart"}, "variantId": {"$ref": "#/$defs/variant"}, "instanceId": {"$ref": "#/$defs/id"}}, "required": ["kind", "variantId", "instanceId"], "additionalProperties": false}
+      }, "required": ["kind", "id", "label", "definitionId", "disposition", "stepRefs", "sourceRefs", "destination"], "additionalProperties": false}
+    ]}}
+  },
+  "required": ["contractVersion", "variantId", "graphHash", "results"],
+  "additionalProperties": false,
+  "$defs": {
+    "variant": {"enum": ["rpi4", "rpi5", "rpi-zero-2-w"]},
+    "id": {"type": "string", "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+    "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+  }
+}

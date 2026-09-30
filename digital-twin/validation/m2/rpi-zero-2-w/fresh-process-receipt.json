@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "command": [
+    "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+    "--no-warnings",
+    "digital-twin/tools/compiler/replay.mjs",
+    "digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json",
+    "digital-twin/validation/m2/runtime-registry.json",
+    "digital-twin/validation/m2/rpi-zero-2-w/fresh-replay.json"
+  ],
+  "exitCode": 0,
+  "graphRawSha256": "257e045b191fdff4ec7b04565c17d73231af3efc1f1cf47e837b9b928584f91e",
+  "registryRawSha256": "231b5df34360f923428db992afa2595185c610f0862353c715955e8fbdd05214",
+  "expectedRawSha256": "eb8a4875657864833ebb6773261c5b42c81739b5cb5cfb1e5524566ffe900f14",
+  "actualRawSha256": "50d5b63b9fc03437a024b2fd46a432e57d9dc0fe47db7d1581c5dfbfcdd32ac1",
+  "prefixes": 187,
+  "stepBoundaries": 29
+}

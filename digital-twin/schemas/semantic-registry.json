@@ -1,10 +1,30 @@
 {
   "contractVersion": 2,
-  "semanticVersion": 1,
+  "semanticVersion": 2,
   "gate": "G-DATA",
-  "futureReferenceFamilies": ["AssemblyOperation", "MechanicalConnection", "CableConnection", "Constraint", "Condition", "AssemblyGroup", "SolutionContract", "StateContract", "ReportContract", "AppearanceContract", "EngineeringCheck", "ObservationContract"],
+  "futureReferenceFamilies": [
+    "AssemblyOperation",
+    "MechanicalConnection",
+    "CableConnection",
+    "Constraint",
+    "Condition",
+    "AssemblyGroup",
+    "SolutionContract",
+    "StateContract",
+    "ReportContract",
+    "AppearanceContract",
+    "EngineeringCheck",
+    "ObservationContract"
+  ],
   "futureRecordPolicy": "M1 supplies canonical shapes where present in audited v2; typed owners are declared before records are authored in their owning milestone. No synthesized IDs or fake operations/solutions. A known reference without a registered typed record fails closure.",
   "mechanicalAuthority": "UNRESOLVED and PROBABLE cannot certify authoritative mechanical dependencies. Process maturity never upgrades confidence.",
   "phasePolicy": "Predicate version 1 and operand/target/unit/comparator/phase table in SEMANTIC_CONTRACT section 5 are mandatory.",
-  "invalidation": "Relevant record, reference, schema, evidence, validator or hash-policy changes invalidate G-DATA; retain superseded records and recompute transitive impact."
+  "invalidation": "Relevant record, reference, schema, evidence, validator or hash-policy changes invalidate G-DATA; retain superseded records and recompute transitive impact.",
+  "installationLocationRevision": {
+    "id": "PX-V40-CONTRACT-LOCATION-01",
+    "path": "docs/digital-twin/SEMANTIC_LOCATION_REVISION.md",
+    "rawSha256": "9906beba00637ca051f43b05c38112e6a9dbded51ec575cdb14cd51d459bfd3a",
+    "authority": "Explicit project-owner instruction received 2026-09-29 America/New_York; prospective M2 revision only",
+    "supersedes": "Original section 3 location effects only; accepted M1 objects and original audited package preserved"
+  }
 }
