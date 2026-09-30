@@ -1,0 +1,27 @@
+{
+  "contractVersion": 2,
+  "families": {
+    "plannedUses": "components/inventory/planned-uses.json",
+    "evidence": "evidence/records/evidence.json",
+    "claims": "evidence/records/claims.json",
+    "conflicts": "evidence/conflicts/conflicts.json",
+    "derivations": "components/measurements/derivations.json",
+    "definitions": "components/definitions/parts.json",
+    "instances": "components/instances/planned-stock.json",
+    "measurements": "components/measurements/measurements.json",
+    "interfaces": "components/interfaces/mechanical.json",
+    "connectionPoints": "components/interfaces/connection-points.json",
+    "fastenerDefinitions": "components/definitions/fasteners.json",
+    "cableDefinitions": "components/definitions/cables.json",
+    "geometrySources": "components/definitions/geometry-sources.json",
+    "frames": "components/interfaces/frames.json",
+    "unresolvedItems": "evidence/records/blockers.json",
+    "variants": "components/inventory/variants.json",
+    "tools": "components/inventory/tools.json",
+    "warnings": "evidence/records/warnings.json",
+    "verificationRules": "components/interfaces/verification-rules.json",
+    "lots": "components/inventory/lots.json",
+    "allocations": "components/inventory/allocations.json"
+  },
+  "scope": "M1 authoring only; no live state or compiled graph"
+}

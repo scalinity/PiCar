@@ -1,0 +1,25 @@
+[
+  {
+    "id": "PX-V40-WARN-ELECTRICAL-CONFLICT",
+    "severity": "critical",
+    "text": "Printed V40 rail labels and generic ultrasonic documentation conflict; electrical certification remains BLOCKED.",
+    "evidenceRefs": [
+      "PX-EV-PHOTO-06",
+      "PX-EV-DOC-ULTRASONIC"
+    ],
+    "operationIds": [],
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "triggerRuleIds": [],
+    "acknowledgmentRequired": false,
+    "blocks": [
+      "certification"
+    ],
+    "blockerIds": [
+      "Q-08"
+    ]
+  }
+]

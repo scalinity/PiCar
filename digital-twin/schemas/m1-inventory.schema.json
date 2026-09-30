@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://picar.local/spec/v2/m1-inventory.schema.json",
+  "$defs": {
+    "Id": {
+      "type": "string",
+      "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "InventoryLot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "definitionId",
+        "scope",
+        "quantity",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "definitionId": {
+          "$ref": "#/$defs/Id"
+        },
+        "scope": {
+          "const": "printedPlanning"
+        },
+        "quantity": {
+          "$ref": "digital-twin.schema.json#/$defs/NumericValue"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Id"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "PlannedAllocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instanceId",
+        "variantId",
+        "disposition",
+        "stepId",
+        "useId"
+      ],
+      "properties": {
+        "instanceId": {
+          "$ref": "#/$defs/Id"
+        },
+        "variantId": {
+          "enum": [
+            "rpi4",
+            "rpi5",
+            "rpi-zero-2-w"
+          ]
+        },
+        "disposition": {
+          "enum": [
+            "plannedInstalled",
+            "backup",
+            "variantUnused",
+            "accessory",
+            "tool",
+            "consumable",
+            "unresolved"
+          ]
+        },
+        "stepId": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useId": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/Id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceLotId": {
+          "$ref": "#/$defs/Id"
+        },
+        "allocatedAmount": {
+          "$ref": "digital-twin.schema.json#/$defs/NumericValue"
+        }
+      }
+    },
+    "PlanningUse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "instanceId",
+        "definitionId",
+        "variantId",
+        "stepId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "instanceId": {
+          "$ref": "#/$defs/Id"
+        },
+        "definitionId": {
+          "$ref": "#/$defs/Id"
+        },
+        "variantId": {
+          "enum": [
+            "rpi4",
+            "rpi5",
+            "rpi-zero-2-w"
+          ]
+        },
+        "stepId": {
+          "$ref": "#/$defs/Id"
+        }
+      }
+    }
+  }
+}

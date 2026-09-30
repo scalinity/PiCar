@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { read,strictParse,jcs,H,assertFinite } from '../../tools/evidence/hash.mjs';
+import { normalize,createHashPolicy,validateHashInputs } from '../../tools/evidence/identity.mjs';
+import { twin } from '../../tools/evidence/semantic.mjs';
+const corpus=read(path.join(twin,'validation/fixtures/hash-vectors.json'));
+for(const v of corpus.valid)test('positive JCS vector: '+v.id,()=>assert.equal(jcs(normalize(strictParse(v.input))).toString(),v.canonical));
+for(const v of corpus.invalid)test('negative JCS vector: '+v.id,()=>assert.throws(()=>strictParse(v.input),new RegExp(v.error)));
+for(const [name,n]of [['NaN',NaN],['Infinity',Infinity],['-Infinity',-Infinity],['negative zero',-0]])test('negative programmatic numeric: '+name,()=>assert.throws(()=>assertFinite({number:n}),/NONFINITE|NEGATIVE_ZERO/));
+test('domain separation and raw bytes are distinct',()=>assert.notEqual(H('schema',{n:1}),H('model',{n:1})));
+test('cross-language results match exact canonical bytes, hashes and rejection reasons',()=>{const r=read(path.join(twin,'validation/hash-cross-language-report.json'));assert.equal(r.status,'PASS');for(const language of ['python','rust'])for(const js of r.results.javascript){const other=r.results[language].find(x=>x.id===js.id);assert.deepEqual(other,js);}});
+test('hash inputs are exhaustively classified and acyclic',()=>validateHashInputs(createHashPolicy()));

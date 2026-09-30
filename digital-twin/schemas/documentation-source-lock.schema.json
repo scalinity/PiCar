@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://picar.local/spec/v2/documentation-source-lock.schema.json",
+  "type": "object",
+  "properties": {
+    "contractVersion": {
+      "const": 2
+    },
+    "kitRevision": {
+      "const": "Z0104V40"
+    },
+    "repositoryHead": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "upstreamCommit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "sharedCommit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "sharedGitlink": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "pdfLocator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pdfGitBlob": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "pdfSha256": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unavailable"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "pdfByteLength": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "VERIFIED",
+        "BLOCKED"
+      ]
+    },
+    "photoHashes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evidenceId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "evidenceId",
+          "sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 6
+    },
+    "panels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "printedStep": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 29
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "pdfPage": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "normalizedRect": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "photoId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "photoPanel": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "variants": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "rpi4",
+                      "rpi5",
+                      "rpi-zero-2-w"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "result": {
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "BLOCKED"
+                  ]
+                }
+              },
+              "required": [
+                "pdfPage",
+                "normalizedRect",
+                "photoId",
+                "photoPanel",
+                "variants",
+                "result"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "result": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "BLOCKED"
+            ]
+          }
+        },
+        "required": [
+          "printedStep",
+          "mappings",
+          "result"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "blockerIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "contractVersion",
+    "kitRevision",
+    "repositoryHead",
+    "upstreamCommit",
+    "sharedCommit",
+    "sharedGitlink",
+    "pdfLocator",
+    "pdfGitBlob",
+    "pdfSha256",
+    "pdfByteLength",
+    "status",
+    "photoHashes",
+    "panels",
+    "blockerIds"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "VERIFIED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "pdfSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "panels": {
+            "minItems": 29,
+            "maxItems": 29,
+            "items": {
+              "properties": {
+                "result": {
+                  "const": "PASS"
+                },
+                "mappings": {
+                  "items": {
+                    "properties": {
+                      "result": {
+                        "const": "PASS"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "blockerIds": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "BLOCKED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "blockerIds": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

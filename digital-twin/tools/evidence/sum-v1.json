@@ -1,0 +1,7 @@
+{
+  "method": "sum-v1",
+  "version": 1,
+  "valueRule": "Sum ordered input Measurement.value.value with identical units.",
+  "uncertaintyRule": "Sum input minus and plus bounds independently; any unresolved input bound remains unresolved. No statistical independence is assumed.",
+  "authorityRule": "Preserve all input source limitations and claims. This method does not promote evidence confidence or scope."
+}

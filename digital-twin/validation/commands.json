@@ -1,0 +1,42 @@
+[
+  {
+    "command": "node tools/cli.mjs validate",
+    "cwd": "digital-twin",
+    "exitCode": 0
+  },
+  {
+    "command": "node tools/cross-language.mjs",
+    "cwd": "digital-twin",
+    "exitCode": 0
+  },
+  {
+    "command": "node tools/types.mjs --check",
+    "cwd": "digital-twin",
+    "exitCode": 0
+  },
+  {
+    "command": "node --test --test-reporter=tap validation/tests/attestations.test.mjs validation/tests/audited-semantics.test.mjs validation/tests/hash.test.mjs validation/tests/schema.test.mjs validation/tests/semantic.test.mjs",
+    "cwd": "digital-twin",
+    "exitCode": 0
+  },
+  {
+    "command": "pnpm test:unit",
+    "cwd": "picarx-companion",
+    "exitCode": 0
+  },
+  {
+    "command": "pnpm typecheck",
+    "cwd": "picarx-companion",
+    "exitCode": 0
+  },
+  {
+    "command": "pnpm content:check",
+    "cwd": "picarx-companion",
+    "exitCode": 0
+  },
+  {
+    "command": "pnpm package:check",
+    "cwd": "picarx-companion",
+    "exitCode": 0
+  }
+]

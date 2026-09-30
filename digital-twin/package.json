@@ -1,0 +1,19 @@
+{
+  "name": "picar-digital-twin-authoring",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/cli.mjs validate",
+    "test": "node --test validation/tests/*.test.mjs",
+    "types": "node tools/types.mjs",
+    "types:check": "node tools/types.mjs --check"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "canonicalize": "2.1.0",
+    "jsonc-parser": "3.3.1",
+    "json-schema-to-typescript": "15.0.4"
+  }
+}

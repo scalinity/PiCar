@@ -1,0 +1,990 @@
+[
+  {
+    "id": "PX-V40-RULE-M25X6-SCREW-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M25X6-SCREW"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M25X6-SCREW",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 10,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X6-SCREW-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M3X25-SCREW-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M3X25-SCREW"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M3X25-SCREW",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3X25-SCREW-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-SPRING-WASHER-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-SPRING-WASHER"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-SPRING-WASHER",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-SPRING-WASHER-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M3-NUT-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M3-NUT"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M3-NUT",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3-NUT-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M15X3-SCREW-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M15X3-SCREW"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M15X3-SCREW",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 11,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M15X3-SCREW-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M3X6-SCREW-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M3X6-SCREW"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M3X6-SCREW",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3X6-SCREW-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M25X18PLUS6-STANDOFF-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M25X18PLUS6-STANDOFF"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M25X18PLUS6-STANDOFF",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X18PLUS6-STANDOFF-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M25X18-STANDOFF-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M25X18-STANDOFF"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M25X18-STANDOFF",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X18-STANDOFF-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M25X11-STANDOFF-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M25X11-STANDOFF"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M25X11-STANDOFF",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X11-STANDOFF-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M25X30-STANDOFF-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M25X30-STANDOFF"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M25X30-STANDOFF",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M25X30-STANDOFF-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-M3X26-STANDOFF-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-M3X26-STANDOFF"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-M3X26-STANDOFF",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-M3X26-STANDOFF-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-R2048-RIVET-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-R2048-RIVET"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-R2048-RIVET",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 6,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R2048-RIVET-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-R2056-RIVET-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-R2056-RIVET"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-R2056-RIVET",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 8,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R2056-RIVET-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-R3055-RIVET-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-R3055-RIVET"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-R3055-RIVET",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R3055-RIVET-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-R3065-RIVET-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-R3065-RIVET"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-R3065-RIVET",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 8,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R3065-RIVET-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-R3080-RIVET-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-R3080-RIVET"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-R3080-RIVET",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R3080-RIVET-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-R30185-RIVET-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-R30185-RIVET"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-R30185-RIVET",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 4,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-R30185-RIVET-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-WASHER-A-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-WASHER-A"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-WASHER-A",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 2,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-WASHER-A-PRINTED-TOTAL"
+      }
+    }
+  },
+  {
+    "id": "PX-V40-RULE-WASHER-B-PRINTED-QUANTITY",
+    "predicate": "quantity",
+    "targetIds": [
+      "PX-V40-LOT-WASHER-B"
+    ],
+    "observability": {
+      "class": "notCameraObservable",
+      "requiredFeatureIds": [],
+      "requiredViews": [],
+      "calibrationRequired": false,
+      "eligibilityRuleIds": [],
+      "limitations": [
+        "Printed planning projection, not observed physical stock."
+      ]
+    },
+    "evidenceRequirementIds": [
+      "PX-EV-PHOTO-03"
+    ],
+    "comparator": "equals",
+    "toleranceRef": {
+      "state": "notApplicable",
+      "reason": "Exact count of printed depictions; no metric tolerance."
+    },
+    "onUnknown": "BLOCKED",
+    "onContradiction": "FAIL",
+    "humanAcknowledgment": "notApplicable",
+    "invalidationDependencyIds": [
+      "PX-V40-LOT-WASHER-B",
+      "PX-EV-PHOTO-03"
+    ],
+    "predicateVersion": 1,
+    "evaluationPhase": "projection",
+    "expected": {
+      "kind": "numeric",
+      "value": {
+        "state": "known",
+        "value": 8,
+        "unit": "count",
+        "confidence": "DERIVED",
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "uncertainty": {
+          "state": "bounded",
+          "minus": 0,
+          "plus": 0
+        },
+        "derivationRef": "PX-DERIV-WASHER-B-PRINTED-TOTAL"
+      }
+    }
+  }
+]

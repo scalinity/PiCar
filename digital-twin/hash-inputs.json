@@ -1,0 +1,1011 @@
+{
+  "contractVersion": 2,
+  "domainPrefix": "picar-v2:<kind>\\n",
+  "canonicalization": "RFC8785 UTF-8; strict input validation before canonicalization",
+  "setLikeIdFields": [
+    "activeInstanceIds",
+    "affectedFeatureIds",
+    "affectedStepIds",
+    "applicabilityRuleIds",
+    "blockerIds",
+    "boardIdentityClaimIds",
+    "claimIds",
+    "conflictIds",
+    "connectionPointRefs",
+    "eligibilityRuleIds",
+    "endpointConnectorRefs",
+    "evidenceRefs",
+    "evidenceRequirementIds",
+    "forbiddenCombinationRuleIds",
+    "geometrySourceRefs",
+    "gripRangeRefs",
+    "inactiveInstanceIds",
+    "inputClaimIds",
+    "inputMeasurementIds",
+    "interfaceRefs",
+    "invalidationDependencyIds",
+    "keyingClaimIds",
+    "matingRuleIds",
+    "measurementRefs",
+    "netClaimIds",
+    "requiredFeatureIds",
+    "resolutionEvidenceRefs",
+    "sourceRefs",
+    "strainReliefRuleIds",
+    "supersedes",
+    "targetIds",
+    "toleranceRefs",
+    "triggerRuleIds",
+    "variantIds"
+  ],
+  "authoredOrderArrays": [
+    "operations",
+    "steps",
+    "contactStack",
+    "guideEndpoints",
+    "motionSegments",
+    "replaceOperationIds",
+    "withOperationIds"
+  ],
+  "inputs": [
+    {
+      "path": "schemas/AdmissionReport.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/AssemblyOperation.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/AssemblySession.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/AssemblySolution.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/AssemblyState.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/AssemblyStep.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/CableConnection.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/CableDefinition.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/CameraInstruction.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/Claim.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/CompiledGraph.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/ConflictRecord.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/ConnectionPoint.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/DerivationRecord.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/EvidenceRecord.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/FastenerDefinition.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/FrameRecord.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/GeometrySource.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/Measurement.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/MechanicalConnection.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/MechanicalInterface.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/MotionInstruction.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/OperationUndo.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/PartDefinition.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/PartInstance.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/ProcedureAcknowledgment.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/RuntimeManifest.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/RuntimeRegistry.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/RuntimeTransform.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/ToolRequirement.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/UnresolvedEvidenceItem.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/VariantPatch.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/VariantRule.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/VerificationRule.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/VisibilityRule.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/Warning.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/ZeroingAttestation.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/digital-twin.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/documentation-source-lock.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/m0-gate-report.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/m1-g-data-report.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/m1-inventory.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/planning-step-seed.schema.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "schemas/semantic-registry.json",
+      "family": "schema",
+      "projection": "Exact raw bytes indexed by relative path; includes semantic/gate descriptors.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "schemaHash"
+      ]
+    },
+    {
+      "path": "components/inventory/planned-uses.json",
+      "family": "plannedUses",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "evidence/records/evidence.json",
+      "family": "evidence",
+      "projection": "All EvidenceRecord fields except retrievedOn; preserve revision, locators, privacy, applicability, limitations and exact artifact hash.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "evidenceHash"
+      ]
+    },
+    {
+      "path": "evidence/records/claims.json",
+      "family": "claims",
+      "projection": "Canonical scoped Claim values excluding appearance scope; normalize set-like ID arrays.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "evidence/conflicts/conflicts.json",
+      "family": "conflicts",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/measurements/derivations.json",
+      "family": "derivations",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/definitions/parts.json",
+      "family": "definitions",
+      "projection": "All mechanical fields except name, appearanceRefs and generated geometrySourceRefs.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/instances/planned-stock.json",
+      "family": "instances",
+      "projection": "All identity/inventory fields except installedByOperationRef (future graph binding).",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/measurements/measurements.json",
+      "family": "measurements",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/interfaces/mechanical.json",
+      "family": "interfaces",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/interfaces/connection-points.json",
+      "family": "connectionPoints",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/definitions/fasteners.json",
+      "family": "fastenerDefinitions",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/definitions/cables.json",
+      "family": "cableDefinitions",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/definitions/geometry-sources.json",
+      "family": "geometrySources",
+      "projection": "sourceGeneratorInputs only: id, sorted sourceRefs, sourceRevision and normalized generatorArtifact; exclude output artifact/maturity/report references.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/interfaces/frames.json",
+      "family": "frames",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "evidence/records/blockers.json",
+      "family": "unresolvedItems",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "components/inventory/variants.json",
+      "family": "variants",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/inventory/tools.json",
+      "family": "tools",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "evidence/records/warnings.json",
+      "family": "warnings",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "components/interfaces/verification-rules.json",
+      "family": "verificationRules",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/inventory/lots.json",
+      "family": "lots",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/inventory/allocations.json",
+      "family": "allocations",
+      "projection": "Canonical family records; sorted by stable identity. model-input projection implemented by tools/evidence/identity.mjs; M1 empty future families do not imply later admission.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "components/inventory/registry-index.json",
+      "family": "registryOwnership",
+      "projection": "Bound raw source input for validation; planning data is not executable graph data.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "components/inventory/printed-hardware.json",
+      "family": "printedInventory",
+      "projection": "Bound raw source input for validation; planning data is not executable graph data.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "components/inventory/unresolved-allocations.json",
+      "family": "unresolvedAllocation",
+      "projection": "Bound raw source input for validation; planning data is not executable graph data.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "components/inventory/planning-steps.json",
+      "family": "planningSeed",
+      "projection": "Bound raw source input for validation; planning data is not executable graph data.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "evidence/sources.lock.json",
+      "family": "sourceLock",
+      "projection": "Bound raw source input for validation; planning data is not executable graph data.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "evidence/records/blocker-source-records.json",
+      "family": "auditedBlockerProvenance",
+      "projection": "Bound raw source input for validation; planning data is not executable graph data.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "tools/evidence/sum-v1.json",
+      "family": "immutableDerivationMethod",
+      "projection": "Exact method artifact raw hash included in every DerivationRecord.",
+      "role": "authored",
+      "stage": "M1",
+      "hashKinds": [
+        "modelHash"
+      ]
+    },
+    {
+      "path": "validation/model-input.json",
+      "family": "modelPreimageMaterialization",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/evidence-input.json",
+      "family": "evidencePreimageMaterialization",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/typed-reference-index.json",
+      "family": "typedClosureReport",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/unresolved-impact.json",
+      "family": "blockerImpactReport",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/printed-inventory-report.json",
+      "family": "inventoryReport",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/schema-semantic-report.json",
+      "family": "semanticReport",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    },
+    {
+      "path": "validation/hash-cross-language-report.json",
+      "family": "hashConformanceReport",
+      "projection": "Generated validation output/cache; recompute from authored inputs; never a source for its own identity.",
+      "role": "generated",
+      "stage": "M1",
+      "hashKinds": []
+    }
+  ],
+  "identities": [
+    {
+      "name": "schemaHash",
+      "stage": 1,
+      "dependsOn": [],
+      "projection": "H(schema, sorted relative schema/descriptor paths + raw SHA256).",
+      "status": "implemented",
+      "sourceFiles": [
+        "schemas/AdmissionReport.schema.json",
+        "schemas/AssemblyOperation.schema.json",
+        "schemas/AssemblySession.schema.json",
+        "schemas/AssemblySolution.schema.json",
+        "schemas/AssemblyState.schema.json",
+        "schemas/AssemblyStep.schema.json",
+        "schemas/CableConnection.schema.json",
+        "schemas/CableDefinition.schema.json",
+        "schemas/CameraInstruction.schema.json",
+        "schemas/Claim.schema.json",
+        "schemas/CompiledGraph.schema.json",
+        "schemas/ConflictRecord.schema.json",
+        "schemas/ConnectionPoint.schema.json",
+        "schemas/DerivationRecord.schema.json",
+        "schemas/EvidenceRecord.schema.json",
+        "schemas/FastenerDefinition.schema.json",
+        "schemas/FrameRecord.schema.json",
+        "schemas/GeometrySource.schema.json",
+        "schemas/Measurement.schema.json",
+        "schemas/MechanicalConnection.schema.json",
+        "schemas/MechanicalInterface.schema.json",
+        "schemas/MotionInstruction.schema.json",
+        "schemas/OperationUndo.schema.json",
+        "schemas/PartDefinition.schema.json",
+        "schemas/PartInstance.schema.json",
+        "schemas/ProcedureAcknowledgment.schema.json",
+        "schemas/RuntimeManifest.schema.json",
+        "schemas/RuntimeRegistry.schema.json",
+        "schemas/RuntimeTransform.schema.json",
+        "schemas/ToolRequirement.schema.json",
+        "schemas/UnresolvedEvidenceItem.schema.json",
+        "schemas/VariantPatch.schema.json",
+        "schemas/VariantRule.schema.json",
+        "schemas/VerificationRule.schema.json",
+        "schemas/VisibilityRule.schema.json",
+        "schemas/Warning.schema.json",
+        "schemas/ZeroingAttestation.schema.json",
+        "schemas/digital-twin.schema.json",
+        "schemas/documentation-source-lock.schema.json",
+        "schemas/m0-gate-report.schema.json",
+        "schemas/m1-g-data-report.schema.json",
+        "schemas/m1-inventory.schema.json",
+        "schemas/planning-step-seed.schema.json",
+        "schemas/semantic-registry.json"
+      ],
+      "outputPath": null
+    },
+    {
+      "name": "evidenceHash",
+      "stage": 1,
+      "dependsOn": [],
+      "projection": "H(evidence, EvidenceRecord projection excluding retrieval timestamps only).",
+      "status": "implemented",
+      "sourceFiles": [
+        "evidence/records/evidence.json"
+      ],
+      "outputPath": "validation/evidence-input.json"
+    },
+    {
+      "name": "modelHash",
+      "stage": 1,
+      "dependsOn": [],
+      "projection": "H(model, materialized model-input.json; authored mechanical records only, no generated geometry/solutions/meshes or maturity).",
+      "status": "implemented",
+      "sourceFiles": [
+        "components/inventory/planned-uses.json",
+        "evidence/records/claims.json",
+        "evidence/conflicts/conflicts.json",
+        "components/measurements/derivations.json",
+        "components/definitions/parts.json",
+        "components/instances/planned-stock.json",
+        "components/measurements/measurements.json",
+        "components/interfaces/mechanical.json",
+        "components/interfaces/connection-points.json",
+        "components/definitions/fasteners.json",
+        "components/definitions/cables.json",
+        "components/definitions/geometry-sources.json",
+        "components/interfaces/frames.json",
+        "components/inventory/variants.json",
+        "components/interfaces/verification-rules.json",
+        "components/inventory/lots.json",
+        "components/inventory/allocations.json",
+        "tools/evidence/sum-v1.json"
+      ],
+      "outputPath": "validation/model-input.json"
+    },
+    {
+      "name": "graphHash",
+      "stage": 2,
+      "dependsOn": [
+        "modelHash"
+      ],
+      "projection": "H(graph, variant graph-input: ordered operations/steps, connections, copied referenced rule/measurement/procedure/warning/motion values, semantic initialState excluding graphHash/modelHash/stateHash/stockDispositionHash).",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "toolchainHash",
+      "stage": 4,
+      "dependsOn": [],
+      "projection": "Exact locks, OS/container, architecture, normalized build options; no wall-clock paths/times.",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "cadHash",
+      "stage": 7,
+      "dependsOn": [
+        "modelHash",
+        "toolchainHash"
+      ],
+      "projection": "Sorted generated CAD raw hashes and independent feature-table hashes.",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "solverHash",
+      "stage": 7,
+      "dependsOn": [
+        "modelHash",
+        "toolchainHash"
+      ],
+      "projection": "Solver implementation/config/input constraint policy, excludes solution artifact.",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "solutionsHash",
+      "stage": 7,
+      "dependsOn": [
+        "graphHash",
+        "cadHash",
+        "solverHash"
+      ],
+      "projection": "Sorted solution IDs + final document raw hashes. No solutionsHash in solution.",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "meshHash",
+      "stage": 8,
+      "dependsOn": [
+        "cadHash",
+        "toolchainHash"
+      ],
+      "projection": "Final GLB/texture/decoder paths, raw hash/length, ownership/LOD; no reports/root manifest.",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "packHash",
+      "stage": 8,
+      "dependsOn": [
+        "graphHash",
+        "solutionsHash",
+        "meshHash",
+        "toolchainHash"
+      ],
+      "projection": "H(pack, RuntimeManifest omitting only top-level packHash).",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "stockDispositionHash",
+      "stage": 2,
+      "dependsOn": [],
+      "projection": "H(stock, complete instance ID/location/parent/owned-state, lots and allocations sorted by ID).",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    },
+    {
+      "name": "stateHash",
+      "stage": 2,
+      "dependsOn": [
+        "graphHash",
+        "modelHash",
+        "stockDispositionHash"
+      ],
+      "projection": "H(state, complete AssemblyState omitting only top-level stateHash after stock recomputation).",
+      "status": "contractOnly",
+      "sourceFiles": [],
+      "outputPath": null
+    }
+  ],
+  "laterArtifactPolicy": "No later milestone artifact generated merely to fill a hash slot."
+}

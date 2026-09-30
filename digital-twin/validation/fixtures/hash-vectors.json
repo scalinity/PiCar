@@ -1,0 +1,124 @@
+{
+  "contractVersion": 2,
+  "kind": "test-vector",
+  "normalization": "Sort evidenceRefs only in this corpus; operationIds/other arrays retain authored order. No Unicode normalization.",
+  "valid": [
+    {
+      "id": "exponents",
+      "input": "{\"numbers\":[1E30,4.50,2e-3,1e-7,1e-6,1e21]}",
+      "canonical": "{\"numbers\":[1e+30,4.5,0.002,1e-7,0.000001,1e+21]}"
+    },
+    {
+      "id": "unicode-utf16-order",
+      "input": "{\"דּ\":\"last\",\"😀\":\"before BMP\",\"ö\":\"first\"}",
+      "canonical": "{\"ö\":\"first\",\"😀\":\"before BMP\",\"דּ\":\"last\"}"
+    },
+    {
+      "id": "sorted-id-set",
+      "input": "{\"evidenceRefs\":[\"TEST-Z\",\"TEST-A\"],\"operationIds\":[\"TEST-Z\",\"TEST-A\"]}",
+      "canonical": "{\"evidenceRefs\":[\"TEST-A\",\"TEST-Z\"],\"operationIds\":[\"TEST-Z\",\"TEST-A\"]}"
+    },
+    {
+      "id": "safe-integer-count",
+      "input": "{\"revision\":9007199254740991,\"amount\":{\"state\":\"known\",\"unit\":\"count\",\"value\":9007199254740991}}",
+      "canonical": "{\"amount\":{\"state\":\"known\",\"unit\":\"count\",\"value\":9007199254740991},\"revision\":9007199254740991}"
+    },
+    {
+      "id": "strings-and-authored-order",
+      "input": "{\"b\":[3,2,1],\"a\":\"é vs é\\n\\t\"}",
+      "canonical": "{\"a\":\"é vs é\\n\\t\",\"b\":[3,2,1]}"
+    },
+    {
+      "id": "large-non-count-number",
+      "input": "{\"n\":100000000000000000000}",
+      "canonical": "{\"n\":100000000000000000000}"
+    },
+    {
+      "id": "ieee754-non-count-rounding",
+      "input": "{\"n\":9007199254740993}",
+      "canonical": "{\"n\":9007199254740992}"
+    }
+  ],
+  "invalid": [
+    {
+      "id": "negative-zero",
+      "input": "{\"n\":-0}",
+      "error": "NEGATIVE_ZERO"
+    },
+    {
+      "id": "negative-zero-exponent",
+      "input": "{\"n\":-0e3}",
+      "error": "NEGATIVE_ZERO"
+    },
+    {
+      "id": "negative-underflow",
+      "input": "{\"n\":-1e-999}",
+      "error": "NEGATIVE_ZERO"
+    },
+    {
+      "id": "infinity",
+      "input": "{\"n\":1e999}",
+      "error": "NONFINITE"
+    },
+    {
+      "id": "negative-infinity",
+      "input": "{\"n\":-1e999}",
+      "error": "NONFINITE"
+    },
+    {
+      "id": "nan",
+      "input": "{\"n\":NaN}",
+      "error": "INVALID_JSON"
+    },
+    {
+      "id": "duplicate-key",
+      "input": "{\"a\":1,\"a\":2}",
+      "error": "DUPLICATE_KEY"
+    },
+    {
+      "id": "escaped-duplicate-key",
+      "input": "{\"a\":1,\"\\u0061\":2}",
+      "error": "DUPLICATE_KEY"
+    },
+    {
+      "id": "nested-duplicate",
+      "input": "{\"o\":{\"k\":1,\"k\":2}}",
+      "error": "DUPLICATE_KEY"
+    },
+    {
+      "id": "lone-surrogate",
+      "input": "{\"s\":\"\\ud800\"}",
+      "error": "LONE_SURROGATE"
+    },
+    {
+      "id": "lone-surrogate-key",
+      "input": "{\"\\udead\":1}",
+      "error": "LONE_SURROGATE"
+    },
+    {
+      "id": "unsafe-revision",
+      "input": "{\"revision\":9007199254740992}",
+      "error": "UNSAFE_INTEGER"
+    },
+    {
+      "id": "unsafe-count",
+      "input": "{\"state\":\"known\",\"unit\":\"count\",\"value\":9007199254740992}",
+      "error": "UNSAFE_INTEGER"
+    },
+    {
+      "id": "fractional-revision",
+      "input": "{\"revision\":1.5}",
+      "error": "UNSAFE_INTEGER"
+    },
+    {
+      "id": "fractional-predicate-version",
+      "input": "{\"predicateVersion\":1.5}",
+      "error": "UNSAFE_INTEGER"
+    },
+    {
+      "id": "unsafe-contract-version",
+      "input": "{\"contractVersion\":9007199254740992}",
+      "error": "UNSAFE_INTEGER"
+    }
+  ]
+}
