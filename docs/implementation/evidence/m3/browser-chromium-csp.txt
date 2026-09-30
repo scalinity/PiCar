@@ -1,0 +1,94 @@
+[WebServer] (node:8693) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8703) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:8729) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (322ms)
+(node:8734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (105ms)
+(node:8740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (5.1s)
+(node:8784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (1.5m)
+
+
+  1) [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract 
+
+    Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'fullFormats')
+        at http://localhost:1420/src/platform/session-validators.js:7:4756
+        at http://localhost:1420/src/platform/session-validators.js:7:4756
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-adapter.spec.ts:5:27
+
+    Error Context: test-results/m3-adapter-real-browser-In-065f9-tive-browser-fault-contract-chromium/error-context.md
+
+  2) [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data 
+
+    Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'fullFormats')
+        at http://localhost:1420/src/platform/session-validators.js:7:4756
+        at http://localhost:1420/src/platform/session-validators.js:7:4756
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-recovery.spec.ts:3:58
+
+    Error Context: test-results/m3-recovery-a-genuinely-bl-df673-ut-resetting-committed-data-chromium/error-context.md
+
+  3) [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Local progress ready', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByText('Local progress ready', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Local progress ready', { exact: true })
+
+
+      12 | });
+      13 | test('explicit recovery import preserves a nonempty startup store and resumes separately',async({page})=>{
+    > 14 |  await page.goto('/#/assembly');await expect(page.getByText('Local progress ready',{exact:true})).toBeVisible();
+         |                                                                                                   ^
+      15 |  const result=await page.evaluate(async()=>{
+      16 |   const {updateSetup,importData,exportData,getStore}=await import(String('/src/features/assembly-session/store.ts')) as typeof import('../../src/features/assembly-session/store');
+      17 |   const {openBrowserRepository}=await import(String('/src/platform/browser/indexed-db.ts')) as typeof import('../../src/platform/browser/indexed-db');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-recovery.spec.ts:14:99
+
+    Error Context: test-results/m3-recovery-explicit-recov-bf8cf-tore-and-resumes-separately-chromium/error-context.md
+
+  4) [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Board variant')
+
+
+      3 | const legacy=fs.readFileSync('tests/baseline/legacy.json','utf8');
+      4 | test.beforeEach(async({page})=>{await page.route('**/*',r=>new URL(r.request().url()).hostname==='localhost'?r.continue():r.abort());});
+    > 5 | async function start(page:import('@playwright/test').Page,variant='rpi4'){await page.goto('/#/assembly');await page.getByLabel('Board variant').selectOption(variant);await page.getByRole('button',{name:'Start new session',exact:true}).click();await expect(page).toHaveURL(/step\/1$/);return page.url().replace(/step\/1$/,'');}
+        |                                                                                                                                                 ^
+      6 | test('all29 source navigation for each variant, part context, search and offline review',async({page})=>{
+      7 |  test.setTimeout(360000);
+      8 |  for(const variant of ['rpi4','rpi5','rpi-zero-2-w']){const base=await start(page,variant);for(let n=1;n<=29;n++){await page.goto(base+'step/'+n);await expect(page.locator('main h1')).toContainText(n+'.');await expect(page.locator('main')).toContainText(variant);await expect(page.getByRole('heading',{name:'Source instructions',exact:true})).toBeVisible();expect(await page.locator('.source-text').first().textContent()).toContain('PX-V40-STEP-'+String(n).padStart(2,'0'));await expect(page.locator('main')).toContainText('geometry unavailable');}await page.getByRole('button',{name:'Preview after',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'After instruction projection'})).toBeVisible();await expect(page.locator('main')).toContainText('0/29 self-confirmed');
+        at start (/Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-ui.spec.ts:5:145)
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-ui.spec.ts:20:25
+
+    Error Context: test-results/m3-ui-quota-failure-keeps--ad4e4--reload-requires-new-submit-chromium/error-context.md
+
+  4 failed
+    [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract 
+    [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data 
+    [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately 
+    [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit 

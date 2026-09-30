@@ -1,0 +1,75 @@
+[
+  {
+    "command": [
+      "node",
+      "digital-twin/tools/compiler/upstream.mjs",
+      "--check"
+    ],
+    "cwd": "/Users/danny/Documents/Apps/PiCar",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m3/upstream-final-closure.txt",
+      "rawSha256": "0708d106019f64f431b93def78f2a8ca7523544ddfca3d56036e33a0faa23112",
+      "bytes": 100
+    }
+  },
+  {
+    "command": [
+      "node",
+      "digital-twin/tools/compiler/gate.mjs",
+      "--check"
+    ],
+    "cwd": "/Users/danny/Documents/Apps/PiCar",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m3/graph-final-closure.txt",
+      "rawSha256": "7669bbe20fa2344a4b47708a2eb420ba03a09e3e8b10b7be53412ad21d602ac9",
+      "bytes": 105
+    }
+  },
+  {
+    "command": [
+      "node",
+      "digital-twin/tools/types.mjs",
+      "--check"
+    ],
+    "cwd": "/Users/danny/Documents/Apps/PiCar",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m3/types-final-closure.txt",
+      "rawSha256": "eb86d49b42aca2ffaf6abcec576f9b8eb80f3e334b4e2039d6a1cb164f0cbd18",
+      "bytes": 95
+    }
+  },
+  {
+    "command": [
+      "pnpm",
+      "content:check"
+    ],
+    "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m3/content-final-closure.txt",
+      "rawSha256": "79b92d3b246bcae1cc162e4382a1078721511eb538934f241774edc9d6dbae71",
+      "bytes": 168
+    }
+  },
+  {
+    "command": [
+      "pnpm",
+      "package:check"
+    ],
+    "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m3/package-final-closure.txt",
+      "rawSha256": "ed0011baf8073cb892dfd4eae082a0b546e3bc8a60b2ec60a4b32827b5543a9a",
+      "bytes": 199
+    }
+  }
+]

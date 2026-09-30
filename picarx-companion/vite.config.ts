@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
@@ -19,7 +19,7 @@ const host = process.env.TAURI_DEV_HOST;
 
 // https://vite.dev/config/
 export default defineConfig(async () => ({
-  plugins: [react()],
+  plugins: [react(), {name:"m3-locked-ledger",enforce:"pre",resolveId(source){if(source.endsWith("docs/digital-twin/V40_ASSEMBLY_LEDGER.md?raw"))return "\0m3-locked-ledger";},load(id){if(id==="\0m3-locked-ledger")return "export default "+JSON.stringify(readFileSync(join(appRoot,"../docs/digital-twin/V40_ASSEMBLY_LEDGER.md"),"utf8"));}}, ...(process.env.VITE_M3_NATIVE_TEST==='1'?[{name:'m3-native-test-bootstrap',transformIndexHtml:{order:'pre' as const,handler:()=>[{tag:'script',attrs:{type:'module',src:'/tests/native/bootstrap.ts'},injectTo:'head' as const}]}}]:[])],
   publicDir: join(appRoot, ".content-publication/safe-public"),
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
@@ -28,6 +28,7 @@ export default defineConfig(async () => ({
   clearScreen: false,
   // 2. tauri expects a fixed port, fail if that port is not available
   server: {
+    fs: { allow: [appRoot, join(appRoot, '../digital-twin/validation/m2'), join(appRoot, '../digital-twin/schemas'), join(appRoot, '../docs/digital-twin/V40_ASSEMBLY_LEDGER.md')] },
     port: 1420,
     strictPort: true,
     host: host || false,

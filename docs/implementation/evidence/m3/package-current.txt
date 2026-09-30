@@ -1,0 +1,18 @@
+
+> picarx-companion@0.1.0 package:check /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsx tools/content-pipeline/entry.ts package-check
+
+ ELIFECYCLE  Command failed with exit code 1.
+/Users/danny/Documents/Apps/PiCar/picarx-companion/tools/content-pipeline/publication.ts:139
+  for(const b of j.bindings){assertInside(app,join(app,b.path));if(sha(fs.readFileSync(join(app,b.path)))!==b.sha256)throw Error('GENERATION_BINDING: '+b.path);}
+                                                                                                                           ^
+
+Error: GENERATION_BINDING: package.json
+    at verifyGeneration (/Users/danny/Documents/Apps/PiCar/picarx-companion/tools/content-pipeline/publication.ts:139:124)
+    at packageCheck (/Users/danny/Documents/Apps/PiCar/picarx-companion/tools/content-pipeline/entry.ts:22:3)
+    at <anonymous> (/Users/danny/Documents/Apps/PiCar/picarx-companion/tools/content-pipeline/entry.ts:41:76)
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v26.8.2

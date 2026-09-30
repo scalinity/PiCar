@@ -1,0 +1,44 @@
+[WebServer] (node:48271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48286) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48293) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:48299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (3.0m)
+(node:56804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.6m)
+  ✓  3 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (2.4s)
+  ✓  4 [chromium] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.2s)
+
+
+  1) [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.reload: net::ERR_ABORTED; maybe frame was detached?
+    Call log:
+      - waiting for navigation until "load"
+
+
+       8 |  for(const variant of ['rpi4','rpi5','rpi-zero-2-w']){const base=await start(page,variant);for(let n=1;n<=29;n++){await page.goto(base+'step/'+n);await expect(page.locator('main h1')).toContainText(n+'.');await expect(page.locator('main')).toContainText(variant);await expect(page.getByRole('heading',{name:'Source instructions',exact:true})).toBeVisible();expect(await page.locator('.source-text').first().textContent()).toContain('PX-V40-STEP-'+String(n).padStart(2,'0'));await expect(page.locator('main')).toContainText('geometry unavailable');}await page.getByRole('button',{name:'Preview after',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'After instruction projection'})).toBeVisible();await expect(page.locator('main')).toContainText('0/29 self-confirmed');
+       9 |  await page.locator('.source-tiles a').first().click();await expect(page).toHaveURL(/\/part\/PX-V40-/);await expect(page.locator('main')).toContainText('Printed-plan disposition');await page.getByRole('link',{name:'Reference',exact:true}).last().click();await page.locator('input[type=search]').fill('battery');await expect(page.locator('.search-results')).toContainText('plannedInstalled');await page.getByRole('link',{name:'Return to assembly bookmark'}).click();await expect(page).toHaveURL(/step\/29$/);}
+    > 10 |  await page.getByRole('link',{name:'Video · requires network',exact:true}).click();await page.getByRole('link',{name:'Return to assembly bookmark'}).click();await expect(page.locator('main')).toContainText('0/29 self-confirmed');await page.reload();await expect(page.locator('main h1')).toContainText('29.');
+         |                                                                                                                                                                                                                                                 ^
+      11 |  await page.route('**/content/**',r=>r.abort());await page.goto('/#/reference/assemble');await expect(page.locator('main h1')).toBeVisible();await expect(page.locator('main')).toContainText('assembly');
+      12 | });
+      13 | test('all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation',async({page})=>{
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-ui.spec.ts:10:241
+
+    Error Context: test-results/m3-ui-all29-source-navigat-1d5ce-t-search-and-offline-review-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review 
+  3 passed (5.7m)

@@ -1,0 +1,753 @@
+2026-09-30T05:43:57.734Z INFO @wdio/cli:launcher: Run onPrepare hook
+2026-09-30T05:43:57.735Z INFO tauri-service:launcher: Using embedded WebDriver provider (tauri-plugin-wdio-webdriver) - no external driver needed
+2026-09-30T05:43:57.735Z INFO tauri-service:launcher: Log capture initialized: /Users/danny/Documents/Apps/PiCar/picarx-companion/logs
+2026-09-30T05:43:57.735Z INFO tauri-service:launcher: Embedded provider mode - spawning Tauri app with embedded WebDriver server
+2026-09-30T05:43:57.737Z INFO tauri-service:launcher: Tauri app spawned (PID: 73955)
+2026-09-30T05:43:58.749Z INFO tauri-service:launcher: WebDriver server ready on port 4445
+
+Execution of 1 workers started at 2026-09-30T05:43:59.753Z
+
+2026-09-30T05:43:59.754Z INFO @wdio/cli:launcher: Run onWorkerStart hook
+2026-09-30T05:43:59.755Z INFO tauri-service: Running Tauri environment diagnostics...
+2026-09-30T05:43:59.758Z INFO tauri-service: Diagnostics complete
+
+2026-09-30T05:43:59.758Z INFO diagnostics: Diagnostics: 6 checks passed
+2026-09-30T05:43:59.758Z INFO @wdio/xvfb: XvfbManager.init() called
+2026-09-30T05:43:59.758Z INFO @wdio/xvfb: Xvfb not needed on current platform
+2026-09-30T05:43:59.758Z INFO @wdio/local-runner: Start worker 0-0 with arg: run tests/native/wdio.conf.mjs
+2026-09-30T05:43:59.762Z INFO @wdio/xvfb:ProcessFactory: xvfb-run not found, falling back to regular fork
+2026-09-30T05:43:59.762Z INFO @wdio/xvfb:ProcessFactory: ProcessFactory: shouldRun=false, isAvailable=false
+2026-09-30T05:43:59.762Z INFO @wdio/xvfb:ProcessFactory: Creating worker process with regular fork
+[0-0] 2026-09-30T05:44:00.075Z INFO @wdio/local-runner: Run worker command: run
+[0-0] RUNNING in undefined - file:///tests/native/native.spec.mjs
+[0-0] 2026-09-30T05:44:00.174Z INFO webdriver: Initiate new session using the WebDriver protocol
+[0-0] 2026-09-30T05:44:00.174Z INFO @wdio/utils: Connecting to existing driver at http://127.0.0.1:4445/
+[0-0] 2026-09-30T05:44:00.175Z INFO webdriver: [POST] http://127.0.0.1:4445/session
+[0-0] 2026-09-30T05:44:00.185Z INFO webdriver: COMMAND getWindowHandle()
+[0-0] 2026-09-30T05:44:00.185Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:00.186Z INFO webdriver: RESULT main
+[0-0] 2026-09-30T05:44:00.186Z INFO tauri-service:service: before() start — mode=binary provider=embedded multiremote=undefined instances=n/a
+[0-0] 2026-09-30T05:44:00.186Z INFO tauri-service:service: Initializing standard browser
+[0-0] 2026-09-30T05:44:00.187Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:00.187Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:00.188Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:00.188Z INFO tauri-service:service: Standard browser window available
+[0-0] 2026-09-30T05:44:00.188Z INFO tauri-service:service: Waiting for Tauri plugin initialization...
+[0-0] 2026-09-30T05:44:00.188Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:00.188Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:00.188Z INFO webdriver: DATA { script: 'checkPluginInit(...) [875 bytes]', args: [] }
+[0-0] 2026-09-30T05:44:00.191Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:00.191Z INFO tauri-service:service: Tauri plugin initialization complete
+[0-0] 2026-09-30T05:44:00.191Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:00.191Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:00.191Z INFO webdriver: DATA { script: 'clearStaleMocks(...) [698 bytes]', args: [] }
+[0-0] 2026-09-30T05:44:00.196Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:00.196Z INFO tauri-service:service: before() complete
+[0-0] 2026-09-30T05:44:11.664Z INFO webdriver: COMMAND navigateTo("http://localhost:1420/#/assembly")
+[0-0] 2026-09-30T05:44:11.664Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/url
+[0-0] 2026-09-30T05:44:11.664Z INFO webdriver: DATA { url: 'http://localhost:1420/#/assembly' }
+[0-0] 2026-09-30T05:44:11.666Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.666Z INFO webdriver: COMMAND refresh()
+[0-0] 2026-09-30T05:44:11.667Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/refresh
+[0-0] 2026-09-30T05:44:11.670Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.675Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.675Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.676Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.676Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.676Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.677Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.677Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.677Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.677Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.678Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.678Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.678Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.679Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.679Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.679Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.683Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.683Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.684Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.684Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.685Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.686Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.686Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.686Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.686Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.687Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.687Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.687Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.689Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.689Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.689Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.689Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:44:11.689Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:11.689Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:44:11.693Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:44:11.851Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.851Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.857Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.857Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.857Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.858Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.858Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.858Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.858Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.859Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.859Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.859Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.861Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.861Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.861Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.868Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.868Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.877Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.877Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.877Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.878Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.878Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.878Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.878Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.879Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.879Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.879Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.880Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.880Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.880Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.880Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:44:11.880Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:11.880Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:44:11.881Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': '2886be9d-00c5-486b-9e1e-1714936e093b'
+[0-0] }
+[0-0] 2026-09-30T05:44:11.882Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:11.882Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:11.882Z INFO webdriver: DATA {
+[0-0]   script: '\n' +
+[0-0]     '            function webdriverioPolyfill() {\n' +
+[0-0]     '  var __defProp = Object.defineProperty;\n' +
+[0-0]     '  var __name = function(target, _value) {\n' +
+[0-0]     '    return __defProp(target, "name", { value: _value, configurable: true });\n' +
+[0-0]     '  };\n' +
+[0-0]     '  var __globalThis = typeof globalThis === "object" && globalThis || typeof window === "object" && window;\n' +
+[0-0]     '  __globalThis.__name = __name;\n' +
+[0-0]     '}\n' +
+[0-0]     '            webdriverioPolyfill();\n' +
+[0-0]     '            return (function(elem) {\n' +
+[0-0]     '      try {\n' +
+[0-0]     '        const style = window.getComputedStyle(elem);\n' +
+[0-0]     '        return { value: style?.display ?? "" };\n' +
+[0-0]     '      } catch {\n' +
+[0-0]     '        if (typeof elem.isConnected === "boolean" && !elem.isConnected) {\n' +
+[0-0]     '          throw new Error("stale element reference: element is not attached to the page document");\n' +
+[0-0]     '        }\n' +
+[0-0]     '        return { value: "" };\n' +
+[0-0]     '      }\n' +
+[0-0]     '    }).apply(null, arguments)\n' +
+[0-0]     '        ',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '2886be9d-00c5-486b-9e1e-1714936e093b',
+[0-0]       ELEMENT: '2886be9d-00c5-486b-9e1e-1714936e093b'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:44:11.882Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:11.882Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:11.882Z INFO webdriver: DATA {
+[0-0]   script: 'checkVisibility(...) [614 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '2886be9d-00c5-486b-9e1e-1714936e093b',
+[0-0]       ELEMENT: '2886be9d-00c5-486b-9e1e-1714936e093b'
+[0-0]     },
+[0-0]     {
+[0-0]       withinViewport: false,
+[0-0]       contentVisibilityAuto: true,
+[0-0]       opacityProperty: true,
+[0-0]       visibilityProperty: true
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:44:11.885Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:44:11.885Z INFO webdriver: RESULT { value: 'inline-block' }
+[0-0] 2026-09-30T05:44:11.885Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:11.885Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:11.885Z INFO webdriver: DATA {
+[0-0]   script: 'isElementClickable(...) [4671 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '2886be9d-00c5-486b-9e1e-1714936e093b',
+[0-0]       ELEMENT: '2886be9d-00c5-486b-9e1e-1714936e093b'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:44:11.887Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:44:11.889Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.889Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.889Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.889Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.890Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.891Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.891Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.891Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.891Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.892Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.892Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.892Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.893Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.893Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.893Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.895Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.895Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.896Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.896Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.896Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.897Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.898Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.898Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.898Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.898Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:44:11.898Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:11.898Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:44:11.899Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': '253b90bc-e48f-4e7c-9cd1-92a9635a07a2'
+[0-0] }
+[0-0] 2026-09-30T05:44:11.902Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.902Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.903Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.904Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.904Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.904Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.906Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.906Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.906Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.906Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.906Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.907Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.908Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.908Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.909Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.909Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:11.910Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:11.911Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.911Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:11.911Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:11.912Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:11.912Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:11.912Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:11.912Z INFO webdriver: COMMAND elementClick("253b90bc-e48f-4e7c-9cd1-92a9635a07a2")
+[0-0] 2026-09-30T05:44:11.912Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element/253b90bc-e48f-4e7c-9cd1-92a9635a07a2/click
+[0-0] 2026-09-30T05:44:11.915Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:11.915Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T05:44:11.915Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/url
+[0-0] 2026-09-30T05:44:11.920Z INFO webdriver: RESULT http://localhost:1420/#/assembly
+[0-0] 2026-09-30T05:44:12.016Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T05:44:12.016Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/url
+[0-0] 2026-09-30T05:44:12.017Z INFO webdriver: RESULT http://localhost:1420/#/assembly/PX-SESSION-085ABA87-724A-410C-8CCE-9DAEEA8C2396/step/1
+[0-0] 2026-09-30T05:44:12.017Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T05:44:12.017Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/url
+[0-0] 2026-09-30T05:44:12.018Z INFO webdriver: RESULT http://localhost:1420/#/assembly/PX-SESSION-085ABA87-724A-410C-8CCE-9DAEEA8C2396/step/1
+[0-0] 2026-09-30T05:44:12.018Z INFO webdriver: COMMAND navigateTo("http://localhost:1420/#/assembly/PX-SESSION-085ABA87-724A-410C-8CCE-9DAEEA8C2396/step/29")
+[0-0] 2026-09-30T05:44:12.018Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/url
+[0-0] 2026-09-30T05:44:12.018Z INFO webdriver: DATA {
+[0-0]   url: 'http://localhost:1420/#/assembly/PX-SESSION-085ABA87-724A-410C-8CCE-9DAEEA8C2396/step/29'
+[0-0] }
+[0-0] 2026-09-30T05:44:12.019Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.921Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.921Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.928Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.928Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.928Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.929Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.929Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.929Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.929Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.930Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.931Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.931Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.936Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.936Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.936Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.939Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.939Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.940Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.941Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.941Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:16.941Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:44:16.942Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'b4705123-ca6b-46db-8ccb-29fb7afa4748'
+[0-0] }
+[0-0] 2026-09-30T05:44:16.943Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:16.943Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:16.943Z INFO webdriver: DATA {
+[0-0]   script: '\n' +
+[0-0]     '            function webdriverioPolyfill() {\n' +
+[0-0]     '  var __defProp = Object.defineProperty;\n' +
+[0-0]     '  var __name = function(target, _value) {\n' +
+[0-0]     '    return __defProp(target, "name", { value: _value, configurable: true });\n' +
+[0-0]     '  };\n' +
+[0-0]     '  var __globalThis = typeof globalThis === "object" && globalThis || typeof window === "object" && window;\n' +
+[0-0]     '  __globalThis.__name = __name;\n' +
+[0-0]     '}\n' +
+[0-0]     '            webdriverioPolyfill();\n' +
+[0-0]     '            return (function(elem) {\n' +
+[0-0]     '      try {\n' +
+[0-0]     '        const style = window.getComputedStyle(elem);\n' +
+[0-0]     '        return { value: style?.display ?? "" };\n' +
+[0-0]     '      } catch {\n' +
+[0-0]     '        if (typeof elem.isConnected === "boolean" && !elem.isConnected) {\n' +
+[0-0]     '          throw new Error("stale element reference: element is not attached to the page document");\n' +
+[0-0]     '        }\n' +
+[0-0]     '        return { value: "" };\n' +
+[0-0]     '      }\n' +
+[0-0]     '    }).apply(null, arguments)\n' +
+[0-0]     '        ',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': 'b4705123-ca6b-46db-8ccb-29fb7afa4748',
+[0-0]       ELEMENT: 'b4705123-ca6b-46db-8ccb-29fb7afa4748'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:44:16.943Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:16.943Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/execute/sync
+[0-0] 2026-09-30T05:44:16.943Z INFO webdriver: DATA {
+[0-0]   script: 'checkVisibility(...) [614 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': 'b4705123-ca6b-46db-8ccb-29fb7afa4748',
+[0-0]       ELEMENT: 'b4705123-ca6b-46db-8ccb-29fb7afa4748'
+[0-0]     },
+[0-0]     {
+[0-0]       withinViewport: false,
+[0-0]       contentVisibilityAuto: true,
+[0-0]       opacityProperty: true,
+[0-0]       visibilityProperty: true
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:44:16.945Z INFO webdriver: RESULT { value: 'block' }
+[0-0] 2026-09-30T05:44:16.945Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:44:16.947Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.947Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.948Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.948Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.948Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.948Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.949Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.949Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.949Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.949Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.949Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.949Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.950Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.950Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.950Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.952Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.953Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.953Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.953Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.954Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.954Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.954Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.954Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:44:16.954Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:16.954Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:44:16.955Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'e7c2675a-d62e-41c7-9446-cd5efaed04db'
+[0-0] }
+[0-0] 2026-09-30T05:44:16.956Z INFO webdriver: COMMAND getElementText("e7c2675a-d62e-41c7-9446-cd5efaed04db")
+[0-0] 2026-09-30T05:44:16.956Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element/e7c2675a-d62e-41c7-9446-cd5efaed04db/text
+[0-0] 2026-09-30T05:44:16.957Z INFO webdriver: RESULT 29. Complete the Robot HAT wiring
+[0-0] 2026-09-30T05:44:16.957Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Preview after"] | .//button[not(.//button[normalize-space(text()) = "Preview after"]) and normalize-space() = "Preview after"]")
+[0-0] 2026-09-30T05:44:16.957Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:16.957Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Preview after"] | .//button[not(.//button[normalize-space(text()) = "Preview after"]) and normalize-space() = "Preview after"]'
+[0-0] }
+[0-0] 2026-09-30T05:44:16.957Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'c132ef28-7180-4080-9349-db826afc4ff1'
+[0-0] }
+[0-0] 2026-09-30T05:44:16.960Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.960Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.961Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.961Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.961Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.962Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.962Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.962Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.962Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.963Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.963Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.963Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.965Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.965Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.965Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.967Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.967Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.968Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.969Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.969Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.969Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.969Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.969Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.969Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.971Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.971Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:16.972Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:16.973Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:16.973Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:16.973Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:16.973Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:16.973Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:16.973Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:16.973Z INFO webdriver: COMMAND elementClick("c132ef28-7180-4080-9349-db826afc4ff1")
+[0-0] 2026-09-30T05:44:16.973Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element/c132ef28-7180-4080-9349-db826afc4ff1/click
+[0-0] 2026-09-30T05:44:22.080Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.110Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.110Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.112Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.113Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.113Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.114Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.114Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.114Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.114Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.115Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.115Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.115Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.134Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.134Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.134Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.139Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.139Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.146Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.146Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.146Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.147Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.147Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.147Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.147Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.148Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.148Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.148Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.156Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.156Z INFO webdriver: COMMAND findElement("css selector", "main")
+[0-0] 2026-09-30T05:44:22.156Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.156Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.156Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:22.156Z INFO webdriver: DATA { using: 'css selector', value: 'main' }
+[0-0] 2026-09-30T05:44:22.172Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': '7f48745a-c33d-4b6c-b068-039949ca9ac7'
+[0-0] }
+[0-0] 2026-09-30T05:44:22.173Z INFO webdriver: COMMAND getElementText("7f48745a-c33d-4b6c-b068-039949ca9ac7")
+[0-0] 2026-09-30T05:44:22.173Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element/7f48745a-c33d-4b6c-b068-039949ca9ac7/text
+[0-0] 2026-09-30T05:44:22.198Z INFO webdriver: RESULT rpi4 · 0/29 self-confirmed · 0 observed · revision 129. Complete the Robot HAT wiringReview and preview never confirm physical work or request power. Printed-plan stock is not observed owner inventory.Review beforePreview afterReferenceVideo · requires networkAfter instruction projection: 189 operations. Physical confirmations: 0.Source instructions## 29. Complete the Robot HAT wiring
+[0-0] 
+[0-0] **ID:** `PX-V40-STEP-29` · **Source:** `PX-EV-PHOTO-06`, printed step 29 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-28.
+[0-0] 
+[0-0] **Parts introduced / reused:** No new required installed item; reuse all leads and cables. Unused accessories remain accounted for.
+[0-0] 
+[0-0] **Hardware:** None.
+[0-0] 
+[0-0] **Connections and final constraints:** Permanent HAT endpoints: pan P0/5V/GND; tilt P1/5V/GND; steering P2/5V/GND; ultrasonic D2,D3 with printed 3V3/GND; grayscale A0,A1,A2 with printed 3V3/GND; MOTOR1 left, MOTOR2 right.
+[0-0] 
+[0-0] **Orientation / warning:** Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.
+[0-0] 
+[0-0] **Tools:** Hands; power OFF for wiring. No automatic actuation or powered validation.
+[0-0] 
+[0-0] **Cable operations:** Remove any temporary P11 assignment; connect permanent endpoints; cable wrap/strain relief can be optional sourced guidance, not an invented printed step.
+[0-0] 
+[0-0] **Servo zeroing:** Preserve completed role-specific zeroing/attachment confirmations; no P11 in final wiring.
+[0-0] 
+[0-0] **Camera focus:** HAT connector map plus selectable per-cable endpoint views.
+[0-0] 
+[0-0] **Motion recipe:** Route/connect one labeled endpoint group at a time; exact cable curve only if admitted, otherwise clearly schematic.
+[0-0] 
+[0-0] **Verification:** All intended endpoints unique/resolved; no temporary P11; motor left/right correct; full inventory accounting; unresolved voltage/pin/strain claims BLOCKED rather than certified.
+[0-0] 
+[0-0] **Geometry blockers:** Q-07, Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.
+[0-0] Owner photographs are withheld. Exact part shape, fit, torque, hidden engagement and electrical applicability remain unresolved.Parts and hardware tray4-pin wire assemblyPX-V40-INS-CABLE-4PIN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.5-pin wire assemblyPX-V40-INS-CABLE-5PIN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.TT Motor left rolePX-V40-INS-MOTOR-LEFT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.TT Motor right rolePX-V40-INS-MOTOR-RIGHT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Robot HAT revision unresolvedPX-V40-INS-ROBOT-HAT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo pan role; OEM equivalence unresolvedPX-V40-INS-SERVO-PAN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo steering role; OEM equivalence unresolvedPX-V40-INS-SERVO-STEERING-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo tilt role; OEM equivalence unresolvedPX-V40-INS-SERVO-TILT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.All accounted parts, reserves and accessoriesSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · backupSource tile · geometry unavailable M2.5x6 screw · backupSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · backupSource tile · geometry unavailable M3x25 screw · backupSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · backupSource tile · geometry unavailable Spring washer · backupSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · backupSource tile · geometry unavailable M3 nut · backupSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · backupSource tile · geometry unavailable M1.5x3 screw · backupSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · backupSource tile · geometry unavailable M3x6 screw · backupSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · backupSource tile · geometry unavailable M2.5x18+6 standoff · backupSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · backupSource tile · geometry unavailable M2.5x18 standoff · backupSource tile · geometry unavailable M2.5x11 standoff · variantUnusedSource tile · geometry unavailable M2.5x11 standoff · variantUnusedSource tile · geometry unavailable M2.5x11 standoff · backupSource tile · geometry unavailable M2.5x11 standoff · backupSource tile · geometry unavailable M2.5x30 standoff · variantUnusedSource tile · geometry unavailable M2.5x30 standoff · variantUnusedSource tile · geometry unavailable M2.5x30 standoff · backupSource tile · geometry unavailable M2.5x30 standoff · backupSource tile · geometry unavailable M3x26 standoff · availableSource tile · geometry unavailable M3x26 standoff · availableSource tile · geometry unavailable M3x26 standoff · backupSource tile · geometry unavailable M3x26 standoff · backupSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · backupSource tile · geometry unavailable R2048 rivet · backupSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · backupSource tile · geometry unavailable R2056 rivet · backupSource tile · geometry unavailable R3055 rivet · availableSource tile · geometry unavailable R3055 rivet · availableSource tile · geometry unavailable R3055 rivet · backupSource tile · geometry unavailable R3055 rivet · backupSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · backupSource tile · geometry unavailable R3065 rivet · backupSource tile · geometry unavailable R3080 rivet · availableSource tile · geometry unavailable R3080 rivet · availableSource tile · geometry unavailable R3080 rivet · backupSource tile · geometry unavailable R3080 rivet · backupSource tile · geometry unavailable R30185 rivet · availableSource tile · geometry unavailable R30185 rivet · availableSource tile · geometry unavailable R30185 rivet · backupSource tile · geometry unavailable R30185 rivet · backupSource tile · geometry unavailable Washer A · availableSource tile · geometry unavailable Washer A · backupSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · backupSource tile · geometry unavailable Washer B · backupSource tile · geometry unavailable Plate A · availableSource tile · geometry unavailable Plate B · availableSource tile · geometry unavailable Plate C · availableSource tile · geometry unavailable Plate D · availableSource tile · geometry unavailable Plate E · availableSource tile · geometry unavailable Plate F · availableSource tile · geometry unavailable Plate G · availableSource tile · geometry unavailable Plate H · availableSource tile · geometry unavailable TT Motor left role · availableSource tile · geometry unavailable TT Motor right role · availableSource tile · geometry unavailable Servo pan role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn pan role · availableSource tile · geometry unavailable Smallest package retaining screw for pan · availableSource tile · geometry unavailable Servo tilt role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn tilt role · availableSource tile · geometry unavailable Smallest package retaining screw for tilt · availableSource tile · geometry unavailable Servo steering role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn steering role · availableSource tile · geometry unavailable Smallest package retaining screw for steering · availableSource tile · geometry unavailable front wheel · availableSource tile · geometry unavailable front wheel · availableSource tile · geometry unavailable rear wheel · availableSource tile · geometry unavailable rear wheel · availableSource tile · geometry unavailable Battery · availableSource tile · geometry unavailable Robot HAT revision unresolved · availableSource tile · geometry unavailable Camera module · availableSource tile · geometry unavailable Ultrasonic module · availableSource tile · geometry unavailable Grayscale module · availableSource tile · geometry unavailable 4-pin wire assembly · availableSource tile · geometry unavailable 5-pin wire assembly · availableSource tile · geometry unavailable FPC camera ribbon · variantUnusedSource tile · geometry unavailable FFC camera ribbon · availableSource tile · geometry unavailable USB-C cable · accessorySource tile · geometry unavailable USB mini microphone accessory · availableSource tile · geometry unavailable Wrench · toolSource tile · geometry unavailable First depicted screwdriver · toolSource tile · geometry unavailable Second depicted screwdriver · toolSource tile · geometry unavailable Raspberry Pi4; user-supplied revision/header/cooler unresolved · availableSource tile · geometry unavailable Raspberry Pi5; user-supplied revision/header/cooler unresolved · variantUnusedSource tile · geometry unavailable Raspberry Pi Zero2W; user-supplied revision/header/cooler unresolved · variantUnusedSource tile · geometry unavailable Hook tape stock · accessorySource tile · geometry unavailable Hook tape stock · availableSource tile · geometry unavailable Loop tape stock · accessorySource tile · geometry unavailable Loop tape stock · availableSource tile · geometry unavailable Electrical tape stock · accessorySource tile · geometry unavailable Cable wrap stock · accessoryTools and warningsConnector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.Printed V40 rail labels and generic ultrasonic documentation conflict; electrical certification remains BLOCKED.Unresolved: Q-07, Q-08, Q-09, Q-13Z0104V40 booklet · source page 2The locked PDF is verified by exact bytes. Source rectangles locate the printed panel and do not provide geometry.Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of 2Next →−120%+Physical self-confirmationConfirm only work you have checked on your actual assembly. A checkbox records your statement and cannot certify engineering or electrical conflicts.Acknowledge the exact printed power/procedure requirement above. PX-V40-OP-29-COMMON-POWER-OFFRecord my acknowledgmentPX-V40-RULE-29-COMMON-POWER-OFF · checked against source instructions; unresolved engineering proof stays blockedMy statement Confirm physical work and saveI understand this invalidates this step and downstream physical self-confirmations.Invalidate this step and downstream confirmationsPrevious reviewNext reviewSave review bookmarkFork with zero inherited confirmations Pi 4Pi 5Zero 2 WCreate separate variant session
+[0-0] 2026-09-30T05:44:22.198Z INFO webdriver: COMMAND refresh()
+[0-0] 2026-09-30T05:44:22.198Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/refresh
+[0-0] 2026-09-30T05:44:22.217Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.236Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.236Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.238Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.238Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.238Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.239Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.239Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.239Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.239Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.240Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.240Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.240Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.241Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.241Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.241Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.300Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.300Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.378Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.379Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.379Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.380Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.380Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.380Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.380Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.381Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.381Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.381Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.388Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.388Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:44:22.388Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:22.388Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.388Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.388Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:44:22.390Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:44:22.393Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.393Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.394Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.395Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.395Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.395Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.395Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.395Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.395Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.397Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.397Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.398Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.398Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.398Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.398Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.399Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.399Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.399Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:44:22.400Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:22.400Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:44:22.400Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:44:22.493Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.493Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.494Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.494Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.494Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.495Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.495Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.495Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.495Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.497Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.497Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.497Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.501Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.501Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.501Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.503Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.503Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.504Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.505Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.505Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.505Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.505Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:44:22.505Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:22.505Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:44:22.505Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:44:22.595Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.595Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.596Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.596Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.596Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.597Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.598Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.598Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.598Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.600Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.600Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.604Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.605Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.605Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.605Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.606Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.606Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.606Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] 2026-09-30T05:44:22.606Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:44:22.606Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/element
+[0-0] 2026-09-30T05:44:22.606Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:44:22.606Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:44:22.701Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.701Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.704Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.704Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:44:22.705Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window/handles
+[0-0] 2026-09-30T05:44:22.705Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:44:22.705Z INFO webdriver: COMMAND switchToWindow("main")
+[0-0] 2026-09-30T05:44:22.705Z INFO webdriver: [POST] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/window
+[0-0] 2026-09-30T05:44:22.705Z INFO webdriver: DATA { handle: 'main' }
+[0-0] 2026-09-30T05:44:22.706Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:22.706Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:44:22.706Z INFO webdriver: [GET] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add/title
+[0-0] 2026-09-30T05:44:22.721Z INFO webdriver: RESULT Tauri + React + Typescript
+[0-0] 2026-09-30T05:44:22.721Z WARN tauri-service:window: Could not find window with title containing "PiCar-X Companion"
+[0-0] 2026-09-30T05:44:22.721Z WARN tauri-service:window: [SERVICE] Failed to switch to active window: PiCar-X Companion
+[0-0] Error in "reference-first native window navigates, previews and resumes without confirmation"
+Error: element ("main h1") still not displayed after 5000ms
+    at async Context.<anonymous> (/Users/danny/Documents/Apps/PiCar/picarx-companion/tests/native/native.spec.mjs:21:134)
+[0-0] 2026-09-30T05:44:27.416Z INFO webdriver: COMMAND deleteSession()
+[0-0] 2026-09-30T05:44:27.416Z INFO webdriver: [DELETE] http://127.0.0.1:4445/session/4d05b861-2f91-4e97-a8b0-1f888e849add
+[0-0] 2026-09-30T05:44:27.417Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:44:27.417Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:44:27.417Z WARN tauri-service:service: Failed to clear mock store: Error: A sessionId is required for this command
+[0-0]     at FetchRequest.createOptions (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2222:15)
+[0-0]     at FetchRequest.createOptions (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2389:49)
+[0-0]     at FetchRequest.makeRequest (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2194:48)
+[0-0]     at Browser.protocolCommand (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:1721:20)
+[0-0]     at Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1100:32)
+[0-0]     at Browser.<anonymous> (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1215:20)
+[0-0]     at Browser.execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriverio@9.32.0/node_modules/webdriverio/build/node.js:3774:15)
+[0-0]     at Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1100:32)
+[0-0]     at Browser.<anonymous> (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1215:20)
+[0-0]     at Browser.patchedExecute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4449:24)
+[0-0] FAILED in undefined - file:///tests/native/native.spec.mjs
+2026-09-30T05:44:27.535Z INFO @wdio/cli:launcher: Run onWorkerEnd hook
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[webkit 605.1.15 macos #0-0] Running: webkit (v605.1.15) on macos
+[webkit 605.1.15 macos #0-0] Session ID: 4d05b861-2f91-4e97-a8b0-1f888e849add
+[webkit 605.1.15 macos #0-0]
+[webkit 605.1.15 macos #0-0] (root)
+[webkit 605.1.15 macos #0-0] (root)
+[webkit 605.1.15 macos #0-0] 1 passing (27.2s)
+[webkit 605.1.15 macos #0-0] 1 failing
+
+
+Spec Files:	 0 passed, 1 failed, 1 total (100% completed) in 00:00:27  
+
+2026-09-30T05:44:27.536Z INFO @wdio/local-runner: Shutting down spawned worker
+2026-09-30T05:44:27.787Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully
+2026-09-30T05:44:27.787Z INFO @wdio/local-runner: shutting down
+2026-09-30T05:44:27.787Z INFO @wdio/cli:launcher: Run onComplete hook
+2026-09-30T05:44:27.787Z INFO tauri-service:launcher: Stopping 1 embedded driver process(es)...

@@ -1,0 +1,9 @@
+.source-text { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; max-width: 100%; }
+.source-tiles { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 1rem; }
+.source-tiles .card { padding: 1rem; overflow-wrap: anywhere; }
+.assembly-check { display: block; margin: 1rem 0; }
+.assembly-check textarea { display: block; width: 100%; min-height: 5rem; font: inherit; }
+.save-status { padding: .5rem 1rem; border-bottom: 1px solid var(--border); }
+.save-status .button { margin-left: .75rem; }
+[aria-current="step"] { font-weight: bold; text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) { .source-tiles, .assembly-check { scroll-behavior: auto; } }

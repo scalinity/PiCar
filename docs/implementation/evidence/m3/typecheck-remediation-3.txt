@@ -1,0 +1,7 @@
+
+> picarx-companion@0.1.0 typecheck /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsc --noEmit && tsc --noEmit -p tsconfig.tools.json
+
+tests/native/generate-fixtures.ts(24,365): error TS2339: Property 'record' does not exist on type 'Action'.
+  Property 'record' does not exist on type '{ kind: "create"; session: AssemblySession; forkOf: string | null; }'.
+ ELIFECYCLE  Command failed with exit code 2.

@@ -1,0 +1,55 @@
+
+> picarx-companion@0.1.0 test:unit /Users/danny/Documents/Apps/PiCar/picarx-companion
+> vitest run --config vitest.config.ts
+
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ❯ tests/publication/packaging.test.ts (1 test | 1 failed) 5966ms
+   × a fresh source-free checkout builds through the safe mirror and excludes synthetic secrets from dist 5965ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/publication/packaging.test.ts > a fresh source-free checkout builds through the safe mirror and excludes synthetic secrets from dist
+AssertionError: 
+> picarx-companion@0.1.0 build /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m0-TEST-package-JwP69g/picarx-companion
+> tsx tools/content-pipeline/entry.ts build
+
+Pinned generated baseline adopted; excluded originals retained; upstream checkout not required
+src/features/assembly-session/commands.ts(3,20): error TS2307: Cannot find module '../../../../digital-twin/schemas/digital-twin.schema.json' or its corresponding type declarations.
+src/features/assembly-session/commands.ts(20,412): error TS2322: Type '{ servoInstanceId: unknown; epoch: number; }[]' is not assignable to type '{ servoInstanceId: string; epoch: number; }[]'.
+  Type '{ servoInstanceId: unknown; epoch: number; }' is not assignable to type '{ servoInstanceId: string; epoch: number; }'.
+    Types of property 'servoInstanceId' are incompatible.
+      Type 'unknown' is not assignable to type 'string'.
+src/features/assembly-session/commands.ts(34,20): error TS2322: Type 'unknown' is not assignable to type 'string'.
+src/features/assembly-session/commands.ts(34,65): error TS2322: Type 'unknown' is not assignable to type 'string'.
+src/features/assembly-session/search.ts(5,20): error TS2307: Cannot find module '../../../../digital-twin/schemas/m2-search-index.schema.json' or its corresponding type declarations.
+src/pages/Assembly.tsx(17,47): error TS18047: 'state.selected' is possibly 'null'.
+src/platform/browser/indexed-db.ts(1,42): error TS6196: 'Backup' is declared but never used.
+ ELIFECYCLE  Command failed with exit code 2.
+
+: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ tests/publication/packaging.test.ts:22:55
+     20|   fs.symlinkSync(join(process.cwd(),'node_modules'),join(app,'node_mod…
+     21|   const build=spawnSync('pnpm',['build'],{cwd:app,encoding:'utf8',time…
+     22|   expect(build.status,build.stdout+'\n'+build.stderr).toBe(0);
+       |                                                       ^
+     23|   expect(fs.existsSync(join(root,'sunfounder-docs'))).toBe(false);
+     24|   for(const e of inventory(join(app,'dist'))){expect(denied(e.path)).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 47 passed (48)
+   Start at  23:54:02
+   Duration  11.16s (tests 97%, import 2%, transform 1%)
+
+ ELIFECYCLE  Command failed with exit code 1.

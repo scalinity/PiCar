@@ -1,0 +1,610 @@
+2026-09-30T05:55:01.463Z INFO @wdio/cli:launcher: Run onPrepare hook
+2026-09-30T05:55:01.463Z INFO tauri-service:launcher: Using embedded WebDriver provider (tauri-plugin-wdio-webdriver) - no external driver needed
+2026-09-30T05:55:01.463Z INFO tauri-service:launcher: Log capture initialized: /Users/danny/Documents/Apps/PiCar/picarx-companion/logs
+2026-09-30T05:55:01.463Z INFO tauri-service:launcher: Embedded provider mode - spawning Tauri app with embedded WebDriver server
+2026-09-30T05:55:01.465Z INFO tauri-service:launcher: Tauri app spawned (PID: 3026)
+2026-09-30T05:55:01.975Z INFO tauri-service:launcher: WebDriver server ready on port 4445
+
+Execution of 1 workers started at 2026-09-30T05:55:02.978Z
+
+2026-09-30T05:55:02.979Z INFO @wdio/cli:launcher: Run onWorkerStart hook
+2026-09-30T05:55:02.981Z INFO tauri-service: Running Tauri environment diagnostics...
+2026-09-30T05:55:02.983Z INFO tauri-service: Diagnostics complete
+
+2026-09-30T05:55:02.984Z INFO diagnostics: Diagnostics: 6 checks passed
+2026-09-30T05:55:02.984Z INFO @wdio/xvfb: XvfbManager.init() called
+2026-09-30T05:55:02.984Z INFO @wdio/xvfb: Xvfb not needed on current platform
+2026-09-30T05:55:02.984Z INFO @wdio/local-runner: Start worker 0-0 with arg: run tests/native/wdio.conf.mjs
+2026-09-30T05:55:02.989Z INFO @wdio/xvfb:ProcessFactory: xvfb-run not found, falling back to regular fork
+2026-09-30T05:55:02.989Z INFO @wdio/xvfb:ProcessFactory: ProcessFactory: shouldRun=false, isAvailable=false
+2026-09-30T05:55:02.989Z INFO @wdio/xvfb:ProcessFactory: Creating worker process with regular fork
+[0-0] 2026-09-30T05:55:03.254Z INFO @wdio/local-runner: Run worker command: run
+[0-0] RUNNING in undefined - file:///tests/native/native.spec.mjs
+[0-0] 2026-09-30T05:55:03.317Z INFO webdriver: Initiate new session using the WebDriver protocol
+[0-0] 2026-09-30T05:55:03.317Z INFO @wdio/utils: Connecting to existing driver at http://127.0.0.1:4445/
+[0-0] 2026-09-30T05:55:03.318Z INFO webdriver: [POST] http://127.0.0.1:4445/session
+[0-0] 2026-09-30T05:55:03.328Z INFO webdriver: COMMAND getWindowHandle()
+[0-0] 2026-09-30T05:55:03.328Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/window
+[0-0] 2026-09-30T05:55:03.329Z INFO webdriver: RESULT main
+[0-0] 2026-09-30T05:55:03.329Z INFO tauri-service:service: before() start — mode=binary provider=embedded multiremote=undefined instances=n/a
+[0-0] 2026-09-30T05:55:03.329Z INFO tauri-service:service: Initializing standard browser
+[0-0] 2026-09-30T05:55:03.330Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T05:55:03.330Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/window/handles
+[0-0] 2026-09-30T05:55:03.331Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T05:55:03.331Z INFO tauri-service:service: Standard browser window available
+[0-0] 2026-09-30T05:55:03.331Z INFO tauri-service:service: Waiting for Tauri plugin initialization...
+[0-0] 2026-09-30T05:55:03.331Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:03.331Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:03.331Z INFO webdriver: DATA { script: 'checkPluginInit(...) [875 bytes]', args: [] }
+[0-0] 2026-09-30T05:55:03.333Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:03.333Z INFO tauri-service:service: Tauri plugin initialization complete
+[0-0] 2026-09-30T05:55:03.334Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:03.334Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:03.334Z INFO webdriver: DATA { script: 'clearStaleMocks(...) [698 bytes]', args: [] }
+[0-0] 2026-09-30T05:55:03.335Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:03.335Z INFO tauri-service:service: before() complete
+[0-0] 2026-09-30T05:55:14.824Z INFO webdriver: COMMAND navigateTo("http://localhost:1420/#/assembly")
+[0-0] 2026-09-30T05:55:14.824Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/url
+[0-0] 2026-09-30T05:55:14.824Z INFO webdriver: DATA { url: 'http://localhost:1420/#/assembly' }
+[0-0] 2026-09-30T05:55:14.826Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:14.827Z INFO webdriver: COMMAND refresh()
+[0-0] 2026-09-30T05:55:14.827Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/refresh
+[0-0] 2026-09-30T05:55:14.830Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:14.839Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:14.839Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:14.840Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:14.843Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:14.843Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:14.844Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:14.845Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:14.845Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:14.845Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:14.846Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:14.993Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:14.994Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:14.996Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.001Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.001Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.002Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.002Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.002Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.002Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.003Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:15.007Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.007Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.007Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.009Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.009Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.010Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.010Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.010Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.010Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.011Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:15.051Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.051Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.052Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.053Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.053Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.054Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.054Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.054Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.054Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.055Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:15.151Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.151Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.152Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.153Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.154Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.154Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.154Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.154Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.154Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.160Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:15.252Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.252Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.253Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.254Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.254Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.255Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.255Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.255Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.255Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.256Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:15.351Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.351Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.351Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.353Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.353Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.353Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.354Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.354Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.354Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.354Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': '09979e4d-23a8-48f2-8de8-633b53f14b2a'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.355Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:15.355Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:15.355Z INFO webdriver: DATA {
+[0-0]   script: '\n' +
+[0-0]     '            function webdriverioPolyfill() {\n' +
+[0-0]     '  var __defProp = Object.defineProperty;\n' +
+[0-0]     '  var __name = function(target, _value) {\n' +
+[0-0]     '    return __defProp(target, "name", { value: _value, configurable: true });\n' +
+[0-0]     '  };\n' +
+[0-0]     '  var __globalThis = typeof globalThis === "object" && globalThis || typeof window === "object" && window;\n' +
+[0-0]     '  __globalThis.__name = __name;\n' +
+[0-0]     '}\n' +
+[0-0]     '            webdriverioPolyfill();\n' +
+[0-0]     '            return (function(elem) {\n' +
+[0-0]     '      try {\n' +
+[0-0]     '        const style = window.getComputedStyle(elem);\n' +
+[0-0]     '        return { value: style?.display ?? "" };\n' +
+[0-0]     '      } catch {\n' +
+[0-0]     '        if (typeof elem.isConnected === "boolean" && !elem.isConnected) {\n' +
+[0-0]     '          throw new Error("stale element reference: element is not attached to the page document");\n' +
+[0-0]     '        }\n' +
+[0-0]     '        return { value: "" };\n' +
+[0-0]     '      }\n' +
+[0-0]     '    }).apply(null, arguments)\n' +
+[0-0]     '        ',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '09979e4d-23a8-48f2-8de8-633b53f14b2a',
+[0-0]       ELEMENT: '09979e4d-23a8-48f2-8de8-633b53f14b2a'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:15.355Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:15.355Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:15.355Z INFO webdriver: DATA {
+[0-0]   script: 'checkVisibility(...) [614 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '09979e4d-23a8-48f2-8de8-633b53f14b2a',
+[0-0]       ELEMENT: '09979e4d-23a8-48f2-8de8-633b53f14b2a'
+[0-0]     },
+[0-0]     {
+[0-0]       withinViewport: false,
+[0-0]       contentVisibilityAuto: true,
+[0-0]       opacityProperty: true,
+[0-0]       visibilityProperty: true
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:15.357Z INFO webdriver: RESULT { value: 'inline-block' }
+[0-0] 2026-09-30T05:55:15.357Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:55:15.357Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:15.357Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:15.357Z INFO webdriver: DATA {
+[0-0]   script: 'isElementClickable(...) [4671 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '09979e4d-23a8-48f2-8de8-633b53f14b2a',
+[0-0]       ELEMENT: '09979e4d-23a8-48f2-8de8-633b53f14b2a'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:15.359Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:55:15.361Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.361Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.362Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.363Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.363Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.364Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.364Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]")
+[0-0] 2026-09-30T05:55:15.364Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:15.364Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Start new session"] | .//button[not(.//button[normalize-space(text()) = "Start new session"]) and normalize-space() = "Start new session"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.365Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'ff758d63-0be6-4be4-b95d-f36e7462b412'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.367Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.367Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.368Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.370Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.370Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.370Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.372Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:15.372Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:15.373Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:15.373Z INFO webdriver: COMMAND elementClick("ff758d63-0be6-4be4-b95d-f36e7462b412")
+[0-0] 2026-09-30T05:55:15.373Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element/ff758d63-0be6-4be4-b95d-f36e7462b412/click
+[0-0] 2026-09-30T05:55:15.376Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:15.377Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T05:55:15.377Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/url
+[0-0] 2026-09-30T05:55:15.380Z INFO webdriver: RESULT http://localhost:1420/#/assembly
+[0-0] 2026-09-30T05:55:15.478Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T05:55:15.478Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/url
+[0-0] 2026-09-30T05:55:15.479Z INFO webdriver: RESULT http://localhost:1420/#/assembly/PX-SESSION-683160DA-657E-4C98-A3D2-7417F91FFB15/step/1
+[0-0] 2026-09-30T05:55:15.479Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T05:55:15.479Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/url
+[0-0] 2026-09-30T05:55:15.479Z INFO webdriver: RESULT http://localhost:1420/#/assembly/PX-SESSION-683160DA-657E-4C98-A3D2-7417F91FFB15/step/1
+[0-0] 2026-09-30T05:55:15.480Z INFO webdriver: COMMAND navigateTo("http://localhost:1420/#/assembly/PX-SESSION-683160DA-657E-4C98-A3D2-7417F91FFB15/step/29")
+[0-0] 2026-09-30T05:55:15.480Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/url
+[0-0] 2026-09-30T05:55:15.480Z INFO webdriver: DATA {
+[0-0]   url: 'http://localhost:1420/#/assembly/PX-SESSION-683160DA-657E-4C98-A3D2-7417F91FFB15/step/29'
+[0-0] }
+[0-0] 2026-09-30T05:55:15.481Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:20.409Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.409Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.415Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.422Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.422Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.425Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.425Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:20.425Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:20.425Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:20.426Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': '8c1499cf-3ca1-4d7d-9885-983cc1ef6215'
+[0-0] }
+[0-0] 2026-09-30T05:55:20.427Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:20.427Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:20.427Z INFO webdriver: DATA {
+[0-0]   script: '\n' +
+[0-0]     '            function webdriverioPolyfill() {\n' +
+[0-0]     '  var __defProp = Object.defineProperty;\n' +
+[0-0]     '  var __name = function(target, _value) {\n' +
+[0-0]     '    return __defProp(target, "name", { value: _value, configurable: true });\n' +
+[0-0]     '  };\n' +
+[0-0]     '  var __globalThis = typeof globalThis === "object" && globalThis || typeof window === "object" && window;\n' +
+[0-0]     '  __globalThis.__name = __name;\n' +
+[0-0]     '}\n' +
+[0-0]     '            webdriverioPolyfill();\n' +
+[0-0]     '            return (function(elem) {\n' +
+[0-0]     '      try {\n' +
+[0-0]     '        const style = window.getComputedStyle(elem);\n' +
+[0-0]     '        return { value: style?.display ?? "" };\n' +
+[0-0]     '      } catch {\n' +
+[0-0]     '        if (typeof elem.isConnected === "boolean" && !elem.isConnected) {\n' +
+[0-0]     '          throw new Error("stale element reference: element is not attached to the page document");\n' +
+[0-0]     '        }\n' +
+[0-0]     '        return { value: "" };\n' +
+[0-0]     '      }\n' +
+[0-0]     '    }).apply(null, arguments)\n' +
+[0-0]     '        ',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '8c1499cf-3ca1-4d7d-9885-983cc1ef6215',
+[0-0]       ELEMENT: '8c1499cf-3ca1-4d7d-9885-983cc1ef6215'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:20.427Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:20.428Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:20.428Z INFO webdriver: DATA {
+[0-0]   script: 'checkVisibility(...) [614 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': '8c1499cf-3ca1-4d7d-9885-983cc1ef6215',
+[0-0]       ELEMENT: '8c1499cf-3ca1-4d7d-9885-983cc1ef6215'
+[0-0]     },
+[0-0]     {
+[0-0]       withinViewport: false,
+[0-0]       contentVisibilityAuto: true,
+[0-0]       opacityProperty: true,
+[0-0]       visibilityProperty: true
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:20.430Z INFO webdriver: RESULT { value: 'block' }
+[0-0] 2026-09-30T05:55:20.431Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:55:20.433Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.433Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.434Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.436Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.436Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.436Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.437Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:20.437Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:20.437Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:20.438Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'd4a97320-273b-466f-b1ce-abe3e8a3967c'
+[0-0] }
+[0-0] 2026-09-30T05:55:20.438Z INFO webdriver: COMMAND getElementText("d4a97320-273b-466f-b1ce-abe3e8a3967c")
+[0-0] 2026-09-30T05:55:20.438Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element/d4a97320-273b-466f-b1ce-abe3e8a3967c/text
+[0-0] 2026-09-30T05:55:20.439Z INFO webdriver: RESULT 29. Complete the Robot HAT wiring
+[0-0] 2026-09-30T05:55:20.439Z INFO webdriver: COMMAND findElement("xpath", ".//button[normalize-space(text()) = "Preview after"] | .//button[not(.//button[normalize-space(text()) = "Preview after"]) and normalize-space() = "Preview after"]")
+[0-0] 2026-09-30T05:55:20.439Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:20.439Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/button[normalize-space(text()) = "Preview after"] | .//button[not(.//button[normalize-space(text()) = "Preview after"]) and normalize-space() = "Preview after"]'
+[0-0] }
+[0-0] 2026-09-30T05:55:20.440Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'fab351da-c4f7-4dd5-bf5d-a03cbef51d47'
+[0-0] }
+[0-0] 2026-09-30T05:55:20.443Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.444Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.445Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.447Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.447Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.448Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.450Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:20.450Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:20.451Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:20.451Z INFO webdriver: COMMAND elementClick("fab351da-c4f7-4dd5-bf5d-a03cbef51d47")
+[0-0] 2026-09-30T05:55:20.451Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element/fab351da-c4f7-4dd5-bf5d-a03cbef51d47/click
+[0-0] 2026-09-30T05:55:25.551Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:25.569Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.569Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.570Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.572Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.572Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.574Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.574Z INFO webdriver: COMMAND findElement("css selector", "main")
+[0-0] 2026-09-30T05:55:25.574Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:25.574Z INFO webdriver: DATA { using: 'css selector', value: 'main' }
+[0-0] 2026-09-30T05:55:25.575Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': '0a6cdbfb-7fbe-4e0b-9049-14eb9dc72e98'
+[0-0] }
+[0-0] 2026-09-30T05:55:25.576Z INFO webdriver: COMMAND getElementText("0a6cdbfb-7fbe-4e0b-9049-14eb9dc72e98")
+[0-0] 2026-09-30T05:55:25.576Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element/0a6cdbfb-7fbe-4e0b-9049-14eb9dc72e98/text
+[0-0] 2026-09-30T05:55:25.578Z INFO webdriver: RESULT rpi4 · 0/29 self-confirmed · 0 observed · revision 129. Complete the Robot HAT wiringReview and preview never confirm physical work or request power. Printed-plan stock is not observed owner inventory.Review beforePreview afterReferenceVideo · requires networkAfter instruction projection: 189 operations. Physical confirmations: 0.Source instructions## 29. Complete the Robot HAT wiring
+[0-0] 
+[0-0] **ID:** `PX-V40-STEP-29` · **Source:** `PX-EV-PHOTO-06`, printed step 29 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-28.
+[0-0] 
+[0-0] **Parts introduced / reused:** No new required installed item; reuse all leads and cables. Unused accessories remain accounted for.
+[0-0] 
+[0-0] **Hardware:** None.
+[0-0] 
+[0-0] **Connections and final constraints:** Permanent HAT endpoints: pan P0/5V/GND; tilt P1/5V/GND; steering P2/5V/GND; ultrasonic D2,D3 with printed 3V3/GND; grayscale A0,A1,A2 with printed 3V3/GND; MOTOR1 left, MOTOR2 right.
+[0-0] 
+[0-0] **Orientation / warning:** Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.
+[0-0] 
+[0-0] **Tools:** Hands; power OFF for wiring. No automatic actuation or powered validation.
+[0-0] 
+[0-0] **Cable operations:** Remove any temporary P11 assignment; connect permanent endpoints; cable wrap/strain relief can be optional sourced guidance, not an invented printed step.
+[0-0] 
+[0-0] **Servo zeroing:** Preserve completed role-specific zeroing/attachment confirmations; no P11 in final wiring.
+[0-0] 
+[0-0] **Camera focus:** HAT connector map plus selectable per-cable endpoint views.
+[0-0] 
+[0-0] **Motion recipe:** Route/connect one labeled endpoint group at a time; exact cable curve only if admitted, otherwise clearly schematic.
+[0-0] 
+[0-0] **Verification:** All intended endpoints unique/resolved; no temporary P11; motor left/right correct; full inventory accounting; unresolved voltage/pin/strain claims BLOCKED rather than certified.
+[0-0] 
+[0-0] **Geometry blockers:** Q-07, Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.
+[0-0] Owner photographs are withheld. Exact part shape, fit, torque, hidden engagement and electrical applicability remain unresolved.Parts and hardware tray4-pin wire assemblyPX-V40-INS-CABLE-4PIN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.5-pin wire assemblyPX-V40-INS-CABLE-5PIN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.TT Motor left rolePX-V40-INS-MOTOR-LEFT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.TT Motor right rolePX-V40-INS-MOTOR-RIGHT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Robot HAT revision unresolvedPX-V40-INS-ROBOT-HAT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo pan role; OEM equivalence unresolvedPX-V40-INS-SERVO-PAN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo steering role; OEM equivalence unresolvedPX-V40-INS-SERVO-STEERING-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo tilt role; OEM equivalence unresolvedPX-V40-INS-SERVO-TILT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.All accounted parts, reserves and accessoriesSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · backupSource tile · geometry unavailable M2.5x6 screw · backupSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · backupSource tile · geometry unavailable M3x25 screw · backupSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · backupSource tile · geometry unavailable Spring washer · backupSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · backupSource tile · geometry unavailable M3 nut · backupSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · backupSource tile · geometry unavailable M1.5x3 screw · backupSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · backupSource tile · geometry unavailable M3x6 screw · backupSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · backupSource tile · geometry unavailable M2.5x18+6 standoff · backupSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · backupSource tile · geometry unavailable M2.5x18 standoff · backupSource tile · geometry unavailable M2.5x11 standoff · variantUnusedSource tile · geometry unavailable M2.5x11 standoff · variantUnusedSource tile · geometry unavailable M2.5x11 standoff · backupSource tile · geometry unavailable M2.5x11 standoff · backupSource tile · geometry unavailable M2.5x30 standoff · variantUnusedSource tile · geometry unavailable M2.5x30 standoff · variantUnusedSource tile · geometry unavailable M2.5x30 standoff · backupSource tile · geometry unavailable M2.5x30 standoff · backupSource tile · geometry unavailable M3x26 standoff · availableSource tile · geometry unavailable M3x26 standoff · availableSource tile · geometry unavailable M3x26 standoff · backupSource tile · geometry unavailable M3x26 standoff · backupSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · backupSource tile · geometry unavailable R2048 rivet · backupSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · backupSource tile · geometry unavailable R2056 rivet · backupSource tile · geometry unavailable R3055 rivet · availableSource tile · geometry unavailable R3055 rivet · availableSource tile · geometry unavailable R3055 rivet · backupSource tile · geometry unavailable R3055 rivet · backupSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · backupSource tile · geometry unavailable R3065 rivet · backupSource tile · geometry unavailable R3080 rivet · availableSource tile · geometry unavailable R3080 rivet · availableSource tile · geometry unavailable R3080 rivet · backupSource tile · geometry unavailable R3080 rivet · backupSource tile · geometry unavailable R30185 rivet · availableSource tile · geometry unavailable R30185 rivet · availableSource tile · geometry unavailable R30185 rivet · backupSource tile · geometry unavailable R30185 rivet · backupSource tile · geometry unavailable Washer A · availableSource tile · geometry unavailable Washer A · backupSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · backupSource tile · geometry unavailable Washer B · backupSource tile · geometry unavailable Plate A · availableSource tile · geometry unavailable Plate B · availableSource tile · geometry unavailable Plate C · availableSource tile · geometry unavailable Plate D · availableSource tile · geometry unavailable Plate E · availableSource tile · geometry unavailable Plate F · availableSource tile · geometry unavailable Plate G · availableSource tile · geometry unavailable Plate H · availableSource tile · geometry unavailable TT Motor left role · availableSource tile · geometry unavailable TT Motor right role · availableSource tile · geometry unavailable Servo pan role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn pan role · availableSource tile · geometry unavailable Smallest package retaining screw for pan · availableSource tile · geometry unavailable Servo tilt role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn tilt role · availableSource tile · geometry unavailable Smallest package retaining screw for tilt · availableSource tile · geometry unavailable Servo steering role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn steering role · availableSource tile · geometry unavailable Smallest package retaining screw for steering · availableSource tile · geometry unavailable front wheel · availableSource tile · geometry unavailable front wheel · availableSource tile · geometry unavailable rear wheel · availableSource tile · geometry unavailable rear wheel · availableSource tile · geometry unavailable Battery · availableSource tile · geometry unavailable Robot HAT revision unresolved · availableSource tile · geometry unavailable Camera module · availableSource tile · geometry unavailable Ultrasonic module · availableSource tile · geometry unavailable Grayscale module · availableSource tile · geometry unavailable 4-pin wire assembly · availableSource tile · geometry unavailable 5-pin wire assembly · availableSource tile · geometry unavailable FPC camera ribbon · variantUnusedSource tile · geometry unavailable FFC camera ribbon · availableSource tile · geometry unavailable USB-C cable · accessorySource tile · geometry unavailable USB mini microphone accessory · availableSource tile · geometry unavailable Wrench · toolSource tile · geometry unavailable First depicted screwdriver · toolSource tile · geometry unavailable Second depicted screwdriver · toolSource tile · geometry unavailable Raspberry Pi4; user-supplied revision/header/cooler unresolved · availableSource tile · geometry unavailable Raspberry Pi5; user-supplied revision/header/cooler unresolved · variantUnusedSource tile · geometry unavailable Raspberry Pi Zero2W; user-supplied revision/header/cooler unresolved · variantUnusedSource tile · geometry unavailable Hook tape stock · accessorySource tile · geometry unavailable Hook tape stock · availableSource tile · geometry unavailable Loop tape stock · accessorySource tile · geometry unavailable Loop tape stock · availableSource tile · geometry unavailable Electrical tape stock · accessorySource tile · geometry unavailable Cable wrap stock · accessoryTools and warningsConnector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.Printed V40 rail labels and generic ultrasonic documentation conflict; electrical certification remains BLOCKED.Unresolved: Q-07, Q-08, Q-09, Q-13Z0104V40 booklet · source page 2The locked PDF is verified by exact bytes. Source rectangles locate the printed panel and do not provide geometry.Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of 2Next →−120%+Physical self-confirmationConfirm only work you have checked on your actual assembly. A checkbox records your statement and cannot certify engineering or electrical conflicts.Acknowledge the exact printed power/procedure requirement above. PX-V40-OP-29-COMMON-POWER-OFFRecord my acknowledgmentPX-V40-RULE-29-COMMON-POWER-OFF · checked against source instructions; unresolved engineering proof stays blockedMy statement Confirm physical work and saveI understand this invalidates this step and downstream physical self-confirmations.Invalidate this step and downstream confirmationsPrevious reviewNext reviewSave review bookmarkFork with zero inherited confirmations Pi 4Pi 5Zero 2 WCreate separate variant session
+[0-0] 2026-09-30T05:55:25.578Z INFO webdriver: COMMAND refresh()
+[0-0] 2026-09-30T05:55:25.578Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/refresh
+[0-0] 2026-09-30T05:55:25.580Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:25.583Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.583Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.586Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.716Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.716Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.717Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.717Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:25.717Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:25.717Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:25.719Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:25.722Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.722Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.723Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.724Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.724Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.725Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.725Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:25.725Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:25.725Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:25.726Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:25.824Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.824Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.824Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.826Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.827Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.827Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.827Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:25.827Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:25.827Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:25.828Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:25.924Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.924Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.924Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.927Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:25.927Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:25.927Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:25.928Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:25.928Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:25.928Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:25.933Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T05:55:26.026Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:26.026Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:26.027Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:26.048Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:26.048Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:30.956Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:30.956Z INFO webdriver: COMMAND findElement("css selector", "main h1")
+[0-0] 2026-09-30T05:55:30.956Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:30.956Z INFO webdriver: DATA { using: 'css selector', value: 'main h1' }
+[0-0] 2026-09-30T05:55:30.962Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'd843efe5-d527-4e14-9d03-e4dd88cf4c54'
+[0-0] }
+[0-0] 2026-09-30T05:55:30.964Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:30.964Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:30.964Z INFO webdriver: DATA {
+[0-0]   script: '\n' +
+[0-0]     '            function webdriverioPolyfill() {\n' +
+[0-0]     '  var __defProp = Object.defineProperty;\n' +
+[0-0]     '  var __name = function(target, _value) {\n' +
+[0-0]     '    return __defProp(target, "name", { value: _value, configurable: true });\n' +
+[0-0]     '  };\n' +
+[0-0]     '  var __globalThis = typeof globalThis === "object" && globalThis || typeof window === "object" && window;\n' +
+[0-0]     '  __globalThis.__name = __name;\n' +
+[0-0]     '}\n' +
+[0-0]     '            webdriverioPolyfill();\n' +
+[0-0]     '            return (function(elem) {\n' +
+[0-0]     '      try {\n' +
+[0-0]     '        const style = window.getComputedStyle(elem);\n' +
+[0-0]     '        return { value: style?.display ?? "" };\n' +
+[0-0]     '      } catch {\n' +
+[0-0]     '        if (typeof elem.isConnected === "boolean" && !elem.isConnected) {\n' +
+[0-0]     '          throw new Error("stale element reference: element is not attached to the page document");\n' +
+[0-0]     '        }\n' +
+[0-0]     '        return { value: "" };\n' +
+[0-0]     '      }\n' +
+[0-0]     '    }).apply(null, arguments)\n' +
+[0-0]     '        ',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': 'd843efe5-d527-4e14-9d03-e4dd88cf4c54',
+[0-0]       ELEMENT: 'd843efe5-d527-4e14-9d03-e4dd88cf4c54'
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:30.964Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:30.965Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/execute/sync
+[0-0] 2026-09-30T05:55:30.965Z INFO webdriver: DATA {
+[0-0]   script: 'checkVisibility(...) [614 bytes]',
+[0-0]   args: [
+[0-0]     {
+[0-0]       'element-6066-11e4-a52e-4f735466cecf': 'd843efe5-d527-4e14-9d03-e4dd88cf4c54',
+[0-0]       ELEMENT: 'd843efe5-d527-4e14-9d03-e4dd88cf4c54'
+[0-0]     },
+[0-0]     {
+[0-0]       withinViewport: false,
+[0-0]       contentVisibilityAuto: true,
+[0-0]       opacityProperty: true,
+[0-0]       visibilityProperty: true
+[0-0]     }
+[0-0]   ]
+[0-0] }
+[0-0] 2026-09-30T05:55:31.013Z INFO webdriver: RESULT true
+[0-0] 2026-09-30T05:55:31.013Z INFO webdriver: RESULT { value: 'block' }
+[0-0] 2026-09-30T05:55:31.016Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:31.016Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:31.017Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:31.018Z INFO webdriver: COMMAND getTitle()
+[0-0] 2026-09-30T05:55:31.019Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/title
+[0-0] 2026-09-30T05:55:31.019Z INFO webdriver: RESULT PiCar-X Companion
+[0-0] 2026-09-30T05:55:31.019Z INFO webdriver: COMMAND findElement("css selector", "main")
+[0-0] 2026-09-30T05:55:31.019Z INFO webdriver: [POST] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element
+[0-0] 2026-09-30T05:55:31.019Z INFO webdriver: DATA { using: 'css selector', value: 'main' }
+[0-0] 2026-09-30T05:55:31.020Z INFO webdriver: RESULT {
+[0-0]   'element-6066-11e4-a52e-4f735466cecf': 'f12b1258-6951-4ef2-9a93-73621cc597cc'
+[0-0] }
+[0-0] 2026-09-30T05:55:31.021Z INFO webdriver: COMMAND getElementText("f12b1258-6951-4ef2-9a93-73621cc597cc")
+[0-0] 2026-09-30T05:55:31.021Z INFO webdriver: [GET] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8/element/f12b1258-6951-4ef2-9a93-73621cc597cc/text
+[0-0] 2026-09-30T05:55:31.022Z INFO webdriver: RESULT rpi4 · 0/29 self-confirmed · 0 observed · revision 129. Complete the Robot HAT wiringReview and preview never confirm physical work or request power. Printed-plan stock is not observed owner inventory.Review beforePreview afterReferenceVideo · requires networkBefore instruction projection: 181 operations. Physical confirmations: 0.Source instructions## 29. Complete the Robot HAT wiring
+[0-0] 
+[0-0] **ID:** `PX-V40-STEP-29` · **Source:** `PX-EV-PHOTO-06`, printed step 29 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-28.
+[0-0] 
+[0-0] **Parts introduced / reused:** No new required installed item; reuse all leads and cables. Unused accessories remain accounted for.
+[0-0] 
+[0-0] **Hardware:** None.
+[0-0] 
+[0-0] **Connections and final constraints:** Permanent HAT endpoints: pan P0/5V/GND; tilt P1/5V/GND; steering P2/5V/GND; ultrasonic D2,D3 with printed 3V3/GND; grayscale A0,A1,A2 with printed 3V3/GND; MOTOR1 left, MOTOR2 right.
+[0-0] 
+[0-0] **Orientation / warning:** Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.
+[0-0] 
+[0-0] **Tools:** Hands; power OFF for wiring. No automatic actuation or powered validation.
+[0-0] 
+[0-0] **Cable operations:** Remove any temporary P11 assignment; connect permanent endpoints; cable wrap/strain relief can be optional sourced guidance, not an invented printed step.
+[0-0] 
+[0-0] **Servo zeroing:** Preserve completed role-specific zeroing/attachment confirmations; no P11 in final wiring.
+[0-0] 
+[0-0] **Camera focus:** HAT connector map plus selectable per-cable endpoint views.
+[0-0] 
+[0-0] **Motion recipe:** Route/connect one labeled endpoint group at a time; exact cable curve only if admitted, otherwise clearly schematic.
+[0-0] 
+[0-0] **Verification:** All intended endpoints unique/resolved; no temporary P11; motor left/right correct; full inventory accounting; unresolved voltage/pin/strain claims BLOCKED rather than certified.
+[0-0] 
+[0-0] **Geometry blockers:** Q-07, Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.
+[0-0] Owner photographs are withheld. Exact part shape, fit, torque, hidden engagement and electrical applicability remain unresolved.Parts and hardware tray4-pin wire assemblyPX-V40-INS-CABLE-4PIN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.5-pin wire assemblyPX-V40-INS-CABLE-5PIN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.TT Motor left rolePX-V40-INS-MOTOR-LEFT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.TT Motor right rolePX-V40-INS-MOTOR-RIGHT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Robot HAT revision unresolvedPX-V40-INS-ROBOT-HAT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo pan role; OEM equivalence unresolvedPX-V40-INS-SERVO-PAN-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo steering role; OEM equivalence unresolvedPX-V40-INS-SERVO-STEERING-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.Servo tilt role; OEM equivalence unresolvedPX-V40-INS-SERVO-TILT-001Source tile · geometry unavailablePrinted-plan disposition: assembly. Supply: kit.All accounted parts, reserves and accessoriesSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · availableSource tile · geometry unavailable M2.5x6 screw · backupSource tile · geometry unavailable M2.5x6 screw · backupSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · availableSource tile · geometry unavailable M3x25 screw · backupSource tile · geometry unavailable M3x25 screw · backupSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · availableSource tile · geometry unavailable Spring washer · backupSource tile · geometry unavailable Spring washer · backupSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · availableSource tile · geometry unavailable M3 nut · backupSource tile · geometry unavailable M3 nut · backupSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · availableSource tile · geometry unavailable M1.5x3 screw · backupSource tile · geometry unavailable M1.5x3 screw · backupSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · availableSource tile · geometry unavailable M3x6 screw · backupSource tile · geometry unavailable M3x6 screw · backupSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · availableSource tile · geometry unavailable M2.5x18+6 standoff · backupSource tile · geometry unavailable M2.5x18+6 standoff · backupSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · availableSource tile · geometry unavailable M2.5x18 standoff · backupSource tile · geometry unavailable M2.5x18 standoff · backupSource tile · geometry unavailable M2.5x11 standoff · variantUnusedSource tile · geometry unavailable M2.5x11 standoff · variantUnusedSource tile · geometry unavailable M2.5x11 standoff · backupSource tile · geometry unavailable M2.5x11 standoff · backupSource tile · geometry unavailable M2.5x30 standoff · variantUnusedSource tile · geometry unavailable M2.5x30 standoff · variantUnusedSource tile · geometry unavailable M2.5x30 standoff · backupSource tile · geometry unavailable M2.5x30 standoff · backupSource tile · geometry unavailable M3x26 standoff · availableSource tile · geometry unavailable M3x26 standoff · availableSource tile · geometry unavailable M3x26 standoff · backupSource tile · geometry unavailable M3x26 standoff · backupSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · availableSource tile · geometry unavailable R2048 rivet · backupSource tile · geometry unavailable R2048 rivet · backupSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · availableSource tile · geometry unavailable R2056 rivet · backupSource tile · geometry unavailable R2056 rivet · backupSource tile · geometry unavailable R3055 rivet · availableSource tile · geometry unavailable R3055 rivet · availableSource tile · geometry unavailable R3055 rivet · backupSource tile · geometry unavailable R3055 rivet · backupSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · availableSource tile · geometry unavailable R3065 rivet · backupSource tile · geometry unavailable R3065 rivet · backupSource tile · geometry unavailable R3080 rivet · availableSource tile · geometry unavailable R3080 rivet · availableSource tile · geometry unavailable R3080 rivet · backupSource tile · geometry unavailable R3080 rivet · backupSource tile · geometry unavailable R30185 rivet · availableSource tile · geometry unavailable R30185 rivet · availableSource tile · geometry unavailable R30185 rivet · backupSource tile · geometry unavailable R30185 rivet · backupSource tile · geometry unavailable Washer A · availableSource tile · geometry unavailable Washer A · backupSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · availableSource tile · geometry unavailable Washer B · backupSource tile · geometry unavailable Washer B · backupSource tile · geometry unavailable Plate A · availableSource tile · geometry unavailable Plate B · availableSource tile · geometry unavailable Plate C · availableSource tile · geometry unavailable Plate D · availableSource tile · geometry unavailable Plate E · availableSource tile · geometry unavailable Plate F · availableSource tile · geometry unavailable Plate G · availableSource tile · geometry unavailable Plate H · availableSource tile · geometry unavailable TT Motor left role · availableSource tile · geometry unavailable TT Motor right role · availableSource tile · geometry unavailable Servo pan role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn pan role · availableSource tile · geometry unavailable Smallest package retaining screw for pan · availableSource tile · geometry unavailable Servo tilt role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn tilt role · availableSource tile · geometry unavailable Smallest package retaining screw for tilt · availableSource tile · geometry unavailable Servo steering role; OEM equivalence unresolved · availableSource tile · geometry unavailable Horn steering role · availableSource tile · geometry unavailable Smallest package retaining screw for steering · availableSource tile · geometry unavailable front wheel · availableSource tile · geometry unavailable front wheel · availableSource tile · geometry unavailable rear wheel · availableSource tile · geometry unavailable rear wheel · availableSource tile · geometry unavailable Battery · availableSource tile · geometry unavailable Robot HAT revision unresolved · availableSource tile · geometry unavailable Camera module · availableSource tile · geometry unavailable Ultrasonic module · availableSource tile · geometry unavailable Grayscale module · availableSource tile · geometry unavailable 4-pin wire assembly · availableSource tile · geometry unavailable 5-pin wire assembly · availableSource tile · geometry unavailable FPC camera ribbon · variantUnusedSource tile · geometry unavailable FFC camera ribbon · availableSource tile · geometry unavailable USB-C cable · accessorySource tile · geometry unavailable USB mini microphone accessory · availableSource tile · geometry unavailable Wrench · toolSource tile · geometry unavailable First depicted screwdriver · toolSource tile · geometry unavailable Second depicted screwdriver · toolSource tile · geometry unavailable Raspberry Pi4; user-supplied revision/header/cooler unresolved · availableSource tile · geometry unavailable Raspberry Pi5; user-supplied revision/header/cooler unresolved · variantUnusedSource tile · geometry unavailable Raspberry Pi Zero2W; user-supplied revision/header/cooler unresolved · variantUnusedSource tile · geometry unavailable Hook tape stock · accessorySource tile · geometry unavailable Hook tape stock · availableSource tile · geometry unavailable Loop tape stock · accessorySource tile · geometry unavailable Loop tape stock · availableSource tile · geometry unavailable Electrical tape stock · accessorySource tile · geometry unavailable Cable wrap stock · accessoryTools and warningsConnector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.Printed V40 rail labels and generic ultrasonic documentation conflict; electrical certification remains BLOCKED.Unresolved: Q-07, Q-08, Q-09, Q-13Z0104V40 booklet · source page 2The locked PDF is verified by exact bytes. Source rectangles locate the printed panel and do not provide geometry.Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of …Next →−120%+Physical self-confirmationConfirm only work you have checked on your actual assembly. A checkbox records your statement and cannot certify engineering or electrical conflicts.Acknowledge the exact printed power/procedure requirement above. PX-V40-OP-29-COMMON-POWER-OFFRecord my acknowledgmentPX-V40-RULE-29-COMMON-POWER-OFF · checked against source instructions; unresolved engineering proof stays blockedMy statement Confirm physical work and saveI understand this invalidates this step and downstream physical self-confirmations.Invalidate this step and downstream confirmationsPrevious reviewNext reviewSave review bookmarkFork with zero inherited confirmations Pi 4Pi 5Zero 2 WCreate separate variant session
+[0-0] 2026-09-30T05:55:31.023Z INFO webdriver: COMMAND deleteSession()
+[0-0] 2026-09-30T05:55:31.023Z INFO webdriver: [DELETE] http://127.0.0.1:4445/session/9dfff18d-4407-4f35-a6ea-d6a29c7021b8
+[0-0] 2026-09-30T05:55:31.024Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T05:55:31.024Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T05:55:31.025Z WARN tauri-service:service: Failed to clear mock store: Error: A sessionId is required for this command
+[0-0]     at FetchRequest.createOptions (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2222:15)
+[0-0]     at FetchRequest.createOptions (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2389:49)
+[0-0]     at FetchRequest.makeRequest (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2194:48)
+[0-0]     at Browser.protocolCommand (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:1721:20)
+[0-0]     at Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1100:32)
+[0-0]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[0-0]     at async Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1100:23)
+[0-0]     at async Object.restoreAllMocks (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3848:5)
+[0-0]     at async TauriWorkerService.afterSession (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4127:17)
+[0-0]     at async Promise.all (index 0)
+[0-0] PASSED in undefined - file:///tests/native/native.spec.mjs
+2026-09-30T05:55:31.143Z INFO @wdio/cli:launcher: Run onWorkerEnd hook
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[webkit 605.1.15 macos #0-0] Running: webkit (v605.1.15) on macos
+[webkit 605.1.15 macos #0-0] Session ID: 9dfff18d-4407-4f35-a6ea-d6a29c7021b8
+[webkit 605.1.15 macos #0-0]
+[webkit 605.1.15 macos #0-0] (root)
+[webkit 605.1.15 macos #0-0] (root)
+[webkit 605.1.15 macos #0-0] 2 passing (27.7s)
+
+
+Spec Files:	 1 passed, 1 total (100% completed) in 00:00:28  
+
+2026-09-30T05:55:31.143Z INFO @wdio/local-runner: Shutting down spawned worker
+2026-09-30T05:55:31.395Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully
+2026-09-30T05:55:31.395Z INFO @wdio/local-runner: shutting down
+2026-09-30T05:55:31.395Z INFO @wdio/cli:launcher: Run onComplete hook
+2026-09-30T05:55:31.395Z INFO tauri-service:launcher: Stopping 1 embedded driver process(es)...

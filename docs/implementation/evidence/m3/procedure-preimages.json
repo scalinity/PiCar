@@ -1,0 +1,2958 @@
+{
+  "sourceLedger": {
+    "path": "docs/digital-twin/V40_ASSEMBLY_LEDGER.md",
+    "rawSha256": "65e66d256d53fad48e086d44f99b8a91492f722734037d20a125660077a7657a",
+    "bytes": 37909
+  },
+  "procedures": [
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-03-PI4-POWER-OFF",
+      "procedureRevisionHash": "cf4174ccd60daf3452c228072aded78e798ae272890b4579849bead75a535958",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-03-PI4-POWER-OFF",
+          "stepId": "PX-V40-STEP-03",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-03-PI4-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-09",
+              "Q-10"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "blockerIds": [
+            "Q-09",
+            "Q-10"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-03-PI4-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 03. Connect the Pi end of the camera ribbon\n\n**ID:** `PX-V40-STEP-03` · **Source:** `PX-EV-PHOTO-04`, printed step 3 · **Parent:** base/electronics · **Prerequisite:** PX-V40-STEP-02.\n\n**Parts introduced / reused:** One selected camera ribbon: Pi4 FFC; Pi5/Zero2W FPC. Alternative cable stock remains noninstalled.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Selected cable Pi-end -> selected Pi camera connector; latch open/insertion/latch closed are separate presentation phases of one atomic connection operation. Camera end remains free.\n\n**Orientation / warning:** Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”.\n\n**Tools:** Hands; do not force latch.\n\n**Cable operations:** Connect Pi end only, power OFF. Cable length/pitch and board-port identity need applicable source binding.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Connector-normal macro view and source inset.\n\n**Motion recipe:** Latch opens; approved ribbon end aligns/inserts; latch closes. Unknown flex shape uses schematic line.\n\n**Verification:** Selected cable label; correct connector face; power-off acknowledgment; camera-end still disconnected.\n\n**Geometry blockers:** Q-09, Q-10. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-04-PI4-POWER-OFF",
+      "procedureRevisionHash": "854ca524644eb9a1115b4ca262a1bf48f7227999d42cacca8ee519759a5c5051",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-04-PI4-POWER-OFF",
+          "stepId": "PX-V40-STEP-04",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-04-PI4-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-06",
+              "Q-07",
+              "Q-09",
+              "Q-10"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-06",
+            "Q-07",
+            "Q-09",
+            "Q-10"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-04-PI4-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 04. Mount the Robot HAT\n\n**ID:** `PX-V40-STEP-04` · **Source:** `PX-EV-PHOTO-04`, printed step 4 · **Parent:** base/electronics · **Prerequisite:** PX-V40-STEP-03.\n\n**Parts introduced / reused:** Robot HAT ×1.\n\n**Hardware:** M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.\n\n**Connections and final constraints:** HAT GPIO connector -> Pi header; HAT holes -> four prepared support positions; screw bearing faces -> HAT/support stack.\n\n**Orientation / warning:** No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Camera ribbon already connected at Pi; keep clear of trapped edges. Power OFF.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Top-oblique HAT/header alignment and side stack view.\n\n**Motion recipe:** HAT approaches along GPIO/support axes; seat connector and mounting stack; four individually tracked screws install.\n\n**Verification:** Four screw instances and supports; header keying/position; HAT revision applicability; no trapped ribbon or connector interference.\n\n**Geometry blockers:** Q-03, Q-06, Q-07, Q-09, Q-10. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-07-COMMON-POWER-OFF",
+      "procedureRevisionHash": "761de4df2aaa62d920f496d8f4516f46cdfb42e0454c2b13deabdd894bb3eb95",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-07-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-07",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-07-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-07",
+              "Q-09",
+              "Q-11"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-07",
+            "Q-09",
+            "Q-11"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-07-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 07. Secure and connect the battery\n\n**ID:** `PX-V40-STEP-07` · **Source:** `PX-EV-PHOTO-05`, printed step 7 · **Parent:** drive/base · **Prerequisite:** PX-V40-STEP-06.\n\n**Parts introduced / reused:** No new battery: use the same instance prepared in S06.\n\n**Hardware:** No new fastener.\n\n**Connections and final constraints:** Battery hook surface -> A loop surface; battery lead -> HAT BATTERY connector. Mount compliance and exact envelope require evidence.\n\n**Orientation / warning:** Connector orientation must match its keyed interface; connected does not mean switch ON.\n\n**Tools:** Hands.\n\n**Cable operations:** Connect the existing battery lead to the printed BATTERY port. Maintain an explicit power-off acknowledgment requirement (not sensed power state) until zeroing.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Underside pack, then HAT battery connector.\n\n**Motion recipe:** Bring pack to its mounting surface; show lead endpoint connection without inventing an exact slack curve.\n\n**Verification:** Same battery ID; correct BATTERY endpoint; mounting/lead clearance scope; switch state is user-acknowledged, not inferred.\n\n**Geometry blockers:** Q-07, Q-09, Q-11. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-11-FFC-POWER-OFF",
+      "procedureRevisionHash": "60b8fb4679cfe07ce03c8fac60fa4b7508669b246e1c04b56df494aafa737a0b",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-11-FFC-POWER-OFF",
+          "stepId": "PX-V40-STEP-11",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-11-FFC-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-08",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-08",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-11-FFC-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 11. Connect the camera end of the ribbon\n\n**ID:** `PX-V40-STEP-11` · **Source:** `PX-EV-PHOTO-05`, printed step 11 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-10.\n\n**Parts introduced / reused:** Camera module ×1; reuse ribbon introduced at S03.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Cable camera-end -> camera connector with open/insert/close latch operation. No second cable is introduced.\n\n**Orientation / warning:** Follow the printed blue-plastic-side orientation at the camera itself; source inset remains available.\n\n**Tools:** Hands; no force.\n\n**Cable operations:** Connect other end of FFC/FPC while power OFF.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Camera connector macro view.\n\n**Motion recipe:** Show correct local-face approach and latch movement if admitted; otherwise source-panel sequence and schematic ribbon.\n\n**Verification:** Single cable instance connects Pi and camera endpoints; contact orientation and power-off acknowledgment.\n\n**Geometry blockers:** Q-08, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+      "procedureRevisionHash": "a2fa356e1b81560e9afc1f8e1a7605c2d7a052b9d3e04e6f48ad3b64d2987ea6",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-17",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-05",
+              "Q-07"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-05",
+            "Q-07"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 17. Introduce the servo-zeroing procedure\n\n**ID:** `PX-V40-STEP-17` · **Source:** `PX-EV-PHOTO-05`, printed step 17 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-16.\n\n**Parts introduced / reused:** No new part; prepared robot and servo leads.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Procedure state: printed power ON -> ZERO button -> temporary single-servo P11 connection before each horn attachment. No permanent P0/P1/P2 wiring is created.\n\n**Orientation / warning:** Use the exact depicted HAT interface when applicable; do not infer actual board revision from this drawing.\n\n**Tools:** Hands; existing setup/software reference where applicable.\n\n**Cable operations:** Temporary P11 is reserved for one servo at a time. Battery connection and procedure are explicit; this app does not energize hardware.\n\n**Servo zeroing:** Acknowledge per-servo zeroing requirement; fresh role-specific confirmation at S18/S19/S22.\n\n**Camera focus:** HAT power/ZERO/P11 inset plus source panel.\n\n**Motion recipe:** Procedure interstitial, not a fabricated servo-angle measurement animation.\n\n**Verification:** HAT/procedure applicability; temporary versus permanent ports; no blanket “all three zeroed” auto-certification.\n\n**Geometry blockers:** Q-05, Q-07. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "7cf884394b0f84a9f667644102168b3e08742155d43ba0e7a4381bba28b6d84e",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-18",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 18. Mate the camera/Plate-C assembly to tilt\n\n**ID:** `PX-V40-STEP-18` · **Source:** `PX-EV-PHOTO-06`, printed step 18 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-17.\n\n**Parts introduced / reused:** No new major part; C/camera/horn joins B/tilt.\n\n**Hardware:** Smallest servo-package retaining screw ×1; exact dimensions/standard unresolved.\n\n**Connections and final constraints:** Zeroed tilt output spline -> C tilt-horn spline; retaining screw seats through horn into output. Preserve C/camera as one internally connected subassembly.\n\n**Orientation / warning:** Middle/zero orientation as printed; do not force an arbitrary horn index.\n\n**Tools:** Matched screwdriver for the package screw.\n\n**Cable operations:** Temporary tilt lead to P11 during zeroing; remove temporary assignment afterward; camera ribbon route remains.\n\n**Servo zeroing:** Fresh tilt-instance zeroing attestation immediately before fixing horn.\n\n**Camera focus:** Tilt spline/retainer macro view and camera orientation overview.\n\n**Motion recipe:** Subassembly approaches spline axis, aligns indexed orientation, seats and receives retaining screw.\n\n**Verification:** Correct smallest package screw, fresh tilt attestation, spline/frame alignment, cable clearance.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-18-COMMON-ZERO-TILT",
+      "procedureRevisionHash": "6cf18e0a2c0801836c8761fe1d85e5514fc7e3fa6457920337b43a415ba70cf9",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-18-COMMON-ZERO-TILT",
+          "stepId": "PX-V40-STEP-18",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-TILT-001",
+            "conditionRuleId": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+            "validForOperationId": "PX-V40-OP-18-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-TILT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-18-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 18. Mate the camera/Plate-C assembly to tilt\n\n**ID:** `PX-V40-STEP-18` · **Source:** `PX-EV-PHOTO-06`, printed step 18 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-17.\n\n**Parts introduced / reused:** No new major part; C/camera/horn joins B/tilt.\n\n**Hardware:** Smallest servo-package retaining screw ×1; exact dimensions/standard unresolved.\n\n**Connections and final constraints:** Zeroed tilt output spline -> C tilt-horn spline; retaining screw seats through horn into output. Preserve C/camera as one internally connected subassembly.\n\n**Orientation / warning:** Middle/zero orientation as printed; do not force an arbitrary horn index.\n\n**Tools:** Matched screwdriver for the package screw.\n\n**Cable operations:** Temporary tilt lead to P11 during zeroing; remove temporary assignment afterward; camera ribbon route remains.\n\n**Servo zeroing:** Fresh tilt-instance zeroing attestation immediately before fixing horn.\n\n**Camera focus:** Tilt spline/retainer macro view and camera orientation overview.\n\n**Motion recipe:** Subassembly approaches spline axis, aligns indexed orientation, seats and receives retaining screw.\n\n**Verification:** Correct smallest package screw, fresh tilt attestation, spline/frame alignment, cable clearance.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "2d42fc71d4d0366fbd92381cf96403e96244baf5afd896000cde4a71a9e75b3a",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-19",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 19. Mate the pan-tilt assembly to the chassis\n\n**ID:** `PX-V40-STEP-19` · **Source:** `PX-EV-PHOTO-06`, printed step 19 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-18.\n\n**Parts introduced / reused:** Washer A ×1; reuse complete pan-tilt subassembly.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed pan output -> A-mounted pan horn, with the printed Washer A/retainer stack. Do not substitute Washer B.\n\n**Orientation / warning:** Pan zero orientation and large-bore Washer A correspond to the printed callout.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary pan lead P11 during zeroing, later free until P0 at S29; ribbon stays connected/routed.\n\n**Servo zeroing:** Fresh pan-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Pan base joint and Washer A close-up, then front overview.\n\n**Motion recipe:** Move the whole gimbal to chassis horn, align spline and washer stack, install retaining screw.\n\n**Verification:** Washer A identity; one pan retainer; fresh pan attestation; all subassembly members and camera cable preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-19-COMMON-ZERO-PAN",
+      "procedureRevisionHash": "1c3f0cb0d668ee60ef50ea7f7f340a1f418b265201ebf6ae29a0dcacd9ebcc77",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-19-COMMON-ZERO-PAN",
+          "stepId": "PX-V40-STEP-19",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-PAN-001",
+            "conditionRuleId": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+            "validForOperationId": "PX-V40-OP-19-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-PAN-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-19-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 19. Mate the pan-tilt assembly to the chassis\n\n**ID:** `PX-V40-STEP-19` · **Source:** `PX-EV-PHOTO-06`, printed step 19 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-18.\n\n**Parts introduced / reused:** Washer A ×1; reuse complete pan-tilt subassembly.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed pan output -> A-mounted pan horn, with the printed Washer A/retainer stack. Do not substitute Washer B.\n\n**Orientation / warning:** Pan zero orientation and large-bore Washer A correspond to the printed callout.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary pan lead P11 during zeroing, later free until P0 at S29; ribbon stays connected/routed.\n\n**Servo zeroing:** Fresh pan-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Pan base joint and Washer A close-up, then front overview.\n\n**Motion recipe:** Move the whole gimbal to chassis horn, align spline and washer stack, install retaining screw.\n\n**Verification:** Washer A identity; one pan retainer; fresh pan attestation; all subassembly members and camera cable preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "cf2678a4217d9b4cb23a4bb26f5f2693232ee22b72a92f2f8c1ebb3faca792cd",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-22",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-12"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-12"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 22. Attach the steering horn assembly to its servo\n\n**ID:** `PX-V40-STEP-22` · **Source:** `PX-EV-PHOTO-06`, printed step 22 · **Parent:** steering/front · **Prerequisite:** PX-V40-STEP-21.\n\n**Parts introduced / reused:** Reuse G/horn subassembly and steering servo.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed steering spline -> steering horn spline; retaining screw secures horn while G retains its S21 relative revolute joint.\n\n**Orientation / warning:** Nominal steering center as printed; distinguish spline fixation from the separate G pivot.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary P11 during zeroing, then free until permanent P2 wiring.\n\n**Servo zeroing:** Fresh steering-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Steering spline/retainer and G link orientation.\n\n**Motion recipe:** Subassembly aligns/seats on spline; screw installs without freezing G pivot.\n\n**Verification:** Fresh steering attestation; third retaining screw allocated once; intended remaining DOF preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-12. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-22-COMMON-ZERO-STEERING",
+      "procedureRevisionHash": "9749ff9ced205263c486a5a969b510f9e3ae4f34c2f99186144b0724b9316884",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-22-COMMON-ZERO-STEERING",
+          "stepId": "PX-V40-STEP-22",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001",
+            "conditionRuleId": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+            "validForOperationId": "PX-V40-OP-22-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-12"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-12"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-STEERING-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-22-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 22. Attach the steering horn assembly to its servo\n\n**ID:** `PX-V40-STEP-22` · **Source:** `PX-EV-PHOTO-06`, printed step 22 · **Parent:** steering/front · **Prerequisite:** PX-V40-STEP-21.\n\n**Parts introduced / reused:** Reuse G/horn subassembly and steering servo.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed steering spline -> steering horn spline; retaining screw secures horn while G retains its S21 relative revolute joint.\n\n**Orientation / warning:** Nominal steering center as printed; distinguish spline fixation from the separate G pivot.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary P11 during zeroing, then free until permanent P2 wiring.\n\n**Servo zeroing:** Fresh steering-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Steering spline/retainer and G link orientation.\n\n**Motion recipe:** Subassembly aligns/seats on spline; screw installs without freezing G pivot.\n\n**Verification:** Fresh steering attestation; third retaining screw allocated once; intended remaining DOF preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-12. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-28-COMMON-POWER-OFF",
+      "procedureRevisionHash": "4c3965edd4d4dbeb4795ad4713d538644c42201d553303257d400e28eb133285",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-28-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-28",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-28-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-08",
+              "Q-09",
+              "Q-13"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-08",
+            "Q-09",
+            "Q-13"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-28-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 28. Connect the sensor ends of their cables\n\n**ID:** `PX-V40-STEP-28` · **Source:** `PX-EV-PHOTO-06`, printed step 28 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-27.\n\n**Parts introduced / reused:** 4-pin wire assembly ×1; 5-pin wire assembly ×1.\n\n**Hardware:** None.\n\n**Connections and final constraints:** 4-pin cable sensor-end -> ultrasonic connector; 5-pin cable sensor-end -> grayscale connector. HAT ends remain free until S29.\n\n**Orientation / warning:** Keying/contact orientation from each exact connector; cable color is supplementary evidence, not definitive pin mapping.\n\n**Tools:** Hands; connector work with power OFF.\n\n**Cable operations:** Connect sensor ends only, retaining distinct cable and endpoint IDs.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Ultrasonic and grayscale connector insets.\n\n**Motion recipe:** Connector alignment/insertion where geometry admitted; schematic remainder of each cable.\n\n**Verification:** Correct 4-pin versus 5-pin cable; one end connected per cable; power-off acknowledgment; electrical applicability conflicts visible.\n\n**Geometry blockers:** Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi4",
+      "operationId": "PX-V40-OP-29-COMMON-POWER-OFF",
+      "procedureRevisionHash": "cda312f1fb5ca885a406d842de5add7fde20b51ef992dfc00501861c4cc70941",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-29-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-29",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-29-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-07",
+              "Q-08",
+              "Q-09",
+              "Q-13"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-07",
+            "Q-08",
+            "Q-09",
+            "Q-13"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-29-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 29. Complete the Robot HAT wiring\n\n**ID:** `PX-V40-STEP-29` · **Source:** `PX-EV-PHOTO-06`, printed step 29 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-28.\n\n**Parts introduced / reused:** No new required installed item; reuse all leads and cables. Unused accessories remain accounted for.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Permanent HAT endpoints: pan P0/5V/GND; tilt P1/5V/GND; steering P2/5V/GND; ultrasonic D2,D3 with printed 3V3/GND; grayscale A0,A1,A2 with printed 3V3/GND; MOTOR1 left, MOTOR2 right.\n\n**Orientation / warning:** Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.\n\n**Tools:** Hands; power OFF for wiring. No automatic actuation or powered validation.\n\n**Cable operations:** Remove any temporary P11 assignment; connect permanent endpoints; cable wrap/strain relief can be optional sourced guidance, not an invented printed step.\n\n**Servo zeroing:** Preserve completed role-specific zeroing/attachment confirmations; no P11 in final wiring.\n\n**Camera focus:** HAT connector map plus selectable per-cable endpoint views.\n\n**Motion recipe:** Route/connect one labeled endpoint group at a time; exact cable curve only if admitted, otherwise clearly schematic.\n\n**Verification:** All intended endpoints unique/resolved; no temporary P11; motor left/right correct; full inventory accounting; unresolved voltage/pin/strain claims BLOCKED rather than certified.\n\n**Geometry blockers:** Q-07, Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-03-PI5-POWER-OFF",
+      "procedureRevisionHash": "62a7cd04ec46afc1a2b320d192ddb9ec3ade27e84cf6cc49b94f62f4ec16f840",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-03-PI5-POWER-OFF",
+          "stepId": "PX-V40-STEP-03",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-03-PI5-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-09",
+              "Q-10"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "blockerIds": [
+            "Q-09",
+            "Q-10"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-03-PI5-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 03. Connect the Pi end of the camera ribbon\n\n**ID:** `PX-V40-STEP-03` · **Source:** `PX-EV-PHOTO-04`, printed step 3 · **Parent:** base/electronics · **Prerequisite:** PX-V40-STEP-02.\n\n**Parts introduced / reused:** One selected camera ribbon: Pi4 FFC; Pi5/Zero2W FPC. Alternative cable stock remains noninstalled.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Selected cable Pi-end -> selected Pi camera connector; latch open/insertion/latch closed are separate presentation phases of one atomic connection operation. Camera end remains free.\n\n**Orientation / warning:** Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”.\n\n**Tools:** Hands; do not force latch.\n\n**Cable operations:** Connect Pi end only, power OFF. Cable length/pitch and board-port identity need applicable source binding.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Connector-normal macro view and source inset.\n\n**Motion recipe:** Latch opens; approved ribbon end aligns/inserts; latch closes. Unknown flex shape uses schematic line.\n\n**Verification:** Selected cable label; correct connector face; power-off acknowledgment; camera-end still disconnected.\n\n**Geometry blockers:** Q-09, Q-10. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-04-PI5-POWER-OFF",
+      "procedureRevisionHash": "37851977ca1267b4f60c390013bbbff4d83142daff5b68fd32359e5de6bd35a9",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-04-PI5-POWER-OFF",
+          "stepId": "PX-V40-STEP-04",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-04-PI5-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-06",
+              "Q-07",
+              "Q-09",
+              "Q-10"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-06",
+            "Q-07",
+            "Q-09",
+            "Q-10"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-04-PI5-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 04. Mount the Robot HAT\n\n**ID:** `PX-V40-STEP-04` · **Source:** `PX-EV-PHOTO-04`, printed step 4 · **Parent:** base/electronics · **Prerequisite:** PX-V40-STEP-03.\n\n**Parts introduced / reused:** Robot HAT ×1.\n\n**Hardware:** M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.\n\n**Connections and final constraints:** HAT GPIO connector -> Pi header; HAT holes -> four prepared support positions; screw bearing faces -> HAT/support stack.\n\n**Orientation / warning:** No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Camera ribbon already connected at Pi; keep clear of trapped edges. Power OFF.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Top-oblique HAT/header alignment and side stack view.\n\n**Motion recipe:** HAT approaches along GPIO/support axes; seat connector and mounting stack; four individually tracked screws install.\n\n**Verification:** Four screw instances and supports; header keying/position; HAT revision applicability; no trapped ribbon or connector interference.\n\n**Geometry blockers:** Q-03, Q-06, Q-07, Q-09, Q-10. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-07-COMMON-POWER-OFF",
+      "procedureRevisionHash": "761de4df2aaa62d920f496d8f4516f46cdfb42e0454c2b13deabdd894bb3eb95",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-07-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-07",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-07-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-07",
+              "Q-09",
+              "Q-11"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-07",
+            "Q-09",
+            "Q-11"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-07-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 07. Secure and connect the battery\n\n**ID:** `PX-V40-STEP-07` · **Source:** `PX-EV-PHOTO-05`, printed step 7 · **Parent:** drive/base · **Prerequisite:** PX-V40-STEP-06.\n\n**Parts introduced / reused:** No new battery: use the same instance prepared in S06.\n\n**Hardware:** No new fastener.\n\n**Connections and final constraints:** Battery hook surface -> A loop surface; battery lead -> HAT BATTERY connector. Mount compliance and exact envelope require evidence.\n\n**Orientation / warning:** Connector orientation must match its keyed interface; connected does not mean switch ON.\n\n**Tools:** Hands.\n\n**Cable operations:** Connect the existing battery lead to the printed BATTERY port. Maintain an explicit power-off acknowledgment requirement (not sensed power state) until zeroing.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Underside pack, then HAT battery connector.\n\n**Motion recipe:** Bring pack to its mounting surface; show lead endpoint connection without inventing an exact slack curve.\n\n**Verification:** Same battery ID; correct BATTERY endpoint; mounting/lead clearance scope; switch state is user-acknowledged, not inferred.\n\n**Geometry blockers:** Q-07, Q-09, Q-11. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-11-FPC-POWER-OFF",
+      "procedureRevisionHash": "55323fd0e2d1cfc310f0219c0c7ad80e9f6d7c79c52b524e25c1b71facdc8ec3",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-11-FPC-POWER-OFF",
+          "stepId": "PX-V40-STEP-11",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-11-FPC-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-08",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-08",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-11-FPC-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 11. Connect the camera end of the ribbon\n\n**ID:** `PX-V40-STEP-11` · **Source:** `PX-EV-PHOTO-05`, printed step 11 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-10.\n\n**Parts introduced / reused:** Camera module ×1; reuse ribbon introduced at S03.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Cable camera-end -> camera connector with open/insert/close latch operation. No second cable is introduced.\n\n**Orientation / warning:** Follow the printed blue-plastic-side orientation at the camera itself; source inset remains available.\n\n**Tools:** Hands; no force.\n\n**Cable operations:** Connect other end of FFC/FPC while power OFF.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Camera connector macro view.\n\n**Motion recipe:** Show correct local-face approach and latch movement if admitted; otherwise source-panel sequence and schematic ribbon.\n\n**Verification:** Single cable instance connects Pi and camera endpoints; contact orientation and power-off acknowledgment.\n\n**Geometry blockers:** Q-08, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+      "procedureRevisionHash": "a2fa356e1b81560e9afc1f8e1a7605c2d7a052b9d3e04e6f48ad3b64d2987ea6",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-17",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-05",
+              "Q-07"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-05",
+            "Q-07"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 17. Introduce the servo-zeroing procedure\n\n**ID:** `PX-V40-STEP-17` · **Source:** `PX-EV-PHOTO-05`, printed step 17 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-16.\n\n**Parts introduced / reused:** No new part; prepared robot and servo leads.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Procedure state: printed power ON -> ZERO button -> temporary single-servo P11 connection before each horn attachment. No permanent P0/P1/P2 wiring is created.\n\n**Orientation / warning:** Use the exact depicted HAT interface when applicable; do not infer actual board revision from this drawing.\n\n**Tools:** Hands; existing setup/software reference where applicable.\n\n**Cable operations:** Temporary P11 is reserved for one servo at a time. Battery connection and procedure are explicit; this app does not energize hardware.\n\n**Servo zeroing:** Acknowledge per-servo zeroing requirement; fresh role-specific confirmation at S18/S19/S22.\n\n**Camera focus:** HAT power/ZERO/P11 inset plus source panel.\n\n**Motion recipe:** Procedure interstitial, not a fabricated servo-angle measurement animation.\n\n**Verification:** HAT/procedure applicability; temporary versus permanent ports; no blanket “all three zeroed” auto-certification.\n\n**Geometry blockers:** Q-05, Q-07. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "7cf884394b0f84a9f667644102168b3e08742155d43ba0e7a4381bba28b6d84e",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-18",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 18. Mate the camera/Plate-C assembly to tilt\n\n**ID:** `PX-V40-STEP-18` · **Source:** `PX-EV-PHOTO-06`, printed step 18 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-17.\n\n**Parts introduced / reused:** No new major part; C/camera/horn joins B/tilt.\n\n**Hardware:** Smallest servo-package retaining screw ×1; exact dimensions/standard unresolved.\n\n**Connections and final constraints:** Zeroed tilt output spline -> C tilt-horn spline; retaining screw seats through horn into output. Preserve C/camera as one internally connected subassembly.\n\n**Orientation / warning:** Middle/zero orientation as printed; do not force an arbitrary horn index.\n\n**Tools:** Matched screwdriver for the package screw.\n\n**Cable operations:** Temporary tilt lead to P11 during zeroing; remove temporary assignment afterward; camera ribbon route remains.\n\n**Servo zeroing:** Fresh tilt-instance zeroing attestation immediately before fixing horn.\n\n**Camera focus:** Tilt spline/retainer macro view and camera orientation overview.\n\n**Motion recipe:** Subassembly approaches spline axis, aligns indexed orientation, seats and receives retaining screw.\n\n**Verification:** Correct smallest package screw, fresh tilt attestation, spline/frame alignment, cable clearance.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-18-COMMON-ZERO-TILT",
+      "procedureRevisionHash": "6cf18e0a2c0801836c8761fe1d85e5514fc7e3fa6457920337b43a415ba70cf9",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-18-COMMON-ZERO-TILT",
+          "stepId": "PX-V40-STEP-18",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-TILT-001",
+            "conditionRuleId": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+            "validForOperationId": "PX-V40-OP-18-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-TILT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-18-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 18. Mate the camera/Plate-C assembly to tilt\n\n**ID:** `PX-V40-STEP-18` · **Source:** `PX-EV-PHOTO-06`, printed step 18 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-17.\n\n**Parts introduced / reused:** No new major part; C/camera/horn joins B/tilt.\n\n**Hardware:** Smallest servo-package retaining screw ×1; exact dimensions/standard unresolved.\n\n**Connections and final constraints:** Zeroed tilt output spline -> C tilt-horn spline; retaining screw seats through horn into output. Preserve C/camera as one internally connected subassembly.\n\n**Orientation / warning:** Middle/zero orientation as printed; do not force an arbitrary horn index.\n\n**Tools:** Matched screwdriver for the package screw.\n\n**Cable operations:** Temporary tilt lead to P11 during zeroing; remove temporary assignment afterward; camera ribbon route remains.\n\n**Servo zeroing:** Fresh tilt-instance zeroing attestation immediately before fixing horn.\n\n**Camera focus:** Tilt spline/retainer macro view and camera orientation overview.\n\n**Motion recipe:** Subassembly approaches spline axis, aligns indexed orientation, seats and receives retaining screw.\n\n**Verification:** Correct smallest package screw, fresh tilt attestation, spline/frame alignment, cable clearance.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "2d42fc71d4d0366fbd92381cf96403e96244baf5afd896000cde4a71a9e75b3a",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-19",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 19. Mate the pan-tilt assembly to the chassis\n\n**ID:** `PX-V40-STEP-19` · **Source:** `PX-EV-PHOTO-06`, printed step 19 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-18.\n\n**Parts introduced / reused:** Washer A ×1; reuse complete pan-tilt subassembly.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed pan output -> A-mounted pan horn, with the printed Washer A/retainer stack. Do not substitute Washer B.\n\n**Orientation / warning:** Pan zero orientation and large-bore Washer A correspond to the printed callout.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary pan lead P11 during zeroing, later free until P0 at S29; ribbon stays connected/routed.\n\n**Servo zeroing:** Fresh pan-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Pan base joint and Washer A close-up, then front overview.\n\n**Motion recipe:** Move the whole gimbal to chassis horn, align spline and washer stack, install retaining screw.\n\n**Verification:** Washer A identity; one pan retainer; fresh pan attestation; all subassembly members and camera cable preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-19-COMMON-ZERO-PAN",
+      "procedureRevisionHash": "1c3f0cb0d668ee60ef50ea7f7f340a1f418b265201ebf6ae29a0dcacd9ebcc77",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-19-COMMON-ZERO-PAN",
+          "stepId": "PX-V40-STEP-19",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-PAN-001",
+            "conditionRuleId": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+            "validForOperationId": "PX-V40-OP-19-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-PAN-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-19-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 19. Mate the pan-tilt assembly to the chassis\n\n**ID:** `PX-V40-STEP-19` · **Source:** `PX-EV-PHOTO-06`, printed step 19 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-18.\n\n**Parts introduced / reused:** Washer A ×1; reuse complete pan-tilt subassembly.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed pan output -> A-mounted pan horn, with the printed Washer A/retainer stack. Do not substitute Washer B.\n\n**Orientation / warning:** Pan zero orientation and large-bore Washer A correspond to the printed callout.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary pan lead P11 during zeroing, later free until P0 at S29; ribbon stays connected/routed.\n\n**Servo zeroing:** Fresh pan-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Pan base joint and Washer A close-up, then front overview.\n\n**Motion recipe:** Move the whole gimbal to chassis horn, align spline and washer stack, install retaining screw.\n\n**Verification:** Washer A identity; one pan retainer; fresh pan attestation; all subassembly members and camera cable preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "cf2678a4217d9b4cb23a4bb26f5f2693232ee22b72a92f2f8c1ebb3faca792cd",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-22",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-12"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-12"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 22. Attach the steering horn assembly to its servo\n\n**ID:** `PX-V40-STEP-22` · **Source:** `PX-EV-PHOTO-06`, printed step 22 · **Parent:** steering/front · **Prerequisite:** PX-V40-STEP-21.\n\n**Parts introduced / reused:** Reuse G/horn subassembly and steering servo.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed steering spline -> steering horn spline; retaining screw secures horn while G retains its S21 relative revolute joint.\n\n**Orientation / warning:** Nominal steering center as printed; distinguish spline fixation from the separate G pivot.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary P11 during zeroing, then free until permanent P2 wiring.\n\n**Servo zeroing:** Fresh steering-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Steering spline/retainer and G link orientation.\n\n**Motion recipe:** Subassembly aligns/seats on spline; screw installs without freezing G pivot.\n\n**Verification:** Fresh steering attestation; third retaining screw allocated once; intended remaining DOF preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-12. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-22-COMMON-ZERO-STEERING",
+      "procedureRevisionHash": "9749ff9ced205263c486a5a969b510f9e3ae4f34c2f99186144b0724b9316884",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-22-COMMON-ZERO-STEERING",
+          "stepId": "PX-V40-STEP-22",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001",
+            "conditionRuleId": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+            "validForOperationId": "PX-V40-OP-22-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-12"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-12"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-STEERING-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-22-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 22. Attach the steering horn assembly to its servo\n\n**ID:** `PX-V40-STEP-22` · **Source:** `PX-EV-PHOTO-06`, printed step 22 · **Parent:** steering/front · **Prerequisite:** PX-V40-STEP-21.\n\n**Parts introduced / reused:** Reuse G/horn subassembly and steering servo.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed steering spline -> steering horn spline; retaining screw secures horn while G retains its S21 relative revolute joint.\n\n**Orientation / warning:** Nominal steering center as printed; distinguish spline fixation from the separate G pivot.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary P11 during zeroing, then free until permanent P2 wiring.\n\n**Servo zeroing:** Fresh steering-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Steering spline/retainer and G link orientation.\n\n**Motion recipe:** Subassembly aligns/seats on spline; screw installs without freezing G pivot.\n\n**Verification:** Fresh steering attestation; third retaining screw allocated once; intended remaining DOF preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-12. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-28-COMMON-POWER-OFF",
+      "procedureRevisionHash": "4c3965edd4d4dbeb4795ad4713d538644c42201d553303257d400e28eb133285",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-28-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-28",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-28-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-08",
+              "Q-09",
+              "Q-13"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-08",
+            "Q-09",
+            "Q-13"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-28-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 28. Connect the sensor ends of their cables\n\n**ID:** `PX-V40-STEP-28` · **Source:** `PX-EV-PHOTO-06`, printed step 28 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-27.\n\n**Parts introduced / reused:** 4-pin wire assembly ×1; 5-pin wire assembly ×1.\n\n**Hardware:** None.\n\n**Connections and final constraints:** 4-pin cable sensor-end -> ultrasonic connector; 5-pin cable sensor-end -> grayscale connector. HAT ends remain free until S29.\n\n**Orientation / warning:** Keying/contact orientation from each exact connector; cable color is supplementary evidence, not definitive pin mapping.\n\n**Tools:** Hands; connector work with power OFF.\n\n**Cable operations:** Connect sensor ends only, retaining distinct cable and endpoint IDs.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Ultrasonic and grayscale connector insets.\n\n**Motion recipe:** Connector alignment/insertion where geometry admitted; schematic remainder of each cable.\n\n**Verification:** Correct 4-pin versus 5-pin cable; one end connected per cable; power-off acknowledgment; electrical applicability conflicts visible.\n\n**Geometry blockers:** Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi5",
+      "operationId": "PX-V40-OP-29-COMMON-POWER-OFF",
+      "procedureRevisionHash": "cda312f1fb5ca885a406d842de5add7fde20b51ef992dfc00501861c4cc70941",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-29-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-29",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-29-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-07",
+              "Q-08",
+              "Q-09",
+              "Q-13"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-07",
+            "Q-08",
+            "Q-09",
+            "Q-13"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-29-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 29. Complete the Robot HAT wiring\n\n**ID:** `PX-V40-STEP-29` · **Source:** `PX-EV-PHOTO-06`, printed step 29 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-28.\n\n**Parts introduced / reused:** No new required installed item; reuse all leads and cables. Unused accessories remain accounted for.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Permanent HAT endpoints: pan P0/5V/GND; tilt P1/5V/GND; steering P2/5V/GND; ultrasonic D2,D3 with printed 3V3/GND; grayscale A0,A1,A2 with printed 3V3/GND; MOTOR1 left, MOTOR2 right.\n\n**Orientation / warning:** Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.\n\n**Tools:** Hands; power OFF for wiring. No automatic actuation or powered validation.\n\n**Cable operations:** Remove any temporary P11 assignment; connect permanent endpoints; cable wrap/strain relief can be optional sourced guidance, not an invented printed step.\n\n**Servo zeroing:** Preserve completed role-specific zeroing/attachment confirmations; no P11 in final wiring.\n\n**Camera focus:** HAT connector map plus selectable per-cable endpoint views.\n\n**Motion recipe:** Route/connect one labeled endpoint group at a time; exact cable curve only if admitted, otherwise clearly schematic.\n\n**Verification:** All intended endpoints unique/resolved; no temporary P11; motor left/right correct; full inventory accounting; unresolved voltage/pin/strain claims BLOCKED rather than certified.\n\n**Geometry blockers:** Q-07, Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-03-ZERO2W-POWER-OFF",
+      "procedureRevisionHash": "577966a7f5199e2acbeaa018b38b56b6d81dcb88a8cda857fad620628ecde30f",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-03-ZERO2W-POWER-OFF",
+          "stepId": "PX-V40-STEP-03",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-03-ZERO2W-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-09",
+              "Q-10"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "blockerIds": [
+            "Q-09",
+            "Q-10"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-03-ZERO2W-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 03. Connect the Pi end of the camera ribbon\n\n**ID:** `PX-V40-STEP-03` · **Source:** `PX-EV-PHOTO-04`, printed step 3 · **Parent:** base/electronics · **Prerequisite:** PX-V40-STEP-02.\n\n**Parts introduced / reused:** One selected camera ribbon: Pi4 FFC; Pi5/Zero2W FPC. Alternative cable stock remains noninstalled.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Selected cable Pi-end -> selected Pi camera connector; latch open/insertion/latch closed are separate presentation phases of one atomic connection operation. Camera end remains free.\n\n**Orientation / warning:** Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”.\n\n**Tools:** Hands; do not force latch.\n\n**Cable operations:** Connect Pi end only, power OFF. Cable length/pitch and board-port identity need applicable source binding.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Connector-normal macro view and source inset.\n\n**Motion recipe:** Latch opens; approved ribbon end aligns/inserts; latch closes. Unknown flex shape uses schematic line.\n\n**Verification:** Selected cable label; correct connector face; power-off acknowledgment; camera-end still disconnected.\n\n**Geometry blockers:** Q-09, Q-10. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-04-ZERO2W-POWER-OFF",
+      "procedureRevisionHash": "dbfc2170c3dc9a15a8d92fc83e3344082742b1dfb7f81dc83ab2d6c38fbc92d5",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-04-ZERO2W-POWER-OFF",
+          "stepId": "PX-V40-STEP-04",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-04-ZERO2W-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-06",
+              "Q-07",
+              "Q-09",
+              "Q-10"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-06",
+            "Q-07",
+            "Q-09",
+            "Q-10"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-04-ZERO2W-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-04"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 04. Mount the Robot HAT\n\n**ID:** `PX-V40-STEP-04` · **Source:** `PX-EV-PHOTO-04`, printed step 4 · **Parent:** base/electronics · **Prerequisite:** PX-V40-STEP-03.\n\n**Parts introduced / reused:** Robot HAT ×1.\n\n**Hardware:** M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.\n\n**Connections and final constraints:** HAT GPIO connector -> Pi header; HAT holes -> four prepared support positions; screw bearing faces -> HAT/support stack.\n\n**Orientation / warning:** No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Camera ribbon already connected at Pi; keep clear of trapped edges. Power OFF.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Top-oblique HAT/header alignment and side stack view.\n\n**Motion recipe:** HAT approaches along GPIO/support axes; seat connector and mounting stack; four individually tracked screws install.\n\n**Verification:** Four screw instances and supports; header keying/position; HAT revision applicability; no trapped ribbon or connector interference.\n\n**Geometry blockers:** Q-03, Q-06, Q-07, Q-09, Q-10. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-07-COMMON-POWER-OFF",
+      "procedureRevisionHash": "761de4df2aaa62d920f496d8f4516f46cdfb42e0454c2b13deabdd894bb3eb95",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-07-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-07",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-07-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-07",
+              "Q-09",
+              "Q-11"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-07",
+            "Q-09",
+            "Q-11"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-07-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 07. Secure and connect the battery\n\n**ID:** `PX-V40-STEP-07` · **Source:** `PX-EV-PHOTO-05`, printed step 7 · **Parent:** drive/base · **Prerequisite:** PX-V40-STEP-06.\n\n**Parts introduced / reused:** No new battery: use the same instance prepared in S06.\n\n**Hardware:** No new fastener.\n\n**Connections and final constraints:** Battery hook surface -> A loop surface; battery lead -> HAT BATTERY connector. Mount compliance and exact envelope require evidence.\n\n**Orientation / warning:** Connector orientation must match its keyed interface; connected does not mean switch ON.\n\n**Tools:** Hands.\n\n**Cable operations:** Connect the existing battery lead to the printed BATTERY port. Maintain an explicit power-off acknowledgment requirement (not sensed power state) until zeroing.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Underside pack, then HAT battery connector.\n\n**Motion recipe:** Bring pack to its mounting surface; show lead endpoint connection without inventing an exact slack curve.\n\n**Verification:** Same battery ID; correct BATTERY endpoint; mounting/lead clearance scope; switch state is user-acknowledged, not inferred.\n\n**Geometry blockers:** Q-07, Q-09, Q-11. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-11-FPC-POWER-OFF",
+      "procedureRevisionHash": "55323fd0e2d1cfc310f0219c0c7ad80e9f6d7c79c52b524e25c1b71facdc8ec3",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-11-FPC-POWER-OFF",
+          "stepId": "PX-V40-STEP-11",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-11-FPC-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-08",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-08",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-11-FPC-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 11. Connect the camera end of the ribbon\n\n**ID:** `PX-V40-STEP-11` · **Source:** `PX-EV-PHOTO-05`, printed step 11 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-10.\n\n**Parts introduced / reused:** Camera module ×1; reuse ribbon introduced at S03.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Cable camera-end -> camera connector with open/insert/close latch operation. No second cable is introduced.\n\n**Orientation / warning:** Follow the printed blue-plastic-side orientation at the camera itself; source inset remains available.\n\n**Tools:** Hands; no force.\n\n**Cable operations:** Connect other end of FFC/FPC while power OFF.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Camera connector macro view.\n\n**Motion recipe:** Show correct local-face approach and latch movement if admitted; otherwise source-panel sequence and schematic ribbon.\n\n**Verification:** Single cable instance connects Pi and camera endpoints; contact orientation and power-off acknowledgment.\n\n**Geometry blockers:** Q-08, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+      "procedureRevisionHash": "a2fa356e1b81560e9afc1f8e1a7605c2d7a052b9d3e04e6f48ad3b64d2987ea6",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-17-COMMON-PRINTED-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-17",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-05",
+              "Q-07"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "blockerIds": [
+            "Q-05",
+            "Q-07"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-17-COMMON-POWER-ZERO-P11",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-05"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 17. Introduce the servo-zeroing procedure\n\n**ID:** `PX-V40-STEP-17` · **Source:** `PX-EV-PHOTO-05`, printed step 17 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-16.\n\n**Parts introduced / reused:** No new part; prepared robot and servo leads.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Procedure state: printed power ON -> ZERO button -> temporary single-servo P11 connection before each horn attachment. No permanent P0/P1/P2 wiring is created.\n\n**Orientation / warning:** Use the exact depicted HAT interface when applicable; do not infer actual board revision from this drawing.\n\n**Tools:** Hands; existing setup/software reference where applicable.\n\n**Cable operations:** Temporary P11 is reserved for one servo at a time. Battery connection and procedure are explicit; this app does not energize hardware.\n\n**Servo zeroing:** Acknowledge per-servo zeroing requirement; fresh role-specific confirmation at S18/S19/S22.\n\n**Camera focus:** HAT power/ZERO/P11 inset plus source panel.\n\n**Motion recipe:** Procedure interstitial, not a fabricated servo-angle measurement animation.\n\n**Verification:** HAT/procedure applicability; temporary versus permanent ports; no blanket “all three zeroed” auto-certification.\n\n**Geometry blockers:** Q-05, Q-07. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "7cf884394b0f84a9f667644102168b3e08742155d43ba0e7a4381bba28b6d84e",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-18-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-18",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-18-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 18. Mate the camera/Plate-C assembly to tilt\n\n**ID:** `PX-V40-STEP-18` · **Source:** `PX-EV-PHOTO-06`, printed step 18 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-17.\n\n**Parts introduced / reused:** No new major part; C/camera/horn joins B/tilt.\n\n**Hardware:** Smallest servo-package retaining screw ×1; exact dimensions/standard unresolved.\n\n**Connections and final constraints:** Zeroed tilt output spline -> C tilt-horn spline; retaining screw seats through horn into output. Preserve C/camera as one internally connected subassembly.\n\n**Orientation / warning:** Middle/zero orientation as printed; do not force an arbitrary horn index.\n\n**Tools:** Matched screwdriver for the package screw.\n\n**Cable operations:** Temporary tilt lead to P11 during zeroing; remove temporary assignment afterward; camera ribbon route remains.\n\n**Servo zeroing:** Fresh tilt-instance zeroing attestation immediately before fixing horn.\n\n**Camera focus:** Tilt spline/retainer macro view and camera orientation overview.\n\n**Motion recipe:** Subassembly approaches spline axis, aligns indexed orientation, seats and receives retaining screw.\n\n**Verification:** Correct smallest package screw, fresh tilt attestation, spline/frame alignment, cable clearance.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-18-COMMON-ZERO-TILT",
+      "procedureRevisionHash": "6cf18e0a2c0801836c8761fe1d85e5514fc7e3fa6457920337b43a415ba70cf9",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-18-COMMON-ZERO-TILT",
+          "stepId": "PX-V40-STEP-18",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-TILT-001",
+            "conditionRuleId": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+            "validForOperationId": "PX-V40-OP-18-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-18-COMMON-ZERO-TILT",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-TILT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-18-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 18. Mate the camera/Plate-C assembly to tilt\n\n**ID:** `PX-V40-STEP-18` · **Source:** `PX-EV-PHOTO-06`, printed step 18 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-17.\n\n**Parts introduced / reused:** No new major part; C/camera/horn joins B/tilt.\n\n**Hardware:** Smallest servo-package retaining screw ×1; exact dimensions/standard unresolved.\n\n**Connections and final constraints:** Zeroed tilt output spline -> C tilt-horn spline; retaining screw seats through horn into output. Preserve C/camera as one internally connected subassembly.\n\n**Orientation / warning:** Middle/zero orientation as printed; do not force an arbitrary horn index.\n\n**Tools:** Matched screwdriver for the package screw.\n\n**Cable operations:** Temporary tilt lead to P11 during zeroing; remove temporary assignment afterward; camera ribbon route remains.\n\n**Servo zeroing:** Fresh tilt-instance zeroing attestation immediately before fixing horn.\n\n**Camera focus:** Tilt spline/retainer macro view and camera orientation overview.\n\n**Motion recipe:** Subassembly approaches spline axis, aligns indexed orientation, seats and receives retaining screw.\n\n**Verification:** Correct smallest package screw, fresh tilt attestation, spline/frame alignment, cable clearance.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "2d42fc71d4d0366fbd92381cf96403e96244baf5afd896000cde4a71a9e75b3a",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-19-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-19",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-19-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 19. Mate the pan-tilt assembly to the chassis\n\n**ID:** `PX-V40-STEP-19` · **Source:** `PX-EV-PHOTO-06`, printed step 19 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-18.\n\n**Parts introduced / reused:** Washer A ×1; reuse complete pan-tilt subassembly.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed pan output -> A-mounted pan horn, with the printed Washer A/retainer stack. Do not substitute Washer B.\n\n**Orientation / warning:** Pan zero orientation and large-bore Washer A correspond to the printed callout.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary pan lead P11 during zeroing, later free until P0 at S29; ribbon stays connected/routed.\n\n**Servo zeroing:** Fresh pan-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Pan base joint and Washer A close-up, then front overview.\n\n**Motion recipe:** Move the whole gimbal to chassis horn, align spline and washer stack, install retaining screw.\n\n**Verification:** Washer A identity; one pan retainer; fresh pan attestation; all subassembly members and camera cable preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-19-COMMON-ZERO-PAN",
+      "procedureRevisionHash": "1c3f0cb0d668ee60ef50ea7f7f340a1f418b265201ebf6ae29a0dcacd9ebcc77",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-19-COMMON-ZERO-PAN",
+          "stepId": "PX-V40-STEP-19",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-PAN-001",
+            "conditionRuleId": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+            "validForOperationId": "PX-V40-OP-19-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-09"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-09"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-19-COMMON-ZERO-PAN",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-PAN-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-19-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 19. Mate the pan-tilt assembly to the chassis\n\n**ID:** `PX-V40-STEP-19` · **Source:** `PX-EV-PHOTO-06`, printed step 19 · **Parent:** pan-tilt · **Prerequisite:** PX-V40-STEP-18.\n\n**Parts introduced / reused:** Washer A ×1; reuse complete pan-tilt subassembly.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed pan output -> A-mounted pan horn, with the printed Washer A/retainer stack. Do not substitute Washer B.\n\n**Orientation / warning:** Pan zero orientation and large-bore Washer A correspond to the printed callout.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary pan lead P11 during zeroing, later free until P0 at S29; ribbon stays connected/routed.\n\n**Servo zeroing:** Fresh pan-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Pan base joint and Washer A close-up, then front overview.\n\n**Motion recipe:** Move the whole gimbal to chassis horn, align spline and washer stack, install retaining screw.\n\n**Verification:** Washer A identity; one pan retainer; fresh pan attestation; all subassembly members and camera cable preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-09. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+      "procedureRevisionHash": "cf2678a4217d9b4cb23a4bb26f5f2693232ee22b72a92f2f8c1ebb3faca792cd",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-22-COMMON-ZERO-PROCEDURE",
+          "stepId": "PX-V40-STEP-22",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-12"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-12"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-22-COMMON-ZERO-PROCEDURE",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 22. Attach the steering horn assembly to its servo\n\n**ID:** `PX-V40-STEP-22` · **Source:** `PX-EV-PHOTO-06`, printed step 22 · **Parent:** steering/front · **Prerequisite:** PX-V40-STEP-21.\n\n**Parts introduced / reused:** Reuse G/horn subassembly and steering servo.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed steering spline -> steering horn spline; retaining screw secures horn while G retains its S21 relative revolute joint.\n\n**Orientation / warning:** Nominal steering center as printed; distinguish spline fixation from the separate G pivot.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary P11 during zeroing, then free until permanent P2 wiring.\n\n**Servo zeroing:** Fresh steering-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Steering spline/retainer and G link orientation.\n\n**Motion recipe:** Subassembly aligns/seats on spline; screw installs without freezing G pivot.\n\n**Verification:** Fresh steering attestation; third retaining screw allocated once; intended remaining DOF preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-12. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-22-COMMON-ZERO-STEERING",
+      "procedureRevisionHash": "9749ff9ced205263c486a5a969b510f9e3ae4f34c2f99186144b0724b9316884",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-22-COMMON-ZERO-STEERING",
+          "stepId": "PX-V40-STEP-22",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001",
+            "conditionRuleId": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+            "validForOperationId": "PX-V40-OP-22-COMMON-SPLINE"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-03",
+              "Q-05",
+              "Q-06",
+              "Q-12"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-03",
+            "Q-05",
+            "Q-06",
+            "Q-12"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-22-COMMON-ZERO-STEERING",
+          "predicate": "zeroingAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-SERVO-STEERING-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06",
+            "PX-V40-OP-22-COMMON-SPLINE"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 22. Attach the steering horn assembly to its servo\n\n**ID:** `PX-V40-STEP-22` · **Source:** `PX-EV-PHOTO-06`, printed step 22 · **Parent:** steering/front · **Prerequisite:** PX-V40-STEP-21.\n\n**Parts introduced / reused:** Reuse G/horn subassembly and steering servo.\n\n**Hardware:** Smallest servo-package retaining screw ×1.\n\n**Connections and final constraints:** Zeroed steering spline -> steering horn spline; retaining screw secures horn while G retains its S21 relative revolute joint.\n\n**Orientation / warning:** Nominal steering center as printed; distinguish spline fixation from the separate G pivot.\n\n**Tools:** Matched screwdriver.\n\n**Cable operations:** Temporary P11 during zeroing, then free until permanent P2 wiring.\n\n**Servo zeroing:** Fresh steering-instance zeroing attestation immediately before fixing.\n\n**Camera focus:** Steering spline/retainer and G link orientation.\n\n**Motion recipe:** Subassembly aligns/seats on spline; screw installs without freezing G pivot.\n\n**Verification:** Fresh steering attestation; third retaining screw allocated once; intended remaining DOF preserved.\n\n**Geometry blockers:** Q-03, Q-05, Q-06, Q-12. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-28-COMMON-POWER-OFF",
+      "procedureRevisionHash": "4c3965edd4d4dbeb4795ad4713d538644c42201d553303257d400e28eb133285",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-28-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-28",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-28-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-08",
+              "Q-09",
+              "Q-13"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-08",
+            "Q-09",
+            "Q-13"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-28-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 28. Connect the sensor ends of their cables\n\n**ID:** `PX-V40-STEP-28` · **Source:** `PX-EV-PHOTO-06`, printed step 28 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-27.\n\n**Parts introduced / reused:** 4-pin wire assembly ×1; 5-pin wire assembly ×1.\n\n**Hardware:** None.\n\n**Connections and final constraints:** 4-pin cable sensor-end -> ultrasonic connector; 5-pin cable sensor-end -> grayscale connector. HAT ends remain free until S29.\n\n**Orientation / warning:** Keying/contact orientation from each exact connector; cable color is supplementary evidence, not definitive pin mapping.\n\n**Tools:** Hands; connector work with power OFF.\n\n**Cable operations:** Connect sensor ends only, retaining distinct cable and endpoint IDs.\n\n**Servo zeroing:** None.\n\n**Camera focus:** Ultrasonic and grayscale connector insets.\n\n**Motion recipe:** Connector alignment/insertion where geometry admitted; schematic remainder of each cable.\n\n**Verification:** Correct 4-pin versus 5-pin cable; one end connected per cable; power-off acknowledgment; electrical applicability conflicts visible.\n\n**Geometry blockers:** Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n\n"
+      }
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "operationId": "PX-V40-OP-29-COMMON-POWER-OFF",
+      "procedureRevisionHash": "cda312f1fb5ca885a406d842de5add7fde20b51ef992dfc00501861c4cc70941",
+      "preimage": {
+        "contractVersion": 2,
+        "operation": {
+          "id": "PX-V40-OP-29-COMMON-POWER-OFF",
+          "stepId": "PX-V40-STEP-29",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "PX-V40-RULE-29-COMMON-POWER-OFF"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "Q-07",
+              "Q-08",
+              "Q-09",
+              "Q-13"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "blockerIds": [
+            "Q-07",
+            "Q-08",
+            "Q-09",
+            "Q-13"
+          ],
+          "parentAssignments": []
+        },
+        "rule": {
+          "id": "PX-V40-RULE-29-COMMON-POWER-OFF",
+          "predicate": "powerAcknowledgment",
+          "predicateVersion": 1,
+          "evaluationPhase": "physicalCommand",
+          "targetIds": [
+            "PX-V40-INS-ROBOT-HAT-001"
+          ],
+          "observability": {
+            "class": "notCameraObservable",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": false,
+            "eligibilityRuleIds": [],
+            "limitations": [
+              "User statement only; no sensed power, angle, electrical or geometry certification."
+            ]
+          },
+          "evidenceRequirementIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "comparator": "allTrue",
+          "toleranceRef": {
+            "state": "notApplicable",
+            "reason": "Procedure condition; no numeric tolerance."
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [
+            "PX-EV-PHOTO-06"
+          ],
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "sourceProcedureText": "## 29. Complete the Robot HAT wiring\n\n**ID:** `PX-V40-STEP-29` · **Source:** `PX-EV-PHOTO-06`, printed step 29 · **Parent:** wiring/full-robot · **Prerequisite:** PX-V40-STEP-28.\n\n**Parts introduced / reused:** No new required installed item; reuse all leads and cables. Unused accessories remain accounted for.\n\n**Hardware:** None.\n\n**Connections and final constraints:** Permanent HAT endpoints: pan P0/5V/GND; tilt P1/5V/GND; steering P2/5V/GND; ultrasonic D2,D3 with printed 3V3/GND; grayscale A0,A1,A2 with printed 3V3/GND; MOTOR1 left, MOTOR2 right.\n\n**Orientation / warning:** Connector polarity/keying and exact conductor mapping are separate claims. The printed rail labels do not resolve the repository ultrasonic 5V applicability conflict by themselves.\n\n**Tools:** Hands; power OFF for wiring. No automatic actuation or powered validation.\n\n**Cable operations:** Remove any temporary P11 assignment; connect permanent endpoints; cable wrap/strain relief can be optional sourced guidance, not an invented printed step.\n\n**Servo zeroing:** Preserve completed role-specific zeroing/attachment confirmations; no P11 in final wiring.\n\n**Camera focus:** HAT connector map plus selectable per-cable endpoint views.\n\n**Motion recipe:** Route/connect one labeled endpoint group at a time; exact cable curve only if admitted, otherwise clearly schematic.\n\n**Verification:** All intended endpoints unique/resolved; no temporary P11; motor left/right correct; full inventory accounting; unresolved voltage/pin/strain claims BLOCKED rather than certified.\n\n**Geometry blockers:** Q-07, Q-08, Q-09, Q-13. Reference instructions remain available; numerical motion/fit claims require G-GEOMETRY.\n"
+      }
+    }
+  ]
+}

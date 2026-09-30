@@ -10,7 +10,7 @@ it('preserves four route families, nested reference paths and section links',()=
   expect(parseRoute('#/videos/assemble')).toEqual({name:'videos',slug:'assemble'});
   expect(parseRoute('#/unknown')).toEqual({name:'home'});
 });
-it('characterizes pre-existing malformed percent decoding',()=>expect(()=>parseRoute('#/reference/%ZZ')).toThrow(URIError));
+it('M3 recovers malformed percent decoding characterized at M0',()=>expect(parseRoute('#/reference/%ZZ')).toEqual({name:'routeError',message:'Malformed URL escape'}));
 it('preserves exact setup stage order and documentary assembly completion',()=>{
  const wizard=readJson('src/content/wizard.json');expect(wizard.map((x:any)=>x.id)).toEqual(['parts','os','power','connect','software','servo-zero','assembly','calibrate']);
  expect(wizard.find((x:any)=>x.id==='assembly').pdf).toBe('/content/pdf/picar-x-assembly.pdf');

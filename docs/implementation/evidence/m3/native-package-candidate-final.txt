@@ -1,0 +1,40 @@
+
+> picarx-companion@0.1.0 build /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion
+> tsx tools/content-pipeline/entry.ts build
+
+Pinned generated baseline adopted; excluded originals retained; upstream checkout not required
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 175 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                        0.47 kB │ gzip:   0.30 kB
+dist/assets/pdf.worker.min-DEtVeC4l.mjs            1,255.07 kB
+dist/assets/Assembly-CLSY7huw.css                      0.62 kB │ gzip:   0.37 kB
+dist/assets/index-mFZyHRrV.css                        11.33 kB │ gzip:   3.02 kB
+dist/assets/event-_-Yfb1Qr.js                          1.38 kB │ gzip:   0.67 kB
+dist/assets/documentation-source-lock-QoK-uPjO.js     16.68 kB │ gzip:   1.55 kB
+dist/assets/Assembly-CwyD5sO9.js                      17.20 kB │ gzip:   4.32 kB
+dist/assets/_m3-locked-ledger-D2B_noOo.js             38.06 kB │ gzip:   9.93 kB
+dist/assets/search-index-C1TSHRBG.js                  85.87 kB │ gzip:   4.91 kB
+dist/assets/search-index-DfwM_xVL.js                  85.87 kB │ gzip:   4.92 kB
+dist/assets/search-index-CbLVMrqN.js                  87.22 kB │ gzip:   4.93 kB
+dist/assets/runtime-registry-Cd27iB5b.js             568.22 kB │ gzip:  29.70 kB
+dist/assets/compiled-graph-BrAN1xmX.js               627.21 kB │ gzip:  23.51 kB
+dist/assets/compiled-graph-Va1C-Idr.js               636.70 kB │ gzip:  23.83 kB
+dist/assets/compiled-graph-dDnaW3_W.js               636.70 kB │ gzip:  23.87 kB
+dist/assets/index-Bg-eI6r_.js                      6,178.68 kB │ gzip: 591.13 kB
+✓ built in 1.12s
+Safe mirror/dist exclusions and static bytes verified
+[plugin vite:reporter] 
+(!) /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/src/platform/tauri/repository.ts is dynamically imported by /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/src/features/assembly-session/store.ts, /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/src/features/assembly-session/store.ts but also statically imported by /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/tests/native/bootstrap.ts, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter] 
+(!) /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/src/platform/browser/indexed-db.ts is dynamically imported by /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/src/features/assembly-session/store.ts, /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/src/features/assembly-session/store.ts but also statically imported by /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/tests/session/browser-controls.ts, dynamic import will not move module into another chunk.
+
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+Isolated test-only package: /private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/picarx-companion/dist

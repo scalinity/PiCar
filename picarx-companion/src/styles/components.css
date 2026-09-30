@@ -606,3 +606,6 @@
   font-size: 13px;
   color: var(--text-dim);
 }
+.image-trigger { border: 0; padding: 0; background: transparent; cursor: zoom-in; }
+.image-trigger:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; }

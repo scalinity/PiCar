@@ -1,0 +1,35 @@
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 304, reused 154, downloaded 40, added 0
+ WARN  4 deprecated subdependencies found: glob@10.5.0, glob@8.1.0, inflight@1.0.6, whatwg-encoding@3.1.1
+Progress: resolved 618, reused 157, downloaded 366, added 0
+Packages: +376 -5
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+Progress: resolved 618, reused 157, downloaded 367, added 376, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+ WARN  Issues with peer dependencies found
+.
+├─┬ @wdio/cli 9.32.0
+│ └─┬ @wdio/globals 9.31.3
+│   └── ✕ missing peer expect-webdriverio@^6.0.9
+└─┬ @wdio/tauri-service 1.4.0
+  └─┬ @wdio/globals 9.29.1
+    └── ✕ missing peer expect-webdriverio@^5.6.5
+✕ Conflicting peer dependencies:
+  expect-webdriverio
+
+devDependencies:
++ @wdio/cli 9.32.0
++ @wdio/mocha-framework 9.32.0
++ @wdio/spec-reporter 9.32.0
++ @wdio/tauri-plugin 1.4.0
++ @wdio/tauri-service 1.4.0
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: edgedriver@6.3.1, geckodriver@6.1.1.                │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 3.7s using pnpm v10.33.2

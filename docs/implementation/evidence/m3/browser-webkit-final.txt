@@ -1,0 +1,118 @@
+[WebServer] (node:72101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:72111) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:72117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:72120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+
+(node:72126) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [webkit] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.2s)
+  ✓  2 [webkit] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (421ms)
+  ✘  3 [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (6.2s)
+(node:72267) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [webkit] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (416ms)
+  ✓  5 [webkit] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (543ms)
+  ✘  6 [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (6.6s)
+(node:72409) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  7 [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.5m)
+(node:78812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  8 [webkit] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (2.2s)
+  ✓  9 [webkit] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.1s)
+
+
+  1) [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('main h1')
+    Expected substring: "1."
+    Received string:    "Session recovery"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('main h1') with timeout 5000ms
+      - waiting for locator('main h1')
+        9 × locator resolved to <h1>Session recovery</h1>
+          - unexpected value "Session recovery"
+
+
+      41 |  await expect(page.getByText('0/29 self-confirmed',{exact:false}).first()).toBeVisible();
+      42 |  const url=page.url();const session=url.match(/PX-SESSION-[A-Z0-9-]+/)![0];
+    > 43 |  for(const number of [1,10,17,18,19,22,29]){await page.goto(`/#/assembly/${session}/step/${number}`);await expect(page.locator('main h1')).toContainText(`${number}.`);await expect(page.getByText('0/29 self-confirmed',{exact:false}).first()).toBeVisible();}
+         |                                                                                                                                            ^
+      44 |  await page.getByRole('button',{name:'Preview after',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'After instruction projection'})).toBeVisible();
+      45 |  await page.getByRole('link',{name:'Reference',exact:true}).last().click();await page.getByRole('link',{name:'Return to assembly bookmark',exact:true}).click();await expect(page).toHaveURL(/step\/29$/);
+      46 |  await page.reload();await expect(page.getByText('0/29 self-confirmed',{exact:false}).first()).toBeVisible();
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-persistence.spec.ts:43:140
+
+    Error Context: test-results/m3-persistence-reference-o-777d5-d-URL-review-never-confirms-webkit/error-context.md
+
+  2) [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('main h1')
+    Expected substring: "1."
+    Received string:    "Session recovery"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('main h1') with timeout 5000ms
+      - waiting for locator('main h1')
+        9 × locator resolved to <h1>Session recovery</h1>
+          - unexpected value "Session recovery"
+
+
+       6 | test('all29 source navigation for each variant, part context, search and offline review',async({page})=>{
+       7 |  test.setTimeout(360000);
+    >  8 |  for(const variant of ['rpi4','rpi5','rpi-zero-2-w']){const base=await start(page,variant);for(let n=1;n<=29;n++){await page.goto(base+'step/'+n);await expect(page.locator('main h1')).toContainText(n+'.');await expect(page.locator('main')).toContainText(variant);await expect(page.getByRole('heading',{name:'Source instructions',exact:true})).toBeVisible();expect(await page.locator('.source-text').first().textContent()).toContain('PX-V40-STEP-'+String(n).padStart(2,'0'));await expect(page.locator('main')).toContainText('geometry unavailable');}await page.getByRole('button',{name:'Preview after',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'After instruction projection'})).toBeVisible();await expect(page.locator('main')).toContainText('0/29 self-confirmed');
+         |                                                                                                                                                                                         ^
+       9 |  await page.locator('.source-tiles a').first().click();await expect(page).toHaveURL(/\/part\/PX-V40-/);await expect(page.locator('main')).toContainText('Printed-plan disposition');await page.getByRole('link',{name:'Reference',exact:true}).last().click();await page.locator('input[type=search]').fill('battery');await expect(page.locator('.search-results')).toContainText('plannedInstalled');await page.getByRole('link',{name:'Return to assembly bookmark'}).click();await expect(page).toHaveURL(/step\/29$/);}
+      10 |  await page.getByRole('link',{name:'Video · requires network',exact:true}).click();await page.getByRole('link',{name:'Return to assembly bookmark'}).click();await expect(page.locator('main')).toContainText('0/29 self-confirmed');await page.reload();await expect(page.locator('main h1')).toContainText('29.');
+      11 |  await page.route('**/content/**',r=>r.abort());await page.goto('/#/reference/assemble');await expect(page.locator('main h1')).toBeVisible();await expect(page.locator('main')).toContainText('assembly');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-ui.spec.ts:8:185
+
+    Error Context: test-results/m3-ui-all29-source-navigat-1d5ce-t-search-and-offline-review-webkit/error-context.md
+
+  3) [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('main')
+    Expected substring: "17/29 self-confirmed"
+    Received string:    "Session recoveryUNKNOWN_SESSIONAssembly overview"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('main') with timeout 5000ms
+      - waiting for locator('main')
+        - locator resolved to <main class="page">Opening assembly…</main>
+        - unexpected value "Opening assembly…"
+        13 × locator resolved to <main class="page">…</main>
+           - unexpected value "Session recoveryUNKNOWN_SESSIONAssembly overview"
+
+
+      15 |  for(let n=1;n<=29;n++){await expect(page.locator('main h1')).toContainText(n+'.');while(await page.getByRole('button',{name:'Record my acknowledgment',exact:true}).count()){await expect(page.getByRole('alert')).toHaveCount(0);await page.getByRole('button',{name:'Record my acknowledgment',exact:true}).first().click();await expect(page.getByText('Local progress ready',{exact:true})).toBeVisible();}
+      16 |  for(const box of await page.locator('.assembly-check').filter({hasText:'PX-V40-RULE-'}).locator('input[type=checkbox]').all())await box.check();await page.getByLabel('My statement').fill('I checked this printed physical task.');await page.getByRole('button',{name:'Confirm physical work and save',exact:true}).click();await expect(page.locator('main')).toContainText(n+'/29 self-confirmed');}
+    > 17 |  await page.getByRole('button',{name:'Explicitly reconcile the setup assembly badge'}).click();await expect(page.getByText('Local progress ready',{exact:true})).toBeVisible();await page.goto(base+'step/18');await page.getByRole('checkbox',{name:'I understand this invalidates this step and downstream physical self-confirmations.'}).check();await page.getByRole('button',{name:'Invalidate this step and downstream confirmations',exact:true}).click();await expect(page.locator('main')).toContainText('17/29 self-confirmed');await page.reload();await expect(page.locator('main')).toContainText('17/29 self-confirmed');await page.getByLabel('Fork with zero inherited confirmations').selectOption('rpi5');await page.getByRole('button',{name:'Create separate variant session'}).click();await expect(page.locator('main')).toContainText('rpi5 · 0/29 self-confirmed');
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+      18 | });
+      19 | test('quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit',async({page})=>{
+      20 |  test.setTimeout(90000);await start(page);for(const box of await page.locator('.assembly-check').filter({hasText:'PX-V40-RULE-'}).locator('input').all())await box.check();await page.getByLabel('My statement').fill('I checked the task.');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-ui.spec.ts:17:579
+
+    Error Context: test-results/m3-ui-all29-physical-UI-co-76b44-ndo-fork-and-reconciliation-webkit/error-context.md
+
+  3 failed
+    [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms 
+    [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review 
+    [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation 
+  6 passed (2.9m)

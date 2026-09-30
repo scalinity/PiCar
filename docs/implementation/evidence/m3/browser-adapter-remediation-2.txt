@@ -1,0 +1,64 @@
+[WebServer] (node:29848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30226) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:30998) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/m3-adapter.spec.ts:2:1 › real browser IndexedDB executes common native/browser fault contract (316ms)
+(node:31741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (328ms)
+  ✘  3 [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (6.1s)
+
+
+  1) [chromium] › tests/browser/m3-adapter.spec.ts:2:1 › real browser IndexedDB executes common native/browser fault contract 
+
+    Error: page.evaluate: TypeError: Failed to fetch dynamically imported module: http://localhost:1420/@fs/Users/danny/Documents/Apps/PiCar/docs/digital-twin/V40_ASSEMBLY_LEDGER.md?import&raw
+
+      2 | test('real browser IndexedDB executes common native/browser fault contract',async({page,browserName,browser})=>{
+      3 |  test.setTimeout(600000);await page.goto('/#/reference');
+    > 4 |  const results=await page.evaluate(async()=>{
+        |                           ^
+      5 |   const {runAdapterContract}=await import(String('/tests/session/adapter-contract.ts')) as typeof import('../session/adapter-contract');
+      6 |   const {openBrowserRepository}=await import(String('/src/platform/browser/indexed-db.ts')) as typeof import('../../src/platform/browser/indexed-db');
+      7 |   const {acceptedContext,contexts}=await import(String('/src/features/assembly-session/accepted.ts')) as typeof import('../../src/features/assembly-session/accepted');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-adapter.spec.ts:4:27
+
+    Error Context: test-results/m3-adapter-real-browser-In-065f9-tive-browser-fault-contract-chromium/error-context.md
+
+  2) [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /#\/assembly\/PX-SESSION-[A-Z0-9-]+\/step\/1$/
+    Received string:  "http://localhost:1420/#/assembly"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://localhost:1420/#/assembly"
+
+
+      38 | test('reference-only journey creates empty session and URL review never confirms',async({page})=>{
+      39 |  await page.goto('/#/assembly');await page.getByRole('button',{name:'Start new session',exact:true}).click();
+    > 40 |  await expect(page).toHaveURL(/#\/assembly\/PX-SESSION-[A-Z0-9-]+\/step\/1$/);
+         |                     ^
+      41 |  await expect(page.getByText('0/29 self-confirmed',{exact:false}).first()).toBeVisible();
+      42 |  const url=page.url();const session=url.match(/PX-SESSION-[A-Z0-9-]+/)![0];
+      43 |  for(const number of [1,10,17,18,19,22,29]){await page.goto(`/#/assembly/${session}/step/${number}`);await expect(page.locator('main h1')).toContainText(`${number}.`);await expect(page.getByText('0/29 self-confirmed',{exact:false}).first()).toBeVisible();}
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-persistence.spec.ts:40:21
+
+    Error Context: test-results/m3-persistence-reference-o-777d5-d-URL-review-never-confirms-chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/browser/m3-adapter.spec.ts:2:1 › real browser IndexedDB executes common native/browser fault contract 
+    [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms 
+  1 passed (8.3s)

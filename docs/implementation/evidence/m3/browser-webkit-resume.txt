@@ -1,0 +1,26 @@
+[WebServer] (node:81627) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81637) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81643) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81646) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+
+(node:81664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [webkit] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (4.9s)
+  ✓  2 [webkit] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (570ms)
+  ✓  3 [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (21.4s)
+  ✓  4 [webkit] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (517ms)
+  ✓  5 [webkit] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (783ms)
+  ✓  6 [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (2.8m)
+  ✓  7 [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.4m)
+  ✓  8 [webkit] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (1.9s)
+  ✓  9 [webkit] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.4s)
+
+  Slow test file: [webkit] › tests/browser/m3-ui.spec.ts (5.3m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  9 passed (5.8m)

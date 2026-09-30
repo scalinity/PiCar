@@ -1,0 +1,7 @@
+
+> picarx-companion@0.1.0 typecheck /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsc --noEmit && tsc --noEmit -p tsconfig.tools.json
+
+src/components/DocImage.tsx(4,65): error TS2550: Property 'at' does not exist on type 'string[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/pages/Assembly.tsx(15,71): error TS18047: 'state.selected' is possibly 'null'.
+ ELIFECYCLE  Command failed with exit code 2.

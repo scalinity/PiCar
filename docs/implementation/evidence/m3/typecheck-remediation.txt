@@ -1,0 +1,17 @@
+
+> picarx-companion@0.1.0 typecheck /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsc --noEmit && tsc --noEmit -p tsconfig.tools.json
+
+src/features/assembly-session/accepted.ts(6,34): error TS2307: Cannot find module '../../../../digital-twin/validation/m2/runtime-registry.json?raw' or its corresponding type declarations.
+src/features/assembly-session/accepted.ts(8,21): error TS2307: Cannot find module '../../../../digital-twin/validation/m2/rpi4/compiled-graph.json?raw' or its corresponding type declarations.
+src/features/assembly-session/accepted.ts(9,21): error TS2307: Cannot find module '../../../../digital-twin/validation/m2/rpi5/compiled-graph.json?raw' or its corresponding type declarations.
+src/features/assembly-session/accepted.ts(10,31): error TS2307: Cannot find module '../../../../digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json?raw' or its corresponding type declarations.
+src/features/assembly-session/accepted.ts(17,97): error TS2307: Cannot find module '../../../../docs/digital-twin/V40_ASSEMBLY_LEDGER.md?raw' or its corresponding type declarations.
+src/features/assembly-session/accepted.ts(17,165): error TS2307: Cannot find module '../../../tools/content-pipeline/documentation-source-lock.json?raw' or its corresponding type declarations.
+src/features/assembly-session/accepted.ts(21,96): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/lib/m3-enabled.ts(2,39): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+tests/browser/m3-persistence.spec.ts(6,46): error TS2307: Cannot find module '/src/platform/browser/indexed-db.ts' or its corresponding type declarations.
+tests/browser/m3-persistence.spec.ts(7,50): error TS2307: Cannot find module '/src/features/assembly-session/commands.ts' or its corresponding type declarations.
+tests/browser/m3-persistence.spec.ts(8,29): error TS2307: Cannot find module '/src/features/assembly-session/hash.ts' or its corresponding type declarations.
+tests/browser/m3-persistence.spec.ts(9,38): error TS2307: Cannot find module '/src/features/assembly-session/legacy.ts' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.

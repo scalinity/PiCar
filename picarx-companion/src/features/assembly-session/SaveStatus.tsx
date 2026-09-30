@@ -1,0 +1,6 @@
+import { useCompanion, retrySave, exportOriginal, exportData, download, serializeExport, resolveLegacy, saveError } from './store';
+export function SaveStatus(){const s=useCompanion();return <div className="save-status" aria-live="polite">
+ {!s.initialized?<span>Opening saved progress…</span>:s.pending?<span>Saving… previous acknowledged state remains visible.</span>:s.error?<><span role="alert">Save failed: {s.error}</span>{s.retryAvailable&&<button className="button" onClick={()=>void retrySave().catch(saveError)}>Retry same save</button>}</>:<span>Local progress ready</span>}
+ {s.recovery&&<p role="alert">{s.recovery} <button className="button" onClick={exportOriginal}>Export original progress</button>{s.recovery.startsWith('LEGACY_DIVERGENCE')&&<><button className="button" onClick={()=>void resolveLegacy('keepNew').catch(saveError)}>Keep new progress</button><button className="button" onClick={()=>void resolveLegacy('recovery').catch(saveError)}>Separate recovery import</button></>}</p>}
+ <button className="button" disabled={s.pending} onClick={()=>void exportData().then(b=>download('picarx-sessions.json',serializeExport(b))).catch(saveError)}>Export sessions</button>
+ </div>;}

@@ -1,0 +1,844 @@
+{
+  "milestone": "M3",
+  "status": "BLOCKED",
+  "acceptanceEstablished": false,
+  "implementationStatus": "partial uncommitted draft",
+  "branch": "codex/m3-durable-sessions",
+  "head": "0b613dc5d079b327f5e631bb3a84bb20267d63c5",
+  "date": "2026-09-30",
+  "timeZone": "America/New_York",
+  "acceptedUpstream": {
+    "m0": "2a934710501d71aecbd8da827925c92e49378661",
+    "m1": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+    "m2": "8d8d30d0c7b077504916a26d80c211e2fc52c4e2",
+    "identities": {
+      "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+      "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+      "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+      "sourceLockRawSha256": "3f715ec18946e022a1b5633a15e3b3ae3d31576e1fa378d77c375d61c291b06e",
+      "semanticValidatorRawSha256": "980749983845369e24d77b7aad22774012ac480f2668319ab0ddb3c8589b931b",
+      "hashPolicyRawSha256": "a799b9b5161c1cee501a7667ac56e8ca4466172b876fb832e9b3ae1be3649c62",
+      "compilerRawSha256": "e09f7a90f5618ca24bfe16436e4b69ac418f0a2f4dde9e5f452f09c1d2248ed0",
+      "reducerRawSha256": "48a2cc4e5919cbb784c6a7fed314ba6b1829c16337b7398dc99ffffb382dee4d",
+      "gatePolicyRawSha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad"
+    },
+    "variants": [
+      {
+        "variantId": "rpi4",
+        "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+        "operations": 189,
+        "steps": 29
+      },
+      {
+        "variantId": "rpi5",
+        "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+        "operations": 189,
+        "steps": 29
+      },
+      {
+        "variantId": "rpi-zero-2-w",
+        "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+        "operations": 186,
+        "steps": 29
+      }
+    ],
+    "currentGData": "PASS",
+    "currentGGraph": "PASS"
+  },
+  "scope": "M3 reference-first only; no hardware, geometry, camera or later milestones",
+  "sourceDraft": {
+    "changedTrackedPaths": [
+      ".gitignore",
+      "picarx-companion/package.json",
+      "picarx-companion/playwright.config.ts",
+      "picarx-companion/pnpm-lock.yaml",
+      "picarx-companion/src-tauri/Cargo.lock",
+      "picarx-companion/src-tauri/Cargo.toml",
+      "picarx-companion/src-tauri/src/lib.rs",
+      "picarx-companion/src/App.tsx",
+      "picarx-companion/src/components/PdfViewer.tsx",
+      "picarx-companion/src/components/SearchBox.tsx",
+      "picarx-companion/src/lib/content-types.ts",
+      "picarx-companion/src/lib/progress-store.ts",
+      "picarx-companion/src/lib/router.ts",
+      "picarx-companion/src/main.tsx",
+      "picarx-companion/src/pages/Home.tsx",
+      "picarx-companion/src/pages/WizardStep.tsx",
+      "picarx-companion/tests/baseline/preservation.test.ts",
+      "picarx-companion/tests/publication/packaging.test.ts",
+      "picarx-companion/tools/content-pipeline/overlay.ts",
+      "picarx-companion/vite.config.ts",
+      "picarx-companion/vitest.config.ts"
+    ],
+    "newSourcePaths": [
+      "picarx-companion/src/features/assembly-session/SaveStatus.tsx",
+      "picarx-companion/src/features/assembly-session/accepted.ts",
+      "picarx-companion/src/features/assembly-session/commands.ts",
+      "picarx-companion/src/features/assembly-session/hash.ts",
+      "picarx-companion/src/features/assembly-session/legacy.ts",
+      "picarx-companion/src/features/assembly-session/search.ts",
+      "picarx-companion/src/features/assembly-session/store.ts",
+      "picarx-companion/src/platform/browser/indexed-db.ts",
+      "picarx-companion/src/platform/repository.ts",
+      "picarx-companion/src/platform/tauri/repository.ts",
+      "picarx-companion/src-tauri/src/persistence/mod.rs",
+      "picarx-companion/tests/session/domain.test.ts",
+      "picarx-companion/tests/session/rejection.test.ts",
+      "picarx-companion/src-tauri/src/commands.rs",
+      "picarx-companion/src-tauri/src/strict_json.rs",
+      "picarx-companion/src/lib/m3-enabled.ts",
+      "picarx-companion/src/pages/Assembly.tsx",
+      "picarx-companion/src/styles/assembly.css",
+      "picarx-companion/tests/browser/m3-persistence.spec.ts"
+    ],
+    "nativeTestBridgePresent": false,
+    "uiOptIn": "VITE_M3_ENABLED=1",
+    "nativeOptIn": "m3-persistence; default disabled",
+    "nativeIsolationFeature": "m3-native-test",
+    "sharedNativeFaultRunnerImplemented": false
+  },
+  "commands": [
+    {
+      "argv": [
+        "node",
+        "digital-twin/tools/compiler/upstream.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "logPath": "docs/implementation/evidence/m3/upstream-current.txt"
+    },
+    {
+      "argv": [
+        "node",
+        "digital-twin/tools/compiler/gate.mjs",
+        "--check"
+      ],
+      "exitCode": 0,
+      "logPath": "docs/implementation/evidence/m3/graph-current.txt"
+    },
+    {
+      "argv": [
+        "pnpm",
+        "--dir",
+        "picarx-companion",
+        "content:check"
+      ],
+      "exitCode": 1,
+      "logPath": "docs/implementation/evidence/m3/content-current.txt"
+    },
+    {
+      "argv": [
+        "pnpm",
+        "--dir",
+        "picarx-companion",
+        "package:check"
+      ],
+      "exitCode": 1,
+      "logPath": "docs/implementation/evidence/m3/package-current.txt"
+    }
+  ],
+  "scopedTests": {
+    "sessionDomain": {
+      "pass": 8,
+      "fail": 0,
+      "exitCode": 0
+    },
+    "unitAttempt": {
+      "total": 48,
+      "pass": 47,
+      "fail": 1,
+      "exitCode": 1,
+      "includesSessionDomain": true,
+      "unauthorizedFixtureBuild": true
+    },
+    "m1": {
+      "pass": 254,
+      "fail": 0,
+      "exitCode": 0
+    },
+    "m2ReadOnlyContracts": {
+      "pass": 12,
+      "fail": 0,
+      "exitCode": 0
+    },
+    "generatedTypeDrift": {
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "rustFormatting": {
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "browserAttempt": {
+      "exitCode": 1,
+      "executedTests": 0,
+      "reason": "GENERATION_BINDING: package.json before dev server started"
+    },
+    "standaloneNoEmit": {
+      "status": "BLOCKED"
+    },
+    "nativeSqlite": {
+      "status": "BLOCKED"
+    },
+    "nativeEmbeddedProvider": {
+      "status": "BLOCKED"
+    }
+  },
+  "acceptanceRows": [
+    {
+      "id": "AC-01",
+      "status": "BLOCKED",
+      "reason": "Actual adapter/native/application targets and content generation unverified or rejected; domain results do not close this criterion."
+    },
+    {
+      "id": "AC-07",
+      "status": "BLOCKED",
+      "reason": "Actual adapter/native/application targets and content generation unverified or rejected; domain results do not close this criterion."
+    },
+    {
+      "id": "AC-08",
+      "status": "BLOCKED",
+      "reason": "Actual adapter/native/application targets and content generation unverified or rejected; domain results do not close this criterion."
+    },
+    {
+      "id": "AC-12",
+      "status": "BLOCKED",
+      "reason": "Actual adapter/native/application targets and content generation unverified or rejected; domain results do not close this criterion."
+    }
+  ],
+  "faultMatrix": [
+    {
+      "id": "lost-ack retry",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "changed request ID reuse",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "two concurrent fresh writers",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "migration interrupted before marker",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "migration interrupted after marker",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "legacy divergence after downgrade",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "malformed raw retained",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "old assembly checkbox zero detailed confirmations",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "disk/quota rejection and acknowledged UI",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "missing event",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "duplicate sequence",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "corrupt snapshot",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "unsupported newer schema or graph",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "committed-WAL / consistent logical backup and independent restore",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "blocked IndexedDB upgrade",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "explicit recovery import",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "variant fork zero inherited confirmations",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "canonical-path import rejection",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "correct scoped attestation consumption",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "lost-ack attestation consumption retry",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    },
+    {
+      "id": "attestation invalidation and epochs",
+      "browser": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "sqlite": {
+        "status": "BLOCKED",
+        "executed": false
+      },
+      "parity": "BLOCKED"
+    }
+  ],
+  "faultCounts": {
+    "browserBlocked": 21,
+    "sqliteBlocked": 21,
+    "adapterPass": 0,
+    "parityPass": 0
+  },
+  "instructionDeviation": {
+    "action": "Existing unit packaging test invoked pnpm build in disposable fixture without separate authorization",
+    "fixtureBuildExit": 2,
+    "outerUnitExit": 1,
+    "stage": "tsc; bundling not reached",
+    "logPath": "docs/implementation/evidence/m3/unit-tests.txt",
+    "ownerStateTouched": false,
+    "nativeBuild": false,
+    "guardAdded": "PICAR_ALLOW_PACKAGE_BUILD requires explicit owner authorization"
+  },
+  "unexecutedTargets": [
+    "complete real IndexedDB matrix",
+    "real SQLite matrix and committed-WAL restore",
+    "native WDIO compatibility/build/session",
+    "all29 UI and StrictMode save flows",
+    "Chromium/WebKit matrix",
+    "keyboard/accessibility/reduced motion/offline missing media",
+    "current noEmit and amended packaging fixture",
+    "full isolated M2 replay/mutation regression if affected"
+  ],
+  "blockers": [
+    "Separate owner compilation/native-session authorization unanswered",
+    "Separate content-generation/input-adoption authorization unanswered",
+    "Current captured input manifest intentionally not adopted; INPUT_TAMPER",
+    "Old committed generation intentionally retained; GENERATION_BINDING: package.json",
+    "Partial native event/import authorization and recovery/migration/conflict workflows",
+    "Complete shared adapter fault fixtures and native runner not implemented"
+  ],
+  "preservation": {
+    "originalDiagnostics": 12,
+    "diagnosticReceiptEntriesVerified": 15,
+    "privateFilesIgnored": 10,
+    "privateTracked": 0,
+    "privatePublicCopies": 0,
+    "acceptedReportsUnchanged": true,
+    "legacyKeyUntouched": true,
+    "ownerDatabaseTestsExecuted": false,
+    "stagedPaths": [],
+    "commitCreated": false,
+    "remoteWrite": false
+  },
+  "nextAllowedWork": "M3 remediation only; HANDOFF_M3_REMEDIATION.md",
+  "bindings": [
+    {
+      "path": ".gitignore",
+      "rawSha256": "15e7c32cb1cf1c43b5ad0a2c06e3097d7517f43ea62d4b4fd521354f9f66f532",
+      "byteLength": 2011
+    },
+    {
+      "path": "M0_GATE_REPORT.json",
+      "rawSha256": "881e499d6d0321377233630da21d0dbea2c5d76c667390e950a88a79372c2a24",
+      "byteLength": 4498
+    },
+    {
+      "path": "digital-twin/validation/m2/adopted-g-data.json",
+      "rawSha256": "e884e72364851b91f67921359cdc9b7ad610df8472a62f689fda874d2fbf7485",
+      "byteLength": 37079
+    },
+    {
+      "path": "docs/digital-twin/PERSISTENCE_CONTRACT.md",
+      "rawSha256": "1a9d0a39799f1626039315efd48b2181b52fdd59ae8897272e56a870459d75dd",
+      "byteLength": 6295
+    },
+    {
+      "path": "docs/digital-twin/SOURCE_PUBLICATION_CONTRACT.md",
+      "rawSha256": "c18122bf2aa3bb252ad4604632a2b377e7954d6ff8330109bc9905ec638c2f9a",
+      "byteLength": 6801
+    },
+    {
+      "path": "docs/digital-twin/SPEC_PACKAGE_RECEIPT.md",
+      "rawSha256": "2bfd0aab080dca092fa5642516163bf5f90e2515286e49e5e3624a80022ddb61",
+      "byteLength": 2373
+    },
+    {
+      "path": "docs/implementation/HANDOFF_M3_REMEDIATION.md",
+      "rawSha256": "97e7e2895bd9109956d19d725ab306c91d6cf408472e5fcdd40ee6dea4ca1e5b",
+      "byteLength": 9198
+    },
+    {
+      "path": "docs/implementation/M0_CHECKPOINT_VERIFICATION.json",
+      "rawSha256": "ee6d07c92f199b248e048b05b4e4770c8ef338036e97fc523c596b3344979d64",
+      "byteLength": 2233
+    },
+    {
+      "path": "docs/implementation/M0_REPORT.md",
+      "rawSha256": "a26a69b9325219868afc109c438d20817274a247a4b7fef4647e14d70b7e9a2c",
+      "byteLength": 14206
+    },
+    {
+      "path": "docs/implementation/M1_G_DATA_REPORT.json",
+      "rawSha256": "ddbdad1c00372e670b674bbc6d6bf2170b6f2b0d08a034b715e522029b644f0f",
+      "byteLength": 30477
+    },
+    {
+      "path": "docs/implementation/M2_G_GRAPH_REPORT.json",
+      "rawSha256": "708de7bda8e3dd5d9bf53c3d1775846dec59784725064ef96f5082fefd9ab38e",
+      "byteLength": 63998
+    },
+    {
+      "path": "docs/implementation/M3_NATIVE_TEST_PLAN.md",
+      "rawSha256": "e8ca290dfae9739f858001e6fa49cfb1b00b4d438622802893ff72ef4fbf6b84",
+      "byteLength": 2622
+    },
+    {
+      "path": "docs/implementation/M3_PUBLICATION_PLAN.md",
+      "rawSha256": "6aa56913b88aec29db0f1dcf0f452a8a94f44673b64fcccce6d628dba01536b2",
+      "byteLength": 1826
+    },
+    {
+      "path": "docs/implementation/M3_REPORT.md",
+      "rawSha256": "fc3f4af965dbb52c3feb7a68fb5251d5d22f5f1bd544cb92bdb96bba74c0b3cb",
+      "byteLength": 11035
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-current.txt",
+      "rawSha256": "944faa023f2e86557e477379dd1963865460fb2032a8877c8e1c0f74c3f7f176",
+      "byteLength": 898
+    },
+    {
+      "path": "docs/implementation/evidence/m3/diff-check.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": "docs/implementation/evidence/m3/domain-final.txt",
+      "rawSha256": "a1ad197af379975cec18a5a74d109d13abc5446077a264c172cb1a61e22b8505",
+      "byteLength": 200
+    },
+    {
+      "path": "docs/implementation/evidence/m3/final-check-commands.json",
+      "rawSha256": "1369bac828507ba6fd244ef997d1f76ef55dd8a48f844a15c662ee78560c6dde",
+      "byteLength": 784
+    },
+    {
+      "path": "docs/implementation/evidence/m3/generated-types.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "byteLength": 94
+    },
+    {
+      "path": "docs/implementation/evidence/m3/graph-current.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "byteLength": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m3/m1-tests.tap",
+      "rawSha256": "4a5c6a1949e5eebd0174bf84810f8dc5c34d2333c9c40a12fe1b22955da9c14d",
+      "byteLength": 44514
+    },
+    {
+      "path": "docs/implementation/evidence/m3/m2-contracts.tap",
+      "rawSha256": "02419200bcfa747d100fca1621fb1bf4234020e0c3ea15eb9569f4b6297c94fb",
+      "byteLength": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/m3/package-current.txt",
+      "rawSha256": "2d5f8129ec6f77fd23a568aab62c89c7c0e56321d8716e73696f06f33e606efb",
+      "byteLength": 1179
+    },
+    {
+      "path": "docs/implementation/evidence/m3/preflight.json",
+      "rawSha256": "abab3ad36521ac9257f10e21930c51986cbb26e494d304cc89515d0b3a4721b2",
+      "byteLength": 2241
+    },
+    {
+      "path": "docs/implementation/evidence/m3/rust-format.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-tests.txt",
+      "rawSha256": "30dc87e432a8e3cac8d3c7701c56efd137b12e9c5b1b090abebd66dfaae93767",
+      "byteLength": 3007
+    },
+    {
+      "path": "docs/implementation/evidence/m3/upstream-current.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "byteLength": 99
+    },
+    {
+      "path": "picarx-companion/package.json",
+      "rawSha256": "9b9065b010d8427a8f7691bda66834a354b10a1f2be779e4398a40dbf6494fcb",
+      "byteLength": 1536
+    },
+    {
+      "path": "picarx-companion/playwright.config.ts",
+      "rawSha256": "fe42dedcecd71392c8111c23f92914777b882ae2885c3734176fb23c4cf1d31e",
+      "byteLength": 446
+    },
+    {
+      "path": "picarx-companion/pnpm-lock.yaml",
+      "rawSha256": "e30094f05772197acb76517208b6377500aa69d17dceac577f840855e3183335",
+      "byteLength": 66603
+    },
+    {
+      "path": "picarx-companion/src-tauri/Cargo.lock",
+      "rawSha256": "7d62ca65a9180364fdb891d4b53c83f9c0eea7565600a6500d5101351a0f9bec",
+      "byteLength": 127303
+    },
+    {
+      "path": "picarx-companion/src-tauri/Cargo.toml",
+      "rawSha256": "f6ac8ba32d45f0b0017351fcb36a0f6bb68dfb3fe575822b3bced2b30c85cf19",
+      "byteLength": 994
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/commands.rs",
+      "rawSha256": "fb217978fbee8e00111227cef641726092b7dff840d487f4161598156af44dfe",
+      "byteLength": 2025
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/lib.rs",
+      "rawSha256": "6d844ce7c7448eecb876580efe45cc35f392a0430b1b0c6f4729a438dbb2216c",
+      "byteLength": 2010
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/persistence/mod.rs",
+      "rawSha256": "e4b19a78acf0fb64e23d0596059bf9d4b24db461f536a5891eb7b43c289ffd78",
+      "byteLength": 33630
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/strict_json.rs",
+      "rawSha256": "60b331ef22e71640134ac5ddd8165a42889b9e404ad822a7a68dd15f11883839",
+      "byteLength": 4725
+    },
+    {
+      "path": "picarx-companion/src/App.tsx",
+      "rawSha256": "103782763c1621e6498e651ee5491f53a2f62209578a62c83d5fbcc50a8b41b3",
+      "byteLength": 3292
+    },
+    {
+      "path": "picarx-companion/src/components/PdfViewer.tsx",
+      "rawSha256": "e7ecd199c5d9ce6d861c8e04085370c6a6d9e1fd27dfedfc4f1daf9ae12e4148",
+      "byteLength": 4694
+    },
+    {
+      "path": "picarx-companion/src/components/SearchBox.tsx",
+      "rawSha256": "733fb3132e11357a5c9e3144e7992616af90fb947632c243b514980021cb4dad",
+      "byteLength": 2751
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/SaveStatus.tsx",
+      "rawSha256": "550b9408cedd12fdbb968dfdc8bcf338c280244ac3fd1db7894b67199c4acf72",
+      "byteLength": 1185
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/accepted.ts",
+      "rawSha256": "87d88de5fbf3d25e617e30c86953490d44009c66a7b771d2d77293b288b78320",
+      "byteLength": 2374
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/commands.ts",
+      "rawSha256": "541e20428c7bb18764964bec81e6408520d8527e6804ddea8e608289827f8cbd",
+      "byteLength": 12826
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/hash.ts",
+      "rawSha256": "48eb7a0d1b9acbd1d3c79d7a31177f5925e40902696cef7f7add563de9b9e2f3",
+      "byteLength": 1984
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/legacy.ts",
+      "rawSha256": "84b1b4e156eec222c61db66e3dd10be75d628adee67eb7eb97d31b117603fa68",
+      "byteLength": 2053
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/search.ts",
+      "rawSha256": "d5ea16595ac758ea18abf80d52a0f3ea817d0755d4ecb9a094c03e0ea3e25990",
+      "byteLength": 1742
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/store.ts",
+      "rawSha256": "6497220fe5f47e502ecbebe777764789771feda453d66551b7b7955be973ef0f",
+      "byteLength": 7831
+    },
+    {
+      "path": "picarx-companion/src/lib/content-types.ts",
+      "rawSha256": "a2b3ef4404b0ad3d7c56186be18dc426663e42a182fbd488122958f7e034b1cb",
+      "byteLength": 2010
+    },
+    {
+      "path": "picarx-companion/src/lib/m3-enabled.ts",
+      "rawSha256": "19afa5338aec64cee9b6df0469ffc8b98438b536ec445355a1c35277a39de4d3",
+      "byteLength": 147
+    },
+    {
+      "path": "picarx-companion/src/lib/progress-store.ts",
+      "rawSha256": "31abe3d5f4ca037a0e8904ba9c084c1de77f9bb56a578bf17666615c8e9585ab",
+      "byteLength": 1831
+    },
+    {
+      "path": "picarx-companion/src/lib/router.ts",
+      "rawSha256": "8fa4a6c3c998b102bd3a7156ccec080688099203ab5298cc12b3b23240f5087b",
+      "byteLength": 3169
+    },
+    {
+      "path": "picarx-companion/src/main.tsx",
+      "rawSha256": "4523ca476ae9622297618631ac0528641113cdfa5a28673aa5d2aa919b2560df",
+      "byteLength": 602
+    },
+    {
+      "path": "picarx-companion/src/pages/Assembly.tsx",
+      "rawSha256": "4462c9f1901e6da1d53a5d4429f87d3d515517987aaca2375998d0dac9bfaad6",
+      "byteLength": 11294
+    },
+    {
+      "path": "picarx-companion/src/pages/Home.tsx",
+      "rawSha256": "c39d3b17d5a1d6e0c4e4c7d7da842ed48b2538a5fe782c349c7e40a0174e6781",
+      "byteLength": 2175
+    },
+    {
+      "path": "picarx-companion/src/pages/WizardStep.tsx",
+      "rawSha256": "27dd1761645d57824830aa62f2dae1c06397151e50ea91f1dd400a0df629feb8",
+      "byteLength": 4213
+    },
+    {
+      "path": "picarx-companion/src/platform/browser/indexed-db.ts",
+      "rawSha256": "4a686cf3ad5f0e429e4cb4c5ac3f7a682d5d8a7ef829640f321f59fd54aad570",
+      "byteLength": 8483
+    },
+    {
+      "path": "picarx-companion/src/platform/repository.ts",
+      "rawSha256": "3d23fc4dde12fbfad4677e05dca95d45054b5c0101c89ebb97d1a83147ea54c1",
+      "byteLength": 2515
+    },
+    {
+      "path": "picarx-companion/src/platform/tauri/repository.ts",
+      "rawSha256": "9ca512c2e88112450c93b0fdb11dc1906dc8ccf9099527d3e8c09747916910c6",
+      "byteLength": 1477
+    },
+    {
+      "path": "picarx-companion/src/styles/assembly.css",
+      "rawSha256": "a3035af490db4bc76f3c9cdda87e5bf17689be4fbed4988936a134f16f9d5d54",
+      "byteLength": 706
+    },
+    {
+      "path": "picarx-companion/tests/baseline/preservation.test.ts",
+      "rawSha256": "1c3b084d24e49dd14b8812d952b74c1d22fe0b230933a3ef2a36594edad1b968",
+      "byteLength": 2822
+    },
+    {
+      "path": "picarx-companion/tests/browser/m3-persistence.spec.ts",
+      "rawSha256": "41e880b95a5d6a5cb758985247782cd1c6845794050a341b11c80b7a746baf77",
+      "byteLength": 5560
+    },
+    {
+      "path": "picarx-companion/tests/publication/packaging.test.ts",
+      "rawSha256": "de80f0d9bc2707c10e5838fcb7a57f1ff0141e98307d69c4ad49476e2a64a660",
+      "byteLength": 3537
+    },
+    {
+      "path": "picarx-companion/tests/session/domain.test.ts",
+      "rawSha256": "a0b8493edf66e06107c884f0164aa9da9f6010a25f5173a9efb2332a891ee412",
+      "byteLength": 4062
+    },
+    {
+      "path": "picarx-companion/tests/session/rejection.test.ts",
+      "rawSha256": "e09bd448088adde49a73883d09b9f09de436f5d9c91838c33e22871e96c02f84",
+      "byteLength": 3323
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/overlay.ts",
+      "rawSha256": "0645eafb65d17c924ab1776e5e892d899d59ebf5f98ca0f767e451db241b3dfb",
+      "byteLength": 6953
+    },
+    {
+      "path": "picarx-companion/vite.config.ts",
+      "rawSha256": "1cc116b74bcb54314acea217c272003de510c670827bdfef62f708ef53811e78",
+      "byteLength": 1859
+    },
+    {
+      "path": "picarx-companion/vitest.config.ts",
+      "rawSha256": "cc2e24414bfeb486ec1478ee7137a8bb8279469b1d390c0a72666376cfc6b273",
+      "byteLength": 215
+    }
+  ],
+  "selfHashIncluded": false
+}

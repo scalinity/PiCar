@@ -60,6 +60,7 @@ export interface VideoEntry {
 }
 
 export interface WizardStep {
+  assemblyLauncher?: boolean;
   id: string;
   title: string;
   intro?: string;

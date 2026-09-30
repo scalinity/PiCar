@@ -1,3 +1,5 @@
+import { bytesToHex } from '@noble/hashes/utils';
+import { sha256 } from '@noble/hashes/sha256';
 import { useState } from 'react';
 import * as pdfjs from 'pdfjs-dist';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
@@ -12,19 +14,26 @@ const docCache = new Map<string, Promise<PDFDocumentProxy>>();
 const loadDoc = (url: string) => {
   let p = docCache.get(url);
   if (!p) {
-    p = pdfjs.getDocument({ url }).promise;
+    p = (async () => {
+      if (url !== '/content/pdf/picar-x-assembly.pdf') throw Error('UNLOCKED_PDF');
+      const response = await fetch(url); if (!response.ok) throw Error('PDF_UNAVAILABLE');
+      const data = new Uint8Array(await response.arrayBuffer());
+      if (bytesToHex(sha256(data)) !== '2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce') throw Error('V40_PDF_HASH');
+      return pdfjs.getDocument({ data }).promise;
+    })();
     docCache.set(url, p);
   }
   return p;
 };
 
-export function PdfViewer({ src }: { src: string }) {
+export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?: number }) {
   const { pdfLastPage } = useProgress();
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [failed, setFailed] = useState(false);
   const [zoom, setZoom] = useState(1.2);
-  const page = doc ? Math.min(Math.max(1, pdfLastPage), doc.numPages) : 1;
-  const setPage = (n: number) => update({ pdfLastPage: n });
+  const [sourcePage, setSourcePage] = useState<number | undefined>(requestedPage);
+  const page = doc ? Math.min(Math.max(1, sourcePage ?? pdfLastPage), doc.numPages) : 1;
+  const setPage = (n: number) => { if (requestedPage !== undefined) setSourcePage(n); else update({ pdfLastPage: n }); };
 
   return (
     <div
@@ -41,6 +50,7 @@ export function PdfViewer({ src }: { src: string }) {
         };
       }}
     >
+      <p>Z0104V40 · exact locked booklet bytes · owner photos withheld</p>
       <div className="pdf-toolbar">
         <button className="button" disabled={!doc || page <= 1} onClick={() => setPage(page - 1)}>
           ← Prev
@@ -73,7 +83,7 @@ export function PdfViewer({ src }: { src: string }) {
         </span>
       </div>
       <div className="pdf-canvas-wrap">
-        {failed && <p className="pdf-error">Could not load the PDF.</p>}
+        {failed && <p className="pdf-error" role="alert">Could not load the verified V40 PDF. Source text remains available.<button className="button" onClick={() => { docCache.delete(src); setFailed(false); }}>Retry exact booklet</button></p>}
         {doc && (
           <canvas
             key={`${page}@${zoom}`}

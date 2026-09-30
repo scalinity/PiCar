@@ -1,6 +1,10 @@
+import { useCompanion } from '../features/assembly-session/store';
+import { assemblySearch } from '../features/assembly-session/search';
+import type { AssemblyHit } from '../features/assembly-session/search';
+import type { AssemblySession } from '../generated/twin/contracts';
 import { useState } from 'react';
 import { searchIndex } from '../content';
-import { navigate, refHref } from '../lib/router';
+import { parseRoute,navigate, refHref } from '../lib/router';
 
 interface Hit {
   page: string;
@@ -36,6 +40,8 @@ function search(query: string): Hit[] {
 
 export function SearchBox() {
   const [query, setQuery] = useState('');
+  const [assemblyHits, setAssemblyHits] = useState<{query:string;hits:AssemblyHit[]}>({query:'',hits:[]});
+  const companion = useCompanion();
   const hits = search(query);
   return (
     <div className="searchbox">
@@ -43,7 +49,7 @@ export function SearchBox() {
         type="search"
         placeholder="Search the docs…"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => { const q=e.target.value;setQuery(q);if(companion.selected && q.trim().length>=2)void assemblySearch(companion.selected.snapshot as AssemblySession,q,(()=>{const r=parseRoute(location.hash);return 'returnTo' in r&&r.returnTo?Number(r.returnTo.split('/').slice(-1)[0]):undefined;})()).then(hits=>setAssemblyHits({query:q,hits})).catch(()=>setAssemblyHits({query:q,hits:[]})); }}
       />
       {query.trim().length >= 2 && (
         <ul className="search-results">
@@ -61,6 +67,7 @@ export function SearchBox() {
               </button>
             </li>
           ))}
+          {assemblyHits.query===query && assemblyHits.hits.map(h=><li key={h.href}><button onClick={()=>{setQuery('');navigate(h.href);}}><span>{h.label} · {h.disposition}</span></button></li>)}
         </ul>
       )}
     </div>

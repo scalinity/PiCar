@@ -1,0 +1,159 @@
+2026-09-30T06:11:24.003Z INFO @wdio/cli:launcher: Run onPrepare hook
+2026-09-30T06:11:24.004Z INFO tauri-service:launcher: Using embedded WebDriver provider (tauri-plugin-wdio-webdriver) - no external driver needed
+2026-09-30T06:11:24.004Z INFO tauri-service:launcher: Log capture initialized: /Users/danny/Documents/Apps/PiCar/picarx-companion/logs
+2026-09-30T06:11:24.004Z INFO tauri-service:launcher: Embedded provider mode - spawning Tauri app with embedded WebDriver server
+2026-09-30T06:11:24.006Z INFO tauri-service:launcher: Tauri app spawned (PID: 49132)
+2026-09-30T06:11:25.522Z INFO tauri-service:launcher: WebDriver server ready on port 4445
+
+Execution of 1 workers started at 2026-09-30T06:11:26.526Z
+
+2026-09-30T06:11:26.527Z INFO @wdio/cli:launcher: Run onWorkerStart hook
+2026-09-30T06:11:26.528Z INFO tauri-service: Running Tauri environment diagnostics...
+2026-09-30T06:11:26.531Z INFO tauri-service: Diagnostics complete
+
+2026-09-30T06:11:26.531Z INFO diagnostics: Diagnostics: 6 checks passed
+2026-09-30T06:11:26.531Z INFO @wdio/xvfb: XvfbManager.init() called
+2026-09-30T06:11:26.531Z INFO @wdio/xvfb: Xvfb not needed on current platform
+2026-09-30T06:11:26.531Z INFO @wdio/local-runner: Start worker 0-0 with arg: run tests/native/wdio.conf.mjs
+2026-09-30T06:11:26.535Z INFO @wdio/xvfb:ProcessFactory: xvfb-run not found, falling back to regular fork
+2026-09-30T06:11:26.535Z INFO @wdio/xvfb:ProcessFactory: ProcessFactory: shouldRun=false, isAvailable=false
+2026-09-30T06:11:26.535Z INFO @wdio/xvfb:ProcessFactory: Creating worker process with regular fork
+[0-0] 2026-09-30T06:11:26.809Z INFO @wdio/local-runner: Run worker command: run
+[0-0] RUNNING in undefined - file:///tests/native/native.spec.mjs
+[0-0] 2026-09-30T06:11:26.880Z INFO webdriver: Initiate new session using the WebDriver protocol
+[0-0] 2026-09-30T06:11:26.880Z INFO @wdio/utils: Connecting to existing driver at http://127.0.0.1:4445/
+[0-0] 2026-09-30T06:11:26.881Z INFO webdriver: [POST] http://127.0.0.1:4445/session
+[0-0] 2026-09-30T06:11:26.891Z INFO webdriver: COMMAND getWindowHandle()
+[0-0] 2026-09-30T06:11:26.891Z INFO webdriver: [GET] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/window
+[0-0] 2026-09-30T06:11:26.892Z INFO webdriver: RESULT main
+[0-0] 2026-09-30T06:11:26.892Z INFO tauri-service:service: before() start — mode=binary provider=embedded multiremote=undefined instances=n/a
+[0-0] 2026-09-30T06:11:26.892Z INFO tauri-service:service: Initializing standard browser
+[0-0] 2026-09-30T06:11:26.893Z INFO webdriver: COMMAND getWindowHandles()
+[0-0] 2026-09-30T06:11:26.893Z INFO webdriver: [GET] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/window/handles
+[0-0] 2026-09-30T06:11:26.894Z INFO webdriver: RESULT [ 'main' ]
+[0-0] 2026-09-30T06:11:26.894Z INFO tauri-service:service: Standard browser window available
+[0-0] 2026-09-30T06:11:26.894Z INFO tauri-service:service: Waiting for Tauri plugin initialization...
+[0-0] 2026-09-30T06:11:26.894Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T06:11:26.894Z INFO webdriver: [POST] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/execute/sync
+[0-0] 2026-09-30T06:11:26.894Z INFO webdriver: DATA { script: 'checkPluginInit(...) [875 bytes]', args: [] }
+[0-0] 2026-09-30T06:11:26.896Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T06:11:26.896Z INFO tauri-service:service: Tauri plugin initialization complete
+[0-0] 2026-09-30T06:11:26.896Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T06:11:26.896Z INFO webdriver: [POST] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/execute/sync
+[0-0] 2026-09-30T06:11:26.896Z INFO webdriver: DATA { script: 'clearStaleMocks(...) [698 bytes]', args: [] }
+[0-0] 2026-09-30T06:11:26.897Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T06:11:26.898Z INFO tauri-service:service: before() complete
+[0-0] Error in "native IPC and actual SQLite execute the shared adapter contract"
+Error: waitUntil condition failed with the following reason: Tauri core.invoke not available after 5s timeout
+    at async browser.waitUntil.timeout (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/tests/native/native.spec.mjs:4:35)
+    ---
+    at async Context.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/tests/native/native.spec.mjs:4:2)
+[0-0] Error in "reference-first native window navigates, previews and resumes without confirmation"
+Error: Tauri core.invoke not available after 5s timeout
+    at async Context.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/tests/native/native.spec.mjs:10:2)
+[0-0] Error in "actual browser and desktop exports transfer through separate recovery destinations"
+Error: Tauri core.invoke not available after 5s timeout
+    at async Context.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/tests/native/native.spec.mjs:18:112)
+[0-0] 2026-09-30T06:12:06.995Z INFO webdriver: COMMAND getUrl()
+[0-0] 2026-09-30T06:12:06.995Z INFO webdriver: [GET] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/url
+[0-0] 2026-09-30T06:12:06.997Z INFO webdriver: RESULT tauri://localhost
+[0-0] 2026-09-30T06:12:12.043Z WARN tauri-service:window: Failed to get window states: Error: Tauri core.invoke not available after 5s timeout
+[0-0]     at DirectEvalClient.eval (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:2880:19)
+[0-0]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[0-0]     at async execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3313:25)
+[0-0]     at async Object.execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4326:32)
+[0-0]     at async getWindowStates (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3052:24)
+[0-0]     at async ensureActiveWindowFocus (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3106:24)
+[0-0]     at async TauriWorkerService.beforeCommand (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4077:13)
+[0-0]     at async Promise.all (index 0)
+[0-0]     at async Browser.executeHooksWithArgs (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1083:18)
+[0-0]     at async Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1094:7)
+[0-0] 2026-09-30T06:12:17.054Z WARN tauri-service:window: Failed to get window states: Error: Tauri core.invoke not available after 5s timeout
+[0-0]     at DirectEvalClient.eval (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:2880:19)
+[0-0]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[0-0]     at async execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3313:25)
+[0-0]     at async Object.execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4326:32)
+[0-0]     at async getWindowStates (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3052:24)
+[0-0]     at async ensureActiveWindowFocus (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3106:24)
+[0-0]     at async TauriWorkerService.beforeCommand (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4077:13)
+[0-0]     at async Promise.all (index 0)
+[0-0]     at async Browser.executeHooksWithArgs (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1083:18)
+[0-0]     at async Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1094:7)
+[0-0] 2026-09-30T06:12:17.055Z INFO webdriver: COMMAND findElement("xpath", ".//summary[contains(., "Z0104V40 booklet") and not(.//summary)]")
+[0-0] 2026-09-30T06:12:17.055Z INFO webdriver: [POST] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/element
+[0-0] 2026-09-30T06:12:17.055Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/summary[contains(., "Z0104V40 booklet") and not(.//summary)]'
+[0-0] }
+[0-0] 2026-09-30T06:12:17.056Z INFO webdriver: RESULT {
+[0-0]   error: 'no such element',
+[0-0]   message: 'Unable to locate element',
+[0-0]   stacktrace: ''
+[0-0] }
+[0-0] 2026-09-30T06:12:22.094Z WARN tauri-service:window: Failed to get window states: Error: Tauri core.invoke not available after 5s timeout
+[0-0]     at DirectEvalClient.eval (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:2880:19)
+[0-0]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[0-0]     at async execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3313:25)
+[0-0]     at async Object.execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4326:32)
+[0-0]     at async getWindowStates (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3052:24)
+[0-0]     at async ensureActiveWindowFocus (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3106:24)
+[0-0]     at async TauriWorkerService.beforeCommand (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4077:13)
+[0-0]     at async Promise.all (index 0)
+[0-0]     at async Browser.executeHooksWithArgs (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1083:18)
+[0-0]     at async Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1094:7)
+[0-0] 2026-09-30T06:12:27.671Z WARN tauri-service:window: Failed to get window states: Error: Tauri core.invoke not available after 5s timeout
+[0-0]     at DirectEvalClient.eval (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:2880:19)
+[0-0]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[0-0]     at async execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3313:25)
+[0-0]     at async Object.execute (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4326:32)
+[0-0]     at async getWindowStates (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3052:24)
+[0-0]     at async ensureActiveWindowFocus (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3106:24)
+[0-0]     at async TauriWorkerService.beforeCommand (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4077:13)
+[0-0]     at async Promise.all (index 0)
+[0-0]     at async Browser.executeHooksWithArgs (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1083:18)
+[0-0]     at async Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1094:7)
+[0-0] 2026-09-30T06:12:27.671Z INFO webdriver: COMMAND findElements("xpath", ".//summary[contains(., "Z0104V40 booklet") and not(.//summary)]")
+[0-0] 2026-09-30T06:12:27.671Z INFO webdriver: [POST] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a/elements
+[0-0] 2026-09-30T06:12:27.671Z INFO webdriver: DATA {
+[0-0]   using: 'xpath',
+[0-0]   value: './/summary[contains(., "Z0104V40 booklet") and not(.//summary)]'
+[0-0] }
+[0-0] 2026-09-30T06:12:27.672Z INFO webdriver: RESULT []
+[0-0] Error in "embedded reference/PDF journey works without a development server or remote media"
+Error: Can't call click on element with selector "summary*=Z0104V40 booklet" because element wasn't found
+    at async Context.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/tests/native/native.spec.mjs:20:219)
+[0-0] 2026-09-30T06:12:27.675Z INFO webdriver: COMMAND deleteSession()
+[0-0] 2026-09-30T06:12:27.675Z INFO webdriver: [DELETE] http://127.0.0.1:4445/session/a6bd30e1-ba6e-462c-a6dd-53a7e48a209a
+[0-0] 2026-09-30T06:12:27.676Z INFO webdriver: RESULT null
+[0-0] 2026-09-30T06:12:27.676Z INFO webdriver: COMMAND executeScript(<fn>, <object>)
+[0-0] 2026-09-30T06:12:27.676Z WARN tauri-service:service: Failed to clear mock store: Error: A sessionId is required for this command
+[0-0]     at FetchRequest.createOptions (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2222:15)
+[0-0]     at FetchRequest.createOptions (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2389:49)
+[0-0]     at FetchRequest.makeRequest (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:2194:48)
+[0-0]     at Browser.protocolCommand (file:///Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/webdriver@9.32.0/node_modules/webdriver/build/node.js:1721:20)
+[0-0]     at Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1100:32)
+[0-0]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[0-0]     at async Browser.wrapCommandFn (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+utils@9.32.0/node_modules/@wdio/utils/build/index.js:1100:23)
+[0-0]     at async Object.restoreAllMocks (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:3848:5)
+[0-0]     at async TauriWorkerService.afterSession (/Users/danny/Documents/Apps/PiCar/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:4127:17)
+[0-0]     at async Promise.all (index 0)
+[0-0] FAILED in undefined - file:///tests/native/native.spec.mjs
+2026-09-30T06:12:27.784Z INFO @wdio/cli:launcher: Run onWorkerEnd hook
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[webkit 605.1.15 macos #0-0] Running: webkit (v605.1.15) on macos
+[webkit 605.1.15 macos #0-0] Session ID: a6bd30e1-ba6e-462c-a6dd-53a7e48a209a
+[webkit 605.1.15 macos #0-0]
+[webkit 605.1.15 macos #0-0] (root)
+[webkit 605.1.15 macos #0-0] (root)
+[webkit 605.1.15 macos #0-0] 4 failing (1m 0.7s)
+
+
+Spec Files:	 0 passed, 1 failed, 1 total (100% completed) in 00:01:01  
+
+2026-09-30T06:12:27.784Z INFO @wdio/local-runner: Shutting down spawned worker
+2026-09-30T06:12:28.036Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully
+2026-09-30T06:12:28.036Z INFO @wdio/local-runner: shutting down
+2026-09-30T06:12:28.036Z INFO @wdio/cli:launcher: Run onComplete hook
+2026-09-30T06:12:28.036Z INFO tauri-service:launcher: Stopping 1 embedded driver process(es)...

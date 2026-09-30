@@ -1,3 +1,6 @@
+import { M3_ENABLED } from './lib/m3-enabled';
+import { initializePersistence } from './features/assembly-session/store';
+import { rememberRoute } from './lib/progress-store';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -10,3 +13,5 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <App />
   </React.StrictMode>,
 );
+
+if (M3_ENABLED) { void initializePersistence(); window.addEventListener('hashchange', rememberRoute); }

@@ -1,0 +1,26 @@
+{
+  "app": {
+    "security": {
+      "capabilities": [
+        "default",
+        {
+          "identifier": "m3-persistence",
+          "description": "Local bounded session repository commands only",
+          "windows": [
+            "main"
+          ],
+          "permissions": [
+            "allow-load-companion-state",
+            "allow-list-companion-aggregates",
+            "allow-list-progress-imports",
+            "allow-commit-session-command",
+            "allow-export-session",
+            "allow-import-session",
+            "allow-quarantine-legacy-raw",
+            "allow-recover-session"
+          ]
+        }
+      ]
+    }
+  }
+}

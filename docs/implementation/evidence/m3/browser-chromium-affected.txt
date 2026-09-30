@@ -1,0 +1,19 @@
+[WebServer] (node:66260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:66270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:66276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:66279) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:66301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.0s)
+  ✓  2 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (224ms)
+  ✓  3 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (412ms)
+  ✓  4 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (2.2s)
+
+  4 passed (9.1s)

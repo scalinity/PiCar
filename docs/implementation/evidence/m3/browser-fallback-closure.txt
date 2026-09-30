@@ -1,0 +1,81 @@
+[WebServer] (node:88045) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:88056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:88062) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:88065) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:88068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (5.4s)
+(node:88111) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (553ms)
+  ✓  3 [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (596ms)
+(node:88117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (5.9s)
+(node:88167) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (586ms)
+  ✓  6 [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (585ms)
+
+
+  1) [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.doc-image [role=status]').first()
+    Expected substring: "unavailable"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" locator('.doc-image [role=status]').first() with timeout 5000ms
+      - waiting for locator('.doc-image [role=status]').first()
+
+
+      3 | test('custom Hermes content and excluded source media remain accessible',async({page})=>{
+      4 |  await page.goto('/#/reference/custom/hermes');await expect(page.locator('main h1')).toContainText('Hermes');await expect(page.locator('main')).toContainText('PiCar-X');
+    > 5 |  await page.goto('/#/reference/adjust_servo');await page.route('**/content/images/**',r=>r.abort());await page.reload();await page.locator(".doc-image").first().scrollIntoViewIfNeeded();await expect(page.locator('.doc-image [role=status]').first()).toContainText('unavailable');
+        |                                                                                                                                                                                                                                                          ^
+      6 | });
+      7 | test('lazy assembly failure recovers through reference and retains durable export',async({page})=>{
+      8 |  await page.route('**/src/pages/Assembly.tsx*',r=>r.abort());await page.goto('/#/assembly');await expect(page.getByRole('heading',{name:'Assembly recovery',exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Export sessions'})).toBeVisible();await page.getByRole('link',{name:'Open reference'}).click();await expect(page.locator('main h1')).toHaveText('Reference');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-fallback.spec.ts:5:250
+
+    Error Context: test-results/m3-fallback-custom-Hermes--05e53-rce-media-remain-accessible-chromium/error-context.md
+
+  2) [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.doc-image [role=status]').first()
+    Expected substring: "unavailable"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" locator('.doc-image [role=status]').first() with timeout 5000ms
+      - waiting for locator('.doc-image [role=status]').first()
+
+
+      3 | test('custom Hermes content and excluded source media remain accessible',async({page})=>{
+      4 |  await page.goto('/#/reference/custom/hermes');await expect(page.locator('main h1')).toContainText('Hermes');await expect(page.locator('main')).toContainText('PiCar-X');
+    > 5 |  await page.goto('/#/reference/adjust_servo');await page.route('**/content/images/**',r=>r.abort());await page.reload();await page.locator(".doc-image").first().scrollIntoViewIfNeeded();await expect(page.locator('.doc-image [role=status]').first()).toContainText('unavailable');
+        |                                                                                                                                                                                                                                                          ^
+      6 | });
+      7 | test('lazy assembly failure recovers through reference and retains durable export',async({page})=>{
+      8 |  await page.route('**/src/pages/Assembly.tsx*',r=>r.abort());await page.goto('/#/assembly');await expect(page.getByRole('heading',{name:'Assembly recovery',exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Export sessions'})).toBeVisible();await page.getByRole('link',{name:'Open reference'}).click();await expect(page.locator('main h1')).toHaveText('Reference');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-fallback.spec.ts:5:250
+
+    Error Context: test-results/m3-fallback-custom-Hermes--05e53-rce-media-remain-accessible-webkit/error-context.md
+
+  2 failed
+    [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+    [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+  4 passed (15.8s)

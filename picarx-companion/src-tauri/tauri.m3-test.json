@@ -1,0 +1,53 @@
+{
+  "app": {
+    "security": {
+      "capabilities": [
+        "default",
+        {
+          "identifier": "m3-persistence",
+          "description": "Local bounded session repository commands only",
+          "windows": [
+            "main"
+          ],
+          "permissions": [
+            "allow-load-companion-state",
+            "allow-list-companion-aggregates",
+            "allow-list-progress-imports",
+            "allow-commit-session-command",
+            "allow-export-session",
+            "allow-import-session",
+            "allow-quarantine-legacy-raw",
+            "allow-recover-session"
+          ]
+        },
+        {
+          "identifier": "m3-native-test",
+          "windows": [
+            "main"
+          ],
+          "permissions": [
+            "wdio:default",
+            "wdio-webdriver:default",
+            "allow-m3-test-fresh",
+            "allow-m3-test-fault"
+          ]
+        }
+      ],
+      "devCsp": "default-src 'self' tauri:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://i.ytimg.com; font-src 'self'; worker-src 'self' blob:; connect-src 'self' ipc: http://ipc.localhost http://localhost:1420 ws://localhost:1420; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'"
+    },
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "PiCar-X Companion",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1100,
+        "minHeight": 700,
+        "center": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "incognito": true
+      }
+    ]
+  }
+}

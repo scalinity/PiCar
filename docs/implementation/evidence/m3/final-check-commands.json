@@ -1,0 +1,40 @@
+[
+  {
+    "argv": [
+      "node",
+      "digital-twin/tools/compiler/upstream.mjs",
+      "--check"
+    ],
+    "exitCode": 0,
+    "logPath": "docs/implementation/evidence/m3/upstream-current.txt"
+  },
+  {
+    "argv": [
+      "node",
+      "digital-twin/tools/compiler/gate.mjs",
+      "--check"
+    ],
+    "exitCode": 0,
+    "logPath": "docs/implementation/evidence/m3/graph-current.txt"
+  },
+  {
+    "argv": [
+      "pnpm",
+      "--dir",
+      "picarx-companion",
+      "content:check"
+    ],
+    "exitCode": 1,
+    "logPath": "docs/implementation/evidence/m3/content-current.txt"
+  },
+  {
+    "argv": [
+      "pnpm",
+      "--dir",
+      "picarx-companion",
+      "package:check"
+    ],
+    "exitCode": 1,
+    "logPath": "docs/implementation/evidence/m3/package-current.txt"
+  }
+]

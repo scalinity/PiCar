@@ -1,0 +1,16 @@
+   Compiling picarx-companion v0.1.0 (/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri)
+error[E0282]: type annotations needed for `std::result::Result<serde_json::Value, _>`
+   --> src/persistence/mod.rs:110:9
+    |
+110 | ...et interpreted=(||{require(raw.len()<=LIMIT,"LEGACY_OVERSIZED")?;let v=super::strict_json::parse(raw)?;let object=v.as_object().ok_or("LEGACY_TYPE")?;require(object.keys().all(|k|["steps","checks","lastRoute","pdfLastPage"].contains(&k.as_str())),"LEGACY_TYPE")?;
+    |       ^^^^^^^^^^^
+111 | ...et mut s=json!({"steps":{},"checks":{},"lastRoute":"","pdfLastPage":1,"legacyAssemblyReportedDone":false});for k in ["steps","checks","lastRoute","pdfLastPage"]{if let Some(value)=v.get(k){s[k]=value.clone();}}s["legacyAssemblyReportedDone"]=json!(s["steps"]["assembly"]=="done");setup(&s)?;require(canon(r)?.len()+canon(&s)?.len()*2<=LIMIT-65536,"LEGACY_OVERSIZED")?;Ok(s)})();
+    |                                                                                                                                                                                                                                                                                                                                                                                    ----- type must be known at this point
+    |
+help: consider giving `interpreted` an explicit type, where the type for type parameter `E` is specified
+    |
+110 |     let interpreted: std::result::Result<_, E>=(||{require(raw.len()<=LIMIT,"LEGACY_OVERSIZED")?;let v=super::strict_json::parse(raw)?;let object=v.as_object().ok_or("LEGACY_TYPE")?;require(object.keys().all(|k|["steps","checks","lastRoute","pdfLastPage"].contains(&k.as_str())),"LEGACY_TYPE")?;
+    |                    +++++++++++++++++++++++++++
+
+For more information about this error, try `rustc --explain E0282`.
+error: could not compile `picarx-companion` (lib test) due to 1 previous error

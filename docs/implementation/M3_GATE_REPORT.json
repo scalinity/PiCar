@@ -1,0 +1,1791 @@
+{
+  "milestone": "M3",
+  "status": "PASS",
+  "acceptanceEstablished": true,
+  "branch": "codex/m3-durable-sessions",
+  "startHead": "0b613dc5d079b327f5e631bb3a84bb20267d63c5",
+  "acceptanceCommit": "recorded in separate documentation receipt after local implementation commit",
+  "date": "2026-09-30",
+  "acceptedUpstream": {
+    "m0": "2a934710501d71aecbd8da827925c92e49378661",
+    "m1": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+    "m2": "8d8d30d0c7b077504916a26d80c211e2fc52c4e2",
+    "identities": {
+      "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+      "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+      "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+      "sourceLockRawSha256": "3f715ec18946e022a1b5633a15e3b3ae3d31576e1fa378d77c375d61c291b06e",
+      "semanticValidatorRawSha256": "980749983845369e24d77b7aad22774012ac480f2668319ab0ddb3c8589b931b",
+      "hashPolicyRawSha256": "a799b9b5161c1cee501a7667ac56e8ca4466172b876fb832e9b3ae1be3649c62",
+      "compilerRawSha256": "e09f7a90f5618ca24bfe16436e4b69ac418f0a2f4dde9e5f452f09c1d2248ed0",
+      "reducerRawSha256": "48a2cc4e5919cbb784c6a7fed314ba6b1829c16337b7398dc99ffffb382dee4d",
+      "gatePolicyRawSha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad"
+    },
+    "variants": [
+      {
+        "variantId": "rpi4",
+        "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+        "operations": 189,
+        "steps": 29
+      },
+      {
+        "variantId": "rpi5",
+        "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+        "operations": 189,
+        "steps": 29
+      },
+      {
+        "variantId": "rpi-zero-2-w",
+        "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+        "operations": 186,
+        "steps": 29
+      }
+    ],
+    "currentGData": "PASS",
+    "currentGGraph": "PASS"
+  },
+  "scope": "Durable sessions and reference-first journey only. No geometry/hardware/M4 implementation.",
+  "authorizations": {
+    "publication": "YES owner authorization 1",
+    "frontend": "YES owner authorization 2",
+    "native": "YES owner authorization 3",
+    "productionBuild": "NOT_APPLICABLE"
+  },
+  "criteria": {
+    "AC01": "PASS",
+    "AC07": "PASS accepted G-GRAPH plus all29/variant browser review",
+    "AC08": "PASS real adapters, faults, native IPC, UI restart/undo/fork",
+    "AC12": "PASS offline embedded WKWebView locked reference/PDF and browser missing-media recovery",
+    "actualAdapterFaultMatrix": "PASS",
+    "nativePrerequisite": "PASS official WDIO embedded provider",
+    "sourcePublication": "PASS",
+    "legacyRecovery": "PASS",
+    "capabilitiesCspIsolation": "PASS"
+  },
+  "adapterParity": {
+    "status": "PASS",
+    "scenarioCount": 73,
+    "results": {
+      "append": "PASS",
+      "backup separate recovery": "PASS",
+      "changed command ID reuse": "PASS",
+      "complete session import replay": "PASS",
+      "duplicate before revision": "PASS",
+      "exact original retained": "PASS",
+      "explicit badge reconciliation": "PASS",
+      "forged migration setup": "PASS",
+      "forged observed snapshot": "PASS",
+      "import canonicalPath": "PASS",
+      "import canonicalPath rollback": "PASS",
+      "import checksum": "PASS",
+      "import checksum rollback": "PASS",
+      "import duplicateSequence": "PASS",
+      "import duplicateSequence rollback": "PASS",
+      "import invalidSnapshot": "PASS",
+      "import invalidSnapshot rollback": "PASS",
+      "import missingEvent": "PASS",
+      "import missingEvent rollback": "PASS",
+      "import missingResult": "PASS",
+      "import missingResult rollback": "PASS",
+      "import nestedPath": "PASS",
+      "import nestedPath rollback": "PASS",
+      "import unknownGraph": "PASS",
+      "import unknownGraph rollback": "PASS",
+      "import unknownModel": "PASS",
+      "import unknownModel rollback": "PASS",
+      "incomplete invalidation set": "PASS",
+      "incomplete retainedAttestations set": "PASS",
+      "initial creation": "PASS",
+      "invalidation rejection atomicity": "PASS",
+      "legacy divergence no reimport": "PASS",
+      "legacy imports zero detailed confirmations": "PASS",
+      "legacy keep new and both copies": "PASS",
+      "lost acknowledgment exact retry": "PASS",
+      "malformed quarantine raw retention": "PASS",
+      "migration identity retry": "PASS",
+      "migration interrupted before marker": "PASS",
+      "migration interruption after marker": "PASS",
+      "migration rollback": "PASS",
+      "missing procedure dependency": "PASS",
+      "missingEvent append rejection": "PASS",
+      "missingEvent load rejection": "PASS",
+      "newer schema export": "PASS",
+      "newer schema read only": "PASS",
+      "oversized separate durable raw retention": "PASS",
+      "quota atomicity": "PASS",
+      "quota rejection": "PASS",
+      "quota same-command retry": "PASS",
+      "reconciliation import proof closure": "PASS",
+      "recovery imports-only destination rejection": "PASS",
+      "recovery nonempty rejection": "PASS",
+      "restart resume": "PASS",
+      "retainedAttestations rejection atomicity": "PASS",
+      "rollback atomicity": "PASS",
+      "rollback rejection": "PASS",
+      "rollback same-command retry": "PASS",
+      "snapshot append rejection": "PASS",
+      "snapshot load rejection": "PASS",
+      "stale CAS": "PASS",
+      "stale reconciliation rejects invalidated work": "PASS",
+      "two concurrent fresh writers": "PASS",
+      "unknown setup aggregate": "PASS",
+      "variant 0 all29 and invalidation": "PASS",
+      "variant 0 exact confirmation retry": "PASS",
+      "variant 0 zeroing consumption and epochs": "PASS",
+      "variant 1 all29 and invalidation": "PASS",
+      "variant 1 exact confirmation retry": "PASS",
+      "variant 1 zeroing consumption and epochs": "PASS",
+      "variant 2 all29 and invalidation": "PASS",
+      "variant 2 exact confirmation retry": "PASS",
+      "variant 2 zeroing consumption and epochs": "PASS",
+      "variant fork zero inherited confirmations": "PASS"
+    },
+    "targets": [
+      {
+        "adapter": "IndexedDB",
+        "engine": "Chromium",
+        "version": "153.0.8010.12"
+      },
+      {
+        "adapter": "IndexedDB",
+        "engine": "WebKit",
+        "version": "26.6"
+      },
+      {
+        "adapter": "SQLite",
+        "engine": "WDIO embedded WKWebView",
+        "version": "605.1.15"
+      },
+      {
+        "adapter": "IndexedDB",
+        "engine": "actual embedded WKWebView",
+        "version": "605.1.15"
+      }
+    ],
+    "nativeGroups": 6,
+    "nativeSessionTests": 4,
+    "countsAreNotAdditive": true,
+    "transfer": {
+      "browserToDesktop": "PASS",
+      "desktopToBrowser": "PASS",
+      "separateNativeRecovery": "PASS"
+    }
+  },
+  "commands": [
+    {
+      "command": "pnpm exec tsx tools/m3/adopt-content.ts",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/content-generation.txt",
+        "rawSha256": "9611c684dc192d8c300f85d3bb24df0954f3be95bf7a36cca660dbf8a128dd01",
+        "bytes": 263
+      }
+    },
+    {
+      "command": "pnpm typecheck",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/typecheck-receipts.txt",
+        "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+        "bytes": 142
+      }
+    },
+    {
+      "command": "pnpm test:unit",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {
+        "PICAR_ALLOW_PACKAGE_BUILD": "1",
+        "packagingBuildScope": "disposable source-free fixture only"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 48,
+      "log": {
+        "path": "docs/implementation/evidence/m3/unit-closure.txt",
+        "rawSha256": "07ee80b9ca20795db5931f5d90e299efd364994b9d1354ee8e3f4b4b1b55a519",
+        "bytes": 317
+      }
+    },
+    {
+      "command": "pnpm exec tsx tools/m3/generate-validators.ts --check",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/validators-closure.txt",
+        "rawSha256": "702317c943fd1af5285f993b076756b7d4831280ddea833357e48284057ff64d",
+        "bytes": 55
+      }
+    },
+    {
+      "command": "node --test --test-reporter=tap digital-twin/validation/tests/*.test.mjs",
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 254,
+      "log": {
+        "path": "docs/implementation/evidence/m3/m1-tests-final.tap",
+        "rawSha256": "3b638bd4f93dec3f7fca9a6e095d4c42014bd28677e57dd2f48ab86975880c86",
+        "bytes": 17645
+      }
+    },
+    {
+      "command": "node --test --test-reporter=tap digital-twin/validation/m2/tests/contracts.test.mjs",
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 12,
+      "log": {
+        "path": "docs/implementation/evidence/m3/m2-contracts-final.tap",
+        "rawSha256": "45f76e4ba6bdb71b76d6361f256139acd6446b9399286d1771e1e17a22aba830",
+        "bytes": 1269
+      }
+    },
+    {
+      "command": "pnpm exec playwright test tests/browser/m3-adapter.spec.ts tests/browser/m3-persistence.spec.ts tests/browser/m3-recovery.spec.ts tests/browser/m3-ui.spec.ts --project=webkit",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 9,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-webkit-resume.txt",
+        "rawSha256": "3b3741e4ee458088b868d422a5beaa83a6e687509b2a802995a272fecd9fe68a",
+        "bytes": 2457
+      }
+    },
+    {
+      "command": "pnpm exec playwright test tests/browser/m3-adapter.spec.ts tests/browser/m3-persistence.spec.ts tests/browser/m3-recovery.spec.ts tests/browser/m3-ui.spec.ts --project=webkit --grep-invert \"all29\"",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 7,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-webkit-csp.txt",
+        "rawSha256": "0f6c3f7d75eecd52361c5fc764bb9301109963e07c935e80aa4f49ee83508730",
+        "bytes": 1994
+      }
+    },
+    {
+      "command": "pnpm exec playwright test tests/browser/m3-adapter.spec.ts tests/browser/m3-recovery.spec.ts tests/browser/m3-ui.spec.ts --project=chromium --grep \"real browser|blocked|explicit recovery|quota failure\"",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 4,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-chromium-csp-2.txt",
+        "rawSha256": "b93886290dfcebcb9ff4b3f8da068e1a4e17a9dcbf137ffcec99d48694c7d7df",
+        "bytes": 1575
+      }
+    },
+    {
+      "command": "pnpm exec playwright test --config playwright.legacy.config.ts",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 8,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-legacy-final.txt",
+        "rawSha256": "5fdd2d7a6614b696593b8746247efb73772054dd5031af51b7284fca52e9d2bc",
+        "bytes": 2241
+      }
+    },
+    {
+      "command": "pnpm exec playwright test tests/browser/preservation.spec.ts --grep-invert PDF",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 6,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-optin-regression.txt",
+        "rawSha256": "bb9ec93a6a4cacfcca416a3a60eeee57a82eae6127f05b85d274ff8e62470379",
+        "bytes": 1962
+      }
+    },
+    {
+      "command": "pnpm exec playwright test tests/browser/m3-fallback.spec.ts",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "status": "PASS",
+      "count": 6,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-fallback-passed.txt",
+        "rawSha256": "f76af24c9afe81e6fee5122efa82401f38816c15bb1534caa4f059c353fcdc06",
+        "bytes": 2030
+      }
+    },
+    {
+      "command": "/Users/danny/.cargo/bin/cargo test --locked --features m3-persistence --lib",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri",
+      "environment": {
+        "CARGO_TARGET_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-compile-mRPDsKmn/target"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 6,
+      "log": {
+        "path": "docs/implementation/evidence/m3/sqlite-tests-closure.txt",
+        "rawSha256": "1864561cac051890b2a376da777b5cdd0aaa8f78f9274668a5a9aa2f1ae2ac67",
+        "bytes": 974
+      }
+    },
+    {
+      "command": "/Users/danny/.cargo/bin/cargo check --locked --no-default-features",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri",
+      "environment": {
+        "CARGO_TARGET_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-compile-mRPDsKmn/target"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/native-default-closure.txt",
+        "rawSha256": "b24c6034f6cdaebcc4805df9e45e386eea6012c938f907f6ae8e446b8b0f69b3",
+        "bytes": 172
+      }
+    },
+    {
+      "command": "/Users/danny/.cargo/bin/cargo check --locked --features m3-persistence",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri",
+      "environment": {
+        "TAURI_CONFIG": "/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri/tauri.m3.json",
+        "CARGO_TARGET_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-compile-mRPDsKmn/target"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/native-persistence-normal-closure.txt",
+        "rawSha256": "602e4cfafdb08820a11abfd2f0b3cd467d31455658845ea5cba532df694e6fce",
+        "bytes": 172
+      }
+    },
+    {
+      "command": "pnpm exec tsx tools/m3/prepare-native-package.ts",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {
+        "PICAR_ALLOW_PACKAGE_BUILD": "1",
+        "VITE_M3_ENABLED": "1",
+        "VITE_M3_NATIVE_TEST": "1",
+        "scope": "source-free disposable fixture only"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/native-package-candidate-final.txt",
+        "rawSha256": "1bc28392139113eb80278dc2379e11022c1f3ce3579ff592330ec18089a2d3a4",
+        "bytes": 3690
+      }
+    },
+    {
+      "command": "/Users/danny/.cargo/bin/cargo build --locked --features m3-native-test,tauri/custom-protocol",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri",
+      "environment": {
+        "TAURI_CONFIG": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-package-vWXksL/offline-tauri.json",
+        "CARGO_TARGET_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-compile-mRPDsKmn/target"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/native-offline-build-final.txt",
+        "rawSha256": "3766cc8dd3882b099f55893de7bfe9df487dc0295a4df72998d5dc9864014caf",
+        "bytes": 173
+      }
+    },
+    {
+      "command": "pnpm exec wdio run tests/native/wdio.conf.mjs",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {
+        "PICAR_M3_TEST_DATA_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-csp-n0fCabO8",
+        "PICAR_M3_TEST_BINARY": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-compile-mRPDsKmn/target/debug/picarx-companion"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 4,
+      "log": {
+        "path": "docs/implementation/evidence/m3/native-wdio-closure.txt",
+        "rawSha256": "3c1297999cc559fe6e2ff1cb937b3222727748ca2a2c23500ae44e93ed2aec33",
+        "bytes": 64649
+      }
+    },
+    {
+      "command": [
+        "node",
+        "digital-twin/tools/compiler/upstream.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {},
+      "exit": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/upstream-final-closure.txt",
+        "rawSha256": "0708d106019f64f431b93def78f2a8ca7523544ddfca3d56036e33a0faa23112",
+        "bytes": 100
+      }
+    },
+    {
+      "command": [
+        "node",
+        "digital-twin/tools/compiler/gate.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {},
+      "exit": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/graph-final-closure.txt",
+        "rawSha256": "7669bbe20fa2344a4b47708a2eb420ba03a09e3e8b10b7be53412ad21d602ac9",
+        "bytes": 105
+      }
+    },
+    {
+      "command": [
+        "node",
+        "digital-twin/tools/types.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {},
+      "exit": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/types-final-closure.txt",
+        "rawSha256": "eb86d49b42aca2ffaf6abcec576f9b8eb80f3e334b4e2039d6a1cb164f0cbd18",
+        "bytes": 95
+      }
+    },
+    {
+      "command": [
+        "pnpm",
+        "content:check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/content-final-closure.txt",
+        "rawSha256": "79b92d3b246bcae1cc162e4382a1078721511eb538934f241774edc9d6dbae71",
+        "bytes": 168
+      }
+    },
+    {
+      "command": [
+        "pnpm",
+        "package:check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {},
+      "exit": 0,
+      "log": {
+        "path": "docs/implementation/evidence/m3/package-final-closure.txt",
+        "rawSha256": "ed0011baf8073cb892dfd4eae082a0b546e3bc8a60b2ec60a4b32827b5543a9a",
+        "bytes": 199
+      }
+    },
+    {
+      "command": "pnpm exec playwright test tests/browser/m3-adapter.spec.ts tests/browser/m3-persistence.spec.ts tests/browser/m3-recovery.spec.ts tests/browser/m3-ui.spec.ts --grep-invert all29",
+      "cwd": "/Users/danny/Documents/Apps/PiCar/picarx-companion",
+      "environment": {
+        "VITE_M3_ENABLED": "1",
+        "server": "coordinated isolated localhost:1420"
+      },
+      "exit": 0,
+      "status": "PASS",
+      "count": 14,
+      "log": {
+        "path": "docs/implementation/evidence/m3/browser-core-closure.txt",
+        "rawSha256": "cb786d6e728c99d4429fc556409b2556c325658af91f7b4f65c844b598d94ce8",
+        "bytes": 3212
+      }
+    }
+  ],
+  "counts": {
+    "unit": 48,
+    "m1": 254,
+    "m2CurrentReadOnlyContracts": 12,
+    "m2AcceptedFullTests": 114,
+    "m2AcceptedRejectingMutants": 73,
+    "sqliteGroups": 6,
+    "wdioSession": 4,
+    "browserM3UniquePerEngine": 9,
+    "browserFallbackUniquePerEngine": 3,
+    "defaultRegressionPerEngine": 4,
+    "optInRegressionPerEngine": 3,
+    "commonFaultAssertionsPerTarget": 73,
+    "counting": "No grand total: embedded shared assertions, domain tests and affected reruns overlap. Chromium full run had 8 passes/1 failure, resolved by affected reruns; WebKit full 9/9 and current affected 7/7."
+  },
+  "history": {
+    "originalBlockedReports": "evidence/m3/prior-blocked",
+    "priorFailuresPreserved": true,
+    "unauthorizedPackagingIncident": "Original unapproved disposable fixture attempted compilation; exit 2 at tsc, no bundling. Preserved in prior report.",
+    "nativeIsolationIncident": "First unqualified test launch used shared webview storage and captured one unclassified legacy record into a temporary database. No raw bytes published or key changed. That temporary database is retained excluded; final test requires incognito and isolated canonical temp, asserts null legacy/zero imports.",
+    "correctedFailures": [
+      "stale generation before authorization",
+      "Rust compile/type errors",
+      "WDIO runner/spec path and reload timeout",
+      "offline bootstrap ordering and admitted-context initialization",
+      "standalone validator browser module interoperability",
+      "browser overall all29 timeout and CAS readiness assertion",
+      "fallback selectors, lazy image scroll and actual /content/img request path"
+    ],
+    "wdioCleanupWarning": "Service cleanup emits missing sessionId after session deletion; all four tests and launcher exit 0.",
+    "rawLogs": "M3-local Git attributes retain exact tool output bytes; only tool-generated end blanks are exempted from whitespace checking. Source remains checked."
+  },
+  "limitations": {
+    "geometry": "BLOCKED unadmitted; not in M3 acceptance scope",
+    "observedPhysicalState": "BLOCKED unknown; all progress self-confirmed",
+    "hardware": "NOT_APPLICABLE prohibited",
+    "camera": "NOT_APPLICABLE prohibited",
+    "releaseDistribution": "NOT_APPLICABLE no production/release build or remote publication",
+    "newerUnsupportedSchema": "read-only export only; no reset",
+    "oversizedRaw": "separate durable quarantine; native 64 MiB bound rejects beyond it without altering original key"
+  },
+  "rollback": "Disable VITE_M3_ENABLED and nondefault persistence route, retain original key/exports/databases. Publication rollback requires stopped readers and exact archived inputs/generation; verify coherence before reopening.",
+  "sourceBindings": [
+    {
+      "path": ".gitignore",
+      "rawSha256": "8d502d3d5da85e520b4b8aabf28432689b7d3046a9eff70b70fecff520a68120",
+      "bytes": 2229
+    },
+    {
+      "path": "picarx-companion/index.html",
+      "rawSha256": "7d60446bee1ffea28e58a8b7f1528f959c1bf6e2ffa31e88ade5430e37e6d9f9",
+      "bytes": 367
+    },
+    {
+      "path": "picarx-companion/package.json",
+      "rawSha256": "4d6a6b2d8543cc6435421916fac80737afc90748a32822930ea00d5975790c0d",
+      "bytes": 1746
+    },
+    {
+      "path": "picarx-companion/playwright.config.ts",
+      "rawSha256": "fe42dedcecd71392c8111c23f92914777b882ae2885c3734176fb23c4cf1d31e",
+      "bytes": 446
+    },
+    {
+      "path": "picarx-companion/playwright.legacy.config.ts",
+      "rawSha256": "198587548930fcd7aaf1459a4503815e59778711e5979318bad3bec152f141eb",
+      "bytes": 164
+    },
+    {
+      "path": "picarx-companion/pnpm-lock.yaml",
+      "rawSha256": "de1202e79cee0d1a4d024234947d52da7b7b1eb0888424bdcef6bd11ef78c7f7",
+      "bytes": 189426
+    },
+    {
+      "path": "picarx-companion/src-tauri/Cargo.lock",
+      "rawSha256": "8e09b67170f28ab7defadd7fc29f1b3641d9764629ca4814ef565bc596438650",
+      "bytes": 133622
+    },
+    {
+      "path": "picarx-companion/src-tauri/Cargo.toml",
+      "rawSha256": "cee3bab671bffcbe3a7cf27a140d4ff815777fdffa57a6a14c5478f30cdf3258",
+      "bytes": 1185
+    },
+    {
+      "path": "picarx-companion/src-tauri/build.rs",
+      "rawSha256": "5d8e8649a0d2b8fda1aeb9c3011c3117badd2e54eac235da146176bdb643aced",
+      "bytes": 1617
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/commands.rs",
+      "rawSha256": "e8f8dbe85dffb40a55db5e0a32faae39e67c0c6cd78032b5f6d54878186ee388",
+      "bytes": 5216
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/lib.rs",
+      "rawSha256": "becc7176c10ff7d1fa453c440d9ada6394e1e536a8cdfd94040dbe67fca5bc42",
+      "bytes": 3569
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/persistence/mod.rs",
+      "rawSha256": "420b9fa1567e80117e1b2b76878bd71f892ecf52864546237cbf77742c61b3de",
+      "bytes": 55190
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/persistence/tests.rs",
+      "rawSha256": "8e154e98e3a812c85773583fbe5ef4ee7d231690c0a9f6a6640bce0d34a4fcfc",
+      "bytes": 9985
+    },
+    {
+      "path": "picarx-companion/src-tauri/src/strict_json.rs",
+      "rawSha256": "63491311dedcc2d63bfbfddbb3d8cf86b4c6e9ea5fe7cbf6f5397b1b1b36a8b4",
+      "bytes": 4800
+    },
+    {
+      "path": "picarx-companion/src-tauri/tauri.conf.json",
+      "rawSha256": "968a591ca77f980c1a83cef04f714c5b8092c037aef8e9ca5623f5b32660ec33",
+      "bytes": 1197
+    },
+    {
+      "path": "picarx-companion/src-tauri/tauri.m3-test.json",
+      "rawSha256": "d7ca1ad8a90709135d78186ac36f6f9fb41c9d94f64f7089bf782a90f1cbd994",
+      "bytes": 1650
+    },
+    {
+      "path": "picarx-companion/src-tauri/tauri.m3.json",
+      "rawSha256": "2541d74363f40cff379d450d054003506859d21c7a28996879cfd70c5e532159",
+      "bytes": 652
+    },
+    {
+      "path": "picarx-companion/src/App.tsx",
+      "rawSha256": "d1d25f612d7eb06b58220819bc7d99eb3227bf6176b90342ce0795271fe1e8fa",
+      "bytes": 4079
+    },
+    {
+      "path": "picarx-companion/src/components/DocImage.tsx",
+      "rawSha256": "da349e7d4250e9a4b834558bfc89db2dc2e1b23f19e3e982eeb63b3e20ee2bae",
+      "bytes": 1263
+    },
+    {
+      "path": "picarx-companion/src/components/PdfViewer.tsx",
+      "rawSha256": "e7ecd199c5d9ce6d861c8e04085370c6a6d9e1fd27dfedfc4f1daf9ae12e4148",
+      "bytes": 4694
+    },
+    {
+      "path": "picarx-companion/src/components/SearchBox.tsx",
+      "rawSha256": "077b463f483e4996826cf583f34d2977007c8c8b45db59499ed29975f244c796",
+      "bytes": 2895
+    },
+    {
+      "path": "picarx-companion/src/content/wizard.json",
+      "rawSha256": "2fc9aaaa6537fdad00eae1323b9b97801a364ea35f20108aa7159705210ecd4a",
+      "bytes": 5935
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/SaveStatus.tsx",
+      "rawSha256": "58040f5e6ee3f61adf3e25524320ebf5381c885bff4540b6c1d0874a1595dfe2",
+      "bytes": 1205
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/accepted.ts",
+      "rawSha256": "87d88de5fbf3d25e617e30c86953490d44009c66a7b771d2d77293b288b78320",
+      "bytes": 2374
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/commands.ts",
+      "rawSha256": "9664c6f33bd9eb7c97eaeb0c3e8cf9de8693ac4788270f2deb9202793a79c009",
+      "bytes": 14306
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/hash.ts",
+      "rawSha256": "48eb7a0d1b9acbd1d3c79d7a31177f5925e40902696cef7f7add563de9b9e2f3",
+      "bytes": 1984
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/legacy.ts",
+      "rawSha256": "b47ea5d4a4ba5c305f9975b7130798ce12c24f77931bcf723f6eecb05c52db4b",
+      "bytes": 2422
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/search.ts",
+      "rawSha256": "9666419dcd6d84acd6729972d38ac3489f0d23e2d7c01374bc8164230331c863",
+      "bytes": 1710
+    },
+    {
+      "path": "picarx-companion/src/features/assembly-session/store.ts",
+      "rawSha256": "00b250421264a33d69e72ad0ee4232230417a89d453de66d7066208ba41d5164",
+      "bytes": 10110
+    },
+    {
+      "path": "picarx-companion/src/lib/content-types.ts",
+      "rawSha256": "a2b3ef4404b0ad3d7c56186be18dc426663e42a182fbd488122958f7e034b1cb",
+      "bytes": 2010
+    },
+    {
+      "path": "picarx-companion/src/lib/m3-enabled.ts",
+      "rawSha256": "19afa5338aec64cee9b6df0469ffc8b98438b536ec445355a1c35277a39de4d3",
+      "bytes": 147
+    },
+    {
+      "path": "picarx-companion/src/lib/progress-store.ts",
+      "rawSha256": "31abe3d5f4ca037a0e8904ba9c084c1de77f9bb56a578bf17666615c8e9585ab",
+      "bytes": 1831
+    },
+    {
+      "path": "picarx-companion/src/lib/router.ts",
+      "rawSha256": "ce3bf0f1ebc6f3922fb8b37eb7b6e476513a77b93ef5797a13f1ffef1fb742fd",
+      "bytes": 3182
+    },
+    {
+      "path": "picarx-companion/src/main.tsx",
+      "rawSha256": "4523ca476ae9622297618631ac0528641113cdfa5a28673aa5d2aa919b2560df",
+      "bytes": 602
+    },
+    {
+      "path": "picarx-companion/src/pages/Assembly.tsx",
+      "rawSha256": "ccbd82440cc93dc0fefee26e4c5919a438292c12a071590f60f38d85c59920a9",
+      "bytes": 12234
+    },
+    {
+      "path": "picarx-companion/src/pages/Home.tsx",
+      "rawSha256": "c39d3b17d5a1d6e0c4e4c7d7da842ed48b2538a5fe782c349c7e40a0174e6781",
+      "bytes": 2175
+    },
+    {
+      "path": "picarx-companion/src/pages/WizardStep.tsx",
+      "rawSha256": "32099786636d3ffea5ca400a234fbe2a26bcfc3e266d3023f09f6fa89d31bb02",
+      "bytes": 4749
+    },
+    {
+      "path": "picarx-companion/src/platform/browser/indexed-db.ts",
+      "rawSha256": "e1a591c9a4366190a303b1d4829a82261edd46da3ab5c2b9f0b38c5d568610bb",
+      "bytes": 11122
+    },
+    {
+      "path": "picarx-companion/src/platform/repository.ts",
+      "rawSha256": "f96543e1298d3b9dd93cb67f6df1f2f12e6a254057d8a3359b290d7ef8e57d5e",
+      "bytes": 2670
+    },
+    {
+      "path": "picarx-companion/src/platform/session-validators.d.ts",
+      "rawSha256": "6d8ca2754cea4c82f8d7898b9e23dc45d9966a496b05e3e68bd8185cb97c9fbc",
+      "bytes": 109
+    },
+    {
+      "path": "picarx-companion/src/platform/session-validators.js",
+      "rawSha256": "53dd4b8d17522e7a87e9d67cf0595b13a9f6594b34426c63dd4be463a9a1bc56",
+      "bytes": 136538
+    },
+    {
+      "path": "picarx-companion/src/platform/tauri/repository.ts",
+      "rawSha256": "526273c606b48761a9c2ebca58da25c6f9992bd141c8be0b008a111187f385ed",
+      "bytes": 1608
+    },
+    {
+      "path": "picarx-companion/src/platform/validation.ts",
+      "rawSha256": "5aeadf1b810aeb305c6c5058994b9cb3e8cef22d19ac7250dcd96398ee3e45dc",
+      "bytes": 6463
+    },
+    {
+      "path": "picarx-companion/src/styles/assembly.css",
+      "rawSha256": "a3035af490db4bc76f3c9cdda87e5bf17689be4fbed4988936a134f16f9d5d54",
+      "bytes": 706
+    },
+    {
+      "path": "picarx-companion/src/styles/components.css",
+      "rawSha256": "da00597c7d57a2ee173b394d48a35fcdbe9e35efa467eb3bd28ed7a843763457",
+      "bytes": 11177
+    },
+    {
+      "path": "picarx-companion/tests/baseline/preservation.test.ts",
+      "rawSha256": "1c3b084d24e49dd14b8812d952b74c1d22fe0b230933a3ef2a36594edad1b968",
+      "bytes": 2822
+    },
+    {
+      "path": "picarx-companion/tests/browser/m3-adapter.spec.ts",
+      "rawSha256": "b967fb667f03e590a86d9c8037363e84227759777af948d9dce1bfbcac4baa44",
+      "bytes": 1528
+    },
+    {
+      "path": "picarx-companion/tests/browser/m3-fallback.spec.ts",
+      "rawSha256": "a2e96b9ac38db6f08d58ef4b070317ddff1dd4c876230398a2ffeab968552c77",
+      "bytes": 1923
+    },
+    {
+      "path": "picarx-companion/tests/browser/m3-persistence.spec.ts",
+      "rawSha256": "5ae849c4ec5786c319ad8d85e1c4f731dbb7bf48a57549609b859ec03fad4793",
+      "bytes": 5953
+    },
+    {
+      "path": "picarx-companion/tests/browser/m3-recovery.spec.ts",
+      "rawSha256": "991c194b6e4964e4337472657f447de32a40a73de19a29a628666e4b83768a1f",
+      "bytes": 3773
+    },
+    {
+      "path": "picarx-companion/tests/browser/m3-ui.spec.ts",
+      "rawSha256": "e44acaf9cba9e9a627b284f53eea606137e15bb88bdd76d2e169f26b48fc1167",
+      "bytes": 8503
+    },
+    {
+      "path": "picarx-companion/tests/native/bootstrap.ts",
+      "rawSha256": "76865a65bd91f1eb8a942e83b8eca18c45c95143392aa37a0a512c1e262bd295",
+      "bytes": 2343
+    },
+    {
+      "path": "picarx-companion/tests/native/fixtures.json",
+      "rawSha256": "d175402a0cdcf9db7eedd7d6ec823a003c6d7fad65124c458bf7af6ad99b3f59",
+      "bytes": 6348881
+    },
+    {
+      "path": "picarx-companion/tests/native/generate-fixtures.ts",
+      "rawSha256": "2f64628661f480e6d67dad47177ce600125f8ddb9a4f3c83599eed08b879e53d",
+      "bytes": 5089
+    },
+    {
+      "path": "picarx-companion/tests/native/native.spec.mjs",
+      "rawSha256": "70b70779e88e3ea2d69a8497d0cdcd122a4ffe18e2316f66a8004828e07e7abb",
+      "bytes": 3287
+    },
+    {
+      "path": "picarx-companion/tests/native/wdio.conf.mjs",
+      "rawSha256": "3436e612a3fc2d91de23ccdb0dff4fb6eba8219f2618fa46255906332e7592c5",
+      "bytes": 896
+    },
+    {
+      "path": "picarx-companion/tests/publication/packaging.test.ts",
+      "rawSha256": "00babe10116544da2f65447ce0cd20d3ad4e9fdc00c470dfc7d580a5df22d7c5",
+      "bytes": 3807
+    },
+    {
+      "path": "picarx-companion/tests/session/adapter-contract.ts",
+      "rawSha256": "c8d2cfad6842168e49db4c88cd86a911fe61ef35bd7f0cd7a3648b796c4988f2",
+      "bytes": 10495
+    },
+    {
+      "path": "picarx-companion/tests/session/browser-controls.ts",
+      "rawSha256": "b42a1932f5e78859ab0874ca94e8079ddea31fec15b30cce6c5e3263363b849e",
+      "bytes": 1786
+    },
+    {
+      "path": "picarx-companion/tests/session/domain.test.ts",
+      "rawSha256": "a0b8493edf66e06107c884f0164aa9da9f6010a25f5173a9efb2332a891ee412",
+      "bytes": 4062
+    },
+    {
+      "path": "picarx-companion/tests/session/rejection.test.ts",
+      "rawSha256": "e09bd448088adde49a73883d09b9f09de436f5d9c91838c33e22871e96c02f84",
+      "bytes": 3323
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/documentation-generation-baseline.json",
+      "rawSha256": "2ce21a513ee78ca7449c4679cb343b50a82b271abf9c901b43a8a53070b3a303",
+      "bytes": 22444
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/documentation-input-manifest.json",
+      "rawSha256": "a0ea71eb24b70296e751ee150967804da426100ef58c9965d619ae4cecc4e6ef",
+      "bytes": 124231
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/overlay.ts",
+      "rawSha256": "0645eafb65d17c924ab1776e5e892d899d59ebf5f98ca0f767e451db241b3dfb",
+      "bytes": 6953
+    },
+    {
+      "path": "picarx-companion/tools/m3/adopt-content.ts",
+      "rawSha256": "56e058953e487d382b7ecaf46f7a9a73488cf8b210b6e4a3508840de3b5dc6ab",
+      "bytes": 5552
+    },
+    {
+      "path": "picarx-companion/tools/m3/closure-evidence.ts",
+      "rawSha256": "b89403dc84d0b23374621754704bc5056e4b92d5ef3ed7a7c04191a47c89c58a",
+      "bytes": 7930
+    },
+    {
+      "path": "picarx-companion/tools/m3/generate-validators.ts",
+      "rawSha256": "cfb6d3ae08134c8ecda01b1d84bbb35e9b7283b640c82e2f945aa1ff7b0224d1",
+      "bytes": 2111
+    },
+    {
+      "path": "picarx-companion/tools/m3/prepare-native-package.ts",
+      "rawSha256": "b5d1fd9e8cec6d745fbce8782735b2db6c9ec5373385761665f8ee40e7b6db68",
+      "bytes": 3241
+    },
+    {
+      "path": "picarx-companion/tsconfig.tools.json",
+      "rawSha256": "3b28a7e595822b693571974020a2968783d1ea4dc2e48ee3bf19fc7fad13b893",
+      "bytes": 372
+    },
+    {
+      "path": "picarx-companion/vite.config.ts",
+      "rawSha256": "d259cb461a977b4b77a6e26238330bf0490a43c93951dfb969a8faee7297f3f9",
+      "bytes": 2425
+    },
+    {
+      "path": "picarx-companion/vitest.config.ts",
+      "rawSha256": "cc2e24414bfeb486ec1478ee7137a8bb8279469b1d390c0a72666376cfc6b273",
+      "bytes": 215
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/implementation/evidence/m3/adapter-parity.json",
+      "rawSha256": "6723042dec54e04d02118369c823f82e4d5358d402a9e4385fd4f7e2d5057352",
+      "bytes": 3858
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-adapter-initial.txt",
+      "rawSha256": "592325d26e7da3bc1bfa788cb573d77fb6e32717a84ce920496b2c24efcd69ea",
+      "bytes": 5927
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-adapter-remediation-2.txt",
+      "rawSha256": "eed1b00a35889f3d39c9fd54a63f7ab80db455b1d1c01852dc2f220bb2559be4",
+      "bytes": 4723
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-adapter-remediation-3.txt",
+      "rawSha256": "5ba69afa864b87ba02752be52b7f8e952c22987beaefb396c38e0fafca367f2e",
+      "bytes": 1392
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-chromium-affected.txt",
+      "rawSha256": "92dae20cc2edc5d8574273877fbca1dd6312627eed4e70d602f135485fe53279",
+      "bytes": 1575
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-chromium-csp-2.txt",
+      "rawSha256": "b93886290dfcebcb9ff4b3f8da068e1a4e17a9dcbf137ffcec99d48694c7d7df",
+      "bytes": 1575
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-chromium-csp.txt",
+      "rawSha256": "cffca18833a7b4ebe0e68fdb640f3782e90818dcc66651201766d1f26ab3638a",
+      "bytes": 7661
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-chromium-final.txt",
+      "rawSha256": "6ae9e5a50d04ea6cf03b32ca8c4b4b97678d6182e60bbe61e1f9fa218c4f84e8",
+      "bytes": 6241
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-core-closure.txt",
+      "rawSha256": "cb786d6e728c99d4429fc556409b2556c325658af91f7b4f65c844b598d94ce8",
+      "bytes": 3212
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-fallback-closure.txt",
+      "rawSha256": "2250a7ac05ccc3e8a9a2a0c67a1ba8054918bdd0e2b0aa8d34772c13bed74945",
+      "bytes": 6789
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-fallback-final.txt",
+      "rawSha256": "9a1b6c660ddc6759839c27044f466ad8efbe8e0d88e87d973b671a5c2dd72418",
+      "bytes": 6525
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-fallback-passed.txt",
+      "rawSha256": "f76af24c9afe81e6fee5122efa82401f38816c15bb1534caa4f059c353fcdc06",
+      "bytes": 2030
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-fallback.txt",
+      "rawSha256": "c06b24e942d65e2fa24007bb4d4b5cb84e42450efefe55ee0dbd45fa3bccc7ed",
+      "bytes": 10863
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-legacy-final.txt",
+      "rawSha256": "5fdd2d7a6614b696593b8746247efb73772054dd5031af51b7284fca52e9d2bc",
+      "bytes": 2241
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-optin-regression.txt",
+      "rawSha256": "bb9ec93a6a4cacfcca416a3a60eeee57a82eae6127f05b85d274ff8e62470379",
+      "bytes": 1962
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-parity-chromium.json",
+      "rawSha256": "73de3371f689212ac2c3d2d6ed41d3932883e5531873ae94ec888fec1ea05365",
+      "bytes": 3255
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-parity-webkit.json",
+      "rawSha256": "20cd975b9771badc772ceddfee5adf3c40e7d049b970a4f80e7decad45b4030e",
+      "bytes": 3244
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-ui-initial.txt",
+      "rawSha256": "271991d3735b26d12b954cac9e3ad0e6a65af07a43b3ae68a5f256d7f424c8b2",
+      "bytes": 11316
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-ui-remediation.txt",
+      "rawSha256": "dc1dec1d3df3dad51d83f791e87536e144ff502609abe78999d9794727941834",
+      "bytes": 4664
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-webkit-csp.txt",
+      "rawSha256": "0f6c3f7d75eecd52361c5fc764bb9301109963e07c935e80aa4f49ee83508730",
+      "bytes": 1994
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-webkit-final.txt",
+      "rawSha256": "480a229d38f9eec54b069e53dd5480d49dfdd6f162a977a8d0fbcad966089395",
+      "bytes": 11747
+    },
+    {
+      "path": "docs/implementation/evidence/m3/browser-webkit-resume.txt",
+      "rawSha256": "3b3741e4ee458088b868d422a5beaa83a6e687509b2a802995a272fecd9fe68a",
+      "bytes": 2457
+    },
+    {
+      "path": "docs/implementation/evidence/m3/closure-commands.json",
+      "rawSha256": "1358b395cf34940c555bbcce06d7ec3388f924f1095df870aeb05b579e43be41",
+      "bytes": 1924
+    },
+    {
+      "path": "docs/implementation/evidence/m3/closure-state.json",
+      "rawSha256": "0e75b7939f07e6fe1ac079a0bfa7c7796d0cac6f51c4c656319e422268c883ef",
+      "bytes": 3452
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-adoption.json",
+      "rawSha256": "7cc8a36f47245e6ae7210155e773c719b9e2e65a6aeee8f303659857cef41689",
+      "bytes": 24897
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-build-ledger-binding.txt",
+      "rawSha256": "2d477547f98246fc397dbdb7a4b02c83cf501a47306c777ef0441462c9a5497d",
+      "bytes": 262
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-build-ledger-prebinding.txt",
+      "rawSha256": "2d477547f98246fc397dbdb7a4b02c83cf501a47306c777ef0441462c9a5497d",
+      "bytes": 262
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-build-native-title.txt",
+      "rawSha256": "2d477547f98246fc397dbdb7a4b02c83cf501a47306c777ef0441462c9a5497d",
+      "bytes": 262
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-build-test-prebootstrap.txt",
+      "rawSha256": "2d477547f98246fc397dbdb7a4b02c83cf501a47306c777ef0441462c9a5497d",
+      "bytes": 262
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-build-wdio-runner.txt",
+      "rawSha256": "2d477547f98246fc397dbdb7a4b02c83cf501a47306c777ef0441462c9a5497d",
+      "bytes": 262
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-check-remediation-final.txt",
+      "rawSha256": "438e53e160f63310c924bebb8d32a5aedf24f9e8b3fede454c72e5fcaf6a46df",
+      "bytes": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-check-remediation.txt",
+      "rawSha256": "438e53e160f63310c924bebb8d32a5aedf24f9e8b3fede454c72e5fcaf6a46df",
+      "bytes": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-current.txt",
+      "rawSha256": "944faa023f2e86557e477379dd1963865460fb2032a8877c8e1c0f74c3f7f176",
+      "bytes": 898
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-final-closure.txt",
+      "rawSha256": "79b92d3b246bcae1cc162e4382a1078721511eb538934f241774edc9d6dbae71",
+      "bytes": 168
+    },
+    {
+      "path": "docs/implementation/evidence/m3/content-generation.txt",
+      "rawSha256": "9611c684dc192d8c300f85d3bb24df0954f3be95bf7a36cca660dbf8a128dd01",
+      "bytes": 263
+    },
+    {
+      "path": "docs/implementation/evidence/m3/dev-diagnostic.txt",
+      "rawSha256": "f57535441091715f5e8b5d64bbe3f15fc7471d04826e5ee2befd126c88ec4a53",
+      "bytes": 1020
+    },
+    {
+      "path": "docs/implementation/evidence/m3/diff-check.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/implementation/evidence/m3/domain-final.txt",
+      "rawSha256": "a1ad197af379975cec18a5a74d109d13abc5446077a264c172cb1a61e22b8505",
+      "bytes": 200
+    },
+    {
+      "path": "docs/implementation/evidence/m3/final-check-commands.json",
+      "rawSha256": "1369bac828507ba6fd244ef997d1f76ef55dd8a48f844a15c662ee78560c6dde",
+      "bytes": 784
+    },
+    {
+      "path": "docs/implementation/evidence/m3/generated-types-final.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "bytes": 94
+    },
+    {
+      "path": "docs/implementation/evidence/m3/generated-types-remediation.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "bytes": 94
+    },
+    {
+      "path": "docs/implementation/evidence/m3/generated-types.txt",
+      "rawSha256": "f2c42a53dd9438938b56e3a90a945c4c090942a28f0dd56ac294f80086e8b528",
+      "bytes": 94
+    },
+    {
+      "path": "docs/implementation/evidence/m3/graph-closure.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m3/graph-current.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m3/graph-final-closure.txt",
+      "rawSha256": "7669bbe20fa2344a4b47708a2eb420ba03a09e3e8b10b7be53412ad21d602ac9",
+      "bytes": 105
+    },
+    {
+      "path": "docs/implementation/evidence/m3/graph-final.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m3/graph-remediation.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m3/m1-tests-final.tap",
+      "rawSha256": "3b638bd4f93dec3f7fca9a6e095d4c42014bd28677e57dd2f48ab86975880c86",
+      "bytes": 17645
+    },
+    {
+      "path": "docs/implementation/evidence/m3/m1-tests.tap",
+      "rawSha256": "4a5c6a1949e5eebd0174bf84810f8dc5c34d2333c9c40a12fe1b22955da9c14d",
+      "bytes": 44514
+    },
+    {
+      "path": "docs/implementation/evidence/m3/m2-contracts-final.tap",
+      "rawSha256": "45f76e4ba6bdb71b76d6361f256139acd6446b9399286d1771e1e17a22aba830",
+      "bytes": 1269
+    },
+    {
+      "path": "docs/implementation/evidence/m3/m2-contracts.tap",
+      "rawSha256": "02419200bcfa747d100fca1621fb1bf4234020e0c3ea15eb9569f4b6297c94fb",
+      "bytes": 2835
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-browser-transfer.json",
+      "rawSha256": "7c8e6d44df815a4020a41f1dfb3d20cf1cf040938f2898a10cc6be63468d3c0b",
+      "bytes": 3281
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-build-transfer.txt",
+      "rawSha256": "99406257ac3eaf61b0d6538bdc83fcb7aa80977715033b60226d76de51dda5b4",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-compile-remediation-2.txt",
+      "rawSha256": "771f5e9c2b41d410d224a0debeea792050de798a520c85693645e283c9bb7f6c",
+      "bytes": 926
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-compile-remediation-3.txt",
+      "rawSha256": "956854c9c1ee05dc605b176e6f502cd8ff6c3bf9bae81e4d388fd1aa697e0e89",
+      "bytes": 1751
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-compile-remediation.txt",
+      "rawSha256": "f1b35c5ed438be65ba6aa1c698d636d9397f92e039777d86fd75b4dac9ffbb26",
+      "bytes": 10384
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-default-check.txt",
+      "rawSha256": "79e32e85f410607e6c0a500bbbb9827c26eee93e1c5bb833b44d2f6247a12e90",
+      "bytes": 6792
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-default-closure.txt",
+      "rawSha256": "b24c6034f6cdaebcc4805df9e45e386eea6012c938f907f6ae8e446b8b0f69b3",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-default-feature-tree.txt",
+      "rawSha256": "40c30b2cd5509614039f438f6b4e09db8f20c4706993b413187fafabe3b27714",
+      "bytes": 187936
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-dev-server-2.txt",
+      "rawSha256": "e3f425e60a82060b62bf75e802cf86e68d112d83fa212e3bbb7b7b16b7097633",
+      "bytes": 482
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-dev-server-private.txt",
+      "rawSha256": "2fa9ff6d46c51a213b3a49994ca179265fc5471ae19c5605303982f3937a2be0",
+      "bytes": 485
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-dev-server-reload.txt",
+      "rawSha256": "2ba0c5153bff112245e81d2bc15fbedc08997f9602c51a2bdb20ecc0b9678892",
+      "bytes": 248
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-dev-server.txt",
+      "rawSha256": "a7c9841f665b05aa4e686e4b70678ee8a5d2472f7fc8c046079ab18984fece5a",
+      "bytes": 334
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-dev-transfer.txt",
+      "rawSha256": "9589d71008d7b635ce69c90584c12384eab55b467f25838be5c73bdaa6b2ad3f",
+      "bytes": 248
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-initial-import-count.txt",
+      "rawSha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "bytes": 2
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-normal-capabilities.json",
+      "rawSha256": "714c0d224607ca07a099cc44e37eac9c4b060c7c2b351565370a8ee0a8d010aa",
+      "bytes": 1547
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-offline-build-2.txt",
+      "rawSha256": "c27d55f95f41003a51ec7af8b1b4c4fb71834791a1f7cfeaba0318571a5b6bec",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-offline-build-csp.txt",
+      "rawSha256": "9b977342671287309c20e90f11b2adb868b2b70f7a8285a3137d44e5d8204ca6",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-offline-build-final.txt",
+      "rawSha256": "3766cc8dd3882b099f55893de7bfe9df487dc0295a4df72998d5dc9864014caf",
+      "bytes": 173
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-offline-build.txt",
+      "rawSha256": "291bb9cba47ab5ef731754e94090e62f31fb92f0ea3157bb1670b7b4aff722af",
+      "bytes": 359
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-offline.json",
+      "rawSha256": "0a65bec15c8b2c022d305fea09f74853febe6076408743dfeb8860a2b4c2aee4",
+      "bytes": 175
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-package-build-2.txt",
+      "rawSha256": "c1f50f85a34d9bc3165987ea16cfa20b1b3007243da22cddb346e9c627439c7e",
+      "bytes": 3690
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-package-build-3.txt",
+      "rawSha256": "1b162e0e6d09a3cab2680e7aba181b4bf9cbc8bb05a937e3fdbc0fa79db3d5ed",
+      "bytes": 3690
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-package-build-csp.txt",
+      "rawSha256": "53de85718a78a12612aa3fbf3d564dc471006228d0bd14013c5c922642b31aef",
+      "bytes": 3690
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-package-build.txt",
+      "rawSha256": "74d18c2e1b6c5732770529d6f22e5b1278244588853ceba0b5cf5d2cb53a9f7d",
+      "bytes": 2357
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-package-candidate-final.txt",
+      "rawSha256": "1bc28392139113eb80278dc2379e11022c1f3ce3579ff592330ec18089a2d3a4",
+      "bytes": 3690
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-package.json",
+      "rawSha256": "196602d31c2faa6d6079fc247c00ab4b55df502a4833053be1af2d6a254ace5a",
+      "bytes": 27980
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-parity.json",
+      "rawSha256": "e62311b4f51734c0e8e9facdc6a446964d4982d85311f7441f9830bdfb446eef",
+      "bytes": 3204
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-persistence-normal-closure.txt",
+      "rawSha256": "602e4cfafdb08820a11abfd2f0b3cd467d31455658845ea5cba532df694e6fce",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-current.txt",
+      "rawSha256": "f0788aa36d1c86b6ccdfb7f4042a5574102d82061c046422a2d42e008a1e4710",
+      "bytes": 72
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-guarded.txt",
+      "rawSha256": "61c2a03bb653ac6b4b4c6a6f5f2cb7531e01cc8c565baa2b542af1428ec5f7e8",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-initial-stderr.txt",
+      "rawSha256": "41648b8a23f72d0f4f5dac6ab03db750997a63c66a6bd6609fbc978defa004f9",
+      "bytes": 7754
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-initial.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-isolation.txt",
+      "rawSha256": "a1e4862eef0a23c71c923bdd871483d3c23f975c3db22fd619fa5b82b343cade",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-private.txt",
+      "rawSha256": "de16a6762f3ce526e067168ac2d05d883499c7a76483f69b71ff02f1979eed07",
+      "bytes": 172
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-test-build-remediation-2.txt",
+      "rawSha256": "813497ae6946e3788295119eefefd2c41b10f33631c6e48200f69b27134f53db",
+      "bytes": 546
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-closure.txt",
+      "rawSha256": "3c1297999cc559fe6e2ff1cb937b3222727748ca2a2c23500ae44e93ed2aec33",
+      "bytes": 64649
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-initial.txt",
+      "rawSha256": "e732f5760ba99ac41c3b1b293e982700b6757eba3422b8b56da21aad5aff1e10",
+      "bytes": 536
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-offline-2.txt",
+      "rawSha256": "d8bd4155b9b6f65bd9bddf245527c6f8b27de3f0dd57821f2274b5aa90e5e1e0",
+      "bytes": 101005
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-offline.txt",
+      "rawSha256": "0c0885ed60b703908ebfcccaf955208bad56574d194ffd67ba37132f9a0fab51",
+      "bytes": 18372
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-private.txt",
+      "rawSha256": "73d1617601af5c2407540b29bff5ab8b7dd18920598ff513c7a117d4fb43fd18",
+      "bytes": 75992
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-reload.txt",
+      "rawSha256": "72b96e7d96427ba43db34d798386e29b559554cd08dde8d8f941af118fcb38c8",
+      "bytes": 71057
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-remediation-2.txt",
+      "rawSha256": "ac0a58033032182c185a7d28571e63a84db6b562e60cf0c0bf09dcef9ceee3e6",
+      "bytes": 1506
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-wdio-transfer.txt",
+      "rawSha256": "a9b949514c80700e0092838444f6f149fd7569fb37df1ba9a2efe693c150c89c",
+      "bytes": 71058
+    },
+    {
+      "path": "docs/implementation/evidence/m3/native-window-offline.json",
+      "rawSha256": "6f2d21183ec1840a240ff39a2b4860efa9385834a64eb2be44b0e70848fa74d8",
+      "bytes": 138
+    },
+    {
+      "path": "docs/implementation/evidence/m3/package-check-remediation-final.txt",
+      "rawSha256": "ea77ab9acb3d1e202e871c624c2b2b97b1262ecb07e598cb4c699b158fd9a51a",
+      "bytes": 198
+    },
+    {
+      "path": "docs/implementation/evidence/m3/package-check-remediation.txt",
+      "rawSha256": "ea77ab9acb3d1e202e871c624c2b2b97b1262ecb07e598cb4c699b158fd9a51a",
+      "bytes": 198
+    },
+    {
+      "path": "docs/implementation/evidence/m3/package-current.txt",
+      "rawSha256": "2d5f8129ec6f77fd23a568aab62c89c7c0e56321d8716e73696f06f33e606efb",
+      "bytes": 1179
+    },
+    {
+      "path": "docs/implementation/evidence/m3/package-final-closure.txt",
+      "rawSha256": "ed0011baf8073cb892dfd4eae082a0b546e3bc8a60b2ec60a4b32827b5543a9a",
+      "bytes": 199
+    },
+    {
+      "path": "docs/implementation/evidence/m3/preflight.json",
+      "rawSha256": "abab3ad36521ac9257f10e21930c51986cbb26e494d304cc89515d0b3a4721b2",
+      "bytes": 2241
+    },
+    {
+      "path": "docs/implementation/evidence/m3/preservation-closure.json",
+      "rawSha256": "e8740bba1096ba8d5fab5e882536f3f46d7b6f6de2b82bc67bfbb1c8f7d62c4f",
+      "bytes": 179
+    },
+    {
+      "path": "docs/implementation/evidence/m3/prior-blocked/HANDOFF_M3_REMEDIATION.md",
+      "rawSha256": "97e7e2895bd9109956d19d725ab306c91d6cf408472e5fcdd40ee6dea4ca1e5b",
+      "bytes": 9198
+    },
+    {
+      "path": "docs/implementation/evidence/m3/prior-blocked/M3_GATE_REPORT.json",
+      "rawSha256": "d3829c87658fbcef3c52703af19755962429691b0b0e0a66d0695ee72c93c66d",
+      "bytes": 26791
+    },
+    {
+      "path": "docs/implementation/evidence/m3/prior-blocked/M3_REPORT.md",
+      "rawSha256": "fc3f4af965dbb52c3feb7a68fb5251d5d22f5f1bd544cb92bdb96bba74c0b3cb",
+      "bytes": 11035
+    },
+    {
+      "path": "docs/implementation/evidence/m3/procedure-preimages.json",
+      "rawSha256": "2d73d1b3242a8c90bad7ccd2a444a40f2e2171e3e8017a4de6e4f74dadcfac6e",
+      "bytes": 144617
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-lease-recovery-2.txt",
+      "rawSha256": "8007ccd9836cc7bf8931f8108f4b24bf051b02a8f9b1cdf175ea8d576236cb36",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-lease-recovery-3.txt",
+      "rawSha256": "98cfc1aadc4e1bffad053837391f1a84c5643f0896dc75a61b86609ede663a84",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-lease-recovery-native.txt",
+      "rawSha256": "267a22cfbc7b16ca6b8d6e3ce01a6c1a70dae6932eebaf25aaaf2a6bd515b452",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-lease-recovery-ui.txt",
+      "rawSha256": "816a97e64c1928eb66ca025703da767334b7f8bf742eda816552fa6f730945b5",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-lease-recovery.txt",
+      "rawSha256": "ad2107db50e6fc49f6f5c6e4235c76de3d734abf600e653b8da460c250c38539",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-accessibility.txt",
+      "rawSha256": "fa8dacbaa8c1e29f9fbaa5988e24ef7ba4ad9fb73434e9e8ab4a993dae03294f",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-before-staging.txt",
+      "rawSha256": "4e4b950df39c3ba0fdabce1e109b372d8061a26ae713facc814a3334c64793c1",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-cas-final.txt",
+      "rawSha256": "96e52c6cf9fd8790770203a91c95f775c369358619336c4a7bbd13f8f09cb71e",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-closure.txt",
+      "rawSha256": "e1125fb2ad16c9ba753b6f54e486ddb08656317d1f11eafba573d26a2ac659c2",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-csp.txt",
+      "rawSha256": "9ddb028281572eee2d767a1a43d7c4ce8583f101cb203c6d423f38650a4ecd31",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-fallback-2.txt",
+      "rawSha256": "a6a1c91695c6f76ac53520267f63bf5fe0536081f6a964dd1fa10a783e957a64",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-fallback-3.txt",
+      "rawSha256": "530c1ff76d6d9ea3acbb62599656a3372b2acd6923861668d8e17be170635408",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-fallback.txt",
+      "rawSha256": "32062179018d54331566a22da7b5a9abb555e9200dbab7de6340a70cfe7689b6",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-final.txt",
+      "rawSha256": "043236ac0c225f5f68de8815dc8bee7d44d82bb8544a5576203f64f7ec675a2c",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-optin.txt",
+      "rawSha256": "e8fd564992b7dc013fa64ce77414cfc0f1d47e29b995d0afe75dbccdb8e27c65",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-regressions.txt",
+      "rawSha256": "fa6bba8772d37f1522ba86ed444f3e834f1d75081e197717a6edb016e91e07fc",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-resume.txt",
+      "rawSha256": "f67968590a1d79908cf1000a0b0e5d646c23da390df9770ac53c2036c740b495",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-validator-interop.txt",
+      "rawSha256": "cd7c0b0dc994099ecfc041a569a453bd4c62ae04d75a7ac7dbcd56feb3f9aca0",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/reader-recovery-webkit.txt",
+      "rawSha256": "617e078f5cbc9ee9ff9ea56518b5e4414f8514e4bdb245dc5bb86dcd3e7be411",
+      "bytes": 296
+    },
+    {
+      "path": "docs/implementation/evidence/m3/rust-format.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/implementation/evidence/m3/source-publication-closure.json",
+      "rawSha256": "6efcb374b987c184e8c92a1f86ede7c7e677814b6626fc25f3551a9323dcc0a3",
+      "bytes": 5425
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-closure.txt",
+      "rawSha256": "1864561cac051890b2a376da777b5cdd0aaa8f78f9274668a5a9aa2f1ae2ac67",
+      "bytes": 974
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-final-2.txt",
+      "rawSha256": "e31ef19d07a45dcb1329ab384fe1843e5f7690e4acef6ceaeba56e7a3b03279e",
+      "bytes": 1949
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-final-3.txt",
+      "rawSha256": "47cc896c4fdb801983a7d71b62f19f232086cee49c528804de74f2679642698e",
+      "bytes": 895
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-final-4.txt",
+      "rawSha256": "94533df7a72ce721db636136b2fc03b352471fa5c126f7d3443c32e805963e27",
+      "bytes": 974
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-final.txt",
+      "rawSha256": "ac5f47e523c618f21b961e56d3e632160da7b04433080b0b33fe7cfb8e71d39d",
+      "bytes": 895
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-initial.txt",
+      "rawSha256": "ebbb0b1b044f0b8ea54764fb055dc4fa44edf51a18f04760da5309e592421d31",
+      "bytes": 1475
+    },
+    {
+      "path": "docs/implementation/evidence/m3/sqlite-tests-remediation.txt",
+      "rawSha256": "88ca61b1385ebeb04a5797f5e925da17d8d0ca1ccbe5197644fc9d221f3b49ba",
+      "bytes": 894
+    },
+    {
+      "path": "docs/implementation/evidence/m3/standalone-validator-check.txt",
+      "rawSha256": "702317c943fd1af5285f993b076756b7d4831280ddea833357e48284057ff64d",
+      "bytes": 55
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-closure.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-csp.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-2.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-3.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-4.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-5.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-candidate-2.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-candidate-3.txt",
+      "rawSha256": "819cceb0ce093d857ad0962ab671878fb8e840e05453dfc7aa14b1313aeeb07d",
+      "bytes": 827
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-candidate-4.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-candidate.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final-closure.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-final.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-receipts.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-reconciliation-2.txt",
+      "rawSha256": "9135a1c51c8a134bd1c85b57d03a6db8da37569a773c1907b5ec3cd2c3642b23",
+      "bytes": 397
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-reconciliation.txt",
+      "rawSha256": "9135a1c51c8a134bd1c85b57d03a6db8da37569a773c1907b5ec3cd2c3642b23",
+      "bytes": 397
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-remediation-2.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-remediation-3.txt",
+      "rawSha256": "de3497f226d713e5dfbd85333b48a23b3b608e276ae28bbfc7169ae5e4b445da",
+      "bytes": 415
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-remediation-4.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-remediation.txt",
+      "rawSha256": "006c27cd3a5f1025513dd116f3188d74036607f7a194d59efb1063282d59c6e0",
+      "bytes": 2179
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-transfer-2.txt",
+      "rawSha256": "4b9e913fc9dae393d02c06cb82189ffbf1f7866126afc2fe2f6a050996cc470e",
+      "bytes": 721
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-transfer.txt",
+      "rawSha256": "2de694bc64251afdd7b9082968ea99be84db324f1524645831a6090a16f4110b",
+      "bytes": 3515
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-ui-remediation.txt",
+      "rawSha256": "3ae0373462748fbff14549b183b482ab73a5d1f5acd44f1332fc299b1f701101",
+      "bytes": 142
+    },
+    {
+      "path": "docs/implementation/evidence/m3/typecheck-ui.txt",
+      "rawSha256": "1c404cba8d44bb9ae0a698c24b2ebad8575ee123215ec776706d8df3f56864e7",
+      "bytes": 477
+    },
+    {
+      "path": "docs/implementation/evidence/m3/types-final-closure.txt",
+      "rawSha256": "eb86d49b42aca2ffaf6abcec576f9b8eb80f3e334b4e2039d6a1cb164f0cbd18",
+      "bytes": 95
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-closure.txt",
+      "rawSha256": "07ee80b9ca20795db5931f5d90e299efd364994b9d1354ee8e3f4b4b1b55a519",
+      "bytes": 317
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-csp.txt",
+      "rawSha256": "8a40725ae78c237ab7570a807c1e7ce32a64746778570c2df7414446c264333d",
+      "bytes": 317
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-final-2.txt",
+      "rawSha256": "48059851a445babde221cfdfaff845407836aa0fbb8653a4688fc51834a5b806",
+      "bytes": 328
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-final.txt",
+      "rawSha256": "25cafe87204bb93102b9b1e89205be22d58e06ecc1fe8ce01e21ca2a83db7b98",
+      "bytes": 328
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-remediation.txt",
+      "rawSha256": "9d3355917de381d6f24b3667f8902b47e12cc09327a31ff93e2176a99eab9dd4",
+      "bytes": 328
+    },
+    {
+      "path": "docs/implementation/evidence/m3/unit-tests.txt",
+      "rawSha256": "30dc87e432a8e3cac8d3c7701c56efd137b12e9c5b1b090abebd66dfaae93767",
+      "bytes": 3007
+    },
+    {
+      "path": "docs/implementation/evidence/m3/upstream-closure.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m3/upstream-current.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m3/upstream-final-closure.txt",
+      "rawSha256": "0708d106019f64f431b93def78f2a8ca7523544ddfca3d56036e33a0faa23112",
+      "bytes": 100
+    },
+    {
+      "path": "docs/implementation/evidence/m3/upstream-final.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m3/upstream-remediation.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m3/validators-closure.txt",
+      "rawSha256": "702317c943fd1af5285f993b076756b7d4831280ddea833357e48284057ff64d",
+      "bytes": 55
+    },
+    {
+      "path": "docs/implementation/evidence/m3/wdio-dependencies.txt",
+      "rawSha256": "f0fc43dd22d58cd080196797432b6570004fc7ff86715a29e8a61ae06054e95a",
+      "bytes": 2004
+    },
+    {
+      "path": "docs/implementation/evidence/m3/wdio-runner-dependency.txt",
+      "rawSha256": "e181a283a480e916dc6e76d9fa164e00c110ed004b0a216c5e5353575ba1a674",
+      "bytes": 1511
+    },
+    {
+      "path": "docs/implementation/evidence/m3/.gitattributes",
+      "rawSha256": "48d7e1f5799e317edf142a0aed42b2510f836d1357fe91d8fa2dab9b261f80bc",
+      "bytes": 181
+    }
+  ],
+  "reportsExcludedFromOwnBindings": [
+    "docs/implementation/M3_GATE_REPORT.json",
+    "docs/implementation/M3_REPORT.md"
+  ],
+  "m4ImplementationPerformed": false
+}

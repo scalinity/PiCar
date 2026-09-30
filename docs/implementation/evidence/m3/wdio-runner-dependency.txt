@@ -1,0 +1,23 @@
+Progress: resolved 0, reused 1, downloaded 0, added 0
+Progress: resolved 636, reused 524, downloaded 16, added 0
+ WARN  4 deprecated subdependencies found: glob@10.5.0, glob@8.1.0, inflight@1.0.6, whatwg-encoding@3.1.1
+Packages: +45 -4
++++++++++++++++++++++++++++++++++++++++++++++----
+Progress: resolved 659, reused 524, downloaded 41, added 45, done
+ WARN  Issues with peer dependencies found
+.
+└─┬ @wdio/tauri-service 1.4.0
+  └─┬ @wdio/globals 9.29.1
+    └── ✕ unmet peer expect-webdriverio@^5.6.5: found 6.1.0
+
+devDependencies:
++ @wdio/local-runner 9.32.0
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: edgedriver@6.3.1, geckodriver@6.1.1.                │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 1.8s using pnpm v10.33.2

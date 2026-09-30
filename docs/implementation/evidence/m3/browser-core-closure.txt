@@ -1,0 +1,31 @@
+[WebServer] (node:10982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10995) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11002) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:11007) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 1 worker
+
+(node:11028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.1s)
+  ✓   2 [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (372ms)
+  ✓   3 [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (20.5s)
+  ✓   4 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (268ms)
+  ✓   5 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (544ms)
+  ✓   6 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (2.6s)
+  ✓   7 [chromium] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.5s)
+(node:11202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [webkit] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (4.9s)
+  ✓   9 [webkit] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (485ms)
+  ✓  10 [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (20.7s)
+  ✓  11 [webkit] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (409ms)
+  ✓  12 [webkit] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (588ms)
+  ✓  13 [webkit] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (1.9s)
+  ✓  14 [webkit] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.2s)
+
+  14 passed (1.0m)

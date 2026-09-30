@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "identifier": "com.danny.picarx-companion",
+  "windowDefaults": [
+    {
+      "title": "PiCar-X Companion",
+      "width": 1440,
+      "height": 900,
+      "minWidth": 1100,
+      "minHeight": 700,
+      "center": true,
+      "titleBarStyle": "Overlay",
+      "hiddenTitle": true
+    }
+  ],
+  "defaultCapability": {
+    "path": "picarx-companion/src-tauri/capabilities/default.json",
+    "rawSha256": "50e6561a0c5480e8f19379bb0f745c4ac48b8114a7127e614ecec24640cd74c0",
+    "bytes": 220
+  },
+  "normalConfig": {
+    "path": "picarx-companion/src-tauri/tauri.m3.json",
+    "rawSha256": "2541d74363f40cff379d450d054003506859d21c7a28996879cfd70c5e532159",
+    "bytes": 652
+  },
+  "csp": "default-src 'self' tauri:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://i.ytimg.com; font-src 'self'; worker-src 'self' blob:; connect-src 'self' ipc: http://ipc.localhost; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'",
+  "normalCompiledAcl": {
+    "rawSha256": "3af096c3b4d13ff8ebe6e941738dae5252df0d81799c9f78ac88ea23e10e744e",
+    "bytes": 73037,
+    "testPrivileges": false
+  },
+  "defaultCompiledAcl": {
+    "rawSha256": "4d93885b464518dae2a2ed75ec63efc2c9d5a8991f51c26e6764dcb4264623c5",
+    "bytes": 69499,
+    "testPrivileges": false
+  },
+  "normalFeatureTree": {
+    "path": "docs/implementation/evidence/m3/native-default-feature-tree.txt",
+    "rawSha256": "40c30b2cd5509614039f438f6b4e09db8f20c4706993b413187fafabe3b27714",
+    "bytes": 187936
+  }
+}

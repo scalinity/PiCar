@@ -1,0 +1,19 @@
+
+> picarx-companion@0.1.0 typecheck /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsc --noEmit && tsc --noEmit -p tsconfig.tools.json
+
+tests/native/bootstrap.ts(16,61): error TS2352: Conversion of type '{ format: string; schemaVersion: number; aggregates: { aggregate: { id: string; revision: number; graphHash: string; modelHash: string; snapshot: { id: string; projectId: string; setupProgressRef: string; ... 14 more ...; servoEpochs: { ...; }[]; }; snapshotHash: string; }; events: ({ ...; } | ... 3 more ... | { ......' to type 'Backup' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Types of property 'aggregates' are incompatible.
+    Type '{ aggregate: { id: string; revision: number; graphHash: string; modelHash: string; snapshot: { id: string; projectId: string; setupProgressRef: string; contractVersion: number; schemaVersion: number; ... 12 more ...; servoEpochs: { ...; }[]; }; snapshotHash: string; }; events: ({ ...; } | ... 3 more ... | { ...; })[...' is not comparable to type 'Stored[]'.
+      Type '{ aggregate: { id: string; revision: number; graphHash: string; modelHash: string; snapshot: { id: string; projectId: string; setupProgressRef: string; contractVersion: number; schemaVersion: number; ... 12 more ...; servoEpochs: { ...; }[]; }; snapshotHash: string; }; events: ({ ...; } | ... 3 more ... | { ...; })[...' is not comparable to type 'Stored'.
+        The types of 'aggregate.snapshot' are incompatible between these types.
+          Type '{ id: string; projectId: string; setupProgressRef: string; contractVersion: number; schemaVersion: number; variantId: string; graphHash: string; modelHash: string; evidenceHash: string; revision: number; ... 7 more ...; servoEpochs: { ...; }[]; }' is not comparable to type 'Snapshot'.
+            Type '{ id: string; projectId: string; setupProgressRef: string; contractVersion: number; schemaVersion: number; variantId: string; graphHash: string; modelHash: string; evidenceHash: string; revision: number; ... 7 more ...; servoEpochs: { ...; }[]; }' is not comparable to type 'AssemblySession'.
+              Types of property 'procedureAcknowledgments' are incompatible.
+                Type '({ id: string; sessionId: string; variantId: string; graphHash: string; modelHash: string; conditionRuleId: string; procedureRevisionHash: string; operationId: string; dependencyIds: string[]; ... 4 more ...; accepted: boolean; } | { ...; })[]' is not comparable to type 'ProcedureAcknowledgment[]'.
+                  Type '{ id: string; sessionId: string; variantId: string; graphHash: string; modelHash: string; conditionRuleId: string; procedureRevisionHash: string; operationId: string; dependencyIds: string[]; ... 4 more ...; accepted: boolean; } | { ...; }' is not comparable to type 'ProcedureAcknowledgment'.
+                    Type '{ id: string; sessionId: string; variantId: string; graphHash: string; modelHash: string; conditionRuleId: string; procedureRevisionHash: string; operationId: string; dependencyIds: string[]; ... 4 more ...; accepted: boolean; }' is not comparable to type 'ProcedureAcknowledgment'.
+                      Types of property 'dependencyIds' are incompatible.
+                        Type 'string[]' is not comparable to type '[string, ...string[]]'.
+                          Source provides no match for required element at position 0 in target.
+ ELIFECYCLE  Command failed with exit code 2.

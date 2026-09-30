@@ -1,0 +1,63 @@
+[WebServer] (node:37887) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37898) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+
+(node:37911) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.2s)
+  ✓  2 [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (284ms)
+  ✓  3 [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (22.0s)
+  ✓  4 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (249ms)
+  ✓  5 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (421ms)
+  ✓  6 [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (3.2m)
+  ✓  7 [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.6m)
+  ✘  8 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (1.5m)
+(node:57559) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  9 [chromium] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.2s)
+
+
+  1) [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Confirm physical work and save', exact: true })
+        - locator resolved to <button disabled class="button primary">Confirm physical work and save</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        171 × waiting for element to be visible, enabled and stable
+            - element is not enabled
+          - retrying click action
+            - waiting 500ms
+
+
+      23 |  await page.getByRole('link',{name:'Next review',exact:true}).click();for(const box of await page.locator('.assembly-check').filter({hasText:'PX-V40-RULE-'}).locator('input').all())await box.check();await page.getByLabel('My statement').fill('I checked the second task.');
+      24 |  await page.evaluate(async()=>{const {getStore}=await import(String('/src/features/assembly-session/store.ts')) as typeof import('../../src/features/assembly-session/store');const {contexts}=await import(String('/src/features/assembly-session/accepted.ts')) as typeof import('../../src/features/assembly-session/accepted');const {openBrowserRepository}=await import(String('/src/platform/browser/indexed-db.ts')) as typeof import('../../src/platform/browser/indexed-db');const {prepareCommand}=await import(String('/src/features/assembly-session/commands.ts')) as typeof import('../../src/features/assembly-session/commands');const current=getStore().selected!;const r=await openBrowserRepository('picarx.sessions',contexts);await r.commit(prepareCommand(current,{kind:'bookmark',stepId:'PX-V40-STEP-02'},'TEST-EXTERNAL-BOOKMARK',contexts.get(current.graphHash!)));r.close();});
+    > 25 |  await page.getByRole('button',{name:'Confirm physical work and save',exact:true}).click();await expect(page.getByRole('alert')).toContainText('CONFLICT');await expect(page.getByRole('button',{name:'Retry same save'})).toHaveCount(0);await expect(page.locator('main')).toContainText('1/29 self-confirmed');await page.getByRole('button',{name:'Confirm physical work and save',exact:true}).click();await expect(page.locator('main')).toContainText('2/29 self-confirmed');
+         |                                                                                    ^
+      26 | });
+      27 | test('opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion',async({page})=>{
+      28 |  await page.addInitScript(raw=>localStorage.setItem('picarx.v1',raw),legacy);await page.emulateMedia({reducedMotion:'reduce',colorScheme:'dark'});await page.setViewportSize({width:1100,height:700});await page.goto('/#/wizard/assembly');await expect(page.locator('.pdf-pageinfo')).toContainText('of 2');await page.getByRole('button',{name:'← Prev',exact:true}).click();await expect(page.locator('.pdf-viewer input')).toHaveValue('1');expect(await page.evaluate(()=>localStorage.getItem('picarx.v1'))).toBe(legacy);
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-ui.spec.ts:25:84
+
+    Error Context: test-results/m3-ui-quota-failure-keeps--ad4e4--reload-requires-new-submit-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit 
+  8 passed (7.8m)

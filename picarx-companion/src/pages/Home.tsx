@@ -1,3 +1,4 @@
+import { M3_ENABLED } from '../lib/m3-enabled';
 import { wizard } from '../content';
 import { useProgress } from '../lib/progress-store';
 
@@ -39,6 +40,7 @@ export function Home() {
         </div>
       </section>
 
+      {M3_ENABLED && <section className="card"><h2>Assembly sessions</h2><p>29-step V40 reference journey with separate physical self-confirmations.</p><a className="button" href="#/assembly">Open assembly overview</a></section>}
       <section className="home-steps">
         {wizard.map((s, i) => (
           <a key={s.id} className={`step-card card ${progress.steps[s.id] === 'done' ? 'done' : ''}`} href={`#/wizard/${s.id}`}>

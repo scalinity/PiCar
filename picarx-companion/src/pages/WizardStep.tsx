@@ -1,3 +1,7 @@
+import { useCompanion } from '../features/assembly-session/store';
+import {completed} from '../features/assembly-session/commands';
+import type {AssemblySession} from '../generated/twin/contracts';
+import { M3_ENABLED } from '../lib/m3-enabled';
 import { pages, videoBySlug, wizard } from '../content';
 import { setStepDone, useProgress } from '../lib/progress-store';
 import { SectionView } from '../components/RstRenderer';
@@ -6,7 +10,7 @@ import { PdfViewer } from '../components/PdfViewer';
 import { VideoEmbed } from '../components/VideoEmbed';
 
 export function WizardStepPage({ stepId }: { stepId: string }) {
-  const progress = useProgress();
+  const progress = useProgress();const companion=useCompanion();
   const idx = wizard.findIndex((s) => s.id === stepId);
   const step = wizard[idx];
   if (!step) {
@@ -46,6 +50,7 @@ export function WizardStepPage({ stepId }: { stepId: string }) {
             Step {idx + 1} of {wizard.length}
           </p>
           <h1>{step.title}</h1>
+          {M3_ENABLED && step.id === 'assembly' && step.assemblyLauncher && <section className="card"><h2>29-step assembly session</h2><p>This setup badge is a self-report. Detailed physical confirmations are stored separately.</p><ul>{companion.sessions.map(a=><li key={a.id}>{(a.snapshot as AssemblySession).variantId}: {completed(a.snapshot as AssemblySession).length}/29 self-confirmed, 0 observed</li>)}</ul><a className="button" href="#/assembly">Open assembly sessions and coverage</a></section>}
           {step.intro && <p className="wizard-intro">{step.intro}</p>}
 
           {step.checklist && (
@@ -97,9 +102,9 @@ export function WizardStepPage({ stepId }: { stepId: string }) {
             ) : (
               <span />
             )}
-            <button className={`button ${done ? '' : 'primary'}`} onClick={() => setStepDone(step.id, !done)}>
+            {M3_ENABLED && step.id==='assembly'?<a className="button" href="#/assembly">Reconcile from a completed assembly session</a>:<button className={`button ${done ? '' : 'primary'}`} onClick={() => setStepDone(step.id, !done)}>
               {done ? '✓ Completed — undo' : 'Mark step complete'}
-            </button>
+            </button>}
             {next ? (
               <a className="button" href={`#/wizard/${next.id}`}>
                 {next.title} →

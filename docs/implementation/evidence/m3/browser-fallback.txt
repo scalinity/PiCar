@@ -1,0 +1,139 @@
+[WebServer] (node:62478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62498) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:62553) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (5.6s)
+(node:62575) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (548ms)
+  ✘  3 [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (5.8s)
+(node:62622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (6.1s)
+(node:62638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (695ms)
+  ✘  6 [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (5.7s)
+
+
+  1) [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.missing-image').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.missing-image').first() with timeout 5000ms
+      - waiting for locator('.missing-image').first()
+
+
+      3 | test('custom Hermes content and excluded source media remain accessible',async({page})=>{
+      4 |  await page.goto('/#/reference/custom/hermes');await expect(page.locator('main h1')).toContainText('Hermes');await expect(page.locator('main')).toContainText('PiCar-X');
+    > 5 |  await page.goto('/#/reference/adjust_servo');await page.route('**/content/images/**',r=>r.abort());await page.reload();await expect(page.locator('.missing-image').first()).toBeVisible();
+        |                                                                                                                                                                              ^
+      6 | });
+      7 | test('lazy assembly failure recovers through reference and retains durable export',async({page})=>{
+      8 |  await page.route('**/src/pages/Assembly.tsx*',r=>r.abort());await page.goto('/#/assembly');await expect(page.getByRole('heading',{name:'Assembly recovery',exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Export sessions'})).toBeVisible();await page.getByRole('link',{name:'Open reference'}).click();await expect(page.locator('main h1')).toHaveText('Reference');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-fallback.spec.ts:5:174
+
+    Error Context: test-results/m3-fallback-custom-Hermes--05e53-rce-media-remain-accessible-chromium/error-context.md
+
+  2) [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.pdf-viewer')
+    Expected substring: "unavailable"
+    Received string:    "Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of 2Next →−120%+"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.pdf-viewer') with timeout 5000ms
+      - waiting for locator('.pdf-viewer')
+        4 × locator resolved to <div class="pdf-viewer">…</div>
+          - unexpected value "Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of …Next →−120%+"
+        10 × locator resolved to <div class="pdf-viewer">…</div>
+           - unexpected value "Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of 2Next →−120%+"
+
+
+      10 | test('keyboard review focuses the heading and missing PDF keeps source text with no fallback',async({page})=>{
+      11 |  await page.goto('/#/assembly');await page.getByRole('button',{name:'Start new session',exact:true}).click();await expect(page.locator('main h1')).toContainText('1.');await expect(page.locator('main h1')).toBeFocused();
+    > 12 |  await page.route('**/content/pdf/**',r=>r.abort());await page.getByText('Z0104V40 booklet · source page 1',{exact:true}).click();await expect(page.locator('.pdf-viewer')).toContainText('unavailable');await expect(page.getByRole('heading',{name:'Source instructions'})).toBeVisible();await expect(page.locator('main')).toContainText('0/29 self-confirmed');
+         |                                                                                                                                                                             ^
+      13 | });
+      14 |
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-fallback.spec.ts:12:173
+
+    Error Context: test-results/m3-fallback-keyboard-revie-89162-ource-text-with-no-fallback-chromium/error-context.md
+
+  3) [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.missing-image').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.missing-image').first() with timeout 5000ms
+      - waiting for locator('.missing-image').first()
+
+
+      3 | test('custom Hermes content and excluded source media remain accessible',async({page})=>{
+      4 |  await page.goto('/#/reference/custom/hermes');await expect(page.locator('main h1')).toContainText('Hermes');await expect(page.locator('main')).toContainText('PiCar-X');
+    > 5 |  await page.goto('/#/reference/adjust_servo');await page.route('**/content/images/**',r=>r.abort());await page.reload();await expect(page.locator('.missing-image').first()).toBeVisible();
+        |                                                                                                                                                                              ^
+      6 | });
+      7 | test('lazy assembly failure recovers through reference and retains durable export',async({page})=>{
+      8 |  await page.route('**/src/pages/Assembly.tsx*',r=>r.abort());await page.goto('/#/assembly');await expect(page.getByRole('heading',{name:'Assembly recovery',exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Export sessions'})).toBeVisible();await page.getByRole('link',{name:'Open reference'}).click();await expect(page.locator('main h1')).toHaveText('Reference');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-fallback.spec.ts:5:174
+
+    Error Context: test-results/m3-fallback-custom-Hermes--05e53-rce-media-remain-accessible-webkit/error-context.md
+
+  4) [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.pdf-viewer')
+    Expected substring: "unavailable"
+    Received string:    "Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of 2Next →−120%+"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.pdf-viewer') with timeout 5000ms
+      - waiting for locator('.pdf-viewer')
+        3 × locator resolved to <div class="pdf-viewer">…</div>
+          - unexpected value "Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of …Next →−120%+"
+        11 × locator resolved to <div class="pdf-viewer">…</div>
+           - unexpected value "Z0104V40 · exact locked booklet bytes · owner photos withheld← PrevPage  of 2Next →−120%+"
+
+
+      10 | test('keyboard review focuses the heading and missing PDF keeps source text with no fallback',async({page})=>{
+      11 |  await page.goto('/#/assembly');await page.getByRole('button',{name:'Start new session',exact:true}).click();await expect(page.locator('main h1')).toContainText('1.');await expect(page.locator('main h1')).toBeFocused();
+    > 12 |  await page.route('**/content/pdf/**',r=>r.abort());await page.getByText('Z0104V40 booklet · source page 1',{exact:true}).click();await expect(page.locator('.pdf-viewer')).toContainText('unavailable');await expect(page.getByRole('heading',{name:'Source instructions'})).toBeVisible();await expect(page.locator('main')).toContainText('0/29 self-confirmed');
+         |                                                                                                                                                                             ^
+      13 | });
+      14 |
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/m3-fallback.spec.ts:12:173
+
+    Error Context: test-results/m3-fallback-keyboard-revie-89162-ource-text-with-no-fallback-webkit/error-context.md
+
+  4 failed
+    [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+    [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback 
+    [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible 
+    [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback 
+  2 passed (27.0s)

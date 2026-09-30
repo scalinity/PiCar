@@ -1,0 +1,7 @@
+
+> picarx-companion@0.1.0 typecheck /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsc --noEmit && tsc --noEmit -p tsconfig.tools.json
+
+tests/browser/m3-recovery.spec.ts(19,10): error TS2339: Property 'default' does not exist on type '{ setupCreate: { payloadVersion: number; aggregateId: string; commandId: string; expectedRevision: number; graphHash: null; modelHash: null; payload: { kind: string; setup: { steps: {}; checks: {}; lastRoute: string; pdfLastPage: number; legacyAssemblyReportedDone: boolean; }; }; proposal: { ...; }; previousHash: st...'.
+tests/browser/m3-recovery.spec.ts(21,52): error TS2322: Type '"doing"' is not assignable to type '"done"'.
+ ELIFECYCLE  Command failed with exit code 2.

@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "adoption": {
+    "path": "docs/implementation/evidence/m3/content-adoption.json",
+    "rawSha256": "7cc8a36f47245e6ae7210155e773c719b9e2e65a6aeee8f303659857cef41689",
+    "bytes": 24897
+  },
+  "previousGenerationRecoverable": true,
+  "archiveVerified": true,
+  "currentGeneration": {
+    "id": "96db462d-a054-48d8-90a5-02910c893bff",
+    "roots": [
+      {
+        "path": "src/content/pages",
+        "oldExists": true,
+        "oldHash": "c81c64b6341771254499520667a504ca708b743b044e72a887d5a5f6f90b3f22",
+        "newHash": "c81c64b6341771254499520667a504ca708b743b044e72a887d5a5f6f90b3f22"
+      },
+      {
+        "path": "src/content/nav.json",
+        "oldExists": true,
+        "oldHash": "dc850371f64c154ea4ad0c8671e3e242807b0335717ab473eafe70b5ed3f4d65",
+        "newHash": "dc850371f64c154ea4ad0c8671e3e242807b0335717ab473eafe70b5ed3f4d65"
+      },
+      {
+        "path": "src/content/search-index.json",
+        "oldExists": true,
+        "oldHash": "cc57224a3b49074febc3bdd50d17f5b04cef165b52589a8f519a30ac15e19111",
+        "newHash": "cc57224a3b49074febc3bdd50d17f5b04cef165b52589a8f519a30ac15e19111"
+      },
+      {
+        "path": "src/content/videos.json",
+        "oldExists": true,
+        "oldHash": "5d73b360559004f63928fb4de83354f81e067688505e356139820584e57abff3",
+        "newHash": "5d73b360559004f63928fb4de83354f81e067688505e356139820584e57abff3"
+      },
+      {
+        "path": "src/content/wizard.json",
+        "oldExists": true,
+        "oldHash": "b6f83fb01c45865a59f0f73b6478bb359ace9d9a65b6448ed0979a973da8b711",
+        "newHash": "b6f83fb01c45865a59f0f73b6478bb359ace9d9a65b6448ed0979a973da8b711"
+      },
+      {
+        "path": "public/content",
+        "oldExists": true,
+        "oldHash": "c68a994cd3158f5447383a1f973108e5b536a429d6d37c884bc16de5499ccc55",
+        "newHash": "c68a994cd3158f5447383a1f973108e5b536a429d6d37c884bc16de5499ccc55"
+      },
+      {
+        "path": ".content-publication/safe-public",
+        "oldExists": true,
+        "oldHash": "2a740fff48906d731e4cc73a7df2a53dd04d75e3b49ee2bbdf5419311ea4cef0",
+        "newHash": "2a740fff48906d731e4cc73a7df2a53dd04d75e3b49ee2bbdf5419311ea4cef0"
+      }
+    ],
+    "protectedHash": "f2f8da62a4b5b1df8d68eaa57338c8b6252f8ee651ba3d949e5e11487ed84ce5",
+    "bindings": [
+      {
+        "path": "package.json",
+        "sha256": "4d6a6b2d8543cc6435421916fac80737afc90748a32822930ea00d5975790c0d"
+      },
+      {
+        "path": "vite.config.ts",
+        "sha256": "d259cb461a977b4b77a6e26238330bf0490a43c93951dfb969a8faee7297f3f9"
+      },
+      {
+        "path": "src-tauri/tauri.conf.json",
+        "sha256": "968a591ca77f980c1a83cef04f714c5b8092c037aef8e9ca5623f5b32660ec33"
+      },
+      {
+        "path": "src-tauri/capabilities/default.json",
+        "sha256": "50e6561a0c5480e8f19379bb0f745c4ac48b8114a7127e614ecec24640cd74c0"
+      },
+      {
+        "path": "tools/content-pipeline/build.ts",
+        "sha256": "a17b29dd0f4f6f807b4b4a841bc0dd5c78933c009b0f573428c4cea678f8773f"
+      },
+      {
+        "path": "tools/content-pipeline/denied-media.json",
+        "sha256": "390fb2236e82a5b4f680ea23f06bfb7af6850ded4aaaf54c91850af3dcfc1b70"
+      },
+      {
+        "path": "tools/content-pipeline/documentation-generation-baseline.json",
+        "sha256": "2ce21a513ee78ca7449c4679cb343b50a82b271abf9c901b43a8a53070b3a303"
+      },
+      {
+        "path": "tools/content-pipeline/documentation-input-manifest.json",
+        "sha256": "a0ea71eb24b70296e751ee150967804da426100ef58c9965d619ae4cecc4e6ef"
+      },
+      {
+        "path": "tools/content-pipeline/documentation-source-lock.json",
+        "sha256": "8ca58014ece62abf765ebdbd767d72611d69eaac39440e06b78769505fd6d0b3"
+      },
+      {
+        "path": "tools/content-pipeline/entry.ts",
+        "sha256": "abe4535813710beff731405d0e1b72ccc710aced36472d795188b9f3327c3e57"
+      },
+      {
+        "path": "tools/content-pipeline/overlay.ts",
+        "sha256": "0645eafb65d17c924ab1776e5e892d899d59ebf5f98ca0f767e451db241b3dfb"
+      },
+      {
+        "path": "tools/content-pipeline/publication.ts",
+        "sha256": "9a74ac2f51265db328763fa37bd78c456888fdcc8b76824fe02febd10d5a997b"
+      },
+      {
+        "path": "tools/content-pipeline/rst-parser.ts",
+        "sha256": "1675c97ca5f3130a298771dabd9a7e858bcc57917d72043d018313bc797e800d"
+      },
+      {
+        "path": "tools/content-pipeline/source.ts",
+        "sha256": "300f629a12d739d5a0927c29e5db648cc8016b76ba598de865c88d619cbaeb50"
+      },
+      {
+        "path": "tools/content-pipeline/transform.ts",
+        "sha256": "6abdf8f6203825d32b006a0f96fafc98ebbec345f8fc89dfb54d4dd7d8059c9d"
+      }
+    ]
+  },
+  "currentManifest": {
+    "path": "picarx-companion/tools/content-pipeline/documentation-input-manifest.json",
+    "rawSha256": "a0ea71eb24b70296e751ee150967804da426100ef58c9965d619ae4cecc4e6ef",
+    "bytes": 124231
+  },
+  "currentBaseline": {
+    "path": "picarx-companion/tools/content-pipeline/documentation-generation-baseline.json",
+    "rawSha256": "2ce21a513ee78ca7449c4679cb343b50a82b271abf9c901b43a8a53070b3a303",
+    "bytes": 22444
+  },
+  "privateOriginalCount": 10,
+  "trackedPrivateCount": 0,
+  "privateHashesPublished": false,
+  "sourceDelta": [
+    {
+      "path": "picarx-companion/tools/content-pipeline/overlay.ts",
+      "sha256": "0645eafb65d17c924ab1776e5e892d899d59ebf5f98ca0f767e451db241b3dfb",
+      "bytes": 6953
+    }
+  ]
+}

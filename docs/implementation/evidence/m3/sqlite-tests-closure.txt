@@ -1,0 +1,14 @@
+   Compiling picarx-companion v0.1.0 (/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.79s
+     Running unittests src/lib.rs (/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m3-native-compile-mRPDsKmn/target/debug/deps/picarx_companion_lib-b44c2470a259b14c)
+
+running 6 tests
+test persistence::tests::independent_connections_exactly_one_writer_wins ... ok
+test persistence::tests::strict_json_checksum_import_closure_and_newer_read_only ... ok
+test persistence::tests::initialization_append_retry_cas_restart_wal_backup ... ok
+test persistence::tests::migration_raw_markers_retry_malformed_and_oversized ... ok
+test persistence::tests::real_transaction_rollback_disk_full_and_corrupt_current_history ... ok
+test persistence::tests::all29_records_consumption_invalidation_and_forgery ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.84s
+
