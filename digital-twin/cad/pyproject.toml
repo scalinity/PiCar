@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "twin-cad"
+version = "0.1.0"
+description = "PiCar M4 synthetic mechanical authoring qualification"
+requires-python = "==3.12.*"
+dependencies = ["cadquery==2.8.0", "cadquery-ocp==7.9.3.1.1", "numpy==2.4.4", "scipy==1.17.1", "rfc8785==0.1.4"]
+
+[project.scripts]
+twin-cad = "twin_cad.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["twin_cad"]

@@ -1,0 +1,488 @@
+[
+  {
+    "name": "a-frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-frozen-install.txt",
+      "rawSha256": "ad4bdbd71e9f595225406fa7d0669d0e90e63747d378e9f764a03bc041de03cf",
+      "bytes": 1935
+    }
+  },
+  {
+    "name": "a-wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/wheel"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-wheel-build.txt",
+      "rawSha256": "5d3f92785f2d5d9dd62a961d1fc6391023cf78ba21e80273b918a2e1595bb8cf",
+      "bytes": 148
+    }
+  },
+  {
+    "name": "a-wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment/bin/python",
+      "--no-deps",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-wheel-install.txt",
+      "rawSha256": "f016f32e915357c7a344fa490b20f05b830d0d6855dfb29417a9286b9b0af082",
+      "bytes": 345
+    }
+  },
+  {
+    "name": "a-environment",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "a-fixture-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "python",
+      "-m",
+      "twin_cad",
+      "build",
+      "--fixture",
+      "validation/fixtures/m4/TEST-M4.json",
+      "--output",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/exports"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-fixture-build.txt",
+      "rawSha256": "d4d65c20068ba0272c7f6b7af32989d43baab87934ec635dbda4a3f29eb6f009",
+      "bytes": 106
+    }
+  },
+  {
+    "name": "a-independent-verify",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "python",
+      "-m",
+      "twin_cad",
+      "verify",
+      "--fixture",
+      "validation/fixtures/m4/TEST-M4.json",
+      "--output",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/exports"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-independent-verify.txt",
+      "rawSha256": "c3f5f6164a997a684471c05aff86131415f8505728f32ad5cea39f1a6eab8033",
+      "bytes": 8350
+    }
+  },
+  {
+    "name": "a-pytest",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "pytest",
+      "cad/tests",
+      "validation/tests_python",
+      "-q",
+      "--junitxml=/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/tests.xml"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-pytest.txt",
+      "rawSha256": "1f330cebe87a0f2ac59a08d4e95b3282834fb931391bd5a7d3cdc62a4f0de9d3",
+      "bytes": 100
+    }
+  },
+  {
+    "name": "b-frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-frozen-install.txt",
+      "rawSha256": "cafbe9a49aaa01aa708a3d86b2eb2d024ddfd7d9fcfa0bfbb87c8369f12f2af6",
+      "bytes": 1935
+    }
+  },
+  {
+    "name": "b-wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/wheel"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-wheel-build.txt",
+      "rawSha256": "6a676c6339e93a0dfdd1f7136b69d8aa62b84b29a849d3fd3c09d8ac40fff7e7",
+      "bytes": 148
+    }
+  },
+  {
+    "name": "b-wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment/bin/python",
+      "--no-deps",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-wheel-install.txt",
+      "rawSha256": "933b109433f744c0ca5798d806d05c446e7aecc91c2aac1cb9d5900a945f7d59",
+      "bytes": 348
+    }
+  },
+  {
+    "name": "b-environment",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "b-fixture-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "python",
+      "-m",
+      "twin_cad",
+      "build",
+      "--fixture",
+      "validation/fixtures/m4/TEST-M4.json",
+      "--output",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/exports"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-fixture-build.txt",
+      "rawSha256": "d4d65c20068ba0272c7f6b7af32989d43baab87934ec635dbda4a3f29eb6f009",
+      "bytes": 106
+    }
+  },
+  {
+    "name": "b-independent-verify",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "python",
+      "-m",
+      "twin_cad",
+      "verify",
+      "--fixture",
+      "validation/fixtures/m4/TEST-M4.json",
+      "--output",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/exports"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-independent-verify.txt",
+      "rawSha256": "c3f5f6164a997a684471c05aff86131415f8505728f32ad5cea39f1a6eab8033",
+      "bytes": 8350
+    }
+  },
+  {
+    "name": "b-pytest",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "run",
+      "--frozen",
+      "--no-sync",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "pytest",
+      "cad/tests",
+      "validation/tests_python",
+      "-q",
+      "--junitxml=/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/tests.xml"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/uv-cache",
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-pytest.txt",
+      "rawSha256": "accb609f48dbe014b4d566e1a6eda83d6a1ce08bfcf92c4a06b8d836f97253f1",
+      "bytes": 100
+    }
+  },
+  {
+    "name": "historical-upstream-check",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "digital-twin/tools/compiler/upstream.mjs",
+      "--check"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q",
+    "environment": {
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/historical-upstream-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    }
+  },
+  {
+    "name": "historical-graph-check",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "digital-twin/tools/compiler/gate.mjs",
+      "--check"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q",
+    "environment": {
+      "UV_NO_PROGRESS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/historical-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    }
+  }
+]

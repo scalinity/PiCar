@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: positive JCS vector: exponents
+ok 1 - positive JCS vector: exponents
+  ---
+  duration_ms: 0.567333
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: unicode-utf16-order
+ok 2 - positive JCS vector: unicode-utf16-order
+  ---
+  duration_ms: 0.097666
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: sorted-id-set
+ok 3 - positive JCS vector: sorted-id-set
+  ---
+  duration_ms: 0.077125
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: safe-integer-count
+ok 4 - positive JCS vector: safe-integer-count
+  ---
+  duration_ms: 0.071125
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: strings-and-authored-order
+ok 5 - positive JCS vector: strings-and-authored-order
+  ---
+  duration_ms: 0.063084
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: large-non-count-number
+ok 6 - positive JCS vector: large-non-count-number
+  ---
+  duration_ms: 0.042709
+  type: 'test'
+  ...
+# Subtest: positive JCS vector: ieee754-non-count-rounding
+ok 7 - positive JCS vector: ieee754-non-count-rounding
+  ---
+  duration_ms: 0.046542
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-zero
+ok 8 - negative JCS vector: negative-zero
+  ---
+  duration_ms: 0.161917
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-zero-exponent
+ok 9 - negative JCS vector: negative-zero-exponent
+  ---
+  duration_ms: 0.06875
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-underflow
+ok 10 - negative JCS vector: negative-underflow
+  ---
+  duration_ms: 0.066459
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: infinity
+ok 11 - negative JCS vector: infinity
+  ---
+  duration_ms: 0.060458
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: negative-infinity
+ok 12 - negative JCS vector: negative-infinity
+  ---
+  duration_ms: 0.037125
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: nan
+ok 13 - negative JCS vector: nan
+  ---
+  duration_ms: 0.091125
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: duplicate-key
+ok 14 - negative JCS vector: duplicate-key
+  ---
+  duration_ms: 0.061042
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: escaped-duplicate-key
+ok 15 - negative JCS vector: escaped-duplicate-key
+  ---
+  duration_ms: 0.04625
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: nested-duplicate
+ok 16 - negative JCS vector: nested-duplicate
+  ---
+  duration_ms: 0.051916
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: lone-surrogate
+ok 17 - negative JCS vector: lone-surrogate
+  ---
+  duration_ms: 0.042083
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: lone-surrogate-key
+ok 18 - negative JCS vector: lone-surrogate-key
+  ---
+  duration_ms: 0.027708
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: unsafe-revision
+ok 19 - negative JCS vector: unsafe-revision
+  ---
+  duration_ms: 0.031
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: unsafe-count
+ok 20 - negative JCS vector: unsafe-count
+  ---
+  duration_ms: 0.023417
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: fractional-revision
+ok 21 - negative JCS vector: fractional-revision
+  ---
+  duration_ms: 0.021083
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: fractional-predicate-version
+ok 22 - negative JCS vector: fractional-predicate-version
+  ---
+  duration_ms: 0.027167
+  type: 'test'
+  ...
+# Subtest: negative JCS vector: unsafe-contract-version
+ok 23 - negative JCS vector: unsafe-contract-version
+  ---
+  duration_ms: 0.021875
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: NaN
+ok 24 - negative programmatic numeric: NaN
+  ---
+  duration_ms: 0.059917
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: Infinity
+ok 25 - negative programmatic numeric: Infinity
+  ---
+  duration_ms: 0.035125
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: -Infinity
+ok 26 - negative programmatic numeric: -Infinity
+  ---
+  duration_ms: 0.020791
+  type: 'test'
+  ...
+# Subtest: negative programmatic numeric: negative zero
+ok 27 - negative programmatic numeric: negative zero
+  ---
+  duration_ms: 0.022833
+  type: 'test'
+  ...
+# Subtest: domain separation and raw bytes are distinct
+ok 28 - domain separation and raw bytes are distinct
+  ---
+  duration_ms: 0.258917
+  type: 'test'
+  ...
+# Subtest: cross-language results match exact canonical bytes, hashes and rejection reasons
+ok 29 - cross-language results match exact canonical bytes, hashes and rejection reasons
+  ---
+  duration_ms: 1.240333
+  type: 'test'
+  ...
+# Subtest: hash inputs are exhaustively classified and acyclic
+ok 30 - hash inputs are exhaustively classified and acyclic
+  ---
+  duration_ms: 1.284875
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 91.485459

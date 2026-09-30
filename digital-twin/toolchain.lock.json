@@ -1,0 +1,286 @@
+{
+  "contractVersion": 1,
+  "scope": "M4 TEST-ONLY canonical qualification environment",
+  "versions": {
+    "python": "3.12.14",
+    "uv": "uv 0.12.15 (Homebrew 2026-09-15 aarch64-apple-darwin)",
+    "node": "v26.8.2",
+    "cadquery": "2.8.0",
+    "ocp": "7.9.3.1.1",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "pytest": "9.1.1",
+    "hatchling": "1.32.4",
+    "rfc8785": "0.1.4"
+  },
+  "platform": {
+    "os": "macOS",
+    "productVersion": "27.0",
+    "buildVersion": "26A428",
+    "architecture": "arm64"
+  },
+  "lockInputs": [
+    {
+      "path": "digital-twin/pyproject.toml",
+      "rawSha256": "d4b8cf600d27906724d53aceaa4aaead192f0d902ff0d105ceba180f550679de",
+      "bytes": 277
+    },
+    {
+      "path": "digital-twin/uv.lock",
+      "rawSha256": "628a53e1a1a0ec7b21eed3d96dbbb672d872dcd88ca6776631439f346d718b9d",
+      "bytes": 323315
+    },
+    {
+      "path": "digital-twin/cad/pyproject.toml",
+      "rawSha256": "d4fedee27803e41591d5f07e50b84619d9d951f396918f891051eb1c48a197f0",
+      "bytes": 454
+    }
+  ],
+  "packages": [
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1"
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.3"
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "cadquery",
+      "version": "2.8.0"
+    },
+    {
+      "name": "cadquery-ocp",
+      "version": "7.9.3.1.1"
+    },
+    {
+      "name": "cadquery-ocp-proxy",
+      "version": "7.9.3.1.1"
+    },
+    {
+      "name": "casadi",
+      "version": "3.8.1"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.4.0"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1"
+    },
+    {
+      "name": "ezdxf",
+      "version": "1.4.4"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.66.1"
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0"
+    },
+    {
+      "name": "hatchling",
+      "version": "1.32.4"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.0"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1"
+    },
+    {
+      "name": "llvmlite",
+      "version": "0.49.0"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.2"
+    },
+    {
+      "name": "more-itertools",
+      "version": "11.1.0"
+    },
+    {
+      "name": "msgpack",
+      "version": "1.2.3"
+    },
+    {
+      "name": "multidict",
+      "version": "6.9.1"
+    },
+    {
+      "name": "multimethod",
+      "version": "1.12"
+    },
+    {
+      "name": "nlopt",
+      "version": "2.11.0"
+    },
+    {
+      "name": "numba",
+      "version": "0.67.0"
+    },
+    {
+      "name": "numpy",
+      "version": "2.4.4"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pathspec",
+      "version": "1.1.1"
+    },
+    {
+      "name": "picar-m1-hash-vectors",
+      "version": "0.1.0"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0"
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.4"
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "pytest",
+      "version": "9.1.1"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0"
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.3"
+    },
+    {
+      "name": "rfc8785",
+      "version": "0.1.4"
+    },
+    {
+      "name": "runtype",
+      "version": "0.5.3"
+    },
+    {
+      "name": "scipy",
+      "version": "1.17.1"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0"
+    },
+    {
+      "name": "tomlkit",
+      "version": "0.15.1"
+    },
+    {
+      "name": "trame",
+      "version": "4.0.0"
+    },
+    {
+      "name": "trame-client",
+      "version": "4.1.2"
+    },
+    {
+      "name": "trame-common",
+      "version": "1.2.7"
+    },
+    {
+      "name": "trame-components",
+      "version": "2.5.0"
+    },
+    {
+      "name": "trame-server",
+      "version": "4.0.0"
+    },
+    {
+      "name": "trame-vtk",
+      "version": "2.11.17"
+    },
+    {
+      "name": "trame-vuetify",
+      "version": "3.3.0"
+    },
+    {
+      "name": "trove-classifiers",
+      "version": "2026.9.21.13"
+    },
+    {
+      "name": "twin-cad",
+      "version": "0.1.0"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "vtk",
+      "version": "9.6.2"
+    },
+    {
+      "name": "wslink",
+      "version": "2.5.7"
+    },
+    {
+      "name": "yarl",
+      "version": "1.25.1"
+    }
+  ],
+  "buildOptions": {
+    "dependencyGroup": "m4",
+    "packageInstall": "Build wheel from cad/ using locked hatchling without isolation, install exact wheel without dependency resolution",
+    "numericType": "float64",
+    "outputComputationRounding": 1e-10,
+    "tessellationLinearMm": 0.005,
+    "tessellationAngularRad": 0.05,
+    "units": "mm",
+    "basis": "RH-XFORWARD-YLEFT-ZUP",
+    "quaternionOrder": "XYZW",
+    "criticalSurfaceBudgetMm": 0.02,
+    "contextSurfaceBudgetMm": 0.1,
+    "interfacePositionBudgetMm": 0.01,
+    "interfaceAngleBudgetRad": 0.0001
+  },
+  "scopeLimitations": [
+    "Planar synthetic through-hole profile only; unbounded/nonplanar surface proofs BLOCKED",
+    "No real PiCar model or manufacturing tolerance admission",
+    "No GPU/native/app qualification",
+    "Original FreeCAD/Codex/CUA bootstrap remains historically unqualified; M4 CLI does not invoke those bridges"
+  ]
+}

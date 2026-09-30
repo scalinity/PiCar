@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="13" failures="4" skipped="0" tests="48" time="42.331" timestamp="2026-09-30T03:54:31.630512-04:00" hostname="macbook.local"><testcase classname="cad.tests.test_toolchain" name="test_physical_dof_and_independent_residuals[0]" time="0.049" /><testcase classname="cad.tests.test_toolchain" name="test_physical_dof_and_independent_residuals[1]" time="0.005" /><testcase classname="cad.tests.test_toolchain" name="test_physical_dof_and_independent_residuals[2]" time="0.021" /><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[1-0]" time="0.051"><failure message="twin_cad.contracts.Invalid: UNINTENDED_DOF">source = {'id': 'TEST-M4-PLANAR-ASSEMBLIES', 'scope': 'TEST-ONLY', 'unit': 'mm', 'basis': 'RH-XFORWARD-YLEFT-ZUP', ...}
+index = 0, seed = 1
+
+    @pytest.mark.parametrize("index", [0, 1, 2])
+    @pytest.mark.parametrize("seed", [1, 19, 74])
+    def test_reordered_constraints_and_perturbed_starts(source, index, seed):
+        a = source["assemblies"][index]
+        original = solve(a)
+        a["instanceIds"].reverse()
+        a["constraints"].reverse()
+&gt;       perturbed = solve(a, seed)
+                    ^^^^^^^^^^^^^^
+
+cad/tests/test_toolchain.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+assembly = {'id': 'TEST-FIXED', 'instanceIds': ['TEST-INS-B', 'TEST-INS-A'], 'anchor': 'TEST-INS-A', 'anchorPose': {'translationMm': [100, 7, 11], 'quaternionXYZW': [0, 0, 0.7071067811865476, 0.7071067811865476]}, ...}
+start_seed = 1
+
+    def solve(assembly, start_seed=0):
+        ids = sorted(assembly["instanceIds"])
+        moving = [i for i in ids if i != assembly["anchor"]]
+        anchor = frame(assembly["anchorPose"])
+    
+        def poses(x):
+            result = {assembly["anchor"]: anchor}
+            for n, ident in enumerate(moving):
+                m = np.eye(4)
+                m[:3, 3] = x[6*n:6*n+3]
+                m[:3, :3] = Rotation.from_rotvec(x[6*n+3:6*n+6]).as_matrix()
+                result[ident] = m
+            return result
+    
+        constraints = sorted(assembly["constraints"], key=lambda c: c["id"])
+    
+        def residual(x, gauges=False):
+            p = poses(x)
+            values = []
+            for c in constraints:
+                a, b = p[c["a"]] @ frame(c["frameA"]), p[c["b"]] @ frame(c["frameB"])
+                values.extend(a[:3, 3] - b[:3, 3])
+                relative = a[:3, :3].T @ b[:3, :3]
+                if c["kind"] == "fixed":
+                    values.extend(Rotation.from_matrix(relative).as_rotvec())
+                else:
+                    # Directed axis dot=+1 is required. Cross alone would allow mirrors.
+                    values.extend(relative[:, 2] - np.array([0., 0., 1.]))
+                    if gauges:
+                        values.append(np.arctan2(relative[1, 0], relative[0, 0]) - c["referenceRad"])
+            return np.asarray(values, dtype=np.float64)
+    
+        rng = np.random.default_rng(start_seed)
+        x = np.zeros(6 * len(moving))
+        if start_seed:
+            x += rng.uniform(-0.25, 0.25, len(x))
+        result = least_squares(lambda v: residual(v, True), x, ftol=1e-13, xtol=1e-13,
+                               gtol=1e-13, max_nfev=2000, diff_step=1e-5)
+        if not result.success or np.max(np.abs(residual(result.x, True)), initial=0) &gt; 1e-8:
+            raise Invalid("INCONSISTENT_OR_OVERCONSTRAINED")
+        # Rank of physical constraints excludes the sampled revolute reference gauge.
+        step = 1e-6
+        jac = np.column_stack([(residual(result.x + np.eye(len(x))[n]*step) -
+                                residual(result.x - np.eye(len(x))[n]*step))/(2*step) for n in range(len(x))])
+        rank = int(np.linalg.matrix_rank(jac, tol=1e-6))
+        dof = len(x) - rank
+        if dof != assembly["expectedDOF"]:
+&gt;           raise Invalid("UNINTENDED_DOF")
+E           twin_cad.contracts.Invalid: UNINTENDED_DOF
+
+.venv/lib/python3.12/site-packages/twin_cad/solver.py:56: Invalid</failure></testcase><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[1-1]" time="0.008" /><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[1-2]" time="0.048" /><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[19-0]" time="0.079"><failure message="twin_cad.contracts.Invalid: UNINTENDED_DOF">source = {'id': 'TEST-M4-PLANAR-ASSEMBLIES', 'scope': 'TEST-ONLY', 'unit': 'mm', 'basis': 'RH-XFORWARD-YLEFT-ZUP', ...}
+index = 0, seed = 19
+
+    @pytest.mark.parametrize("index", [0, 1, 2])
+    @pytest.mark.parametrize("seed", [1, 19, 74])
+    def test_reordered_constraints_and_perturbed_starts(source, index, seed):
+        a = source["assemblies"][index]
+        original = solve(a)
+        a["instanceIds"].reverse()
+        a["constraints"].reverse()
+&gt;       perturbed = solve(a, seed)
+                    ^^^^^^^^^^^^^^
+
+cad/tests/test_toolchain.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+assembly = {'id': 'TEST-FIXED', 'instanceIds': ['TEST-INS-B', 'TEST-INS-A'], 'anchor': 'TEST-INS-A', 'anchorPose': {'translationMm': [100, 7, 11], 'quaternionXYZW': [0, 0, 0.7071067811865476, 0.7071067811865476]}, ...}
+start_seed = 19
+
+    def solve(assembly, start_seed=0):
+        ids = sorted(assembly["instanceIds"])
+        moving = [i for i in ids if i != assembly["anchor"]]
+        anchor = frame(assembly["anchorPose"])
+    
+        def poses(x):
+            result = {assembly["anchor"]: anchor}
+            for n, ident in enumerate(moving):
+                m = np.eye(4)
+                m[:3, 3] = x[6*n:6*n+3]
+                m[:3, :3] = Rotation.from_rotvec(x[6*n+3:6*n+6]).as_matrix()
+                result[ident] = m
+            return result
+    
+        constraints = sorted(assembly["constraints"], key=lambda c: c["id"])
+    
+        def residual(x, gauges=False):
+            p = poses(x)
+            values = []
+            for c in constraints:
+                a, b = p[c["a"]] @ frame(c["frameA"]), p[c["b"]] @ frame(c["frameB"])
+                values.extend(a[:3, 3] - b[:3, 3])
+                relative = a[:3, :3].T @ b[:3, :3]
+                if c["kind"] == "fixed":
+                    values.extend(Rotation.from_matrix(relative).as_rotvec())
+                else:
+                    # Directed axis dot=+1 is required. Cross alone would allow mirrors.
+                    values.extend(relative[:, 2] - np.array([0., 0., 1.]))
+                    if gauges:
+                        values.append(np.arctan2(relative[1, 0], relative[0, 0]) - c["referenceRad"])
+            return np.asarray(values, dtype=np.float64)
+    
+        rng = np.random.default_rng(start_seed)
+        x = np.zeros(6 * len(moving))
+        if start_seed:
+            x += rng.uniform(-0.25, 0.25, len(x))
+        result = least_squares(lambda v: residual(v, True), x, ftol=1e-13, xtol=1e-13,
+                               gtol=1e-13, max_nfev=2000, diff_step=1e-5)
+        if not result.success or np.max(np.abs(residual(result.x, True)), initial=0) &gt; 1e-8:
+            raise Invalid("INCONSISTENT_OR_OVERCONSTRAINED")
+        # Rank of physical constraints excludes the sampled revolute reference gauge.
+        step = 1e-6
+        jac = np.column_stack([(residual(result.x + np.eye(len(x))[n]*step) -
+                                residual(result.x - np.eye(len(x))[n]*step))/(2*step) for n in range(len(x))])
+        rank = int(np.linalg.matrix_rank(jac, tol=1e-6))
+        dof = len(x) - rank
+        if dof != assembly["expectedDOF"]:
+&gt;           raise Invalid("UNINTENDED_DOF")
+E           twin_cad.contracts.Invalid: UNINTENDED_DOF
+
+.venv/lib/python3.12/site-packages/twin_cad/solver.py:56: Invalid</failure></testcase><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[19-1]" time="0.009" /><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[19-2]" time="0.045" /><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[74-0]" time="0.052"><failure message="twin_cad.contracts.Invalid: UNINTENDED_DOF">source = {'id': 'TEST-M4-PLANAR-ASSEMBLIES', 'scope': 'TEST-ONLY', 'unit': 'mm', 'basis': 'RH-XFORWARD-YLEFT-ZUP', ...}
+index = 0, seed = 74
+
+    @pytest.mark.parametrize("index", [0, 1, 2])
+    @pytest.mark.parametrize("seed", [1, 19, 74])
+    def test_reordered_constraints_and_perturbed_starts(source, index, seed):
+        a = source["assemblies"][index]
+        original = solve(a)
+        a["instanceIds"].reverse()
+        a["constraints"].reverse()
+&gt;       perturbed = solve(a, seed)
+                    ^^^^^^^^^^^^^^
+
+cad/tests/test_toolchain.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+assembly = {'id': 'TEST-FIXED', 'instanceIds': ['TEST-INS-B', 'TEST-INS-A'], 'anchor': 'TEST-INS-A', 'anchorPose': {'translationMm': [100, 7, 11], 'quaternionXYZW': [0, 0, 0.7071067811865476, 0.7071067811865476]}, ...}
+start_seed = 74
+
+    def solve(assembly, start_seed=0):
+        ids = sorted(assembly["instanceIds"])
+        moving = [i for i in ids if i != assembly["anchor"]]
+        anchor = frame(assembly["anchorPose"])
+    
+        def poses(x):
+            result = {assembly["anchor"]: anchor}
+            for n, ident in enumerate(moving):
+                m = np.eye(4)
+                m[:3, 3] = x[6*n:6*n+3]
+                m[:3, :3] = Rotation.from_rotvec(x[6*n+3:6*n+6]).as_matrix()
+                result[ident] = m
+            return result
+    
+        constraints = sorted(assembly["constraints"], key=lambda c: c["id"])
+    
+        def residual(x, gauges=False):
+            p = poses(x)
+            values = []
+            for c in constraints:
+                a, b = p[c["a"]] @ frame(c["frameA"]), p[c["b"]] @ frame(c["frameB"])
+                values.extend(a[:3, 3] - b[:3, 3])
+                relative = a[:3, :3].T @ b[:3, :3]
+                if c["kind"] == "fixed":
+                    values.extend(Rotation.from_matrix(relative).as_rotvec())
+                else:
+                    # Directed axis dot=+1 is required. Cross alone would allow mirrors.
+                    values.extend(relative[:, 2] - np.array([0., 0., 1.]))
+                    if gauges:
+                        values.append(np.arctan2(relative[1, 0], relative[0, 0]) - c["referenceRad"])
+            return np.asarray(values, dtype=np.float64)
+    
+        rng = np.random.default_rng(start_seed)
+        x = np.zeros(6 * len(moving))
+        if start_seed:
+            x += rng.uniform(-0.25, 0.25, len(x))
+        result = least_squares(lambda v: residual(v, True), x, ftol=1e-13, xtol=1e-13,
+                               gtol=1e-13, max_nfev=2000, diff_step=1e-5)
+        if not result.success or np.max(np.abs(residual(result.x, True)), initial=0) &gt; 1e-8:
+            raise Invalid("INCONSISTENT_OR_OVERCONSTRAINED")
+        # Rank of physical constraints excludes the sampled revolute reference gauge.
+        step = 1e-6
+        jac = np.column_stack([(residual(result.x + np.eye(len(x))[n]*step) -
+                                residual(result.x - np.eye(len(x))[n]*step))/(2*step) for n in range(len(x))])
+        rank = int(np.linalg.matrix_rank(jac, tol=1e-6))
+        dof = len(x) - rank
+        if dof != assembly["expectedDOF"]:
+&gt;           raise Invalid("UNINTENDED_DOF")
+E           twin_cad.contracts.Invalid: UNINTENDED_DOF
+
+.venv/lib/python3.12/site-packages/twin_cad/solver.py:56: Invalid</failure></testcase><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[74-1]" time="0.008" /><testcase classname="cad.tests.test_toolchain" name="test_reordered_constraints_and_perturbed_starts[74-2]" time="0.046" /><testcase classname="cad.tests.test_toolchain" name="test_inconsistent_closed_loop_rejects" time="0.017" /><testcase classname="cad.tests.test_toolchain" name="test_underconstraint_rejects_expected_fixed" time="0.025" /><testcase classname="cad.tests.test_toolchain" name="test_extra_contradictory_constraint_rejects" time="0.068" /><testcase classname="cad.tests.test_toolchain" name="test_independent_oracle_rejects_mirrored_axis_solution" time="0.005" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[unknown]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[zero]" time="0.000" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[nan]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[production]" time="0.000" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[units]" time="0.000" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[duplicate]" time="0.000" /><testcase classname="cad.tests.test_toolchain" name="test_source_firewalls[quaternion]" time="0.000" /><testcase classname="cad.tests.test_toolchain" name="test_solids_features_complete_surface_and_export" time="0.666"><failure message="twin_cad.contracts.Invalid: FEATURE_GEOMETRY">source = {'id': 'TEST-M4-PLANAR-ASSEMBLIES', 'scope': 'TEST-ONLY', 'unit': 'mm', 'basis': 'RH-XFORWARD-YLEFT-ZUP', ...}
+tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_solids_features_complete_0')
+
+    def test_solids_features_complete_surface_and_export(source, tmp_path):
+        build(source, tmp_path)
+&gt;       result = verify(source, tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+cad/tests/test_toolchain.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</failure></testcase><testcase classname="cad.tests.test_toolchain" name="test_production_cli_blocks_without_solids[build-extra0-2]" time="0.788" /><testcase classname="cad.tests.test_toolchain" name="test_production_cli_blocks_without_solids[verify-extra1-2]" time="0.516" /><testcase classname="cad.tests.test_toolchain" name="test_production_cli_blocks_without_solids[lint-extra2-2]" time="0.244" /><testcase classname="cad.tests.test_toolchain" name="test_production_cli_blocks_without_solids[lint-extra3-0]" time="0.542" /><testcase classname="cad.tests.test_toolchain" name="test_production_cli_blocks_without_solids[build-extra4-2]" time="0.307" /><testcase classname="cad.tests.test_toolchain" name="test_strict_json_rejects[{&quot;a&quot;:1,&quot;a&quot;:2}]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_strict_json_rejects[{&quot;a&quot;:-0}]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_strict_json_rejects[{&quot;a&quot;:-0.0}]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_strict_json_rejects[{&quot;a&quot;:NaN}]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_strict_json_rejects[{&quot;a&quot;:&quot;\\ud800&quot;}]" time="0.001" /><testcase classname="cad.tests.test_toolchain" name="test_cli_exit_one_and_three" time="0.543" /><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[wrong-handed-SURFACE_GRID_DEVIATION]" time="0.846"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati0')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[shifted-pivot-SHIFTED_PIVOT]" time="0.803"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati1')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[missing-hole-CAPPED_OR_MISSING_HOLE]" time="0.694"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati2')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[wrong-axis-WRONG_AXIS_POLARITY_OR_ROLL]" time="0.691"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati3')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[swapped-instance-SWAPPED_INSTANCE_DEFINITION]" time="0.698"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati4')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[1000x-SURFACE_GRID_DEVIATION]" time="0.695"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati5')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[hole-wall-removed-OPEN_OR_DUPLICATE_TOPOLOGY]" time="0.679"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati6')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[overlap-OPEN_OR_DUPLICATE_TOPOLOGY]" time="0.679"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati7')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[reversed-winding-WINDING_OR_WRONG_HANDED]" time="0.663"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati8')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[double-conversion-UNITS_OR_DOUBLE_CONVERSION]" time="0.651"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati9')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_independent_export_mutations_reject[stale-fingerprint-FEATURE_TABLE_NOT_BREP]" time="0.663"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_independent_export_mutati10')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_actual_brep_missing_hole_not_metadata" time="0.671"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_actual_brep_missing_hole_0')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase><testcase classname="validation.tests_python.test_independent_mutations" name="test_actual_brep_swapped_definition" time="0.659"><error message="failed on setup with &quot;twin_cad.contracts.Invalid: FEATURE_GEOMETRY&quot;">tmp_path = PosixPath('/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/pytest-of-danny/pytest-0/test_actual_brep_swapped_defin0')
+
+    @pytest.fixture
+    def exported(tmp_path):
+        source = load(TWIN / "validation/fixtures/m4/TEST-M4.json")
+        build(source, tmp_path)
+&gt;       assert verify(source, tmp_path)["status"] == "PASS"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+validation/tests_python/test_independent_mutations.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:239: in verify
+    "shapes": [shape_witness(d, out) for d in sorted(source["definitions"], key=lambda d: d["id"])],
+               ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:220: in shape_witness
+    require(abs(features["volumeMm3"]-solid.Volume()) &lt; 1e-8 and features["boundsMm"] == [0, 0, 0, l, w, h], "FEATURE_GEOMETRY")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, reason = 'FEATURE_GEOMETRY'
+
+    def require(condition, reason):
+        if not condition:
+&gt;           raise Invalid(reason)
+E           twin_cad.contracts.Invalid: FEATURE_GEOMETRY
+
+.venv/lib/python3.12/site-packages/twin_cad/verification.py:17: Invalid</error></testcase></testsuite></testsuites>

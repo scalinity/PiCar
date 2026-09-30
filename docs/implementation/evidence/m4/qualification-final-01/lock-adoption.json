@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "M4 lock adoption; all production semantics and M3 source/evidence remain accepted",
+  "accepted": {
+    "m1": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+    "m2": "8d8d30d0c7b077504916a26d80c211e2fc52c4e2",
+    "m3": "baddbfe6953237d436cbedb963c6ea88d2960f05"
+  },
+  "activeIdentities": {
+    "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+    "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2"
+  },
+  "deltas": [
+    {
+      "path": "digital-twin/pyproject.toml",
+      "oldRawSha256": "ac8198750cdeca2b6c893a7c7df2d348eef78f04eecbcf87bb0f89d29193fc00",
+      "oldBytes": 153,
+      "newRawSha256": "d4b8cf600d27906724d53aceaa4aaead192f0d902ff0d105ceba180f550679de",
+      "newBytes": 277,
+      "preservedAt": "digital-twin/validation/m4/prior-m1/pyproject.toml",
+      "classification": "M4 optional Python dependency group/local cad package; rfc8785==0.1.4 and M1 virtual package unchanged"
+    },
+    {
+      "path": "digital-twin/uv.lock",
+      "oldRawSha256": "97e6877d35570239e5f27ec48eb11c8e6f8985627c254e354bb3adade9580e19",
+      "oldBytes": 964,
+      "newRawSha256": "628a53e1a1a0ec7b21eed3d96dbbb672d872dcd88ca6776631439f346d718b9d",
+      "newBytes": 323315,
+      "preservedAt": "digital-twin/validation/m4/prior-m1/uv.lock",
+      "classification": "M4 optional Python dependency group/local cad package; rfc8785==0.1.4 and M1 virtual package unchanged"
+    }
+  ],
+  "unchangedBindings": 722,
+  "oldDirectChecks": "Expected lock drift in M1/M2 old --check. Verify their original locks in isolated mirrors and this current adoption separately; old receipts remain immutable."
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "name": "CadQuery release",
+    "url": "https://api.github.com/repos/CadQuery/cadquery/releases/tags/v2.8.0",
+    "httpStatus": 200,
+    "tag": "v2.8.0",
+    "release": "2026-06-20T17:53:53Z",
+    "description": "See [changes.md](https://github.com/CadQuery/cadquery/blob/v2.8.0/changes.md)."
+  },
+  {
+    "name": "OCP release",
+    "url": "https://api.github.com/repos/CadQuery/OCP/releases/tags/7.9.3.1.1",
+    "httpStatus": 200,
+    "tag": "7.9.3.1.1",
+    "release": "2026-05-25T10:56:59Z",
+    "description": "Dummy release to enable support for 3.14 on pypi"
+  },
+  {
+    "name": "CadQuery distribution",
+    "url": "https://pypi.org/pypi/cadquery/2.8.0/json",
+    "httpStatus": 200,
+    "version": "2.8.0",
+    "requiresPython": ">=3.11",
+    "dependencies": [
+      "cadquery-ocp<8.0,>=7.9.3.1",
+      "ezdxf>=1.3.0",
+      "multimethod<2.0,>=1.11",
+      "nlopt<3.0,>=2.9.0",
+      "runtype",
+      "casadi",
+      "trame",
+      "trame-vtk",
+      "trame-components",
+      "trame-vuetify",
+      "pyparsing>=3.0.0",
+      "scipy",
+      "numba",
+      "docutils; extra == \"dev\"",
+      "ipython; extra == \"dev\"",
+      "pytest; extra == \"dev\"",
+      "ipython; extra == \"ipython\""
+    ],
+    "license": "Apache Public License 2.0",
+    "files": [
+      {
+        "filename": "cadquery-2.8.0-py3-none-any.whl",
+        "rawSha256": "0acaddf36415551c26c3f8237907980ba86c277e211c32398121c839f719c81f",
+        "bytes": 201893
+      }
+    ]
+  },
+  {
+    "name": "OCP distribution",
+    "url": "https://pypi.org/pypi/cadquery-ocp/7.9.3.1.1/json",
+    "httpStatus": 200,
+    "version": "7.9.3.1.1",
+    "requiresPython": "<3.15,>=3.10",
+    "dependencies": [
+      "cadquery-ocp-proxy==7.9.3.1.1",
+      "vtk==9.6.2"
+    ],
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "filename": "cadquery_ocp-7.9.3.1.1-cp312-cp312-macosx_11_0_arm64.whl",
+        "rawSha256": "83b4d8e8d6e25e3ac8868ae998e52e176fc929fd61beaeb3a87af953b93b7ca4",
+        "bytes": 62625112
+      }
+    ]
+  }
+]

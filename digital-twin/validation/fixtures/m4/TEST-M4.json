@@ -1,0 +1,308 @@
+{
+  "id": "TEST-M4-PLANAR-ASSEMBLIES",
+  "scope": "TEST-ONLY",
+  "unit": "mm",
+  "basis": "RH-XFORWARD-YLEFT-ZUP",
+  "dimensionScope": "SYNTHETIC_AUTHORED_NOT_MEASURED",
+  "datum": "synthetic.x0-y0-z0",
+  "budgets": {
+    "criticalSurfaceMm": 0.02,
+    "contextSurfaceMm": 0.1,
+    "transformedInterfaceMm": 0.01,
+    "transformedInterfaceRad": 0.0001,
+    "sourceUncertainty": "NOT_A_MANUFACTURING_MEASUREMENT"
+  },
+  "definitions": [
+    {
+      "id": "TEST-DEF-A",
+      "dimensionScope": "SYNTHETIC_AUTHORED_NOT_MEASURED",
+      "parameters": {
+        "length": 24,
+        "width": 18,
+        "height": 3,
+        "holeX": 5,
+        "holeY": 4,
+        "holeLength": 4,
+        "holeWidth": 6
+      }
+    },
+    {
+      "id": "TEST-DEF-B",
+      "dimensionScope": "SYNTHETIC_AUTHORED_NOT_MEASURED",
+      "parameters": {
+        "length": 17,
+        "width": 13,
+        "height": 2,
+        "holeX": 3,
+        "holeY": 6,
+        "holeLength": 5,
+        "holeWidth": 3
+      }
+    },
+    {
+      "id": "TEST-DEF-C",
+      "dimensionScope": "SYNTHETIC_AUTHORED_NOT_MEASURED",
+      "parameters": {
+        "length": 20,
+        "width": 15,
+        "height": 4,
+        "holeX": 9,
+        "holeY": 3,
+        "holeLength": 3,
+        "holeWidth": 5
+      }
+    }
+  ],
+  "instances": [
+    {
+      "id": "TEST-INS-A",
+      "definitionId": "TEST-DEF-A"
+    },
+    {
+      "id": "TEST-INS-B",
+      "definitionId": "TEST-DEF-B"
+    },
+    {
+      "id": "TEST-INS-C",
+      "definitionId": "TEST-DEF-C"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "TEST-FIXED",
+      "instanceIds": [
+        "TEST-INS-A",
+        "TEST-INS-B"
+      ],
+      "anchor": "TEST-INS-A",
+      "anchorPose": {
+        "translationMm": [
+          100,
+          7,
+          11
+        ],
+        "quaternionXYZW": [
+          0,
+          0,
+          0.7071067811865476,
+          0.7071067811865476
+        ]
+      },
+      "expectedDOF": 0,
+      "constraints": [
+        {
+          "id": "TEST-CONN-FIXED",
+          "a": "TEST-INS-A",
+          "b": "TEST-INS-B",
+          "kind": "fixed",
+          "frameA": {
+            "translationMm": [
+              15,
+              4,
+              2
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "frameB": {
+            "translationMm": [
+              2,
+              1,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "TEST-REVOLUTE",
+      "instanceIds": [
+        "TEST-INS-A",
+        "TEST-INS-B"
+      ],
+      "anchor": "TEST-INS-A",
+      "anchorPose": {
+        "translationMm": [
+          2,
+          3,
+          5
+        ],
+        "quaternionXYZW": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "expectedDOF": 1,
+      "constraints": [
+        {
+          "id": "TEST-CONN-REVOLUTE",
+          "a": "TEST-INS-A",
+          "b": "TEST-INS-B",
+          "kind": "revolute",
+          "frameA": {
+            "translationMm": [
+              6,
+              4,
+              2
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "frameB": {
+            "translationMm": [
+              3,
+              2,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "referenceRad": 0.37,
+          "axisPolarity": "+Z",
+          "roll": "free physical DOF; sampled reference coordinate is a gauge"
+        }
+      ]
+    },
+    {
+      "id": "TEST-CLOSED-LOOP",
+      "instanceIds": [
+        "TEST-INS-A",
+        "TEST-INS-B",
+        "TEST-INS-C"
+      ],
+      "anchor": "TEST-INS-A",
+      "anchorPose": {
+        "translationMm": [
+          0,
+          0,
+          0
+        ],
+        "quaternionXYZW": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "expectedDOF": 0,
+      "constraints": [
+        {
+          "id": "TEST-LOOP-AB",
+          "a": "TEST-INS-A",
+          "b": "TEST-INS-B",
+          "kind": "fixed",
+          "frameA": {
+            "translationMm": [
+              12,
+              0,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "frameB": {
+            "translationMm": [
+              0,
+              0,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "id": "TEST-LOOP-BC",
+          "a": "TEST-INS-B",
+          "b": "TEST-INS-C",
+          "kind": "fixed",
+          "frameA": {
+            "translationMm": [
+              0,
+              7,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "frameB": {
+            "translationMm": [
+              0,
+              0,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "id": "TEST-LOOP-CA",
+          "a": "TEST-INS-C",
+          "b": "TEST-INS-A",
+          "kind": "fixed",
+          "frameA": {
+            "translationMm": [
+              0,
+              0,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "frameB": {
+            "translationMm": [
+              12,
+              7,
+              0
+            ],
+            "quaternionXYZW": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

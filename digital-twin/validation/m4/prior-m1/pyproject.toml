@@ -6,9 +6,3 @@ dependencies = ["rfc8785==0.1.4"]
 
 [tool.uv]
 package = false
-
-[dependency-groups]
-m4 = ["twin-cad", "pytest==9.1.1", "hatchling==1.32.4"]
-
-[tool.uv.sources]
-twin-cad = { path = "cad" }

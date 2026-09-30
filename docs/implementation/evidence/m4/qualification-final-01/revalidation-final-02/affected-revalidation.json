@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "m1DefaultEnvironment": {
+    "python": "Python 3.14.7",
+    "dependencyGroup": "default M1 only; new lock adds optional m4 group"
+  },
+  "hashVectors": {
+    "accepted": 7,
+    "rejected": 16,
+    "python312": "Python 3.12.14",
+    "python314": "Python 3.14.7",
+    "javascript": "Actual current execution",
+    "rust": "Retained accepted witness, unchanged input/library; no new Rust execution"
+  },
+  "affectedM1HashTests": 30,
+  "m2ReadonlyContracts": 12,
+  "priorBroadM1Attempt": {
+    "passes": 253,
+    "failures": 1,
+    "status": "FAIL environment/excluded-input",
+    "reason": "Unchanged synthetic nominal semantic test traverses registry including excluded private original; no private bytes copied. Full 254 acceptance retained from M3, not relabeled a new execution. Only lock/hash checks are affected by M4."
+  },
+  "fixtureInputHash": "751da9364ff40286b06155c5f818d1148b92e29d7676b5a6873e5441dad84890",
+  "fixtureJcsEquality": "PASS JS/Python exact source canonicalization",
+  "productionDependencies": "M4 CAD source not installed or referenced by runtime registry; production schema/model/graph identities unchanged",
+  "m3Checks": {
+    "status": "NOT_APPLICABLE new execution",
+    "reason": "No app/domain/session/content/native input or dependency changed. All 71+173 accepted M3 bindings independently verified; prior qualification retained, not counted again."
+  }
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "name": "m1-default-frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--python",
+      "3.14.7"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/m1-default-environment",
+      "UV_CACHE_DIR": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/m1-cache"
+    },
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/m1-default-frozen-install.txt",
+      "rawSha256": "5480a012f372fa71d3bd35f58cb758dbffe307dc58be8a92a1b82f53a851efab",
+      "bytes": 28
+    }
+  },
+  {
+    "name": "python312-hash-revalidation",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "tools/export/m4-hash-revalidation.mjs",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-b-UZENLa/environment/bin/python"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/python312-hash-revalidation.txt",
+      "rawSha256": "7ae2a6e2a575b451cf76b0f75517456ee254098b952e5153d4025ab6a94778b2",
+      "bytes": 2774
+    }
+  },
+  {
+    "name": "python314-hash-revalidation",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "tools/export/m4-hash-revalidation.mjs",
+      "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/m1-default-environment/bin/python"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/python314-hash-revalidation.txt",
+      "rawSha256": "48c3a4dcf5dce57edb1bf5b9d6981e15b7c0b8df78e8eb369918972c82ef0ebd",
+      "bytes": 2773
+    }
+  },
+  {
+    "name": "affected-m1-hash-tests",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "validation/tests/hash.test.mjs"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/affected-m1-hash-tests.txt",
+      "rawSha256": "dcb69170aea05d59250bae49a30fb233d6e58843005a854045f9616ace0d850a",
+      "bytes": 4683
+    }
+  },
+  {
+    "name": "current-m2-readonly-contracts",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "validation/m2/tests/contracts.test.mjs"
+    ],
+    "cwd": "/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m4-clean-a-Q7sS6q/digital-twin",
+    "environment": {},
+    "exit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/current-m2-readonly-contracts.txt",
+      "rawSha256": "1433242ee9066afdc5cdba8b4057f84eb52d90a4de442c1f70f6677767093468",
+      "bytes": 2842
+    }
+  }
+]

@@ -1,0 +1,657 @@
+{
+  "milestone": "M4",
+  "gate": "G-TOOLCHAIN",
+  "status": "PASS",
+  "scope": "M4 synthetic toolchain only",
+  "acceptedM3": "baddbfe6953237d436cbedb963c6ea88d2960f05",
+  "startReceipt": "62225d41c57a2a41b51b19165ecf38e8f99f070d",
+  "branch": "codex/m4-mechanical-toolchain",
+  "ownerAuthorization": "Approve everything including builds, etc, do what you have to do for M4",
+  "toolchainHash": "be4c1f8158fe16865c7f68c821ae3d87e846c7855cac058bee4902996c806add",
+  "fixtureInputHash": "751da9364ff40286b06155c5f818d1148b92e29d7676b5a6873e5441dad84890",
+  "upstream": {
+    "status": "PASS",
+    "scope": "M4 lock adoption; all production semantics and M3 source/evidence remain accepted",
+    "accepted": {
+      "m1": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+      "m2": "8d8d30d0c7b077504916a26d80c211e2fc52c4e2",
+      "m3": "baddbfe6953237d436cbedb963c6ea88d2960f05"
+    },
+    "activeIdentities": {
+      "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+      "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+      "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2"
+    },
+    "deltas": [
+      {
+        "path": "digital-twin/pyproject.toml",
+        "oldRawSha256": "ac8198750cdeca2b6c893a7c7df2d348eef78f04eecbcf87bb0f89d29193fc00",
+        "oldBytes": 153,
+        "newRawSha256": "d4b8cf600d27906724d53aceaa4aaead192f0d902ff0d105ceba180f550679de",
+        "newBytes": 277,
+        "preservedAt": "digital-twin/validation/m4/prior-m1/pyproject.toml",
+        "classification": "M4 optional Python dependency group/local cad package; rfc8785==0.1.4 and M1 virtual package unchanged"
+      },
+      {
+        "path": "digital-twin/uv.lock",
+        "oldRawSha256": "97e6877d35570239e5f27ec48eb11c8e6f8985627c254e354bb3adade9580e19",
+        "oldBytes": 964,
+        "newRawSha256": "628a53e1a1a0ec7b21eed3d96dbbb672d872dcd88ca6776631439f346d718b9d",
+        "newBytes": 323315,
+        "preservedAt": "digital-twin/validation/m4/prior-m1/uv.lock",
+        "classification": "M4 optional Python dependency group/local cad package; rfc8785==0.1.4 and M1 virtual package unchanged"
+      }
+    ],
+    "unchangedBindings": 722,
+    "oldDirectChecks": "Expected lock drift in M1/M2 old --check. Verify their original locks in isolated mirrors and this current adoption separately; old receipts remain immutable."
+  },
+  "checks": {
+    "lockedPackageInstallation": "PASS exact identical wheels; locked backend without isolation",
+    "fixedRevoluteClosedLoop": "PASS unique at declared reference, physical DOF 0/1/0",
+    "independentShapeAndInterfaceChecks": "PASS actual BRep and exact rational planar surface coverage",
+    "numericalBudgets": "PASS 0.02/0.10 mm surfaces; 0.01 mm/0.0001 rad interfaces",
+    "reorderedPerturbedStarts": "PASS",
+    "overUnderconstraint": "PASS classified validation failures",
+    "requiredMutations": "PASS wrong-handed, shifted-pivot, missing-hole, wrong-axis, swapped-instance, 1000x plus topology/winding/double-conversion/BRep mutants",
+    "unknownNumericInputs": "PASS BLOCKED before solids",
+    "cliExitPolicy": "PASS 0/1/2/3; production unresolved lint cannot release",
+    "independentCleanRebuilds": "PASS normalized JSON and BRep equal; STEP raw unequal due timestamps",
+    "affectedDependencyRevalidation": "PASS two Python lines, exact JCS common vectors, 30 hash tests, 12 read-only graph contracts",
+    "m3Preservation": "PASS all 71 source/173 evidence bindings and accepted experience retained; no new session execution"
+  },
+  "counts": {
+    "m4UniqueTests": 54,
+    "independentCleanRuns": 2,
+    "m1AffectedHashTests": 30,
+    "m2ReadOnlyContracts": 12,
+    "hashAcceptedPerPythonLine": 7,
+    "hashRejectedPerPythonLine": 16,
+    "counting": "No additive grand total; same 54 tests executed twice. Existing M3 counts remain accepted prior evidence, not new tests."
+  },
+  "qualifiedOutputs": "docs/implementation/evidence/m4/qualification-final-01",
+  "revalidation": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02",
+  "history": {
+    "initialCadRun": "4 FAIL / 31 PASS / 13 ERROR; rotvec branch rank and padded-bound defects fixed; XML retained",
+    "correctedSpike": "48/48 then 54/54; final clean runs separately qualified",
+    "broadM1Rerun": {
+      "passes": 253,
+      "failures": 1,
+      "status": "FAIL environment/excluded-input",
+      "reason": "Unchanged synthetic nominal semantic test traverses registry including excluded private original; no private bytes copied. Full 254 acceptance retained from M3, not relabeled a new execution. Only lock/hash checks are affected by M4."
+    },
+    "originalM3Incidents": "All accepted M3 archived diagnostics, unclassified initial database, keys/raw backups and recovery archive preserved; never read or changed by M4",
+    "rawEvidenceWhitespace": "Precisely scoped .gitattributes preserves raw OpenCascade STEP/BRep and initial failed-test XML bytes; source files retain default checks."
+  },
+  "limitations": {
+    "production": "BLOCKED Q-03–Q-12; no real kit solids, production datum choice or G-CAD/G-GEOMETRY admission",
+    "physical": "BLOCKED Q-01/Q-13; synthetic success proves no manufacturing tolerance, fit, torque, hidden engagement or owner equality",
+    "surfaceMethod": "Planar TEST profile only; unsupported/unbounded proof BLOCKED; no swept-path capability",
+    "runtime": "No TEST in production manifest; no GLB, frontend 3D, app/native build, hardware, M5–M14 or remote action",
+    "rights": "Q-17 remains scoped; no third-party binary/private source publication",
+    "native": "M3 reference/persistence/PDF only; GPU/performance and historical external CAD bridge qualification not extended"
+  },
+  "invalidation": "Any source, lock, fixture, validator/solver, policy or bound evidence change invalidates this M4 receipt and requires affected qualification. Production identities remain separately pinned. No output/self/report/pack hash enters upstream fixture/toolchain inputs.",
+  "rollback": "Preserve original M1 locks/Git objects and M3 keys/sessions/backups/incident/recovery archives; additive named M4 reversion, never reset/clean owner data.",
+  "sourceBindings": [
+    {
+      "path": ".gitattributes",
+      "rawSha256": "2725e1ce809855a21b2eb6a8baccdacc412753bd7ea93ea68e1f3e0346c853a6",
+      "bytes": 331
+    },
+    {
+      "path": "digital-twin/cad/pyproject.toml",
+      "rawSha256": "d4fedee27803e41591d5f07e50b84619d9d951f396918f891051eb1c48a197f0",
+      "bytes": 454
+    },
+    {
+      "path": "digital-twin/cad/README.md",
+      "rawSha256": "643d4a2abb7ed3c76c9dbb3b10e1d74e8215ffb3522b60897c56697a1c38453a",
+      "bytes": 6093
+    },
+    {
+      "path": "digital-twin/cad/tests/test_toolchain.py",
+      "rawSha256": "e83d5cd3de493ab53a1502ab134638fd0a4e99dc72e126d967d98033a2b0f549",
+      "bytes": 6712
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/__init__.py",
+      "rawSha256": "c6abd1ee40069e78534196e3102f34b28e60861fcdb007119aa8078fba5e83ac",
+      "bytes": 72
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/__main__.py",
+      "rawSha256": "159e0bc15c8541163c6496cfa755263e22a55071f9a724c149872724527a9a4e",
+      "bytes": 4145
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/contracts.py",
+      "rawSha256": "00ae6976c23d7d9f0ea6144c09143ab45564184c1d708229ebc62305e6a4810d",
+      "bytes": 6692
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/geometry.py",
+      "rawSha256": "22e399ec9ed4ead8e931ec15886c133de006e49b193e602de53471974bb67432",
+      "bytes": 3115
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/production-parameters.json",
+      "rawSha256": "3f5526e5f4774f8ecc1ff3744739975ecd90a9da22b515d9e67431912bf06d6f",
+      "bytes": 73121
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/solver.py",
+      "rawSha256": "12a1174cdbabba0a0d9e9ac361d26de40dcdcc2c2268622e33323df3fc04e155",
+      "bytes": 2907
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/verification.py",
+      "rawSha256": "21f1064dc220fd6507fa26ab36f814024cb89a46f4b0795357d906256ae71523",
+      "bytes": 15969
+    },
+    {
+      "path": "digital-twin/pyproject.toml",
+      "rawSha256": "d4b8cf600d27906724d53aceaa4aaead192f0d902ff0d105ceba180f550679de",
+      "bytes": 277
+    },
+    {
+      "path": "digital-twin/toolchain.lock.json",
+      "rawSha256": "c3143496ff93e1afc2042081d1b242f2d7e6aed6d17946d1c9342c53cf440e97",
+      "bytes": 5639
+    },
+    {
+      "path": "digital-twin/tools/export/fixtures.mjs",
+      "rawSha256": "8ed258fe4235d67df5c444e8e23e28012fb3f66f6596c2ecab7e055db3c63e7d",
+      "bytes": 3791
+    },
+    {
+      "path": "digital-twin/tools/export/m4-adoption.mjs",
+      "rawSha256": "427612e8f3035aaee1827b13fce487bdb19c0cd38f0998c5622ccbc2f33ed8ff",
+      "bytes": 3358
+    },
+    {
+      "path": "digital-twin/tools/export/m4-gate.mjs",
+      "rawSha256": "2ad1cdb954f25b036297e9f3debd2c009ae297feba3f2e6e9c64454b82a22ab2",
+      "bytes": 9109
+    },
+    {
+      "path": "digital-twin/tools/export/m4-hash-revalidation.mjs",
+      "rawSha256": "4bbb174d0b7574fa96492fa4e9aba926682695fd5c2915c387fec3f50c8f1f41",
+      "bytes": 1522
+    },
+    {
+      "path": "digital-twin/tools/export/m4-qualify.mjs",
+      "rawSha256": "3f2cef6d5ab8a978283c8769a36c7c91fcd64bfe2a6084c4ca1d45b178082e92",
+      "bytes": 6958
+    },
+    {
+      "path": "digital-twin/tools/export/m4-revalidate.mjs",
+      "rawSha256": "74f09ab86b1f61ce37b398bb3dbb52674157e5e69d586a729d621fbb5892a5f5",
+      "bytes": 4610
+    },
+    {
+      "path": "digital-twin/uv.lock",
+      "rawSha256": "628a53e1a1a0ec7b21eed3d96dbbb672d872dcd88ca6776631439f346d718b9d",
+      "bytes": 323315
+    },
+    {
+      "path": "digital-twin/validation/fixtures/m4/TEST-M4.json",
+      "rawSha256": "e325c77ee85ef43f12aedb30e0c0bff52a93c540c9da636a65794eb7e5f6288a",
+      "bytes": 6114
+    },
+    {
+      "path": "digital-twin/validation/m4/prior-m1/pyproject.toml",
+      "rawSha256": "ac8198750cdeca2b6c893a7c7df2d348eef78f04eecbcf87bb0f89d29193fc00",
+      "bytes": 153
+    },
+    {
+      "path": "digital-twin/validation/m4/prior-m1/uv.lock",
+      "rawSha256": "97e6877d35570239e5f27ec48eb11c8e6f8985627c254e354bb3adade9580e19",
+      "bytes": 964
+    },
+    {
+      "path": "digital-twin/validation/tests_python/test_independent_mutations.py",
+      "rawSha256": "31591327a4b4ab0132b0ce7c9feefd38106a2eda939ac9a7dc334bdbf44cb8a7",
+      "bytes": 3579
+    },
+    {
+      "path": "docs/digital-twin/ARCHITECTURE.md",
+      "rawSha256": "4dd8a2f3df251b1190466979150df68cb664eb31143ad77310af218d2961cf5f",
+      "bytes": 22914
+    },
+    {
+      "path": "docs/digital-twin/ASSET_PIPELINE_SPEC.md",
+      "rawSha256": "3ec5c6e30be736ca806ada45830cb84c19156d5d24b82361550b2f54f41af88d",
+      "bytes": 15075
+    },
+    {
+      "path": "docs/digital-twin/DIGITAL_TWIN_DATA_MODEL.md",
+      "rawSha256": "76d9670a32c8861c59a53d1537f2d0e54ae53b46b3f563b6e9e99b0177f457bd",
+      "bytes": 17952
+    },
+    {
+      "path": "docs/digital-twin/GATE_CONTRACTS.md",
+      "rawSha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad",
+      "bytes": 10265
+    },
+    {
+      "path": "docs/digital-twin/HASH_AND_PACK_CONTRACT.md",
+      "rawSha256": "1083bf837a1bc5528ddeb2952e94f79953051904db760985cc8ffe9c347d6681",
+      "bytes": 11641
+    },
+    {
+      "path": "docs/digital-twin/MILESTONE_REVIEW.md",
+      "rawSha256": "e096660e8f635e14f934c6c545c3c5dfdda9c9e24d06dd170ba94d60df3be224",
+      "bytes": 28324
+    },
+    {
+      "path": "docs/digital-twin/MILESTONES.md",
+      "rawSha256": "3e985112761c59b59d698b98fde559671de9f5a13bb497f04ef70097073467c5",
+      "bytes": 38169
+    },
+    {
+      "path": "docs/digital-twin/OPEN_QUESTIONS_AND_BLOCKERS.md",
+      "rawSha256": "809ea86a75010368b547ac0f9c0867742e419079ead46b8d35fdaa81187151b5",
+      "bytes": 18506
+    },
+    {
+      "path": "docs/digital-twin/REPOSITORY_CHANGE_MAP.md",
+      "rawSha256": "932927c243770f679dbec26ee056425672d5d9d8a5ca44b2da3f41a155338410",
+      "bytes": 16738
+    },
+    {
+      "path": "docs/digital-twin/SOURCE_PUBLICATION_CONTRACT.md",
+      "rawSha256": "c18122bf2aa3bb252ad4604632a2b377e7954d6ff8330109bc9905ec638c2f9a",
+      "bytes": 6801
+    },
+    {
+      "path": "docs/digital-twin/SOURCE_REGISTER.md",
+      "rawSha256": "3cd318687bbec39120ffa12409b616e0491fe8fbbf0226ad62cfb52e6af63328",
+      "bytes": 13119
+    },
+    {
+      "path": "docs/digital-twin/VERIFICATION_AND_TEST_PLAN.md",
+      "rawSha256": "e6201ef6fa9bb20e6152939a0b3b0009e81b3d65f9e5d078089d12277763342e",
+      "bytes": 19582
+    },
+    {
+      "path": "docs/implementation/M4_EXECUTION_PLAN.md",
+      "rawSha256": "823dc5eb26855d421557b0d209c2e191dcada7c325bacf6efb80a46d494900a5",
+      "bytes": 3334
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/implementation/evidence/m4/initial-failed-tests.xml",
+      "rawSha256": "84241f4cfef0363a12feb850f50ef8046cd787ff21d4f2e0e3de9264405ab6ce",
+      "bytes": 36864
+    },
+    {
+      "path": "docs/implementation/evidence/m4/official-versions.json",
+      "rawSha256": "8107b262c8d5544a47eaf3c40f8bd37aa9855d9848fd159b4448a8c26549b06b",
+      "bytes": 2014
+    },
+    {
+      "path": "docs/implementation/evidence/m4/preflight.json",
+      "rawSha256": "02235c48e99e03c99cde98abd75f3cd62da928fa466f48f2b49656d51dd492d4",
+      "bytes": 237890
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-environment.json",
+      "rawSha256": "5c37687478c683e588acd3af1b52f3fce9d422c400063d95085e382d192f293f",
+      "bytes": 245
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-A.brep",
+      "rawSha256": "be019c20370602451b956507f7ccd48f5833057ab0c3c40193bb24fb3af75822",
+      "bytes": 5056
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-A.features.json",
+      "rawSha256": "be295f7dccc6501dca6a3b015ec8794c664b2886752dcceb4b6693946c8c5557",
+      "bytes": 1054
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-A.mesh.json",
+      "rawSha256": "b98d3e7f75cb82ebf6c099a581094695c3c8b4c6836d282acf57f765239e3209",
+      "bytes": 672
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-A.step",
+      "rawSha256": "408d259a63c8d67df330b386191636add05c60c58b40136670ca71409bfe71bd",
+      "bytes": 29935
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-B.brep",
+      "rawSha256": "325698f86663bea208b7448df44c48f991ef03b990f877b3078ad8e6e74b5e7e",
+      "bytes": 5045
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-B.features.json",
+      "rawSha256": "85f72f86e03ad7c38fc31d83c262896ce3ba8e971f8d88e1e30a3b2cd08c641c",
+      "bytes": 1048
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-B.mesh.json",
+      "rawSha256": "735c4783cac52f7dca54174b4f2da2a0b62051891ab928045745ef65a6638247",
+      "bytes": 666
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-B.step",
+      "rawSha256": "e1c8881754bec6ae2b798bc0d6765b97b7d98dacb20675dc79ba6b5f00c0c927",
+      "bytes": 29918
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-C.brep",
+      "rawSha256": "3d00084721f0e8516db174c5943383e4a5b09af7a99764bb1962f35968810ade",
+      "bytes": 5160
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-C.features.json",
+      "rawSha256": "8a6cb2d6bf12ed067facf32d54694113e2249c0cae71a5d505476470674b19e9",
+      "bytes": 1055
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-C.mesh.json",
+      "rawSha256": "ceed6f74fe3b885d7e58a8674f2f4361abccd428ef777657ef02312e7504c044",
+      "bytes": 674
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/TEST-DEF-C.step",
+      "rawSha256": "aa763cbb7119bb9a813fc41fa86d9eef806597efb47041eb46aa73e68c4328af",
+      "bytes": 29955
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/fingerprints.json",
+      "rawSha256": "b3494b9ed31eaca5a0e391f7dda11514cc40c726e05c7ab2070d66174b310ed7",
+      "bytes": 757
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/independent-verification.json",
+      "rawSha256": "dcdff93d567de98d6824c5f161cc05e8fcc458ee69f12907cd4a0001ce48e25a",
+      "bytes": 7526
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-exports/solutions.json",
+      "rawSha256": "eb3124a54726ca42c431b221a1d0e3652747695553425c1fc52b605b3278c8f1",
+      "bytes": 2109
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-fixture-build.txt",
+      "rawSha256": "d4d65c20068ba0272c7f6b7af32989d43baab87934ec635dbda4a3f29eb6f009",
+      "bytes": 106
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-frozen-install.txt",
+      "rawSha256": "ad4bdbd71e9f595225406fa7d0669d0e90e63747d378e9f764a03bc041de03cf",
+      "bytes": 1935
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-independent-verify.txt",
+      "rawSha256": "c3f5f6164a997a684471c05aff86131415f8505728f32ad5cea39f1a6eab8033",
+      "bytes": 8350
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-pytest.txt",
+      "rawSha256": "1f330cebe87a0f2ac59a08d4e95b3282834fb931391bd5a7d3cdc62a4f0de9d3",
+      "bytes": 100
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-tests.xml",
+      "rawSha256": "783354adb84fcc0544a48d0d8d4c5ef65fa2d2f3f946aa2e68d333db8703609c",
+      "bytes": 7189
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-wheel-build.txt",
+      "rawSha256": "5d3f92785f2d5d9dd62a961d1fc6391023cf78ba21e80273b918a2e1595bb8cf",
+      "bytes": 148
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-wheel-install.txt",
+      "rawSha256": "f016f32e915357c7a344fa490b20f05b830d0d6855dfb29417a9286b9b0af082",
+      "bytes": 345
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/a-wheel.json",
+      "rawSha256": "37e48865b71964bac2ba16c407655469ff93f2ae32e2de5ac81a4b726cfeb4bc",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-environment.json",
+      "rawSha256": "5c37687478c683e588acd3af1b52f3fce9d422c400063d95085e382d192f293f",
+      "bytes": 245
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-A.brep",
+      "rawSha256": "be019c20370602451b956507f7ccd48f5833057ab0c3c40193bb24fb3af75822",
+      "bytes": 5056
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-A.features.json",
+      "rawSha256": "be295f7dccc6501dca6a3b015ec8794c664b2886752dcceb4b6693946c8c5557",
+      "bytes": 1054
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-A.mesh.json",
+      "rawSha256": "b98d3e7f75cb82ebf6c099a581094695c3c8b4c6836d282acf57f765239e3209",
+      "bytes": 672
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-A.step",
+      "rawSha256": "d0cdee6d74d2fe85d24b3ee0d49516cf8ac29b6b5aa5a6abad3106dd7e49572c",
+      "bytes": 29935
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-B.brep",
+      "rawSha256": "325698f86663bea208b7448df44c48f991ef03b990f877b3078ad8e6e74b5e7e",
+      "bytes": 5045
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-B.features.json",
+      "rawSha256": "85f72f86e03ad7c38fc31d83c262896ce3ba8e971f8d88e1e30a3b2cd08c641c",
+      "bytes": 1048
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-B.mesh.json",
+      "rawSha256": "735c4783cac52f7dca54174b4f2da2a0b62051891ab928045745ef65a6638247",
+      "bytes": 666
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-B.step",
+      "rawSha256": "94de3b6b47941fb531efe1f98093f4a1db623545d251dcaefb5ea30afa45e662",
+      "bytes": 29918
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-C.brep",
+      "rawSha256": "3d00084721f0e8516db174c5943383e4a5b09af7a99764bb1962f35968810ade",
+      "bytes": 5160
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-C.features.json",
+      "rawSha256": "8a6cb2d6bf12ed067facf32d54694113e2249c0cae71a5d505476470674b19e9",
+      "bytes": 1055
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-C.mesh.json",
+      "rawSha256": "ceed6f74fe3b885d7e58a8674f2f4361abccd428ef777657ef02312e7504c044",
+      "bytes": 674
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/TEST-DEF-C.step",
+      "rawSha256": "7f919382180d2aca65adae07cb0c4539d2f95b851a8e4010fd0b24fd26577517",
+      "bytes": 29955
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/fingerprints.json",
+      "rawSha256": "b3494b9ed31eaca5a0e391f7dda11514cc40c726e05c7ab2070d66174b310ed7",
+      "bytes": 757
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/independent-verification.json",
+      "rawSha256": "dcdff93d567de98d6824c5f161cc05e8fcc458ee69f12907cd4a0001ce48e25a",
+      "bytes": 7526
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-exports/solutions.json",
+      "rawSha256": "eb3124a54726ca42c431b221a1d0e3652747695553425c1fc52b605b3278c8f1",
+      "bytes": 2109
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-fixture-build.txt",
+      "rawSha256": "d4d65c20068ba0272c7f6b7af32989d43baab87934ec635dbda4a3f29eb6f009",
+      "bytes": 106
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-frozen-install.txt",
+      "rawSha256": "cafbe9a49aaa01aa708a3d86b2eb2d024ddfd7d9fcfa0bfbb87c8369f12f2af6",
+      "bytes": 1935
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-independent-verify.txt",
+      "rawSha256": "c3f5f6164a997a684471c05aff86131415f8505728f32ad5cea39f1a6eab8033",
+      "bytes": 8350
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-pytest.txt",
+      "rawSha256": "accb609f48dbe014b4d566e1a6eda83d6a1ce08bfcf92c4a06b8d836f97253f1",
+      "bytes": 100
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-tests.xml",
+      "rawSha256": "5cd71c54e053987384b8e220d9612ee5d7ca5c764cb7ef8ff8cc6516ff5569d2",
+      "bytes": 7189
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-wheel-build.txt",
+      "rawSha256": "6a676c6339e93a0dfdd1f7136b69d8aa62b84b29a849d3fd3c09d8ac40fff7e7",
+      "bytes": 148
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-wheel-install.txt",
+      "rawSha256": "933b109433f744c0ca5798d806d05c446e7aecc91c2aac1cb9d5900a945f7d59",
+      "bytes": 348
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/b-wheel.json",
+      "rawSha256": "37e48865b71964bac2ba16c407655469ff93f2ae32e2de5ac81a4b726cfeb4bc",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/commands.json",
+      "rawSha256": "22ae92d649112f36e0723efc5c31df4d6c15a6ded11696b981167fa4a64ee991",
+      "bytes": 16164
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/current-m1-tests.txt",
+      "rawSha256": "ed99935dfdad14a138e041d4cc20509d77bdb0ba2e48a4795740c110f8b75c85",
+      "bytes": 45831
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/historical-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/historical-upstream-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/lock-adoption.json",
+      "rawSha256": "70bb69ad14e6c6fc15b92a3bacb3600ae90de887782fa672eef4225e9bec6085",
+      "bytes": 1782
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/m1-default-frozen-install.txt",
+      "rawSha256": "3f8fc36bbf5c3cd097f69b4393eab7e2a0532d11559afc346d4ebc847b6a5e33",
+      "bytes": 284
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/mirror-inputs.json",
+      "rawSha256": "1d4132f2f4360f0f64623040acab58ec7ae67650d942eab7a28f86daf491622f",
+      "bytes": 141873
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/python312-hash-revalidation.txt",
+      "rawSha256": "7ae2a6e2a575b451cf76b0f75517456ee254098b952e5153d4025ab6a94778b2",
+      "bytes": 2774
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/python314-hash-revalidation.txt",
+      "rawSha256": "48c3a4dcf5dce57edb1bf5b9d6981e15b7c0b8df78e8eb369918972c82ef0ebd",
+      "bytes": 2773
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/reproducibility.json",
+      "rawSha256": "79627b0b705849318e47dab359d1256caee6dccce64d2b32860ce6f724d93582",
+      "bytes": 9731
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-commands.json",
+      "rawSha256": "0f124015caf0ac1013292a3594c9712e95cd2eb320c44a59c890e00b5d5aa6f2",
+      "bytes": 2827
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/affected-m1-hash-tests.txt",
+      "rawSha256": "dcb69170aea05d59250bae49a30fb233d6e58843005a854045f9616ace0d850a",
+      "bytes": 4683
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/affected-revalidation.json",
+      "rawSha256": "80eaae4d716c987768a29be0deb66ce416f6cbf137f780a41355ca9cacf853f2",
+      "bytes": 1415
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/current-m2-readonly-contracts.txt",
+      "rawSha256": "1433242ee9066afdc5cdba8b4057f84eb52d90a4de442c1f70f6677767093468",
+      "bytes": 2842
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/m1-default-frozen-install.txt",
+      "rawSha256": "5480a012f372fa71d3bd35f58cb758dbffe307dc58be8a92a1b82f53a851efab",
+      "bytes": 28
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/python312-hash-revalidation.txt",
+      "rawSha256": "7ae2a6e2a575b451cf76b0f75517456ee254098b952e5153d4025ab6a94778b2",
+      "bytes": 2774
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/python314-hash-revalidation.txt",
+      "rawSha256": "48c3a4dcf5dce57edb1bf5b9d6981e15b7c0b8df78e8eb369918972c82ef0ebd",
+      "bytes": 2773
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/revalidation-final-02/revalidation-commands.json",
+      "rawSha256": "d5a85e94284d11b4b61482d9fdb114ac221ee9c5dc6087dfff52b45ebf1c3a0f",
+      "bytes": 3351
+    },
+    {
+      "path": "docs/implementation/evidence/m4/qualification-final-01/step-normalization.json",
+      "rawSha256": "83c42e770eb2df9283781ee408e32fc22b710e6a5682c392dced0a625b6e296e",
+      "bytes": 1006
+    },
+    {
+      "path": "docs/implementation/evidence/m4/source-preservation.json",
+      "rawSha256": "1ac3969bedf0d45430d9693c43f95e4979d441cbc37aefcc8cd5cd229fe4936a",
+      "bytes": 589
+    },
+    {
+      "path": "docs/implementation/evidence/m4/spike-passed-v2.xml",
+      "rawSha256": "172fd59b1decfcb627376c447378412f075c9fbb43f093d0aa4ba3709014a32b",
+      "bytes": 6509
+    }
+  ],
+  "selfExcluded": true,
+  "acceptanceCommit": "Recorded after local acceptance in separate receipt",
+  "m5ImplementationPerformed": false
+}
