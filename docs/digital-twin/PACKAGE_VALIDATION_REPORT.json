@@ -1,0 +1,3782 @@
+{
+  "reportVersion": 2,
+  "scope": "Independent specification-package validation; no production implementation or mechanical validation.",
+  "validatedInputDigest": "9e519162707628705ba2760a1d3bbe0489e001e43abcae58d08a82ca7bea783b",
+  "inputDigestScheme": "SHA256 of UTF-8 compact sorted-key JSON of sorted raw-file inventory; excludes both current reports and root integrity manifest only. Not a production model hash.",
+  "inputs": [
+    {
+      "path": "ARCHITECTURE.md",
+      "sha256": "4dd8a2f3df251b1190466979150df68cb664eb31143ad77310af218d2961cf5f",
+      "byteLength": 22914
+    },
+    {
+      "path": "ASSEMBLY_ENGINE_SPEC.md",
+      "sha256": "94835d49c3371deb776d3a9014033fce90c8c987b74f8ce4e84b29515b9155b2",
+      "byteLength": 19305
+    },
+    {
+      "path": "ASSET_PIPELINE_SPEC.md",
+      "sha256": "3ec5c6e30be736ca806ada45830cb84c19156d5d24b82361550b2f54f41af88d",
+      "byteLength": 15075
+    },
+    {
+      "path": "AUDIT_CHANGELOG.md",
+      "sha256": "9a3c7081d0dfc31bb13d4fdbe402920926474d716ece41bf5a7a76d5f9648028",
+      "byteLength": 18178
+    },
+    {
+      "path": "AUDIT_EVIDENCE/contradiction-matrix.json",
+      "sha256": "c56c4a44dccae64db4a5f42ef10ebbc5aab57f7e2ff1a7adff033ea4e1e85413",
+      "byteLength": 13917
+    },
+    {
+      "path": "AUDIT_EVIDENCE/dependency-review.json",
+      "sha256": "8d2b51b358a77e0a7ebdd96177a4bf299e644fa2fe4a4ee60ecf11bcb189b027",
+      "byteLength": 1631
+    },
+    {
+      "path": "AUDIT_EVIDENCE/findings.json",
+      "sha256": "223b8aed8c5dc6090cbeec6b88954f0a4fb887f4222a517d4d636c3806f3fe77",
+      "byteLength": 26508
+    },
+    {
+      "path": "AUDIT_EVIDENCE/original-check-classification.json",
+      "sha256": "0a3b806eae5b5161d01c62cb92170bb5bd63466f66598b457bb8ae6914a1f209",
+      "byteLength": 50338
+    },
+    {
+      "path": "AUDIT_EVIDENCE/original-inspection-inventory.json",
+      "sha256": "21e04b35c60df76d4f20e7ae3e96e15a29ae1a2c594097add177139bde766f74",
+      "byteLength": 23765
+    },
+    {
+      "path": "AUDIT_EVIDENCE/package-change-inventory.json",
+      "sha256": "fb9f4afe2c3d3b250a0110e062ce03d7325a281a2f719fc436f723ab13b0fedb",
+      "byteLength": 28618
+    },
+    {
+      "path": "AUDIT_EVIDENCE/repository-read-receipt.json",
+      "sha256": "3515c183c9012ab9361173459f8f1edbb3fd133e97ba0223487df13c62fc3701",
+      "byteLength": 1016
+    },
+    {
+      "path": "AUDIT_EVIDENCE/schema-probes.json",
+      "sha256": "3d30bac75c9211d59e3e0c8c5853286c2f735978bc3fcbebe12615447607434d",
+      "byteLength": 131314
+    },
+    {
+      "path": "AUDIT_EVIDENCE/scorecard.json",
+      "sha256": "ddcef80f34838a5b286645f123ced905efdf4f71f5aefcbd242b332d3b9719d4",
+      "byteLength": 6471
+    },
+    {
+      "path": "AUDIT_EVIDENCE/semantic-fixtures.json",
+      "sha256": "95dd8202018d8c2e3cd5cbd5fec07a204322104c79278bcd25b623bf954449f7",
+      "byteLength": 68953
+    },
+    {
+      "path": "AUDIT_EVIDENCE/validator-mutation-results.json",
+      "sha256": "182b23df379186e0e8a21fccefc6cb1ec6c78a5c041d99da5d4cf372bea9646b",
+      "byteLength": 2750
+    },
+    {
+      "path": "AUDIT_REPORT.md",
+      "sha256": "965f5540e1ef30fb0299cfc59e5d9eea0d8f43042303e2e0106b16a7e018209a",
+      "byteLength": 76301
+    },
+    {
+      "path": "AUDIT_TOOLS/requirements.txt",
+      "sha256": "1a98b9819331b7b154871633d4fe406431c5ba1885b8a6eb0670f6242e423bbc",
+      "byteLength": 34
+    },
+    {
+      "path": "AUDIT_TOOLS/test_validator_mutations.py",
+      "sha256": "b86d5644328062c702f6d0c1ddcb6d4ec2611d298a18615b11a622631e3b6abd",
+      "byteLength": 3555
+    },
+    {
+      "path": "AUDIT_TOOLS/validate_package.py",
+      "sha256": "9420f23e7dfc22d8b9e0231e1218311b55d7440a4942030f4f674bd5f952e7a1",
+      "byteLength": 17747
+    },
+    {
+      "path": "BOM_RECONCILIATION.md",
+      "sha256": "c11cd958b31af6a82004b327193d164be4f23f529639de417392ce8e783d3573",
+      "byteLength": 4235
+    },
+    {
+      "path": "CRITICAL_REVIEW.md",
+      "sha256": "b1255fda0f198890dfe91c892f68f495cf830927023ee69aa327bf341e00453b",
+      "byteLength": 7385
+    },
+    {
+      "path": "DIGITAL_TWIN_DATA_MODEL.md",
+      "sha256": "76d9670a32c8861c59a53d1537f2d0e54ae53b46b3f563b6e9e99b0177f457bd",
+      "byteLength": 17952
+    },
+    {
+      "path": "EVIDENCE/crops/hardware-crop.png",
+      "sha256": "d65ed170bf21a900a9d4ee8f71e462ad98138c8fd219c53ff56e177c9379656b",
+      "byteLength": 1072408
+    },
+    {
+      "path": "EVIDENCE/crops/s04-pi45-crop.png",
+      "sha256": "d57efd93e5572798012709a1b0cc86b964efe9d13865ecf56ddc75ecbda2192b",
+      "byteLength": 812761
+    },
+    {
+      "path": "EVIDENCE/crops/s04-zero-crop.png",
+      "sha256": "c1d822371e56e6a878c257710bb6b0bfb168afcd05c525de274a91ee09ddbc0a",
+      "byteLength": 634404
+    },
+    {
+      "path": "EVIDENCE/manifest.json",
+      "sha256": "547e9777786f80df437a9f98755d165a585a19631049c889d5cd671cef902c08",
+      "byteLength": 4665
+    },
+    {
+      "path": "EVIDENCE/originals/01_IMG_0526.jpeg",
+      "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23",
+      "byteLength": 511083
+    },
+    {
+      "path": "EVIDENCE/originals/02_IMG_0527.jpeg",
+      "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd",
+      "byteLength": 496348
+    },
+    {
+      "path": "EVIDENCE/originals/03_IMG_0528.jpeg",
+      "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54",
+      "byteLength": 658801
+    },
+    {
+      "path": "EVIDENCE/originals/04_IMG_0529.jpeg",
+      "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc",
+      "byteLength": 769704
+    },
+    {
+      "path": "EVIDENCE/originals/05_IMG_0530.jpeg",
+      "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d",
+      "byteLength": 669616
+    },
+    {
+      "path": "EVIDENCE/originals/06_IMG_0531.jpeg",
+      "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063",
+      "byteLength": 735400
+    },
+    {
+      "path": "EVIDENCE/originals/IMAGE_INDEX.txt",
+      "sha256": "bd2746513ec497c5fcf8cc1272234987d64aa5b07f58fa090deb2a5c87c17b72",
+      "byteLength": 442
+    },
+    {
+      "path": "EVIDENCE_INSPECTION.md",
+      "sha256": "f10cbf9fb2d8a460343381711b0c3c845b64a09f9b4b0d11503a9b9d2d5ce9f5",
+      "byteLength": 5916
+    },
+    {
+      "path": "FULL_SPECIFICATION.md",
+      "sha256": "ee81c89af5bee3b85fde675b611d4b75962d440eafe73b7f44dc248afffb3ec7",
+      "byteLength": 471764
+    },
+    {
+      "path": "FUTURE_CAMERA_AND_AR_SPEC.md",
+      "sha256": "0d8c17305cb3f3cde8a8ac09398ba5bfccd8ac5ea2a4b37eb6283c69bdf40791",
+      "byteLength": 9448
+    },
+    {
+      "path": "GATE_CONTRACTS.md",
+      "sha256": "1634c22b26f00aecf7186f3c3cecac947783257749fea99668e6b5d4c98b30ad",
+      "byteLength": 10265
+    },
+    {
+      "path": "GEOMETRY_AND_EVIDENCE_SPEC.md",
+      "sha256": "1dbd17808a8d1f623b57f2b44e6ea9bf9bf9931d26ee60905bd8d0f00b465fc3",
+      "byteLength": 21809
+    },
+    {
+      "path": "HANDOFF_M0.md",
+      "sha256": "c46cf7414b421487dfd2d3f03f508a03da0f0a2fbdaef512f967bff934323aba",
+      "byteLength": 5290
+    },
+    {
+      "path": "HASH_AND_PACK_CONTRACT.md",
+      "sha256": "1083bf837a1bc5528ddeb2952e94f79953051904db760985cc8ffe9c347d6681",
+      "byteLength": 11641
+    },
+    {
+      "path": "HISTORICAL/PACKAGE_MANIFEST.sha256",
+      "sha256": "cbf8c13cbb70fa1d4c02fddf28704fb1cc8799062555fd834bd459ddf782ef2c",
+      "byteLength": 8322
+    },
+    {
+      "path": "HISTORICAL/PACKAGE_VALIDATION_REPORT.json",
+      "sha256": "4e17864e2a2aedf8baca8ba3ecfb62a380476ba8333849078c49a605c836db5f",
+      "byteLength": 20915
+    },
+    {
+      "path": "HISTORICAL/README.md",
+      "sha256": "d625c2bee10e30218ad959b57e66820045fa11270fe17a7d71b0de90dc591cad",
+      "byteLength": 352
+    },
+    {
+      "path": "HISTORICAL/digital-twin.v1.schema.json",
+      "sha256": "af242e485c48d56c01282a19d16f323696732d6c6d46e06f17afe97ca8c83c8b",
+      "byteLength": 113743
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/AdmissionReport.schema.json",
+      "sha256": "cf40f7e5b5efb4e1ea6aabb6d372ee4b740c012b581798580626524b3eb85e0b",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/AssemblyOperation.schema.json",
+      "sha256": "ab88a2c53eb5613b02a6c112a9727523f41d51f1db7881adc50ad37d82131aa0",
+      "byteLength": 197
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/AssemblySession.schema.json",
+      "sha256": "50aa4716ffe72311b30eb685a3855753a5cd527be020fbc29585ae216e7f817d",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/AssemblySolution.schema.json",
+      "sha256": "fd616f37e58c39a5539c173bf95dba51a88a077b95db849f995033afd0759ff0",
+      "byteLength": 195
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/AssemblyState.schema.json",
+      "sha256": "477d4eec84f3c5a14fdfe4dbac9d1843da69899d2fbdc9dc27871904a2390c23",
+      "byteLength": 189
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/AssemblyStep.schema.json",
+      "sha256": "181c68ed9511ba977b46440a0059c32daa2b3bba8debd1db009b5cb55b1616b7",
+      "byteLength": 187
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/CableConnection.schema.json",
+      "sha256": "3596c5caa89945ea9b0fd4bf5f111856cc0ca768c92b9a1360ea32855be3c4bd",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/CableDefinition.schema.json",
+      "sha256": "f7f3482b1ce1e0ad85c6ba9aa4d12f93d0125ddf3c00b44357ec76f80653fa75",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/CameraInstruction.schema.json",
+      "sha256": "bee1f943afa68bd0e2b56793ed6652e17eb9b3e921127a4c47e6119865b8031f",
+      "byteLength": 197
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/Claim.schema.json",
+      "sha256": "cb2880c95752b8c859c2bf95a5ddeeb676bd4d63935abb1b2ba02669106b1f46",
+      "byteLength": 173
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/CompiledGraph.schema.json",
+      "sha256": "9f163355e9714b267b2a1c32198d6ae2724ee2b16f294f79bac8bf22309681b2",
+      "byteLength": 189
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/ConflictRecord.schema.json",
+      "sha256": "45cba2695392cef58e362e80eabcb93233470ffe48e130771f410f33441b6c79",
+      "byteLength": 191
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/ConnectionPoint.schema.json",
+      "sha256": "1063819313a90bbd6878ab10576bb7c8136a6547ae36785189ae37b2af960666",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/DerivationRecord.schema.json",
+      "sha256": "1f2d6829e3603673e45d2e2b0ad0c0636bfad5abe2bf1e2ecfc64ef353ff196e",
+      "byteLength": 195
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/EvidenceRecord.schema.json",
+      "sha256": "0902b3ae7f3b004ce26255b82a7062c22fa29d5af05e03bdb8575954696d7354",
+      "byteLength": 191
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/FastenerDefinition.schema.json",
+      "sha256": "0bdefd5f495c2e3e465bc79c8c4b1d8590f77ed7b8348ec971d28e39d7d0fdb5",
+      "byteLength": 199
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/FrameRecord.schema.json",
+      "sha256": "e2a862417e958a0d73fee9dbdf77c4aa8d734bd8880fa73193f75c09a5778c24",
+      "byteLength": 185
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/GeometrySource.schema.json",
+      "sha256": "8bf28c0b28100e0121e6d833cf75f3d74b3815d9aec54589b015507be56fe0ec",
+      "byteLength": 191
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/Measurement.schema.json",
+      "sha256": "f46074f8b9915b8adafeba292324a79fa0ce13cef34271ad38badb3640788494",
+      "byteLength": 185
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/MechanicalConnection.schema.json",
+      "sha256": "3005520caaad45179b015cf3959666929d67d6f864d2813827919236fe74b222",
+      "byteLength": 203
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/MechanicalInterface.schema.json",
+      "sha256": "f7170e7d263aa8ea35d87cc11944d3356ea7adf478ac2ee8ce4d3edd09913412",
+      "byteLength": 201
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/MotionInstruction.schema.json",
+      "sha256": "3336ea2d233d17db3a4b1d557cfc46075e8fb53fb8a9bd098d817cfd39cb3b02",
+      "byteLength": 197
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/OperationUndo.schema.json",
+      "sha256": "b313c3d26f70908d80ef87535de8d8bdc3727fb3f84813113673b3551cc2e65f",
+      "byteLength": 189
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/PartDefinition.schema.json",
+      "sha256": "b4cc002ad92216c6c8c6ea29a5f7db2d7a40f349f01cdf45c545f8c24d370516",
+      "byteLength": 191
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/PartInstance.schema.json",
+      "sha256": "6563e3f03c61b54b2e47e321b02cf6bb42bbb2a49c0e622bcc693c994ee5731e",
+      "byteLength": 187
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/ProcedureAcknowledgment.schema.json",
+      "sha256": "83a01c715c63e6e3c95033e1fbd0a59c133419bd45a3073d231065e04ad4cf9a",
+      "byteLength": 209
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/README.md",
+      "sha256": "a9916fd355330c17cf2f91eebd9a5ae86af6c3552881b557e373c3afb648e55e",
+      "byteLength": 5892
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/RuntimeManifest.schema.json",
+      "sha256": "e960b2edbd239cd67bb48497491b0df54b13320d6a12fb4218cae6dcdb873a08",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/RuntimeRegistry.schema.json",
+      "sha256": "be7a0f3e4e5cfd7041b0099ed4e27f9061a4f879c67d63b9227e51af814b74c4",
+      "byteLength": 194
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/RuntimeTransform.schema.json",
+      "sha256": "8d9e26e780f243864e1b0862e9a14af6a8f18e2117f6e6a93eaf77b9b1ee5adf",
+      "byteLength": 195
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/ToolRequirement.schema.json",
+      "sha256": "33a6ee1584272d4805551ba1d44481111336786a09772b3adef205c974df1eab",
+      "byteLength": 193
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/UnresolvedEvidenceItem.schema.json",
+      "sha256": "3f8973b3b75dce01f2e508d618935a5fba6f86b51bb26268fb91956c5cd85883",
+      "byteLength": 207
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/VariantPatch.schema.json",
+      "sha256": "65a948a47c125fe1b069b1afb598e62daad96d488e572306821cfe769b6e67bd",
+      "byteLength": 187
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/VariantRule.schema.json",
+      "sha256": "cb1b4f03421733dd49afa9ca4c80581479526faf942df0c9f92ff2c7ea678d5e",
+      "byteLength": 185
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/VerificationRule.schema.json",
+      "sha256": "1999c569694e56b33cf53e951bcdeef65ba6ecdb17093fdc1e131d5ab10d339d",
+      "byteLength": 195
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/VisibilityRule.schema.json",
+      "sha256": "e7731187830fecffb0ace117b85fadec3e6663d1eff48424c9175e2faacaf564",
+      "byteLength": 191
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/Warning.schema.json",
+      "sha256": "247f67aae21aca4c13923d018734115808bf185b95af145fd03feacfbf7fbc0d",
+      "byteLength": 177
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/ZeroingAttestation.schema.json",
+      "sha256": "35cf6229923357f9d2fbf5ec0604b6c18f33c11d5c5769d627636854025ff6d3",
+      "byteLength": 199
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/blocker-register.json",
+      "sha256": "527da4ca6443c7ae848fdbfc7d2841f72041881de68c860e11016c4550b30349",
+      "byteLength": 17097
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+      "sha256": "075dda03f82851b24566e22e121b246f9cd3273de058ddafbaea86033480e1c4",
+      "byteLength": 161617
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/documentation-source-lock.schema.json",
+      "sha256": "01c22fd10f6505844879e792e624ba01b0e122b05cf0208c3f66522f8ef95a8c",
+      "byteLength": 5849
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/documentation-source-lock.template.json",
+      "sha256": "0206815de1778d7685ebfffc0f0dd960f3792e1b73d8b24aa9b88c39372443ca",
+      "byteLength": 1520
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/mechanical-interface.valid.json",
+      "sha256": "9d742c390ad253498d6aa6bece6020db0039e11f547f8006bd0accbbd1b0d497",
+      "byteLength": 398
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/numeric-derived-schema-only.valid.json",
+      "sha256": "d6cc753d885f4a5c74722bb92db4200f2f3a8314c5997a591f6fbb8103bb680a",
+      "byteLength": 283
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/numeric-derived-without-method.invalid.json",
+      "sha256": "870f2c1f40271480b9e693a0482ba091b56020344157d724931d31fb14d788dc",
+      "byteLength": 217
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/numeric-unresolved-with-value.invalid.json",
+      "sha256": "7e22bdd4cd8cdc476f4eb23ec2acea50512b26cb196b372233d64601d847195e",
+      "byteLength": 123
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/numeric-unresolved.valid.json",
+      "sha256": "ba05b8f8c32e27995bba5b0a702d848532df102fdd63991c5e46014779d8a7a9",
+      "byteLength": 108
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/part-definition.valid.json",
+      "sha256": "4d8096fd04124a0a8eaa875993a09cac6f59bd8181cb0bb0c5a153dc1cfaf05b",
+      "byteLength": 507
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/printed-designation-claim.valid.json",
+      "sha256": "5931dc61de993128871f54fa8912a1ba12996bfcaaf3033d1390026ccca36ff3",
+      "byteLength": 661
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/unknown-field-definition.invalid.json",
+      "sha256": "31e8f34916e86fb8a9e384a904167932c3481a273ae8eb3bfc2b186532d17e9b",
+      "byteLength": 527
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/examples/verified-claim-without-evidence.invalid.json",
+      "sha256": "a70aae080cb7012339ab7eab3045cc9291166cfded6b9376d2da241bbf3c86ac",
+      "byteLength": 637
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/m0-gate-report.schema.json",
+      "sha256": "4a491d5768b506ef15b0e7fad635224601ebeb8b0eedc82f10312f8df78237e3",
+      "byteLength": 3048
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/milestone-phase-plan.json",
+      "sha256": "2951f6a90ac09e48947032ab7233bc987b1a5c6dc3faa772c4a4a754842494d9",
+      "byteLength": 3816
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/milestone-plan.json",
+      "sha256": "65b6926bc9d4fef8fc841b97ab7f5ff74258831de3377afcdc47059565398ada",
+      "byteLength": 34754
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/planning-step-seed.schema.json",
+      "sha256": "b56667420055983668968a90f3f97480a2e82b25a11b82842b8b01f2cded324a",
+      "byteLength": 4728
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/printed-hardware-ledger.json",
+      "sha256": "b23342d414fba85574cb2d32338c3158d65f63c27561c620cd348855c2b7160d",
+      "byteLength": 5106
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/repository-baseline.json",
+      "sha256": "fbe506dbdf512d060d00e9a3c22c3de745a6bb19c5d798b5b744ee674d00d256",
+      "byteLength": 1296
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/source-register.json",
+      "sha256": "e4906c56748d72f0697e074fbfcbca8984ef3f7b5014c0c2b5735a525487a6ab",
+      "byteLength": 12954
+    },
+    {
+      "path": "MACHINE_READABLE_SCHEMAS/v40-step-seed.json",
+      "sha256": "f9d90846627c658ef1856cb880eb140f5525c9f6149761a5cb2851db7f2c6304",
+      "byteLength": 47037
+    },
+    {
+      "path": "MILESTONES.md",
+      "sha256": "3e985112761c59b59d698b98fde559671de9f5a13bb497f04ef70097073467c5",
+      "byteLength": 38169
+    },
+    {
+      "path": "MILESTONE_REVIEW.md",
+      "sha256": "e096660e8f635e14f934c6c545c3c5dfdda9c9e24d06dd170ba94d60df3be224",
+      "byteLength": 28324
+    },
+    {
+      "path": "OPEN_QUESTIONS_AND_BLOCKERS.md",
+      "sha256": "809ea86a75010368b547ac0f9c0867742e419079ead46b8d35fdaa81187151b5",
+      "byteLength": 18506
+    },
+    {
+      "path": "PERSISTENCE_CONTRACT.md",
+      "sha256": "1a9d0a39799f1626039315efd48b2181b52fdd59ae8897272e56a870459d75dd",
+      "byteLength": 6295
+    },
+    {
+      "path": "PRODUCT_SPEC.md",
+      "sha256": "f628b3342ddc80a18d02fd3165bab8af9cace3cd6ebe5069e17392629fbae640",
+      "byteLength": 15490
+    },
+    {
+      "path": "README.md",
+      "sha256": "1cad5d54fc261ab0ec2e12c1d9c61c002dffb88c264562bf28fc19051914c2a4",
+      "byteLength": 7585
+    },
+    {
+      "path": "REPOSITORY_CHANGE_MAP.md",
+      "sha256": "932927c243770f679dbec26ee056425672d5d9d8a5ca44b2da3f41a155338410",
+      "byteLength": 16738
+    },
+    {
+      "path": "SEMANTIC_CONTRACT.md",
+      "sha256": "82969ee52a7adb9593158a0089d7d51c9fb2bd069020be90d7f22629ec2b8f13",
+      "byteLength": 14708
+    },
+    {
+      "path": "SOURCE_PUBLICATION_CONTRACT.md",
+      "sha256": "c18122bf2aa3bb252ad4604632a2b377e7954d6ff8330109bc9905ec638c2f9a",
+      "byteLength": 6801
+    },
+    {
+      "path": "SOURCE_REGISTER.md",
+      "sha256": "3cd318687bbec39120ffa12409b616e0491fe8fbbf0226ad62cfb52e6af63328",
+      "byteLength": 13119
+    },
+    {
+      "path": "V40_ASSEMBLY_LEDGER.md",
+      "sha256": "65e66d256d53fad48e086d44f99b8a91492f722734037d20a125660077a7657a",
+      "byteLength": 37909
+    },
+    {
+      "path": "VERIFICATION_AND_TEST_PLAN.md",
+      "sha256": "e6201ef6fa9bb20e6152939a0b3b0009e81b3d65f9e5d078089d12277763342e",
+      "byteLength": 19582
+    }
+  ],
+  "summary": {
+    "passed": 420,
+    "failed": 0,
+    "byCategory": {
+      "STRUCTURAL": 310,
+      "SEMANTIC_FIXTURE": 82,
+      "EVIDENCE": 28
+    }
+  },
+  "environment": {
+    "python": "3.13.5",
+    "jsonschema": "4.26.0",
+    "Pillow": "12.3.0"
+  },
+  "checks": [
+    {
+      "check": "json:AUDIT_EVIDENCE/contradiction-matrix.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/dependency-review.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/findings.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/original-check-classification.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/original-inspection-inventory.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/package-change-inventory.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/repository-read-receipt.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/schema-probes.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/scorecard.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/semantic-fixtures.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:AUDIT_EVIDENCE/validator-mutation-results.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:EVIDENCE/manifest.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:HISTORICAL/PACKAGE_VALIDATION_REPORT.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:HISTORICAL/digital-twin.v1.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/AdmissionReport.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/AssemblyOperation.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/AssemblySession.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/AssemblySolution.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/AssemblyState.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/AssemblyStep.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/CableConnection.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/CableDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/CameraInstruction.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/Claim.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/CompiledGraph.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/ConflictRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/ConnectionPoint.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/DerivationRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/EvidenceRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/FastenerDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/FrameRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/GeometrySource.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/Measurement.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/MechanicalConnection.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/MechanicalInterface.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/MotionInstruction.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/OperationUndo.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/PartDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/PartInstance.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/ProcedureAcknowledgment.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/RuntimeManifest.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/RuntimeRegistry.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/RuntimeTransform.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/ToolRequirement.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/UnresolvedEvidenceItem.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/VariantPatch.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/VariantRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/VerificationRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/VisibilityRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/Warning.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/ZeroingAttestation.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/blocker-register.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/documentation-source-lock.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/documentation-source-lock.template.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/mechanical-interface.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/numeric-derived-schema-only.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/numeric-derived-without-method.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/numeric-unresolved-with-value.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/numeric-unresolved.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/part-definition.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/printed-designation-claim.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/unknown-field-definition.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/examples/verified-claim-without-evidence.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/m0-gate-report.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/milestone-phase-plan.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/milestone-plan.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/planning-step-seed.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/printed-hardware-ledger.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/repository-baseline.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/source-register.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "json:MACHINE_READABLE_SCHEMAS/v40-step-seed.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:AdmissionReport.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:AdmissionReport.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:AssemblyOperation.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:AssemblyOperation.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:AssemblySession.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:AssemblySession.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:AssemblySolution.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:AssemblySolution.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:AssemblyState.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:AssemblyState.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:AssemblyStep.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:AssemblyStep.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:CableConnection.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:CableConnection.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:CableDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:CableDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:CameraInstruction.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:CameraInstruction.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:Claim.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:Claim.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:CompiledGraph.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:CompiledGraph.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:ConflictRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:ConflictRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:ConnectionPoint.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:ConnectionPoint.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:DerivationRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:DerivationRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:EvidenceRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:EvidenceRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:FastenerDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:FastenerDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:FrameRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:FrameRecord.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:GeometrySource.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:GeometrySource.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:Measurement.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:Measurement.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MechanicalConnection.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:MechanicalConnection.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MechanicalInterface.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:MechanicalInterface.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MotionInstruction.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:MotionInstruction.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:OperationUndo.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:OperationUndo.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:PartDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:PartDefinition.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:PartInstance.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:PartInstance.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:ProcedureAcknowledgment.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:ProcedureAcknowledgment.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:RuntimeManifest.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:RuntimeManifest.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:RuntimeRegistry.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:RuntimeRegistry.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:RuntimeTransform.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:RuntimeTransform.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:ToolRequirement.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:ToolRequirement.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:UnresolvedEvidenceItem.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:UnresolvedEvidenceItem.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:VariantPatch.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:VariantPatch.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:VariantRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:VariantRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:VerificationRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:VerificationRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:VisibilityRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:VisibilityRule.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:Warning.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:Warning.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:ZeroingAttestation.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "wrapper:ZeroingAttestation.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:digital-twin.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:documentation-source-lock.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:m0-gate-report.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:planning-step-seed.schema.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "all internal $defs references resolve",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "references": 165
+      }
+    },
+    {
+      "check": "original-example-current:mechanical-interface.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original-example-current:numeric-derived-schema-only.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original-example-current:numeric-derived-without-method.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "errors": [
+          "$: {'state': 'known', 'value': 26, 'unit': 'mm', 'confidence': 'DERIVED', 'evidenceRefs': ['PX-EV-PHOTO-05'], 'uncertainty': {'state': 'unresolved', 'blockerIds': ['Q-06']}} is not valid under any of the given schemas"
+        ]
+      }
+    },
+    {
+      "check": "original-example-current:numeric-unresolved-with-value.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "errors": [
+          "$: {'state': 'unresolved', 'unit': 'mm', 'confidence': 'UNRESOLVED', 'blockerIds': ['Q-06'], 'value': 26} is not valid under any of the given schemas"
+        ]
+      }
+    },
+    {
+      "check": "original-example-current:numeric-unresolved.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original-example-current:part-definition.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original-example-current:printed-designation-claim.valid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original-example-current:unknown-field-definition.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "errors": [
+          "$: Additional properties are not allowed ('verified' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "original-example-current:verified-claim-without-evidence.invalid.json",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "errors": [
+          "$.evidenceRefs: [] should be non-empty"
+        ]
+      }
+    },
+    {
+      "check": "probe:original:full-state-can-store-routes-and-allocations",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: Additional properties are not allowed ('cableRoutes', 'consumableAllocations', 'consumableLots', 'subassemblies' were unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:full-state-can-store-routes-and-allocations",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:hash-only-stock-state-no-longer-complete",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:hash-only-stock-state-no-longer-complete",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'contractVersion' is a required property",
+          "$: 'cableRoutes' is a required property",
+          "$: 'consumableLots' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:original:truthful-pre-export-cad-without-mesh",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.meshHash: {'state': 'notApplicable', 'reason': 'not exported'} is not of type 'string'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:truthful-pre-export-cad-without-mesh",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:pass-with-blocker-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:pass-with-blocker-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.blockerIds: ['TEST-BLOCKER'] is expected to be empty"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:geometry-final-stage-shape",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:geometry-empty-step-scope-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:geometry-empty-step-scope-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.stepIds: [] should be non-empty"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:geometry-pass-missing-mesh-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.bindings.meshHash.state: 'available' was expected"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:blocked-missing-artifact-is-representable",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:variant-patch-has-addressable-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: Additional properties are not allowed ('id' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:variant-patch-has-addressable-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:variant-patch-without-id-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:variant-patch-without-id-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'id' is a required property",
+          "$: 'variantId' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:empty-unanchored-replacement-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.replaceOperationIds: [] should be non-empty"
+        ]
+      }
+    },
+    {
+      "check": "probe:original:bare-physical-guide-id-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:bare-physical-guide-id-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.payload: 'guideEndpoints' is a required property",
+          "$.payload: Additional properties are not allowed ('guideInterfaceIds' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:qualified-guide-reference-accepted",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:bare-joint-interface-key-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:bare-joint-interface-key-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.jointCoordinates[0]: 'connectionId' is a required property",
+          "$.jointCoordinates[0]: 'dof' is a required property",
+          "$.jointCoordinates[0]: Additional properties are not allowed ('interfaceId' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:joint-key-is-connection-and-dof",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:runtime-metres-not-cad-mm",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:runtime-rejects-cad-frame",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:runtime-rejects-cad-frame",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'basis' is a required property",
+          "$: 'unit' is a required property",
+          "$: 'translationM' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:runtime-translationMm-not-allowed",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: Additional properties are not allowed ('translationMm' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:zero-quaternion-is-semantic-not-schema-error",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:structured-zeroing-attestation",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:movement-not-denied-is-not-valid-attestation",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.movementSinceZeroingDenied: True was expected"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:attestation-missing-servo-is-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'servoInstanceId' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:typed-rule-expected-operand",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:original:rule-without-expected-operand-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:rule-without-expected-operand-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'predicateVersion' is a required property",
+          "$: 'evaluationPhase' is a required property",
+          "$: 'expected' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:compiled-graph-explicit-operation-registry",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:compiled-graph-missing-operations",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'operations' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:solution-stable-id-and-runtime-unit",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:runtime-asset-complete-synthetic-shape",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:unsafe-path-28",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.path: '../escape.glb' does not match '^(?![./\\\\\\\\])(?!.*//)[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:unsafe-path-29",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.path: '/absolute.glb' does not match '^(?![./\\\\\\\\])(?!.*//)[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:unsafe-path-30",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.path: 'https://bad.invalid/file.glb' does not match '^(?![./\\\\\\\\])(?!.*//)[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:unsafe-path-31",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.path: 'assets/%2e%2e/file.glb' does not match '^(?![./\\\\\\\\])(?!.*//)[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:unsafe-path-32",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.path: 'assets\\\\file.glb' does not match '^(?![./\\\\\\\\])(?!.*//)[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:unsafe-path-33",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.path: 'assets/../file.glb' does not match '^(?![./\\\\\\\\])(?!.*//)[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:manifest-has-explicit-graph-artifact",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:manifest-missing-graph-artifact-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: 'compiledGraphs' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:manifest-rejects-mm-interface-frame",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.interfaceFrames[0]: 'transform' is a required property",
+          "$.interfaceFrames[0]: Additional properties are not allowed ('frame' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-introduce",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-attachRigid",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-attachJoint",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-installFastener",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-insertRivet",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-lockRivet",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-connectCableEnd",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-disconnectCableEnd",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-routeCable",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-allocateConsumable",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-applyConsumable",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-acknowledgeProcedure",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-confirmZeroing",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-groupSubassembly",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-moveSubassembly",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-setJointReference",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-tag-removeOwnedBacking",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:operation-hidden-payload-field-rejected",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.payload: Additional properties are not allowed ('rendererState' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:source-lock-template-stays-blocked",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:verified-source-lock-complete-shape-only",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:verified-source-lock-missing-pdf-hash",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.pdfSha256: {'state': 'unavailable', 'blockerIds': ['Q-02']} is not of type 'string'"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:verified-source-lock-missing-panels",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.panels: [] is too short"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:m0-required-pass-native-explicitly-blocked",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:m0-source-blocked-cannot-allow-m1",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$.checks[3].status: 'PASS' was expected"
+        ]
+      }
+    },
+    {
+      "check": "probe:current:runtime-registry-closed-families",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": true,
+        "actualValid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "probe:current:runtime-registry-no-undeclared-map",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "expectedValid": false,
+        "actualValid": false,
+        "errors": [
+          "$: Additional properties are not allowed ('hiddenMutableMap' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:zero-quaternion-rejected",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "NON_UNIT_QUATERNION"
+        ],
+        "actual": [
+          "NON_UNIT_QUATERNION"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:unit-runtime-quaternion",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:duplicate-ids",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "DUPLICATE_ID"
+        ],
+        "actual": [
+          "DUPLICATE_ID"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:unique-ids",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:qualified-left-instance",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:wrong-definition-interface",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "INTERFACE_OWNER_MISMATCH"
+        ],
+        "actual": [
+          "INTERFACE_OWNER_MISMATCH"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:patch-contiguous",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:patch-discontiguous",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "NONCONTIGUOUS_PATCH"
+        ],
+        "actual": [
+          "NONCONTIGUOUS_PATCH"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:variant-active-inactive-overlap",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "VARIANT_OVERLAP"
+        ],
+        "actual": [
+          "VARIANT_OVERLAP"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:m0-unique-gates",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:m0-duplicate-gate-does-not-pass",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "M0_CHECK_SET",
+          "M0_PERMISSION"
+        ],
+        "actual": [
+          "M0_CHECK_SET",
+          "M0_PERMISSION"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:m0-permission-exact-equivalence",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "M0_PERMISSION"
+        ],
+        "actual": [
+          "M0_PERMISSION"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:source-lock-branch-map",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:source-lock-missing-zero-branch",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "BRANCH_COVERAGE"
+        ],
+        "actual": [
+          "BRANCH_COVERAGE"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:source-lock-inverted-rect",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "INVALID_PANEL_RECT"
+        ],
+        "actual": [
+          "INVALID_PANEL_RECT"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:admission-complete-context-closure",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:missing-context-part-blocks-admission",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "INCOMPLETE_DEPENDENCY_CLOSURE"
+        ],
+        "actual": [
+          "INCOMPLETE_DEPENDENCY_CLOSURE"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:official-approximate-is-not-exact",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "SOURCE_SCOPE_PROMOTION"
+        ],
+        "actual": [
+          "SOURCE_SCOPE_PROMOTION"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:printed-transcription-scope-retained",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "semantic-fixture:fixture-receipt-cannot-admit-real-part",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [
+          "FIXTURE_AS_PRODUCTION"
+        ],
+        "actual": [
+          "FIXTURE_AS_PRODUCTION"
+        ]
+      }
+    },
+    {
+      "check": "semantic-fixture:fixture-receipt-in-fixture-lane",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "source lock remains documentary BLOCKED",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "planning seed schema",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "exact29 source steps",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-01-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-01-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-02-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-02-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-03-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-03-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-04-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-04-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-05-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-05-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-06-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-06-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-07-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-07-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-08-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-08-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-09-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-09-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-10-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-10-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-11-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-11-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-12-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-12-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-13-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-13-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-14-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-14-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-15-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-15-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-16-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-16-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-17-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-17-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-18-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-18-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-19-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-19-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-20-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-20-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-21-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-21-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-22-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-22-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-23-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-23-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-24-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-24-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-25-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-25-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-26-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-26-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-27-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-27-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-28-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-28-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-29-prerequisite",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step-29-human-ledger-id",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "all step blockers resolve",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "S27 rear-drive corrected in both copies",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "source-special-step-10",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "M3x26"
+      ]
+    },
+    {
+      "check": "source-special-step-19",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "Washer A"
+      ]
+    },
+    {
+      "check": "source-special-step-21",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "free"
+      ]
+    },
+    {
+      "check": "source-special-step-25",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "robot-right",
+        "robot-left"
+      ]
+    },
+    {
+      "check": "source-special-step-26",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "Washer B",
+        "three"
+      ]
+    },
+    {
+      "check": "source-special-step-29",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "P0",
+        "P1",
+        "P2",
+        "P11",
+        "MOTOR1",
+        "MOTOR2"
+      ]
+    },
+    {
+      "check": "printed-bom:M2.5x6 screw",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M3x25 screw",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:Spring washer",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M3 nut",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M1.5x3 screw",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M3x6 screw",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M2.5x18+6 standoff",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M2.5x18 standoff",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M2.5x11 standoff",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M2.5x30 standoff",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:M3x26 standoff",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:R2048 rivet",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:R2056 rivet",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:R3055 rivet",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:R3065 rivet",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:R3080 rivet",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:R30185 rivet",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:Washer A",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "printed-bom:Washer B",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Printed total = primary + backup; planned use within printed total for all three variants. No physical count asserted."
+      }
+    },
+    {
+      "check": "coarse DAG recomputed",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "M0",
+        "M1",
+        "M2",
+        "M4",
+        "M3",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "M9",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14"
+      ]
+    },
+    {
+      "check": "coarse reconstruction agrees",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "phase DAG recomputed",
+      "category": "SEMANTIC_FIXTURE",
+      "outcome": "PASS",
+      "detail": [
+        "M0-CORE",
+        "M1-CONTRACTS",
+        "M2-GRAPH",
+        "M4-FIXTURES",
+        "M3-REFERENCE",
+        "M5-COMPONENT-SCOPE",
+        "M6-PLATE-SCOPE",
+        "M8-FIXTURE-EXPORT",
+        "M10-PURE-CONTROLLER",
+        "M7-CAD-SCOPE",
+        "M9-FIXTURE-VIEWER",
+        "M8-REAL-ADMISSION",
+        "M9-REAL-VIEWER",
+        "M10-REAL-TRANSITIONS",
+        "M11-FULL-COVERAGE",
+        "M12-RELEASE",
+        "M13-CAMERA",
+        "M14-AR"
+      ]
+    },
+    {
+      "check": "acceptance-doc-json:M0",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M1",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M2",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M3",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M4",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M5",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M6",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M7",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M8",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M9",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M10",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M11",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M12",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M13",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "acceptance-doc-json:M14",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo:PX-EV-PHOTO-01",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23",
+        "dimensions": [
+          1536,
+          1152
+        ]
+      }
+    },
+    {
+      "check": "photo-private-reference-scope:PX-EV-PHOTO-01",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo:PX-EV-PHOTO-02",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd",
+        "dimensions": [
+          1536,
+          1152
+        ]
+      }
+    },
+    {
+      "check": "photo-private-reference-scope:PX-EV-PHOTO-02",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo:PX-EV-PHOTO-03",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54",
+        "dimensions": [
+          1152,
+          1536
+        ]
+      }
+    },
+    {
+      "check": "photo-private-reference-scope:PX-EV-PHOTO-03",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo:PX-EV-PHOTO-04",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc",
+        "dimensions": [
+          1152,
+          1536
+        ]
+      }
+    },
+    {
+      "check": "photo-private-reference-scope:PX-EV-PHOTO-04",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo:PX-EV-PHOTO-05",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d",
+        "dimensions": [
+          1152,
+          1536
+        ]
+      }
+    },
+    {
+      "check": "photo-private-reference-scope:PX-EV-PHOTO-05",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo:PX-EV-PHOTO-06",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063",
+        "dimensions": [
+          1152,
+          1536
+        ]
+      }
+    },
+    {
+      "check": "photo-private-reference-scope:PX-EV-PHOTO-06",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "photo-index-hash",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop:crops/hardware-crop.png",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop:crops/s04-pi45-crop.png",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop:crops/s04-zero-crop.png",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original manifest audit receipt",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": {
+        "scope": "Direct original-byte comparison recorded before editing; receipt, not a repeat check against changed files."
+      }
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/crops/hardware-crop.png",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/crops/s04-pi45-crop.png",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/crops/s04-zero-crop.png",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/manifest.json",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/01_IMG_0526.jpeg",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/02_IMG_0527.jpeg",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/03_IMG_0528.jpeg",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/04_IMG_0529.jpeg",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/05_IMG_0530.jpeg",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/06_IMG_0531.jpeg",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original-evidence-preserved:EVIDENCE/originals/IMAGE_INDEX.txt",
+      "category": "EVIDENCE",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original174 classification total",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "relative Markdown links",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": {
+        "checked": 158,
+        "broken": []
+      }
+    },
+    {
+      "check": "combined:ARCHITECTURE.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:ASSEMBLY_ENGINE_SPEC.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:ASSET_PIPELINE_SPEC.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:AUDIT_CHANGELOG.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:AUDIT_REPORT.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:BOM_RECONCILIATION.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:CRITICAL_REVIEW.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:DIGITAL_TWIN_DATA_MODEL.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:EVIDENCE_INSPECTION.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:FUTURE_CAMERA_AND_AR_SPEC.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:GATE_CONTRACTS.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:GEOMETRY_AND_EVIDENCE_SPEC.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:HANDOFF_M0.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:HASH_AND_PACK_CONTRACT.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:MILESTONES.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:MILESTONE_REVIEW.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:OPEN_QUESTIONS_AND_BLOCKERS.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:PERSISTENCE_CONTRACT.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:PRODUCT_SPEC.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:README.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:REPOSITORY_CHANGE_MAP.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:SEMANTIC_CONTRACT.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:SOURCE_PUBLICATION_CONTRACT.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:SOURCE_REGISTER.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:V40_ASSEMBLY_LEDGER.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "combined:VERIFICATION_AND_TEST_PLAN.md",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no stale normative hash contract",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": []
+    },
+    {
+      "check": "no CAD/GLB/application code generated",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "findings and correction statuses",
+      "category": "STRUCTURAL",
+      "outcome": "PASS",
+      "detail": ""
+    }
+  ],
+  "explicitlyNotExecuted": [
+    "Repository dependency install/build or application regression tests",
+    "SQLite/IndexedDB command, migration or crash tests",
+    "Packaged Tauri/macOS, WebGL or performance tests",
+    "Production TypeScript/Rust/Python JCS parity tests",
+    "Production29-step reversible reducer tests",
+    "CAD generation, geometric constraints, swept clearance or measured uncertainty",
+    "Real GLB export/decode/geometry admission",
+    "Physical inventory, actual-unit fit or camera/AR testing",
+    "Assembly PDF binary inspection/SHA-256/panel verification",
+    "Rehash of absent original reference-images.zip"
+  ],
+  "integrityProtocol": "Run default mode after --write to independently check report input binding and every PACKAGE_MANIFEST.sha256 entry."
+}

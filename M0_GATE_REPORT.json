@@ -1,0 +1,92 @@
+{
+  "contractVersion": 2,
+  "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+  "auditedPackageSha256": "7a01cc81d68e2a12c641e9d3dfe0b00636476dee1df8de17e442cc127178b411",
+  "checks": [
+    {
+      "id": "A",
+      "status": "PASS",
+      "evidencePaths": [
+        "docs/implementation/evidence/m0/baseline-install.txt",
+        "docs/implementation/evidence/m0/baseline-build.txt",
+        "docs/implementation/evidence/m0/final-install.txt",
+        "docs/implementation/evidence/m0/final-build.txt",
+        "docs/implementation/evidence/m0/environment.json",
+        "docs/implementation/evidence/m0/before-tree-manifest.json",
+        "docs/implementation/evidence/m0/after-tree-manifest.json"
+      ],
+      "summary": "Recorded baseline and final frozen install/build succeeded; unchanged audited HEAD and native lock."
+    },
+    {
+      "id": "B",
+      "status": "PASS",
+      "evidencePaths": [
+        "docs/implementation/evidence/m0/unit-results.json",
+        "docs/implementation/evidence/m0/browser-tests-final.txt",
+        "docs/implementation/evidence/m0/test-manifest.json"
+      ],
+      "summary": "Four routes, eight ordered stage IDs, reference/search/video/PDF and valid raw legacy behavior preserved; 40 unit and 8 Chromium/WebKit cases pass."
+    },
+    {
+      "id": "C",
+      "status": "PASS",
+      "evidencePaths": [
+        "docs/implementation/evidence/m0/before-tree-manifest.json",
+        "docs/implementation/evidence/m0/after-tree-manifest.json",
+        "docs/implementation/evidence/m0/unit-results.json"
+      ],
+      "summary": "com.danny.picarx-companion, native source/config/permissions and Cargo lock byte-identical; no test bridge ships."
+    },
+    {
+      "id": "D",
+      "status": "PASS",
+      "evidencePaths": [
+        "picarx-companion/tools/content-pipeline/documentation-source-lock.json",
+        "docs/implementation/M0_SOURCE_REVIEW.md",
+        "docs/digital-twin/SPEC_PACKAGE_RECEIPT.md"
+      ],
+      "summary": "Actual V40 PDF and all six photos reviewed; 29 panel mappings and all three early branch variants verified, with distinct Git blob and SHA-256."
+    },
+    {
+      "id": "E",
+      "status": "PASS",
+      "evidencePaths": [
+        "docs/implementation/evidence/m0/unit-results.json",
+        "docs/implementation/evidence/m0/content-check-final.txt",
+        "docs/implementation/evidence/m0/test-manifest.json"
+      ],
+      "summary": "Missing/V33-only/wrong V40, dirty/tampered input, wrong actual source revisions and missing branch fail closed; captured inputs and prepublication verification protect live roots."
+    },
+    {
+      "id": "F",
+      "status": "PASS",
+      "evidencePaths": [
+        "docs/implementation/evidence/m0/unit-results.json",
+        "docs/implementation/evidence/m0/protected-paths.json",
+        "docs/implementation/evidence/m0/test-manifest.json"
+      ],
+      "summary": "18 fresh-process fault boundaries, restarted recovery, missing backups, two writers/live readers and symlinks tested; all-old/all-new tree and private/custom/twin hashes preserved. Durability scope: local macOS filesystem honoring fsync/F_FULLFSYNC ordering, as documented in M0_REPORT."
+    },
+    {
+      "id": "G",
+      "status": "PASS",
+      "evidencePaths": [
+        "docs/implementation/evidence/m0/unit-results.json",
+        "docs/implementation/evidence/m0/package-check-final.txt",
+        "docs/implementation/evidence/m0/output-manifest.json",
+        "docs/implementation/evidence/m0/protected-paths.json"
+      ],
+      "summary": "Explicit safe mirror, actual dist and isolated source-free build exclude nested/untracked denied media and owner evidence; local originals preserved."
+    }
+  ],
+  "nativeFeasibility": "BLOCKED",
+  "nativeBlocker": "Actual native lock lacks tauri-plugin-wdio and tauri-plugin-wdio-webdriver. Later work needs compatible versions isolated behind a test-only feature and an authorized native test build/session; no bridge or shipping dependency was added.",
+  "m1Allowed": true,
+  "bindings": {
+    "sourceLockSha256": "8ca58014ece62abf765ebdbd767d72611d69eaac39440e06b78769505fd6d0b3",
+    "inputManifestSha256": "74c028a64f17aef741415727abd1599c0b9b7c110fc00b2db2008570fcd888f4",
+    "testManifestSha256": "07100a0881063406f170030f5ba447909adf55e68c5ca925a9c6d2f2da5dbd14",
+    "outputManifestSha256": "5f96ff5b319bbdaf05aa014d8b9952f7713291af6dffad834e8b57179692dd32"
+  },
+  "rollbackInstructionsPath": "docs/implementation/M0_ROLLBACK.md"
+}

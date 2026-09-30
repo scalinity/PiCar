@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Non-executable V40 planning step seed",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "./planning-step-seed.schema.json"
+    },
+    "documentType": {
+      "const": "planning-step-seed"
+    },
+    "schemaVersion": {
+      "type": "integer"
+    },
+    "revision": {
+      "const": "Z0104V40"
+    },
+    "status": {
+      "const": "NON_EXECUTABLE_PENDING_CANONICAL_BINDING"
+    },
+    "variants": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": "rpi4"
+        },
+        {
+          "const": "rpi5"
+        },
+        {
+          "const": "rpi-zero-2-w"
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "instructionSource": {
+      "const": "owner photographs 04, 05, 06; quantities transcribed from printed depictions"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 29,
+      "maxItems": 29,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "printedNumber": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 29
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidenceRef": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourcePanel": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "parentAssemblies": {
+            "type": "string",
+            "minLength": 1
+          },
+          "introducedParts": {
+            "type": "string",
+            "minLength": 1
+          },
+          "introducedHardware": {
+            "type": "string",
+            "minLength": 1
+          },
+          "connectionIntent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "finalConstraintStatus": {
+            "type": "string",
+            "minLength": 1
+          },
+          "orientation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tools": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cableOperations": {
+            "type": "string",
+            "minLength": 1
+          },
+          "zeroingRequirements": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cameraIntent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "motionIntent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verificationChecks": {
+            "type": "string",
+            "minLength": 1
+          },
+          "geometryBlockerIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "variantDetails": {
+            "type": "object",
+            "properties": {
+              "rpi4": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rpi5": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rpi-zero-2-w": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "confidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "confidenceScope": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "printedNumber",
+          "title",
+          "evidenceRef",
+          "sourcePanel",
+          "prerequisites",
+          "parentAssemblies",
+          "introducedParts",
+          "introducedHardware",
+          "connectionIntent",
+          "finalConstraintStatus",
+          "orientation",
+          "tools",
+          "cableOperations",
+          "zeroingRequirements",
+          "cameraIntent",
+          "motionIntent",
+          "verificationChecks",
+          "geometryBlockerIds",
+          "variantDetails",
+          "confidence",
+          "confidenceScope"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "documentType",
+    "schemaVersion",
+    "revision",
+    "status",
+    "variants",
+    "instructionSource",
+    "steps"
+  ]
+}

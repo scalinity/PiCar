@@ -1,0 +1,127 @@
+{
+  "reconstructed": {
+    "M0": [],
+    "M1": [
+      "M0"
+    ],
+    "M2": [
+      "M1"
+    ],
+    "M3": [
+      "M0",
+      "M1",
+      "M2"
+    ],
+    "M4": [
+      "M1"
+    ],
+    "M5": [
+      "M1",
+      "M2",
+      "M4"
+    ],
+    "M6": [
+      "M1",
+      "M2",
+      "M4"
+    ],
+    "M7": [
+      "M2",
+      "M4",
+      "M5",
+      "M6"
+    ],
+    "M8": [
+      "M1",
+      "M4",
+      "M7"
+    ],
+    "M9": [
+      "M3",
+      "M8"
+    ],
+    "M10": [
+      "M2",
+      "M3",
+      "M8",
+      "M9"
+    ],
+    "M11": [
+      "M3",
+      "M5",
+      "M6",
+      "M7",
+      "M8",
+      "M9",
+      "M10"
+    ],
+    "M12": [
+      "M11"
+    ],
+    "M13": [
+      "M12"
+    ],
+    "M14": [
+      "M13"
+    ]
+  },
+  "suppliedIdentical": true,
+  "acyclic": true,
+  "transitiveReduction": {
+    "M0": [],
+    "M1": [
+      "M0"
+    ],
+    "M2": [
+      "M1"
+    ],
+    "M3": [
+      "M2"
+    ],
+    "M4": [
+      "M1"
+    ],
+    "M5": [
+      "M2",
+      "M4"
+    ],
+    "M6": [
+      "M2",
+      "M4"
+    ],
+    "M7": [
+      "M5",
+      "M6"
+    ],
+    "M8": [
+      "M7"
+    ],
+    "M9": [
+      "M3",
+      "M8"
+    ],
+    "M10": [
+      "M9"
+    ],
+    "M11": [
+      "M10"
+    ],
+    "M12": [
+      "M11"
+    ],
+    "M13": [
+      "M12"
+    ],
+    "M14": [
+      "M13"
+    ]
+  },
+  "missingCoarseEdges": [],
+  "missingPhaseContracts": [
+    "M8 fixture exporter before M7",
+    "M9 fixture viewer before real M8 acceptance",
+    "M10 pure controller before real assets",
+    "per-definition/per-step scope receipts"
+  ],
+  "unnecessaryEdges": "Only transitively redundant explicit input edges, not correctness bugs."
+}

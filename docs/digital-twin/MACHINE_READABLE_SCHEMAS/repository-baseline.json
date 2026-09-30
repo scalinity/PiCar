@@ -1,0 +1,46 @@
+{
+  "repository": "scalinity/PiCar",
+  "branch": "main",
+  "resolvedHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+  "observedOn": "2026-09-29",
+  "upstreamDocumentation": {
+    "repository": "sunfounder/picar-x",
+    "commit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+    "sharedRepository": "sunfounder/sf-shared",
+    "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+    "gitlinkIndependentlyRead": true
+  },
+  "bundledPdf": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "gitBlobSha1": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+    "byteLength": 11048665,
+    "sha256": {
+      "state": "unresolved",
+      "blockerIds": [
+        "Q-02"
+      ]
+    },
+    "binaryContentsInspected": false
+  },
+  "existingScripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "content:build": "tsx tools/content-pipeline/build.ts"
+  },
+  "existingWizardStageIds": [
+    "parts",
+    "os",
+    "power",
+    "connect",
+    "software",
+    "servo-zero",
+    "assembly",
+    "calibrate"
+  ],
+  "repositoryWrites": false,
+  "repositoryBuildExecuted": false,
+  "nativeAppExecuted": false,
+  "planningScope": "read-only repository/source inspection and local specification artifact authoring"
+}

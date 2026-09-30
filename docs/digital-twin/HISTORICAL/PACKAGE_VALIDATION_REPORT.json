@@ -1,0 +1,888 @@
+{
+  "scope": "Specification package integrity and proposed-schema examples only. Not repository build, application tests, CAD verification, physical inventory verification or mechanical certification.",
+  "summary": {
+    "passed": 174,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "check": "JSON parse",
+      "outcome": "PASS",
+      "detail": "45 files parsed"
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/PartDefinition.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/PartInstance.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/ConnectionPoint.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/CableDefinition.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/ToolRequirement.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/Claim.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/GeometrySource.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/AssemblyState.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/UnresolvedEvidenceItem.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/VerificationRule.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/RuntimeManifest.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/AssemblyStep.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/EvidenceRecord.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/MechanicalInterface.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/AdmissionReport.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/CableConnection.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/AssemblyOperation.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/AssemblySession.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/CameraInstruction.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/VariantRule.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/FastenerDefinition.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/VisibilityRule.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/MechanicalConnection.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/OperationUndo.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/Warning.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/Measurement.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/MotionInstruction.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "schema:MACHINE_READABLE_SCHEMAS/planning-step-seed.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "example:part-definition.valid.json",
+      "outcome": "PASS",
+      "detail": "expected valid shape only"
+    },
+    {
+      "check": "example:mechanical-interface.valid.json",
+      "outcome": "PASS",
+      "detail": "expected valid shape only"
+    },
+    {
+      "check": "example:printed-designation-claim.valid.json",
+      "outcome": "PASS",
+      "detail": "expected valid shape only"
+    },
+    {
+      "check": "example:numeric-unresolved.valid.json",
+      "outcome": "PASS",
+      "detail": "expected valid shape only"
+    },
+    {
+      "check": "example:numeric-derived-schema-only.valid.json",
+      "outcome": "PASS",
+      "detail": "expected valid shape only"
+    },
+    {
+      "check": "example:numeric-unresolved-with-value.invalid.json",
+      "outcome": "PASS",
+      "detail": "expected schema rejection"
+    },
+    {
+      "check": "example:numeric-derived-without-method.invalid.json",
+      "outcome": "PASS",
+      "detail": "expected schema rejection"
+    },
+    {
+      "check": "example:verified-claim-without-evidence.invalid.json",
+      "outcome": "PASS",
+      "detail": "expected schema rejection"
+    },
+    {
+      "check": "example:unknown-field-definition.invalid.json",
+      "outcome": "PASS",
+      "detail": "expected schema rejection"
+    },
+    {
+      "check": "required entity definitions",
+      "outcome": "PASS",
+      "detail": "21 requested entities present"
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/PartDefinition.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/PartInstance.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/ConnectionPoint.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/CableDefinition.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/ToolRequirement.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/Claim.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/GeometrySource.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/AssemblyState.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/UnresolvedEvidenceItem.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/VerificationRule.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/RuntimeManifest.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/AssemblyStep.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/EvidenceRecord.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/MechanicalInterface.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/AdmissionReport.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/CableConnection.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/AssemblyOperation.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/AssemblySession.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/CameraInstruction.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/VariantRule.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/FastenerDefinition.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/VisibilityRule.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/MechanicalConnection.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/OperationUndo.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/Warning.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/Measurement.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "local schema reference:MACHINE_READABLE_SCHEMAS/MotionInstruction.schema.json",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "planning seed schema",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "29 steps exactly",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "29 unique step IDs",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "three variants exactly",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "planning seed cannot be a production step",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "seed status non-executable",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step01 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step02 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step03 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step04 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step05 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step06 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step07 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step08 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step09 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step10 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step11 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step12 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step13 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step14 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step15 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step16 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step17 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step18 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step19 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step20 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step21 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step22 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step23 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step24 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step25 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step26 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step27 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step28 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step29 prerequisite",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "step blocker resolution",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "printed stock scope",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M2.5x6 screw",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M3x25 screw",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:Spring washer",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M3 nut",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M1.5x3 screw",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M3x6 screw",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M2.5x18+6 standoff",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M2.5x18 standoff",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M2.5x11 standoff",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M2.5x30 standoff",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:M3x26 standoff",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:R2048 rivet",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:R2056 rivet",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:R3055 rivet",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:R3065 rivet",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:R3080 rivet",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:R30185 rivet",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:Washer A",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "BOM arithmetic:Washer B",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M0",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M1",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M2",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M3",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M4",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M5",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M6",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M7",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M8",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M9",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M10",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M11",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M12",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M13",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "milestone predecessor:M14",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "15 milestones",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "relative markdown links",
+      "outcome": "PASS",
+      "detail": "54 links resolve"
+    },
+    {
+      "check": "original archive hash",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original bytes:01_IMG_0526.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original hash:01_IMG_0526.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "image dimensions:01_IMG_0526.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original bytes:02_IMG_0527.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original hash:02_IMG_0527.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "image dimensions:02_IMG_0527.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original bytes:03_IMG_0528.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original hash:03_IMG_0528.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "image dimensions:03_IMG_0528.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original bytes:04_IMG_0529.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original hash:04_IMG_0529.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "image dimensions:04_IMG_0529.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original bytes:05_IMG_0530.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original hash:05_IMG_0530.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "image dimensions:05_IMG_0530.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original bytes:06_IMG_0531.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "original hash:06_IMG_0531.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "image dimensions:06_IMG_0531.jpeg",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop hash:hardware-crop.png",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop dimensions:hardware-crop.png",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop hash:s04-pi45-crop.png",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop dimensions:s04-pi45-crop.png",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop hash:s04-zero-crop.png",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "crop dimensions:s04-zero-crop.png",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "required documents",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no obsolete contract:src/domain/twin/",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no obsolete contract:src/features/assembly/",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no obsolete contract:src/infrastructure/persistence/",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no obsolete contract:digital-twin/build/",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no obsolete contract:PX-V40-STEP-18.ZERO-TILT",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no obsolete contract:signed/hash-bound",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "Pi5 source limitation retained",
+      "outcome": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no geometry outputs",
+      "outcome": "PASS",
+      "detail": ""
+    }
+  ],
+  "explicitlyNotExecuted": [
+    "repository frontend build",
+    "native application",
+    "production CAD generation",
+    "GLB generation/validation",
+    "physical measurements",
+    "actual inventory count",
+    "camera or AR verification"
+  ]
+}

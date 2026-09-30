@@ -1,0 +1,204 @@
+{
+  "documentType": "planning-blocker-register",
+  "revision": "Z0104V40",
+  "items": [
+    {
+      "id": "Q-01",
+      "title": "Physical evidence scope versus nominal design",
+      "missingEvidence": "The photos show the box and printed documentation, not a measured loose-part inventory or an inspected assembled robot. No current source proves the actual unit matches every nominal feature.",
+      "impact": "All physical-match and actual-stock assertions; not reference/software functionality.",
+      "permittedWork": "Proceed with source-scoped printed claims and nominal candidates; prohibit PHYSICAL_MATCH_CHECKED or actual-stock PASS from these images alone.",
+      "resolutionCriteria": "Adequate direct physical evidence or traceable manufacturer unit/lot data for each claimed property. No new owner capture is required by M0–M12; absent evidence leaves this gate blocked.",
+      "ownerMilestone": "M1/M12",
+      "classification": "Physical certification blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-02",
+      "title": "Bundled PDF bytes, revision and acquisition provenance",
+      "missingEvidence": "The repository exposes a generic PDF filename with a known Git blob, but its binary content could not be read in this pass. The upstream source commit does not by itself establish the separate PDF bytes. Existing code can fall back to V33.",
+      "impact": "Verified booklet label, source regeneration, AC-02; photo-backed semantic planning remains possible.",
+      "permittedWork": "Keep photo source panels authoritative; fail closed when required V40 PDF is absent/mismatched. Do not assert PDF/photo equivalence.",
+      "resolutionCriteria": "Read actual checkout PDF bytes, hash SHA-256, inspect revision/parts/branch/29 panels against all photos, record actual source locator and revision. Remove fallback; test V33-only failure.",
+      "ownerMilestone": "M0",
+      "classification": "Source gate",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-03",
+      "title": "Exact structural plates A–H",
+      "missingEvidence": "No complete applicable engineering package was established in this targeted pass. Missing potentially include each outline, thickness, bend angle/radius, hole/slot centers and diameters, plane offsets, pivot/support datums and E/F handed geometry.",
+      "impact": "Most real assembly poses and interface closure; G-CAD/G-GEOMETRY for dependent steps.",
+      "permittedWork": "Declare parameters, semantic feature names and plate identities; generate no exact solids from perspective tracing or default thickness. Fixture and reference lanes continue.",
+      "resolutionCriteria": "Applicable V40 STEP/DXF plus engineering bend/thickness data, manufacturer drawing, or fully constrained documented derivation from authoritative inputs. A flat drawing alone does not resolve bends. Record independent feature checks.",
+      "ownerMilestone": "M6",
+      "classification": "Critical geometry blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-04",
+      "title": "Exact TT motor/gearbox identity and wheel shaft",
+      "missingEvidence": "Printed label and rendered appearance do not establish OEM model, housing envelope, mount holes, shaft section, seating offset or wire exit geometry.",
+      "impact": "S05, S27 and related chassis/wheel clearance.",
+      "permittedWork": "Maintain kit-role definition unresolved; generic TT CAD may be a visibly provisional comparison only.",
+      "resolutionCriteria": "Manufacturer/kit identity mapping and applicable engineering drawing/STEP; compare all mount, shaft and envelope features, not only gearbox color.",
+      "ownerMilestone": "M5",
+      "classification": "Geometry/identity blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-05",
+      "title": "Servos, horns, spline and retaining screws",
+      "missingEvidence": "Three printed servos are not proof of SG90/MG90S identity or equivalence. Mounts, shaft/spline geometry, neutral mechanical orientation, horn shape and smallest-package screw standard are unresolved.",
+      "impact": "S08/S13–S22 and servo-horn alignment/clearance/zeroing geometry.",
+      "permittedWork": "Keep pan/tilt/steering roles distinct until equivalence is supported; use per-servo zeroing attestations without claiming a measured exact angle.",
+      "resolutionCriteria": "Exact kit-to-OEM mapping plus tab/shaft/spline/horn drawings and accessory screw specification; evidence for zeroing procedure applicable to actual HAT.",
+      "ownerMilestone": "M5",
+      "classification": "Critical geometry/identity blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-06",
+      "title": "Fastener standards, standoff ends, washers and opaque rivet codes",
+      "missingEvidence": "Printed nominal designations do not fully specify head/drive standards, pitch/form, material, nut/hex external dimensions, standoff end sex/depth, washer bore/OD/thickness or rivet grip/locking shape.",
+      "impact": "All fastening stacks, tools, seating and clearance; physical-fit claim even when a nominal length is transcribed.",
+      "permittedWork": "Use exact printed names and source quantities; unresolved sizes in tool cards; no invented torque or rivet digit decoding. Separate Washer A and B.",
+      "resolutionCriteria": "Applicable manufacturer/standard mapping and dimensions for each required feature. Source nominal and manufacturing limits separately; standard is not selected from appearance alone.",
+      "ownerMilestone": "M5",
+      "classification": "Critical geometry blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-07",
+      "title": "Robot HAT revision, ZERO control and connector map",
+      "missingEvidence": "Box/manual appearance and existing latest-family documentation do not establish the exact board revision, mounting thickness/holes, connector heights or whether a referenced ZERO procedure applies.",
+      "impact": "S04/S07/S17/S29, PCB support/cable clearance and physical servo preparation.",
+      "permittedWork": "Show printed source instruction with applicability note; never promote the old UI hardware chip to a verified board identity. No app-controlled actuation.",
+      "resolutionCriteria": "Revision-specific official board CAD/KiCad/drawing and matching supplied-board identity; applicable ZERO/power/port documentation. Board-size snippets or latest-family pages alone are insufficient.",
+      "ownerMilestone": "M5",
+      "classification": "Geometry/procedure blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-08",
+      "title": "Camera, ultrasonic and grayscale identity/dimension conflicts",
+      "missingEvidence": "Camera page contains approximate 25×23×9 and a 24×23.5×8 specification. Sensor family names do not establish exact boards. Repository ultrasonic text says 5 V while V40 final diagram labels 3V3. Grayscale dimensions are unestablished.",
+      "impact": "S09/S11/S12/S24/S28/S29 mounting, connector orientation and electrical applicability.",
+      "permittedWork": "Preserve both source claims and the exact printed diagram. Do not silently substitute a Raspberry Pi Camera Module or generic HC-SR04 CAD; do not synthesize a new voltage instruction from the conflict.",
+      "resolutionCriteria": "Revision-applicable official PCB/connector drawings and explicit V40 electrical pin/supply correspondence. Resolve conflicting dimensions through source scope, not averaging.",
+      "ownerMilestone": "M5",
+      "classification": "Critical identity/electrical/geometry blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-09",
+      "title": "Camera ribbons, loose cables, pin orientation and routing envelopes",
+      "missingEvidence": "FPC/FFC branch labels are visible, but exact conductor counts, pitches, lengths, connector identities, bend-radius limits and some pin-to-pin mappings are not established. Sensor supply labels are not a complete keyed wire mapping.",
+      "impact": "Metric cable visualization, bend/clearance checks and connector mating.",
+      "permittedWork": "Preserve endpoints and source routing order; use labeled schematic paths only where metric geometry is missing. A schematic is not an admitted physical route.",
+      "resolutionCriteria": "Applicable kit cable/connector documentation, known endpoint keying, length/bend data and routing anchors. Identity must match Pi variant and SunFounder module, not only board family.",
+      "ownerMilestone": "M5/M7",
+      "classification": "Connection/route blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-10",
+      "title": "Pi board/revision and limits of official mechanical sources",
+      "missingEvidence": "Official Pi4, Pi5 and Zero2W mechanical sources were located. Pi5 drawing explicitly calls its dimensions approximate/reference-only and not production data. Pi5 STEP is located but its bytes/feature limits were not inspected. Actual user-supplied board revision/header/cooler configuration is unspecified.",
+      "impact": "S01–S04 board interface/clearance; no automatic full Pi5 engineering admission from an official logo.",
+      "permittedWork": "Acquire source-limited reference models; allow nominal engineering scopes only where the source actually supports them. Board variant selection is explicit; additional cooler geometry is not assumed absent.",
+      "resolutionCriteria": "Pin applicable source bytes and limitations; inspect Pi5 STEP and related notices, validate named mechanical interfaces and component omissions, record board/revision/header/cooler configuration. Reference-only dimensions remain provisional for unsupported exact claims.",
+      "ownerMilestone": "M5",
+      "classification": "Bounded acquisition/applicability gate",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-11",
+      "title": "Battery, adhesive/tape and nonrigid envelopes",
+      "missingEvidence": "Exact battery model/dimensions, lead connector, tape/loop thickness and protective material consumption are not measured by the photos.",
+      "impact": "S06/S07 and any envelope/clearance/cable certificate relying on these values.",
+      "permittedWork": "Represent allocation and intended location semantically; omit exact envelopes or mark schematic; do not claim compression, adhesive performance or battery safety from CAD.",
+      "resolutionCriteria": "Applicable battery/connector specifications and prescribed material thickness/stock evidence; assess which dimensions actually enter the claimed mechanical scope.",
+      "ownerMilestone": "M5",
+      "classification": "Scoped geometry/material blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-12",
+      "title": "Front/rear wheel geometry and steering stack detail",
+      "missingEvidence": "Manual establishes wheel roles, E-right/F-left, Washer A at S19 and three Washer B per front wheel at S26. Exact hub/shaft dimensions, washer axial order against each bearing face and joint clearance are not a full dimensioned stack.",
+      "impact": "S19/S21/S25–S27, free steering/wheel movement and mechanical finalization.",
+      "permittedWork": "Keep prescribed counts and free joint semantics; bind intended stack faces only when source/geometry resolves them. No arbitrary closed-loop weld.",
+      "resolutionCriteria": "Applicable wheel/rivet/washer/carrier drawings and an unambiguous source-supported stack interpretation, followed by independent DOF and interference checks.",
+      "ownerMilestone": "M5/M7",
+      "classification": "Critical mechanical blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-13",
+      "title": "Actual inventory, accessory-package stock and repeated cable illustrations",
+      "missingEvidence": "Printed hardware stock can be counted, but actual owner quantities, servo-package accessory counts, repeated cable drawings as items versus views, tape stock and spare declarations are not all determined.",
+      "impact": "Actual inventory equality and no-orphan accounting across all supplied accessories.",
+      "permittedWork": "Track printed stock and planned consumed instances separately; unknown observed counts do not become zero or equal printed totals. Integral leads are not new loose inventory.",
+      "resolutionCriteria": "Applicable exact V40 BOM/package inventory or adequate existing direct inventory evidence. Resolve repeated illustrations and package multiplicity explicitly. No new owner photo is required to continue software work.",
+      "ownerMilestone": "M1/M11",
+      "classification": "Inventory certification blocker",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-14",
+      "title": "Zero2W microphone/header and accessory handling",
+      "missingEvidence": "The Pi4/Pi5 panel depicts USB mini microphone insertion; the Zero2W panel does not establish an equivalent adapter installation. Actual header-ready state and accessory adapter are unspecified.",
+      "impact": "Variant accessory guidance and potential board/HAT mating precondition.",
+      "permittedWork": "Keep microphone as an accounted unused accessory in the Zero2W branch unless an applicable supported operation exists; add header-readiness preflight, not invented assembly step30.",
+      "resolutionCriteria": "Official applicable Zero2W adapter/header configuration and kit accessory evidence. Retain optional task outside the printed29 if later supported.",
+      "ownerMilestone": "M2/M11",
+      "classification": "Scoped variant gate",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-15",
+      "title": "Exact reproducible toolchain lock and binary distribution",
+      "missingEvidence": "Patch versions/OCCT compatibility and rights-cleared pack sizes have not been established through builds here. Architecture and package families are selected; exact compatible lock is a measured gate.",
+      "impact": "Reproducibility, CI/native build and large-asset publication.",
+      "permittedWork": "Use chosen Python3.12/CadQuery2.x and React19/Fiber9 families with locks; synthetic compatibility spike; no unreviewed mass dependency upgrade.",
+      "resolutionCriteria": "Pass locked fixture/build matrix, record tool versions, normalize nondeterministic output and audit distribution rights. Files >50MiB require a recorded storage decision before check-in.",
+      "ownerMilestone": "M0/M4/M8",
+      "classification": "Technical implementation gate",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-16",
+      "title": "Packaged Apple Silicon rendering, performance and native harness",
+      "missingEvidence": "No native app or GPU benchmarks were run in this planning pass. Official Tauri embedded WDIO path is documented but must be tested with the actual lock/target macOS.",
+      "impact": "AC-13 and release performance/native automation.",
+      "permittedWork": "Develop and test browser/Rust layers; report native results missing instead of claiming browser equivalence. Keep GPU fallback.",
+      "resolutionCriteria": "Record target machine; run packaged native interaction/context/memory/performance suite and test-only plugin exclusion. Resolve harness incompatibility explicitly.",
+      "ownerMilestone": "M0/M9/M12",
+      "classification": "Measured validation gate",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-17",
+      "title": "Private evidence, upstream sensitive media and asset redistribution",
+      "missingEvidence": "Gitignore hides known screenshots from Git but does not stop a local build from bundling them. Owner photos and candidate vendor CAD have source-specific rights/privacy; private source vault is not a publication directory.",
+      "impact": "Shipping package, evidence caches, source links and optional cloud processing.",
+      "permittedWork": "Allowlist clean runtime publication, deny sensitive paths, preserve local originals and original hashes, never auto-publish evidence ZIP.",
+      "resolutionCriteria": "Pass rights/privacy manifest and actual bundle audit; explicit approval for every redistributed source/media class; compare staged artifacts, not only git status.",
+      "ownerMilestone": "M0/M8/M12",
+      "classification": "Publication gate",
+      "status": "OPEN"
+    },
+    {
+      "id": "Q-18",
+      "title": "Future camera calibration, pose registration and observability",
+      "missingEvidence": "No calibrated camera/tag fixture or physical observation dataset is present. Hidden torque/washer/screw length cannot be certified from an arbitrary camera view.",
+      "impact": "M13/M14 only and any camera-derived property check.",
+      "permittedWork": "Use controlled/synthetic fixtures for development; keep camera off before M13; no new owner capture dependency in the core product.",
+      "resolutionCriteria": "Calibration with uncertainty, known tag scale and tag-to-assembly registration, admitted feature geometry and validated visible predicates; real target-camera accuracy requires actual evaluation.",
+      "ownerMilestone": "M13/M14",
+      "classification": "Future capability gate",
+      "status": "OPEN"
+    }
+  ]
+}

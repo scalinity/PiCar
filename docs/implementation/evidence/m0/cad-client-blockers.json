@@ -1,0 +1,54 @@
+{
+  "codex": {
+    "status": "BLOCKED",
+    "version": "0.157.1",
+    "initialExitCode": 1,
+    "initialError": "The 'gpt-6.1-sol' model is not supported when using Codex with a ChatGPT account.",
+    "catalogModelAttempt": {
+      "command": "codex exec --json --skip-git-repo-check --model gpt-5.5 <bounded read-only verification prompt>",
+      "exitCode": 0,
+      "calls": [
+        {
+          "server": "freecad-robust",
+          "tool": "get_connection_status",
+          "status": "failed",
+          "error": "MCP tool call requires approval, but approval policy is never"
+        },
+        {
+          "server": "freecad-robust",
+          "tool": "get_freecad_version",
+          "status": "failed",
+          "error": "MCP tool call requires approval, but approval policy is never"
+        },
+        {
+          "server": "freecad-inspect",
+          "tool": "list_documents",
+          "status": "failed",
+          "error": "MCP tool call requires approval, but approval policy is never"
+        }
+      ]
+    },
+    "configured": true,
+    "successfulClientCalls": 0,
+    "defaultConfigurationUnchanged": true
+  },
+  "computerUse": {
+    "status": "BLOCKED",
+    "attempts": [
+      "FreeCAD",
+      "org.freecad.FreeCAD",
+      "/Applications/FreeCAD-1.1.4-M0.app"
+    ],
+    "error": "Computer Use server error -10005: timeoutReached",
+    "verifiedInteraction": false
+  },
+  "officialInstaller": {
+    "sha256": "071343b4abb70492b75c973f41eaf1d2528f9b9c7ea018d22a4f46ae14d27ac0",
+    "signatureExitCode": 0
+  },
+  "loopbackListeners": [
+    9875,
+    9876,
+    9878
+  ]
+}

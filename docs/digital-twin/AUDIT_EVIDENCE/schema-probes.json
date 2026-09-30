@@ -1,0 +1,4253 @@
+{
+  "probes": [
+    {
+      "name": "full-state-can-store-routes-and-allocations",
+      "definition": "AssemblyState",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": [],
+          "contractVersion": 2,
+          "cableRoutes": [],
+          "consumableLots": [],
+          "consumableAllocations": [],
+          "subassemblies": []
+        },
+        "expectedValid": true
+      },
+      "original": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": [],
+          "cableRoutes": [],
+          "consumableLots": [],
+          "consumableAllocations": [],
+          "subassemblies": []
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "hash-only-stock-state-no-longer-complete",
+      "definition": "AssemblyState",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": []
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "truthful-pre-export-cad-without-mesh",
+      "definition": "AdmissionReport",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-CAD",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [],
+          "reviewer": "synthetic schema fixture",
+          "contractVersion": 2,
+          "gatePolicyHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testArtifacts": [
+            {
+              "state": "available",
+              "path": "fixtures/witness.json",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "byteLength": 1,
+              "mediaType": "application/json"
+            }
+          ],
+          "bindings": {
+            "sourceHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schemaHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "graphHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "modelHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "cadHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solverHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solutionsHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "meshHash": {
+              "state": "notApplicable",
+              "reason": "pre-export G-CAD"
+            },
+            "toolchainHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "expectedValid": true
+      },
+      "original": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-CAD",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "sourceHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "schemaHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "cadHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "solverHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "meshHash": {
+            "state": "notApplicable",
+            "reason": "not exported"
+          },
+          "toolchainHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [],
+          "reviewer": "synthetic schema fixture"
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "pass-with-blocker-rejected",
+      "definition": "AdmissionReport",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-CAD",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [
+            "TEST-BLOCKER"
+          ],
+          "reviewer": "synthetic schema fixture",
+          "contractVersion": 2,
+          "gatePolicyHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testArtifacts": [
+            {
+              "state": "available",
+              "path": "fixtures/witness.json",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "byteLength": 1,
+              "mediaType": "application/json"
+            }
+          ],
+          "bindings": {
+            "sourceHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schemaHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "graphHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "modelHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "cadHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solverHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solutionsHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "meshHash": {
+              "state": "notApplicable",
+              "reason": "pre-export G-CAD"
+            },
+            "toolchainHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-CAD",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "sourceHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "schemaHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "cadHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "solverHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "meshHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "toolchainHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [
+            "TEST-BLOCKER"
+          ],
+          "reviewer": "synthetic schema fixture"
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "geometry-final-stage-shape",
+      "definition": "AdmissionReport",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-GEOMETRY",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [],
+          "reviewer": "synthetic schema fixture",
+          "contractVersion": 2,
+          "gatePolicyHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testArtifacts": [
+            {
+              "state": "available",
+              "path": "fixtures/witness.json",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "byteLength": 1,
+              "mediaType": "application/json"
+            }
+          ],
+          "bindings": {
+            "sourceHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schemaHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "graphHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "modelHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "cadHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solverHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solutionsHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "meshHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "toolchainHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "geometry-empty-step-scope-rejected",
+      "definition": "AdmissionReport",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-GEOMETRY",
+          "variantId": "rpi4",
+          "stepIds": [],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [],
+          "reviewer": "synthetic schema fixture",
+          "contractVersion": 2,
+          "gatePolicyHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testArtifacts": [
+            {
+              "state": "available",
+              "path": "fixtures/witness.json",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "byteLength": 1,
+              "mediaType": "application/json"
+            }
+          ],
+          "bindings": {
+            "sourceHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schemaHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "graphHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "modelHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "cadHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solverHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solutionsHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "meshHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "toolchainHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-GEOMETRY",
+          "variantId": "rpi4",
+          "stepIds": [],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "sourceHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "schemaHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "cadHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "solverHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "meshHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "toolchainHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [],
+          "reviewer": "synthetic schema fixture"
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "geometry-pass-missing-mesh-rejected",
+      "definition": "AdmissionReport",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-GEOMETRY",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "PASS",
+          "scope": "nominalInstructionGeometry",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [],
+          "reviewer": "synthetic schema fixture",
+          "contractVersion": 2,
+          "gatePolicyHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testArtifacts": [
+            {
+              "state": "available",
+              "path": "fixtures/witness.json",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "byteLength": 1,
+              "mediaType": "application/json"
+            }
+          ],
+          "bindings": {
+            "sourceHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schemaHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "graphHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "modelHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "cadHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solverHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solutionsHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "meshHash": {
+              "state": "unavailable",
+              "blockerIds": [
+                "TEST-BLOCKER"
+              ]
+            },
+            "toolchainHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "blocked-missing-artifact-is-representable",
+      "definition": "AdmissionReport",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-REPORT",
+          "gate": "G-GEOMETRY",
+          "variantId": "rpi4",
+          "stepIds": [
+            "TEST-STEP"
+          ],
+          "dependencyIds": [
+            "TEST-COMPONENT"
+          ],
+          "outcome": "BLOCKED",
+          "scope": "nominalInstructionGeometry",
+          "testReportRefs": [
+            "TEST-WITNESS"
+          ],
+          "limitations": [],
+          "blockerIds": [
+            "TEST-BLOCKER"
+          ],
+          "reviewer": "synthetic schema fixture",
+          "contractVersion": 2,
+          "gatePolicyHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testArtifacts": [
+            {
+              "state": "available",
+              "path": "fixtures/witness.json",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "byteLength": 1,
+              "mediaType": "application/json"
+            }
+          ],
+          "bindings": {
+            "sourceHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "schemaHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "graphHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "modelHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "cadHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solverHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "solutionsHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "meshHash": {
+              "state": "unavailable",
+              "blockerIds": [
+                "TEST-BLOCKER"
+              ]
+            },
+            "toolchainHash": {
+              "state": "available",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "variant-patch-has-addressable-id",
+      "definition": "VariantPatch",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "stepId": "TEST-STEP",
+          "replaceOperationIds": [
+            "TEST-OP-BASE"
+          ],
+          "withOperationIds": [
+            "TEST-OP-VARIANT"
+          ],
+          "activeInstanceIds": [
+            "TEST-PI4"
+          ],
+          "inactiveInstanceIds": [
+            "TEST-ZERO"
+          ],
+          "connectionIds": [],
+          "id": "TEST-PATCH",
+          "variantId": "rpi4"
+        },
+        "expectedValid": true
+      },
+      "original": {
+        "value": {
+          "stepId": "TEST-STEP",
+          "replaceOperationIds": [
+            "TEST-OP-BASE"
+          ],
+          "withOperationIds": [
+            "TEST-OP-VARIANT"
+          ],
+          "activeInstanceIds": [
+            "TEST-PI4"
+          ],
+          "inactiveInstanceIds": [
+            "TEST-ZERO"
+          ],
+          "connectionIds": [],
+          "id": "TEST-PATCH"
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "variant-patch-without-id-rejected",
+      "definition": "VariantPatch",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "stepId": "TEST-STEP",
+          "replaceOperationIds": [
+            "TEST-OP-BASE"
+          ],
+          "withOperationIds": [
+            "TEST-OP-VARIANT"
+          ],
+          "activeInstanceIds": [
+            "TEST-PI4"
+          ],
+          "inactiveInstanceIds": [
+            "TEST-ZERO"
+          ],
+          "connectionIds": []
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "stepId": "TEST-STEP",
+          "replaceOperationIds": [
+            "TEST-OP-BASE"
+          ],
+          "withOperationIds": [
+            "TEST-OP-VARIANT"
+          ],
+          "activeInstanceIds": [
+            "TEST-PI4"
+          ],
+          "inactiveInstanceIds": [
+            "TEST-ZERO"
+          ],
+          "connectionIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "empty-unanchored-replacement-rejected",
+      "definition": "VariantPatch",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "stepId": "TEST-STEP",
+          "replaceOperationIds": [],
+          "withOperationIds": [
+            "TEST-OP-VARIANT"
+          ],
+          "activeInstanceIds": [
+            "TEST-PI4"
+          ],
+          "inactiveInstanceIds": [
+            "TEST-ZERO"
+          ],
+          "connectionIds": [],
+          "id": "TEST-PATCH",
+          "variantId": "rpi4"
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "bare-physical-guide-id-rejected",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP",
+          "stepId": "TEST-STEP",
+          "kind": "routeCable",
+          "payload": {
+            "cableInstanceId": "TEST-CABLE",
+            "guideInterfaceIds": [
+              "TEST-GUIDE"
+            ],
+            "representation": "schematic"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "id": "TEST-OP",
+          "stepId": "TEST-STEP",
+          "kind": "routeCable",
+          "payload": {
+            "cableInstanceId": "TEST-CABLE",
+            "guideInterfaceIds": [
+              "TEST-GUIDE"
+            ],
+            "representation": "schematic"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "qualified-guide-reference-accepted",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP",
+          "stepId": "TEST-STEP",
+          "kind": "routeCable",
+          "payload": {
+            "cableInstanceId": "TEST-CABLE",
+            "representation": "schematic",
+            "guideEndpoints": [
+              {
+                "instanceId": "TEST-SERVO-LEFT",
+                "interfaceId": "TEST-GUIDE"
+              }
+            ]
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "bare-joint-interface-key-rejected",
+      "definition": "AssemblyState",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [
+            {
+              "interfaceId": "TEST-SERVO-AXIS",
+              "coordinate": {
+                "state": "unresolved",
+                "unit": "rad",
+                "confidence": "UNRESOLVED",
+                "blockerIds": [
+                  "TEST-BLOCKER"
+                ]
+              }
+            }
+          ],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": [],
+          "contractVersion": 2,
+          "cableRoutes": [],
+          "consumableLots": [],
+          "consumableAllocations": [],
+          "subassemblies": []
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [
+            {
+              "interfaceId": "TEST-SERVO-AXIS",
+              "coordinate": {
+                "state": "unresolved",
+                "unit": "rad",
+                "confidence": "UNRESOLVED",
+                "blockerIds": [
+                  "TEST-BLOCKER"
+                ]
+              }
+            }
+          ],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "joint-key-is-connection-and-dof",
+      "definition": "AssemblyState",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantId": "rpi4",
+          "completedOperationIds": [],
+          "instances": [],
+          "activeMechanicalConnectionIds": [],
+          "activeCableConnectionIds": [],
+          "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "jointCoordinates": [
+            {
+              "connectionId": "TEST-JOINT-LEFT",
+              "dof": "rz",
+              "coordinate": {
+                "state": "unresolved",
+                "unit": "rad",
+                "confidence": "UNRESOLVED",
+                "blockerIds": [
+                  "TEST-BLOCKER"
+                ]
+              }
+            }
+          ],
+          "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requiredConditionIds": [],
+          "contractVersion": 2,
+          "cableRoutes": [],
+          "consumableLots": [],
+          "consumableAllocations": [],
+          "subassemblies": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "runtime-metres-not-cad-mm",
+      "definition": "RuntimeTransform",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "basis": "RH-YUP-ZFORWARD",
+          "unit": "m",
+          "translationM": [
+            0,
+            0,
+            0
+          ],
+          "quaternionXYZW": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "runtime-rejects-cad-frame",
+      "definition": "RuntimeTransform",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "state": "known",
+          "translationMm": [
+            0,
+            0,
+            0
+          ],
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "rotationXYZW": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "state": "known",
+          "translationMm": [
+            0,
+            0,
+            0
+          ],
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "rotationXYZW": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "expectedValid": true,
+        "definition": "Frame"
+      }
+    },
+    {
+      "name": "runtime-translationMm-not-allowed",
+      "definition": "RuntimeTransform",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "basis": "RH-YUP-ZFORWARD",
+          "unit": "m",
+          "translationM": [
+            0,
+            0,
+            0
+          ],
+          "quaternionXYZW": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "translationMm": [
+            0,
+            0,
+            0
+          ]
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "zero-quaternion-is-semantic-not-schema-error",
+      "definition": "RuntimeTransform",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "basis": "RH-YUP-ZFORWARD",
+          "unit": "m",
+          "translationM": [
+            0,
+            0,
+            0
+          ],
+          "quaternionXYZW": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "structured-zeroing-attestation",
+      "definition": "ZeroingAttestation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-ATTESTATION",
+          "sessionId": "TEST-SESSION",
+          "variantId": "rpi4",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionRuleId": "TEST-CONDITION",
+          "procedureRevisionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "operationId": "TEST-ZERO-OP",
+          "dependencyIds": [
+            "TEST-SERVO-LEFT"
+          ],
+          "createdAt": "2000-01-01T00:00:00Z",
+          "actor": "self_confirmed",
+          "invalidationEventRef": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          },
+          "servoInstanceId": "TEST-SERVO-LEFT",
+          "validForOperationId": "TEST-HORN-OP",
+          "movementSinceZeroingDenied": true,
+          "servoEpoch": 0,
+          "consumedByCommandRef": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          }
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "movement-not-denied-is-not-valid-attestation",
+      "definition": "ZeroingAttestation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-ATTESTATION",
+          "sessionId": "TEST-SESSION",
+          "variantId": "rpi4",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionRuleId": "TEST-CONDITION",
+          "procedureRevisionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "operationId": "TEST-ZERO-OP",
+          "dependencyIds": [
+            "TEST-SERVO-LEFT"
+          ],
+          "createdAt": "2000-01-01T00:00:00Z",
+          "actor": "self_confirmed",
+          "invalidationEventRef": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          },
+          "servoInstanceId": "TEST-SERVO-LEFT",
+          "validForOperationId": "TEST-HORN-OP",
+          "movementSinceZeroingDenied": false,
+          "servoEpoch": 0,
+          "consumedByCommandRef": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "attestation-missing-servo-is-rejected",
+      "definition": "ZeroingAttestation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-ATTESTATION",
+          "sessionId": "TEST-SESSION",
+          "variantId": "rpi4",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionRuleId": "TEST-CONDITION",
+          "procedureRevisionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "operationId": "TEST-ZERO-OP",
+          "dependencyIds": [
+            "TEST-SERVO-LEFT"
+          ],
+          "createdAt": "2000-01-01T00:00:00Z",
+          "actor": "self_confirmed",
+          "invalidationEventRef": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          },
+          "validForOperationId": "TEST-HORN-OP",
+          "movementSinceZeroingDenied": true,
+          "servoEpoch": 0,
+          "consumedByCommandRef": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "typed-rule-expected-operand",
+      "definition": "VerificationRule",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-RULE",
+          "predicate": "presence",
+          "targetIds": [
+            "TEST-PART"
+          ],
+          "observability": {
+            "class": "directVisible",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": true,
+            "eligibilityRuleIds": [],
+            "limitations": []
+          },
+          "evidenceRequirementIds": [],
+          "comparator": "equals",
+          "toleranceRef": {
+            "state": "known",
+            "ref": "TEST-ID"
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": [],
+          "predicateVersion": 1,
+          "evaluationPhase": "projection",
+          "expected": {
+            "kind": "boolean",
+            "value": true
+          }
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "rule-without-expected-operand-rejected",
+      "definition": "VerificationRule",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-RULE",
+          "predicate": "presence",
+          "targetIds": [
+            "TEST-PART"
+          ],
+          "observability": {
+            "class": "directVisible",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": true,
+            "eligibilityRuleIds": [],
+            "limitations": []
+          },
+          "evidenceRequirementIds": [],
+          "comparator": "equals",
+          "toleranceRef": {
+            "state": "known",
+            "ref": "TEST-ID"
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": []
+        },
+        "expectedValid": false
+      },
+      "original": {
+        "value": {
+          "id": "TEST-RULE",
+          "predicate": "presence",
+          "targetIds": [
+            "TEST-PART"
+          ],
+          "observability": {
+            "class": "directVisible",
+            "requiredFeatureIds": [],
+            "requiredViews": [],
+            "calibrationRequired": true,
+            "eligibilityRuleIds": [],
+            "limitations": []
+          },
+          "evidenceRequirementIds": [],
+          "comparator": "equals",
+          "toleranceRef": {
+            "state": "known",
+            "ref": "TEST-ID"
+          },
+          "onUnknown": "BLOCKED",
+          "onContradiction": "FAIL",
+          "humanAcknowledgment": "required",
+          "invalidationDependencyIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "compiled-graph-explicit-operation-registry",
+      "definition": "CompiledGraph",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "id": "TEST-GRAPH",
+          "variantId": "rpi4",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "initialState": {
+            "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "variantId": "rpi4",
+            "completedOperationIds": [],
+            "instances": [],
+            "activeMechanicalConnectionIds": [],
+            "activeCableConnectionIds": [],
+            "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "jointCoordinates": [],
+            "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requiredConditionIds": [],
+            "contractVersion": 2,
+            "cableRoutes": [],
+            "consumableLots": [],
+            "consumableAllocations": [],
+            "subassemblies": []
+          },
+          "instances": [],
+          "steps": [],
+          "operations": [],
+          "mechanicalConnections": [],
+          "cableConnections": [],
+          "verificationRules": [],
+          "blockerIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "compiled-graph-missing-operations",
+      "definition": "CompiledGraph",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "id": "TEST-GRAPH",
+          "variantId": "rpi4",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "initialState": {
+            "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "variantId": "rpi4",
+            "completedOperationIds": [],
+            "instances": [],
+            "activeMechanicalConnectionIds": [],
+            "activeCableConnectionIds": [],
+            "stockDispositionHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "jointCoordinates": [],
+            "stateHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "requiredConditionIds": [],
+            "contractVersion": 2,
+            "cableRoutes": [],
+            "consumableLots": [],
+            "consumableAllocations": [],
+            "subassemblies": []
+          },
+          "instances": [],
+          "steps": [],
+          "mechanicalConnections": [],
+          "cableConnections": [],
+          "verificationRules": [],
+          "blockerIds": []
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "solution-stable-id-and-runtime-unit",
+      "definition": "AssemblySolution",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-SOLUTION",
+          "variantId": "rpi4",
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "cadHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "solverHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "boundaryOperationId": {
+            "state": "notApplicable",
+            "reason": "synthetic fixture: no geometry or physical action"
+          },
+          "poses": [
+            {
+              "instanceId": "TEST-PART",
+              "transform": {
+                "basis": "RH-YUP-ZFORWARD",
+                "unit": "m",
+                "translationM": [
+                  0,
+                  0,
+                  0
+                ],
+                "quaternionXYZW": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ],
+          "jointCoordinates": [],
+          "blockerIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "runtime-asset-complete-synthetic-shape",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "assets/test.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "unsafe-path-28",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "../escape.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "unsafe-path-29",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "/absolute.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "unsafe-path-30",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "https://bad.invalid/file.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "unsafe-path-31",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "assets/%2e%2e/file.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "unsafe-path-32",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "assets\\file.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "unsafe-path-33",
+      "definition": "RuntimeAsset",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "definitionId": "TEST-DEF",
+          "path": "assets/../file.glb",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "byteLength": 0,
+          "mediaType": "model/gltf-binary",
+          "elementIds": [],
+          "requiredExtensions": [],
+          "lodTriangleCounts": [
+            0
+          ],
+          "admissionReportIds": [],
+          "capability": "syntheticTest",
+          "boundsM": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              1,
+              1,
+              1
+            ]
+          },
+          "decoderArtifacts": [],
+          "lodNodeNames": {
+            "lod0": [
+              "TEST-ELEMENT"
+            ],
+            "lod1": [
+              "TEST-ELEMENT"
+            ],
+            "lod2": [
+              "TEST-ELEMENT"
+            ]
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "manifest-has-explicit-graph-artifact",
+      "definition": "RuntimeManifest",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "schemaVersion": 1,
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidenceHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "toolchainHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantIds": [
+            "rpi4"
+          ],
+          "definitionAssets": [],
+          "instances": [],
+          "interfaceFrames": [],
+          "solutions": [],
+          "admissionReports": [],
+          "routingRepresentations": [],
+          "referenceLinks": [],
+          "licenses": [],
+          "byteBudgets": {
+            "total": 0,
+            "initialVariant": 0
+          },
+          "packHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "compiledGraphs": [
+            {
+              "variantId": "rpi4",
+              "graphId": "TEST-GRAPH",
+              "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "artifact": {
+                "state": "available",
+                "path": "fixtures/witness.json",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "byteLength": 1,
+                "mediaType": "application/json"
+              }
+            }
+          ],
+          "graphSetHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "registry": {
+            "state": "available",
+            "path": "TEST-registry.json",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "byteLength": 1,
+            "mediaType": "application/json"
+          }
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "manifest-missing-graph-artifact-rejected",
+      "definition": "RuntimeManifest",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "schemaVersion": 1,
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidenceHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "toolchainHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantIds": [
+            "rpi4"
+          ],
+          "definitionAssets": [],
+          "instances": [],
+          "interfaceFrames": [],
+          "solutions": [],
+          "admissionReports": [],
+          "routingRepresentations": [],
+          "referenceLinks": [],
+          "licenses": [],
+          "byteBudgets": {
+            "total": 0,
+            "initialVariant": 0
+          },
+          "packHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "graphSetHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "registry": {
+            "state": "available",
+            "path": "TEST-registry.json",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "byteLength": 1,
+            "mediaType": "application/json"
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "manifest-rejects-mm-interface-frame",
+      "definition": "RuntimeManifest",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "schemaVersion": 1,
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidenceHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "toolchainHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "variantIds": [
+            "rpi4"
+          ],
+          "definitionAssets": [],
+          "instances": [],
+          "interfaceFrames": [
+            {
+              "definitionId": "TEST-DEF",
+              "interfaceId": "TEST-IF",
+              "frame": {
+                "state": "known",
+                "translationMm": [
+                  0,
+                  0,
+                  0
+                ],
+                "quaternionXYZW": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "evidenceRefs": [
+                  "TEST-EVIDENCE"
+                ]
+              }
+            }
+          ],
+          "solutions": [],
+          "admissionReports": [],
+          "routingRepresentations": [],
+          "referenceLinks": [],
+          "licenses": [],
+          "byteBudgets": {
+            "total": 0,
+            "initialVariant": 0
+          },
+          "packHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "compiledGraphs": [
+            {
+              "variantId": "rpi4",
+              "graphId": "TEST-GRAPH",
+              "graphHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "artifact": {
+                "state": "available",
+                "path": "fixtures/witness.json",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "byteLength": 1,
+                "mediaType": "application/json"
+              }
+            }
+          ],
+          "graphSetHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "registry": {
+            "state": "available",
+            "path": "TEST-registry.json",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "byteLength": 1,
+            "mediaType": "application/json"
+          }
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "operation-tag-introduce",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-INTRODUCE",
+          "stepId": "TEST-STEP",
+          "kind": "introduce",
+          "payload": {
+            "instanceIds": [
+              "TEST-ID"
+            ],
+            "trayGroupId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-attachRigid",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-ATTACHRIGID",
+          "stepId": "TEST-STEP",
+          "kind": "attachRigid",
+          "payload": {
+            "connectionId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-attachJoint",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-ATTACHJOINT",
+          "stepId": "TEST-STEP",
+          "kind": "attachJoint",
+          "payload": {
+            "connectionId": "TEST-ID",
+            "jointCoordinates": []
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-installFastener",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-INSTALLFASTENER",
+          "stepId": "TEST-STEP",
+          "kind": "installFastener",
+          "payload": {
+            "fastenerInstanceId": "TEST-ID",
+            "connectionId": "TEST-ID",
+            "orderedContactStack": [
+              {
+                "instanceId": "TEST-ID",
+                "interfaceId": "TEST-ID"
+              }
+            ]
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-insertRivet",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-INSERTRIVET",
+          "stepId": "TEST-STEP",
+          "kind": "insertRivet",
+          "payload": {
+            "rivetInstanceId": "TEST-ID",
+            "bodyElementId": "TEST-ID",
+            "connectionId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-lockRivet",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-LOCKRIVET",
+          "stepId": "TEST-STEP",
+          "kind": "lockRivet",
+          "payload": {
+            "rivetInstanceId": "TEST-ID",
+            "pinElementId": "TEST-ID",
+            "connectionId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-connectCableEnd",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-CONNECTCABLEEND",
+          "stepId": "TEST-STEP",
+          "kind": "connectCableEnd",
+          "payload": {
+            "cableConnectionId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-disconnectCableEnd",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-DISCONNECTCABLEEND",
+          "stepId": "TEST-STEP",
+          "kind": "disconnectCableEnd",
+          "payload": {
+            "cableConnectionId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-routeCable",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-ROUTECABLE",
+          "stepId": "TEST-STEP",
+          "kind": "routeCable",
+          "payload": {
+            "cableInstanceId": "TEST-ID",
+            "representation": "schematic",
+            "guideEndpoints": []
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-allocateConsumable",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-ALLOCATECONSUMABLE",
+          "stepId": "TEST-STEP",
+          "kind": "allocateConsumable",
+          "payload": {
+            "sourceLotId": "TEST-ID",
+            "pieceInstanceId": "TEST-ID",
+            "allocatedAmount": {
+              "state": "known",
+              "value": 0,
+              "unit": "mm",
+              "confidence": "VERIFIED",
+              "evidenceRefs": [
+                "TEST-ID"
+              ],
+              "uncertainty": {
+                "state": "bounded",
+                "minus": 0,
+                "plus": 0
+              }
+            }
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-applyConsumable",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-APPLYCONSUMABLE",
+          "stepId": "TEST-STEP",
+          "kind": "applyConsumable",
+          "payload": {
+            "pieceInstanceId": "TEST-ID",
+            "connectionId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-acknowledgeProcedure",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-ACKNOWLEDGEPROCEDURE",
+          "stepId": "TEST-STEP",
+          "kind": "acknowledgeProcedure",
+          "payload": {
+            "conditionRuleId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-confirmZeroing",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-CONFIRMZEROING",
+          "stepId": "TEST-STEP",
+          "kind": "confirmZeroing",
+          "payload": {
+            "servoInstanceId": "TEST-ID",
+            "conditionRuleId": "TEST-ID",
+            "validForOperationId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-groupSubassembly",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-GROUPSUBASSEMBLY",
+          "stepId": "TEST-STEP",
+          "kind": "groupSubassembly",
+          "payload": {
+            "assemblyId": "TEST-ID",
+            "memberInstanceIds": [
+              "TEST-ID"
+            ]
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-moveSubassembly",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-MOVESUBASSEMBLY",
+          "stepId": "TEST-STEP",
+          "kind": "moveSubassembly",
+          "payload": {
+            "assemblyId": "TEST-ID"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-setJointReference",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-SETJOINTREFERENCE",
+          "stepId": "TEST-STEP",
+          "kind": "setJointReference",
+          "payload": {
+            "coordinateRef": {
+              "state": "known",
+              "ref": "TEST-ID"
+            },
+            "connectionId": "TEST-ID",
+            "dof": "tx"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-tag-removeOwnedBacking",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP-REMOVEOWNEDBACKING",
+          "stepId": "TEST-STEP",
+          "kind": "removeOwnedBacking",
+          "payload": {
+            "instanceId": "TEST-ID",
+            "elementId": "TEST-ID",
+            "disposition": "consumedOrDiscarded"
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "operation-hidden-payload-field-rejected",
+      "definition": "AssemblyOperation",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "id": "TEST-OP",
+          "stepId": "TEST-STEP",
+          "kind": "routeCable",
+          "payload": {
+            "cableInstanceId": "TEST-CABLE",
+            "representation": "schematic",
+            "guideEndpoints": [
+              {
+                "instanceId": "TEST-SERVO-LEFT",
+                "interfaceId": "TEST-GUIDE"
+              }
+            ],
+            "rendererState": {}
+          },
+          "preconditionRuleIds": [],
+          "postconditionRuleIds": [],
+          "solutionRef": {
+            "state": "unresolved",
+            "blockerIds": [
+              "TEST-BLOCKER"
+            ]
+          },
+          "inversePolicy": "restoreCapturedBeforeState",
+          "evidenceRefs": [
+            "TEST-EVIDENCE"
+          ],
+          "blockerIds": [],
+          "parentAssignments": []
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "source-lock-template-stays-blocked",
+      "definition": "@documentation-source-lock.schema.json",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "kitRevision": "Z0104V40",
+          "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+          "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+          "pdfSha256": {
+            "state": "unavailable",
+            "blockerIds": [
+              "Q-02"
+            ]
+          },
+          "pdfByteLength": 11048665,
+          "status": "BLOCKED",
+          "photoHashes": [
+            {
+              "evidenceId": "PX-EV-PHOTO-01",
+              "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-02",
+              "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-03",
+              "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-04",
+              "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-05",
+              "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-06",
+              "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+            }
+          ],
+          "panels": [],
+          "blockerIds": [
+            "Q-02"
+          ]
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "verified-source-lock-complete-shape-only",
+      "definition": "@documentation-source-lock.schema.json",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "kitRevision": "Z0104V40",
+          "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+          "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+          "pdfSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pdfByteLength": 11048665,
+          "status": "VERIFIED",
+          "photoHashes": [
+            {
+              "evidenceId": "PX-EV-PHOTO-01",
+              "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-02",
+              "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-03",
+              "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-04",
+              "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-05",
+              "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-06",
+              "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+            }
+          ],
+          "panels": [
+            {
+              "printedStep": 1,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 2,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 3,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 4,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 5,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 6,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 7,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 8,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 9,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 10,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 11,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 12,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 13,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 14,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 15,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 16,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 17,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 18,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 19,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 20,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 21,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 22,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 23,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 24,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 25,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 26,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 27,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 28,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 29,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            }
+          ],
+          "blockerIds": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "verified-source-lock-missing-pdf-hash",
+      "definition": "@documentation-source-lock.schema.json",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "kitRevision": "Z0104V40",
+          "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+          "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+          "pdfSha256": {
+            "state": "unavailable",
+            "blockerIds": [
+              "Q-02"
+            ]
+          },
+          "pdfByteLength": 11048665,
+          "status": "VERIFIED",
+          "photoHashes": [
+            {
+              "evidenceId": "PX-EV-PHOTO-01",
+              "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-02",
+              "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-03",
+              "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-04",
+              "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-05",
+              "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-06",
+              "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+            }
+          ],
+          "panels": [
+            {
+              "printedStep": 1,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 2,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 3,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 4,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 5,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 6,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 7,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 8,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 9,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 10,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 11,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 12,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 13,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 14,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 15,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 16,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 17,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 18,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 19,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 20,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 21,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 22,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 23,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 24,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 25,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 26,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 27,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 28,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            },
+            {
+              "printedStep": 29,
+              "mappings": [
+                {
+                  "pdfPage": 1,
+                  "normalizedRect": [
+                    0,
+                    0,
+                    1,
+                    1
+                  ],
+                  "photoId": "TEST-PHOTO",
+                  "photoPanel": "synthetic fixture",
+                  "variants": [
+                    "rpi4",
+                    "rpi5",
+                    "rpi-zero-2-w"
+                  ],
+                  "result": "PASS"
+                }
+              ],
+              "result": "PASS"
+            }
+          ],
+          "blockerIds": []
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "verified-source-lock-missing-panels",
+      "definition": "@documentation-source-lock.schema.json",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "kitRevision": "Z0104V40",
+          "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+          "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+          "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+          "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+          "pdfSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pdfByteLength": 11048665,
+          "status": "VERIFIED",
+          "photoHashes": [
+            {
+              "evidenceId": "PX-EV-PHOTO-01",
+              "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-02",
+              "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-03",
+              "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-04",
+              "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-05",
+              "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+            },
+            {
+              "evidenceId": "PX-EV-PHOTO-06",
+              "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+            }
+          ],
+          "panels": [],
+          "blockerIds": []
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "m0-required-pass-native-explicitly-blocked",
+      "definition": "@m0-gate-report.schema.json",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "repositoryHead": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "auditedPackageSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "checks": [
+            {
+              "id": "A",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "B",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "C",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "D",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "E",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "F",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "G",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            }
+          ],
+          "nativeFeasibility": "BLOCKED",
+          "nativeBlocker": "TEST-NATIVE-M3",
+          "m1Allowed": true,
+          "bindings": {
+            "sourceLockSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "inputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "testManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "outputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "rollbackInstructionsPath": "TEST-ROLLBACK"
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "m0-source-blocked-cannot-allow-m1",
+      "definition": "@m0-gate-report.schema.json",
+      "fixtureScope": "synthetic schema test; never a production admission",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "repositoryHead": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "auditedPackageSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "checks": [
+            {
+              "id": "A",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "B",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "C",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "D",
+              "status": "BLOCKED",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "E",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "F",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            },
+            {
+              "id": "G",
+              "status": "PASS",
+              "evidencePaths": [
+                "TEST-LOG"
+              ],
+              "summary": "synthetic gate-shape test"
+            }
+          ],
+          "nativeFeasibility": "BLOCKED",
+          "nativeBlocker": "TEST-NATIVE-M3",
+          "m1Allowed": true,
+          "bindings": {
+            "sourceLockSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "inputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "testManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "outputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "rollbackInstructionsPath": "TEST-ROLLBACK"
+        },
+        "expectedValid": false
+      }
+    },
+    {
+      "name": "runtime-registry-closed-families",
+      "definition": "RuntimeRegistry",
+      "fixtureScope": "synthetic record-shape fixture; not reference-complete kit data",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "definitions": [],
+          "fastenerDefinitions": [],
+          "cableDefinitions": [],
+          "interfaces": [],
+          "connectionPoints": [],
+          "measurements": [],
+          "frames": [],
+          "claims": [],
+          "evidence": [],
+          "geometrySources": [],
+          "derivations": [],
+          "conflicts": [],
+          "tools": [],
+          "warnings": [],
+          "motions": [],
+          "cameras": [],
+          "visibility": [],
+          "variants": [],
+          "unresolvedItems": []
+        },
+        "expectedValid": true
+      }
+    },
+    {
+      "name": "runtime-registry-no-undeclared-map",
+      "definition": "RuntimeRegistry",
+      "fixtureScope": "synthetic structural rejection",
+      "current": {
+        "value": {
+          "contractVersion": 2,
+          "modelHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "definitions": [],
+          "fastenerDefinitions": [],
+          "cableDefinitions": [],
+          "interfaces": [],
+          "connectionPoints": [],
+          "measurements": [],
+          "frames": [],
+          "claims": [],
+          "evidence": [],
+          "geometrySources": [],
+          "derivations": [],
+          "conflicts": [],
+          "tools": [],
+          "warnings": [],
+          "motions": [],
+          "cameras": [],
+          "visibility": [],
+          "variants": [],
+          "unresolvedItems": [],
+          "hiddenMutableMap": {}
+        },
+        "expectedValid": false
+      }
+    }
+  ],
+  "notice": "All TEST records and repeated hashes are synthetic structural fixtures, not evidence, outputs, or production admission."
+}

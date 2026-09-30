@@ -1,0 +1,4512 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://picar.local/spec/v1/digital-twin.schema.json",
+  "title": "PiCar-X canonical authoring and runtime record contracts",
+  "description": "Proposed closed record schemas. Semantic cross-record validation and geometry admission remain mandatory. This is a planning deliverable, not released PiCar geometry.",
+  "$defs": {
+    "Id": {
+      "type": "string",
+      "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "Confidence": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "DERIVED",
+        "PROBABLE",
+        "UNRESOLVED"
+      ]
+    },
+    "Maturity": {
+      "type": "string",
+      "enum": [
+        "RECORDED",
+        "MODELED",
+        "CAD_CHECKED",
+        "ASSEMBLY_CHECKED",
+        "PHYSICAL_MATCH_CHECKED"
+      ]
+    },
+    "Uncertainty": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "bounded"
+            },
+            "minus": {
+              "type": "number",
+              "minimum": 0
+            },
+            "plus": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "state",
+            "minus",
+            "plus"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unresolved"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "NumericValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "mm",
+                "rad",
+                "count"
+              ]
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "VERIFIED",
+                "DERIVED",
+                "PROBABLE"
+              ]
+            },
+            "evidenceRefs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            },
+            "derivationRef": {
+              "type": "string",
+              "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+            },
+            "uncertainty": {
+              "$ref": "#/$defs/Uncertainty"
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "unit",
+            "confidence",
+            "evidenceRefs",
+            "uncertainty"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "confidence": {
+                    "const": "DERIVED"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "derivationRef"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "unit": {
+                    "const": "count"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unresolved"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "mm",
+                "rad",
+                "count"
+              ]
+            },
+            "confidence": {
+              "const": "UNRESOLVED"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "unit",
+            "confidence",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ResolvedRef": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "ref": {
+              "type": "string",
+              "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+            }
+          },
+          "required": [
+            "state",
+            "ref"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unresolved"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "notApplicable"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "state",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Frame": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "translationMm": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "rotationXYZW": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "evidenceRefs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            },
+            "derivationRef": {
+              "type": "string",
+              "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+            }
+          },
+          "required": [
+            "state",
+            "translationMm",
+            "rotationXYZW",
+            "evidenceRefs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unresolved"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ArtifactRef": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "available"
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "byteLength": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "mediaType": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "state",
+            "path",
+            "sha256",
+            "byteLength",
+            "mediaType"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unresolved"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "SourceLocator": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "panel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "regionPixels": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "lineStart": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lineEnd": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "file"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ]
+    },
+    "EvidenceRecord": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "sourceKind": {
+          "type": "string",
+          "enum": [
+            "ownerPhoto",
+            "officialManual",
+            "manufacturerDrawing",
+            "manufacturerCAD",
+            "standard",
+            "distributorDrawing",
+            "thirdPartyCAD",
+            "derivedData",
+            "repositoryFile",
+            "officialDocumentation"
+          ]
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrievedOn": {
+          "type": "string",
+          "format": "date"
+        },
+        "locator": {
+          "$ref": "#/$defs/SourceLocator"
+        },
+        "artifact": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "gitBlobSha1": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "applicability": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "engineeringUse": {
+          "type": "string",
+          "enum": [
+            "authoritativeNominal",
+            "referenceOnly",
+            "undetermined"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "privacy": {
+          "type": "string",
+          "enum": [
+            "private",
+            "publicSource",
+            "approvedForPublication"
+          ]
+        },
+        "redistribution": {
+          "type": "string",
+          "enum": [
+            "permittedWithNotice",
+            "privateUseOnly",
+            "unresolved"
+          ]
+        },
+        "conflictIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "sourceKind",
+        "tier",
+        "title",
+        "revision",
+        "retrievedOn",
+        "locator",
+        "artifact",
+        "applicability",
+        "engineeringUse",
+        "limitations",
+        "privacy",
+        "redistribution",
+        "conflictIds",
+        "supersedes"
+      ],
+      "additionalProperties": false
+    },
+    "Claim": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "subjectId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "property": {
+          "type": "string",
+          "minLength": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "inputClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "printedDesignation",
+            "printedInventory",
+            "nominalEngineering",
+            "referenceApproximation",
+            "asBuilt",
+            "appearance",
+            "procedure",
+            "identity"
+          ]
+        },
+        "sourceLimitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "conflictIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "subjectId",
+        "property",
+        "statement",
+        "confidence",
+        "evidenceRefs",
+        "inputClaimIds",
+        "method",
+        "assumptions",
+        "scope",
+        "sourceLimitations",
+        "conflictIds",
+        "blockerIds",
+        "supersedes"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "confidence": {
+                "type": "string",
+                "enum": [
+                  "VERIFIED",
+                  "DERIVED"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidenceRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "confidence": {
+                "const": "UNRESOLVED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "blockerIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "confidence": {
+                "const": "DERIVED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputClaimIds": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Measurement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "subjectId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "feature": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "nominal",
+            "asBuilt",
+            "derived"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/NumericValue"
+        },
+        "originalNotation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "datumRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "sourceTolerance": {
+          "$ref": "#/$defs/Uncertainty"
+        },
+        "measurementUncertainty": {
+          "$ref": "#/$defs/Uncertainty"
+        },
+        "modelDeviationBudget": {
+          "$ref": "#/$defs/NumericValue"
+        },
+        "inputClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "subjectId",
+        "feature",
+        "kind",
+        "value",
+        "originalNotation",
+        "method",
+        "datumRef",
+        "sourceTolerance",
+        "measurementUncertainty",
+        "modelDeviationBudget",
+        "inputClaimIds",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "GeometrySource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "representation": {
+          "type": "string",
+          "enum": [
+            "cadquery",
+            "step",
+            "dxf",
+            "kicad",
+            "meshPacket",
+            "unresolved"
+          ]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "artifact": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "sourceRevision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generatorArtifact": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "coveredFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)*$"
+          },
+          "minItems": 0
+        },
+        "omittedFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)*$"
+          },
+          "minItems": 0
+        },
+        "presentationOnlyFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)*$"
+          },
+          "minItems": 0
+        },
+        "maturity": {
+          "$ref": "#/$defs/Maturity"
+        },
+        "validationReportIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "representation",
+        "sourceRefs",
+        "artifact",
+        "sourceRevision",
+        "generatorArtifact",
+        "coveredFeatures",
+        "omittedFeatures",
+        "presentationOnlyFeatures",
+        "maturity",
+        "validationReportIds",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "OwnedElement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "rigidBody",
+            "movingBody",
+            "integralLead",
+            "cosmetic",
+            "removableBacking"
+          ]
+        },
+        "independentlyAddressable": {
+          "type": "boolean"
+        },
+        "inventoryCountedSeparately": {
+          "const": false
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "independentlyAddressable",
+        "inventoryCountedSeparately"
+      ],
+      "additionalProperties": false
+    },
+    "PartDefinition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "componentClass": {
+          "type": "string",
+          "enum": [
+            "plate",
+            "screw",
+            "nut",
+            "washer",
+            "standoff",
+            "rivet",
+            "servo",
+            "horn",
+            "motor",
+            "wheel",
+            "piBoard",
+            "robotHat",
+            "camera",
+            "ultrasonic",
+            "grayscale",
+            "battery",
+            "cable",
+            "connector",
+            "consumable",
+            "tool",
+            "cosmetic"
+          ]
+        },
+        "identityClaimId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "quantityUnit": {
+          "type": "string",
+          "enum": [
+            "count",
+            "mm"
+          ]
+        },
+        "variantIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rpi4",
+              "rpi5",
+              "rpi-zero-2-w"
+            ]
+          },
+          "minItems": 1
+        },
+        "geometrySourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "measurementRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "interfaceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "connectionPointRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "ownedElements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OwnedElement"
+          },
+          "minItems": 0
+        },
+        "appearanceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "name",
+        "componentClass",
+        "identityClaimId",
+        "quantityUnit",
+        "variantIds",
+        "geometrySourceRefs",
+        "measurementRefs",
+        "interfaceRefs",
+        "connectionPointRefs",
+        "ownedElements",
+        "appearanceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "PartInstance": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "definitionId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "definitionRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supplyOrigin": {
+          "type": "string",
+          "enum": [
+            "kit",
+            "user",
+            "tool",
+            "consumable"
+          ]
+        },
+        "inventoryLotId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "variantIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rpi4",
+              "rpi5",
+              "rpi-zero-2-w"
+            ]
+          },
+          "minItems": 1
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "available",
+            "staged",
+            "installed",
+            "backup",
+            "variantUnused",
+            "accessory",
+            "tool",
+            "consumedOrDiscarded",
+            "missingOrDamaged"
+          ]
+        },
+        "ownerInstanceRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "installedByOperationRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "definitionId",
+        "definitionRevision",
+        "role",
+        "supplyOrigin",
+        "inventoryLotId",
+        "variantIds",
+        "disposition",
+        "ownerInstanceRef",
+        "installedByOperationRef",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "MechanicalInterface": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "definitionId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "feature": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "holeAxis",
+            "shaftAxis",
+            "plane",
+            "slot",
+            "spline",
+            "bearing",
+            "datum",
+            "keepout",
+            "routeGuide"
+          ]
+        },
+        "frame": {
+          "$ref": "#/$defs/Frame"
+        },
+        "measurementRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "permittedDOF": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tx",
+              "ty",
+              "tz",
+              "rx",
+              "ry",
+              "rz"
+            ]
+          },
+          "minItems": 0
+        },
+        "matingRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "toleranceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "definitionId",
+        "feature",
+        "kind",
+        "frame",
+        "measurementRefs",
+        "permittedDOF",
+        "matingRuleIds",
+        "toleranceRefs",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "ConnectionPoint": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "definitionId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "electrical",
+            "mechanical",
+            "optical"
+          ]
+        },
+        "connectorIdentityClaimId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "frame": {
+          "$ref": "#/$defs/Frame"
+        },
+        "cavities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "keyingClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "netClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "definitionId",
+        "kind",
+        "connectorIdentityClaimId",
+        "frame",
+        "cavities",
+        "keyingClaimIds",
+        "netClaimIds",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "Endpoint": {
+      "type": "object",
+      "properties": {
+        "instanceId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "interfaceId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        }
+      },
+      "required": [
+        "instanceId",
+        "interfaceId"
+      ],
+      "additionalProperties": false
+    },
+    "Constraint": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "coincidentAxis",
+            "coincidentPlane",
+            "parallelAxis",
+            "opposedNormal",
+            "signedOffset",
+            "indexedRotation",
+            "revolute",
+            "fixedFrame",
+            "loopClosure",
+            "clearance"
+          ]
+        },
+        "endpointIndices": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        },
+        "parameterMeasurementRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "remainingDOF": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tx",
+              "ty",
+              "tz",
+              "rx",
+              "ry",
+              "rz"
+            ]
+          },
+          "minItems": 0
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "endpointIndices",
+        "parameterMeasurementRefs",
+        "remainingDOF",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "MechanicalConnection": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Endpoint"
+          },
+          "minItems": 2
+        },
+        "jointType": {
+          "type": "string",
+          "enum": [
+            "fixed",
+            "revolute",
+            "splineIndexed",
+            "pressFit",
+            "snapFit",
+            "contactStack"
+          ]
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Constraint"
+          },
+          "minItems": 1
+        },
+        "fastenerInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "orderedContactStack": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Endpoint"
+          },
+          "minItems": 0
+        },
+        "allowedContactRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "clearanceRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "remainingDOF": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tx",
+              "ty",
+              "tz",
+              "rx",
+              "ry",
+              "rz"
+            ]
+          },
+          "minItems": 0
+        },
+        "activationOperationId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "endpoints",
+        "jointType",
+        "constraints",
+        "fastenerInstanceIds",
+        "orderedContactStack",
+        "allowedContactRuleIds",
+        "clearanceRuleIds",
+        "remainingDOF",
+        "activationOperationId",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "FastenerDefinition": {
+      "type": "object",
+      "properties": {
+        "partDefinitionId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "designationClaimId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "machineScrew",
+            "servoRetainer",
+            "nut",
+            "washer",
+            "springWasher",
+            "standoff",
+            "pushRivet"
+          ]
+        },
+        "diameterRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "lengthRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "pitchRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "headStandardRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "driveStandardRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "materialClaimRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "threadFormRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "gripRangeRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "insertionBehavior": {
+          "type": "string",
+          "enum": [
+            "threaded",
+            "pushThenLock",
+            "plainPlace",
+            "unresolved"
+          ]
+        },
+        "unspecifiedProperties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "partDefinitionId",
+        "designationClaimId",
+        "category",
+        "diameterRef",
+        "lengthRef",
+        "pitchRef",
+        "headStandardRef",
+        "driveStandardRef",
+        "materialClaimRef",
+        "threadFormRef",
+        "gripRangeRefs",
+        "insertionBehavior",
+        "unspecifiedProperties",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "PinMapping": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "pairs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "to": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "from",
+                  "to"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "evidenceRefs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "pairs",
+            "evidenceRefs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unresolved"
+            },
+            "blockerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "blockerIds"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CableDefinition": {
+      "type": "object",
+      "properties": {
+        "partDefinitionId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "ownership": {
+          "type": "string",
+          "enum": [
+            "loose",
+            "integral"
+          ]
+        },
+        "conductorCount": {
+          "$ref": "#/$defs/NumericValue"
+        },
+        "endpointConnectorRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "contactMapping": {
+          "$ref": "#/$defs/PinMapping"
+        },
+        "lengthRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "widthRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "thicknessRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "minimumBendRadiusRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "routingGuideRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "strainReliefRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "routingCapability": {
+          "type": "string",
+          "enum": [
+            "schematic",
+            "metricAdmitted",
+            "unresolved"
+          ]
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "partDefinitionId",
+        "ownership",
+        "conductorCount",
+        "endpointConnectorRefs",
+        "contactMapping",
+        "lengthRef",
+        "widthRef",
+        "thicknessRef",
+        "minimumBendRadiusRef",
+        "routingGuideRefs",
+        "strainReliefRuleIds",
+        "routingCapability",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "CableConnection": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "cableInstanceId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "endpointLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targetInstanceId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "connectionPointId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "pinMapping": {
+          "$ref": "#/$defs/PinMapping"
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "temporaryZeroing",
+            "permanent",
+            "setupOnly"
+          ]
+        },
+        "powerPrecondition": {
+          "type": "string",
+          "enum": [
+            "off",
+            "onForZeroing",
+            "sourceSpecified",
+            "unresolved"
+          ]
+        },
+        "activationOperationId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "deactivationOperationRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "routingState": {
+          "type": "string",
+          "enum": [
+            "loose",
+            "endpointConnected",
+            "routed",
+            "fullyConnected",
+            "unresolved"
+          ]
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "cableInstanceId",
+        "endpointLabel",
+        "targetInstanceId",
+        "connectionPointId",
+        "pinMapping",
+        "purpose",
+        "powerPrecondition",
+        "activationOperationId",
+        "deactivationOperationRef",
+        "routingState",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "AssemblyStep": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "printedNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 29
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "const": "Z0104V40"
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "sourcePanel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variantIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rpi4",
+              "rpi5",
+              "rpi-zero-2-w"
+            ]
+          },
+          "minItems": 1
+        },
+        "variantPatchRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "operationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "introducedInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "usedInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "toolRequirementIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "warningIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "zeroingConditionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "motionInstructionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "cameraInstructionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "verificationRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "referenceLinks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "printedNumber",
+        "title",
+        "revision",
+        "sourceRefs",
+        "sourcePanel",
+        "variantIds",
+        "variantPatchRefs",
+        "prerequisites",
+        "operationIds",
+        "introducedInstanceIds",
+        "usedInstanceIds",
+        "toolRequirementIds",
+        "warningIds",
+        "zeroingConditionIds",
+        "motionInstructionIds",
+        "cameraInstructionIds",
+        "verificationRuleIds",
+        "referenceLinks",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "AssemblyOperation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "stepId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "introduce",
+            "attachRigid",
+            "attachJoint",
+            "installFastener",
+            "insertRivet",
+            "lockRivet",
+            "connectCableEnd",
+            "disconnectCableEnd",
+            "routeCable",
+            "allocateConsumable",
+            "applyConsumable",
+            "acknowledgeProcedure",
+            "confirmZeroing",
+            "groupSubassembly",
+            "moveSubassembly",
+            "setJointReference",
+            "removeOwnedBacking"
+          ]
+        },
+        "payload": {
+          "type": "object"
+        },
+        "preconditionRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "postconditionRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "solutionRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "inversePolicy": {
+          "const": "restoreCapturedBeforeState"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "stepId",
+        "kind",
+        "payload",
+        "preconditionRuleIds",
+        "postconditionRuleIds",
+        "solutionRef",
+        "inversePolicy",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "introduce"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "instanceIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                    },
+                    "minItems": 1
+                  },
+                  "trayGroupId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "instanceIds",
+                  "trayGroupId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "attachRigid"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "connectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "connectionId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "attachJoint"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "connectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "jointCoordinateRefs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "connectionId",
+                  "jointCoordinateRefs"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "installFastener"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "fastenerInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "connectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "orderedContactStack": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/Endpoint"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "fastenerInstanceId",
+                  "connectionId",
+                  "orderedContactStack"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "insertRivet"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "rivetInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "bodyElementId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "connectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "rivetInstanceId",
+                  "bodyElementId",
+                  "connectionId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "lockRivet"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "rivetInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "pinElementId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "connectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "rivetInstanceId",
+                  "pinElementId",
+                  "connectionId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "connectCableEnd"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "cableConnectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "cableConnectionId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "disconnectCableEnd"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "cableConnectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "cableConnectionId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "routeCable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "cableInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "guideInterfaceIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                    },
+                    "minItems": 0
+                  },
+                  "representation": {
+                    "type": "string",
+                    "enum": [
+                      "schematic",
+                      "metricPending",
+                      "metricAdmitted"
+                    ]
+                  }
+                },
+                "required": [
+                  "cableInstanceId",
+                  "guideInterfaceIds",
+                  "representation"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "allocateConsumable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "sourceLotId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "pieceInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "allocatedAmount": {
+                    "$ref": "#/$defs/NumericValue"
+                  }
+                },
+                "required": [
+                  "sourceLotId",
+                  "pieceInstanceId",
+                  "allocatedAmount"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "applyConsumable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "pieceInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "connectionId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "pieceInstanceId",
+                  "connectionId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "acknowledgeProcedure"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "conditionRuleId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "conditionRuleId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "confirmZeroing"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "servoInstanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "conditionRuleId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "validForOperationId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  }
+                },
+                "required": [
+                  "servoInstanceId",
+                  "conditionRuleId",
+                  "validForOperationId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "groupSubassembly"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "assemblyId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "memberInstanceIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "assemblyId",
+                  "memberInstanceIds"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "moveSubassembly"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "assemblyId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "solutionRef": {
+                    "$ref": "#/$defs/ResolvedRef"
+                  }
+                },
+                "required": [
+                  "assemblyId",
+                  "solutionRef"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "setJointReference"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "interfaceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "coordinateRef": {
+                    "$ref": "#/$defs/ResolvedRef"
+                  }
+                },
+                "required": [
+                  "interfaceId",
+                  "coordinateRef"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "removeOwnedBacking"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "instanceId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "elementId": {
+                    "type": "string",
+                    "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+                  },
+                  "disposition": {
+                    "const": "consumedOrDiscarded"
+                  }
+                },
+                "required": [
+                  "instanceId",
+                  "elementId",
+                  "disposition"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "InstanceState": {
+      "type": "object",
+      "properties": {
+        "instanceId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "location": {
+          "type": "string",
+          "enum": [
+            "available",
+            "tray",
+            "assembly",
+            "backup",
+            "variantUnused",
+            "accessory",
+            "tool",
+            "consumedOrDiscarded",
+            "missingOrDamaged"
+          ]
+        },
+        "parentAssemblyId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "solutionRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "activeOwnedElements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "ownedElementStates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "elementId": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "loose",
+                  "active",
+                  "inserted",
+                  "locked",
+                  "removed"
+                ]
+              }
+            },
+            "required": [
+              "elementId",
+              "state"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "instanceId",
+        "location",
+        "parentAssemblyId",
+        "solutionRef",
+        "activeOwnedElements",
+        "ownedElementStates"
+      ],
+      "additionalProperties": false
+    },
+    "AssemblyState": {
+      "type": "object",
+      "properties": {
+        "graphHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "modelHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "variantId": {
+          "type": "string",
+          "enum": [
+            "rpi4",
+            "rpi5",
+            "rpi-zero-2-w"
+          ]
+        },
+        "completedOperationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "instances": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InstanceState"
+          },
+          "minItems": 0
+        },
+        "activeMechanicalConnectionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "activeCableConnectionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "stockDispositionHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "jointCoordinates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "interfaceId": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "coordinate": {
+                "$ref": "#/$defs/NumericValue"
+              }
+            },
+            "required": [
+              "interfaceId",
+              "coordinate"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "stateHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "requiredConditionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "graphHash",
+        "modelHash",
+        "variantId",
+        "completedOperationIds",
+        "instances",
+        "activeMechanicalConnectionIds",
+        "activeCableConnectionIds",
+        "stockDispositionHash",
+        "jointCoordinates",
+        "stateHash",
+        "requiredConditionIds"
+      ],
+      "additionalProperties": false
+    },
+    "Confirmation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "stepId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "operationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "actor": {
+          "type": "string",
+          "enum": [
+            "self_confirmed",
+            "self_reported_import",
+            "observation_supported"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "modelHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "dependencyIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "observationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "invalidatedByEventRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        }
+      },
+      "required": [
+        "id",
+        "stepId",
+        "operationIds",
+        "actor",
+        "statement",
+        "createdAt",
+        "modelHash",
+        "dependencyIds",
+        "observationIds",
+        "invalidatedByEventRef"
+      ],
+      "additionalProperties": false
+    },
+    "AssemblySession": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "projectId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "variantId": {
+          "type": "string",
+          "enum": [
+            "rpi4",
+            "rpi5",
+            "rpi-zero-2-w"
+          ]
+        },
+        "schemaVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "graphHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "modelHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "evidenceHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "confirmationRecords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Confirmation"
+          },
+          "minItems": 0
+        },
+        "invalidationEventIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "observationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "setupProgressRef": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "reviewStepId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "sourceAdoptionEventIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "projectId",
+        "variantId",
+        "schemaVersion",
+        "graphHash",
+        "modelHash",
+        "evidenceHash",
+        "revision",
+        "confirmationRecords",
+        "invalidationEventIds",
+        "observationIds",
+        "setupProgressRef",
+        "reviewStepId",
+        "sourceAdoptionEventIds"
+      ],
+      "additionalProperties": false
+    },
+    "MotionSegment": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "approach",
+            "align",
+            "insert",
+            "rotate",
+            "screwSeat",
+            "rivetBody",
+            "rivetPin",
+            "cableReveal"
+          ]
+        },
+        "anchorInterfaceRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "presentationOffsetPolicyId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "finalSolutionRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "durationMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "easing": {
+          "type": "string",
+          "enum": [
+            "quinticSmoothstep",
+            "linear",
+            "instant"
+          ]
+        },
+        "rotationPolicy": {
+          "type": "string",
+          "enum": [
+            "slerp",
+            "pitchCoupled",
+            "illustrativeSpin",
+            "none"
+          ]
+        },
+        "collisionRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "kind",
+        "anchorInterfaceRef",
+        "presentationOffsetPolicyId",
+        "finalSolutionRef",
+        "durationMs",
+        "easing",
+        "rotationPolicy",
+        "collisionRuleIds",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "MotionInstruction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "targetInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "beforeStateContractId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "afterStateContractId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "motionType": {
+          "type": "string",
+          "enum": [
+            "rigidInstall",
+            "screw",
+            "rivet",
+            "cable",
+            "subassembly",
+            "coordinated"
+          ]
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MotionSegment"
+          },
+          "minItems": 1
+        },
+        "finalSolutionRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "capability": {
+          "type": "string",
+          "enum": [
+            "metricPending",
+            "metricAdmitted",
+            "schematic",
+            "syntheticTest"
+          ]
+        },
+        "reverseEvaluation": {
+          "const": "sameFunctionAtOneMinusT"
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "targetInstanceIds",
+        "beforeStateContractId",
+        "afterStateContractId",
+        "motionType",
+        "segments",
+        "finalSolutionRef",
+        "capability",
+        "reverseEvaluation",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "CameraInstruction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "focusInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "focusInterfaceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "preferredFrameRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "viewDirection": {
+          "type": "string",
+          "enum": [
+            "front",
+            "rear",
+            "left",
+            "right",
+            "top",
+            "bottom",
+            "interfaceNormal"
+          ]
+        },
+        "upDirection": {
+          "type": "string",
+          "enum": [
+            "frameUp",
+            "robotUp"
+          ]
+        },
+        "framingMarginRatio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "projection": {
+          "type": "string",
+          "enum": [
+            "perspective",
+            "orthographic"
+          ]
+        },
+        "occlusionPriorityIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "manualOverride": {
+          "const": "untilUserResumesAuto"
+        },
+        "durationMs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "focusInstanceIds",
+        "focusInterfaceIds",
+        "preferredFrameRef",
+        "viewDirection",
+        "upDirection",
+        "framingMarginRatio",
+        "projection",
+        "occlusionPriorityIds",
+        "manualOverride",
+        "durationMs"
+      ],
+      "additionalProperties": false
+    },
+    "Observability": {
+      "type": "object",
+      "properties": {
+        "class": {
+          "type": "string",
+          "enum": [
+            "directVisible",
+            "conditionalVisible",
+            "sequenceObserved",
+            "activeTest",
+            "measurementRequired",
+            "notCameraObservable"
+          ]
+        },
+        "requiredFeatureIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "requiredViews": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "calibrationRequired": {
+          "type": "boolean"
+        },
+        "eligibilityRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "class",
+        "requiredFeatureIds",
+        "requiredViews",
+        "calibrationRequired",
+        "eligibilityRuleIds",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "VerificationRule": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "predicate": {
+          "type": "string",
+          "enum": [
+            "presence",
+            "identity",
+            "orientation",
+            "quantity",
+            "mateResidual",
+            "clearance",
+            "sourceApplicability",
+            "zeroingAcknowledgment",
+            "powerAcknowledgment",
+            "cableEndpoint",
+            "inventoryConservation",
+            "observationResidual"
+          ]
+        },
+        "targetIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "observability": {
+          "$ref": "#/$defs/Observability"
+        },
+        "evidenceRequirementIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "comparator": {
+          "type": "string",
+          "enum": [
+            "equals",
+            "lessOrEqual",
+            "greaterOrEqual",
+            "setEqual",
+            "allTrue",
+            "sourceSupported"
+          ]
+        },
+        "toleranceRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "onUnknown": {
+          "const": "BLOCKED"
+        },
+        "onContradiction": {
+          "const": "FAIL"
+        },
+        "humanAcknowledgment": {
+          "type": "string",
+          "enum": [
+            "required",
+            "allowedWithScope",
+            "notApplicable"
+          ]
+        },
+        "invalidationDependencyIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "predicate",
+        "targetIds",
+        "observability",
+        "evidenceRequirementIds",
+        "comparator",
+        "toleranceRef",
+        "onUnknown",
+        "onContradiction",
+        "humanAcknowledgment",
+        "invalidationDependencyIds"
+      ],
+      "additionalProperties": false
+    },
+    "VisibilityRule": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "targetIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": [
+            "future",
+            "current",
+            "completed",
+            "selected",
+            "all"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "hidden",
+            "ghost",
+            "dim",
+            "isolatedContext"
+          ]
+        },
+        "pickable": {
+          "type": "boolean"
+        },
+        "accessibleLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "precedence": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "targetIds",
+        "lifecycle",
+        "mode",
+        "pickable",
+        "accessibleLabel",
+        "precedence"
+      ],
+      "additionalProperties": false
+    },
+    "ToolRequirement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "screwdriver",
+            "wrench",
+            "hand",
+            "peelingAid",
+            "otherSourceSpecified"
+          ]
+        },
+        "sizeClaimRef": {
+          "$ref": "#/$defs/ResolvedRef"
+        },
+        "quantity": {
+          "$ref": "#/$defs/NumericValue"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "sizeClaimRef",
+        "quantity",
+        "purpose",
+        "operationIds",
+        "evidenceRefs",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "Warning": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "information",
+            "caution",
+            "critical"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "operationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "variantIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rpi4",
+              "rpi5",
+              "rpi-zero-2-w"
+            ]
+          },
+          "minItems": 1
+        },
+        "triggerRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "acknowledgmentRequired": {
+          "type": "boolean"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "physicalCompletion",
+              "metricMotion",
+              "certification"
+            ]
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "severity",
+        "text",
+        "evidenceRefs",
+        "operationIds",
+        "variantIds",
+        "triggerRuleIds",
+        "acknowledgmentRequired",
+        "blocks",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "VariantPatch": {
+      "type": "object",
+      "properties": {
+        "stepId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "replaceOperationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "withOperationIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "activeInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "inactiveInstanceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "connectionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "stepId",
+        "replaceOperationIds",
+        "withOperationIds",
+        "activeInstanceIds",
+        "inactiveInstanceIds",
+        "connectionIds"
+      ],
+      "additionalProperties": false
+    },
+    "VariantRule": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "variantId": {
+          "type": "string",
+          "enum": [
+            "rpi4",
+            "rpi5",
+            "rpi-zero-2-w"
+          ]
+        },
+        "boardIdentityClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "patches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/VariantPatch"
+          },
+          "minItems": 0
+        },
+        "applicabilityRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "forbiddenCombinationRuleIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "migrationPolicy": {
+          "const": "forkWithoutPhysicalConfirmations"
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "variantId",
+        "boardIdentityClaimIds",
+        "patches",
+        "applicabilityRuleIds",
+        "forbiddenCombinationRuleIds",
+        "migrationPolicy",
+        "blockerIds"
+      ],
+      "additionalProperties": false
+    },
+    "UnresolvedEvidenceItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^Q-[0-9]{2,}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "missingClaim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affectedFeatureIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "affectedStepIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "variantIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rpi4",
+              "rpi5",
+              "rpi-zero-2-w"
+            ]
+          },
+          "minItems": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "critical",
+            "scoped",
+            "future"
+          ]
+        },
+        "permittedWork": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "forbiddenClaims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "searchRecords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "resolutionCriteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "ownerMilestone": {
+          "type": "string",
+          "enum": [
+            "M0",
+            "M1",
+            "M2",
+            "M3",
+            "M4",
+            "M5",
+            "M6",
+            "M7",
+            "M8",
+            "M9",
+            "M10",
+            "M11",
+            "M12",
+            "M13",
+            "M14"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "RESOLVED",
+            "SUPERSEDED"
+          ]
+        },
+        "resolutionEvidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "missingClaim",
+        "affectedFeatureIds",
+        "affectedStepIds",
+        "variantIds",
+        "severity",
+        "permittedWork",
+        "forbiddenClaims",
+        "searchRecords",
+        "resolutionCriteria",
+        "ownerMilestone",
+        "status",
+        "resolutionEvidenceRefs",
+        "supersedes"
+      ],
+      "additionalProperties": false
+    },
+    "AdmissionReport": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "gate": {
+          "type": "string",
+          "enum": [
+            "G-COMPONENT",
+            "G-CAD",
+            "G-GEOMETRY",
+            "G-NOMINAL",
+            "G-PHYSICAL"
+          ]
+        },
+        "variantId": {
+          "type": "string",
+          "enum": [
+            "rpi4",
+            "rpi5",
+            "rpi-zero-2-w"
+          ]
+        },
+        "stepIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "dependencyIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "FAIL",
+            "BLOCKED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "componentNominal",
+            "nominalInstructionGeometry",
+            "nominalAssembly",
+            "physicalMatch"
+          ]
+        },
+        "sourceHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "schemaHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "graphHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "cadHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "solverHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "meshHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "toolchainHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "testReportRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "blockerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "gate",
+        "variantId",
+        "stepIds",
+        "dependencyIds",
+        "outcome",
+        "scope",
+        "sourceHash",
+        "schemaHash",
+        "graphHash",
+        "cadHash",
+        "solverHash",
+        "meshHash",
+        "toolchainHash",
+        "testReportRefs",
+        "limitations",
+        "blockerIds",
+        "reviewer"
+      ],
+      "additionalProperties": false
+    },
+    "RuntimeAsset": {
+      "type": "object",
+      "properties": {
+        "definitionId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "byteLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mediaType": {
+          "const": "model/gltf-binary"
+        },
+        "elementIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "requiredExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "decoderPaths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "lodTriangleCounts": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1
+        },
+        "admissionReportIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
+          "minItems": 0
+        },
+        "capability": {
+          "type": "string",
+          "enum": [
+            "instructionGeometry",
+            "provisionalReview",
+            "syntheticTest"
+          ]
+        }
+      },
+      "required": [
+        "definitionId",
+        "path",
+        "sha256",
+        "byteLength",
+        "mediaType",
+        "elementIds",
+        "requiredExtensions",
+        "decoderPaths",
+        "lodTriangleCounts",
+        "admissionReportIds",
+        "capability"
+      ],
+      "additionalProperties": false
+    },
+    "RuntimeManifest": {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "schemaVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "graphHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "modelHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "evidenceHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "toolchainHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "variantIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rpi4",
+              "rpi5",
+              "rpi-zero-2-w"
+            ]
+          },
+          "minItems": 1
+        },
+        "definitionAssets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RuntimeAsset"
+          },
+          "minItems": 0
+        },
+        "instances": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartInstance"
+          },
+          "minItems": 0
+        },
+        "interfaceFrames": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "interfaceId": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "frame": {
+                "$ref": "#/$defs/Frame"
+              }
+            },
+            "required": [
+              "interfaceId",
+              "frame"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "solutions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "minItems": 0
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AssemblyStep"
+          },
+          "minItems": 0
+        },
+        "admissionReports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AdmissionReport"
+          },
+          "minItems": 0
+        },
+        "routingRepresentations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cableDefinitionId": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "capability": {
+                "type": "string",
+                "enum": [
+                  "schematic",
+                  "metricAdmitted",
+                  "unresolved"
+                ]
+              }
+            },
+            "required": [
+              "cableDefinitionId",
+              "capability"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "referenceLinks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "licenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sourceId": {
+                "type": "string",
+                "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+              },
+              "noticePath": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "sourceId",
+              "noticePath",
+              "scope"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "byteBudgets": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "initialVariant": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "total",
+            "initialVariant"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "schemaVersion",
+        "graphHash",
+        "modelHash",
+        "evidenceHash",
+        "toolchainHash",
+        "variantIds",
+        "definitionAssets",
+        "instances",
+        "interfaceFrames",
+        "solutions",
+        "steps",
+        "admissionReports",
+        "routingRepresentations",
+        "referenceLinks",
+        "licenses",
+        "byteBudgets"
+      ],
+      "additionalProperties": false
+    },
+    "OperationUndo": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "type": "string",
+          "pattern": "^(?:PX|TEST|Q|G|AC)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+        },
+        "expectedAfterHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "beforeState": {
+          "$ref": "#/$defs/AssemblyState"
+        }
+      },
+      "required": [
+        "operationId",
+        "expectedAfterHash",
+        "beforeState"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/EvidenceRecord"
+    },
+    {
+      "$ref": "#/$defs/Claim"
+    },
+    {
+      "$ref": "#/$defs/Measurement"
+    },
+    {
+      "$ref": "#/$defs/GeometrySource"
+    },
+    {
+      "$ref": "#/$defs/PartDefinition"
+    },
+    {
+      "$ref": "#/$defs/PartInstance"
+    },
+    {
+      "$ref": "#/$defs/MechanicalInterface"
+    },
+    {
+      "$ref": "#/$defs/ConnectionPoint"
+    },
+    {
+      "$ref": "#/$defs/MechanicalConnection"
+    },
+    {
+      "$ref": "#/$defs/FastenerDefinition"
+    },
+    {
+      "$ref": "#/$defs/CableDefinition"
+    },
+    {
+      "$ref": "#/$defs/CableConnection"
+    },
+    {
+      "$ref": "#/$defs/AssemblyStep"
+    },
+    {
+      "$ref": "#/$defs/AssemblyOperation"
+    },
+    {
+      "$ref": "#/$defs/AssemblyState"
+    },
+    {
+      "$ref": "#/$defs/AssemblySession"
+    },
+    {
+      "$ref": "#/$defs/MotionInstruction"
+    },
+    {
+      "$ref": "#/$defs/CameraInstruction"
+    },
+    {
+      "$ref": "#/$defs/VerificationRule"
+    },
+    {
+      "$ref": "#/$defs/VisibilityRule"
+    },
+    {
+      "$ref": "#/$defs/ToolRequirement"
+    },
+    {
+      "$ref": "#/$defs/Warning"
+    },
+    {
+      "$ref": "#/$defs/VariantRule"
+    },
+    {
+      "$ref": "#/$defs/UnresolvedEvidenceItem"
+    },
+    {
+      "$ref": "#/$defs/AdmissionReport"
+    },
+    {
+      "$ref": "#/$defs/RuntimeManifest"
+    }
+  ]
+}

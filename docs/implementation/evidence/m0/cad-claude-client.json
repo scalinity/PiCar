@@ -1,0 +1,24 @@
+{
+  "calls": [
+    {
+      "tool": "ToolSearch",
+      "args": {
+        "query": "select:mcp__freecad-robust__get_connection_status,mcp__freecad-robust__get_freecad_version,mcp__freecad-inspect__list_documents",
+        "max_results": 3
+      }
+    },
+    {
+      "tool": "mcp__freecad-robust__get_connection_status",
+      "args": {}
+    },
+    {
+      "tool": "mcp__freecad-robust__get_freecad_version",
+      "args": {}
+    },
+    {
+      "tool": "mcp__freecad-inspect__list_documents",
+      "args": {}
+    }
+  ],
+  "result": "Both FreeCAD MCP servers responded. I made only the three read-only calls and changed nothing.\n\n**Tools called**\n1. `mcp__freecad-robust__get_connection_status`\n2. `mcp__freecad-robust__get_freecad_version`\n3. `mcp__freecad-inspect__list_documents`\n\n**Connection** (`freecad-robust`)\n- Connected: yes, over XML-RPC\n- GUI available: yes\n- Last ping: about 29.9 ms\n- Error: none\n\n**Version** (`freecad-robust`)\n- FreeCAD 1.1.4, build date 20260928 (Git shallow)\n- Embedded Python 3.11.14 (conda-forge)\n\n**Documents** (`freecad-inspect`)\n- `TEST_M0_Plate`: 1 object, no file path, marked modified\n- `TEST_M0_STEP_Reopened`: 1 object, no file path, marked modified\n\n`freecad-inspect` is reading the same FreeCAD instance that `freecad-robust` is connected to, or at least a live one. Its call returned the open documents without error. Both documents are unsaved and have no file on disk.\n\n`freecad-inspect` has no connection-status or version tool of its own. Its liveness is confirmed only by `list_documents` succeeding.\n\n`★ Insight ─────────────────────────────────────`\n- `freecad-robust` reports `mode: xmlrpc`. The MCP server talks to FreeCAD through a remote-procedure bridge, so it is not embedded in the FreeCAD process. That is why a ping latency is reported.\n- `freecad-inspect` is a separate server with inspection-only tools such as `list_documents` and `get_document_graph`. That split lets you check state without exposing the editing tools.\n`─────────────────────────────────────────────────`"
+}

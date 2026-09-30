@@ -1,0 +1,29 @@
+
+> picarx-companion@0.1.0 test:browser $REPO/picarx-companion
+> playwright test
+
+[WebServer] (node:31382) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31486) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31542) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:31955) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (464ms)
+  ✓  2 [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (383ms)
+  ✓  3 [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (215ms)
+  ✓  4 [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (655ms)
+(node:32846) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (689ms)
+  ✓  6 [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (413ms)
+  ✓  7 [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (331ms)
+  ✓  8 [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (788ms)
+
+  8 passed (5.9s)

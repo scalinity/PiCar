@@ -4,28 +4,39 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "tsx tools/content-pipeline/entry.ts dev",
+    "build": "tsx tools/content-pipeline/entry.ts build",
+    "preview": "tsx tools/content-pipeline/entry.ts preview",
     "tauri": "tauri",
-    "content:build": "tsx tools/content-pipeline/build.ts"
+    "content:build": "tsx tools/content-pipeline/build.ts",
+    "content:check": "tsx tools/content-pipeline/entry.ts check",
+    "content:baseline": "tsx tools/content-pipeline/entry.ts baseline",
+    "content:recover": "tsx tools/content-pipeline/entry.ts recover",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.tools.json",
+    "test:unit": "vitest run --config vitest.config.ts",
+    "test:browser": "playwright test",
+    "package:check": "tsx tools/content-pipeline/entry.ts package-check"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "@tauri-apps/api": "^2",
     "@tauri-apps/plugin-opener": "^2",
-    "pdfjs-dist": "^6.1.200"
+    "pdfjs-dist": "^6.1.200",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^26.6.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "ajv": "^8.20.0",
+    "shiki": "^3",
+    "tsx": "^4",
     "typescript": "~5.8.3",
     "vite": "^7.0.4",
-    "@tauri-apps/cli": "^2",
-    "tsx": "^4",
-    "shiki": "^3"
+    "vitest": "^5.0.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

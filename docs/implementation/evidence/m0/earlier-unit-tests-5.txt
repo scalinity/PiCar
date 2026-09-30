@@ -1,0 +1,57 @@
+
+> picarx-companion@0.1.0 test:unit $REPO/picarx-companion
+> vitest run --config vitest.config.ts
+
+
+ RUN  v5.0.2 $REPO/picarx-companion
+
+ ❯ tests/publication/packaging.test.ts (1 test | 1 failed) 5111ms
+   × a fresh source-free checkout builds through the safe mirror and excludes synthetic secrets from dist 5110ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/publication/packaging.test.ts > a fresh source-free checkout builds through the safe mirror and excludes synthetic secrets from dist
+AssertionError:
+> picarx-companion@0.1.0 build $TMP/picar-m0-TEST-package-z23qlE/picarx-companion
+> tsx tools/content-pipeline/entry.ts build
+
+Pinned generated baseline adopted; excluded originals retained; upstream checkout not required
+vite v7.3.6 building client environment for production...
+✓ 0 modules transformed.
+ ELIFECYCLE  Command failed with exit code 1.
+
+✗ Build failed in 4ms
+error during build:
+Could not resolve entry module "index.html".
+    at getRollupError (file://$REPO/picarx-companion/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/parseAst.js:317:41)
+    at error (file://$REPO/picarx-companion/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/parseAst.js:313:42)
+    at ModuleLoader.loadEntryModule (file://$REPO/picarx-companion/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/node-entry.js:22188:20)
+    at async Promise.all (index 0)
+: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ getRollupError node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/parseAst.js:317:41
+ ❯ error node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/parseAst.js:313:42
+ ❯ ModuleLoader.loadEntryModule node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/node-entry.js:22188:20
+ ❯ tests/publication/packaging.test.ts:22:55
+     20|   fs.symlinkSync(join(process.cwd(),'node_modules'),join(app,'node_mod…
+     21|   const build=spawnSync('pnpm',['build'],{cwd:app,encoding:'utf8',time…
+     22|   expect(build.status,build.stdout+'\n'+build.stderr).toBe(0);
+       |                                                       ^
+     23|   expect(fs.existsSync(join(root,'sunfounder-docs'))).toBe(false);
+     24|   for(const e of inventory(join(app,'dist'))){expect(denied(e.path)).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 37 passed (38)
+   Start at  19:13:52
+   Duration  7.28s (tests 99%, transform 1%)
+
+ ELIFECYCLE  Command failed with exit code 1.

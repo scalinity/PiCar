@@ -1,0 +1,20 @@
+
+> picarx-companion@0.1.0 build $REPO/picarx-companion
+> tsx tools/content-pipeline/entry.ts build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 117 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.47 kB │ gzip:   0.30 kB
+dist/assets/pdf.worker.min-DEtVeC4l.mjs  1,255.07 kB
+dist/assets/index-DuKhXIny.css              11.12 kB │ gzip:   2.97 kB
+dist/assets/index-UnKa0k6N.js            1,886.60 kB │ gzip: 353.65 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 687ms
+Safe mirror/dist exclusions and static bytes verified

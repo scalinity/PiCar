@@ -8,10 +8,12 @@ import {
   mkdirSync,
   readFileSync,
   readdirSync,
-  rmSync,
   writeFileSync,
 } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { randomUUID } from 'node:crypto';
+import { acquire, recover, denied, preservePrivate, publish, safeMirror } from './publication';
+import { captureInputs, verifySource, v40 } from './source';
 import { fileURLToPath } from 'node:url';
 import { createHighlighter } from 'shiki';
 import { parseRst, type ParseError, type RawBlock } from './rst-parser';
@@ -43,13 +45,18 @@ import type {
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const APP = join(HERE, '../..');
-const DOCS = join(APP, '../sunfounder-docs/docs/source');
-const CUSTOM_DOCS = join(APP, 'custom-docs');
-const PDFS = join(APP, '../sunfounder-docs/pdfs');
-const ASSEMBLY_PDF_SRC = 'z0104v33-a0001013-picar-x.pdf'; // overridden below if v40 present
-const OUT_PAGES = join(APP, 'src/content/pages');
-const OUT_CONTENT = join(APP, 'src/content');
-const OUT_PUBLIC = join(APP, 'public/content');
+const release = acquire(APP, 'writer');
+process.on('exit', release);
+recover(APP);
+const STAGE = join(APP, '.content-publication/staging', randomUUID());
+const SNAPSHOT = join(STAGE, 'inputs');
+captureInputs(APP, SNAPSHOT);
+const DOCS = join(SNAPSHOT, 'sunfounder-docs/docs/source');
+const CUSTOM_DOCS = join(SNAPSHOT, 'picarx-companion/custom-docs');
+const PDFS = join(SNAPSHOT, 'sunfounder-docs/pdfs');
+const OUT_PAGES = join(STAGE, 'src/content/pages');
+const OUT_CONTENT = join(STAGE, 'src/content');
+const OUT_PUBLIC = join(STAGE, 'public/content');
 
 // Pinned after the first verified clean run to catch upstream drift.
 const EXPECTED_PAGE_COUNT: number | null = 62;
@@ -369,9 +376,7 @@ const videoRegistry: VideoEntry[] = [];
 
 // --- wizard ------------------------------------------------------------------
 
-const pdfSource = existsExact(PDFS, 'z0104v40-a0001013-picar-x.pdf')
-  ? 'z0104v40-a0001013-picar-x.pdf'
-  : ASSEMBLY_PDF_SRC;
+const pdfSource = v40;
 
 const wizard: WizardStep[] = wizardSteps.map((def) => {
   for (const c of def.content) {
@@ -440,8 +445,7 @@ for (const p of pages.values()) for (const s of p.page!.sections) highlightBlock
 
 // --- emit ---------------------------------------------------------------------
 
-rmSync(OUT_PAGES, { recursive: true, force: true });
-rmSync(OUT_PUBLIC, { recursive: true, force: true });
+// Render only into private staging; the coordinator replaces managed roots.
 
 for (const p of pages.values()) {
   const out = join(OUT_PAGES, `${p.id}.json`);
@@ -455,11 +459,13 @@ writeFileSync(join(OUT_CONTENT, 'videos.json'), JSON.stringify(videoRegistry, nu
 writeFileSync(join(OUT_CONTENT, 'wizard.json'), JSON.stringify(wizard, null, 2));
 
 for (const rel of imageAssets) {
+  if (denied(rel)) continue;
   const dest = join(OUT_PUBLIC, 'img', rel);
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(join(DOCS, rel), dest);
 }
 for (const rel of videoAssets) {
+  if (denied(rel)) continue;
   const dest = join(OUT_PUBLIC, rel);
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(join(DOCS, '_static', rel), dest);
@@ -467,6 +473,15 @@ for (const rel of videoAssets) {
 mkdirSync(join(OUT_PUBLIC, 'pdf'), { recursive: true });
 copyFileSync(join(PDFS, pdfSource), join(OUT_PUBLIC, 'pdf', 'picar-x-assembly.pdf'));
 
+preservePrivate(APP, OUT_PUBLIC);
+safeMirror(APP, OUT_PUBLIC, join(STAGE, '.content-publication/safe-public'));
+try {
+  publish(APP, STAGE, () => verifySource(APP));
+} catch (error) {
+  recover(APP);
+  throw error;
+}
+release();
 console.log(`✓ content build OK`);
 console.log(`  pages:   ${pages.size}`);
 console.log(`  images:  ${imageAssets.size}`);

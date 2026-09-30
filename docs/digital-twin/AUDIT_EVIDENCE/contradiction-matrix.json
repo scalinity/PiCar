@@ -1,0 +1,325 @@
+{
+  "scope": "Original package comparison and integrated audited resolution",
+  "rows": [
+    {
+      "concept": "Component IDs",
+      "documentA": "DIGITAL_TWIN_DATA_MODEL: IDs",
+      "documentB": "schema: Id/Endpoint",
+      "conflict": "Partial gap",
+      "impact": "Repeated definitions need physical qualification (04).",
+      "canonicalResolution": "Stable PX IDs; typed unique registries; Endpoint(instanceId,interfaceId)."
+    },
+    {
+      "concept": "PartDefinition",
+      "documentA": "data model: definitions",
+      "documentB": "schema: PartDefinition",
+      "conflict": "No",
+      "impact": "Identity and source claims are separated from meshes.",
+      "canonicalResolution": "Retain definition revisions and explicit applicability."
+    },
+    {
+      "concept": "PartInstance",
+      "documentA": "data model: inventory",
+      "documentB": "schema: PartInstance/InstanceState",
+      "conflict": "No basic conflict",
+      "impact": "Inventory identity is not rendering allocation.",
+      "canonicalResolution": "One physical identity; owned elements remain with purchased owner."
+    },
+    {
+      "concept": "EvidenceRecord",
+      "documentA": "evidence specification",
+      "documentB": "schema: EvidenceRecord/manifest",
+      "conflict": "No",
+      "impact": "Private images and printed observations have bounded authority.",
+      "canonicalResolution": "Keep revision/hash/location/privacy/scope; no inferred physical inventory."
+    },
+    {
+      "concept": "GeometrySource",
+      "documentA": "geometry specification",
+      "documentB": "schema: GeometrySource",
+      "conflict": "No",
+      "impact": "Official approximate or generic source cannot self-admit.",
+      "canonicalResolution": "Retain source limitations and proven V40 applicability."
+    },
+    {
+      "concept": "MechanicalInterface",
+      "documentA": "data model",
+      "documentB": "motion/camera/route schema",
+      "conflict": "Yes:04",
+      "impact": "Bare feature ID may bind wrong reused servo.",
+      "canonicalResolution": "Physical refs are Endpoint; reusable runtime local frames use definitionId+interfaceId."
+    },
+    {
+      "concept": "MechanicalConnection",
+      "documentA": "engine: joints",
+      "documentB": "schema: jointCoordinates",
+      "conflict": "Yes:04",
+      "impact": "Interface-keyed coordinates collide across parts.",
+      "canonicalResolution": "Key by connectionId+DOF, with typed units/remaining-DOF validation."
+    },
+    {
+      "concept": "AssemblyStep",
+      "documentA": "ledger/engine",
+      "documentB": "VariantPatch schema",
+      "conflict": "Yes:10/15",
+      "impact": "Patch references lacked IDs; S27 front parent was wrong.",
+      "canonicalResolution": "Identified deterministic patches; S27 chassis/rear-drive in human and JSON."
+    },
+    {
+      "concept": "AssemblyState",
+      "documentA": "engine: exact undo",
+      "documentB": "schema: AssemblyState",
+      "conflict": "Yes:03",
+      "impact": "Routes/allocations/group state cannot survive complete snapshot serialization.",
+      "canonicalResolution": "Explicit complete state collections; hash is derived, not storage replacement."
+    },
+    {
+      "concept": "MotionInstruction",
+      "documentA": "engine/pipeline",
+      "documentB": "MotionSegment schema",
+      "conflict": "Yes:04/12",
+      "impact": "Unqualified anchor and unbounded path proof.",
+      "canonicalResolution": "Endpoint anchor, admitted path scope, independent swept bounds."
+    },
+    {
+      "concept": "VariantRule",
+      "documentA": "data model variants",
+      "documentB": "schema: VariantPatch",
+      "conflict": "Yes:10",
+      "impact": "No stable patch ID/splice semantics.",
+      "canonicalResolution": "At most one patch per step/variant; nonempty contiguous replacement span."
+    },
+    {
+      "concept": "VerificationRule",
+      "documentA": "test/gate prose",
+      "documentB": "schema: VerificationRule",
+      "conflict": "Yes:11",
+      "impact": "No typed expected operand or execution phase.",
+      "canonicalResolution": "predicateVersion/evaluationPhase/expected plus fixed registry."
+    },
+    {
+      "concept": "Confidence",
+      "documentA": "evidence/data prose",
+      "documentB": "Confidence/Claim/NumericValue",
+      "conflict": "No enum conflict",
+      "impact": "VERIFIED transcription is not engineering proof.",
+      "canonicalResolution": "Exactly VERIFIED/DERIVED/PROBABLE/UNRESOLVED; source scope propagates."
+    },
+    {
+      "concept": "Modeling maturity",
+      "documentA": "geometry progression",
+      "documentB": "schema: Maturity",
+      "conflict": "No",
+      "impact": "A completed mesh must not upgrade evidence confidence.",
+      "canonicalResolution": "Retain distinct maturity and confidence axes."
+    },
+    {
+      "concept": "Derivation and conflicts",
+      "documentA": "data model claims",
+      "documentB": "numeric derivationRef/conflictIds",
+      "conflict": "Incomplete:11",
+      "impact": "Method and conflict closure otherwise require ad hoc records.",
+      "canonicalResolution": "Typed DerivationRecord/ConflictRecord; immutable method/source chain."
+    },
+    {
+      "concept": "G-CAD",
+      "documentA": "geometry/M7",
+      "documentB": "AdmissionReport",
+      "conflict": "Yes:06",
+      "impact": "Unconditional meshHash requires future output before export.",
+      "canonicalResolution": "Pre-export mesh notApplicable; upstream real hashes required."
+    },
+    {
+      "concept": "G-GEOMETRY",
+      "documentA": "geometry/asset prose",
+      "documentB": "AdmissionReport",
+      "conflict": "Yes:06/12",
+      "impact": "PASS could carry blockers/empty scope; oracle coverage unspecified.",
+      "canonicalResolution": "Nonempty complete scope, empty blockers, final-byte witnesses and path/LOD limits."
+    },
+    {
+      "concept": "Runtime admission",
+      "documentA": "asset specification",
+      "documentB": "RuntimeManifest",
+      "conflict": "Incomplete:07",
+      "impact": "Consumer cannot resolve all graph/solution dependencies.",
+      "canonicalResolution": "Typed RuntimeRegistry, CompiledGraph and AssemblySolution artifacts; trusted admission chain."
+    },
+    {
+      "concept": "Source lock",
+      "documentA": "M0 handoff",
+      "documentB": "milestone acceptance",
+      "conflict": "Ambiguous:01",
+      "impact": "Blocked PDF could be misread as M0 accepted.",
+      "canonicalResolution": "All29 mapped panels and real SHA required; M1 forbidden until A\u2013G pass."
+    },
+    {
+      "concept": "Variant selection",
+      "documentA": "product/engine",
+      "documentB": "session/manifest",
+      "conflict": "Partial gap:05/07",
+      "impact": "Cross-variant graph or zeroing record can be accidentally reused.",
+      "canonicalResolution": "Session pins one variant graph; explicit fork/adoption and attestation invalidation."
+    },
+    {
+      "concept": "Progress persistence",
+      "documentA": "architecture",
+      "documentB": "current progress-store.ts",
+      "conflict": "No baseline conflict",
+      "impact": "Existing key/fields were correctly identified.",
+      "canonicalResolution": "Preserve raw picarx.v1; actual fields steps/checks/lastRoute/pdfLastPage."
+    },
+    {
+      "concept": "Session persistence",
+      "documentA": "architecture commands",
+      "documentB": "storage acceptance",
+      "conflict": "Incomplete:09",
+      "impact": "Lost acknowledgment retry can fail CAS or duplicate effects.",
+      "canonicalResolution": "Stored requestHash/result checked before CAS; transactionally authoritative events."
+    },
+    {
+      "concept": "Physical confirmation",
+      "documentA": "product/engine",
+      "documentB": "Confirmation schema",
+      "conflict": "Incomplete:05",
+      "impact": "Free text cannot enforce fresh servo/procedure/epoch eligibility.",
+      "canonicalResolution": "Structured acknowledgments/zeroing attestations; no sensed-state claim."
+    },
+    {
+      "concept": "Provisional geometry",
+      "documentA": "product/geometry",
+      "documentB": "runtime capability fields",
+      "conflict": "No policy conflict",
+      "impact": "A provisional model may still look convincing.",
+      "canonicalResolution": "Explicit review-only; never satisfies G-GEOMETRY for production instructions."
+    },
+    {
+      "concept": "Reference-only behavior",
+      "documentA": "product/M3",
+      "documentB": "engine/capability gating",
+      "conflict": "No",
+      "impact": "Useful guidance may exist before metric geometry.",
+      "canonicalResolution": "Text/photos remain available; unverified geometry does not receive placement authority."
+    },
+    {
+      "concept": "Coordinate systems",
+      "documentA": "data model",
+      "documentB": "asset conversion",
+      "conflict": "No math error",
+      "impact": "Basis permutation is right-handed, not reflection.",
+      "canonicalResolution": "Retain R=[[0,1,0],[0,0,1],[1,0,0]], determinant+1."
+    },
+    {
+      "concept": "Units",
+      "documentA": "data model CAD frame",
+      "documentB": "manifest interfaceFrames",
+      "conflict": "Yes:07",
+      "impact": "translationMm schema reused in metre runtime.",
+      "canonicalResolution": "Distinct RuntimeTransform translationM; no silent unit interpretation."
+    },
+    {
+      "concept": "Transforms",
+      "documentA": "asset/engine",
+      "documentB": "solution ArtifactRef",
+      "conflict": "Incomplete:07",
+      "impact": "World/local solution convention and stable lookup missing.",
+      "canonicalResolution": "Typed absolute world poses, exactly one conversion; no double parent transform."
+    },
+    {
+      "concept": "GLB node identity",
+      "documentA": "asset prose",
+      "documentB": "RuntimeAsset/LOD schema",
+      "conflict": "Incomplete:07",
+      "impact": "Advertised LOD nodes not explicitly enumerated.",
+      "canonicalResolution": "Exact node sets per LOD, definition/element ownership, physical root mapping."
+    },
+    {
+      "concept": "Asset hashes",
+      "documentA": "asset metadata",
+      "documentB": "decoder paths",
+      "conflict": "Incomplete:07/08",
+      "impact": "Mutable decoder or undeclared resource can bypass byte binding.",
+      "canonicalResolution": "AvailableArtifact paths/hash/size/media; decode exactly verified bytes."
+    },
+    {
+      "concept": "Model hashes",
+      "documentA": "data versioning",
+      "documentB": "publication directory",
+      "conflict": "Yes:08",
+      "impact": "Appearance variants can collide at one modelHash directory.",
+      "canonicalResolution": "modelHash is mechanical inputs; immutable publication/cache uses packHash."
+    },
+    {
+      "concept": "Graph hashes",
+      "documentA": "variant compiler",
+      "documentB": "multi-variant manifest",
+      "conflict": "Incomplete:07/08",
+      "impact": "Singular root graph versus three compiled variants ambiguous.",
+      "canonicalResolution": "graphSetHash aggregates; sessions/solutions/reports bind selected graphHash."
+    },
+    {
+      "concept": "Evidence hashes",
+      "documentA": "source register",
+      "documentB": "hash/version requirements",
+      "conflict": "Incomplete:08",
+      "impact": "Exact preimage/closure needed to invalidate the right proof.",
+      "canonicalResolution": "JCS scoped source projection, raw source bytes separately hashed."
+    },
+    {
+      "concept": "Schema versions",
+      "documentA": "schema wrappers",
+      "documentB": "runtime/persistence versioning",
+      "conflict": "Incomplete:08/09",
+      "impact": "Unreleased contract revision and storage upgrade could be conflated.",
+      "canonicalResolution": "Canonical schema contractv2; historicv1 not runtime; DB migration remains M3."
+    },
+    {
+      "concept": "Assembly graph versions",
+      "documentA": "engine state hashes",
+      "documentB": "all-artifact hash requirement",
+      "conflict": "Yes:08",
+      "impact": "Unspecified self/downstream hashes can become circular.",
+      "canonicalResolution": "Materialized graph input excludes self hashes and generated solutions; referenced instruction inputs included."
+    },
+    {
+      "concept": "Database migrations",
+      "documentA": "architecture",
+      "documentB": "rollback wording",
+      "conflict": "Incomplete:09",
+      "impact": "Re-upgrade can reimport edited stale legacy values.",
+      "canonicalResolution": "Migration identity and LEGACY_DIVERGENCE; no automatic detailed-state merge."
+    },
+    {
+      "concept": "Rollback behavior",
+      "documentA": "milestone boundaries",
+      "documentB": "publication/persistence",
+      "conflict": "Incomplete:02/09",
+      "impact": "Independent roots/DB WAL break naive copies.",
+      "canonicalResolution": "Journal+leases for content; immutable pack pointer; verified logical/consistent DB backup."
+    },
+    {
+      "concept": "BOM/consumables",
+      "documentA": "BOM reconciliation",
+      "documentB": "state schema",
+      "conflict": "Incomplete:03",
+      "impact": "Symbolic cut lengths and lot remaining state absent.",
+      "canonicalResolution": "Typed unknown amount allowed; quantitative conservation BLOCKED until supported."
+    },
+    {
+      "concept": "Milestone dependencies",
+      "documentA": "MILESTONES",
+      "documentB": "milestone-plan/parallel prose",
+      "conflict": "Coarse agrees;13",
+      "impact": "Fixture success can be mistaken for real-part acceptance.",
+      "canonicalResolution": "Preserve15-node DAG;18-phase plan and scoped receipts."
+    },
+    {
+      "concept": "Sensitive media",
+      "documentA": "README/.gitignore",
+      "documentB": "Vite public build",
+      "conflict": "Incomplete:02",
+      "impact": "Ignored local files may still ship, or be deleted in sanitization.",
+      "canonicalResolution": "Preserve originals and use safe dev/build mirror plus packaging checks."
+    }
+  ]
+}

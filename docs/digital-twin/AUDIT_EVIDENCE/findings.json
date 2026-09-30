@@ -1,0 +1,349 @@
+{
+  "findings": [
+    {
+      "id": "PX-AUD-01",
+      "severity": "P1",
+      "title": "M0 completion and M1 permission are not a single objective gate",
+      "affectedDocuments": [
+        "HANDOFF_M0.md",
+        "MILESTONES.md",
+        "MACHINE_READABLE_SCHEMAS/milestone-plan.json",
+        "VERIFICATION_AND_TEST_PLAN.md"
+      ],
+      "affectedMilestones": [
+        "M0",
+        "M1"
+      ],
+      "problem": "Original M0 permits an explicitly blocked PDF source gate but does not say whether that milestone may nevertheless be considered complete for its M1 dependent. Its report fields and required evidence are prose rather than a checked pass/permission predicate. Native feasibility and preservation regressions also lack an explicit blocked-environment disposition.",
+      "whyItMatters": "An agent reports M0 complete after adding a no-fallback branch, leaves Q-02 open, and another agent begins canonical ingestion under a supposedly verified source boundary.",
+      "failureScenario": "An agent reports M0 complete after adding a no-fallback branch, leaves Q-02 open, and another agent begins canonical ingestion under a supposedly verified source boundary. Two reviewers can reach opposite decisions from the same report.",
+      "correction": "GATE_CONTRACTS fixes mandatory A\u2013G with m1Allowed iff all pass; formal source-lock/M0 report schemas and integrated HANDOFF_M0 specify outputs, hashes, rollback and native-only feasibility exception. Starting M0 does not assert that its PDF gate has passed.",
+      "acceptanceTest": "Reject duplicate/missing A\u2013G, any mandatory BLOCKED with m1Allowed=true, incomplete branch/panel map and unverifiable PDF hash. A valid report plus actual hashed logs and rerunnable tests is required before M1; schema shape alone is insufficient.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-02",
+      "severity": "P1",
+      "title": "Staged publication is underspecified across multiple roots and private originals",
+      "affectedDocuments": [
+        "ARCHITECTURE.md",
+        "ASSET_PIPELINE_SPEC.md",
+        "HANDOFF_M0.md",
+        "MILESTONES.md",
+        "REPOSITORY_CHANGE_MAP.md"
+      ],
+      "affectedMilestones": [
+        "M0",
+        "M8"
+      ],
+      "problem": "Original text requests safe/atomic publication without a reader/writer and recovery protocol for pages, indexes and public media. Actual build.ts deletes OUT_PAGES and OUT_PUBLIC before emitting replacements. Gitignored private media can be present in public/content even though it is absent from a fresh clone.",
+      "whyItMatters": "A crash replaces pages but not indexes/media; Vite packages a mixed generation.",
+      "failureScenario": "A crash replaces pages but not indexes/media; Vite packages a mixed generation. Alternatively the agent sanitizes by deleting local excluded originals, or preserves those originals and Vite copies them into dist.",
+      "correction": "SOURCE_PUBLICATION_CONTRACT specifies multi-root journal/leases, exact old-or-new recovery, a safe public mirror for dev/build, byte-preserved local originals and explicit denied-media/allowlist checks. Twin packs use a separate immutable directory and CAS pointer protocol.",
+      "acceptanceTest": "Inject every publication and recovery boundary; restart and compare complete tree manifests. Race readers/writers; check safe-mirror/dist exclusion with synthetic credentials and unchanged originals, custom-docs and twin sentinel hashes.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-03",
+      "severity": "P1",
+      "title": "The closed snapshot does not represent every promised semantic effect",
+      "affectedDocuments": [
+        "DIGITAL_TWIN_DATA_MODEL.md",
+        "ASSEMBLY_ENGINE_SPEC.md",
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json"
+      ],
+      "affectedMilestones": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "problem": "AssemblyState omits cable route records, consumable allocations/lot capacity and subassembly membership although operations change them and exact inverse promises to restore them. stockDispositionHash is not the underlying stock data. The specification does not define an alternate authoritative derivation for these omitted effects.",
+      "whyItMatters": "A renderer or module-level map remembers route/lot/group state.",
+      "failureScenario": "A renderer or module-level map remembers route/lot/group state. Basic pose replay looks correct, but serializing a snapshot and undo record loses the allocation or membership needed after restart. This is a missing closed contract, not proof that replay is theoretically impossible.",
+      "correction": "Add complete typed state collections, explicit operation parentAssignments, nullable no-parent semantics and effect/write rules. The initial state declares all IDs. Hashes are derivatives, and serialized full-state undo restores the exact prior state with an after-hash guard.",
+      "acceptanceTest": "Original schema rejects a state with the needed route/lot/group fields; v2 accepts the explicit shape. M2 must round-trip every operation and all 29\u00d73 prefixes through JSON in a fresh process, including unresolved cut lengths, nested grouping and connected cables.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-04",
+      "severity": "P1",
+      "title": "Physical interface references can identify the wrong repeated instance",
+      "affectedDocuments": [
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+        "ASSEMBLY_ENGINE_SPEC.md",
+        "DIGITAL_TWIN_DATA_MODEL.md"
+      ],
+      "affectedMilestones": [
+        "M1",
+        "M2",
+        "M7",
+        "M10"
+      ],
+      "problem": "Endpoint already correctly pairs instance and interface, but routeCable.guideInterfaceIds, MotionSegment.anchorInterfaceRef, CameraInstruction.focusInterfaceIds and jointCoordinates/interfaceId do not. A definition-local feature is not a unique physical feature when a definition is reused.",
+      "whyItMatters": "Two servos share one definition and its output-axis ID.",
+      "failureScenario": "Two servos share one definition and its output-axis ID. A coordinate update or camera/motion anchor resolves to the first servo or updates both. The scene can remain visually plausible while the wrong physical joint is taught.",
+      "correction": "Use Endpoint for physical guides/anchors/focus; key joint coordinates by connectionId+DOF, with unit/type checks. Retain reusable definition-local frames only when explicitly qualified by definitionId.",
+      "acceptanceTest": "Construct two instances of the same servo/washer definition. Reject the old bare-reference payload in v2 and wrong-definition endpoint semantically; update one joint without affecting the other and resolve independent picks/anchors.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-05",
+      "severity": "P1",
+      "title": "The zeroing promise lacks a structured durable attestation and phase boundary",
+      "affectedDocuments": [
+        "ASSEMBLY_ENGINE_SPEC.md",
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+        "ARCHITECTURE.md"
+      ],
+      "affectedMilestones": [
+        "M1",
+        "M2",
+        "M3",
+        "M10"
+      ],
+      "problem": "Prose requires named servo, fresh procedure revision, horn-operation scope and a no-movement declaration. Confirmation only has generic statement/dependency fields; the condition evaluator has no phase, so review and physical completion are not mechanically separated by the record contract.",
+      "whyItMatters": "An old self-confirmed step or free-text statement is reused for another servo or after horn reindexing.",
+      "failureScenario": "An old self-confirmed step or free-text statement is reused for another servo or after horn reindexing. Alternatively projectPrefix asks for power/zeroing and ceases to be a pure review function.",
+      "correction": "Add ProcedureAcknowledgment and ZeroingAttestation in the session ledger, bound to session/variant/model/graph/procedure and servo epoch, with one-operation consumption. Projection registers requirements only; physical commands check/consume/invalidate records transactionally.",
+      "acceptanceTest": "Reject wrong servo/variant/procedure/epoch, movement-not-denied and consumed attestation reuse. A lost-ack retry must not consume twice. Review/seek/reverse must produce no attestation or hardware action. A checkbox cannot resolve the ultrasonic evidence conflict.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-06",
+      "severity": "P1",
+      "title": "One admission shape creates a pre-export hash dependency and admits contradictory labels",
+      "affectedDocuments": [
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+        "GEOMETRY_AND_EVIDENCE_SPEC.md",
+        "MILESTONES.md",
+        "ASSET_PIPELINE_SPEC.md"
+      ],
+      "affectedMilestones": [
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8"
+      ],
+      "problem": "AdmissionReport unconditionally requires meshHash even for G-CAD before mesh export. A truthful missing artifact cannot be represented without a placeholder hash. It also structurally permits PASS with blockers or an empty G-GEOMETRY step scope, although prose intends a stronger gate.",
+      "whyItMatters": "An agent inserts zero/dummy mesh hashes to close M7 or waits for M8 to close M7, creating an avoidable cycle.",
+      "failureScenario": "An agent inserts zero/dummy mesh hashes to close M7 or waits for M8 to close M7, creating an avoidable cycle. A later consumer sees PASS without proving that its own step and complete closure were checked.",
+      "correction": "Use tagged stage-specific hash bindings; G-CAD/G-COMPONENT meshHash is notApplicable, not fake data. Positive G-GEOMETRY requires all bindings, nonempty scope, empty blockers, gate-policy hash and test artifact hashes; semantic closure/trust checks remain mandatory.",
+      "acceptanceTest": "Accept truthful pre-export G-CAD; reject G-GEOMETRY PASS with missing mesh binding, blockers or empty scope. Verify a real geometry report against independently recomputed upstream hashes and executed witness tests in M7/M8.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-07",
+      "severity": "P1",
+      "title": "Runtime graph, solution and metre-frame contracts are incomplete",
+      "affectedDocuments": [
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+        "ASSET_PIPELINE_SPEC.md",
+        "ASSEMBLY_ENGINE_SPEC.md"
+      ],
+      "affectedMilestones": [
+        "M2",
+        "M8",
+        "M9",
+        "M10"
+      ],
+      "problem": "RuntimeManifest lists steps and opaque solution ArtifactRefs but lacks an executable graph artifact/operation table and stable solution index. Its interfaceFrames reuse CAD Frame.translationMm despite the runtime metre convention. Promised bounds/decoder/LOD identification is not fully in the schema.",
+      "whyItMatters": "The viewer fetches an unversioned graph from a guessed path, binds a solution by listing order, interprets a millimetre frame as metres, or loads a different unpinned decoder.",
+      "failureScenario": "The viewer fetches an unversioned graph from a guessed path, binds a solution by listing order, interprets a millimetre frame as metres, or loads a different unpinned decoder. Mesh hashes alone do not bind this complete runtime behavior.",
+      "correction": "Add typed CompiledGraph and AssemblySolution artifacts, stable variant/solution indexes and equality checks; distinct RuntimeTransform in metres; explicit boundsM, LOD node sets and hashed decoder artifacts. Runtime roots retain unique physical identities. The hash-bound RuntimeRegistry closes supporting references; graphSetHash separates the multi-variant root from each selected graph, and only compiled graphs own runtime steps. Solution poses are explicitly world transforms.",
+      "acceptanceTest": "Reject old/untyped graph or solution bytes, wrong variant/index, CAD translationMm in a runtime frame, missing LOD node/decoder and mismatched duplicate records. Exercise known/unknown solution resolution without identity-transform fallback.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-08",
+      "severity": "P1",
+      "title": "Hash identities and publication key can conflict or become circular",
+      "affectedDocuments": [
+        "DIGITAL_TWIN_DATA_MODEL.md",
+        "ASSET_PIPELINE_SPEC.md",
+        "ARCHITECTURE.md",
+        "REPOSITORY_CHANGE_MAP.md",
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json"
+      ],
+      "affectedMilestones": [
+        "M1",
+        "M2",
+        "M4",
+        "M8",
+        "M9"
+      ],
+      "problem": "Original text versions mechanical and presentation domains separately but publishes all packs under modelHash. It requires every artifact to record all five hashes and mentions excluding an unspecified own hash; neither state-hash preimages nor downstream/report/mesh exclusions are exact.",
+      "whyItMatters": "A cosmetic rebuild has the same mechanical modelHash but different immutable GLB bytes at the same directory, causing stale loads or overwrites.",
+      "failureScenario": "A cosmetic rebuild has the same mechanical modelHash but different immutable GLB bytes at the same directory, causing stale loads or overwrites. A generated asset/report containing its own aggregate hash creates an unsatisfiable fixed-point requirement.",
+      "correction": "HASH_AND_PACK_CONTRACT fixes JCS/domain separation, materialized acyclic input projections, exact own-field exclusions, upstream-only stage bindings and separate packHash publication/cache identity. Appearance changes do not fabricate mechanical changes.",
+      "acceptanceTest": "M1 cross-language serialization/preimage tests; M8 material-only rebuild changes packHash but preserves modelHash, stale bytes/decoder/solution mutations reject, self/downstream input edges reject, and old pinned packs remain usable.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-09",
+      "severity": "P1",
+      "title": "Retry, migration reentry and backup semantics can lose or misinterpret durable progress",
+      "affectedDocuments": [
+        "ARCHITECTURE.md",
+        "ASSEMBLY_ENGINE_SPEC.md",
+        "MILESTONES.md",
+        "REPOSITORY_CHANGE_MAP.md"
+      ],
+      "affectedMilestones": [
+        "M3",
+        "M12"
+      ],
+      "problem": "Original prose promises idempotent commands, one-way additive migration and backups without defining duplicate-before-CAS ordering, same-ID/different-payload rejection, legacy-key edits after downgrade/re-upgrade or WAL-consistent backup. These are not supplied by choosing SQLite.",
+      "whyItMatters": "Commit succeeds but acknowledgment is lost; retry gets stale-revision rejection instead of its original result.",
+      "failureScenario": "Commit succeeds but acknowledgment is lost; retry gets stale-revision rejection instead of its original result. A later launch reimports edited legacy setup over new data, or a copied .db omits committed WAL events.",
+      "correction": "PERSISTENCE_CONTRACT specifies aggregate-scoped command_results/requestHash and exact retry ordering, one-transaction migration identity, explicit LEGACY_DIVERGENCE recovery, consistent backups and parity/fault tests. The original steps.assembly marker remains a legacy self-report, never 29 physical confirmations.",
+      "acceptanceTest": "Run identical SQLite/IndexedDB cases for lost acknowledgment, ID reuse, concurrent commands, interrupted migration, downgrade divergence, malformed raw preservation, quota/disk failure, newer schema, WAL backup/restore and variant fork. No actual database test was run in this audit.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-10",
+      "severity": "P2",
+      "title": "VariantPatch is referenced by ID but has no ID or deterministic splice rule",
+      "affectedDocuments": [
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+        "DIGITAL_TWIN_DATA_MODEL.md",
+        "ASSEMBLY_ENGINE_SPEC.md"
+      ],
+      "affectedMilestones": [
+        "M1",
+        "M2"
+      ],
+      "problem": "AssemblyStep.variantPatchRefs contains IDs, but VariantPatch does not define an id. Its replace/with arrays also lack an explicit order/overlap/insertion resolution contract.",
+      "whyItMatters": "Two agents invent different patch-ID registries or concatenate overlapping branch operations differently, producing divergent screw allocations and step hashes for the same board..",
+      "failureScenario": "Two agents invent different patch-ID registries or concatenate overlapping branch operations differently, producing divergent screw allocations and step hashes for the same board.",
+      "correction": "Add patch id/variantId and a single nonempty contiguous replacement span per step/variant; preserve explicit replacement order and require disjoint active/inactive sets. No implicit last-writer-wins.",
+      "acceptanceTest": "Reject missing patch ID, mismatched step/variant, dangling refs, overlap and discontiguous replacement. Compile all three branches deterministically and verify stock/connection consistency.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-11",
+      "severity": "P2",
+      "title": "Rules and numeric derivations lack enough typed operands/registry structure",
+      "affectedDocuments": [
+        "MACHINE_READABLE_SCHEMAS/digital-twin.schema.json",
+        "DIGITAL_TWIN_DATA_MODEL.md",
+        "GEOMETRY_AND_EVIDENCE_SPEC.md"
+      ],
+      "affectedMilestones": [
+        "M1",
+        "M2",
+        "M7",
+        "M13"
+      ],
+      "problem": "VerificationRule has comparator/targets but no expected operand, predicate version or execution phase. Claims do contain method/scope/inputClaimIds, which is useful, but numeric derivationRef and conflictIds have no dedicated reproducible numeric-method/conflict record contract.",
+      "whyItMatters": "A quantity comparator cannot say how many are expected without an implementation-specific side table.",
+      "failureScenario": "A quantity comparator cannot say how many are expected without an implementation-specific side table. A DERIVED value names an arbitrary Claim but its output/uncertainty method cannot be independently reconstructed.",
+      "correction": "Add typed expected values/phase/version, a fixed predicate registry, FrameRecord, DerivationRecord and ConflictRecord; require typed reference closure, method artifacts and propagated source limitations. Do not demand JSON Schema prove foreign-key or physical facts.",
+      "acceptanceTest": "Reject incompatible predicate/comparator/expected units and wrong reference types. Preserve a known estimate with unresolved uncertainty as representable but mechanically blocked. Reproduce a derivation and reject unresolved method/conflict or approximate-source promotion at admission.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-12",
+      "severity": "P2",
+      "title": "Independent geometric oracle and surface/path coverage need an explicit proof method",
+      "affectedDocuments": [
+        "ASSET_PIPELINE_SPEC.md",
+        "GEOMETRY_AND_EVIDENCE_SPEC.md",
+        "VERIFICATION_AND_TEST_PLAN.md"
+      ],
+      "affectedMilestones": [
+        "M4",
+        "M7",
+        "M8"
+      ],
+      "problem": "Original numerical budgets and independent checks are good, but vertex/surface and path checks do not fix the coverage/error-bound obligation or independence from the exporter\u2019s metadata. A test name and threshold alone are not a coverage argument.",
+      "whyItMatters": "A simplified mesh caps a hole, an axis metadata table is copied from the same wrong source, or coarse motion samples miss an intervening collision.",
+      "failureScenario": "A simplified mesh caps a hole, an axis metadata table is copied from the same wrong source, or coarse motion samples miss an intervening collision. Rendered poses can look right and sampled vertices can still be close to some CAD surface.",
+      "correction": "GATE_CONTRACTS requires independent source/analytic witnesses, bidirectional bounded surface error, every instructional LOD, conservative swept-path bounds and separate static/path capabilities. Unbounded methods return BLOCKED; original budgets and source-uncertainty limits remain.",
+      "acceptanceTest": "Inject missing hole, wrong axis/handedness, shifted pivot, swapped instance and 1000\u00d7 scale mutants; each must fail the relevant independent check. Record coverage bounds and final decoded byte hashes, not just screenshots.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-13",
+      "severity": "P2",
+      "title": "Coarse dependencies do not encode early fixture lanes or scoped acceptance",
+      "affectedDocuments": [
+        "MILESTONES.md",
+        "MACHINE_READABLE_SCHEMAS/milestone-plan.json",
+        "REPOSITORY_CHANGE_MAP.md"
+      ],
+      "affectedMilestones": [
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "M9",
+        "M10",
+        "M11"
+      ],
+      "problem": "The coarse dependency DAG is acyclic and fundamentally correct. The missing contract is the distinction between fixture start, real-component scoped acceptance and full milestone acceptance, plus concrete shared-file ownership for parallel agents.",
+      "whyItMatters": "A scheduler waits for all geometry before writing the fixture viewer, or calls M8 complete because its TEST fixtures pass.",
+      "failureScenario": "A scheduler waits for all geometry before writing the fixture viewer, or calls M8 complete because its TEST fixtures pass. Two agents concurrently change shared schema/lock/manifest files and produce mutually incompatible artifacts.",
+      "correction": "Preserve the coarse DAG; add an explicit phase plan and ownership/rollback review. Require per-definition and per-step dependency receipts, shared-contract single ownership and final full-coverage aggregation.",
+      "acceptanceTest": "Recompute topological order and transitive reduction independently; reject phase cycles, production phases without G-CAD/G-GEOMETRY receipts, duplicate ownership and attempts to use a fixture receipt as real-part acceptance.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-14",
+      "severity": "P2",
+      "title": "The 174-check claim is not accompanied by its executable validator",
+      "affectedDocuments": [
+        "PACKAGE_VALIDATION_REPORT.json",
+        "CRITICAL_REVIEW.md",
+        "README.md"
+      ],
+      "affectedMilestones": [
+        "M0",
+        "M1",
+        "M12"
+      ],
+      "problem": "The ZIP includes a report but no script/configuration that ran the 174 checks. Most reported checks are schema/document structure or scoped arithmetic; the original reference-image archive whose hash was checked is not included. It cannot all be independently rerun from this ZIP alone.",
+      "whyItMatters": "An agent treats 174 PASS labels as evidence of graph reversibility or mechanical correctness, or edits the package and republishes the unchanged report.",
+      "failureScenario": "An agent treats 174 PASS labels as evidence of graph reversibility or mechanical correctness, or edits the package and republishes the unchanged report. The report correctly disclaims app/CAD work, but reproducibility remains missing.",
+      "correction": "Preserve the original report/schema/manifest as historical; add a runnable independent package validator, explicit counterexamples, inspection inventory, classification, current reports and regenerated integrity manifest. Do not claim the absent original image archive was independently rehashed.",
+      "acceptanceTest": "Run the validator on a clean extraction; mutations to schema/fixture/evidence/hash/links/phase graph must fail. The current report must bind its exact input set and list unexecuted app/native/mechanical categories. Compare all original ZIP manifest entries directly before edits.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    },
+    {
+      "id": "PX-AUD-15",
+      "severity": "P2",
+      "title": "Step 27 rear-wheel installation is assigned to the front-steering parent",
+      "affectedDocuments": [
+        "V40_ASSEMBLY_LEDGER.md",
+        "MACHINE_READABLE_SCHEMAS/v40-step-seed.json"
+      ],
+      "affectedMilestones": [
+        "M2",
+        "M7",
+        "M10"
+      ],
+      "problem": "Both human ledger and machine seed label S27 parentAssemblies as steering/front while the same record mounts the two rear wheels on the motor output shafts. This is an internal factual grouping error, not an unknown dimension.",
+      "whyItMatters": "A compiler or explode/navigation grouping attaches the rear-wheel operation to the front steering group, making group motion, selection or ownership wrong despite a correct rear-wheel mesh..",
+      "failureScenario": "A compiler or explode/navigation grouping attaches the rear-wheel operation to the front steering group, making group motion, selection or ownership wrong despite a correct rear-wheel mesh.",
+      "correction": "Change both copies to chassis/rear-drive. Preserve the printed step number, rear-wheel/shaft connection intent and all evidence/geometry blockers; do not infer a pose.",
+      "acceptanceTest": "Assert S27 is rear-drive in both records and its assigned group is not the front steering group. In M2, test grouped/exploded selection and rear motor-shaft endpoints; preserve all29 numbering and BOM arithmetic.",
+      "status": "CORRECTED_IN_SPEC",
+      "implementationStatus": "NOT_EXECUTED"
+    }
+  ]
+}

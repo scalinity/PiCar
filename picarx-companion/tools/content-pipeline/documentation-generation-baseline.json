@@ -1,0 +1,632 @@
+{
+  "scope": "Verified existing generated documentation; allows fresh-checkout build without raw upstream sources. Unknown/untracked public files are not publication inputs.",
+  "roots": {
+    "src/content/pages": "c81c64b6341771254499520667a504ca708b743b044e72a887d5a5f6f90b3f22",
+    "src/content/nav.json": "dc850371f64c154ea4ad0c8671e3e242807b0335717ab473eafe70b5ed3f4d65",
+    "src/content/search-index.json": "cc57224a3b49074febc3bdd50d17f5b04cef165b52589a8f519a30ac15e19111",
+    "src/content/videos.json": "5d73b360559004f63928fb4de83354f81e067688505e356139820584e57abff3",
+    "src/content/wizard.json": "90738a7d84055e906c3aa5065865fecd1d67d285f96c13e35559312ca3dca61e"
+  },
+  "publicFiles": [
+    {
+      "path": "img/_shared/appendix/img/filezilla_connect.png",
+      "sha256": "6683b833e65fffaba6a0aceaacad380ae39dbe8a29d1742eb1f6775250183c6a",
+      "bytes": 22188
+    },
+    {
+      "path": "img/_shared/appendix/img/filezilla_icon.png",
+      "sha256": "ad7c32dac4bf20a08219682118917322193ec77c3b9d2055166bbf941d261197",
+      "bytes": 14434
+    },
+    {
+      "path": "img/_shared/appendix/img/filezilla_in.png",
+      "sha256": "9db7e1d9ccdffccf5359b7743721bce8a45528cfe07a7b6b2f3bd6b9256e407f",
+      "bytes": 43899
+    },
+    {
+      "path": "img/_shared/appendix/img/filezilla_install.png",
+      "sha256": "0bb1ad4346a29809a05aeb6abe8ca383e2b1471102b028cd9dbf3bc9f6aa8251",
+      "bytes": 13648
+    },
+    {
+      "path": "img/_shared/appendix/img/powershell_login.png",
+      "sha256": "58099679cea286308f3ad4069a6d03ff4b592f1a873dbec73bef8d8803703a9f",
+      "bytes": 14692
+    },
+    {
+      "path": "img/_shared/appendix/img/powershell_ssh.png",
+      "sha256": "71d3632b01bf949691fcc9370c7a82303035f9915039f083d022b0c32f3d0c57",
+      "bytes": 42637
+    },
+    {
+      "path": "img/_shared/appendix/img/putty_accept.png",
+      "sha256": "19a0ec90b31eda1148cac85283d1cf749e1e076edd0e31c50ec3933293d1f367",
+      "bytes": 20943
+    },
+    {
+      "path": "img/_shared/appendix/img/putty_download.png",
+      "sha256": "75660af61d4c937bd98c0a0a292e501c77901bb1cc6d79e6b7229685b8d9aa37",
+      "bytes": 29932
+    },
+    {
+      "path": "img/_shared/appendix/img/putty_login.png",
+      "sha256": "6a71c4196d9b95b267a9d900dcf3c77af4af4d8071bc577927dc0c0391f90854",
+      "bytes": 18780
+    },
+    {
+      "path": "img/_shared/appendix/img/putty_open.png",
+      "sha256": "873947cf542a093c4e3c10885b51b5ffcb77680bde7a0a2dd99da0e453e4c69a",
+      "bytes": 24424
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_i2c_i2c.png",
+      "sha256": "0f7bc19f675c7742cfe613520d45328dd6c670340f718acfbd8f17552c8e50ee",
+      "bytes": 6981
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_i2c_yes.png",
+      "sha256": "cb27f7f6971e9b84179459bf42c00d530ad9a27dae052c0083ab57786e061273",
+      "bytes": 2461
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_interface.png",
+      "sha256": "2a675062afa393f276e92d977e90f0b337d1e6a20b2b70453078d4aec1014b07",
+      "bytes": 7864
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_raspi_config.png",
+      "sha256": "bd3a7f138b486af1b01323a0aa335d6682b099ce028f63c59cec3e85e7300818",
+      "bytes": 22199
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_spi_enable.png",
+      "sha256": "9c2108855fe34599ec7d627f8f00686157650ef9ed3ca72be3a75f3b714e5c11",
+      "bytes": 2361
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_spi_spi.png",
+      "sha256": "c2a12bdb29ee648c4b5eb47bbf522096bb5cc200916c929ece26a0dd83697ae4",
+      "bytes": 6967
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_vnc_desktop.png",
+      "sha256": "1ec769b200b422c8905aac84208a80fc8d80092bade0912cfabff9acd3a2384e",
+      "bytes": 221394
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_vnc_download.png",
+      "sha256": "43a547676a92d473ad64573cf1381a907c8132646194482552ae6fd75c412f1e",
+      "bytes": 34222
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_vnc_enable.png",
+      "sha256": "ebc775b270cc3397308e76aef1eb9ddfc925cb728c9c66fc8e92bde1f77ead82",
+      "bytes": 2321
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_vnc_login.png",
+      "sha256": "e7bae6c8188005bb768b6dde42691f85caa25c8fb377d62ea1e923a66d19b80e",
+      "bytes": 16902
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_vnc_username.png",
+      "sha256": "fbcb692c09d023f794cbab66c829250504f9b36deca32b71c52f3c9ba69c851b",
+      "bytes": 18892
+    },
+    {
+      "path": "img/_shared/appendix/img/ssh_vnc_vnc.png",
+      "sha256": "20563818f1d0dda932fa996536a91705c1b42a984ed348ae3972bf1a235a6182",
+      "bytes": 7982
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_connect.png",
+      "sha256": "90505179d3ca060b64185a3a194cadf85e4ed10fa045ddc2285b5994e5aff25e",
+      "bytes": 49346
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_hostname.png",
+      "sha256": "030a8f1b3c84480f5c3903ad69948c4e229b1654f1d1a92b102e2c55b5291a6a",
+      "bytes": 35817
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_local.png",
+      "sha256": "4e6645c9df29ce234935e4c993c33eb4c3d9520f436dd23228ee8981ee88db6b",
+      "bytes": 40896
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_open.png",
+      "sha256": "aba73898e0d2485e3cfbb34fde5e87718ce0abd572d05e8d522a4aaf6b59e63a",
+      "bytes": 36261
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_skip.png",
+      "sha256": "4890c646426d59b9019b34ee2b5626eec390abc434d5d400919c0e6b1ee66728",
+      "bytes": 34623
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_ssh.png",
+      "sha256": "1d02af077c29bacdbb45439b9a1dfa4b09be1ee4ab1596aed11956f844f797c5",
+      "bytes": 44172
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_custom_user.png",
+      "sha256": "ca531fe014e08891adfd7da222844ebe2af65a94c275f4b2365022d801068c88",
+      "bytes": 48551
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_device.png",
+      "sha256": "b7e00665269b15c663f1d4bbac88109ac8c83a8f6159ac02906a665e7e60fb0d",
+      "bytes": 63530
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_download.png",
+      "sha256": "ccca913de1ecc9e964ee4ad2bc8fc56415fd3c9f22eeb10771eaab47ea58212d",
+      "bytes": 49421
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_erase.png",
+      "sha256": "56710be258cdab8ed29d18e0ffc54d177ec77f2d36bc796952a69ba0d30bf6cf",
+      "bytes": 47802
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_finish.png",
+      "sha256": "de8580202121347c3d7f401e3bcb0f7db0ce0d5bd15c557794cf33cfb21c97f2",
+      "bytes": 56766
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_install.png",
+      "sha256": "0b068b3b3f23bf5ce213257f7ee2b3b62f4a2753a33259ed4b94115b13e4d514",
+      "bytes": 11346
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_os.png",
+      "sha256": "76df7f8428169eaf99be85120825ab5427ddd9fa011a72cb06714b10ef20c507",
+      "bytes": 65054
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_storage.png",
+      "sha256": "1c5c0f89385eae3c0d55cf59cb0b1007e8cc0553f00c78847721f57a18b0bbbe",
+      "bytes": 36834
+    },
+    {
+      "path": "img/_shared/pi_start/img/imager_writing.png",
+      "sha256": "ab1460d16a7dcf199113f8abeafdf7307ec947babee7ce6bb7d63bb3eb95dfe3",
+      "bytes": 58838
+    },
+    {
+      "path": "img/_shared/pi_start/img/insert_sd.png",
+      "sha256": "b2a8da4e5c2072ea60b4835df4d49a42ccd10b8a8b509754ddb59d95813c5ac6",
+      "bytes": 831145
+    },
+    {
+      "path": "img/_shared/pi_start/img/need_hdmi.png",
+      "sha256": "4cd0a908644468223ac2f8ff02a71b9b3c9dee65e9d0d810ecef565f13c8e56f",
+      "bytes": 279590
+    },
+    {
+      "path": "img/_shared/pi_start/img/need_keyboard_mouse.png",
+      "sha256": "42ba362accb54eaac396f6a77e1205952f2a509a77123391b110e45c9a555e53",
+      "bytes": 391479
+    },
+    {
+      "path": "img/_shared/pi_start/img/need_pi.jpg",
+      "sha256": "7419155a17b9363549f614c4e379f31d0038af09b5f77e06f1fb9b5d1498555a",
+      "bytes": 338175
+    },
+    {
+      "path": "img/_shared/pi_start/img/need_power.png",
+      "sha256": "1af98c5cbdb6ab8491f5cc6caaa04d1bfc4ab9d5f036fd3719a02bd3d163bbf5",
+      "bytes": 159932
+    },
+    {
+      "path": "img/_shared/pi_start/img/need_screen.png",
+      "sha256": "cd1643ec304e7d81a88a62fc1691a3f23b4896612dc5a3799213f74d35230e75",
+      "bytes": 362457
+    },
+    {
+      "path": "img/_shared/pi_start/img/need_sd.jpg",
+      "sha256": "7e6ad902b37ba74f82e565a0f104611a8d540b87f3118bf407a82b38ab1f76cd",
+      "bytes": 164264
+    },
+    {
+      "path": "img/_shared/pi_start/img/open_terminal.png",
+      "sha256": "5adb78ba45047d84d81fe4c8db0769da72582641c9ccb0a8d25af82c4f60a0c4",
+      "bytes": 213902
+    },
+    {
+      "path": "img/_shared/pi_start/img/os_sd_to_pi.jpg",
+      "sha256": "824cc271681a7d2e63311c3f959c82b78b9a6a9edfc9975f9e71661808560ff7",
+      "bytes": 758937
+    },
+    {
+      "path": "img/_shared/pi_start/img/plug_screen_trixie.png",
+      "sha256": "d644649c79953e4cdf24c083c2ad278f32ae01b3375aeaa70249f9481c0c0121",
+      "bytes": 242113
+    },
+    {
+      "path": "img/_shared/pi_start/img/robot_hat_charge.png",
+      "sha256": "e30cd57c3fb370bf9419f0e8319948b8b869fc0cda5724f1d0abec14fba0425a",
+      "bytes": 1109655
+    },
+    {
+      "path": "img/_shared/pi_start/img/robot_hat_power.png",
+      "sha256": "e6536ce3ea166dd43d2b843b311bf427b7fa86e55baf7c964908c6171f0d8d5e",
+      "bytes": 761386
+    },
+    {
+      "path": "img/_shared/pi_start/img/ssh_login.png",
+      "sha256": "521220fc7211a69fc0ecb4b7497e649d95080c836a2fcd7029f7d9851647e46d",
+      "bytes": 21848
+    },
+    {
+      "path": "img/ai_interaction/img/display.png",
+      "sha256": "20a4f939d4d9b66ed6cf43cc0761239473964e6c1817480daed20d8dc23bd9f9",
+      "bytes": 5828
+    },
+    {
+      "path": "img/ai_interaction/img/llm_deepseek_chognzhi.png",
+      "sha256": "113dc4da37f8f6d1043d451720b0f88814c46e63595ccad080d07bc118b34091",
+      "bytes": 40163
+    },
+    {
+      "path": "img/ai_interaction/img/llm_deepseek_create.png",
+      "sha256": "2ff6cb6c1672a3dc1ec5cca45205e0492e7cdfb55c72c3846990ba4c9b6eb716",
+      "bytes": 49585
+    },
+    {
+      "path": "img/ai_interaction/img/llm_doubao_create.png",
+      "sha256": "6d8d59e7f6a67ad2a72ffdef655ae27a7ae045f0d38350f7b7d715752648b214",
+      "bytes": 83457
+    },
+    {
+      "path": "img/ai_interaction/img/llm_doubao_kaitong.png",
+      "sha256": "17e9963b3348851e0886e2580a916a252fbfeebd91c2292d41defe4b50d88f20",
+      "bytes": 44231
+    },
+    {
+      "path": "img/ai_interaction/img/llm_doubao_model.png",
+      "sha256": "78f9b6a77a06d71fe9b59915d49dc5baba2ac03bc7468abb66324f3b02d26b94",
+      "bytes": 84241
+    },
+    {
+      "path": "img/ai_interaction/img/llm_doubao_model_select.png",
+      "sha256": "72b35c78e08b94ccc6f49e11060af9aaa3cf9af744b944f41d5771cdc84eb19d",
+      "bytes": 127121
+    },
+    {
+      "path": "img/ai_interaction/img/llm_doubao_name.png",
+      "sha256": "bcb61546b90e8916a2628f6a7d540e3dcc592fba824b779dbc124279fb365b8a",
+      "bytes": 34879
+    },
+    {
+      "path": "img/ai_interaction/img/llm_doubao_use_api.png",
+      "sha256": "e05bd7031ba8e89ddd4e7fbb5eb0973045a5e3916685e1214c328c348cd5aedf",
+      "bytes": 28052
+    },
+    {
+      "path": "img/ai_interaction/img/llm_gemini_choose.png",
+      "sha256": "7ec285931a539a371feb7084ba10e289c6e5db5ab03485450540e420f80b46aa",
+      "bytes": 23761
+    },
+    {
+      "path": "img/ai_interaction/img/llm_gemini_create.png",
+      "sha256": "269e6050009ac98d5bd4f2ee81100f70037e5f8d1b2b9daaf8fb8e6fa79980c2",
+      "bytes": 41669
+    },
+    {
+      "path": "img/ai_interaction/img/llm_gemini_get.png",
+      "sha256": "9eb6ff282f8b4a2f992a5751ac3b5d2319d82b743aa87d16ddf5630d0845967a",
+      "bytes": 79852
+    },
+    {
+      "path": "img/ai_interaction/img/llm_gemini_model.png",
+      "sha256": "abef4b7b412b6556de92fc7edebac94100311419bc508d147ef3f3075f3248d5",
+      "bytes": 108741
+    },
+    {
+      "path": "img/ai_interaction/img/llm_grok_create.png",
+      "sha256": "8f376c9415715ab6be2485c04ef520d8a8f4c71e6931112fe22ec0a414bdf647",
+      "bytes": 27195
+    },
+    {
+      "path": "img/ai_interaction/img/llm_grok_model.png",
+      "sha256": "4bee9d6a10e4a9dc1bef6b5115483def7d976b9bb922758e39bc9918d07e0b1a",
+      "bytes": 36020
+    },
+    {
+      "path": "img/ai_interaction/img/llm_grok_name.png",
+      "sha256": "a5ef04422a2a014e3449471346c80bc680f0ba401d8b5ea0c5e207138d2a57fc",
+      "bytes": 32082
+    },
+    {
+      "path": "img/ai_interaction/img/llm_olama_llama_download.png",
+      "sha256": "1dbfe3192f4aaca0b8fa0a3efaf773d1039117c7954db6c0fc088ee7f72f16e3",
+      "bytes": 17187
+    },
+    {
+      "path": "img/ai_interaction/img/llm_olama_windows_enable.png",
+      "sha256": "c8ae5bd5ddc4790805b4c9ff63695ac48058b5b3a832b3dc3c058162b55a4877",
+      "bytes": 33613
+    },
+    {
+      "path": "img/ai_interaction/img/llm_ollama_choose.png",
+      "sha256": "4605c7e947f4c54aa44346210ce7c9037fb14443cf304d15c8dd3717f73a4cf5",
+      "bytes": 15456
+    },
+    {
+      "path": "img/ai_interaction/img/llm_ollama_download.png",
+      "sha256": "c013b0ab7ae24f69563d61bc76929ea0d344235f7c52a70d00460e68fe65043c",
+      "bytes": 15820
+    },
+    {
+      "path": "img/ai_interaction/img/llm_ollama_image_model.png",
+      "sha256": "a4598805a222bb74c8af1610e5bbbc02060c9291ba93b6ed86b6ac5d36e650a5",
+      "bytes": 16677
+    },
+    {
+      "path": "img/ai_interaction/img/llm_openai_billing.png",
+      "sha256": "211570482a0aee1f9fe41ddf66f7a9e280ff7bea2735320c71f35559f969e325",
+      "bytes": 39115
+    },
+    {
+      "path": "img/ai_interaction/img/llm_openai_create.png",
+      "sha256": "bd05bb9508b36a1680b4b0138a8b4d76ecbe16ad3e7ea56ae173cb14fbd3f2c6",
+      "bytes": 55279
+    },
+    {
+      "path": "img/ai_interaction/img/llm_openai_create_confirm.png",
+      "sha256": "0ad0213dc435bbd421f7dcf10c8844a6a7959d26c83c0059b7fc3755efc8ca39",
+      "bytes": 32172
+    },
+    {
+      "path": "img/ai_interaction/img/llm_openai_models.png",
+      "sha256": "0a0569a188d68017a6fd84a86f7a80b8daf93b7bf7e405c47b0f5982c37f0187",
+      "bytes": 44028
+    },
+    {
+      "path": "img/ai_interaction/img/llm_qwen_aliyun_confirm.png",
+      "sha256": "7fb0af04c04cb974e30a2df015def8a6ecf56922f2019136e5b1ae2306b43ed6",
+      "bytes": 22466
+    },
+    {
+      "path": "img/ai_interaction/img/llm_qwen_aliyun_create.png",
+      "sha256": "4d4371da8dc8365571fd4f38f44d6ebdb3d6721255f6fc825e6c3957494a0693",
+      "bytes": 103071
+    },
+    {
+      "path": "img/hardware/img/1.10_camera.png",
+      "sha256": "f1d2c3a1f2b0ef4b9fb51c63514ffdf464090c890c02128ce25a3d96a2eb7710",
+      "bytes": 25399
+    },
+    {
+      "path": "img/hardware/img/camera_module_pic.png",
+      "sha256": "9ccaab06f2bb0c599785efd8923ec7ad949371f299dbca00c14fbcbab140bb57",
+      "bytes": 985255
+    },
+    {
+      "path": "img/hardware/img/connect_ffc.png",
+      "sha256": "a2d69f0da3e7557e676d61cf299538b9be92525b4f98c3c55908e82a5c802272",
+      "bytes": 66857
+    },
+    {
+      "path": "img/hardware/img/ultrasonic_pic.png",
+      "sha256": "741aa2a2df55db8fd0e13b3f9d491d86e6516dc58f399583e2f2305db6330b51",
+      "bytes": 622502
+    },
+    {
+      "path": "img/hardware/img/ultrasonic_prin.jpg",
+      "sha256": "e06fb14f70d318923e00acd24fe2217fa584b7001a13f4cc1a51c6f64a6be420",
+      "bytes": 485132
+    },
+    {
+      "path": "img/img/IMG_9897.png",
+      "sha256": "a13e92b8fb50bdeff15b5eb73d1e3720855fec242e639f0645e12dd1f488e109",
+      "bytes": 787282
+    },
+    {
+      "path": "img/img/faq_servo.png",
+      "sha256": "4619435a1f68bdb64200af638758f2feabc637d87b09fffc7ebfdfb7cb811d31",
+      "bytes": 24570
+    },
+    {
+      "path": "img/img/openclaw/api_key_open_claw.png",
+      "sha256": "818cb01ddb06116c88fdfa9cbccb08b8c23df3b3eafa8ef783f48bad60dd713d",
+      "bytes": 6750
+    },
+    {
+      "path": "img/img/openclaw/channel_open_claw.png",
+      "sha256": "a01f2b0e675afdf96d3bd9f09f8f898975024469926cca7b90eba895b6f9c7ed",
+      "bytes": 27558
+    },
+    {
+      "path": "img/img/openclaw/config_skill_open_claw.png",
+      "sha256": "0b4d67f985def16971660d017fed31e9b0cb68bc8e4f5408db0e4b4cf2cb2faf",
+      "bytes": 7798
+    },
+    {
+      "path": "img/img/openclaw/hatch_open_claw.png",
+      "sha256": "bc762cb5f121c90d5215f69950244c4bd527e8e227f9258ca4870a8e740081cc",
+      "bytes": 4268
+    },
+    {
+      "path": "img/img/openclaw/hooks2_open_claw.png",
+      "sha256": "69eeba04ba2e283de36edbadfb687bb593e2b83af1d98ab75880a5a1df1080f7",
+      "bytes": 19918
+    },
+    {
+      "path": "img/img/openclaw/install_open_claw.png",
+      "sha256": "7df7f7d13bf40a265d532d737e6d19e38a85947817c283e63a6d6865e5fcbedf",
+      "bytes": 19461
+    },
+    {
+      "path": "img/img/openclaw/install_skill_open_claw.png",
+      "sha256": "140d3c2a3aa3afac59c573125d6882278334b6021c690c1bf211f239a66014a3",
+      "bytes": 14193
+    },
+    {
+      "path": "img/img/openclaw/llm_openai_create.png",
+      "sha256": "bd05bb9508b36a1680b4b0138a8b4d76ecbe16ad3e7ea56ae173cb14fbd3f2c6",
+      "bytes": 55279
+    },
+    {
+      "path": "img/img/openclaw/llm_openai_create_confirm.png",
+      "sha256": "0ad0213dc435bbd421f7dcf10c8844a6a7959d26c83c0059b7fc3755efc8ca39",
+      "bytes": 32172
+    },
+    {
+      "path": "img/img/openclaw/model_config_open_claw.png",
+      "sha256": "87317ce9544f7dba53e17267301466f4dd0686c248bb69ff544a41f61e17b047",
+      "bytes": 10111
+    },
+    {
+      "path": "img/img/openclaw/model_provider_open_claw.png",
+      "sha256": "8ee89e49217cfcc421fe4935fb1d466e9612c872a4573bbafb7844e793c4ab8f",
+      "bytes": 16413
+    },
+    {
+      "path": "img/img/openclaw/paste_api_key_open_claw.png",
+      "sha256": "b7cd542b25387824a51da1855ed6cdc624475f02f61df73031e1544a38fbad0d",
+      "bytes": 11247
+    },
+    {
+      "path": "img/img/openclaw/quickstart_open_claw.png",
+      "sha256": "9039d2474e65453504ad45a9cef3a630d132f8b086013da2224de6636334e49f",
+      "bytes": 8320
+    },
+    {
+      "path": "img/img/openclaw/security_open_claw.png",
+      "sha256": "a4f918e9c0fb591751c940e681c672926fa8b9926ecb4a7268f5ba093d744c86",
+      "bytes": 34991
+    },
+    {
+      "path": "img/img/picar-x_v2.png",
+      "sha256": "d0eb6ffa154cc8880e67b3bc2e55abb8dc934cc17a5db4e32dad6fd361e8f3d0",
+      "bytes": 347460
+    },
+    {
+      "path": "img/img/robot_hat_pic.png",
+      "sha256": "3f2630fc99f4dea0d577ffd7fe1a905695cca81f2e3ca01356afb16a0c3fa97b",
+      "bytes": 983667
+    },
+    {
+      "path": "img/python/img/DTC2.png",
+      "sha256": "67b7dd6f8f78b8d827d585ee307616b2d7b3eb1ecc6eed5d25ff527510c8137c",
+      "bytes": 888916
+    },
+    {
+      "path": "img/python/img/DTC4.png",
+      "sha256": "60339e8c8b0b13a0f052a0d6e288b0251d2b002c82eb89993c98280f8b2bdf83",
+      "bytes": 675701
+    },
+    {
+      "path": "img/python/img/DTC5.png",
+      "sha256": "3ed4658f4a02663c18dcd4a8c728fdf6258c8c761a7d388722dbfc8734eb43b6",
+      "bytes": 605166
+    },
+    {
+      "path": "img/python/img/Z_P11.jpg",
+      "sha256": "863d51ba5f1c6401c68036b6ea67d02f34b022b4a3fdad9c1e7a004bd4d201d1",
+      "bytes": 215082
+    },
+    {
+      "path": "img/python/img/app1.PNG",
+      "sha256": "aa179e9adbba2924856dcd7697516c4e54f062428a738fac3bf607290d65566b",
+      "bytes": 1394477
+    },
+    {
+      "path": "img/python/img/app10.PNG",
+      "sha256": "96f972cdd8f5eeb803fc3bd37d19dbede490c135911085c264c251b4c178c5be",
+      "bytes": 126261
+    },
+    {
+      "path": "img/python/img/app11.PNG",
+      "sha256": "bf195e16184b3e58bfe6580afbd83c245cf96ca7df96ac703fa9c9e733030f2a",
+      "bytes": 59039
+    },
+    {
+      "path": "img/python/img/app12.PNG",
+      "sha256": "70ebe4663f079fc87feac07d31775e1336d52ece1e241da4edbd5844864c2b27",
+      "bytes": 4374696
+    },
+    {
+      "path": "img/python/img/app9.PNG",
+      "sha256": "653d959480f7e448ac9fb7e9b1be8c5322122e410bb04b2d6aa4603100fa8fe6",
+      "bytes": 135715
+    },
+    {
+      "path": "img/python/img/app_control_preset.jpg",
+      "sha256": "46b7dbe2b5f2e3b28c7fa4db7636643ea0938bf2a1818d7ca7860a7c66b78950",
+      "bytes": 461620
+    },
+    {
+      "path": "img/python/img/calibrate1.png",
+      "sha256": "2610cd1664407960d17da4bcaf3fc48a2fc6fb40fbf0547df595b1575dd93671",
+      "bytes": 39629
+    },
+    {
+      "path": "img/python/img/calibrate2.png",
+      "sha256": "830294be069f299d098535e207d128fa895ec3a42ea26e246cd5d3cbb3b74b3c",
+      "bytes": 32760
+    },
+    {
+      "path": "img/python/img/calibrate3.png",
+      "sha256": "2e0b998e4728e397ba53d0d7c7716cb9d0a0f151e20c5efff92ae31471e3c244",
+      "bytes": 32989
+    },
+    {
+      "path": "img/python/img/calibrate4.png",
+      "sha256": "8f6df17d1c8b915be49603958d410a7c7ba9a0eeb85cfadff8d34b2f901e5c20",
+      "bytes": 32680
+    },
+    {
+      "path": "img/python/img/calibrate5.png",
+      "sha256": "5f36795c66a3fd674546eb2a3601b2c640aedf3ab3037d7aa8d28269c3d7e336",
+      "bytes": 43093
+    },
+    {
+      "path": "img/python/img/calibrate6.png",
+      "sha256": "0eb5de4940a95c006c3bbb9e01f5a8065e4986004fe39397bfcaf2cd9acdeb86",
+      "bytes": 32699
+    },
+    {
+      "path": "img/python/img/calibrate_g1.png",
+      "sha256": "cabf0f946a028dfd27ac046219c214cea2d27a5986bb8fdaacd38721607b61d5",
+      "bytes": 23823
+    },
+    {
+      "path": "img/python/img/calibrate_g2.png",
+      "sha256": "23485a83b8b1b273be395f2f54c71bcd4223637e3430a4f50a7d0be0997e6716",
+      "bytes": 26855
+    },
+    {
+      "path": "img/python/img/calibrate_g3.png",
+      "sha256": "0c906d8bab62e7d9134fcbd39e0ea399a6ffb539ce6935c4a183f2c64b3dd68a",
+      "bytes": 25056
+    },
+    {
+      "path": "img/python/img/display.png",
+      "sha256": "20a4f939d4d9b66ed6cf43cc0761239473964e6c1817480daed20d8dc23bd9f9",
+      "bytes": 5828
+    },
+    {
+      "path": "img/python/img/pan_tilt_servo.png",
+      "sha256": "a830415d84f7e3101ffb1c6c9318704dd3e8cc5cea012dd6acb3daf31caec38a",
+      "bytes": 141897
+    },
+    {
+      "path": "img/python/img/robot_hat_v44.png",
+      "sha256": "5c31915406190c120613fcd805076f3f4e752ea6ec844f47cd9b782b3c457e02",
+      "bytes": 327343
+    },
+    {
+      "path": "img/python/img/servo_arm.png",
+      "sha256": "9cbb14db832ccbd8e07eface9b6f16b2100c1f90224bd957415c5f5d3021e7bd",
+      "bytes": 46367
+    },
+    {
+      "path": "pdf/picar-x-assembly.pdf",
+      "sha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+      "bytes": 11048665
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "originalHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+  "mandatoryGates": [
+    {
+      "id": "A",
+      "status": "PASS"
+    },
+    {
+      "id": "B",
+      "status": "PASS"
+    },
+    {
+      "id": "C",
+      "status": "PASS"
+    },
+    {
+      "id": "D",
+      "status": "PASS"
+    },
+    {
+      "id": "E",
+      "status": "PASS"
+    },
+    {
+      "id": "F",
+      "status": "PASS"
+    },
+    {
+      "id": "G",
+      "status": "PASS"
+    }
+  ],
+  "m1Allowed": true,
+  "worktreeManifest": {
+    "files": 388,
+    "mismatches": 0
+  },
+  "specAllocation": {
+    "files": 118,
+    "mismatches": 0,
+    "privateBinaryFiles": 9,
+    "zipHashVerified": true
+  },
+  "sourceMappings": {
+    "steps": 29,
+    "variants": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "status": "PASS"
+  },
+  "privateEvidenceTracked": 0,
+  "privateEvidenceStaged": 0,
+  "privateBytesInPublic": 0,
+  "commands": [
+    {
+      "command": "pnpm test:unit",
+      "exit": 0,
+      "files": 4,
+      "tests": 40
+    },
+    {
+      "command": "pnpm content:check",
+      "exit": 0,
+      "inputs": 662
+    },
+    {
+      "command": "pnpm package:check",
+      "exit": 0
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit": 0
+    }
+  ],
+  "logNormalization": {
+    "reason": "Staged diff check exposed whitespace in six M0 text logs. Only trailing whitespace/blank EOF lines removed; result semantics preserved.",
+    "paths": [
+      "docs/implementation/evidence/m0/baseline-install.txt",
+      "docs/implementation/evidence/m0/earlier-browser-tests-2.txt",
+      "docs/implementation/evidence/m0/earlier-browser-tests.txt",
+      "docs/implementation/evidence/m0/earlier-unit-tests-5.txt",
+      "docs/implementation/evidence/m0/typecheck-final.txt",
+      "docs/implementation/evidence/m0/unit-tests-final.txt"
+    ],
+    "refreshedBindings": [
+      "docs/implementation/evidence/m0/test-manifest.json",
+      "M0_GATE_REPORT.json"
+    ]
+  },
+  "gateReportSha256": "881e499d6d0321377233630da21d0dbea2c5d76c667390e950a88a79372c2a24",
+  "driftPolicy": "Checkpoint changes HEAD only; source/native/app bytes remain the accepted M0 worktree. M0 evidence retains its original inspection HEAD."
+}

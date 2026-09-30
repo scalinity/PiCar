@@ -1,0 +1,248 @@
+{
+  "retrievedOn": "2026-09-29",
+  "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+  "repositorySources": [
+    {
+      "id": "R01",
+      "title": "Live main branch resolution",
+      "url": "https://api.github.com/repos/scalinity/PiCar/branches/main",
+      "scope": "Resolved 9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8; inspection baseline, not a guessed handoff SHA."
+    },
+    {
+      "id": "R02",
+      "title": "Repository README",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/README.md",
+      "scope": "Upstream provenance, build instructions, excluded media and companion overlay context."
+    },
+    {
+      "id": "R03",
+      "title": "Pinned SunFounder upstream tree",
+      "url": "https://api.github.com/repos/sunfounder/picar-x/git/trees/ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+      "scope": "Commit exists; docs tree inspected. A separately acquired PDF is not proven by this commit alone."
+    },
+    {
+      "id": "R04",
+      "title": "Actual pinned shared-docs gitlink",
+      "url": "https://api.github.com/repos/sunfounder/picar-x/contents/docs/source/_shared?ref=ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+      "scope": "The gitlink points to sf-shared at 0c11f833f862661779180ea7da2a25fd515c40d8; .gitmodules also read."
+    },
+    {
+      "id": "R05",
+      "title": "Bundled assembly PDF metadata",
+      "url": "https://api.github.com/repos/scalinity/PiCar/contents/picarx-companion/public/content/pdf/picar-x-assembly.pdf?ref=9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+      "scope": "11,048,665 bytes; Git blob SHA-1 85c752c505c2a52bf82900111fd3a31c6ad0f9d8. Binary contents NOT retrieved; SHA-256 and V40 equivalence unresolved."
+    },
+    {
+      "id": "R06",
+      "title": "Content pipeline build and overlay",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/tools/content-pipeline/build.ts",
+      "scope": "Actual source read, including V40 preference/V33 fallback, case/anchor validation, 62-page expectation and deletion/emission. overlay.ts also read for wizard/corrections."
+    },
+    {
+      "id": "R07",
+      "title": "Root ignore policy",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/.gitignore",
+      "scope": "Separate upstream checkout and sensitive media excluded; this does not establish bundle filtering."
+    },
+    {
+      "id": "R08",
+      "title": "Frontend dependency/scripts manifest",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/package.json",
+      "scope": "React19, TS5.8, Vite7, Tauri2 ranges, pnpm and the five existing scripts. Lock exists; no installed-version/build success claim."
+    },
+    {
+      "id": "R09",
+      "title": "App and frontend entry",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/App.tsx",
+      "scope": "Four routes/nav sections, external opener, fixed hardware chip. main.tsx read for StrictMode and CSS entry points."
+    },
+    {
+      "id": "R10",
+      "title": "Custom hash router",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/lib/router.ts",
+      "scope": "Full parseRoute/useHash/refHref source read; nested reference links and malformed decode risk."
+    },
+    {
+      "id": "R11",
+      "title": "Progress store",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/lib/progress-store.ts",
+      "scope": "Full localStorage picarx.v1 shape, synchronous writes and hashchange bookmark source read."
+    },
+    {
+      "id": "R12",
+      "title": "Content type contract",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/lib/content-types.ts",
+      "scope": "Tagged AST, Page/Section/Search/Video/Wizard types inspected."
+    },
+    {
+      "id": "R13",
+      "title": "Generated wizard and page",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/content/wizard.json",
+      "scope": "Eight stage IDs, assembly PDF/videos/checks; WizardStep.tsx and authoring overlay.ts also read."
+    },
+    {
+      "id": "R14",
+      "title": "Home page",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/pages/Home.tsx",
+      "scope": "Setup summary, next incomplete stage and lastRoute resume inspected."
+    },
+    {
+      "id": "R15",
+      "title": "Reference/search integration",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/pages/Reference.tsx",
+      "scope": "Reference tree/pager and SearchBox.tsx substring/heading-priority/20-result algorithm inspected."
+    },
+    {
+      "id": "R16",
+      "title": "Video course page",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/pages/Videos.tsx",
+      "scope": "Registry sorting, thumbnail network URL, slug detail and lesson links inspected."
+    },
+    {
+      "id": "R17",
+      "title": "Content access layer",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/content/index.ts",
+      "scope": "Eager page glob, JSON casts and registry; nav.json read for exact hardware/lesson page IDs."
+    },
+    {
+      "id": "R18",
+      "title": "Camera hardware page",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/content/pages/hardware/cpn_camera.json",
+      "scope": "OV5647 claim, conflicting prose/spec dimensions and power-off warning. Not proof of the supplied board revision or exact geometry."
+    },
+    {
+      "id": "R19",
+      "title": "Ultrasonic hardware page",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/content/pages/hardware/cpn_ultrasonic.json",
+      "scope": "HC-SR04 family/5V/dimension/connector text inspected. V40 applicability and supply-label conflict remain unresolved."
+    },
+    {
+      "id": "R20",
+      "title": "Robot HAT hardware page",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/content/pages/hardware/cpn_robot_hat.json",
+      "scope": "Links latest robot-hat-v4 docs; does not itself identify the actual board revision."
+    },
+    {
+      "id": "R21",
+      "title": "Native shell and configuration",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src-tauri/src/lib.rs",
+      "scope": "Template greet/opener; Cargo.toml, tauri.conf.json and capabilities/default.json also read. SQLite is a proposal, not an existing subsystem."
+    },
+    {
+      "id": "R22",
+      "title": "PDF and document components",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/components/PdfViewer.tsx",
+      "scope": "PDF.js worker/cache/page behavior; RstRenderer.tsx and DocImage.tsx source also read. Checklist/CodeBlock/VideoEmbed discovered in component tree; no exhaustive audit of those three bodies claimed."
+    },
+    {
+      "id": "R23",
+      "title": "Styling tokens",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/src/styles/tokens.css",
+      "scope": "Plain CSS token system and reduced-motion CSS inspected; base/components stylesheet entry paths confirmed by main.tsx."
+    },
+    {
+      "id": "R24",
+      "title": "Build/tool TS configuration",
+      "url": "https://github.com/scalinity/PiCar/blob/9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8/picarx-companion/tsconfig.json",
+      "scope": "Strict compiler settings and src-only include inspected; vite.config.ts read for port/HMR/native watch exclusions."
+    }
+  ],
+  "externalSources": [
+    {
+      "id": "W01",
+      "title": "CadQuery assemblies",
+      "url": "https://cadquery.readthedocs.io/en/latest/assy.html",
+      "scope": "Inspected primary documentation on assemblies and constraints; pinned exact tool versions remain M4."
+    },
+    {
+      "id": "W02",
+      "title": "CadQuery import/export",
+      "url": "https://cadquery.readthedocs.io/en/latest/importexport.html",
+      "scope": "Inspected primary STEP/DXF/glTF interchange documentation. Runtime exporter choice is this specification’s design."
+    },
+    {
+      "id": "W03",
+      "title": "React Three Fiber maintainer README",
+      "url": "https://github.com/pmndrs/react-three-fiber/blob/master/readme.md",
+      "scope": "Read through GitHub; React19 pairs with Fiber9. Runtime patch lock is not inferred from this mutable URL."
+    },
+    {
+      "id": "W04",
+      "title": "Three WebGLRenderer",
+      "url": "https://threejs.org/docs/pages/WebGLRenderer.html",
+      "scope": "WebGL2 baseline documented; WebGL1 not a fallback in the chosen stack."
+    },
+    {
+      "id": "W05",
+      "title": "Khronos glTF 2.0 specification",
+      "url": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
+      "scope": "Inspected coordinate/transform/hierarchy conventions; project adds stricter ID/naming/asset rules."
+    },
+    {
+      "id": "W06",
+      "title": "Tauri WebDriver testing",
+      "url": "https://v2.tauri.app/develop/tests/webdriver/",
+      "scope": "Current primary docs describe WDIO embedded provider for macOS and native test-plugin setup. Compatibility still needs actual build testing."
+    },
+    {
+      "id": "W07",
+      "title": "glTF-Transform Meshopt function",
+      "url": "https://gltf-transform.dev/modules/functions/functions/meshopt",
+      "scope": "Convenience optimization includes quantization/reordering; specification requires explicit configuration and decode validation."
+    },
+    {
+      "id": "W08",
+      "title": "Three GLTFLoader",
+      "url": "https://threejs.org/docs/pages/GLTFLoader.html",
+      "scope": "Primary loader/decoder interfaces inspected. Local decoder and lifecycle policy is a project requirement."
+    },
+    {
+      "id": "W09",
+      "title": "OpenCV solvePnP documentation",
+      "url": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html",
+      "scope": "Primary calibration/pose coordinate description; no complete assembly verifier or measured project accuracy implied."
+    },
+    {
+      "id": "W10",
+      "title": "University of Michigan AprilTag project",
+      "url": "https://april.eecs.umich.edu/software/apriltag",
+      "scope": "Primary fiducial detection/pose project; physical tag size and registration still require evidence."
+    },
+    {
+      "id": "W11",
+      "title": "Official PiCar-X assembly documentation",
+      "url": "https://docs.sunfounder.com/projects/picar-x-v20/en/latest/assemble.html",
+      "scope": "Printed manual governs assembly over backup video; servo preparation guidance. URL family v20 is not a replacement for printed revision V40."
+    },
+    {
+      "id": "W12",
+      "title": "SunFounder PiCar-X product page",
+      "url": "https://www.sunfounder.com/products/picar-x",
+      "scope": "Used only as current product-family context/candidate acquisition; no exact component CAD identity established."
+    },
+    {
+      "id": "W13",
+      "title": "Robot HAT documentation family",
+      "url": "https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/",
+      "scope": "Mutable family site can contain later board material. Not proof of owner HAT identity."
+    },
+    {
+      "id": "W14",
+      "title": "Official Raspberry Pi4 mechanical source category",
+      "url": "https://pip.raspberrypi.com/categories/545-raspberry-pi-4-model-b",
+      "scope": "Mechanical PDF located; direct PDF fetch timed out in this pass. Do not treat its unseen numerical contents as verified."
+    },
+    {
+      "id": "W15",
+      "title": "Official Raspberry Pi5 source category and mechanical drawing",
+      "url": "https://pip.raspberrypi.com/categories/892-raspberry-pi-5",
+      "scope": "Category inspected; drawing page read and screenshot inspected. It explicitly limits dimensions to approximate/reference use, not production data. STEP ZIP located but bytes not inspected."
+    },
+    {
+      "id": "W16",
+      "title": "Official Zero2W mechanical drawing",
+      "url": "https://pip-assets.raspberrypi.com/categories/584-raspberry-pi-zero-2-w/documents/RP-008358-DS-1-raspberry-pi-zero-2-w-mechanical-drawing.pdf",
+      "scope": "One-page drawing read and screenshot inspected. Source supplies planar reference dimensions, not every board component/tolerance or actual user hardware configuration."
+    }
+  ]
+}

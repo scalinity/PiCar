@@ -1,0 +1,584 @@
+{
+  "head": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+  "branch": "main",
+  "trackedDiff": [
+    {
+      "path": ".gitignore",
+      "added": 8,
+      "deleted": 0
+    },
+    {
+      "path": "README.md",
+      "added": 26,
+      "deleted": 2
+    },
+    {
+      "path": "picarx-companion/package.json",
+      "added": 21,
+      "deleted": 10
+    },
+    {
+      "path": "picarx-companion/pnpm-lock.yaml",
+      "added": 270,
+      "deleted": 7
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/build.ts",
+      "added": 28,
+      "deleted": 13
+    },
+    {
+      "path": "picarx-companion/vite.config.ts",
+      "added": 15,
+      "deleted": 1
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "M0_GATE_REPORT.json"
+    },
+    {
+      "path": "docs/digital-twin/ARCHITECTURE.md"
+    },
+    {
+      "path": "docs/digital-twin/ASSEMBLY_ENGINE_SPEC.md"
+    },
+    {
+      "path": "docs/digital-twin/ASSET_PIPELINE_SPEC.md"
+    },
+    {
+      "path": "docs/digital-twin/AUDITED_PACKAGE_VALIDATION_REPORT.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_CHANGELOG.md"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/contradiction-matrix.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/dependency-review.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/findings.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/original-check-classification.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/original-inspection-inventory.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/package-change-inventory.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/repository-read-receipt.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/schema-probes.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/scorecard.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/semantic-fixtures.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_EVIDENCE/validator-mutation-results.json"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_REPORT.md"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_TOOLS/requirements.txt"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_TOOLS/test_validator_mutations.py"
+    },
+    {
+      "path": "docs/digital-twin/AUDIT_TOOLS/validate_package.py"
+    },
+    {
+      "path": "docs/digital-twin/BOM_RECONCILIATION.md"
+    },
+    {
+      "path": "docs/digital-twin/CRITICAL_REVIEW.md"
+    },
+    {
+      "path": "docs/digital-twin/DIGITAL_TWIN_DATA_MODEL.md"
+    },
+    {
+      "path": "docs/digital-twin/EVIDENCE/README.md"
+    },
+    {
+      "path": "docs/digital-twin/EVIDENCE/manifest.json"
+    },
+    {
+      "path": "docs/digital-twin/EVIDENCE/originals/IMAGE_INDEX.txt"
+    },
+    {
+      "path": "docs/digital-twin/EVIDENCE_INSPECTION.md"
+    },
+    {
+      "path": "docs/digital-twin/FULL_SPECIFICATION.md"
+    },
+    {
+      "path": "docs/digital-twin/FUTURE_CAMERA_AND_AR_SPEC.md"
+    },
+    {
+      "path": "docs/digital-twin/GATE_CONTRACTS.md"
+    },
+    {
+      "path": "docs/digital-twin/GEOMETRY_AND_EVIDENCE_SPEC.md"
+    },
+    {
+      "path": "docs/digital-twin/HANDOFF_M0.md"
+    },
+    {
+      "path": "docs/digital-twin/HASH_AND_PACK_CONTRACT.md"
+    },
+    {
+      "path": "docs/digital-twin/HISTORICAL/PACKAGE_MANIFEST.sha256"
+    },
+    {
+      "path": "docs/digital-twin/HISTORICAL/PACKAGE_VALIDATION_REPORT.json"
+    },
+    {
+      "path": "docs/digital-twin/HISTORICAL/README.md"
+    },
+    {
+      "path": "docs/digital-twin/HISTORICAL/digital-twin.v1.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/AdmissionReport.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/AssemblyOperation.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/AssemblySession.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/AssemblySolution.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/AssemblyState.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/AssemblyStep.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/CableConnection.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/CableDefinition.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/CameraInstruction.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/Claim.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/CompiledGraph.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/ConflictRecord.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/ConnectionPoint.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/DerivationRecord.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/EvidenceRecord.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/FastenerDefinition.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/FrameRecord.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/GeometrySource.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/Measurement.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/MechanicalConnection.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/MechanicalInterface.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/MotionInstruction.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/OperationUndo.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/PartDefinition.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/PartInstance.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/ProcedureAcknowledgment.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/README.md"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/RuntimeManifest.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/RuntimeRegistry.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/RuntimeTransform.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/ToolRequirement.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/UnresolvedEvidenceItem.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/VariantPatch.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/VariantRule.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/VerificationRule.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/VisibilityRule.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/Warning.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/ZeroingAttestation.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/blocker-register.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/digital-twin.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/documentation-source-lock.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/documentation-source-lock.template.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/mechanical-interface.valid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/numeric-derived-schema-only.valid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/numeric-derived-without-method.invalid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/numeric-unresolved-with-value.invalid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/numeric-unresolved.valid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/part-definition.valid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/printed-designation-claim.valid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/unknown-field-definition.invalid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/examples/verified-claim-without-evidence.invalid.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/m0-gate-report.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/milestone-phase-plan.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/milestone-plan.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/planning-step-seed.schema.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/printed-hardware-ledger.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/repository-baseline.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/source-register.json"
+    },
+    {
+      "path": "docs/digital-twin/MACHINE_READABLE_SCHEMAS/v40-step-seed.json"
+    },
+    {
+      "path": "docs/digital-twin/MILESTONES.md"
+    },
+    {
+      "path": "docs/digital-twin/MILESTONE_REVIEW.md"
+    },
+    {
+      "path": "docs/digital-twin/OPEN_QUESTIONS_AND_BLOCKERS.md"
+    },
+    {
+      "path": "docs/digital-twin/PACKAGE_MANIFEST.sha256"
+    },
+    {
+      "path": "docs/digital-twin/PACKAGE_VALIDATION_REPORT.json"
+    },
+    {
+      "path": "docs/digital-twin/PERSISTENCE_CONTRACT.md"
+    },
+    {
+      "path": "docs/digital-twin/PRODUCT_SPEC.md"
+    },
+    {
+      "path": "docs/digital-twin/README.md"
+    },
+    {
+      "path": "docs/digital-twin/REPOSITORY_CHANGE_MAP.md"
+    },
+    {
+      "path": "docs/digital-twin/SEMANTIC_CONTRACT.md"
+    },
+    {
+      "path": "docs/digital-twin/SOURCE_PUBLICATION_CONTRACT.md"
+    },
+    {
+      "path": "docs/digital-twin/SOURCE_REGISTER.md"
+    },
+    {
+      "path": "docs/digital-twin/SPEC_PACKAGE_RECEIPT.md"
+    },
+    {
+      "path": "docs/digital-twin/V40_ASSEMBLY_LEDGER.md"
+    },
+    {
+      "path": "docs/digital-twin/VERIFICATION_AND_TEST_PLAN.md"
+    },
+    {
+      "path": "docs/implementation/M0_CAD_TOOLING_RECEIPT.md"
+    },
+    {
+      "path": "docs/implementation/M0_REPORT.md"
+    },
+    {
+      "path": "docs/implementation/M0_ROLLBACK.md"
+    },
+    {
+      "path": "docs/implementation/M0_SOURCE_REVIEW.md"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/after-tree-manifest.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/baseline-build.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/baseline-install.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/before-tree-manifest.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/browser-tests-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-artifacts.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-claude-client.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-client-blockers.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-analyze_shape-compound-failure.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-analyze_shape.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-execute_script.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-get_document_graph.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-inspect_object-compound-failure.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-inspect_object.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-inspect-tracked_recompute.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-robust-get_connection_status.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-robust-get_freecad_version.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/cad-synthetic.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/changed-paths.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/commands.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/content-build-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/content-check-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-browser-tests-2.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-browser-tests.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-content-build.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-typecheck-2.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-typecheck-4.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-typecheck.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/earlier-unit-tests-5.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/environment.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/final-build.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/final-install.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/output-manifest.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/package-check-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/package-dependencies.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/package-validation.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/protected-paths.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/recovery-after-browser.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/recovery-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/report-validation.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/spec-allocation.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/test-manifest.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/typecheck-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/unit-results.json"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/unit-tests-evidence.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/unit-tests-final.txt"
+    },
+    {
+      "path": "docs/implementation/evidence/m0/unit-tests-shallow-fixture-failure.txt"
+    },
+    {
+      "path": "docs/tooling/FREECAD_AGENT_SETUP.md"
+    },
+    {
+      "path": "picarx-companion/playwright.config.ts"
+    },
+    {
+      "path": "picarx-companion/tests/baseline/legacy.json"
+    },
+    {
+      "path": "picarx-companion/tests/baseline/preservation.test.ts"
+    },
+    {
+      "path": "picarx-companion/tests/browser/preservation.spec.ts"
+    },
+    {
+      "path": "picarx-companion/tests/publication/child.ts"
+    },
+    {
+      "path": "picarx-companion/tests/publication/packaging.test.ts"
+    },
+    {
+      "path": "picarx-companion/tests/publication/recovery.test.ts"
+    },
+    {
+      "path": "picarx-companion/tests/publication/source.test.ts"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/denied-media.json"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/documentation-generation-baseline.json"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/documentation-input-manifest.json"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/documentation-source-lock.json"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/entry.ts"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/publication.ts"
+    },
+    {
+      "path": "picarx-companion/tools/content-pipeline/source.ts"
+    },
+    {
+      "path": "picarx-companion/tsconfig.tools.json"
+    },
+    {
+      "path": "picarx-companion/vitest.config.ts"
+    }
+  ],
+  "stagedPaths": [],
+  "newFilesAreUnstaged": true,
+  "hashScopeNote": "Changed-path inventory lists names only. Byte hashes are in scoped before/after, input, test and output manifests, avoiding self-reference."
+}

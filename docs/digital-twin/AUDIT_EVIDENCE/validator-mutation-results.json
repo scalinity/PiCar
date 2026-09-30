@@ -1,0 +1,77 @@
+{
+  "scope": "Synthetic fault mutations of specification validator/input copies, not application/geometry tests.",
+  "validatorSha256": "9420f23e7dfc22d8b9e0231e1218311b55d7440a4942030f4f674bd5f952e7a1",
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "mutation": "S27-parent",
+      "mode": "regenerate-and-evaluate",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "expectedDiagnosticSubstring": "S27 rear-drive corrected in both copies",
+      "detected": true,
+      "diagnosticLines": [
+        "FAIL S27 rear-drive corrected in both copies \"\""
+      ]
+    },
+    {
+      "mutation": "admission-conditions",
+      "mode": "regenerate-and-evaluate",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "expectedDiagnosticSubstring": "probe:current:",
+      "detected": true,
+      "diagnosticLines": [
+        "FAIL probe:current:pass-with-blocker-rejected {\"expectedValid\": false, \"actualValid\": true, \"errors\": []}",
+        "FAIL probe:current:geometry-empty-step-scope-rejected {\"expectedValid\": false, \"actualValid\": true, \"errors\": []}",
+        "FAIL probe:current:geometry-pass-missing-mesh-rejected {\"expectedValid\": false, \"actualValid\": true, \"errors\": []}"
+      ]
+    },
+    {
+      "mutation": "photo-byte",
+      "mode": "regenerate-and-evaluate",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "expectedDiagnosticSubstring": "photo:",
+      "detected": true,
+      "diagnosticLines": [
+        "FAIL photo:PX-EV-PHOTO-01 {\"sha256\": \"1e6b4b26e32cb744598491468a7810f2005666516c094291c3c7edc465efd87e\", \"dimensions\": [1536, 1152]}",
+        "FAIL original-evidence-preserved:EVIDENCE/originals/01_IMG_0526.jpeg \"\""
+      ]
+    },
+    {
+      "mutation": "phase-cycle",
+      "mode": "regenerate-and-evaluate",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "expectedDiagnosticSubstring": "dependency cycle",
+      "detected": true,
+      "diagnosticLines": [
+        "VALIDATION ERROR: ValueError: dependency cycle"
+      ]
+    },
+    {
+      "mutation": "unlisted-file",
+      "mode": "read-only-integrity",
+      "expectedExit": 2,
+      "actualExit": 2,
+      "expectedDiagnosticSubstring": "input digest changed",
+      "detected": true,
+      "diagnosticLines": [
+        "VALIDATION ERROR: ValueError: Validation input digest changed; report is stale"
+      ]
+    },
+    {
+      "mutation": "validator-endpoint-check-disabled",
+      "mode": "regenerate-and-evaluate",
+      "expectedExit": 1,
+      "actualExit": 1,
+      "expectedDiagnosticSubstring": "semantic-fixture:",
+      "detected": true,
+      "diagnosticLines": [
+        "FAIL semantic-fixture:wrong-definition-interface {\"expected\": [\"INTERFACE_OWNER_MISMATCH\"], \"actual\": []}"
+      ]
+    }
+  ]
+}

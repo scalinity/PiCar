@@ -1,0 +1,2646 @@
+{
+  "fixtures": [
+    {
+      "name": "zero-quaternion-rejected",
+      "kind": "runtimeTransform",
+      "data": {
+        "basis": "RH-YUP-ZFORWARD",
+        "unit": "m",
+        "translationM": [
+          0,
+          0,
+          0
+        ],
+        "quaternionXYZW": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expectedErrors": [
+        "NON_UNIT_QUATERNION"
+      ]
+    },
+    {
+      "name": "unit-runtime-quaternion",
+      "kind": "runtimeTransform",
+      "data": {
+        "basis": "RH-YUP-ZFORWARD",
+        "unit": "m",
+        "translationM": [
+          0,
+          0,
+          0
+        ],
+        "quaternionXYZW": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "duplicate-ids",
+      "kind": "idRegistry",
+      "data": {
+        "ids": [
+          "TEST-A",
+          "TEST-A"
+        ]
+      },
+      "expectedErrors": [
+        "DUPLICATE_ID"
+      ]
+    },
+    {
+      "name": "unique-ids",
+      "kind": "idRegistry",
+      "data": {
+        "ids": [
+          "TEST-A",
+          "TEST-B"
+        ]
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "qualified-left-instance",
+      "kind": "endpoint",
+      "data": {
+        "instances": {
+          "TEST-LEFT": "TEST-DEF",
+          "TEST-RIGHT": "TEST-DEF"
+        },
+        "interfaces": {
+          "TEST-AXIS": "TEST-DEF"
+        },
+        "endpoint": {
+          "instanceId": "TEST-LEFT",
+          "interfaceId": "TEST-AXIS"
+        }
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "wrong-definition-interface",
+      "kind": "endpoint",
+      "data": {
+        "instances": {
+          "TEST-LEFT": "TEST-DEF",
+          "TEST-RIGHT": "TEST-DEF"
+        },
+        "interfaces": {
+          "TEST-AXIS": "TEST-OTHER"
+        },
+        "endpoint": {
+          "instanceId": "TEST-LEFT",
+          "interfaceId": "TEST-AXIS"
+        }
+      },
+      "expectedErrors": [
+        "INTERFACE_OWNER_MISMATCH"
+      ]
+    },
+    {
+      "name": "patch-contiguous",
+      "kind": "variantPatch",
+      "data": {
+        "base": [
+          "TEST-A",
+          "TEST-B",
+          "TEST-C"
+        ],
+        "replace": [
+          "TEST-A",
+          "TEST-B"
+        ],
+        "active": [
+          "TEST-PI4"
+        ],
+        "inactive": [
+          "TEST-ZERO"
+        ]
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "patch-discontiguous",
+      "kind": "variantPatch",
+      "data": {
+        "base": [
+          "TEST-A",
+          "TEST-B",
+          "TEST-C"
+        ],
+        "replace": [
+          "TEST-A",
+          "TEST-C"
+        ],
+        "active": [],
+        "inactive": []
+      },
+      "expectedErrors": [
+        "NONCONTIGUOUS_PATCH"
+      ]
+    },
+    {
+      "name": "variant-active-inactive-overlap",
+      "kind": "variantPatch",
+      "data": {
+        "base": [
+          "TEST-A"
+        ],
+        "replace": [
+          "TEST-A"
+        ],
+        "active": [
+          "TEST-X"
+        ],
+        "inactive": [
+          "TEST-X"
+        ]
+      },
+      "expectedErrors": [
+        "VARIANT_OVERLAP"
+      ]
+    },
+    {
+      "name": "m0-unique-gates",
+      "kind": "m0",
+      "data": {
+        "contractVersion": 2,
+        "repositoryHead": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auditedPackageSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "checks": [
+          {
+            "id": "A",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "B",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "C",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "D",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "E",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "F",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "G",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          }
+        ],
+        "nativeFeasibility": "BLOCKED",
+        "nativeBlocker": "TEST-NATIVE-M3",
+        "m1Allowed": true,
+        "bindings": {
+          "sourceLockSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "inputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "outputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rollbackInstructionsPath": "TEST-ROLLBACK"
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "m0-duplicate-gate-does-not-pass",
+      "kind": "m0",
+      "data": {
+        "contractVersion": 2,
+        "repositoryHead": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auditedPackageSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "checks": [
+          {
+            "id": "A",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "A",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "C",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "D",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "E",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "F",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "G",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          }
+        ],
+        "nativeFeasibility": "BLOCKED",
+        "nativeBlocker": "TEST-NATIVE-M3",
+        "m1Allowed": true,
+        "bindings": {
+          "sourceLockSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "inputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "outputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rollbackInstructionsPath": "TEST-ROLLBACK"
+      },
+      "expectedErrors": [
+        "M0_CHECK_SET",
+        "M0_PERMISSION"
+      ]
+    },
+    {
+      "name": "m0-permission-exact-equivalence",
+      "kind": "m0",
+      "data": {
+        "contractVersion": 2,
+        "repositoryHead": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auditedPackageSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "checks": [
+          {
+            "id": "A",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "B",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "C",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "D",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "E",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "F",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          },
+          {
+            "id": "G",
+            "status": "PASS",
+            "evidencePaths": [
+              "TEST-LOG"
+            ],
+            "summary": "synthetic gate-shape test"
+          }
+        ],
+        "nativeFeasibility": "BLOCKED",
+        "nativeBlocker": "TEST-NATIVE-M3",
+        "m1Allowed": false,
+        "bindings": {
+          "sourceLockSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "inputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "testManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "outputManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "rollbackInstructionsPath": "TEST-ROLLBACK"
+      },
+      "expectedErrors": [
+        "M0_PERMISSION"
+      ]
+    },
+    {
+      "name": "source-lock-branch-map",
+      "kind": "sourceLock",
+      "data": {
+        "contractVersion": 2,
+        "kitRevision": "Z0104V40",
+        "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+        "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+        "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+        "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+        "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+        "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+        "pdfSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "pdfByteLength": 11048665,
+        "status": "VERIFIED",
+        "photoHashes": [
+          {
+            "evidenceId": "PX-EV-PHOTO-01",
+            "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-02",
+            "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-03",
+            "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-04",
+            "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-05",
+            "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-06",
+            "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+          }
+        ],
+        "panels": [
+          {
+            "printedStep": 1,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 2,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 3,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 4,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 5,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 6,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 7,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 8,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 9,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 10,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 11,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 12,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 13,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 14,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 15,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 16,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 17,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 18,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 19,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 20,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 21,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 22,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 23,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 24,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 25,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 26,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 27,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 28,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 29,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          }
+        ],
+        "blockerIds": []
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "source-lock-missing-zero-branch",
+      "kind": "sourceLock",
+      "data": {
+        "contractVersion": 2,
+        "kitRevision": "Z0104V40",
+        "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+        "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+        "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+        "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+        "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+        "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+        "pdfSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "pdfByteLength": 11048665,
+        "status": "VERIFIED",
+        "photoHashes": [
+          {
+            "evidenceId": "PX-EV-PHOTO-01",
+            "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-02",
+            "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-03",
+            "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-04",
+            "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-05",
+            "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-06",
+            "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+          }
+        ],
+        "panels": [
+          {
+            "printedStep": 1,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 2,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 3,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 4,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 5,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 6,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 7,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 8,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 9,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 10,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 11,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 12,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 13,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 14,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 15,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 16,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 17,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 18,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 19,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 20,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 21,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 22,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 23,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 24,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 25,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 26,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 27,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 28,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 29,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          }
+        ],
+        "blockerIds": []
+      },
+      "expectedErrors": [
+        "BRANCH_COVERAGE"
+      ]
+    },
+    {
+      "name": "source-lock-inverted-rect",
+      "kind": "sourceLock",
+      "data": {
+        "contractVersion": 2,
+        "kitRevision": "Z0104V40",
+        "repositoryHead": "9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+        "upstreamCommit": "ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4",
+        "sharedCommit": "0c11f833f862661779180ea7da2a25fd515c40d8",
+        "sharedGitlink": "0c11f833f862661779180ea7da2a25fd515c40d8",
+        "pdfLocator": "scalinity/PiCar:picarx-companion/public/content/pdf/picar-x-assembly.pdf@9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8",
+        "pdfGitBlob": "85c752c505c2a52bf82900111fd3a31c6ad0f9d8",
+        "pdfSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "pdfByteLength": 11048665,
+        "status": "VERIFIED",
+        "photoHashes": [
+          {
+            "evidenceId": "PX-EV-PHOTO-01",
+            "sha256": "edc1cde83f080058a585fb1f7dfa4268825b293eeb93c7e4bda9a6394a1c9a23"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-02",
+            "sha256": "c224983514db1b8c2094f22d001d4f3911eeab1facdbec1f3611f754a658e4dd"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-03",
+            "sha256": "5aea1a7223ff50e5b3fc75854e4dd2d2e390ae7225d51212559a8f007e1ffc54"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-04",
+            "sha256": "2d3a5383d2cd1e75c5c7e357ab242edcfd6ec38c3eeda062c600258cf67e5fdc"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-05",
+            "sha256": "489723f408702e1b9e925e35c4f5658529afde0f16d9781dfcfbe72e83c0fc1d"
+          },
+          {
+            "evidenceId": "PX-EV-PHOTO-06",
+            "sha256": "a1e57eafca22306b98b2be384838a5a432913ecaff01cfd20d348ffe9dfb8063"
+          }
+        ],
+        "panels": [
+          {
+            "printedStep": 1,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 2,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 3,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 4,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 5,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 6,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 7,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 8,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 9,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 10,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 11,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 12,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 13,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 14,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 15,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 16,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 17,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 18,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 19,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 20,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 21,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 22,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 23,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 24,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 25,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 26,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 27,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 28,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          },
+          {
+            "printedStep": 29,
+            "mappings": [
+              {
+                "pdfPage": 1,
+                "normalizedRect": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "photoId": "TEST-PHOTO",
+                "photoPanel": "synthetic fixture",
+                "variants": [
+                  "rpi4",
+                  "rpi5",
+                  "rpi-zero-2-w"
+                ],
+                "result": "PASS"
+              }
+            ],
+            "result": "PASS"
+          }
+        ],
+        "blockerIds": []
+      },
+      "expectedErrors": [
+        "INVALID_PANEL_RECT"
+      ]
+    },
+    {
+      "name": "admission-complete-context-closure",
+      "kind": "closure",
+      "data": {
+        "roots": [
+          "TEST-A"
+        ],
+        "edges": {
+          "TEST-A": [
+            "TEST-B"
+          ],
+          "TEST-B": [
+            "TEST-C"
+          ],
+          "TEST-C": []
+        },
+        "reported": [
+          "TEST-A",
+          "TEST-B",
+          "TEST-C"
+        ]
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "missing-context-part-blocks-admission",
+      "kind": "closure",
+      "data": {
+        "roots": [
+          "TEST-A"
+        ],
+        "edges": {
+          "TEST-A": [
+            "TEST-B"
+          ],
+          "TEST-B": [
+            "TEST-C"
+          ],
+          "TEST-C": []
+        },
+        "reported": [
+          "TEST-A",
+          "TEST-B"
+        ]
+      },
+      "expectedErrors": [
+        "INCOMPLETE_DEPENDENCY_CLOSURE"
+      ]
+    },
+    {
+      "name": "official-approximate-is-not-exact",
+      "kind": "sourceScope",
+      "data": {
+        "sourceScope": "referenceApproximation",
+        "requestedScope": "nominalEngineering",
+        "outcome": "PASS"
+      },
+      "expectedErrors": [
+        "SOURCE_SCOPE_PROMOTION"
+      ]
+    },
+    {
+      "name": "printed-transcription-scope-retained",
+      "kind": "sourceScope",
+      "data": {
+        "sourceScope": "printedDesignation",
+        "requestedScope": "printedDesignation",
+        "outcome": "PASS"
+      },
+      "expectedErrors": []
+    },
+    {
+      "name": "fixture-receipt-cannot-admit-real-part",
+      "kind": "phaseReceipt",
+      "data": {
+        "production": true,
+        "receiptScope": "fixtureOnly"
+      },
+      "expectedErrors": [
+        "FIXTURE_AS_PRODUCTION"
+      ]
+    },
+    {
+      "name": "fixture-receipt-in-fixture-lane",
+      "kind": "phaseReceipt",
+      "data": {
+        "production": false,
+        "receiptScope": "fixtureOnly"
+      },
+      "expectedErrors": []
+    }
+  ],
+  "notice": "Finite independent specification examples; not production reducer, database, CAD, export or runtime test execution."
+}

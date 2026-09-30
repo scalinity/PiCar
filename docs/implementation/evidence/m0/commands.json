@@ -1,0 +1,157 @@
+{
+  "durationNote": "Null means wall duration was not recorded; per-test timing is retained in result artifacts. Filesystem inspection and help commands are described in reports.",
+  "commands": [
+    {
+      "purpose": "baseline install",
+      "command": "pnpm install --frozen-lockfile",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/baseline-install.txt"
+    },
+    {
+      "purpose": "baseline build",
+      "command": "pnpm build",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/baseline-build.txt"
+    },
+    {
+      "purpose": "final install",
+      "command": "pnpm install --frozen-lockfile",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/final-install.txt"
+    },
+    {
+      "purpose": "final build",
+      "command": "pnpm build",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/final-build.txt"
+    },
+    {
+      "purpose": "types",
+      "command": "pnpm typecheck",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/typecheck-final.txt"
+    },
+    {
+      "purpose": "inputs",
+      "command": "pnpm content:check",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/content-check-final.txt"
+    },
+    {
+      "purpose": "generate",
+      "command": "pnpm content:build",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/content-build-final.txt"
+    },
+    {
+      "purpose": "unit",
+      "command": "pnpm test:unit",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": 10.51,
+      "log": "docs/implementation/evidence/m0/unit-tests-final.txt"
+    },
+    {
+      "purpose": "unit evidence",
+      "command": "pnpm test:unit --reporter=json --outputFile=$STAGING/unit-results.json",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/unit-tests-evidence.txt"
+    },
+    {
+      "purpose": "browser",
+      "command": "pnpm test:browser",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": 5.9,
+      "log": "docs/implementation/evidence/m0/browser-tests-final.txt"
+    },
+    {
+      "purpose": "packaging",
+      "command": "pnpm package:check",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/package-check-final.txt"
+    },
+    {
+      "purpose": "stale recovery",
+      "command": "pnpm content:recover --apply",
+      "cwd": "picarx-companion/",
+      "exitCode": 0,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/recovery-after-browser.txt"
+    },
+    {
+      "purpose": "initial type failure",
+      "command": "pnpm typecheck",
+      "cwd": "picarx-companion/",
+      "exitCode": 2,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/earlier-typecheck.txt"
+    },
+    {
+      "purpose": "intermediate syntax failure",
+      "command": "pnpm typecheck",
+      "cwd": "picarx-companion/",
+      "exitCode": 2,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/earlier-typecheck-4.txt"
+    },
+    {
+      "purpose": "incomplete packaging fixture",
+      "command": "pnpm test:unit",
+      "cwd": "picarx-companion/",
+      "exitCode": 1,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/earlier-unit-tests-5.txt"
+    },
+    {
+      "purpose": "shallow revision fixture",
+      "command": "pnpm test:unit",
+      "cwd": "picarx-companion/",
+      "exitCode": 1,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/unit-tests-shallow-fixture-failure.txt"
+    },
+    {
+      "purpose": "initial browser selector failure",
+      "command": "pnpm test:browser",
+      "cwd": "picarx-companion/",
+      "exitCode": 1,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/earlier-browser-tests.txt"
+    },
+    {
+      "purpose": "stale reader rejection",
+      "command": "pnpm test:browser",
+      "cwd": "picarx-companion/",
+      "exitCode": 1,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/earlier-browser-tests-2.txt"
+    },
+    {
+      "purpose": "stale reader generation rejection",
+      "command": "pnpm content:build",
+      "cwd": "picarx-companion/",
+      "exitCode": 1,
+      "durationSeconds": null,
+      "log": "docs/implementation/evidence/m0/earlier-content-build.txt"
+    }
+  ]
+}

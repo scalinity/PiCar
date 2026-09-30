@@ -1,0 +1,71 @@
+# PiCar-X Z0104V40 M0 implementation report
+
+Date: 2026-09-29, America/New_York. M0 only. Mandatory gates **A–G PASS**; `m1Allowed = true` in the schema-validated [M0_GATE_REPORT.json](../../M0_GATE_REPORT.json). Native feasibility and CAD tooling bootstrap remain **BLOCKED** separately. M1 is permitted by the gate, but was not started. No commit, push, remote branch or PR was created.
+
+## Repository and package provenance
+
+Resolved remote `main`, initial local HEAD and final HEAD all equal `9e54b2fb3199c22f5d5c7cd67c8e4531ab2246f8`; branch `main`. Initial tracked/staged diff was empty. There was no architectural or harmless drift to incorporate. Git index remains unchanged. All implementation and report additions are local, unstaged work. Native code/config/permissions, existing frontend sources, generated page/index bytes and bundled manual remain unchanged from that HEAD.
+
+Audited ZIP SHA-256: `7a01cc81d68e2a12c641e9d3dfe0b00636476dee1df8de17e442cc127178b411`; size 6,883,092 bytes. The isolated supplied validator ran without `--write`: **420 PASS / 0 FAIL**, including 117 integrity entries. `SPEC_PACKAGE_VALIDATION = PASS`; `SPEC_PACKAGE_ALLOCATION = PASS`. All 118 original package files retain their bytes: 109 text/metadata artifacts under `docs/digital-twin/`, nine original/crop binaries under ignored `digital-twin/evidence/private/spec-audit-v2/`. The unchanged ZIP's repository copy is under ignored `digital-twin/evidence/private/spec-packages/`. The Downloads original was preserved. [Receipt](../digital-twin/SPEC_PACKAGE_RECEIPT.md), [full allocation map](evidence/m0/spec-allocation.json).
+
+Private evidence was independently rehashed after implementation. None of its hashes occurs in the safe mirror or dist; no private evidence is tracked or staged. The allocated specification retains normative semantics/schema/history and references; the added EVIDENCE README explains relocated private binary locators. This audited repository-resident specification was used as the implementation contract. HISTORICAL files were not activated.
+
+## M0 work sections and mandatory gates
+
+| Work section | Result |
+|---|---|
+| M0-A baseline/preservation | PASS: exact environment, pristine baseline install/build, before tree, source/native locks recorded |
+| M0-B documentary lock | PASS: actual V40 bytes, six private photos, 29 panels and three branch variants reviewed |
+| M0-C fail-closed generation/publication | PASS: captured pinned bytes, strict V40, leases, staged journal/recovery, protected originals and safe mirror |
+| M0-D final verification | PASS for final install/build and all established tests; native feasibility BLOCKED separately |
+| M0-E CAD tooling | BLOCKED: FreeCAD/two bridges/Claude/STEP pass; actual Codex and Computer Use verification blocked |
+
+| Mandatory gate | Result and evidence |
+|---|---|
+| A reproducible baseline | PASS: baseline and final `pnpm install --frozen-lockfile` / `pnpm build`, exact environment/locks |
+| B regression preservation | PASS: four route families, ordered eight stages, Reference/search/video/PDF, valid legacy bytes/values; unit and Chromium/WebKit tests |
+| C native identity | PASS: `com.danny.picarx-companion`, native permissions/config/source and Cargo lock unchanged; no native test bridge ships |
+| D V40 source | PASS: actual documentary lock, 29 mappings, Pi4/Pi5/Zero2W branches, checked owner-photo hashes |
+| E no fallback/tamper | PASS: missing/V33-only/wrong PDF, dirty/changed input, wrong source revisions and incomplete branch tests reject |
+| F publication/recovery | PASS in the explicit local macOS durability scope below: complete old/new trees, 18 fault boundaries, concurrency, restarted recovery, missing rollback and protected sentinels |
+| G exclusion | PASS: denied media at arbitrary depth excluded from safe mirror and actual dist; source-free checkout packaging fixture passes |
+
+The source checkout is independently pinned to `ce2ef77d7f96ac6325c1c8c3fe584b9caab418e4`; `_shared` HEAD and Gitlink are `0c11f833f862661779180ea7da2a25fd515c40d8`. Tracked consumed bytes match Git objects, not merely HEAD labels. The untracked `pdfs/` directory is separately byte-locked. Full captured input inventory includes RST/config/media, custom docs and pipeline/overlay implementation. A source lock mismatch does not regenerate the lock.
+
+Actual PDF SHA-256: `2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce`. Separate Git blob SHA-1: `85c752c505c2a52bf82900111fd3a31c6ad0f9d8`. Size: 11,048,665 bytes, two sheets. `pdfinfo`, `pdftotext`, raster rendering and visual review established revision Z0104V40 and the complete printed procedure. [Review](M0_SOURCE_REVIEW.md) and `tools/content-pipeline/documentation-source-lock.json` contain all per-panel rectangles, branch correspondence and photo hashes. Q-02 is resolved only for documentary correspondence; no physical applicability/dimension inference follows.
+
+## Publication and durability scope
+
+Generated ownership is seven roots: pages directory, four indexes, local `public/content`, and the private safe mirror. `custom-docs`, `public/twin`, private owner evidence, unrelated public files and user state are outside ownership. Existing excluded local copies are carried forward at exact paths; fourteen local files have identical before/after path/byte hashes. Safe serving/packaging admits cleared generated files plus the two explicitly owned SVGs. No recursive arbitrary-public or twin copy occurs. A source-free checkout validates/adopts the pinned bundled baseline, so an upstream checkout is not required to use/build the already generated app.
+
+Writer and reader leases serialize publication and dev/build/preview consumption. Vite holds its own reader lease as well as its wrapper's lease. Direct Vite starts fail without a live coordinated parent. Stale owners are never removed by age; an explicit dry-run/apply recovery verifies PID absence and refuses live/PID-reused/unknown owners. The live dev server has been stopped after tests.
+
+Publication writes and verifies complete private old/new backups, then flushes their files and directories (including generation/base parents) before a durable journal. Each root is installed via retained displacement and a copied installation root; source/destination rename parents are synced. Only after every new root/protected hash and input binding agrees is the committed marker written. A pre-marker restart verifies every backup before restoring all old roots. A post-marker restart verifies all new roots. Recovery itself may be interrupted and restarted. Missing/corrupt backups stop before recovery mutation and retain evidence.
+
+Durability uses file/directory `fsync` followed by Darwin `F_FULLFSYNC` (51, verified in the local SDK header and by successful calls) at journal/commit/recovery barriers. The OS ordering argument is: the journal barrier makes rollback data durable before live replacement; all replacement bytes/rename parents are synced before the commit barrier; observing a committed marker therefore selects the complete new generation; otherwise the durable journal selects verified old backups. Recovery completion is flushed before journal retirement is finalized. This is recoverable coordinated multi-root publication, not a claim that seven renames are atomic.
+
+The supported scope is this local macOS APFS filesystem on storage that honors the OS full-flush contract. Successful barriers were exercised by the fault suite. [Apple's fsync documentation](https://developer.apple.com/documentation/virtualization/vzdiskimagesynchronizationmode/fsync) distinguishes best-effort cache flushing from [full synchronization](https://developer.apple.com/documentation/virtualization/vzdiskimagesynchronizationmode/full). The local `fsync(2)` manual documents `F_FULLFSYNC` ordering. A destructive physical power-cut test was not performed. Unsupported platforms/barriers fail closed; a filesystem or controller that does not honor these guarantees is BLOCKED for durable publication and requires separate platform proof. No universal power-loss/physical-hardware claim is made.
+
+## Verification and evidence
+
+Final results: **40 unit tests PASS** across four files; **8 headless browser tests PASS** (Chromium and WebKit); type checking, frozen install, production build, source check, content generation and package check all exit 0. Content generation produced 63 pages, 175 indexed sections, eight setup stages and 17 video registry entries. Its 136 image count is referenced source images, not a count of admitted runtime files. Actual dist inventory contains 130 files and passed ownership/static-hash/exclusion checks.
+
+Publication tests exit a fresh writer process at the journal, displaced/replaced boundaries for each of seven roots, pre-marker verification, committed marker and completion: 18 named fault points. Fresh recovery compares complete path/byte manifests to exactly old or new, and checks twin/custom/private sentinels. Additional tests cover restarted recovery, missing rollback, two writers, active readers, source changes during staging and symlinks. Negative source tests operate only on disposable clones/copies; the original upstream checkout was not modified. Its shallow history is accounted for in mismatched-revision fixtures without creating commits.
+
+Browser fixtures seed only ephemeral contexts with valid `picarx.v1` raw data. Existing `steps`, `checks`, `lastRoute` and `pdfLastPage` behavior remains. `steps.assembly = done` is still documentary/setup completion, not 29 physical steps. No migration was introduced. Remote browser requests are aborted; only localhost:1420 is loaded. Pre-existing malformed percent decoding raises URIError and is characterized separately. Existing oversized-bundle warning remains; no unrelated application repairs were made.
+
+Earlier failures are retained, not relabeled successful: new pipeline Ajv type narrowing and an intermediate syntax error were repaired; a missing `index.html` in the source-free fixture and a shallow-HEAD-parent test assumption were corrected; an ambiguous browser heading selector was bounded; terminated browser wrappers left stale leases and were recovered only after PID verification. An accidental dependency command from the repository root created temporary root package files/dependencies, which were removed, and the dependency was added in the app. No baseline runtime defect was silently repaired. [Command/exit ledger](evidence/m0/commands.json) includes final and earlier failed checks with sanitized stdout/stderr logs; null durations mean they were not recorded.
+
+Environment: macOS 27.0 (26A428), Apple M5 Pro arm64, Mac17,8, 18 cores/48 GB; Node 26.8.2, pnpm 10.33.2, Rust/Cargo 1.96.1, Tauri CLI 2.11.4. Native lock uses tauri 2.11.5 / tauri-build 2.6.3 / opener 2.5.4. npm registry and `onlyBuiltDependencies = [esbuild]` are recorded in [environment evidence](evidence/m0/environment.json). No native compilation was run.
+
+Manifests: [before tree](evidence/m0/before-tree-manifest.json), [after relevant tree](evidence/m0/after-tree-manifest.json), [all changed paths and exact tracked numstat](evidence/m0/changed-paths.json), [test/fixture/config/policy bindings](evidence/m0/test-manifest.json), [generated/safe/dist output inventory](evidence/m0/output-manifest.json), [protected/private/twin sentinel hashes](evidence/m0/protected-paths.json), and the consumed `documentation-input-manifest.json`. Scope exclusions preventing self-referential hashes are stated inside manifests. The gate report binds actual source lock, input, test and output manifests; test manifest additionally binds gate policies and result artifacts. None is an empty positive scope. Synthetic tests supply the positive twin proof; no real twin existed or was created. [Final schema/semantics/hash/privacy verification](evidence/m0/report-validation.txt) exited 0.
+
+Six originally tracked files changed: root `.gitignore`/README; app package/lock; pipeline entry; Vite config. New files contain the audited spec, pipeline safeguards/locks/deny registry, bounded test harness/fixtures, and receipts/evidence. No frontend component, native dependency or upstream parser/transform source changed. Existing SunFounder notices and licensing caveats remain; M0 does not grant new redistribution rights for third-party media.
+
+## Remaining prerequisites and stop boundary
+
+Native feasibility is BLOCKED: the actual Cargo lock has neither `tauri-plugin-wdio` nor `tauri-plugin-wdio-webdriver`. Read-only `cargo metadata --locked --offline --no-deps` and the [official WDIO Tauri embedded-provider setup](https://webdriver.io/docs/desktop-testing/tauri/plugin-setup/) establish the missing setup. Later native acceptance needs compatible pinned dependencies isolated behind a test-only feature plus an explicitly authorized native test build/session. No untested native bridge ships. This is an M3 native/M9 performance prerequisite, separate from A–G.
+
+CAD tooling bootstrap is BLOCKED despite verified official FreeCAD 1.1.4, both live MCPs, actual Claude Code calls and synthetic STEP assertions. Codex CLI's default model was rejected; a single catalog-model override reached the three requested calls, but the runtime denied each because approval policy is never. No default or approval setting was changed. Computer Use app selection times out. [Exact tooling receipt](M0_CAD_TOOLING_RECEIPT.md) and [setup](../tooling/FREECAD_AGENT_SETUP.md) document all nine status fields, source pins, external changes, limitations and required future verification. Both synthetic TEST documents and loopback bridges remain open in the owned official FreeCAD app for inspection; the original app was preserved.
+
+**M1 ALLOWED; CAD TOOLING PRECONDITION REMAINS FOR FUTURE CAD MILESTONE.** Revalidate affected gates after changing bound source/config/fixture/policy/PDF/pin bytes or repository HEAD. Next permitted milestone is M1 only under the structured accepted gate; this session stops at M0. No PiCar geometry, 3D runtime/viewer, assembly reducer, migration, camera/AR or robot commands were implemented. [Recovery/rollback instructions](M0_ROLLBACK.md).

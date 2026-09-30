@@ -1,0 +1,92 @@
+
+> picarx-companion@0.1.0 test:browser $REPO/picarx-companion
+> playwright test
+
+[WebServer] (node:81541) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81649) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:81781) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:81795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (259ms)
+(node:81813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (241ms)
+  ✓  3 [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (194ms)
+  ✓  4 [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (870ms)
+(node:82146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (529ms)
+(node:82261) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  6 [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (408ms)
+  ✓  7 [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (288ms)
+  ✓  8 [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (853ms)
+
+
+  1) [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('main h1')
+    Expected substring: "Check Your Kit"
+    Error: strict mode violation: locator('main h1') resolved to 2 elements:
+        1) <h1>Check Your Kit</h1> aka getByRole('heading', { name: 'Check Your Kit' })
+        2) <h1>What Else Do You Need?</h1> aka getByRole('heading', { name: 'What Else Do You Need?' })
+
+    Call log:
+      - Expect "toContainText" locator('main h1') with timeout 5000ms
+      - waiting for locator('main h1')
+
+
+      14 | test('Home and all eight setup routes retain stage identities',async({page})=>{
+      15 |  await page.goto('/#/');await expect(page.locator('main')).toBeVisible();
+    > 16 |  for(const stage of wizard){await page.goto('/#/wizard/'+stage.id);await expect(page.locator('main h1')).toContainText(stage.title);}
+         |                                                                                                          ^
+      17 | });
+      18 | test('Reference pager and real heading-first search ordering are retained',async({page})=>{
+      19 |  await page.goto('/#/reference');await expect(page.locator('main h1')).toHaveText('Reference');
+        at $REPO/picarx-companion/tests/browser/preservation.spec.ts:16:106
+
+    Error Context: test-results/preservation-Home-and-all--7b6cc-tes-retain-stage-identities-chromium/error-context.md
+
+  2) [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('main h1')
+    Expected substring: "Check Your Kit"
+    Error: strict mode violation: locator('main h1') resolved to 2 elements:
+        1) <h1>Check Your Kit</h1> aka getByRole('heading', { name: 'Check Your Kit' })
+        2) <h1>What Else Do You Need?</h1> aka getByRole('heading', { name: 'What Else Do You Need?' })
+
+    Call log:
+      - Expect "toContainText" locator('main h1') with timeout 5000ms
+      - waiting for locator('main h1')
+
+
+      14 | test('Home and all eight setup routes retain stage identities',async({page})=>{
+      15 |  await page.goto('/#/');await expect(page.locator('main')).toBeVisible();
+    > 16 |  for(const stage of wizard){await page.goto('/#/wizard/'+stage.id);await expect(page.locator('main h1')).toContainText(stage.title);}
+         |                                                                                                          ^
+      17 | });
+      18 | test('Reference pager and real heading-first search ordering are retained',async({page})=>{
+      19 |  await page.goto('/#/reference');await expect(page.locator('main h1')).toHaveText('Reference');
+        at $REPO/picarx-companion/tests/browser/preservation.spec.ts:16:106
+
+    Error Context: test-results/preservation-Home-and-all--7b6cc-tes-retain-stage-identities-webkit/error-context.md
+
+  2 failed
+    [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+    [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+  6 passed (6.1s)
+ ELIFECYCLE  Command failed with exit code 1.

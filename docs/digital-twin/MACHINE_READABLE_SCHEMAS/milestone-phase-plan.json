@@ -1,0 +1,213 @@
+{
+  "contractVersion": 2,
+  "coarseAcceptanceDependencies": {
+    "M0": [],
+    "M1": [
+      "M0"
+    ],
+    "M2": [
+      "M1"
+    ],
+    "M3": [
+      "M0",
+      "M1",
+      "M2"
+    ],
+    "M4": [
+      "M1"
+    ],
+    "M5": [
+      "M1",
+      "M2",
+      "M4"
+    ],
+    "M6": [
+      "M1",
+      "M2",
+      "M4"
+    ],
+    "M7": [
+      "M2",
+      "M4",
+      "M5",
+      "M6"
+    ],
+    "M8": [
+      "M1",
+      "M4",
+      "M7"
+    ],
+    "M9": [
+      "M3",
+      "M8"
+    ],
+    "M10": [
+      "M2",
+      "M3",
+      "M8",
+      "M9"
+    ],
+    "M11": [
+      "M3",
+      "M5",
+      "M6",
+      "M7",
+      "M8",
+      "M9",
+      "M10"
+    ],
+    "M12": [
+      "M11"
+    ],
+    "M13": [
+      "M12"
+    ],
+    "M14": [
+      "M13"
+    ]
+  },
+  "phases": [
+    {
+      "id": "M0-CORE",
+      "deps": [],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M1-CONTRACTS",
+      "deps": [
+        "M0-CORE"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M2-GRAPH",
+      "deps": [
+        "M1-CONTRACTS"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M3-REFERENCE",
+      "deps": [
+        "M2-GRAPH"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M4-FIXTURES",
+      "deps": [
+        "M1-CONTRACTS"
+      ],
+      "scopePolicy": "fixtureOnly"
+    },
+    {
+      "id": "M5-COMPONENT-SCOPE",
+      "deps": [
+        "M2-GRAPH",
+        "M4-FIXTURES"
+      ],
+      "scopePolicy": "perDependencyClosure"
+    },
+    {
+      "id": "M6-PLATE-SCOPE",
+      "deps": [
+        "M2-GRAPH",
+        "M4-FIXTURES"
+      ],
+      "scopePolicy": "perDependencyClosure"
+    },
+    {
+      "id": "M7-CAD-SCOPE",
+      "deps": [
+        "M2-GRAPH",
+        "M4-FIXTURES",
+        "M5-COMPONENT-SCOPE",
+        "M6-PLATE-SCOPE"
+      ],
+      "scopePolicy": "perDependencyClosure"
+    },
+    {
+      "id": "M8-FIXTURE-EXPORT",
+      "deps": [
+        "M4-FIXTURES"
+      ],
+      "scopePolicy": "fixtureOnly"
+    },
+    {
+      "id": "M8-REAL-ADMISSION",
+      "deps": [
+        "M7-CAD-SCOPE",
+        "M8-FIXTURE-EXPORT"
+      ],
+      "scopePolicy": "perDependencyClosure"
+    },
+    {
+      "id": "M9-FIXTURE-VIEWER",
+      "deps": [
+        "M3-REFERENCE",
+        "M8-FIXTURE-EXPORT"
+      ],
+      "scopePolicy": "fixtureOnly"
+    },
+    {
+      "id": "M9-REAL-VIEWER",
+      "deps": [
+        "M9-FIXTURE-VIEWER",
+        "M8-REAL-ADMISSION"
+      ],
+      "scopePolicy": "perDependencyClosure"
+    },
+    {
+      "id": "M10-PURE-CONTROLLER",
+      "deps": [
+        "M2-GRAPH",
+        "M3-REFERENCE"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M10-REAL-TRANSITIONS",
+      "deps": [
+        "M10-PURE-CONTROLLER",
+        "M9-REAL-VIEWER"
+      ],
+      "scopePolicy": "perDependencyClosure"
+    },
+    {
+      "id": "M11-FULL-COVERAGE",
+      "deps": [
+        "M10-REAL-TRANSITIONS",
+        "M5-COMPONENT-SCOPE",
+        "M6-PLATE-SCOPE"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M12-RELEASE",
+      "deps": [
+        "M11-FULL-COVERAGE"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M13-CAMERA",
+      "deps": [
+        "M12-RELEASE"
+      ],
+      "scopePolicy": "milestoneScope"
+    },
+    {
+      "id": "M14-AR",
+      "deps": [
+        "M13-CAMERA"
+      ],
+      "scopePolicy": "milestoneScope"
+    }
+  ],
+  "rules": [
+    "Scope receipts are keyed by exact definition/step/variant dependency closure and hashes.",
+    "A fixture receipt cannot satisfy real-component admission.",
+    "M11 aggregates all29 steps in all3 claimed variants; partial scopes do not pass full coverage.",
+    "When a scope uses no definitions of a lane, that lane is explicitly notApplicable; never create an empty positive admission."
+  ]
+}
