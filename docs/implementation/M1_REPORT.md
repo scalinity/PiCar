@@ -204,3 +204,13 @@ Stage only named intended M1 paths after git status --short, git diff --check, g
 Rollback boundary is the additive M1 commits -> 2a934710501d71aecbd8da827925c92e49378661; no live assembly session depends on these records, and legacy picarx.v1 was not migrated or reinterpreted. Inspect git status first, retain later/unrelated work, and use git switch --detach 2a934710501d71aecbd8da827925c92e49378661 to inspect/run accepted M0 without rewriting history or removing ignored evidence. For a history-preserving branch rollback, revert the documentation receipt then the accepted M1 commit after reviewing their exact changes. Do not reset/delete the private vault. Keep m1-canonical-data recoverable.
 
 M2 may begin only when this exact G-DATA PASS remains current and accepted M1 contracts are committed locally. HANDOFF_M2.md records the actual acceptance SHA and bindings and requires a fresh preflight. Stop after M1 closure/handoff; no M2 implementation is authorized within this session.
+
+## Local acceptance receipt
+
+- M1_ACCEPTED_SHA: 22c85058f9420aaaaf376c5e312915f5b7b5288d
+- Exact acceptance subject: M1: establish canonical digital twin data contracts.
+- 118 named intended text/source files committed; all 124 G-DATA bindings matched index bytes before commit.
+- git status --short after acceptance: empty; ignored private originals/cache/targets remain local.
+- M2 authorization: **YES**, contingent on fresh next-session verification of these accepted bindings.
+- HANDOFF_M2.md contains actual accepted SHA and exact source/schema/evidence/model/validator/hash-policy/vector/report identities. No M2 code was written.
+- This receipt/handoff is a subsequent documentation-only commit; it does not change the accepted M1 contracts or gate bytes.
