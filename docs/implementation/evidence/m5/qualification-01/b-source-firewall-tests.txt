@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: negative: unknown numeric with payload
+ok 1 - negative: unknown numeric with payload
+  ---
+  duration_ms: 5.647917
+  type: 'test'
+  ...
+# Subtest: negative: owned rivet pin double-counted as supplied stock
+ok 2 - negative: owned rivet pin double-counted as supplied stock
+  ---
+  duration_ms: 33.223917
+  type: 'test'
+  ...
+# Subtest: negative: probable generic HAT identity promoted without proof
+ok 3 - negative: probable generic HAT identity promoted without proof
+  ---
+  duration_ms: 5.556709
+  type: 'test'
+  ...
+# Subtest: negative: official reference approximation promoted to exact
+ok 4 - negative: official reference approximation promoted to exact
+  ---
+  duration_ms: 4.02175
+  type: 'test'
+  ...
+# Subtest: negative: source limitations silently discarded
+ok 5 - negative: source limitations silently discarded
+  ---
+  duration_ms: 2.860875
+  type: 'test'
+  ...
+# Subtest: negative: open conflict treated as resolved
+ok 6 - negative: open conflict treated as resolved
+  ---
+  duration_ms: 3.369458
+  type: 'test'
+  ...
+# Subtest: negative: resolved conflict loses competing claims
+ok 7 - negative: resolved conflict loses competing claims
+  ---
+  duration_ms: 3.545833
+  type: 'test'
+  ...
+# Subtest: negative: integrated cable misclassified as loose stock
+ok 8 - negative: integrated cable misclassified as loose stock
+  ---
+  duration_ms: 30.978375
+  type: 'test'
+  ...
+# Subtest: negative: integrated cable endpoint on another owner
+ok 9 - negative: integrated cable endpoint on another owner
+  ---
+  duration_ms: 6.288583
+  type: 'test'
+  ...
+# Subtest: positive: integrated lead has owner-bound endpoint without extra stock
+ok 10 - positive: integrated lead has owner-bound endpoint without extra stock
+  ---
+  duration_ms: 109.815458
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 302.62425

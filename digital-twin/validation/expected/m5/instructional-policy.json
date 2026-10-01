@@ -1,0 +1,30 @@
+{
+  "id": "PX-OWNER-INSTRUCTIONAL-20260930",
+  "gate": "G-INSTRUCTIONAL-COMPONENT",
+  "track": "instructional-only",
+  "strictGate": "G-COMPONENT",
+  "strictGateUnchanged": true,
+  "scopeDefinitions": 50,
+  "integralLeadScopes": 6,
+  "mustNotDrive": [
+    "G-COMPONENT",
+    "engineeringMeasurement",
+    "engineeringInterface",
+    "engineeringRoute",
+    "engineeringSolver",
+    "G-CAD",
+    "G-GEOMETRY",
+    "manufacturing",
+    "physicalFit",
+    "torque",
+    "engagement",
+    "electricalVoltage",
+    "batterySafety",
+    "collisionGuarantee"
+  ],
+  "canonicalUnknownsMustRemainUnresolved": true,
+  "proxyAuthority": "Presentation only; never engineering solver/interface/measurement inputs",
+  "zeroTutorialCriticalBlockersRequired": true,
+  "sourcePublicationAuthorized": false,
+  "m6ConditionalOnly": true
+}

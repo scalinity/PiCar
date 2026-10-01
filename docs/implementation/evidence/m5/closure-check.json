@@ -1,0 +1,77 @@
+{
+  "status": "BLOCKED",
+  "bindingAndPreservationChecks": "PASS",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "docs/implementation/evidence/m5/closure.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {
+        "inherited": true
+      },
+      "startedAt": "2026-09-30T09:40:13.574Z",
+      "finishedAt": "2026-09-30T09:40:22.647Z",
+      "exit": 2,
+      "expectedExit": 2
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "digital-twin/tools/export/m4-gate.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {
+        "inherited": true
+      },
+      "startedAt": "2026-09-30T09:40:22.647Z",
+      "finishedAt": "2026-09-30T09:40:22.816Z",
+      "exit": 0,
+      "expectedExit": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {
+        "inherited": true
+      },
+      "startedAt": "2026-09-30T09:40:22.816Z",
+      "finishedAt": "2026-09-30T09:40:22.826Z",
+      "exit": 0,
+      "expectedExit": 0
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environment": {
+        "inherited": true
+      },
+      "startedAt": "2026-09-30T09:40:22.826Z",
+      "finishedAt": "2026-09-30T09:40:22.835Z",
+      "exit": 0,
+      "expectedExit": 0
+    }
+  ],
+  "log": {
+    "path": "docs/implementation/evidence/m5/closure-check.txt",
+    "bytes": 269,
+    "rawSha256": "de6c5c1b1f7ff272a61b786cd700d0a489a41eec17164354e0c3360f6a46e9e7"
+  },
+  "report": {
+    "path": "docs/implementation/M5_GATE_REPORT.json",
+    "bytes": 243626,
+    "rawSha256": "5d121edf4ac3a15b076dd0e30f80e3f2804a665aa3e079bbe689de6a4e056581"
+  }
+}

@@ -1,0 +1,1222 @@
+{
+  "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "representationKind": "photo_supported_proxy",
+  "sourceRefs": [
+    "PX-EV-PHOTO-03",
+    "PX-EV-PHOTO-04"
+  ],
+  "sourceLimitations": [
+    "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry."
+  ],
+  "canonicalUnknowns": [
+    {
+      "feature": "body.length",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    },
+    {
+      "feature": "body.envelope",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    },
+    {
+      "feature": "ends.sex",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    },
+    {
+      "feature": "thread.pitch",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    },
+    {
+      "feature": "thread.depth",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    },
+    {
+      "feature": "bearing.planes",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    }
+  ],
+  "instructionalApproximations": [
+    {
+      "name": "diameter",
+      "value": 6,
+      "unit": "mm",
+      "basis": "Authored visual estimate of standoff body proportions from uncalibrated V40 printed imagery; no metric image measurement",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04"
+      ],
+      "approximationKind": "visualEstimate",
+      "visualPurpose": "Recognizable M3x26 standoff presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-06",
+        "Q-17"
+      ]
+    },
+    {
+      "name": "length",
+      "value": 26,
+      "unit": "mm",
+      "basis": "Nominal instructional transcription of printed metric designation; no pitch/tolerance/standard/physical claim",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04"
+      ],
+      "approximationKind": "designationNominal",
+      "visualPurpose": "Recognizable M3x26 standoff presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-06",
+        "Q-17"
+      ]
+    },
+    {
+      "name": "extensionDiameter",
+      "value": 3,
+      "unit": "mm",
+      "basis": "Nominal instructional transcription of printed metric designation; no pitch/tolerance/standard/physical claim",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04"
+      ],
+      "approximationKind": "designationNominal",
+      "visualPurpose": "Recognizable M3x26 standoff presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-06",
+        "Q-17"
+      ]
+    },
+    {
+      "name": "extensionLength",
+      "value": 0,
+      "unit": "mm",
+      "basis": "Nominal instructional transcription of printed metric designation; no pitch/tolerance/standard/physical claim",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04"
+      ],
+      "approximationKind": "designationNominal",
+      "visualPurpose": "Recognizable M3x26 standoff presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-06",
+        "Q-17"
+      ]
+    }
+  ],
+  "criticalTutorialFacts": [
+    {
+      "variantId": "rpi4",
+      "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+      "steps": [
+        {
+          "stepId": "PX-V40-STEP-10",
+          "printedNumber": 10,
+          "sourceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "operationIds": [
+            "PX-V40-OP-10-COMMON-INTRODUCE",
+            "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-M3X26-STANDOFF-001",
+            "PX-V40-INS-M3X26-STANDOFF-002"
+          ],
+          "orientation": "Supports extend under the front car. This is printed step 10, not step 11.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-10"
+          ]
+        },
+        {
+          "stepId": "PX-V40-STEP-23",
+          "printedNumber": 23,
+          "sourceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "operationIds": [
+            "PX-V40-OP-23-COMMON-INTRODUCE",
+            "PX-V40-OP-23-COMMON-PLATE-D",
+            "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+            "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-M3X26-STANDOFF-001",
+            "PX-V40-INS-M3X26-STANDOFF-002"
+          ],
+          "orientation": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-23"
+          ]
+        }
+      ]
+    },
+    {
+      "variantId": "rpi5",
+      "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+      "steps": [
+        {
+          "stepId": "PX-V40-STEP-10",
+          "printedNumber": 10,
+          "sourceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "operationIds": [
+            "PX-V40-OP-10-COMMON-INTRODUCE",
+            "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-M3X26-STANDOFF-001",
+            "PX-V40-INS-M3X26-STANDOFF-002"
+          ],
+          "orientation": "Supports extend under the front car. This is printed step 10, not step 11.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-10"
+          ]
+        },
+        {
+          "stepId": "PX-V40-STEP-23",
+          "printedNumber": 23,
+          "sourceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "operationIds": [
+            "PX-V40-OP-23-COMMON-INTRODUCE",
+            "PX-V40-OP-23-COMMON-PLATE-D",
+            "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+            "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-M3X26-STANDOFF-001",
+            "PX-V40-INS-M3X26-STANDOFF-002"
+          ],
+          "orientation": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-23"
+          ]
+        }
+      ]
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+      "steps": [
+        {
+          "stepId": "PX-V40-STEP-10",
+          "printedNumber": 10,
+          "sourceRefs": [
+            "PX-EV-PHOTO-05"
+          ],
+          "operationIds": [
+            "PX-V40-OP-10-COMMON-INTRODUCE",
+            "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+            "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-M3X26-STANDOFF-001",
+            "PX-V40-INS-M3X26-STANDOFF-002"
+          ],
+          "orientation": "Supports extend under the front car. This is printed step 10, not step 11.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-10"
+          ]
+        },
+        {
+          "stepId": "PX-V40-STEP-23",
+          "printedNumber": 23,
+          "sourceRefs": [
+            "PX-EV-PHOTO-06"
+          ],
+          "operationIds": [
+            "PX-V40-OP-23-COMMON-INTRODUCE",
+            "PX-V40-OP-23-COMMON-PLATE-D",
+            "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+            "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-M3X26-STANDOFF-001",
+            "PX-V40-INS-M3X26-STANDOFF-002"
+          ],
+          "orientation": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-23"
+          ]
+        }
+      ]
+    }
+  ],
+  "protectedFacts": {
+    "definition": {
+      "id": "PX-V40-DEF-M3X26-STANDOFF",
+      "revision": 1,
+      "name": "M3x26 standoff",
+      "componentClass": "standoff",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "identityClaimId": "PX-CLAIM-M3X26-STANDOFF-DESIGNATION"
+    },
+    "identityClaim": {
+      "id": "PX-CLAIM-M3X26-STANDOFF-DESIGNATION",
+      "subjectId": "PX-V40-DEF-M3X26-STANDOFF",
+      "property": "printedDesignation",
+      "statement": "Printed role/designation: M3x26 standoff. Does not establish OEM identity, exact geometry or actual inventory.",
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "PX-EV-PHOTO-03"
+      ],
+      "inputClaimIds": [],
+      "method": "Scoped transcription of source at retained locator",
+      "assumptions": [],
+      "scope": "printedDesignation",
+      "sourceLimitations": [
+        "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry."
+      ],
+      "conflictIds": [],
+      "blockerIds": [],
+      "supersedes": []
+    },
+    "instances": [
+      {
+        "id": "PX-V40-INS-M3X26-STANDOFF-001",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "definitionRevision": 1,
+        "role": "printed-stock-1",
+        "supplyOrigin": "kit",
+        "inventoryLotId": "PX-V40-LOT-M3X26-STANDOFF",
+        "variantIds": [
+          "rpi4",
+          "rpi5",
+          "rpi-zero-2-w"
+        ],
+        "disposition": "available",
+        "ownerInstanceRef": {
+          "state": "notApplicable",
+          "reason": "Standalone planned stock; owned elements stay within the parent definition."
+        },
+        "installedByOperationRef": {
+          "state": "notApplicable",
+          "reason": "M1 authoring inventory; no M2 operation authored."
+        },
+        "blockerIds": [
+          "Q-06",
+          "Q-01",
+          "Q-13"
+        ]
+      },
+      {
+        "id": "PX-V40-INS-M3X26-STANDOFF-002",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "definitionRevision": 1,
+        "role": "printed-stock-2",
+        "supplyOrigin": "kit",
+        "inventoryLotId": "PX-V40-LOT-M3X26-STANDOFF",
+        "variantIds": [
+          "rpi4",
+          "rpi5",
+          "rpi-zero-2-w"
+        ],
+        "disposition": "available",
+        "ownerInstanceRef": {
+          "state": "notApplicable",
+          "reason": "Standalone planned stock; owned elements stay within the parent definition."
+        },
+        "installedByOperationRef": {
+          "state": "notApplicable",
+          "reason": "M1 authoring inventory; no M2 operation authored."
+        },
+        "blockerIds": [
+          "Q-06",
+          "Q-01",
+          "Q-13"
+        ]
+      },
+      {
+        "id": "PX-V40-INS-M3X26-STANDOFF-003",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "definitionRevision": 1,
+        "role": "printed-stock-3",
+        "supplyOrigin": "kit",
+        "inventoryLotId": "PX-V40-LOT-M3X26-STANDOFF",
+        "variantIds": [
+          "rpi4",
+          "rpi5",
+          "rpi-zero-2-w"
+        ],
+        "disposition": "backup",
+        "ownerInstanceRef": {
+          "state": "notApplicable",
+          "reason": "Standalone planned stock; owned elements stay within the parent definition."
+        },
+        "installedByOperationRef": {
+          "state": "notApplicable",
+          "reason": "M1 authoring inventory; no M2 operation authored."
+        },
+        "blockerIds": [
+          "Q-06",
+          "Q-01",
+          "Q-13"
+        ]
+      },
+      {
+        "id": "PX-V40-INS-M3X26-STANDOFF-004",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "definitionRevision": 1,
+        "role": "printed-stock-4",
+        "supplyOrigin": "kit",
+        "inventoryLotId": "PX-V40-LOT-M3X26-STANDOFF",
+        "variantIds": [
+          "rpi4",
+          "rpi5",
+          "rpi-zero-2-w"
+        ],
+        "disposition": "backup",
+        "ownerInstanceRef": {
+          "state": "notApplicable",
+          "reason": "Standalone planned stock; owned elements stay within the parent definition."
+        },
+        "installedByOperationRef": {
+          "state": "notApplicable",
+          "reason": "M1 authoring inventory; no M2 operation authored."
+        },
+        "blockerIds": [
+          "Q-06",
+          "Q-01",
+          "Q-13"
+        ]
+      }
+    ],
+    "printedStockMeasurements": [
+      {
+        "id": "PX-V40-MEAS-M3X26-STANDOFF-STOCK-PRINTED-PRIMARY",
+        "subjectId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "stock.printed-primary",
+        "kind": "nominal",
+        "value": {
+          "state": "known",
+          "value": 2,
+          "unit": "count",
+          "confidence": "VERIFIED",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-03"
+          ],
+          "uncertainty": {
+            "state": "bounded",
+            "minus": 0,
+            "plus": 0
+          }
+        },
+        "originalNotation": "stock.printed-primary",
+        "method": "Transcribed count or explicit absence of measured geometry",
+        "datumRef": {
+          "state": "notApplicable",
+          "reason": "Count or unresolved geometry has no known metrology datum."
+        },
+        "sourceTolerance": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "measurementUncertainty": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "modelDeviationBudget": {
+          "state": "unresolved",
+          "unit": "count",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "inputClaimIds": [
+          "PX-CLAIM-M3X26-STANDOFF-PRINTED-STOCK"
+        ],
+        "blockerIds": []
+      },
+      {
+        "id": "PX-V40-MEAS-M3X26-STANDOFF-STOCK-PRINTED-BACKUP",
+        "subjectId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "stock.printed-backup",
+        "kind": "nominal",
+        "value": {
+          "state": "known",
+          "value": 2,
+          "unit": "count",
+          "confidence": "VERIFIED",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-03"
+          ],
+          "uncertainty": {
+            "state": "bounded",
+            "minus": 0,
+            "plus": 0
+          }
+        },
+        "originalNotation": "stock.printed-backup",
+        "method": "Transcribed count or explicit absence of measured geometry",
+        "datumRef": {
+          "state": "notApplicable",
+          "reason": "Count or unresolved geometry has no known metrology datum."
+        },
+        "sourceTolerance": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "measurementUncertainty": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "modelDeviationBudget": {
+          "state": "unresolved",
+          "unit": "count",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "inputClaimIds": [
+          "PX-CLAIM-M3X26-STANDOFF-PRINTED-STOCK"
+        ],
+        "blockerIds": []
+      },
+      {
+        "id": "PX-V40-MEAS-M3X26-STANDOFF-STOCK-PRINTED-TOTAL",
+        "subjectId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "stock.printed-total",
+        "kind": "derived",
+        "value": {
+          "state": "known",
+          "value": 4,
+          "unit": "count",
+          "confidence": "DERIVED",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-03"
+          ],
+          "uncertainty": {
+            "state": "bounded",
+            "minus": 0,
+            "plus": 0
+          },
+          "derivationRef": "PX-DERIV-M3X26-STANDOFF-PRINTED-TOTAL"
+        },
+        "originalNotation": "primary + backup",
+        "method": "Sum of source-scoped printed depiction counts",
+        "datumRef": {
+          "state": "notApplicable",
+          "reason": "Count or unresolved geometry has no known metrology datum."
+        },
+        "sourceTolerance": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "measurementUncertainty": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "modelDeviationBudget": {
+          "state": "unresolved",
+          "unit": "count",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "inputClaimIds": [
+          "PX-CLAIM-M3X26-STANDOFF-PRINTED-STOCK"
+        ],
+        "blockerIds": []
+      }
+    ],
+    "consumableLots": [
+      {
+        "id": "PX-V40-LOT-M3X26-STANDOFF",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "scope": "printedPlanning",
+        "quantity": {
+          "state": "known",
+          "value": 4,
+          "unit": "count",
+          "confidence": "DERIVED",
+          "evidenceRefs": [
+            "PX-EV-PHOTO-03"
+          ],
+          "uncertainty": {
+            "state": "bounded",
+            "minus": 0,
+            "plus": 0
+          },
+          "derivationRef": "PX-DERIV-M3X26-STANDOFF-PRINTED-TOTAL"
+        },
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    ],
+    "consumableAllocations": [
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+        "variantId": "rpi4",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-10",
+        "useId": "PX-V40-USE-M3X26-STANDOFF-RPI4-001"
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+        "variantId": "rpi4",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-10",
+        "useId": "PX-V40-USE-M3X26-STANDOFF-RPI4-002"
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-003",
+        "variantId": "rpi4",
+        "disposition": "backup",
+        "stepId": null,
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-004",
+        "variantId": "rpi4",
+        "disposition": "backup",
+        "stepId": null,
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+        "variantId": "rpi5",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-10",
+        "useId": "PX-V40-USE-M3X26-STANDOFF-RPI5-001"
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+        "variantId": "rpi5",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-10",
+        "useId": "PX-V40-USE-M3X26-STANDOFF-RPI5-002"
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-003",
+        "variantId": "rpi5",
+        "disposition": "backup",
+        "stepId": null,
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-004",
+        "variantId": "rpi5",
+        "disposition": "backup",
+        "stepId": null,
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+        "variantId": "rpi-zero-2-w",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-10",
+        "useId": "PX-V40-USE-M3X26-STANDOFF-RPIZERO2W-001"
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+        "variantId": "rpi-zero-2-w",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-10",
+        "useId": "PX-V40-USE-M3X26-STANDOFF-RPIZERO2W-002"
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-003",
+        "variantId": "rpi-zero-2-w",
+        "disposition": "backup",
+        "stepId": null,
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-004",
+        "variantId": "rpi-zero-2-w",
+        "disposition": "backup",
+        "stepId": null,
+        "useId": null
+      }
+    ],
+    "ownedElements": [],
+    "fastener": {
+      "partDefinitionId": "PX-V40-DEF-M3X26-STANDOFF",
+      "designationClaimId": "PX-CLAIM-M3X26-STANDOFF-DESIGNATION",
+      "category": "standoff",
+      "diameterRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "lengthRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "pitchRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "headStandardRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "driveStandardRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "materialClaimRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "threadFormRef": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      "gripRangeRefs": [],
+      "insertionBehavior": "unresolved",
+      "unspecifiedProperties": [
+        "thread/pitch/head/drive/material/grip geometry not established by printed designation"
+      ],
+      "blockerIds": [
+        "Q-06"
+      ]
+    },
+    "cable": null,
+    "connectorPoints": [],
+    "connectorClaims": [],
+    "plannedUses": [
+      {
+        "id": "PX-V40-USE-M3X26-STANDOFF-RPI4-001",
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "variantId": "rpi4",
+        "stepId": "PX-V40-STEP-10"
+      },
+      {
+        "id": "PX-V40-USE-M3X26-STANDOFF-RPI4-002",
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "variantId": "rpi4",
+        "stepId": "PX-V40-STEP-10"
+      },
+      {
+        "id": "PX-V40-USE-M3X26-STANDOFF-RPI5-001",
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "variantId": "rpi5",
+        "stepId": "PX-V40-STEP-10"
+      },
+      {
+        "id": "PX-V40-USE-M3X26-STANDOFF-RPI5-002",
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "variantId": "rpi5",
+        "stepId": "PX-V40-STEP-10"
+      },
+      {
+        "id": "PX-V40-USE-M3X26-STANDOFF-RPIZERO2W-001",
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-001",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "variantId": "rpi-zero-2-w",
+        "stepId": "PX-V40-STEP-10"
+      },
+      {
+        "id": "PX-V40-USE-M3X26-STANDOFF-RPIZERO2W-002",
+        "instanceId": "PX-V40-INS-M3X26-STANDOFF-002",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "variantId": "rpi-zero-2-w",
+        "stepId": "PX-V40-STEP-10"
+      }
+    ],
+    "graphUse": [
+      {
+        "variantId": "rpi4",
+        "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+        "steps": [
+          {
+            "stepId": "PX-V40-STEP-10",
+            "printedNumber": 10,
+            "sourceRefs": [
+              "PX-EV-PHOTO-05"
+            ],
+            "operationIds": [
+              "PX-V40-OP-10-COMMON-INTRODUCE",
+              "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-M3X26-STANDOFF-001",
+              "PX-V40-INS-M3X26-STANDOFF-002"
+            ],
+            "orientation": "Supports extend under the front car. This is printed step 10, not step 11.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-10"
+            ]
+          },
+          {
+            "stepId": "PX-V40-STEP-23",
+            "printedNumber": 23,
+            "sourceRefs": [
+              "PX-EV-PHOTO-06"
+            ],
+            "operationIds": [
+              "PX-V40-OP-23-COMMON-INTRODUCE",
+              "PX-V40-OP-23-COMMON-PLATE-D",
+              "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+              "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-M3X26-STANDOFF-001",
+              "PX-V40-INS-M3X26-STANDOFF-002"
+            ],
+            "orientation": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-23"
+            ]
+          }
+        ]
+      },
+      {
+        "variantId": "rpi5",
+        "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+        "steps": [
+          {
+            "stepId": "PX-V40-STEP-10",
+            "printedNumber": 10,
+            "sourceRefs": [
+              "PX-EV-PHOTO-05"
+            ],
+            "operationIds": [
+              "PX-V40-OP-10-COMMON-INTRODUCE",
+              "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-M3X26-STANDOFF-001",
+              "PX-V40-INS-M3X26-STANDOFF-002"
+            ],
+            "orientation": "Supports extend under the front car. This is printed step 10, not step 11.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-10"
+            ]
+          },
+          {
+            "stepId": "PX-V40-STEP-23",
+            "printedNumber": 23,
+            "sourceRefs": [
+              "PX-EV-PHOTO-06"
+            ],
+            "operationIds": [
+              "PX-V40-OP-23-COMMON-INTRODUCE",
+              "PX-V40-OP-23-COMMON-PLATE-D",
+              "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+              "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-M3X26-STANDOFF-001",
+              "PX-V40-INS-M3X26-STANDOFF-002"
+            ],
+            "orientation": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-23"
+            ]
+          }
+        ]
+      },
+      {
+        "variantId": "rpi-zero-2-w",
+        "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+        "steps": [
+          {
+            "stepId": "PX-V40-STEP-10",
+            "printedNumber": 10,
+            "sourceRefs": [
+              "PX-EV-PHOTO-05"
+            ],
+            "operationIds": [
+              "PX-V40-OP-10-COMMON-INTRODUCE",
+              "PX-V40-OP-10-COMMON-FRONT-SUPPORTS",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-001",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X6-SCREW-002",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-001",
+              "PX-V40-OP-10-COMMON-HARDWARE-M3X26-STANDOFF-002"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-M3X26-STANDOFF-001",
+              "PX-V40-INS-M3X26-STANDOFF-002"
+            ],
+            "orientation": "Supports extend under the front car. This is printed step 10, not step 11.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-10"
+            ]
+          },
+          {
+            "stepId": "PX-V40-STEP-23",
+            "printedNumber": 23,
+            "sourceRefs": [
+              "PX-EV-PHOTO-06"
+            ],
+            "operationIds": [
+              "PX-V40-OP-23-COMMON-INTRODUCE",
+              "PX-V40-OP-23-COMMON-PLATE-D",
+              "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-003",
+              "PX-V40-OP-23-COMMON-HARDWARE-M3X6-SCREW-004"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-M3X26-STANDOFF-001",
+              "PX-V40-INS-M3X26-STANDOFF-002"
+            ],
+            "orientation": "D lies beneath the front assembly in the illustrated orientation; sensor face and carrier holes remain accessible.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-23"
+            ]
+          }
+        ]
+      }
+    ],
+    "openConflicts": [
+      {
+        "id": "PX-CONFLICT-CAMERA-DIMENSIONS",
+        "claimIds": [
+          "PX-CLAIM-CAMERA-DIMENSIONS-1",
+          "PX-CLAIM-CAMERA-DIMENSIONS-2"
+        ],
+        "subjectId": "PX-V40-DEF-CAMERA",
+        "property": "referenceDimensions",
+        "status": "open",
+        "resolution": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-08"
+          ]
+        },
+        "reason": "Source statements preserved; no applicability or numerical resolution inferred."
+      },
+      {
+        "id": "PX-CONFLICT-ULTRASONIC-SUPPLY",
+        "claimIds": [
+          "PX-CLAIM-ULTRASONIC-SUPPLY-1",
+          "PX-CLAIM-ULTRASONIC-SUPPLY-2"
+        ],
+        "subjectId": "PX-V40-DEF-ULTRASONIC",
+        "property": "supplyApplicability",
+        "status": "open",
+        "resolution": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-08"
+          ]
+        },
+        "reason": "Source statements preserved; no applicability or numerical resolution inferred."
+      }
+    ],
+    "engineeringUnknownMeasurements": [
+      {
+        "id": "PX-V40-MEAS-M3X26-STANDOFF-GEOMETRY-LENGTH",
+        "subjectId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "geometry.length",
+        "kind": "nominal",
+        "value": {
+          "state": "unresolved",
+          "unit": "mm",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "originalNotation": "geometry.length",
+        "method": "Transcribed count or explicit absence of measured geometry",
+        "datumRef": {
+          "state": "notApplicable",
+          "reason": "Count or unresolved geometry has no known metrology datum."
+        },
+        "sourceTolerance": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "measurementUncertainty": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "modelDeviationBudget": {
+          "state": "unresolved",
+          "unit": "mm",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "inputClaimIds": [
+          "PX-CLAIM-M3X26-STANDOFF-DESIGNATION"
+        ],
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "PX-V40-IF-M3X26-STANDOFF-BEARING-OR-GRIP",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "bearing-or-grip",
+        "kind": "datum",
+        "frame": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "measurementRefs": [],
+        "permittedDOF": [],
+        "matingRuleIds": [],
+        "toleranceRefs": [],
+        "evidenceRefs": [
+          "PX-EV-PHOTO-05"
+        ],
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      {
+        "id": "PX-V40-IF-M3X26-STANDOFF-LOWER-BEARING",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "lower-bearing",
+        "kind": "datum",
+        "frame": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "measurementRefs": [],
+        "permittedDOF": [],
+        "matingRuleIds": [],
+        "toleranceRefs": [],
+        "evidenceRefs": [
+          "PX-EV-PHOTO-06"
+        ],
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      {
+        "id": "PX-V40-IF-M3X26-STANDOFF-REFERENCE",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "mount.axis",
+        "kind": "shaftAxis",
+        "frame": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "measurementRefs": [],
+        "permittedDOF": [],
+        "matingRuleIds": [],
+        "toleranceRefs": [],
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "blockerIds": [
+          "Q-06"
+        ]
+      },
+      {
+        "id": "PX-V40-IF-M3X26-STANDOFF-UPPER-BEARING",
+        "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+        "feature": "upper-bearing",
+        "kind": "datum",
+        "frame": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-06"
+          ]
+        },
+        "measurementRefs": [],
+        "permittedDOF": [],
+        "matingRuleIds": [],
+        "toleranceRefs": [],
+        "evidenceRefs": [
+          "PX-EV-PHOTO-05"
+        ],
+        "blockerIds": [
+          "Q-06"
+        ]
+      }
+    ],
+    "observedOwnerStock": "UNRESOLVED"
+  },
+  "mustNotDrive": [
+    "G-COMPONENT",
+    "engineeringMeasurement",
+    "engineeringInterface",
+    "engineeringRoute",
+    "engineeringSolver",
+    "G-CAD",
+    "G-GEOMETRY",
+    "manufacturing",
+    "physicalFit",
+    "torque",
+    "engagement",
+    "electricalVoltage",
+    "batterySafety",
+    "collisionGuarantee"
+  ],
+  "blockerIds": [
+    "Q-06",
+    "Q-17"
+  ],
+  "rightsStatus": {
+    "artifact": "Newly authored analytic functional proxy; no copied artwork/image/vendor bytes",
+    "sourcePublicationAllowed": false,
+    "privatePhotoInAsset": false,
+    "sourceUse": "Local reference only; retain source-specific limits and SunFounder notices"
+  },
+  "artifactPaths": [
+    "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M3X26-STANDOFF.brep",
+    "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M3X26-STANDOFF.svg"
+  ],
+  "validationResults": {
+    "actualShapeCheck": "PASS",
+    "independentShape": {
+      "boundsMm": [
+        -3,
+        -3,
+        0,
+        3,
+        3,
+        26
+      ],
+      "cylindricalFeatureCount": 1,
+      "definitionId": "PX-V40-DEF-M3X26-STANDOFF",
+      "engineeringAdmission": false,
+      "featureChecks": "Actual surfaces/holes inspected independently of generator metadata",
+      "maxPlanarWireCount": 1,
+      "scope": "Actual authored proxy BRep only; not metrology/fit",
+      "solidCount": 1,
+      "status": "PASS",
+      "unit": "mm",
+      "valid": true,
+      "volumeMm3": 735.13268094
+    },
+    "protectedTutorialFacts": "PASS",
+    "engineeringInputExclusion": "PASS",
+    "sourceClosure": "PASS",
+    "meshDeviation": "NOT_CLAIMED",
+    "physicalFit": "UNRESOLVED"
+  },
+  "notes": [
+    "No engineering datum/interface/fit or manufacturing claim",
+    "Tiny details, materials, exact thread/pitch, internal mechanisms and unsupported metric interfaces omitted",
+    "Presentation anchors and all unproved feature geometry are replaceable without changing PartDefinition identity",
+    "All recipe subfeature offsets/proportional subdivisions are authored schematic presentation choices, not measured interfaces"
+  ],
+  "displayRequirements": [
+    "Show exact definition/role/designation label next to proxy",
+    "Show presentation-only approximation notice; use the original source panel for physical alignment",
+    "Do not use proxy dimensions to select a replacement part"
+  ],
+  "inputHash": "bce61a7aed278bdcec6610368ac136d7413ffe8ee9d75392de85ee03f8e62c4b"
+}

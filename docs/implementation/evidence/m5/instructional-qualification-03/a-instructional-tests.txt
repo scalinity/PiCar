@@ -1,0 +1,618 @@
+TAP version 13
+# Subtest: negative: proxy cannot become engineering admitted
+ok 1 - negative: proxy cannot become engineering admitted
+  ---
+  duration_ms: 16.988583
+  type: 'test'
+  ...
+# Subtest: negative: visual estimate cannot become VERIFIED Measurement
+ok 2 - negative: visual estimate cannot become VERIFIED Measurement
+  ---
+  duration_ms: 43.216
+  type: 'test'
+  ...
+# Subtest: negative: DERIVED without reproducible derivation
+ok 3 - negative: DERIVED without reproducible derivation
+  ---
+  duration_ms: 0.122
+  type: 'test'
+  ...
+# Subtest: negative: SG90 identity promotion
+ok 4 - negative: SG90 identity promotion
+  ---
+  duration_ms: 8.617667
+  type: 'test'
+  ...
+# Subtest: negative: generic TT identity promotion
+ok 5 - negative: generic TT identity promotion
+  ---
+  duration_ms: 9.294666
+  type: 'test'
+  ...
+# Subtest: negative: HC-SR04 identity promotion
+ok 6 - negative: HC-SR04 identity promotion
+  ---
+  duration_ms: 8.254083
+  type: 'test'
+  ...
+# Subtest: negative: camera conflicting values cannot be averaged
+ok 7 - negative: camera conflicting values cannot be averaged
+  ---
+  duration_ms: 27.53975
+  type: 'test'
+  ...
+# Subtest: negative: ultrasonic voltage conflict cannot disappear
+ok 8 - negative: ultrasonic voltage conflict cannot disappear
+  ---
+  duration_ms: 17.495459
+  type: 'test'
+  ...
+# Subtest: negative: Washer A cannot collapse into Washer B
+ok 9 - negative: Washer A cannot collapse into Washer B
+  ---
+  duration_ms: 18.174458
+  type: 'test'
+  ...
+# Subtest: negative: front wheel cannot become rear wheel
+ok 10 - negative: front wheel cannot become rear wheel
+  ---
+  duration_ms: 14.93175
+  type: 'test'
+  ...
+# Subtest: negative: left motor cannot become right motor
+ok 11 - negative: left motor cannot become right motor
+  ---
+  duration_ms: 12.969666
+  type: 'test'
+  ...
+# Subtest: negative: integral lead cannot become extra stock
+ok 12 - negative: integral lead cannot become extra stock
+  ---
+  duration_ms: 18.29725
+  type: 'test'
+  ...
+# Subtest: negative: rivet pin cannot become extra purchased element
+ok 13 - negative: rivet pin cannot become extra purchased element
+  ---
+  duration_ms: 11.360666
+  type: 'test'
+  ...
+# Subtest: negative: approximate route cannot become engineering input
+ok 14 - negative: approximate route cannot become engineering input
+  ---
+  duration_ms: 0.183625
+  type: 'test'
+  ...
+# Subtest: negative: Pi5 guidance cannot become manufacturing input
+ok 15 - negative: Pi5 guidance cannot become manufacturing input
+  ---
+  duration_ms: 0.12425
+  type: 'test'
+  ...
+# Subtest: negative: relabeling a proxy as engineering still requires strict proof
+ok 16 - negative: relabeling a proxy as engineering still requires strict proof
+  ---
+  duration_ms: 0.064625
+  type: 'test'
+  ...
+# Subtest: negative: private photo cannot become runtime/public artifact
+ok 17 - negative: private photo cannot become runtime/public artifact
+  ---
+  duration_ms: 0.837
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for G-COMPONENT
+ok 18 - negative: presentation blocked for G-COMPONENT
+  ---
+  duration_ms: 0.068416
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for engineeringMeasurement
+ok 19 - negative: presentation blocked for engineeringMeasurement
+  ---
+  duration_ms: 0.054208
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for engineeringInterface
+ok 20 - negative: presentation blocked for engineeringInterface
+  ---
+  duration_ms: 0.051541
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for engineeringRoute
+ok 21 - negative: presentation blocked for engineeringRoute
+  ---
+  duration_ms: 0.049833
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for engineeringSolver
+ok 22 - negative: presentation blocked for engineeringSolver
+  ---
+  duration_ms: 0.048958
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for G-CAD
+ok 23 - negative: presentation blocked for G-CAD
+  ---
+  duration_ms: 0.045958
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for G-GEOMETRY
+ok 24 - negative: presentation blocked for G-GEOMETRY
+  ---
+  duration_ms: 0.048708
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for manufacturing
+ok 25 - negative: presentation blocked for manufacturing
+  ---
+  duration_ms: 0.04925
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for physicalFit
+ok 26 - negative: presentation blocked for physicalFit
+  ---
+  duration_ms: 0.045709
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for torque
+ok 27 - negative: presentation blocked for torque
+  ---
+  duration_ms: 0.044625
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for engagement
+ok 28 - negative: presentation blocked for engagement
+  ---
+  duration_ms: 0.048
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for electricalVoltage
+ok 29 - negative: presentation blocked for electricalVoltage
+  ---
+  duration_ms: 0.046083
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for batterySafety
+ok 30 - negative: presentation blocked for batterySafety
+  ---
+  duration_ms: 0.043375
+  type: 'test'
+  ...
+# Subtest: negative: presentation blocked for collisionGuarantee
+ok 31 - negative: presentation blocked for collisionGuarantee
+  ---
+  duration_ms: 0.043334
+  type: 'test'
+  ...
+# Subtest: negative: source limitations cannot be discarded
+not ok 32 - negative: source limitations cannot be discarded
+  ---
+  duration_ms: 8.277584
+  type: 'test'
+  location: '/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m5-instructional-a-hWVLTP/digital-twin/validation/expected/m5/instructional.test.mjs:12:34'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /SOURCE_LIMITATION_DROPPED/. Input:
+    
+    'AssertionError [ERR_ASSERTION]: [{"instancePath":"/definitions/0/sourceLimitations","schemaPath":"#/properties/definitions/items/properties/sourceLimitations/minItems","keyword":"minItems","params":{"limit":1},"message":"must NOT have fewer than 1 items"}]'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: '[{"instancePath":"/definitions/0/sourceLimitations","schemaPath":"#/properties/definitions/items/properties/sourceLimitations/minItems","keyword":"minItems","params":{"limit":1},"message":"must NOT have fewer than 1 items"}]'
+  stack: |-
+    validateParameters (file:///private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m5-instructional-a-hWVLTP/digital-twin/tools/evidence/m5-instructional.mjs:62:132)
+    validate (file:///private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m5-instructional-a-hWVLTP/digital-twin/validation/expected/m5/instructional.test.mjs:10:19)
+    file:///private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m5-instructional-a-hWVLTP/digital-twin/validation/expected/m5/instructional.test.mjs:12:119
+    getActual (node:assert:580:5)
+    strict.throws (node:assert:728:24)
+    TestContext.<anonymous> (file:///private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m5-instructional-a-hWVLTP/digital-twin/validation/expected/m5/instructional.test.mjs:12:108)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m5-instructional-a-hWVLTP/digital-twin/validation/expected/m5/instructional.test.mjs:12:108)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1402:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+    Test.postRun (node:internal/test_runner/test:1542:19)
+    Test.run (node:internal/test_runner/test:1467:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: negative: canonical unknown cannot gain numeric payload
+ok 33 - negative: canonical unknown cannot gain numeric payload
+  ---
+  duration_ms: 9.640167
+  type: 'test'
+  ...
+# Subtest: negative: fifty scope cannot duplicate one definition
+ok 34 - negative: fifty scope cannot duplicate one definition
+  ---
+  duration_ms: 7.968542
+  type: 'test'
+  ...
+# Subtest: positive: strict blocked and instructional admitted coexist
+ok 35 - positive: strict blocked and instructional admitted coexist
+  ---
+  duration_ms: 0.078
+  type: 'test'
+  ...
+# Subtest: positive: independent engineering pass and instructional pass coexist (synthetic policy unit)
+ok 36 - positive: independent engineering pass and instructional pass coexist (synthetic policy unit)
+  ---
+  duration_ms: 0.023375
+  type: 'test'
+  ...
+# Subtest: positive: engineering blockers retained
+ok 37 - positive: engineering blockers retained
+  ---
+  duration_ms: 14.720167
+  type: 'test'
+  ...
+# Subtest: positive: canonical unknowns remain unresolved
+ok 38 - positive: canonical unknowns remain unresolved
+  ---
+  duration_ms: 0.084833
+  type: 'test'
+  ...
+# Subtest: positive: presentation records contain no engineering Measurements
+ok 39 - positive: presentation records contain no engineering Measurements
+  ---
+  duration_ms: 0.039209
+  type: 'test'
+  ...
+# Subtest: positive: replaceable visual dimensions preserve component identities
+ok 40 - positive: replaceable visual dimensions preserve component identities
+  ---
+  duration_ms: 17.382875
+  type: 'test'
+  ...
+# Subtest: positive: provenance closure and source limits
+ok 41 - positive: provenance closure and source limits
+  ---
+  duration_ms: 0.0485
+  type: 'test'
+  ...
+# Subtest: positive: both source conflicts retained with proxy
+ok 42 - positive: both source conflicts retained with proxy
+  ---
+  duration_ms: 0.040458
+  type: 'test'
+  ...
+# Subtest: positive: all five loose cables are zero-solid endpoint schematics
+ok 43 - positive: all five loose cables are zero-solid endpoint schematics
+  ---
+  duration_ms: 0.029792
+  type: 'test'
+  ...
+# Subtest: positive: four consumables are allocation abstractions
+ok 44 - positive: four consumables are allocation abstractions
+  ---
+  duration_ms: 0.023833
+  type: 'test'
+  ...
+# Subtest: positive: receipt complete without invented engineering admission
+ok 45 - positive: receipt complete without invented engineering admission
+  ---
+  duration_ms: 0.55825
+  type: 'test'
+  ...
+# Subtest: positive: exact fifty once and six integral leads
+ok 46 - positive: exact fifty once and six integral leads
+  ---
+  duration_ms: 13.588458
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M25X6-SCREW
+ok 47 - positive: actual receipt and independent shape PX-V40-DEF-M25X6-SCREW
+  ---
+  duration_ms: 1.421416
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M3X25-SCREW
+ok 48 - positive: actual receipt and independent shape PX-V40-DEF-M3X25-SCREW
+  ---
+  duration_ms: 1.098667
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SPRING-WASHER
+ok 49 - positive: actual receipt and independent shape PX-V40-DEF-SPRING-WASHER
+  ---
+  duration_ms: 0.760125
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M3-NUT
+ok 50 - positive: actual receipt and independent shape PX-V40-DEF-M3-NUT
+  ---
+  duration_ms: 0.710042
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M15X3-SCREW
+ok 51 - positive: actual receipt and independent shape PX-V40-DEF-M15X3-SCREW
+  ---
+  duration_ms: 0.964458
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M3X6-SCREW
+ok 52 - positive: actual receipt and independent shape PX-V40-DEF-M3X6-SCREW
+  ---
+  duration_ms: 0.746125
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M25X18PLUS6-STANDOFF
+ok 53 - positive: actual receipt and independent shape PX-V40-DEF-M25X18PLUS6-STANDOFF
+  ---
+  duration_ms: 0.803708
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M25X18-STANDOFF
+ok 54 - positive: actual receipt and independent shape PX-V40-DEF-M25X18-STANDOFF
+  ---
+  duration_ms: 0.699041
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M25X11-STANDOFF
+ok 55 - positive: actual receipt and independent shape PX-V40-DEF-M25X11-STANDOFF
+  ---
+  duration_ms: 0.650875
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M25X30-STANDOFF
+ok 56 - positive: actual receipt and independent shape PX-V40-DEF-M25X30-STANDOFF
+  ---
+  duration_ms: 1.159708
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-M3X26-STANDOFF
+ok 57 - positive: actual receipt and independent shape PX-V40-DEF-M3X26-STANDOFF
+  ---
+  duration_ms: 0.846625
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-R2048-RIVET
+ok 58 - positive: actual receipt and independent shape PX-V40-DEF-R2048-RIVET
+  ---
+  duration_ms: 0.812875
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-R2056-RIVET
+ok 59 - positive: actual receipt and independent shape PX-V40-DEF-R2056-RIVET
+  ---
+  duration_ms: 0.868917
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-R3055-RIVET
+ok 60 - positive: actual receipt and independent shape PX-V40-DEF-R3055-RIVET
+  ---
+  duration_ms: 0.615333
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-R3065-RIVET
+ok 61 - positive: actual receipt and independent shape PX-V40-DEF-R3065-RIVET
+  ---
+  duration_ms: 0.739917
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-R3080-RIVET
+ok 62 - positive: actual receipt and independent shape PX-V40-DEF-R3080-RIVET
+  ---
+  duration_ms: 0.604416
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-R30185-RIVET
+ok 63 - positive: actual receipt and independent shape PX-V40-DEF-R30185-RIVET
+  ---
+  duration_ms: 0.605666
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-WASHER-A
+ok 64 - positive: actual receipt and independent shape PX-V40-DEF-WASHER-A
+  ---
+  duration_ms: 0.552542
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-WASHER-B
+ok 65 - positive: actual receipt and independent shape PX-V40-DEF-WASHER-B
+  ---
+  duration_ms: 0.9655
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-MOTOR-LEFT
+ok 66 - positive: actual receipt and independent shape PX-V40-DEF-MOTOR-LEFT
+  ---
+  duration_ms: 1.020667
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-MOTOR-RIGHT
+ok 67 - positive: actual receipt and independent shape PX-V40-DEF-MOTOR-RIGHT
+  ---
+  duration_ms: 0.687959
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SERVO-PAN
+ok 68 - positive: actual receipt and independent shape PX-V40-DEF-SERVO-PAN
+  ---
+  duration_ms: 0.671459
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-HORN-PAN
+ok 69 - positive: actual receipt and independent shape PX-V40-DEF-HORN-PAN
+  ---
+  duration_ms: 0.517917
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SERVO-RETAINER-PAN
+ok 70 - positive: actual receipt and independent shape PX-V40-DEF-SERVO-RETAINER-PAN
+  ---
+  duration_ms: 0.476875
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SERVO-TILT
+ok 71 - positive: actual receipt and independent shape PX-V40-DEF-SERVO-TILT
+  ---
+  duration_ms: 0.641625
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-HORN-TILT
+ok 72 - positive: actual receipt and independent shape PX-V40-DEF-HORN-TILT
+  ---
+  duration_ms: 0.491917
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SERVO-RETAINER-TILT
+ok 73 - positive: actual receipt and independent shape PX-V40-DEF-SERVO-RETAINER-TILT
+  ---
+  duration_ms: 0.444875
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SERVO-STEERING
+ok 74 - positive: actual receipt and independent shape PX-V40-DEF-SERVO-STEERING
+  ---
+  duration_ms: 0.628292
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-HORN-STEERING
+ok 75 - positive: actual receipt and independent shape PX-V40-DEF-HORN-STEERING
+  ---
+  duration_ms: 0.522791
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-SERVO-RETAINER-STEERING
+ok 76 - positive: actual receipt and independent shape PX-V40-DEF-SERVO-RETAINER-STEERING
+  ---
+  duration_ms: 0.477
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-WHEEL-FRONT
+ok 77 - positive: actual receipt and independent shape PX-V40-DEF-WHEEL-FRONT
+  ---
+  duration_ms: 0.501417
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-WHEEL-REAR
+ok 78 - positive: actual receipt and independent shape PX-V40-DEF-WHEEL-REAR
+  ---
+  duration_ms: 0.454041
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-BATTERY
+ok 79 - positive: actual receipt and independent shape PX-V40-DEF-BATTERY
+  ---
+  duration_ms: 0.481542
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-ROBOT-HAT
+ok 80 - positive: actual receipt and independent shape PX-V40-DEF-ROBOT-HAT
+  ---
+  duration_ms: 0.870375
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-CAMERA
+ok 81 - positive: actual receipt and independent shape PX-V40-DEF-CAMERA
+  ---
+  duration_ms: 0.5515
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-ULTRASONIC
+ok 82 - positive: actual receipt and independent shape PX-V40-DEF-ULTRASONIC
+  ---
+  duration_ms: 0.520792
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-GRAYSCALE
+ok 83 - positive: actual receipt and independent shape PX-V40-DEF-GRAYSCALE
+  ---
+  duration_ms: 0.489875
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-CABLE-4PIN
+ok 84 - positive: actual receipt and independent shape PX-V40-DEF-CABLE-4PIN
+  ---
+  duration_ms: 0.4825
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-CABLE-5PIN
+ok 85 - positive: actual receipt and independent shape PX-V40-DEF-CABLE-5PIN
+  ---
+  duration_ms: 0.461625
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-RIBBON-FPC
+ok 86 - positive: actual receipt and independent shape PX-V40-DEF-RIBBON-FPC
+  ---
+  duration_ms: 0.465
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-RIBBON-FFC
+ok 87 - positive: actual receipt and independent shape PX-V40-DEF-RIBBON-FFC
+  ---
+  duration_ms: 0.404666
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-USB-CABLE
+ok 88 - positive: actual receipt and independent shape PX-V40-DEF-USB-CABLE
+  ---
+  duration_ms: 0.350125
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-USB-MICROPHONE
+ok 89 - positive: actual receipt and independent shape PX-V40-DEF-USB-MICROPHONE
+  ---
+  duration_ms: 0.373667
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-PI4
+ok 90 - positive: actual receipt and independent shape PX-V40-DEF-PI4
+  ---
+  duration_ms: 0.490792
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-PI5
+ok 91 - positive: actual receipt and independent shape PX-V40-DEF-PI5
+  ---
+  duration_ms: 0.495375
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-ZERO2W
+ok 92 - positive: actual receipt and independent shape PX-V40-DEF-ZERO2W
+  ---
+  duration_ms: 0.466
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-HOOK
+ok 93 - positive: actual receipt and independent shape PX-V40-DEF-HOOK
+  ---
+  duration_ms: 0.375542
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-LOOP
+ok 94 - positive: actual receipt and independent shape PX-V40-DEF-LOOP
+  ---
+  duration_ms: 0.36975
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-ELECTRICAL-TAPE
+ok 95 - positive: actual receipt and independent shape PX-V40-DEF-ELECTRICAL-TAPE
+  ---
+  duration_ms: 0.291959
+  type: 'test'
+  ...
+# Subtest: positive: actual receipt and independent shape PX-V40-DEF-CABLE-WRAP
+ok 96 - positive: actual receipt and independent shape PX-V40-DEF-CABLE-WRAP
+  ---
+  duration_ms: 0.276166
+  type: 'test'
+  ...
+1..96
+# tests 96
+# suites 0
+# pass 95
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 482.982459

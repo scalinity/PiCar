@@ -1,0 +1,596 @@
+{
+  "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "representationKind": "photo_supported_proxy",
+  "sourceRefs": [
+    "PX-EV-PHOTO-03",
+    "PX-EV-PHOTO-04",
+    "PX-EV-PHOTO-05",
+    "PX-EV-PHOTO-06"
+  ],
+  "sourceLimitations": [
+    "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry."
+  ],
+  "canonicalUnknowns": [
+    {
+      "feature": "connector.identity",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    },
+    {
+      "feature": "mating.envelope",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    },
+    {
+      "feature": "contact.mapping",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    },
+    {
+      "feature": "latch.keying",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    },
+    {
+      "feature": "seating.depth",
+      "value": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    }
+  ],
+  "instructionalApproximations": [
+    {
+      "name": "length",
+      "value": 14,
+      "unit": "mm",
+      "basis": "Authored visual estimate of functional proportions from uncalibrated V40 printed imagery; no metric image measurement",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04",
+        "PX-EV-PHOTO-05",
+        "PX-EV-PHOTO-06"
+      ],
+      "approximationKind": "visualEstimate",
+      "visualPurpose": "Recognizable USB mini microphone accessory presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-14",
+        "Q-17"
+      ]
+    },
+    {
+      "name": "width",
+      "value": 12,
+      "unit": "mm",
+      "basis": "Authored visual estimate of functional proportions from uncalibrated V40 printed imagery; no metric image measurement",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04",
+        "PX-EV-PHOTO-05",
+        "PX-EV-PHOTO-06"
+      ],
+      "approximationKind": "visualEstimate",
+      "visualPurpose": "Recognizable USB mini microphone accessory presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-14",
+        "Q-17"
+      ]
+    },
+    {
+      "name": "height",
+      "value": 7,
+      "unit": "mm",
+      "basis": "Authored visual estimate of functional proportions from uncalibrated V40 printed imagery; no metric image measurement",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04",
+        "PX-EV-PHOTO-05",
+        "PX-EV-PHOTO-06"
+      ],
+      "approximationKind": "visualEstimate",
+      "visualPurpose": "Recognizable USB mini microphone accessory presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-14",
+        "Q-17"
+      ]
+    },
+    {
+      "name": "plugLength",
+      "value": 10,
+      "unit": "mm",
+      "basis": "Authored visual estimate of functional proportions from uncalibrated V40 printed imagery; no metric image measurement",
+      "sourceRefs": [
+        "PX-EV-PHOTO-03",
+        "PX-EV-PHOTO-04",
+        "PX-EV-PHOTO-05",
+        "PX-EV-PHOTO-06"
+      ],
+      "approximationKind": "visualEstimate",
+      "visualPurpose": "Recognizable USB mini microphone accessory presentation; no engineering alignment or dimensional authority",
+      "nonEngineering": true,
+      "blockerIds": [
+        "Q-14",
+        "Q-17"
+      ]
+    }
+  ],
+  "criticalTutorialFacts": [
+    {
+      "variantId": "rpi4",
+      "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+      "steps": [
+        {
+          "stepId": "PX-V40-STEP-02",
+          "printedNumber": 2,
+          "sourceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "operationIds": [
+            "PX-V40-OP-02-PI4-INTRODUCE",
+            "PX-V40-OP-02-PI4-BOARD",
+            "PX-V40-OP-02-PI4-MICROPHONE",
+            "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-001",
+            "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-002",
+            "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-003",
+            "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-004"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-USB-MICROPHONE-001"
+          ],
+          "orientation": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-02"
+          ]
+        }
+      ]
+    },
+    {
+      "variantId": "rpi5",
+      "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+      "steps": [
+        {
+          "stepId": "PX-V40-STEP-02",
+          "printedNumber": 2,
+          "sourceRefs": [
+            "PX-EV-PHOTO-04"
+          ],
+          "operationIds": [
+            "PX-V40-OP-02-PI5-INTRODUCE",
+            "PX-V40-OP-02-PI5-BOARD",
+            "PX-V40-OP-02-PI5-MICROPHONE",
+            "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-001",
+            "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-002",
+            "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-003",
+            "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-004"
+          ],
+          "instanceIds": [
+            "PX-V40-INS-USB-MICROPHONE-001"
+          ],
+          "orientation": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+          "zeroingConditionIds": [],
+          "warningIds": [
+            "PX-V40-WARN-STEP-02"
+          ]
+        }
+      ]
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+      "steps": []
+    }
+  ],
+  "protectedFacts": {
+    "definition": {
+      "id": "PX-V40-DEF-USB-MICROPHONE",
+      "revision": 1,
+      "name": "USB mini microphone accessory",
+      "componentClass": "connector",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "identityClaimId": "PX-CLAIM-USB-MICROPHONE-DESIGNATION"
+    },
+    "identityClaim": {
+      "id": "PX-CLAIM-USB-MICROPHONE-DESIGNATION",
+      "subjectId": "PX-V40-DEF-USB-MICROPHONE",
+      "property": "printedDesignation",
+      "statement": "Printed role/designation: USB mini microphone accessory. Does not establish OEM identity, exact geometry or actual inventory.",
+      "confidence": "VERIFIED",
+      "evidenceRefs": [
+        "PX-EV-PHOTO-03"
+      ],
+      "inputClaimIds": [],
+      "method": "Scoped transcription of source at retained locator",
+      "assumptions": [],
+      "scope": "printedDesignation",
+      "sourceLimitations": [
+        "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry."
+      ],
+      "conflictIds": [],
+      "blockerIds": [],
+      "supersedes": []
+    },
+    "instances": [
+      {
+        "id": "PX-V40-INS-USB-MICROPHONE-001",
+        "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+        "definitionRevision": 1,
+        "role": "USB mini microphone accessory",
+        "supplyOrigin": "kit",
+        "inventoryLotId": "PX-V40-LOT-USB-MICROPHONE",
+        "variantIds": [
+          "rpi4",
+          "rpi5",
+          "rpi-zero-2-w"
+        ],
+        "disposition": "available",
+        "ownerInstanceRef": {
+          "state": "notApplicable",
+          "reason": "Standalone planned stock; owned elements stay within the parent definition."
+        },
+        "installedByOperationRef": {
+          "state": "notApplicable",
+          "reason": "M1 authoring inventory; no M2 operation authored."
+        },
+        "blockerIds": [
+          "Q-14",
+          "Q-01",
+          "Q-13"
+        ]
+      }
+    ],
+    "printedStockMeasurements": [],
+    "consumableLots": [
+      {
+        "id": "PX-V40-LOT-USB-MICROPHONE",
+        "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+        "scope": "printedPlanning",
+        "quantity": {
+          "state": "unresolved",
+          "unit": "count",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-13"
+          ]
+        },
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "blockerIds": [
+          "Q-13"
+        ]
+      }
+    ],
+    "consumableAllocations": [
+      {
+        "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+        "variantId": "rpi4",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-02",
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+        "variantId": "rpi5",
+        "disposition": "plannedInstalled",
+        "stepId": "PX-V40-STEP-02",
+        "useId": null
+      },
+      {
+        "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+        "variantId": "rpi-zero-2-w",
+        "disposition": "accessory",
+        "stepId": null,
+        "useId": null
+      }
+    ],
+    "ownedElements": [],
+    "fastener": null,
+    "cable": null,
+    "connectorPoints": [],
+    "connectorClaims": [],
+    "plannedUses": [],
+    "graphUse": [
+      {
+        "variantId": "rpi4",
+        "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7",
+        "steps": [
+          {
+            "stepId": "PX-V40-STEP-02",
+            "printedNumber": 2,
+            "sourceRefs": [
+              "PX-EV-PHOTO-04"
+            ],
+            "operationIds": [
+              "PX-V40-OP-02-PI4-INTRODUCE",
+              "PX-V40-OP-02-PI4-BOARD",
+              "PX-V40-OP-02-PI4-MICROPHONE",
+              "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-001",
+              "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-002",
+              "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-003",
+              "PX-V40-OP-02-PI4-HARDWARE-M25X18-STANDOFF-004"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-USB-MICROPHONE-001"
+            ],
+            "orientation": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-02"
+            ]
+          }
+        ]
+      },
+      {
+        "variantId": "rpi5",
+        "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+        "steps": [
+          {
+            "stepId": "PX-V40-STEP-02",
+            "printedNumber": 2,
+            "sourceRefs": [
+              "PX-EV-PHOTO-04"
+            ],
+            "operationIds": [
+              "PX-V40-OP-02-PI5-INTRODUCE",
+              "PX-V40-OP-02-PI5-BOARD",
+              "PX-V40-OP-02-PI5-MICROPHONE",
+              "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-001",
+              "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-002",
+              "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-003",
+              "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-004"
+            ],
+            "instanceIds": [
+              "PX-V40-INS-USB-MICROPHONE-001"
+            ],
+            "orientation": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+            "zeroingConditionIds": [],
+            "warningIds": [
+              "PX-V40-WARN-STEP-02"
+            ]
+          }
+        ]
+      },
+      {
+        "variantId": "rpi-zero-2-w",
+        "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
+        "steps": []
+      }
+    ],
+    "openConflicts": [
+      {
+        "id": "PX-CONFLICT-CAMERA-DIMENSIONS",
+        "claimIds": [
+          "PX-CLAIM-CAMERA-DIMENSIONS-1",
+          "PX-CLAIM-CAMERA-DIMENSIONS-2"
+        ],
+        "subjectId": "PX-V40-DEF-CAMERA",
+        "property": "referenceDimensions",
+        "status": "open",
+        "resolution": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-08"
+          ]
+        },
+        "reason": "Source statements preserved; no applicability or numerical resolution inferred."
+      },
+      {
+        "id": "PX-CONFLICT-ULTRASONIC-SUPPLY",
+        "claimIds": [
+          "PX-CLAIM-ULTRASONIC-SUPPLY-1",
+          "PX-CLAIM-ULTRASONIC-SUPPLY-2"
+        ],
+        "subjectId": "PX-V40-DEF-ULTRASONIC",
+        "property": "supplyApplicability",
+        "status": "open",
+        "resolution": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-08"
+          ]
+        },
+        "reason": "Source statements preserved; no applicability or numerical resolution inferred."
+      }
+    ],
+    "engineeringUnknownMeasurements": [
+      {
+        "id": "PX-V40-MEAS-USB-MICROPHONE-GEOMETRY-LENGTH",
+        "subjectId": "PX-V40-DEF-USB-MICROPHONE",
+        "feature": "geometry.length",
+        "kind": "nominal",
+        "value": {
+          "state": "unresolved",
+          "unit": "mm",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-14"
+          ]
+        },
+        "originalNotation": "geometry.length",
+        "method": "Transcribed count or explicit absence of measured geometry",
+        "datumRef": {
+          "state": "notApplicable",
+          "reason": "Count or unresolved geometry has no known metrology datum."
+        },
+        "sourceTolerance": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-14"
+          ]
+        },
+        "measurementUncertainty": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-14"
+          ]
+        },
+        "modelDeviationBudget": {
+          "state": "unresolved",
+          "unit": "mm",
+          "confidence": "UNRESOLVED",
+          "blockerIds": [
+            "Q-14"
+          ]
+        },
+        "inputClaimIds": [
+          "PX-CLAIM-USB-MICROPHONE-DESIGNATION"
+        ],
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "PX-V40-IF-USB-MICROPHONE-REFERENCE",
+        "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+        "feature": "datum.reference",
+        "kind": "datum",
+        "frame": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-14"
+          ]
+        },
+        "measurementRefs": [],
+        "permittedDOF": [],
+        "matingRuleIds": [],
+        "toleranceRefs": [],
+        "evidenceRefs": [
+          "PX-EV-PHOTO-03"
+        ],
+        "blockerIds": [
+          "Q-14"
+        ]
+      },
+      {
+        "id": "PX-V40-IF-USB-MICROPHONE-USB-PLUG",
+        "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+        "feature": "usb-plug",
+        "kind": "datum",
+        "frame": {
+          "state": "unresolved",
+          "blockerIds": [
+            "Q-14"
+          ]
+        },
+        "measurementRefs": [],
+        "permittedDOF": [],
+        "matingRuleIds": [],
+        "toleranceRefs": [],
+        "evidenceRefs": [
+          "PX-EV-PHOTO-04"
+        ],
+        "blockerIds": [
+          "Q-14"
+        ]
+      }
+    ],
+    "observedOwnerStock": "UNRESOLVED"
+  },
+  "mustNotDrive": [
+    "G-COMPONENT",
+    "engineeringMeasurement",
+    "engineeringInterface",
+    "engineeringRoute",
+    "engineeringSolver",
+    "G-CAD",
+    "G-GEOMETRY",
+    "manufacturing",
+    "physicalFit",
+    "torque",
+    "engagement",
+    "electricalVoltage",
+    "batterySafety",
+    "collisionGuarantee"
+  ],
+  "blockerIds": [
+    "Q-14",
+    "Q-17"
+  ],
+  "rightsStatus": {
+    "artifact": "Newly authored analytic functional proxy; no copied artwork/image/vendor bytes",
+    "sourcePublicationAllowed": false,
+    "privatePhotoInAsset": false,
+    "sourceUse": "Local reference only; retain source-specific limits and SunFounder notices"
+  },
+  "artifactPaths": [
+    "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-USB-MICROPHONE.brep",
+    "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-USB-MICROPHONE.svg"
+  ],
+  "validationResults": {
+    "actualShapeCheck": "PASS",
+    "independentShape": {
+      "boundsMm": [
+        0,
+        0,
+        0,
+        24,
+        12,
+        7
+      ],
+      "cylindricalFeatureCount": 0,
+      "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+      "engineeringAdmission": false,
+      "featureChecks": "Actual surfaces/holes inspected independently of generator metadata",
+      "maxPlanarWireCount": 1,
+      "scope": "Actual authored proxy BRep only; not metrology/fit",
+      "solidCount": 2,
+      "status": "PASS",
+      "unit": "mm",
+      "valid": true,
+      "volumeMm3": 1680
+    },
+    "protectedTutorialFacts": "PASS",
+    "engineeringInputExclusion": "PASS",
+    "sourceClosure": "PASS",
+    "meshDeviation": "NOT_CLAIMED",
+    "physicalFit": "UNRESOLVED"
+  },
+  "notes": [
+    "No engineering datum/interface/fit or manufacturing claim",
+    "Tiny details, materials, exact thread/pitch, internal mechanisms and unsupported metric interfaces omitted",
+    "Presentation anchors and all unproved feature geometry are replaceable without changing PartDefinition identity",
+    "All recipe subfeature offsets/proportional subdivisions are authored schematic presentation choices, not measured interfaces"
+  ],
+  "displayRequirements": [
+    "Show exact definition/role/designation label next to proxy",
+    "Show presentation-only approximation notice; use the original source panel for physical alignment",
+    "Do not use proxy dimensions to select a replacement part"
+  ],
+  "inputHash": "6c9cd1691595c728f942f2c24d535afac5bd90e53eb1e20731b7c1070a44c674"
+}

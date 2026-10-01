@@ -1,0 +1,478 @@
+{
+  "branch": "codex/m5-purchased-components",
+  "head": "5a4077285f4d31d69b0959527e480037be1ee8db",
+  "status": "?? digital-twin/cad/source-vault/.gitignore\n?? digital-twin/cad/tests/test_m5_vendor.py\n?? digital-twin/cad/twin_cad/vendor/__init__.py\n?? digital-twin/cad/twin_cad/vendor/pi5_candidate.py\n?? digital-twin/validation/expected/m5/candidate-inventory.json\n?? digital-twin/validation/expected/m5/candidate-sources.json\n?? digital-twin/validation/expected/m5/component-evidence.test.mjs\n?? digital-twin/validation/expected/m5/scope-receipts.json\n?? docs/implementation/M5_EXECUTION_PLAN.md\n?? docs/implementation/M5_GATE_REPORT.json\n?? docs/implementation/M5_REMEDIATION.md\n?? docs/implementation/M5_REPORT.md\n?? docs/implementation/evidence/m2/commands.json\n?? docs/implementation/evidence/m2/companion-content.txt\n?? docs/implementation/evidence/m2/companion-package.txt\n?? docs/implementation/evidence/m2/companion-typecheck.txt\n?? docs/implementation/evidence/m2/companion-unit.txt\n?? docs/implementation/evidence/m2/g-data-check.txt\n?? docs/implementation/evidence/m2/m1-tests.tap\n?? docs/implementation/evidence/m2/preflight-command-initial.txt\n?? docs/implementation/evidence/m2/preflight-command.txt\n?? docs/implementation/evidence/m2/preflight.json\n?? docs/implementation/evidence/m2/types-check.txt\n?? docs/implementation/evidence/m2/verify-preflight.mjs\n?? docs/implementation/evidence/m5/acquire.mjs\n?? docs/implementation/evidence/m5/acquisition-followup.json\n?? docs/implementation/evidence/m5/acquisition.json\n?? docs/implementation/evidence/m5/closure-check.json\n?? docs/implementation/evidence/m5/closure-check.txt\n?? docs/implementation/evidence/m5/closure.mjs\n?? docs/implementation/evidence/m5/initial-candidate-tests.tap\n?? docs/implementation/evidence/m5/initial-candidate-tests.tap.json\n?? docs/implementation/evidence/m5/official-pages.json\n?? docs/implementation/evidence/m5/pi5-zip-members.json\n?? docs/implementation/evidence/m5/preflight.json\n?? docs/implementation/evidence/m5/preflight.mjs\n?? docs/implementation/evidence/m5/preliminary-source/pi5_candidate.py\n?? docs/implementation/evidence/m5/preliminary-source/test_m5_vendor.py\n?? docs/implementation/evidence/m5/preservation-final.json\n?? docs/implementation/evidence/m5/qualification-01/a-candidate-inspection.txt\n?? docs/implementation/evidence/m5/qualification-01/a-environment.txt\n?? docs/implementation/evidence/m5/qualification-01/a-frozen-install.txt\n?? docs/implementation/evidence/m5/qualification-01/a-historical-graph-check.txt\n?? docs/implementation/evidence/m5/qualification-01/a-historical-upstream-check.txt\n?? docs/implementation/evidence/m5/qualification-01/a-identity-guard-tests.txt\n?? docs/implementation/evidence/m5/qualification-01/a-pi5-inspection.json\n?? docs/implementation/evidence/m5/qualification-01/a-read-only-graph-contracts.txt\n?? docs/implementation/evidence/m5/qualification-01/a-source-firewall-tests.txt\n?? docs/implementation/evidence/m5/qualification-01/a-tests.xml\n?? docs/implementation/evidence/m5/qualification-01/a-wheel-build.txt\n?? docs/implementation/evidence/m5/qualification-01/a-wheel-install.txt\n?? docs/implementation/evidence/m5/qualification-01/a-wheel.json\n?? docs/implementation/evidence/m5/qualification-01/b-candidate-inspection.txt\n?? docs/implementation/evidence/m5/qualification-01/b-environment.txt\n?? docs/implementation/evidence/m5/qualification-01/b-frozen-install.txt\n?? docs/implementation/evidence/m5/qualification-01/b-historical-graph-check.txt\n?? docs/implementation/evidence/m5/qualification-01/b-historical-upstream-check.txt\n?? docs/implementation/evidence/m5/qualification-01/b-identity-guard-tests.txt\n?? docs/implementation/evidence/m5/qualification-01/b-pi5-inspection.json\n?? docs/implementation/evidence/m5/qualification-01/b-read-only-graph-contracts.txt\n?? docs/implementation/evidence/m5/qualification-01/b-source-firewall-tests.txt\n?? docs/implementation/evidence/m5/qualification-01/b-tests.xml\n?? docs/implementation/evidence/m5/qualification-01/b-wheel-build.txt\n?? docs/implementation/evidence/m5/qualification-01/b-wheel-install.txt\n?? docs/implementation/evidence/m5/qualification-01/b-wheel.json\n?? docs/implementation/evidence/m5/qualification-01/commands.json\n?? docs/implementation/evidence/m5/qualification-01/mirror-inputs.json\n?? docs/implementation/evidence/m5/qualification-01/reproducibility.json\n?? docs/implementation/evidence/m5/qualification-02/a-candidate-evidence-tests.txt\n?? docs/implementation/evidence/m5/qualification-02/a-candidate-inspection.txt\n?? docs/implementation/evidence/m5/qualification-02/a-environment.txt\n?? docs/implementation/evidence/m5/qualification-02/a-frozen-install.txt\n?? docs/implementation/evidence/m5/qualification-02/a-historical-graph-check.txt\n?? docs/implementation/evidence/m5/qualification-02/a-historical-upstream-check.txt\n?? docs/implementation/evidence/m5/qualification-02/a-identity-guard-tests.txt\n?? docs/implementation/evidence/m5/qualification-02/a-pi5-inspection.json\n?? docs/implementation/evidence/m5/qualification-02/a-read-only-graph-contracts.txt\n?? docs/implementation/evidence/m5/qualification-02/a-source-firewall-tests.txt\n?? docs/implementation/evidence/m5/qualification-02/a-tests.xml\n?? docs/implementation/evidence/m5/qualification-02/a-wheel-build.txt\n?? docs/implementation/evidence/m5/qualification-02/a-wheel-install.txt\n?? docs/implementation/evidence/m5/qualification-02/a-wheel.json\n?? docs/implementation/evidence/m5/qualification-02/b-candidate-evidence-tests.txt\n?? docs/implementation/evidence/m5/qualification-02/b-candidate-inspection.txt\n?? docs/implementation/evidence/m5/qualification-02/b-environment.txt\n?? docs/implementation/evidence/m5/qualification-02/b-frozen-install.txt\n?? docs/implementation/evidence/m5/qualification-02/b-historical-graph-check.txt\n?? docs/implementation/evidence/m5/qualification-02/b-historical-upstream-check.txt\n?? docs/implementation/evidence/m5/qualification-02/b-identity-guard-tests.txt\n?? docs/implementation/evidence/m5/qualification-02/b-pi5-inspection.json\n?? docs/implementation/evidence/m5/qualification-02/b-read-only-graph-contracts.txt\n?? docs/implementation/evidence/m5/qualification-02/b-source-firewall-tests.txt\n?? docs/implementation/evidence/m5/qualification-02/b-tests.xml\n?? docs/implementation/evidence/m5/qualification-02/b-wheel-build.txt\n?? docs/implementation/evidence/m5/qualification-02/b-wheel-install.txt\n?? docs/implementation/evidence/m5/qualification-02/b-wheel.json\n?? docs/implementation/evidence/m5/qualification-02/commands.json\n?? docs/implementation/evidence/m5/qualification-02/mirror-inputs.json\n?? docs/implementation/evidence/m5/qualification-02/reproducibility.json\n?? docs/implementation/evidence/m5/qualify.mjs\n?? docs/implementation/evidence/m5/raw-official-pages.json",
+  "stagedNames": "",
+  "stagedStat": "",
+  "diffStat": "",
+  "privateTracked": "",
+  "newM5Files": [
+    {
+      "path": "digital-twin/cad/source-vault/.gitignore",
+      "bytes": 14,
+      "rawSha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
+    },
+    {
+      "path": "digital-twin/cad/tests/test_m5_vendor.py",
+      "bytes": 1684,
+      "rawSha256": "0a3ae45459db1deccc6cba9450c4b68341e0309e491a4cc2d5f4213c59c9a20f"
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/vendor/__init__.py",
+      "bytes": 70,
+      "rawSha256": "166400b67781522d2fb3ac056700cf43e9d14b4e4df2071278e466c9658629e0"
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/vendor/pi5_candidate.py",
+      "bytes": 5950,
+      "rawSha256": "73cf469221c6dbd27b0156a8bb482797b25f16b2880f0ab46d14de3da0a1b90c"
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/candidate-inventory.json",
+      "bytes": 76881,
+      "rawSha256": "bfb0d4ae5722bd0cd5e77003544da5bee623b4e26cf328febaaa4b01967fd661"
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/candidate-sources.json",
+      "bytes": 22780,
+      "rawSha256": "0e7772f2ca556482fafd72634193b9b224884b5c9cb7e58b47dc9e519994f462"
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/component-evidence.test.mjs",
+      "bytes": 3566,
+      "rawSha256": "4a72f1b6f7441e8183dc6bd8746acf69e062e469dd8d757f2d047548ccd410b8"
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/scope-receipts.json",
+      "bytes": 270256,
+      "rawSha256": "22ac3d9fed5f47d2f1b683d72e8a707f27344e9b1bc46d3e31b38976b77fa29e"
+    },
+    {
+      "path": "docs/implementation/M5_EXECUTION_PLAN.md",
+      "bytes": 4537,
+      "rawSha256": "a2a52d0d2a2beb4ed57eb51d0f02e28759c7b4df2f5be85a8963acf2b5f2b2f3"
+    },
+    {
+      "path": "docs/implementation/M5_GATE_REPORT.json",
+      "bytes": 243626,
+      "rawSha256": "5d121edf4ac3a15b076dd0e30f80e3f2804a665aa3e079bbe689de6a4e056581"
+    },
+    {
+      "path": "docs/implementation/M5_REMEDIATION.md",
+      "bytes": 5959,
+      "rawSha256": "e724e7273d14819ce113c5d554ea588ca1bb6e3f25e295cf5eb8b83307a77519"
+    },
+    {
+      "path": "docs/implementation/M5_REPORT.md",
+      "bytes": 16738,
+      "rawSha256": "568ccb5d026c77125219484e1d677148cea2f365b218f4b04de6376389d3c51b"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/acquire.mjs",
+      "bytes": 5055,
+      "rawSha256": "b1ab10e74c839199d62057f0a0465aa5aad57ff285e36fa49ec99843de5b4d51"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/acquisition-followup.json",
+      "bytes": 7793,
+      "rawSha256": "6e19eec3097b819004cba90342c0f782640aabd8977f15abaa33884bb1da619e"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/acquisition.json",
+      "bytes": 20375,
+      "rawSha256": "d2328461c21733bf3b74083a50661e81bcb2a73478939d82c44fa06bf4f3ce24"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/closure-check.json",
+      "bytes": 1954,
+      "rawSha256": "aff03b461a30be9439b37786957e32360fae34ed0ace218c4146d6bab529422b"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/closure-check.txt",
+      "bytes": 269,
+      "rawSha256": "de6c5c1b1f7ff272a61b786cd700d0a489a41eec17164354e0c3360f6a46e9e7"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/closure.mjs",
+      "bytes": 10543,
+      "rawSha256": "cc0577ffb067a4449d5c8f05c5c11c11372ad0915daf70503a64083e37626e0f"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/initial-candidate-tests.tap",
+      "bytes": 22889,
+      "rawSha256": "69fece2fe4def5041ef8c94442af5154e0974b20e2db5644cec322ede0740712"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/initial-candidate-tests.tap.json",
+      "bytes": 487,
+      "rawSha256": "6d2c6e648fd021dfcd53982fc5d662999419cb718e2462eb031e72eeffbc966f"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/official-pages.json",
+      "bytes": 6356,
+      "rawSha256": "54e9e172596df507ebda2b416aae8bea0d21445fc98b7bd0c6726aac8a11ed57"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/pi5-zip-members.json",
+      "bytes": 724,
+      "rawSha256": "70d96d75a6699216a904bcb60dedda9402f9a5ebd3e6500b8c23dcad97971728"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/preflight.json",
+      "bytes": 308033,
+      "rawSha256": "2f76e6b90a283dbb24b97640e88710a9598dea7e59d4c9efa8871b81e76110dc"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/preflight.mjs",
+      "bytes": 6032,
+      "rawSha256": "4c5143cb61ce5beb25249959b63fb11c7dbbc4b51b0efde36c9eebddd16764c1"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/preliminary-source/pi5_candidate.py",
+      "bytes": 5835,
+      "rawSha256": "662a0def782f754975d2ed3ee7cdac68c532bfdde6ecf8f997b6ab72aede161d"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/preliminary-source/test_m5_vendor.py",
+      "bytes": 1329,
+      "rawSha256": "c02fc0d70f3586c20031e334011dcde5c9ecbf99f9fe8edaecdbf40a8f64d979"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/preservation-final.json",
+      "bytes": 313683,
+      "rawSha256": "571315124c7aa263ab76dcb5e05c6d698a309c9baf756cc2479e0122f7d6acc9"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-candidate-inspection.txt",
+      "bytes": 166,
+      "rawSha256": "345f1669b6bcc93bbcad7a2308fcd1d56ed5f7bb78402f0043eb151224c1fd35"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-environment.txt",
+      "bytes": 207,
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-frozen-install.txt",
+      "bytes": 1942,
+      "rawSha256": "28c0eac441a6442a34c42dbe17e0abaf120f9baf9512303f8d10d95078f15066"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-historical-graph-check.txt",
+      "bytes": 104,
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-historical-upstream-check.txt",
+      "bytes": 99,
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-identity-guard-tests.txt",
+      "bytes": 98,
+      "rawSha256": "7d8791a9bb72e65283b3c0e607dd407e50bce3050f811bc7cf9b37f38c330fda"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-pi5-inspection.json",
+      "bytes": 1728868,
+      "rawSha256": "5f5c85ed7c8d0cab381d2040c41130f172301100586d6fb472a68b4bbab31a5e"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-read-only-graph-contracts.txt",
+      "bytes": 2838,
+      "rawSha256": "2d4c7cd711d05b94a60b6c9e7bb06ee20695222c071cf7e605ffd5a0336c35e2"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-source-firewall-tests.txt",
+      "bytes": 1901,
+      "rawSha256": "f4366527d176a928f5cbebe086828e96299b89c779c44056dab9d61f020cb3c1"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-tests.xml",
+      "bytes": 473,
+      "rawSha256": "e4b1f2caa54bf728d9c3cc0c87ca9b447bd44f5e4be484629dc84e3fca0abce5"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-wheel-build.txt",
+      "bytes": 156,
+      "rawSha256": "267e505909e048554c5a368d2f560f8142122d2ea438ce99b385f75a83f55b7e"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-wheel-install.txt",
+      "bytes": 361,
+      "rawSha256": "e77b941a8d3f25e551842048df0529efdb7481e51e06201ac5f6dce90f1f4f45"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/a-wheel.json",
+      "bytes": 149,
+      "rawSha256": "8b6d79b2db04b355a3671fb37b23699288d21a4138e59b2701a51e2028195c9d"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-candidate-inspection.txt",
+      "bytes": 166,
+      "rawSha256": "345f1669b6bcc93bbcad7a2308fcd1d56ed5f7bb78402f0043eb151224c1fd35"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-environment.txt",
+      "bytes": 207,
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-frozen-install.txt",
+      "bytes": 1942,
+      "rawSha256": "cef4871521daec42f654a8e300d42859a8af757ae58e914ff5d92c8e854edf21"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-historical-graph-check.txt",
+      "bytes": 104,
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-historical-upstream-check.txt",
+      "bytes": 99,
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-identity-guard-tests.txt",
+      "bytes": 98,
+      "rawSha256": "b1a06b26972c2140d432c34fda543615763c138b875a7c41cc50eedff85f4e4a"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-pi5-inspection.json",
+      "bytes": 1728868,
+      "rawSha256": "5f5c85ed7c8d0cab381d2040c41130f172301100586d6fb472a68b4bbab31a5e"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-read-only-graph-contracts.txt",
+      "bytes": 2837,
+      "rawSha256": "b55c19ca32455d60185912e8ffe649e7db0254fd2d17146da8899f836f4bb42b"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-source-firewall-tests.txt",
+      "bytes": 1905,
+      "rawSha256": "d7cea12fb4fd23c30674527af1428755b60d966875d5a0f70c42f260f668e136"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-tests.xml",
+      "bytes": 473,
+      "rawSha256": "ed10583a70e7275a5d994a92b51c7e6fd0bb4e5a0377e5900ba390488abe910c"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-wheel-build.txt",
+      "bytes": 156,
+      "rawSha256": "3e62faaa4cede9f45a68c3d9efcb58d29057365ac17ce5346fc5403d58021bdb"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-wheel-install.txt",
+      "bytes": 364,
+      "rawSha256": "fc01c3728f436f361f485f6378c2e8cd52064eb819fbaab4ac4db184bcfe5e0f"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/b-wheel.json",
+      "bytes": 149,
+      "rawSha256": "8b6d79b2db04b355a3671fb37b23699288d21a4138e59b2701a51e2028195c9d"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/commands.json",
+      "bytes": 20987,
+      "rawSha256": "56615d5254c8d5778eb956b9b05d67ee5b704dff46a39eb935606a4bb9b0cc9c"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/mirror-inputs.json",
+      "bytes": 102745,
+      "rawSha256": "604d1a4b44229d00f1f92b57e6026937e911a0c1b70b63245080b86499a60233"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-01/reproducibility.json",
+      "bytes": 893,
+      "rawSha256": "b6e1ca6d798e98b30bffa1526ab201ff114eaa5445ff117b15dd0689bda6e483"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-candidate-evidence-tests.txt",
+      "bytes": 4955,
+      "rawSha256": "f7ed0a0e9f3bae06b4bf025b0b773a82894ec2b8a1f8f56581b094ade04373c9"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-candidate-inspection.txt",
+      "bytes": 166,
+      "rawSha256": "345f1669b6bcc93bbcad7a2308fcd1d56ed5f7bb78402f0043eb151224c1fd35"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-environment.txt",
+      "bytes": 207,
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-frozen-install.txt",
+      "bytes": 1943,
+      "rawSha256": "31239e72fc2997e8f485bdae73c5f0174f760c7c757644039dc5510a74fd2682"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-historical-graph-check.txt",
+      "bytes": 104,
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-historical-upstream-check.txt",
+      "bytes": 99,
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-identity-guard-tests.txt",
+      "bytes": 98,
+      "rawSha256": "8bbc4d00d6a321a31d4bf47956a4d6cc557f5dc6fab20a80411dc519ba2e1419"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-pi5-inspection.json",
+      "bytes": 1728969,
+      "rawSha256": "d36318fe149d638de4815464673303a83bb2588789814ad2ba4ca465cbba67df"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-read-only-graph-contracts.txt",
+      "bytes": 2839,
+      "rawSha256": "160075c371ed7bdc2a7914aa3bdeb0685b4cda380e309f8485f1c531ff22ec8a"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-source-firewall-tests.txt",
+      "bytes": 1903,
+      "rawSha256": "bc6d363e3526d3ddf4511a764bc462e842862ea446877cc8534de74bf1d44999"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-tests.xml",
+      "bytes": 586,
+      "rawSha256": "42b6833f7bc4c5e7d49aeff402b05885166fe4966491a65064febab2692029b9"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-wheel-build.txt",
+      "bytes": 156,
+      "rawSha256": "44b64759601a0f99f6480eb2212242116a6ab958f7deecc2747c8079e80f8a9d"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-wheel-install.txt",
+      "bytes": 364,
+      "rawSha256": "5124f8d3cac3d50a7f6c80f43281331dbac592352e5f19ef08b88c82a34c18fb"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/a-wheel.json",
+      "bytes": 149,
+      "rawSha256": "bfa2eabc1b5054a554c606dbf612a8744f5df6abf284f7a6f515ef3158568dd3"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-candidate-evidence-tests.txt",
+      "bytes": 4958,
+      "rawSha256": "510a7e4f72c4818e257563c118ec14ad604b931a89d202c294a15cb4697a8d63"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-candidate-inspection.txt",
+      "bytes": 166,
+      "rawSha256": "345f1669b6bcc93bbcad7a2308fcd1d56ed5f7bb78402f0043eb151224c1fd35"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-environment.txt",
+      "bytes": 207,
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-frozen-install.txt",
+      "bytes": 1943,
+      "rawSha256": "1bd377d83a4f28d4fe1818d90ad3afb8ab5b6fc6fd131a4edc8e123dea79b71e"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-historical-graph-check.txt",
+      "bytes": 104,
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-historical-upstream-check.txt",
+      "bytes": 99,
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-identity-guard-tests.txt",
+      "bytes": 98,
+      "rawSha256": "12b244b923a290b739a003eb3101140e9d927d3db464d9bb0a855086430774c2"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-pi5-inspection.json",
+      "bytes": 1728969,
+      "rawSha256": "d36318fe149d638de4815464673303a83bb2588789814ad2ba4ca465cbba67df"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-read-only-graph-contracts.txt",
+      "bytes": 2836,
+      "rawSha256": "b4954e7e227f6e51cde2c209ec4aaf82ce4565db5fa3b641d09b746abe1965e9"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-source-firewall-tests.txt",
+      "bytes": 1904,
+      "rawSha256": "136a3ae02aa120a1d551f7c3212b110ac44f3eb81e50fdce539fae1fec185a68"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-tests.xml",
+      "bytes": 586,
+      "rawSha256": "b883792cd05ed6f031c548a78f8d6ec87916263162cb93d833f8ec4a7d6859df"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-wheel-build.txt",
+      "bytes": 156,
+      "rawSha256": "e7840b240e17568d6e9950edc2a5e908dd42dfe97f3ef4902e342cb6de4c662a"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-wheel-install.txt",
+      "bytes": 364,
+      "rawSha256": "c2951aa2a2556c5853722d0a4259e4fe83e2b359e792e211c6aa2c38a84c27f0"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/b-wheel.json",
+      "bytes": 149,
+      "rawSha256": "bfa2eabc1b5054a554c606dbf612a8744f5df6abf284f7a6f515ef3158568dd3"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/commands.json",
+      "bytes": 22867,
+      "rawSha256": "68b30b1e7683733cf88c6bbf39be52ff10849bed868fa1692b525ddc9c941d1a"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/mirror-inputs.json",
+      "bytes": 103497,
+      "rawSha256": "17518950ab39fed0873145c1155dc23da52ff0331dd89bcbaa79f0ab8c14c202"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualification-02/reproducibility.json",
+      "bytes": 893,
+      "rawSha256": "f09e17bbcb1b9c071e5d6be5f653f561a489257e330cd7738673af3048987cc8"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/qualify.mjs",
+      "bytes": 7417,
+      "rawSha256": "7dd736e84323cc47d31609ba79490f05e8835a120bea2e4f650386ea86ee99ad"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/raw-official-pages.json",
+      "bytes": 8946,
+      "rawSha256": "28d3f78cf658e7cc3ccc7ea738dcee0b2a38ba00032abf6dbf690a5ad5c7a2cb"
+    }
+  ],
+  "originalUntrackedM2Names": [
+    "docs/implementation/evidence/m2/commands.json",
+    "docs/implementation/evidence/m2/companion-content.txt",
+    "docs/implementation/evidence/m2/companion-package.txt",
+    "docs/implementation/evidence/m2/companion-typecheck.txt",
+    "docs/implementation/evidence/m2/companion-unit.txt",
+    "docs/implementation/evidence/m2/g-data-check.txt",
+    "docs/implementation/evidence/m2/m1-tests.tap",
+    "docs/implementation/evidence/m2/preflight-command-initial.txt",
+    "docs/implementation/evidence/m2/preflight-command.txt",
+    "docs/implementation/evidence/m2/preflight.json",
+    "docs/implementation/evidence/m2/types-check.txt",
+    "docs/implementation/evidence/m2/verify-preflight.mjs"
+  ],
+  "privacyExclusions": [
+    "ignored vendor source-vault bytes",
+    "ignored Firecrawl research/previews",
+    "isolated dependencies/caches/wheels outside repository",
+    "owner databases/keys/recovery untouched"
+  ],
+  "commit": null,
+  "reason": "No G-COMPONENT admission; preserve uncommitted remediation result instead of an acceptance commit"
+}
