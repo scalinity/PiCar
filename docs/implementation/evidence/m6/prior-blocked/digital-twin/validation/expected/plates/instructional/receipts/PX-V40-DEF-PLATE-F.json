@@ -1,0 +1,488 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-F",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "BLOCKED",
+  "handedness": "LEFT",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-F",
+    "revision": 1,
+    "name": "Plate F",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-F-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-F"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-F-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-F-LEFT-PLATE-A-PIVOT",
+      "PX-V40-IF-PLATE-F-LEFT-PLATE-D-PIVOT",
+      "PX-V40-IF-PLATE-F-LEFT-PLATE-G-PIVOT",
+      "PX-V40-IF-PLATE-F-REFERENCE",
+      "PX-V40-IF-PLATE-F-WHEEL-AXLE"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-F-001",
+      "definitionId": "PX-V40-DEF-PLATE-F",
+      "definitionRevision": 1,
+      "role": "Plate F",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-F",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      25,
+      26
+    ],
+    "rpi5": [
+      25,
+      26
+    ],
+    "rpi-zero-2-w": [
+      25,
+      26
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-F/plate-F_01_top-down-base-and-offset-notch.jpeg",
+      "sourceRawSha256": "1e38654df2b656c23a26ec1a16777efe17aa2674f6ca28547721e690b21358c5",
+      "bytes": 1032741,
+      "plate": "F",
+      "view": "top-down",
+      "orientation": "Base face toward camera; offset tab and notch at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Clear base hole and asymmetric outline; owner identifies this part as F."
+    },
+    {
+      "sourceImage": "Plate-F/plate-F_02_tab-face-profile-narrow-tab-right.jpeg",
+      "sourceRawSha256": "d0f660150d6f139cb25d13746c471dac23dc4834ea24cbaa7039f57398f6489d",
+      "bytes": 597676,
+      "plate": "F",
+      "view": "face-on profile",
+      "orientation": "Wider tab nearest camera; narrow offset tab at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Visible tab holes and relative heights; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-F/plate-F_03_edge-profile-three-tabs.jpeg",
+      "sourceRawSha256": "2bef5c2a51616642ba94df09b9d45574228bad63ac8e28bc76913dd90f49dd06",
+      "bytes": 538551,
+      "plate": "F",
+      "view": "side profile",
+      "orientation": "Three tabs viewed mainly edge-on",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Shows relative tab spacing; soft focus on the small part; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+      "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d",
+      "bytes": 512409,
+      "plate": "F",
+      "view": "oblique",
+      "orientation": "Open inner base with offset tab nearest camera left",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Base hole, tab holes and notch visible; flat card and penny nearby."
+    },
+    {
+      "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+      "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58",
+      "bytes": 471354,
+      "plate": "F",
+      "view": "oblique",
+      "orientation": "Open inner base with wide tab nearest camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary tab-face and bend view; retained as distinct exposure."
+    },
+    {
+      "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+      "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da",
+      "bytes": 455111,
+      "plate": "F",
+      "view": "oblique",
+      "orientation": "Base face uppermost; tabs extend down toward support",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows exterior base, center hole, notch and two tab faces."
+    }
+  ],
+  "features": [
+    {
+      "name": "base.outline-and-notch",
+      "observation": "Asymmetric mirrored-looking base footprint and offset extension/notch",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-F/plate-F_01_top-down-base-and-offset-notch.jpeg",
+          "sourceRawSha256": "1e38654df2b656c23a26ec1a16777efe17aa2674f6ca28547721e690b21358c5"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "base.hole",
+      "observation": "Central base hole",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-F/plate-F_01_top-down-base-and-offset-notch.jpeg",
+          "sourceRawSha256": "1e38654df2b656c23a26ec1a16777efe17aa2674f6ca28547721e690b21358c5"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "tabs.three-uprights",
+      "observation": "Three upright tabs",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-F/plate-F_02_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "d0f660150d6f139cb25d13746c471dac23dc4834ea24cbaa7039f57398f6489d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_03_edge-profile-three-tabs.jpeg",
+          "sourceRawSha256": "2bef5c2a51616642ba94df09b9d45574228bad63ac8e28bc76913dd90f49dd06"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "tabs.holes",
+      "observation": "One hole per upright tab",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-F/plate-F_02_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "d0f660150d6f139cb25d13746c471dac23dc4834ea24cbaa7039f57398f6489d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "planes.bends",
+      "observation": "Tab heights, widths and bend registration not calibrated",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-F/plate-F_02_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "d0f660150d6f139cb25d13746c471dac23dc4834ea24cbaa7039f57398f6489d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_03_edge-profile-three-tabs.jpeg",
+          "sourceRawSha256": "2bef5c2a51616642ba94df09b9d45574228bad63ac8e28bc76913dd90f49dd06"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "handedness",
+      "observation": "Owner and V40 S25 establish robot LEFT",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-F/plate-F_01_top-down-base-and-offset-notch.jpeg",
+          "sourceRawSha256": "1e38654df2b656c23a26ec1a16777efe17aa2674f6ca28547721e690b21358c5"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_02_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "d0f660150d6f139cb25d13746c471dac23dc4834ea24cbaa7039f57398f6489d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_03_edge-profile-three-tabs.jpeg",
+          "sourceRawSha256": "2bef5c2a51616642ba94df09b9d45574228bad63ac8e28bc76913dd90f49dd06"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_06_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "535cc21b84df71fd90b62be71dc85bd9715f90486203ace3606e9cada262a9da"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "NOT_CLOSED",
+  "shapeValidationStatus": "BLOCKED",
+  "sourceValidationStatus": "BLOCKED",
+  "blockerIds": [
+    "Q-03",
+    "M6-CALIBRATION-UNCERTAINTY",
+    "M6-FULL-SOURCE-PROJECTION",
+    "M6-INSTRUCTIONAL-ORIENTATION",
+    "M6-BENT-FACE-REGISTRATION",
+    "M6-BENT-CAD-NOT-AUTHORED"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "BLOCKED",
+  "limitations": [
+    "No full instructional admission or strict engineering G-STRUCTURE/G-CAD acceptance",
+    "Bent geometry is not silently substituted with a bounding box or flat outline",
+    "Candidate D/G/H numeric parameters are isolated from canonical model preimages"
+  ]
+}

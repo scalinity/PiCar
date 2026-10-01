@@ -1,0 +1,222 @@
+[
+  {
+    "name": "frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:15:50.271Z",
+    "finishedAt": "2026-10-01T05:15:58.254Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/frozen-install.txt",
+      "rawSha256": "7a673503fa523a06709a4cb42e4d92b90e41b0b4434244816f0f2e7140793033",
+      "bytes": 1962
+    }
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/wheel"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:15:58.254Z",
+    "finishedAt": "2026-10-01T05:15:58.422Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/wheel-build.txt",
+      "rawSha256": "425d78d7eef8e8d2a7bce77d6bc4b1b5d378f8365149737f72a3d8734bc40675",
+      "bytes": 175
+    }
+  },
+  {
+    "name": "wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "--no-deps",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:15:58.423Z",
+    "finishedAt": "2026-10-01T05:15:58.442Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/wheel-install.txt",
+      "rawSha256": "56824ba6bee246bb750a591f49719f64e75462135fb6f291cdb49d3c6cefd037",
+      "bytes": 402
+    }
+  },
+  {
+    "name": "environment",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:15:58.442Z",
+    "finishedAt": "2026-10-01T05:16:11.782Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "calibration",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.calibration",
+      "--package",
+      "/Users/danny/Documents/Apps/PiCar/docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/calibration.json",
+      "--private-output",
+      "/Users/danny/Documents/Apps/PiCar/digital-twin/evidence/private/m6/qualification-amended-b-02"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:16:11.782Z",
+    "finishedAt": "2026-10-01T05:16:15.199Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    }
+  },
+  {
+    "name": "generate-candidates",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.generate",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/candidate-artifacts"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:16:15.199Z",
+    "finishedAt": "2026-10-01T05:16:35.748Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    }
+  },
+  {
+    "name": "independent-shapes",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.oracle",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/candidate-artifacts",
+      "--calibration",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/calibration.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/shapes.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache"
+    },
+    "startedAt": "2026-10-01T05:16:35.749Z",
+    "finishedAt": "2026-10-01T05:16:38.277Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/independent-shapes.txt",
+      "rawSha256": "5729548d84b7f2c70b1b47697ddf1b267b653b1d350cc96a7058c454bc0e927a",
+      "bytes": 246
+    }
+  },
+  {
+    "name": "cad-tests",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment/bin/python",
+      "-m",
+      "pytest",
+      "cad/tests/test_m6_bent.py",
+      "cad/tests/test_m6_plates.py",
+      "cad/tests/test_toolchain.py",
+      "-q",
+      "--junitxml=/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/tests.xml"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/uv-cache",
+      "PICAR_M6_PARAMETERS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "PICAR_M6_ARTIFACTS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu/candidate-artifacts"
+    },
+    "startedAt": "2026-10-01T05:16:38.278Z",
+    "finishedAt": "2026-10-01T05:16:47.086Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/cad-tests.txt",
+      "rawSha256": "fc487c7c49851bc2ca0fc718ad21805f3a685a7b54c09a7243786bb700ff23b3",
+      "bytes": 179
+    }
+  }
+]

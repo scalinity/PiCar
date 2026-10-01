@@ -1,0 +1,383 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-G",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-G",
+    "revision": 1,
+    "name": "Plate G",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-G-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-G"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-G-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-G-CENTER-PIVOT",
+      "PX-V40-IF-PLATE-G-LEFT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-G-REFERENCE",
+      "PX-V40-IF-PLATE-G-RIGHT-CARRIER-PIVOT"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-G-001",
+      "definitionId": "PX-V40-DEF-PLATE-G",
+      "definitionRevision": 1,
+      "role": "Plate G",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-G",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      21,
+      25
+    ],
+    "rpi5": [
+      21,
+      25
+    ],
+    "rpi-zero-2-w": [
+      21,
+      25
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+      "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468",
+      "bytes": 642806,
+      "plate": "G",
+      "view": "top-down",
+      "orientation": "Long bar horizontal; larger holes at both rounded ends",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Whole outline and smaller middle hole visible; card below and penny above."
+    },
+    {
+      "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+      "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+      "bytes": 783289,
+      "plate": "G",
+      "view": "top-down",
+      "orientation": "Long bar approximately horizontal in image",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Second distinct overhead exposure; reverse-face identity is not asserted."
+    },
+    {
+      "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+      "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554",
+      "bytes": 674678,
+      "plate": "G",
+      "view": "oblique",
+      "orientation": "Bar runs diagonally; flat sheet edge visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows both end holes, smaller middle hole and rounded ends."
+    }
+  ],
+  "features": [
+    {
+      "name": "outline",
+      "observation": "Straight flat linkage/bar with rounded ends",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+          "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+          "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Three-hole steering bar silhouette and hole relationships agree in both corrected planar projections and the oblique source. V40 S21 retains free-horn role. Width 8.1 mm remains an instructional approximation."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "holes",
+      "observation": "Two larger end holes and one smaller middle hole",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+          "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+          "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Three-hole steering bar silhouette and hole relationships agree in both corrected planar projections and the oblique source. V40 S21 retains free-horn role. Width 8.1 mm remains an instructional approximation."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "flatness",
+      "observation": "No bend supported",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Three-hole steering bar silhouette and hole relationships agree in both corrected planar projections and the oblique source. V40 S21 retains free-horn role. Width 8.1 mm remains an instructional approximation."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "PRACTICAL_REVIEW",
+  "shapeValidationStatus": "PASS",
+  "sourceValidationStatus": "PASS",
+  "blockerIds": [
+    "Q-03"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+    "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+    "Assembly/world numeric transforms are not solved in M6.",
+    "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+  ],
+  "instructionalOrigin": {
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "cardMetricCenterMm": [
+      41.31689888685991,
+      -5.7020801169780535
+    ],
+    "axes": "RH millimeters: local X points toward primary image top; local Y toward image right; local Z through stock. No assembly pose/datum admitted."
+  },
+  "reviewedInstructionalDimensions": {
+    "confidence": "INSTRUCTIONAL_APPROXIMATION",
+    "engineeringDatum": false,
+    "profile": {
+      "kind": "capsule-bar",
+      "endCentersMm": [
+        [
+          0.30802106822706055,
+          -41.711296534564646
+        ],
+        [
+          -0.3094853593608855,
+          41.66302352836211
+        ]
+      ],
+      "widthMm": 8.1,
+      "widthBasis": "G_01 and G_02 visible approximately 130 annotation-pixel transverse spans relative to card; provisional rounded presentation estimate, not a DERIVED engineering value"
+    },
+    "holes": [
+      {
+        "name": "visible.hole.1",
+        "centerMm": [
+          0.30802106822706055,
+          -41.711296534564646
+        ],
+        "diameterMm": 3.2285179025294295,
+        "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+        "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+      },
+      {
+        "name": "visible.hole.2",
+        "centerMm": [
+          0.001464291133826734,
+          0.04827300620254249
+        ],
+        "diameterMm": 1.94765927643962,
+        "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+        "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+      },
+      {
+        "name": "visible.hole.3",
+        "centerMm": [
+          -0.3094853593608855,
+          41.66302352836211
+        ],
+        "diameterMm": 3.3263900439785443,
+        "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+        "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+      }
+    ],
+    "thickness": {
+      "valueMm": 2,
+      "confidence": "PROBABLE",
+      "basis": "Owner working same-stock hypothesis; not manufacturer-certified"
+    }
+  },
+  "proofs": {
+    "ownerAmendment": {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    "parameters": {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    "shapeReport": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    "sourceReview": {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "5ea0920bbae8c9c2e54220acbdf20b6a592e482e4a4719cd106fe96c5885874c",
+      "bytes": 30990
+    },
+    "brep": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    }
+  }
+}

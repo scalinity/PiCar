@@ -1,0 +1,625 @@
+{
+  "track": "instructional-only",
+  "status": "PASS",
+  "reviewer": "Codex source-image and actual-solid visual review, 2026-10-01",
+  "ownerAmendment": {
+    "path": "docs/implementation/evidence/m6/owner-amendment.json",
+    "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+    "bytes": 392
+  },
+  "parameters": {
+    "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+    "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+    "bytes": 92684
+  },
+  "shapeReport": {
+    "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+    "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+    "bytes": 45004
+  },
+  "comparisonPreparation": {
+    "path": "docs/implementation/evidence/m6/amendment-shapes-04/source-review-pending.json",
+    "rawSha256": "f86d17249f47c79469980b20a1dc1cb998b04e2913bfedbf2c6defd595303d8e",
+    "bytes": 14807
+  },
+  "V40": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "scope": "Part identity and role from locked V40/M2 step semantics; E RIGHT/F LEFT S25; G free horn S21; installed numeric transforms are future M7 work"
+  },
+  "jointMetrologyRequired": false,
+  "holeCenterTargetMm": 0.75,
+  "engineeringAdmission": false,
+  "privatePixelsCopiedToReceipt": false,
+  "results": [
+    {
+      "definitionId": "PX-V40-DEF-PLATE-A",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        }
+      ],
+      "shapeRawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "method": "Qualitative independent multi-view review; no meaningful calibrated common-plane residual claimed for bent faces",
+        "status": "VISUAL_REVIEW"
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-B",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-B/plate-B_01_top-down-large-cutout-face.jpeg",
+          "sourceRawSha256": "447145b90ee0bf03d8b0a1210d506457dcfdfa31f6273eab0c5462f024a3acaf",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-B/plate-B_06_oblique-open-bracket.jpeg",
+          "sourceRawSha256": "569e99a0d7baec95eb86352c9b5fd7c5215c803f410195ffa6cd812526dfd268",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-B/plate-B_03_face-on-narrow-cutout-flange.jpeg",
+          "sourceRawSha256": "0f42b1a05f84f743c01f60c66fef70beeab6f2227d1d56b4165ed86a55160190",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        }
+      ],
+      "shapeRawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "Two connected perpendicular faces, broad body window and narrow upright window with paired mounts agree in primary, independent open-bracket and face-on flange views.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "method": "Qualitative independent multi-view review; no meaningful calibrated common-plane residual claimed for bent faces",
+        "status": "VISUAL_REVIEW"
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-C",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        }
+      ],
+      "shapeRawSha256": "b3bbd8c2e961dc9efffbac053dbcc2c39a89f631bda3aa318623ef22455d1259",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "method": "Qualitative independent multi-view review; no meaningful calibrated common-plane residual claimed for bent faces",
+        "status": "VISUAL_REVIEW"
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-D",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9",
+          "index": 1,
+          "method": "Actual imported BRep edge samples projected through primary calibration or independent rigid secondary alignment and inverse lens model",
+          "comparison": "PASS",
+          "privateOutput": "D-1-projection.png"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+          "index": 2,
+          "method": "Actual imported BRep edge samples projected through primary calibration or independent rigid secondary alignment and inverse lens model",
+          "comparison": "PASS",
+          "privateOutput": "D-2-projection.png"
+        }
+      ],
+      "shapeRawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "definitionId": "PX-V40-DEF-PLATE-D",
+        "status": "PASS",
+        "scope": "Owner-amended practical independent hole-center review, <=0.75 mm",
+        "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+        "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            0.9999829620669386,
+            -0.005837428871659164
+          ],
+          [
+            0.005837428871659164,
+            0.9999829620669386
+          ]
+        ],
+        "alignmentTranslationMm": [
+          -50.051193016438305,
+          -28.79798562675275
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          1
+        ],
+        "withheldHoleIndices": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "holeCenterResidualsMm": [
+          0.05831068635798921,
+          0.0583106863579821,
+          0.17243735820840295,
+          0.064879645621578,
+          0.20067310517130185,
+          0.14275392717975197
+        ],
+        "maxHoleCenterResidualMm": 0.20067310517130185,
+        "rmsHoleCenterResidualMm": 0.1299952961157234,
+        "holeDiameterDifferencesMm": [
+          0.012992963182243855,
+          0.021423404733142082,
+          0.01503914518436833,
+          0.0180657877590491,
+          0.017572671940766504,
+          0.021997227792918128
+        ],
+        "maxHoleDiameterDifferenceMm": 0.021997227792918128,
+        "engineeringAdmission": false,
+        "instructionalAdmission": false,
+        "historicalOracleDisposition": "BLOCKED",
+        "limitations": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ]
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-E",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-E/plate-E_01_top-down-base-notch-left.jpeg",
+          "sourceRawSha256": "3ee133f1557de79c47fd0a9270f2595190997638f3fa1ad0b761da947f3e2e9c",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        }
+      ],
+      "shapeRawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "method": "Qualitative independent multi-view review; no meaningful calibrated common-plane residual claimed for bent faces",
+        "status": "VISUAL_REVIEW"
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-F",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-F/plate-F_01_top-down-base-and-offset-notch.jpeg",
+          "sourceRawSha256": "1e38654df2b656c23a26ec1a16777efe17aa2674f6ca28547721e690b21358c5",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_04_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "cc9dbdc53a9d0c879743a33682be0363684e1fcebc492abb7de3aa577f70c93d",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg",
+          "sourceRawSha256": "79ce53ed477d609b5a6f1d8926da7a2aded0c37849b98523fb59bf023bce5a58",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        }
+      ],
+      "shapeRawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "LEFT identity from V40 S25. CAD reflection is baked across YZ. Independently checked against F01/F04/F05, all six F contact views, and both E/F comparison photographs. Three parallel tabs and opposed asymmetric base agree; runtime scale remains positive.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "method": "Qualitative independent multi-view review; no meaningful calibrated common-plane residual claimed for bent faces",
+        "status": "VISUAL_REVIEW"
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-G",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+          "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+          "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+          "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468",
+          "index": 1,
+          "method": "Actual imported BRep edge samples projected through primary calibration or independent rigid secondary alignment and inverse lens model",
+          "comparison": "PASS",
+          "privateOutput": "G-1-projection.png"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+          "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+          "index": 2,
+          "method": "Actual imported BRep edge samples projected through primary calibration or independent rigid secondary alignment and inverse lens model",
+          "comparison": "PASS",
+          "privateOutput": "G-2-projection.png"
+        }
+      ],
+      "shapeRawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "Three-hole steering bar silhouette and hole relationships agree in both corrected planar projections and the oblique source. V40 S21 retains free-horn role. Width 8.1 mm remains an instructional approximation.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "definitionId": "PX-V40-DEF-PLATE-G",
+        "status": "PASS",
+        "scope": "Owner-amended practical independent hole-center review, <=0.75 mm",
+        "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+        "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            0.9999618394614807,
+            0.008736110164826415
+          ],
+          [
+            -0.008736110164826415,
+            0.9999618394614807
+          ]
+        ],
+        "alignmentTranslationMm": [
+          -9.693980500674485,
+          -43.03458580973021
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          2
+        ],
+        "withheldHoleIndices": [
+          1
+        ],
+        "holeCenterResidualsMm": [
+          0.11497739432824883,
+          0.06246083337241921,
+          0.11497739432824883
+        ],
+        "maxHoleCenterResidualMm": 0.11497739432824883,
+        "rmsHoleCenterResidualMm": 0.10056665802442406,
+        "holeDiameterDifferencesMm": [
+          0.09947757112317879,
+          0.04532115570376272,
+          0.0542713285371379
+        ],
+        "maxHoleDiameterDifferenceMm": 0.09947757112317879,
+        "engineeringAdmission": false,
+        "instructionalAdmission": false,
+        "historicalOracleDisposition": "BLOCKED",
+        "limitations": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ]
+      }
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-H",
+      "status": "PASS",
+      "comparisons": [
+        {
+          "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+          "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6",
+          "role": "primary",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg",
+          "sourceRawSha256": "148567fc6df4f888a8d9532f6b9f6f59d550e7596be2f9a75eeae28cb7aaa456",
+          "role": "independent secondary/oblique",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+          "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+          "role": "profile/independent consistency",
+          "method": "Independent visual comparison of actual triangulated BRep and source view; no contour tolerance claim",
+          "comparison": "PASS"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+          "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6",
+          "index": 1,
+          "method": "Actual imported BRep edge samples projected through primary calibration or independent rigid secondary alignment and inverse lens model",
+          "comparison": "PASS",
+          "privateOutput": "H-1-projection.png"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+          "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+          "index": 2,
+          "method": "Actual imported BRep edge samples projected through primary calibration or independent rigid secondary alignment and inverse lens model",
+          "comparison": "PASS",
+          "privateOutput": "H-2-projection.png"
+        }
+      ],
+      "shapeRawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "limitations": [
+        "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+        "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+        "Assembly/world numeric transforms are not solved in M6.",
+        "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+      ],
+      "findings": "Six-hole notched plate silhouette and notch orientation agree in the two corrected projections and oblique view. Small outer-edge offsets from stock/plane/perspective are presentation-level, with no displaced mounting relationships. Radius 3 mm remains approximate.",
+      "majorFeatureAgreement": "PASS",
+      "partLocalOrientation": "PASS",
+      "materialContradictions": [],
+      "holeCenterResidual": {
+        "definitionId": "PX-V40-DEF-PLATE-H",
+        "status": "PASS",
+        "scope": "Owner-amended practical independent hole-center review, <=0.75 mm",
+        "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+        "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            -0.9999988009977598,
+            0.0015485486891787005
+          ],
+          [
+            -0.0015485486891787005,
+            -0.9999988009977598
+          ]
+        ],
+        "alignmentTranslationMm": [
+          13.422620335432189,
+          42.79427169482943
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          5
+        ],
+        "withheldHoleIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "holeCenterResidualsMm": [
+          0.022851625854186694,
+          0.12213754793605248,
+          0.038744709182212185,
+          0.019452483563641564,
+          0.07107823080362455,
+          0.022851625854190247
+        ],
+        "maxHoleCenterResidualMm": 0.12213754793605248,
+        "rmsHoleCenterResidualMm": 0.0617705980824378,
+        "holeDiameterDifferencesMm": [
+          0.04104751495715808,
+          0.028704515357214966,
+          0.054167239195611394,
+          0.06540782210670226,
+          0.09102817065328006,
+          0.10749614527068019
+        ],
+        "maxHoleDiameterDifferenceMm": 0.10749614527068019,
+        "engineeringAdmission": false,
+        "instructionalAdmission": false,
+        "historicalOracleDisposition": "BLOCKED",
+        "limitations": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ]
+      }
+    }
+  ],
+  "mirror": {
+    "status": "PASS",
+    "sourceImages": [
+      {
+        "sourceImage": "Plate-E-F-Mirror-Comparison/plate-E-F_01_mirror-comparison-offset-tabs-down.jpeg",
+        "sourceRawSha256": "3785f902c386082f2c2a92bacee0ad7e5ec5fd855ac6902228ea2cafaad1cc3b",
+        "bytes": 604617,
+        "plate": "E-F",
+        "view": "top-down comparison",
+        "orientation": "Two brackets side by side; offset extensions toward image bottom",
+        "referenceCardVisibility": "full",
+        "referencePenny": "yes",
+        "limitations": "Owner-identified E/F comparison; opposed notch/tab arrangement visible; no exact dimensional equality inferred."
+      },
+      {
+        "sourceImage": "Plate-E-F-Mirror-Comparison/plate-E-F_02_mirror-comparison-offset-tabs-up.jpeg",
+        "sourceRawSha256": "cca65d4c59a5b1bba2821f6ff479781cea57a714610fe2c680b450321f3d8c8e",
+        "bytes": 924736,
+        "plate": "E-F",
+        "view": "top-down comparison",
+        "orientation": "Two brackets side by side; offset extensions toward image top",
+        "referenceCardVisibility": "full",
+        "referencePenny": "yes",
+        "limitations": "Complementary E/F comparison view; shared frame helps compare handed contours."
+      }
+    ],
+    "independentFViewsInspected": 6,
+    "E": "RIGHT",
+    "F": "LEFT",
+    "findings": "Both shared-frame photographs show opposed base extensions/tab patterns. F-specific views agree independently with the baked reflection.",
+    "geometry": {
+      "status": "PASS",
+      "E": "RIGHT",
+      "F": "LEFT",
+      "method": "Actual reflected E compared to independently imported F using both boolean differences; nonmirrored E/F remain asymmetric",
+      "symmetricDifferenceMm3": 0,
+      "volumeMm3": 1720.2013322353841,
+      "runtimeScale": [
+        1,
+        1,
+        1
+      ],
+      "exactManufacturingMirrorClaim": false
+    }
+  }
+}

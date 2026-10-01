@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-analysis-KATT15/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/image_analysis.py", line 63, in <module>
+    main()
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-analysis-KATT15/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/image_analysis.py", line 59, in main
+    print('Verified and inspected '+str(contacts(args.package, args.private_output))+' manifest images')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-analysis-KATT15/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/image_analysis.py", line 31, in contacts
+    rows = manifest(package)
+           ^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-analysis-KATT15/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/image_analysis.py", line 26, in manifest
+    raise ValueError('SOURCE_COUNTS_OR_DUPLICATES')
+ValueError: SOURCE_COUNTS_OR_DUPLICATES

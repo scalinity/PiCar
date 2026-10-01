@@ -1,0 +1,866 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-E",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "handedness": "RIGHT",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-E",
+    "revision": 1,
+    "name": "Plate E",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-E-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-E"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-E-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-E-REFERENCE",
+      "PX-V40-IF-PLATE-E-RIGHT-PLATE-A-PIVOT",
+      "PX-V40-IF-PLATE-E-RIGHT-PLATE-D-PIVOT",
+      "PX-V40-IF-PLATE-E-RIGHT-PLATE-G-PIVOT",
+      "PX-V40-IF-PLATE-E-WHEEL-AXLE"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-E-001",
+      "definitionId": "PX-V40-DEF-PLATE-E",
+      "definitionRevision": 1,
+      "role": "Plate E",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-E",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      25,
+      26
+    ],
+    "rpi5": [
+      25,
+      26
+    ],
+    "rpi-zero-2-w": [
+      25,
+      26
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-E/plate-E_01_top-down-base-notch-left.jpeg",
+      "sourceRawSha256": "3ee133f1557de79c47fd0a9270f2595190997638f3fa1ad0b761da947f3e2e9c",
+      "bytes": 622329,
+      "plate": "E",
+      "view": "top-down",
+      "orientation": "Base face toward camera; offset notched extension at upper left in image",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Base hole, notch and edge-on tabs visible; owner identifies this part as E."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_02_top-down-base-alternate-face.jpeg",
+      "sourceRawSha256": "35da3f6648e7c9656086b501d6babac772841f2d59181f1fa7f06528d96cadfe",
+      "bytes": 586055,
+      "plate": "E",
+      "view": "top-down",
+      "orientation": "Base face toward camera; offset notched extension at upper right in image",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary base-face view at wider framing; plate-specific assignment comes from owner."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+      "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359",
+      "bytes": 922078,
+      "plate": "E",
+      "view": "face-on profile",
+      "orientation": "Narrow offset tab at image left; wider tab face at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows tab-hole arrangement and relative heights; upright card and edge-on penny."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+      "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1",
+      "bytes": 626468,
+      "plate": "E",
+      "view": "face-on profile",
+      "orientation": "Narrow offset tab at image right; wider tab face at image left",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary tab-face profile with holes visible."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_05_edge-profile-three-tabs.jpeg",
+      "sourceRawSha256": "fce580f52aee7f67ad76febe74293f474ffea127ff38a4ac335c438df0c705a3",
+      "bytes": 822554,
+      "plate": "E",
+      "view": "side profile",
+      "orientation": "All three upright tabs viewed mainly edge-on",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Relative tab spacing and bend arrangement; fine edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+      "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29",
+      "bytes": 544808,
+      "plate": "E",
+      "view": "oblique",
+      "orientation": "Inner base face and three upturned tabs visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows central base hole, tab holes and notch with card lying flat."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+      "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3",
+      "bytes": 543872,
+      "plate": "E",
+      "view": "oblique",
+      "orientation": "Base face uppermost; tabs extend down toward support",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary outside/underside configuration with central hole and notch."
+    },
+    {
+      "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+      "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311",
+      "bytes": 379184,
+      "plate": "E",
+      "view": "oblique",
+      "orientation": "Three upright tab faces around base",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Closer oblique with upright card; all three tab holes visible."
+    }
+  ],
+  "features": [
+    {
+      "name": "base.outline-and-notch",
+      "observation": "Asymmetric base footprint and offset extension/notch",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-E/plate-E_01_top-down-base-notch-left.jpeg",
+          "sourceRawSha256": "3ee133f1557de79c47fd0a9270f2595190997638f3fa1ad0b761da947f3e2e9c"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_02_top-down-base-alternate-face.jpeg",
+          "sourceRawSha256": "35da3f6648e7c9656086b501d6babac772841f2d59181f1fa7f06528d96cadfe"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "base.hole",
+      "observation": "Central base hole",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-E/plate-E_01_top-down-base-notch-left.jpeg",
+          "sourceRawSha256": "3ee133f1557de79c47fd0a9270f2595190997638f3fa1ad0b761da947f3e2e9c"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_02_top-down-base-alternate-face.jpeg",
+          "sourceRawSha256": "35da3f6648e7c9656086b501d6babac772841f2d59181f1fa7f06528d96cadfe"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "tabs.three-uprights",
+      "observation": "Three upright tabs",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+          "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_05_edge-profile-three-tabs.jpeg",
+          "sourceRawSha256": "fce580f52aee7f67ad76febe74293f474ffea127ff38a4ac335c438df0c705a3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "tabs.holes",
+      "observation": "One hole per upright tab",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+          "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "planes.bends",
+      "observation": "Tab heights, widths and bend registration not calibrated",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+          "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_05_edge-profile-three-tabs.jpeg",
+          "sourceRawSha256": "fce580f52aee7f67ad76febe74293f474ffea127ff38a4ac335c438df0c705a3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "handedness",
+      "observation": "Owner and V40 S25 establish robot RIGHT",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-E/plate-E_01_top-down-base-notch-left.jpeg",
+          "sourceRawSha256": "3ee133f1557de79c47fd0a9270f2595190997638f3fa1ad0b761da947f3e2e9c"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_02_top-down-base-alternate-face.jpeg",
+          "sourceRawSha256": "35da3f6648e7c9656086b501d6babac772841f2d59181f1fa7f06528d96cadfe"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+          "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+          "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_05_edge-profile-three-tabs.jpeg",
+          "sourceRawSha256": "fce580f52aee7f67ad76febe74293f474ffea127ff38a4ac335c438df0c705a3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+          "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+          "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+        },
+        {
+          "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+          "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "PRACTICAL_REVIEW",
+  "shapeValidationStatus": "PASS",
+  "sourceValidationStatus": "PASS",
+  "blockerIds": [
+    "Q-03"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "PASS",
+  "limitations": [
+    "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+    "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+    "Assembly/world numeric transforms are not solved in M6.",
+    "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+  ],
+  "instructionalOrigin": {
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "axes": "Origin at front base-edge midpoint, +X from long-offset side toward short-offset side, +Y toward offset extension, +Z toward tabs. E is robot RIGHT under V40 S25; part-local frame is not a robot pose.",
+    "units": "mm"
+  },
+  "reviewedInstructionalDimensions": {
+    "confidence": "INSTRUCTIONAL_APPROXIMATION",
+    "engineeringDatum": false,
+    "profile": {
+      "kind": "bent-faces",
+      "faces": [
+        {
+          "name": "base",
+          "originMm": [
+            0,
+            0,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ],
+          "outlineMm": [
+            [
+              -10.5,
+              0
+            ],
+            [
+              10.5,
+              0
+            ],
+            [
+              10.5,
+              16.5
+            ],
+            [
+              1,
+              16.5
+            ],
+            [
+              1,
+              26.5
+            ],
+            [
+              -8,
+              26.5
+            ],
+            [
+              -10.5,
+              24
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                0,
+                8
+              ],
+              "diameterMm": 3,
+              "name": "base.hole.1"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-E/plate-E_01_top-down-base-notch-left.jpeg",
+              "sourceRawSha256": "3ee133f1557de79c47fd0a9270f2595190997638f3fa1ad0b761da947f3e2e9c"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_02_top-down-base-alternate-face.jpeg",
+              "sourceRawSha256": "35da3f6648e7c9656086b501d6babac772841f2d59181f1fa7f06528d96cadfe"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_07_oblique-inverted-base.jpeg",
+              "sourceRawSha256": "268a727e9a0b49983d8e1ed2ce32fec64dd78b74fd38e650255215b1d0e2d9e3"
+            }
+          ]
+        },
+        {
+          "name": "outer-tab-left",
+          "originMm": [
+            -10.5,
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              16.5,
+              0
+            ],
+            [
+              16.5,
+              12
+            ],
+            [
+              0,
+              12
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                8.25,
+                7.5
+              ],
+              "diameterMm": 3,
+              "name": "outer-tab-left.hole.1"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+              "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+              "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+              "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+            }
+          ]
+        },
+        {
+          "name": "outer-tab-right",
+          "originMm": [
+            8.5,
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              16.5,
+              0
+            ],
+            [
+              16.5,
+              12
+            ],
+            [
+              0,
+              12
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                8.25,
+                7.5
+              ],
+              "diameterMm": 3,
+              "name": "outer-tab-right.hole.1"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+              "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg",
+              "sourceRawSha256": "0e9f846c44280e1d582d1bf3f33a1a4bf1256119ed6594bb09ac9c2c5dcd6be1"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg",
+              "sourceRawSha256": "12a494965c5e3bc200b251a0d0d05a0c76a854a5720719b1a0132f5ca7639311"
+            }
+          ]
+        },
+        {
+          "name": "offset-tab",
+          "originMm": [
+            -1,
+            16.5,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              0,
+              12
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                5,
+                7.5
+              ],
+              "diameterMm": 3,
+              "name": "offset-tab.hole.1"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg",
+              "sourceRawSha256": "3dfdb8dcf124dcc01c481fc50059b632951f74981284e394de0b10f4163b5359"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_05_edge-profile-three-tabs.jpeg",
+              "sourceRawSha256": "fce580f52aee7f67ad76febe74293f474ffea127ff38a4ac335c438df0c705a3"
+            },
+            {
+              "sourceImage": "Plate-E/plate-E_06_oblique-open-tabs.jpeg",
+              "sourceRawSha256": "f7dd203a8e068b02dde2d449d2d95ccc051def84067f0c49794fe24819694e29"
+            }
+          ]
+        }
+      ]
+    },
+    "holes": [],
+    "thickness": {
+      "valueMm": 2,
+      "confidence": "PROBABLE",
+      "basis": "Owner common instructional stock instruction"
+    }
+  },
+  "proofs": {
+    "ownerAmendment": {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    "parameters": {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    "shapeReport": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    "sourceReview": {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "9025430381754b1175fe8080a4fbec74a365a2df47322075e12d0dd1552d475e",
+      "bytes": 31074
+    },
+    "brep": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    }
+  }
+}

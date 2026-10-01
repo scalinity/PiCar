@@ -1,0 +1,1464 @@
+{
+  "track": "instructional-only",
+  "status": "REVIEW_REQUIRED",
+  "views": [
+    {
+      "plate": "G",
+      "index": 1,
+      "usage": "primary",
+      "lens": {
+        "method": "center-fixed division-model plumb-line fit",
+        "coefficient": 0.008320451625974156,
+        "imageCenter": [
+          816.0,
+          763.0
+        ],
+        "normalizerPx": 1632,
+        "onePixelSensitivityInterval": [
+          -0.09999999999999998,
+          0.128
+        ],
+        "independentIntrinsicCalibration": false
+      },
+      "perspective": {
+        "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+        "homographyUndistortedAnnotationPxToCardMm": [
+          [
+            0.05893683587419405,
+            -0.0003928251922244966,
+            -7.929033780609144
+          ],
+          [
+            -0.0006506758156251389,
+            0.0595137814860566,
+            -34.732979767627235
+          ],
+          [
+            -1.3680427275381952e-05,
+            -2.5169676204773476e-05,
+            1.0
+          ]
+        ],
+        "correctedCardCornersPx": [
+          [
+            138.43440793150285,
+            585.1259123414513
+          ],
+          [
+            1538.4214540665218,
+            600.4322445953002
+          ],
+          [
+            1513.3698084091109,
+            1455.1760144026396
+          ],
+          [
+            144.24661818084041,
+            1457.1506406734138
+          ]
+        ]
+      },
+      "withheldStraightEdgeRmsPx": 0.3814041666728828,
+      "withheldStraightEdgeMaxPx": 1.4996413549415593,
+      "pennyDetectedBoundsPx": [
+        661,
+        39,
+        971,
+        358
+      ],
+      "pennyWithheldDiametersMm": [
+        19.045832165873325,
+        18.72898926635344
+      ],
+      "pennyMaxDeviationMm": 0.32101073364655974,
+      "cardEdgeSamples": 796,
+      "calibrationStatus": "REVIEW_REQUIRED",
+      "engineeringStatus": "UNRESOLVED",
+      "uncertainty": {
+        "state": "unresolved",
+        "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+      },
+      "metricCandidateFeatures": {
+        "holes": [
+          {
+            "centerMm": [
+              -0.3943976477047346,
+              -6.010101185205114
+            ],
+            "diameterMm": 3.2285179025294295
+          },
+          {
+            "centerMm": [
+              41.36517189306245,
+              -5.70354440811188
+            ],
+            "diameterMm": 1.94765927643962
+          },
+          {
+            "centerMm": [
+              82.97992241522202,
+              -5.392594757617168
+            ],
+            "diameterMm": 3.3263900439785443
+          }
+        ],
+        "outlineBounds": [
+          [
+            -4.157442515026209,
+            -9.970885954965006
+          ],
+          [
+            86.75926182416498,
+            -11.186417871922547
+          ],
+          [
+            87.06807202965328,
+            -1.3799743628013694
+          ],
+          [
+            -4.249927298229183,
+            -0.36299927467431103
+          ]
+        ]
+      },
+      "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+      "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468",
+      "sourceSize": [
+        1771,
+        1657
+      ],
+      "annotationSize": [
+        1632,
+        1526
+      ],
+      "rawToAnnotationScale": [
+        0.9215132693393563,
+        0.9209414604707302
+      ],
+      "reference": {
+        "kind": "compatible ID-1 payment card",
+        "widthMm": 85.6,
+        "heightMm": 53.98,
+        "compatibility": "Visible debit/Mastercard form factor; dimensional conformance not physically certified",
+        "source": "https://www.iso.org/standard/31432.html",
+        "currentEdition": "https://www.iso.org/standard/70483.html",
+        "pennyDiameterMm": 19.05,
+        "pennySource": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications"
+      },
+      "limitations": [
+        "Card on soft support may not be perfectly planar/straight",
+        "Lens center fixed at image center is a model assumption; tangential distortion is not independently calibrated",
+        "Reference and plate top surfaces have small unresolved height differences",
+        "Segmentation estimates visible blue boundary, not certified card stock dimensions",
+        "No exact manufacturing or tolerance claim"
+      ]
+    },
+    {
+      "plate": "G",
+      "index": 2,
+      "usage": "withheld",
+      "lens": {
+        "method": "center-fixed division-model plumb-line fit",
+        "coefficient": 0.0075170678220635775,
+        "imageCenter": [
+          784.0,
+          799.0
+        ],
+        "normalizerPx": 1598,
+        "onePixelSensitivityInterval": [
+          -0.10099999999999998,
+          0.128
+        ],
+        "independentIntrinsicCalibration": false
+      },
+      "perspective": {
+        "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+        "homographyUndistortedAnnotationPxToCardMm": [
+          [
+            0.061188143384490114,
+            7.645303626986558e-05,
+            -5.978046208466145
+          ],
+          [
+            -0.0007674538503208244,
+            0.06143639957652072,
+            -40.85997350522904
+          ],
+          [
+            -7.157928871043262e-06,
+            -1.7126257804711073e-05,
+            1.0
+          ]
+        ],
+        "correctedCardCornersPx": [
+          [
+            96.8669118988687,
+            666.2876514882631
+          ],
+          [
+            1464.7686722386068,
+            683.3752653469791
+          ],
+          [
+            1443.646955089524,
+            1529.6466323089428
+          ],
+          [
+            95.79845775942283,
+            1521.4103290676949
+          ]
+        ]
+      },
+      "withheldStraightEdgeRmsPx": 0.4234058561508794,
+      "withheldStraightEdgeMaxPx": 1.5477204564780322,
+      "pennyDetectedBoundsPx": [
+        634,
+        48,
+        941,
+        356
+      ],
+      "pennyWithheldDiametersMm": [
+        18.88148747861187,
+        19.033053659930648
+      ],
+      "pennyMaxDeviationMm": 0.16851252138813066,
+      "cardEdgeSamples": 784,
+      "calibrationStatus": "REVIEW_REQUIRED",
+      "engineeringStatus": "UNRESOLVED",
+      "uncertainty": {
+        "state": "unresolved",
+        "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+      },
+      "metricCandidateFeatures": {
+        "holes": [
+          {
+            "centerMm": [
+              1.2956549511151765,
+              -9.991915430553243
+            ],
+            "diameterMm": 3.3279954736526083
+          },
+          {
+            "centerMm": [
+              43.218948307245824,
+              -9.28570051289535
+            ],
+            "diameterMm": 1.9929804321433826
+          },
+          {
+            "centerMm": [
+              84.8913236292982,
+              -8.642353433744653
+            ],
+            "diameterMm": 3.380661372515682
+          }
+        ],
+        "outlineBounds": [
+          [
+            -2.696484129047411,
+            -13.936406133765459
+          ],
+          [
+            88.60476700881894,
+            -15.230426926393475
+          ],
+          [
+            88.89202890623362,
+            -4.6909034372907294
+          ],
+          [
+            -2.703641804518628,
+            -3.504343035996269
+          ]
+        ]
+      },
+      "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+      "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+      "sourceSize": [
+        1885,
+        1922
+      ],
+      "annotationSize": [
+        1568,
+        1598
+      ],
+      "rawToAnnotationScale": [
+        0.8318302387267904,
+        0.8314255983350677
+      ],
+      "reference": {
+        "kind": "compatible ID-1 payment card",
+        "widthMm": 85.6,
+        "heightMm": 53.98,
+        "compatibility": "Visible debit/Mastercard form factor; dimensional conformance not physically certified",
+        "source": "https://www.iso.org/standard/31432.html",
+        "currentEdition": "https://www.iso.org/standard/70483.html",
+        "pennyDiameterMm": 19.05,
+        "pennySource": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications"
+      },
+      "limitations": [
+        "Card on soft support may not be perfectly planar/straight",
+        "Lens center fixed at image center is a model assumption; tangential distortion is not independently calibrated",
+        "Reference and plate top surfaces have small unresolved height differences",
+        "Segmentation estimates visible blue boundary, not certified card stock dimensions",
+        "No exact manufacturing or tolerance claim"
+      ]
+    },
+    {
+      "plate": "H",
+      "index": 1,
+      "usage": "primary",
+      "lens": {
+        "method": "center-fixed division-model plumb-line fit",
+        "coefficient": 0.011957923247409737,
+        "imageCenter": [
+          729.5,
+          848.0
+        ],
+        "normalizerPx": 1696,
+        "onePixelSensitivityInterval": [
+          -0.09999999999999998,
+          0.138
+        ],
+        "independentIntrinsicCalibration": false
+      },
+      "perspective": {
+        "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+        "homographyUndistortedAnnotationPxToCardMm": [
+          [
+            0.061085681429240445,
+            0.00033906663507141593,
+            -3.860088299270458
+          ],
+          [
+            -0.0014631660645618098,
+            0.06160572753786605,
+            -47.79574867264344
+          ],
+          [
+            -6.845842341272215e-06,
+            -2.6229931278813938e-05,
+            1.0
+          ]
+        ],
+        "correctedCardCornersPx": [
+          [
+            58.87722024054931,
+            777.231237044388
+          ],
+          [
+            1416.6648856630322,
+            809.4793560801654
+          ],
+          [
+            1381.9074526583445,
+            1638.9144221164802
+          ],
+          [
+            54.222184058598295,
+            1615.8748186883195
+          ]
+        ]
+      },
+      "withheldStraightEdgeRmsPx": 0.37035862230507716,
+      "withheldStraightEdgeMaxPx": 1.0529249744511162,
+      "pennyDetectedBoundsPx": [
+        593,
+        49,
+        902,
+        354
+      ],
+      "pennyWithheldDiametersMm": [
+        18.597228963615425,
+        19.137198494703537
+      ],
+      "pennyMaxDeviationMm": 0.4527710363845756,
+      "cardEdgeSamples": 780,
+      "calibrationStatus": "REVIEW_REQUIRED",
+      "engineeringStatus": "UNRESOLVED",
+      "uncertainty": {
+        "state": "unresolved",
+        "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+      },
+      "metricCandidateFeatures": {
+        "holes": [
+          {
+            "centerMm": [
+              17.430065379964926,
+              -13.0825493504389
+            ],
+            "diameterMm": 3.2352039162495334
+          },
+          {
+            "centerMm": [
+              31.361926689807053,
+              -18.114271329044943
+            ],
+            "diameterMm": 2.6129463125624914
+          },
+          {
+            "centerMm": [
+              56.941265161782574,
+              -18.1505637621683
+            ],
+            "diameterMm": 2.6246219477530106
+          },
+          {
+            "centerMm": [
+              31.42158850781512,
+              -8.191510337368491
+            ],
+            "diameterMm": 2.631424143969963
+          },
+          {
+            "centerMm": [
+              56.99492304047009,
+              -8.131890709240976
+            ],
+            "diameterMm": 2.64329247043655
+          },
+          {
+            "centerMm": [
+              70.99971494918421,
+              -13.058223349809534
+            ],
+            "diameterMm": 3.265717547999353
+          }
+        ],
+        "outlineBounds": [
+          [
+            14.836202858602752,
+            -23.23328042587716
+          ],
+          [
+            73.25497299698371,
+            -24.77373343230794
+          ],
+          [
+            74.08510262152517,
+            -3.0510107929715184
+          ],
+          [
+            15.073645910370312,
+            -1.6309173048951526
+          ]
+        ],
+        "notch": [
+          [
+            37.177099662926395,
+            -2.7986576417360194
+          ],
+          [
+            37.06874758069663,
+            -7.893161799804073
+          ],
+          [
+            51.26891810860888,
+            -7.992074296016859
+          ],
+          [
+            51.40973549251947,
+            -2.8894589153730763
+          ]
+        ]
+      },
+      "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+      "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6",
+      "sourceSize": [
+        1921,
+        2232
+      ],
+      "annotationSize": [
+        1459,
+        1696
+      ],
+      "rawToAnnotationScale": [
+        0.7595002602811036,
+        0.7598566308243727
+      ],
+      "reference": {
+        "kind": "compatible ID-1 payment card",
+        "widthMm": 85.6,
+        "heightMm": 53.98,
+        "compatibility": "Visible debit/Mastercard form factor; dimensional conformance not physically certified",
+        "source": "https://www.iso.org/standard/31432.html",
+        "currentEdition": "https://www.iso.org/standard/70483.html",
+        "pennyDiameterMm": 19.05,
+        "pennySource": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications"
+      },
+      "limitations": [
+        "Card on soft support may not be perfectly planar/straight",
+        "Lens center fixed at image center is a model assumption; tangential distortion is not independently calibrated",
+        "Reference and plate top surfaces have small unresolved height differences",
+        "Segmentation estimates visible blue boundary, not certified card stock dimensions",
+        "No exact manufacturing or tolerance claim"
+      ]
+    },
+    {
+      "plate": "H",
+      "index": 2,
+      "usage": "withheld-180-degree",
+      "lens": {
+        "method": "center-fixed division-model plumb-line fit",
+        "coefficient": 0.010785394781801115,
+        "imageCenter": [
+          731.5,
+          848.0
+        ],
+        "normalizerPx": 1696,
+        "onePixelSensitivityInterval": [
+          -0.09799999999999998,
+          0.132
+        ],
+        "independentIntrinsicCalibration": false
+      },
+      "perspective": {
+        "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+        "homographyUndistortedAnnotationPxToCardMm": [
+          [
+            0.059766969865438474,
+            -0.0003663337700401519,
+            -1.8360477388705498
+          ],
+          [
+            -0.0007079938504444554,
+            0.0602063339555429,
+            -45.55384635605065
+          ],
+          [
+            -8.13226787848987e-06,
+            -2.5441053300547484e-05,
+            1.0
+          ]
+        ],
+        "correctedCardCornersPx": [
+          [
+            35.360312787127796,
+            757.0446204831161
+          ],
+          [
+            1422.9368962109959,
+            773.361768921522
+          ],
+          [
+            1397.4990161235905,
+            1622.4484250524158
+          ],
+          [
+            40.62835920683848,
+            1616.5208614588516
+          ]
+        ]
+      },
+      "withheldStraightEdgeRmsPx": 0.3586456465118811,
+      "withheldStraightEdgeMaxPx": 0.9187796363522693,
+      "pennyDetectedBoundsPx": [
+        550,
+        21,
+        854,
+        338
+      ],
+      "pennyWithheldDiametersMm": [
+        18.899141961368418,
+        18.429388462795586
+      ],
+      "pennyMaxDeviationMm": 0.6206115372044145,
+      "cardEdgeSamples": 790,
+      "calibrationStatus": "REVIEW_REQUIRED",
+      "engineeringStatus": "UNRESOLVED",
+      "uncertainty": {
+        "state": "unresolved",
+        "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+      },
+      "metricCandidateFeatures": {
+        "holes": [
+          {
+            "centerMm": [
+              69.55770925060816,
+              -13.56929185016684
+            ],
+            "diameterMm": 3.1941564012923753
+          },
+          {
+            "centerMm": [
+              55.73006049289939,
+              -8.489600906157996
+            ],
+            "diameterMm": 2.5842417972052765
+          },
+          {
+            "centerMm": [
+              30.043270155133474,
+              -8.403142908399703
+            ],
+            "diameterMm": 2.570454708557399
+          },
+          {
+            "centerMm": [
+              55.550659591311906,
+              -18.4511600362433
+            ],
+            "diameterMm": 2.566016321863261
+          },
+          {
+            "centerMm": [
+              29.98167306994334,
+              -18.390241393763336
+            ],
+            "diameterMm": 2.55226429978327
+          },
+          {
+            "centerMm": [
+              15.942383017186048,
+              -13.51061259114486
+            ],
+            "diameterMm": 3.158221402728673
+          }
+        ],
+        "outlineBounds": [
+          [
+            13.532243157881801,
+            -23.44283006153264
+          ],
+          [
+            71.74590355593173,
+            -24.316092229948147
+          ],
+          [
+            72.28595158875675,
+            -3.2055900041993675
+          ],
+          [
+            13.501877416173919,
+            -2.4907447715251707
+          ]
+        ],
+        "notch": [
+          [
+            49.88465137626606,
+            -23.890179578117014
+          ],
+          [
+            49.965677258694114,
+            -18.678170499461725
+          ],
+          [
+            35.773712965840154,
+            -18.657597425636165
+          ],
+          [
+            35.729265964174274,
+            -23.738586627727514
+          ]
+        ]
+      },
+      "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+      "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+      "sourceSize": [
+        1908,
+        2211
+      ],
+      "annotationSize": [
+        1463,
+        1696
+      ],
+      "rawToAnnotationScale": [
+        0.7667714884696016,
+        0.7670737222976028
+      ],
+      "reference": {
+        "kind": "compatible ID-1 payment card",
+        "widthMm": 85.6,
+        "heightMm": 53.98,
+        "compatibility": "Visible debit/Mastercard form factor; dimensional conformance not physically certified",
+        "source": "https://www.iso.org/standard/31432.html",
+        "currentEdition": "https://www.iso.org/standard/70483.html",
+        "pennyDiameterMm": 19.05,
+        "pennySource": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications"
+      },
+      "limitations": [
+        "Card on soft support may not be perfectly planar/straight",
+        "Lens center fixed at image center is a model assumption; tangential distortion is not independently calibrated",
+        "Reference and plate top surfaces have small unresolved height differences",
+        "Segmentation estimates visible blue boundary, not certified card stock dimensions",
+        "No exact manufacturing or tolerance claim"
+      ]
+    },
+    {
+      "plate": "D",
+      "index": 1,
+      "usage": "primary",
+      "lens": {
+        "method": "center-fixed division-model plumb-line fit",
+        "coefficient": 0.013554772250260572,
+        "imageCenter": [
+          611.0,
+          768.0
+        ],
+        "normalizerPx": 1536,
+        "onePixelSensitivityInterval": [
+          -0.22599999999999998,
+          0.31300000000000006
+        ],
+        "independentIntrinsicCalibration": false
+      },
+      "perspective": {
+        "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+        "homographyUndistortedAnnotationPxToCardMm": [
+          [
+            0.09595004819410571,
+            -0.000357360706967151,
+            -27.524677261646694
+          ],
+          [
+            0.00040043047737378564,
+            0.09615939860392045,
+            -88.45048524752275
+          ],
+          [
+            -8.09143775638696e-06,
+            -9.2859066260883e-06,
+            1.0
+          ]
+        ],
+        "correctedCardCornersPx": [
+          [
+            290.286014339669,
+            918.6231108211648
+          ],
+          [
+            1166.4035964941208,
+            914.9747500082742
+          ],
+          [
+            1163.9206767991259,
+            1463.4294393925966
+          ],
+          [
+            292.3432315084216,
+            1470.9784275619447
+          ]
+        ]
+      },
+      "withheldStraightEdgeRmsPx": 0.3566156260106825,
+      "withheldStraightEdgeMaxPx": 0.8499980727458478,
+      "pennyDetectedBoundsPx": [
+        891,
+        369,
+        1085,
+        563
+      ],
+      "pennyWithheldDiametersMm": [
+        18.76221273917388,
+        18.897262399741418
+      ],
+      "pennyMaxDeviationMm": 0.2877872608261214,
+      "cardEdgeSamples": 504,
+      "calibrationStatus": "REVIEW_REQUIRED",
+      "engineeringStatus": "UNRESOLVED",
+      "uncertainty": {
+        "state": "unresolved",
+        "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+      },
+      "metricCandidateFeatures": {
+        "holes": [
+          {
+            "centerMm": [
+              -14.02971919836492,
+              -73.47876493912177
+            ],
+            "diameterMm": 3.238666982367355
+          },
+          {
+            "centerMm": [
+              70.27789561205508,
+              -72.61669908281326
+            ],
+            "diameterMm": 3.276474178219396
+          },
+          {
+            "centerMm": [
+              12.932615960457094,
+              -49.948322659334195
+            ],
+            "diameterMm": 3.2768563614037394
+          },
+          {
+            "centerMm": [
+              43.263809283420194,
+              -49.66441170506496
+            ],
+            "diameterMm": 3.290412863250605
+          },
+          {
+            "centerMm": [
+              5.698158919159937,
+              -26.612769463156166
+            ],
+            "diameterMm": 3.2882116990418746
+          },
+          {
+            "centerMm": [
+              50.00818795237473,
+              -26.23829297218107
+            ],
+            "diameterMm": 3.3080448473556237
+          }
+        ],
+        "outline": [
+          [
+            -20.990350737459178,
+            -73.81941973878826
+          ],
+          [
+            -20.39024792595198,
+            -76.7624493351357
+          ],
+          [
+            -18.27248172541151,
+            -79.04950158625454
+          ],
+          [
+            -15.591272829945881,
+            -80.39244321028225
+          ],
+          [
+            3.3558547015205487,
+            -82.39712335943975
+          ],
+          [
+            5.2686564751320155,
+            -81.45797266849145
+          ],
+          [
+            8.13728527280373,
+            -79.28709609694026
+          ],
+          [
+            11.497963340881808,
+            -78.73086422458259
+          ],
+          [
+            45.93738996497568,
+            -78.44114558924959
+          ],
+          [
+            48.547548736863384,
+            -79.30265978111116
+          ],
+          [
+            51.444528593960406,
+            -81.30769973028622
+          ],
+          [
+            54.2503409578831,
+            -81.31026462103556
+          ],
+          [
+            70.81852715180385,
+            -79.308458858755
+          ],
+          [
+            73.34534894839523,
+            -78.16067068041042
+          ],
+          [
+            75.78371839285155,
+            -75.9601550834575
+          ],
+          [
+            77.15892141655974,
+            -73.4710705051696
+          ],
+          [
+            77.17582777635036,
+            -71.07680643626887
+          ],
+          [
+            76.41586921728545,
+            -68.68129252352789
+          ],
+          [
+            74.48609503403011,
+            -66.86102483836527
+          ],
+          [
+            72.16205229511509,
+            -65.80805141616565
+          ],
+          [
+            69.63884676988802,
+            -65.52283326051867
+          ],
+          [
+            65.55733579510697,
+            -66.19836235401003
+          ],
+          [
+            61.7714084748684,
+            -66.20075849457565
+          ],
+          [
+            58.08679819813946,
+            -65.24275003359557
+          ],
+          [
+            54.79248741859981,
+            -63.515867500307714
+          ],
+          [
+            52.08076588969724,
+            -61.307422868187395
+          ],
+          [
+            50.04854977561099,
+            -58.52042813562147
+          ],
+          [
+            48.598975312299594,
+            -54.96085731235922
+          ],
+          [
+            48.022198480041325,
+            -51.49335530623429
+          ],
+          [
+            47.949136846761036,
+            -35.55110773528718
+          ],
+          [
+            48.63300229259288,
+            -34.00011197786914
+          ],
+          [
+            53.21388856834931,
+            -33.022744612048626
+          ],
+          [
+            54.483506874629946,
+            -31.759827315079292
+          ],
+          [
+            54.7204648019031,
+            -7.252432918759126
+          ],
+          [
+            54.038119845621026,
+            -5.8898286488431
+          ],
+          [
+            52.08428802601521,
+            -5.214058313849433
+          ],
+          [
+            2.4338918612170715,
+            -5.789117140122628
+          ],
+          [
+            1.0809560570382466,
+            -6.570889229832766
+          ],
+          [
+            0.6983778449739662,
+            -7.930711340677526
+          ],
+          [
+            0.8869014605634232,
+            -31.835557777160847
+          ],
+          [
+            1.762774830567569,
+            -33.47546423158728
+          ],
+          [
+            6.4972127884077615,
+            -33.66511367659952
+          ],
+          [
+            7.565151891658508,
+            -34.919219711145324
+          ],
+          [
+            8.016352873989673,
+            -51.960956425802046
+          ],
+          [
+            7.4523663193504674,
+            -55.51086927573408
+          ],
+          [
+            6.020726511527854,
+            -58.670964421629876
+          ],
+          [
+            4.011082493554851,
+            -61.2508525529324
+          ],
+          [
+            1.2337468598565613,
+            -63.5378616938504
+          ],
+          [
+            -1.5432041290872867,
+            -65.15270751317244
+          ],
+          [
+            -4.9902526265778135,
+            -66.38093042132039
+          ],
+          [
+            -9.20399965148878,
+            -66.84117496572692
+          ],
+          [
+            -13.897212408609716,
+            -66.34507728401411
+          ],
+          [
+            -16.379470684794132,
+            -66.71505496062986
+          ],
+          [
+            -18.754536237939032,
+            -68.13142007494169
+          ],
+          [
+            -20.450915451258187,
+            -70.40444391797388
+          ]
+        ],
+        "square": [
+          [
+            19.881845208082126,
+            -44.464208594884134
+          ],
+          [
+            35.98117708654845,
+            -44.36281806374323
+          ],
+          [
+            35.88267169624135,
+            -32.374040802279566
+          ],
+          [
+            19.85625540584303,
+            -32.492641927145485
+          ]
+        ],
+        "lowerCutout": [
+          [
+            3.448526488081887,
+            -19.65008255022142
+          ],
+          [
+            23.23135185148357,
+            -19.60249394969698
+          ],
+          [
+            25.17740774029358,
+            -21.053168304421323
+          ],
+          [
+            27.122723489026423,
+            -21.72778016294111
+          ],
+          [
+            28.678749234143744,
+            -21.724190664770564
+          ],
+          [
+            30.623864138147223,
+            -21.040278113353896
+          ],
+          [
+            32.666815727871494,
+            -19.57894926231074
+          ],
+          [
+            52.066796310313364,
+            -19.139837716144225
+          ],
+          [
+            51.98332161775866,
+            -8.138769476144624
+          ],
+          [
+            3.411559662356193,
+            -8.69685443978777
+          ]
+        ],
+        "slots": [
+          {
+            "endCentersMm": [
+              [
+                -4.744088357973858,
+                -74.47592025187272
+              ],
+              [
+                10.518585618081987,
+                -74.54006564446094
+              ]
+            ],
+            "widthMm": 3.2324276708674766
+          },
+          {
+            "endCentersMm": [
+              [
+                45.75192712182195,
+                -74.0492777837807
+              ],
+              [
+                60.86464951001257,
+                -74.05629224900908
+              ]
+            ],
+            "widthMm": 3.2489936258346277
+          },
+          {
+            "endCentersMm": [
+              [
+                12.997847499231737,
+                -68.63518103408076
+              ],
+              [
+                43.14550574066063,
+                -68.69017113672172
+              ]
+            ],
+            "widthMm": 3.2469220161902395
+          },
+          {
+            "endCentersMm": [
+              [
+                12.879518722121013,
+                -62.61159981579007
+              ],
+              [
+                43.152805726009,
+                -62.65083224268245
+              ]
+            ],
+            "widthMm": 3.2544237140924315
+          }
+        ]
+      },
+      "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+      "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9",
+      "sourceSize": [
+        1222,
+        1536
+      ],
+      "annotationSize": [
+        1222,
+        1536
+      ],
+      "rawToAnnotationScale": [
+        1.0,
+        1.0
+      ],
+      "reference": {
+        "kind": "compatible ID-1 payment card",
+        "widthMm": 85.6,
+        "heightMm": 53.98,
+        "compatibility": "Visible debit/Mastercard form factor; dimensional conformance not physically certified",
+        "source": "https://www.iso.org/standard/31432.html",
+        "currentEdition": "https://www.iso.org/standard/70483.html",
+        "pennyDiameterMm": 19.05,
+        "pennySource": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications"
+      },
+      "limitations": [
+        "Card on soft support may not be perfectly planar/straight",
+        "Lens center fixed at image center is a model assumption; tangential distortion is not independently calibrated",
+        "Reference and plate top surfaces have small unresolved height differences",
+        "Segmentation estimates visible blue boundary, not certified card stock dimensions",
+        "No exact manufacturing or tolerance claim"
+      ]
+    },
+    {
+      "plate": "D",
+      "index": 2,
+      "usage": "withheld",
+      "lens": {
+        "method": "center-fixed division-model plumb-line fit",
+        "coefficient": 0.009839514850864312,
+        "imageCenter": [
+          704.0,
+          884.5
+        ],
+        "normalizerPx": 1769,
+        "onePixelSensitivityInterval": [
+          -0.21799999999999997,
+          0.28700000000000003
+        ],
+        "independentIntrinsicCalibration": false
+      },
+      "perspective": {
+        "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+        "homographyUndistortedAnnotationPxToCardMm": [
+          [
+            0.085815469189931,
+            0.0009204964434999626,
+            -28.034291243963644
+          ],
+          [
+            -0.0009753974557940462,
+            0.08642747339611986,
+            -90.93139740254988
+          ],
+          [
+            -8.804129875416114e-06,
+            -1.1538797178087055e-05,
+            1.0
+          ]
+        ],
+        "correctedCardCornersPx": [
+          [
+            315.3574745429618,
+            1055.6712199917308
+          ],
+          [
+            1289.130494101755,
+            1066.6609630499975
+          ],
+          [
+            1275.786848452235,
+            1672.0151439296928
+          ],
+          [
+            308.8058786317906,
+            1666.459323552734
+          ]
+        ]
+      },
+      "withheldStraightEdgeRmsPx": 0.34391615384387747,
+      "withheldStraightEdgeMaxPx": 0.9386181857043994,
+      "pennyDetectedBoundsPx": [
+        1012,
+        752,
+        1225,
+        967
+      ],
+      "pennyWithheldDiametersMm": [
+        18.903586174856876,
+        18.751859102921365
+      ],
+      "pennyMaxDeviationMm": 0.29814089707863545,
+      "cardEdgeSamples": 562,
+      "calibrationStatus": "REVIEW_REQUIRED",
+      "engineeringStatus": "UNRESOLVED",
+      "uncertainty": {
+        "state": "unresolved",
+        "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+      },
+      "metricCandidateFeatures": {
+        "holes": [
+          {
+            "centerMm": [
+              -13.628983266210936,
+              -73.69118226719391
+            ],
+            "diameterMm": 3.2516599455495987
+          },
+          {
+            "centerMm": [
+              70.56560711456376,
+              -73.32178246935342
+            ],
+            "diameterMm": 3.297897582952538
+          },
+          {
+            "centerMm": [
+              13.573033255750069,
+              -50.38029759401307
+            ],
+            "diameterMm": 3.2918955065881077
+          },
+          {
+            "centerMm": [
+              43.68448167026022,
+              -50.186752136235725
+            ],
+            "diameterMm": 3.308478651009654
+          },
+          {
+            "centerMm": [
+              6.469619938742544,
+              -26.814918823348734
+            ],
+            "diameterMm": 3.305784370982641
+          },
+          {
+            "centerMm": [
+              50.74035555604446,
+              -26.74110351480227
+            ],
+            "diameterMm": 3.330042075148542
+          }
+        ],
+        "outlineBounds": [
+          [
+            -20.77491428027592,
+            -82.23064237115703
+          ],
+          [
+            77.383423457379,
+            -84.20457836902929
+          ],
+          [
+            79.1284680221157,
+            -6.006463449619765
+          ],
+          [
+            -20.259929321099932,
+            -4.828958355526266
+          ]
+        ],
+        "square": [
+          [
+            20.500526911505638,
+            -44.948155271034885
+          ],
+          [
+            36.7021490679794,
+            -44.86053477491092
+          ],
+          [
+            36.717587998981735,
+            -32.7495943848923
+          ],
+          [
+            20.48727619588357,
+            -32.771788778120445
+          ]
+        ],
+        "lowerCutout": [
+          [
+            4.202685049635883,
+            -19.805503166030032
+          ],
+          [
+            23.452113771105342,
+            -19.889809560150837
+          ],
+          [
+            25.35101337983812,
+            -21.490262323018737
+          ],
+          [
+            27.177574826915208,
+            -22.04000129348627
+          ],
+          [
+            28.922318017964407,
+            -22.238762848801308
+          ],
+          [
+            30.677976740679828,
+            -21.737575311915442
+          ],
+          [
+            33.06793549817817,
+            -19.843430301679913
+          ],
+          [
+            52.884449562606825,
+            -19.668627023794688
+          ],
+          [
+            52.90183738982918,
+            -8.76973620716706
+          ],
+          [
+            4.238700233635037,
+            -8.877968956318128
+          ]
+        ],
+        "slots": [
+          {
+            "endCentersMm": [
+              [
+                -4.11470743049605,
+                -74.91792601051738
+              ],
+              [
+                10.780664833146338,
+                -74.96681400263193
+              ]
+            ],
+            "widthMm": 3.2501914748751393
+          },
+          {
+            "endCentersMm": [
+              [
+                46.22082709554428,
+                -74.8747450074231
+              ],
+              [
+                61.37363229109461,
+                -74.80178262206346
+              ]
+            ],
+            "widthMm": 3.269815390129234
+          },
+          {
+            "endCentersMm": [
+              [
+                13.524719339308511,
+                -69.09841960056072
+              ],
+              [
+                43.71217861501591,
+                -69.05698497670646
+              ]
+            ],
+            "widthMm": 3.2656270960070426
+          },
+          {
+            "endCentersMm": [
+              [
+                13.508926413850999,
+                -63.074337641518284
+              ],
+              [
+                43.72544635009265,
+                -63.18570395887842
+              ]
+            ],
+            "widthMm": 3.2734239003411627
+          }
+        ]
+      },
+      "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+      "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+      "sourceSize": [
+        1762,
+        2214
+      ],
+      "annotationSize": [
+        1408,
+        1769
+      ],
+      "rawToAnnotationScale": [
+        0.7990919409761634,
+        0.7990063233965673
+      ],
+      "reference": {
+        "kind": "compatible ID-1 payment card",
+        "widthMm": 85.6,
+        "heightMm": 53.98,
+        "compatibility": "Visible debit/Mastercard form factor; dimensional conformance not physically certified",
+        "source": "https://www.iso.org/standard/31432.html",
+        "currentEdition": "https://www.iso.org/standard/70483.html",
+        "pennyDiameterMm": 19.05,
+        "pennySource": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications"
+      },
+      "limitations": [
+        "Card on soft support may not be perfectly planar/straight",
+        "Lens center fixed at image center is a model assumption; tangential distortion is not independently calibrated",
+        "Reference and plate top surfaces have small unresolved height differences",
+        "Segmentation estimates visible blue boundary, not certified card stock dimensions",
+        "No exact manufacturing or tolerance claim"
+      ]
+    }
+  ]
+}

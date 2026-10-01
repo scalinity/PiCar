@@ -1,0 +1,63 @@
+[
+  {
+    "name": "debug2-wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/debug2-wheel"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/digital-twin",
+    "exit": 0
+  },
+  {
+    "name": "debug2-wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/bin/python",
+      "--no-deps",
+      "--reinstall",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/debug2-wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/digital-twin",
+    "exit": 0
+  },
+  {
+    "name": "debug2-oracle",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.oracle",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/candidate-artifacts",
+      "--calibration",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/calibration.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/debug2-shapes.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/digital-twin",
+    "exit": 0
+  },
+  {
+    "name": "debug2-tests",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/bin/python",
+      "-m",
+      "pytest",
+      "cad/tests/test_m6_bent.py",
+      "-q"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/digital-twin",
+    "exit": 0
+  }
+]

@@ -1,0 +1,10 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+const base='docs/implementation/evidence/m6',labels=['qualification-amended-a-02','qualification-amended-b-02'],[a,b]=labels.map(l=>base+'/'+l),read=p=>JSON.parse(fs.readFileSync(p)),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const inputs=labels.map(l=>read(base+'/'+l+'/inputs.json'));assert.deepEqual(inputs[0],inputs[1],'INITIAL_INPUTS_DIFFER');
+assert.deepEqual(read(a+'/upstream-inputs.json'),read(b+'/upstream-inputs.json'),'UPSTREAM_INPUTS_DIFFER');
+assert.deepEqual(read(a+'/wheel.json'),read(b+'/wheel.json'),'WHEEL_BYTES_DIFFER');
+const names=['calibration.json','shapes.json',...fs.readdirSync(a+'/candidate-artifacts').map(n=>'candidate-artifacts/'+n)];
+const outputs=names.map(p=>{const left=fs.readFileSync(a+'/'+p),right=fs.readFileSync(b+'/'+p);assert(left.equals(right),'RAW_DIFFERENCE '+p);return{path:p,bytes:left.length,rawSha256:hash(left),rawIdentical:true};});
+const reviewedGeometry=fs.readdirSync(a+'/candidate-artifacts').filter(p=>p.endsWith('.brep')).map(p=>{assert(fs.readFileSync(a+'/candidate-artifacts/'+p).equals(fs.readFileSync(base+'/amendment-shapes-04/candidate-artifacts/'+p)),'REVIEWED_GEOMETRY_CHANGED '+p);return{path:p,reviewedBRepRawIdentical:true};});
+const result={status:'PASS',scope:'All eight authored instructional plate solids; no manufacturing or physical-fit claim',labels,sameInitialInputs:true,sameConsumedUpstreamAndPolicyInputs:true,wheel:read(a+'/wheel.json'),outputs,reviewedGeometry,normalization:'NONE: raw bytes equal for all 8 BReps, 8 SVGs, generation receipt, calibration and oracle report',nonComparedMetadata:['Command timestamps and disposable paths','pytest XML execution times and paths'],engineeringAdmission:false};
+fs.writeFileSync(base+'/reproducibility-amended.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({...result,outputs:outputs.length,reviewedGeometry:reviewedGeometry.length}));

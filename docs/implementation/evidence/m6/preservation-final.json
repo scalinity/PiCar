@@ -1,0 +1,792 @@
+{
+  "status": "PASS",
+  "scope": "Preservation/privacy closure only, M6 admission remains BLOCKED",
+  "head": "9112c2937bd58d89d4075a040750636b484f41e3",
+  "branch": "codex/m6-instructional-plates",
+  "acceptedTrackedDiff": "",
+  "indexEmpty": true,
+  "trackedPrivateNames": [],
+  "originalPrivateFilesVerified": 65,
+  "privateDerivedFilesIgnored": 41,
+  "publicFilesHashChecked": 140,
+  "acceptedBindingsVerified": 1041,
+  "diagnosticsUnchangedUntracked": 12,
+  "privatePixelCopyScan": "PASS: original hashes absent from authored/public outputs; derived source pixels confined to ignored private namespace",
+  "authoredPixels": "Only geometric SVG drawings and BRep candidates outside private namespace; no photographic raster outputs",
+  "sourcePublicationContractPreserved": true,
+  "noSessionStoreReadOrTested": true,
+  "instructionalGate": "BLOCKED",
+  "strictEngineeringGate": "BLOCKED",
+  "acceptanceCommit": null,
+  "m7Authorized": false,
+  "authoredBindings": [
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/generate.py",
+      "rawSha256": "a07e0aaa2c27a5487f73b74716cc3e722058a94b180a58c6865ae703aeffbefc",
+      "bytes": 4492
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/oracle.py",
+      "rawSha256": "a9d388024b32bc23dc0a7a7089beb6d4571dac2b62e9d134bcdf46b35850101e",
+      "bytes": 7225
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/plates.test.mjs",
+      "rawSha256": "209e542e9084061342d6aa2e1f2d56e0e959fd596856f55251ba8d6455dd8a76",
+      "bytes": 4822
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "cba8db887eab45da6c0e41741cc5564da463f6761ff8f97a78df105ad2ae9446",
+      "bytes": 6416
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "db2de8fca9419d7ec9636f07ff169425764288dc0d0d623c7da45f96b2e6c65f",
+      "bytes": 27561
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "711fb778a14b08bebc4c5dfe23126e13c3a63d82f1e7e30139f9b80d9f87a9fe",
+      "bytes": 16854
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "4d7945105a15ca87c6183f5f02a7858b50b67ddff7d568920d9d69b6293a3266",
+      "bytes": 33253
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "aab790a8463ebad9ac36ea15e7d039e273ffd5efcf2747844c3a8e70632e0087",
+      "bytes": 15426
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "c54887c460d9856db4eeba2f97f08a6e30f81f330f22bfaf3cc4afff751d9931",
+      "bytes": 19495
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "c25bb3d3984692474b2e95dbac16a9342b4c6ea73e3dea4f676c87e5079065a0",
+      "bytes": 17074
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "b8a0110cf99b7ba924593dd44ea8406f7b47074bc2d39b816cb55104ee4fd590",
+      "bytes": 8833
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "7506f37e5e96ed79f32944dec25ad92399da8c638f7f76149891caedabfdf81e",
+      "bytes": 10090
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "digital-twin/cad/tests/test_m6_plates.py",
+      "rawSha256": "f8a5714370f3f87c7a1c93a84f44bac07154f5b26d728bbf256191aa5b9669f5",
+      "bytes": 5026
+    },
+    {
+      "path": "digital-twin/tools/evidence/m6-plates.mjs",
+      "rawSha256": "ea1aacbd393329adf387847750675b7a25b2c96b6dcfa7c31f7d8c4a8cae3285",
+      "bytes": 6483
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-01-source/image_analysis.py",
+      "rawSha256": "8f343c8db0be67a4af0bd0d4c84667ce63feee92ca6ef418c17ad0b77a880ff6",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-01-source/setup-analysis.mjs",
+      "rawSha256": "b75a1496bdd2e3b90eea9c04f4f4f6464800270a3834735a7e5aad2576e049ed",
+      "bytes": 2906
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-commands.json",
+      "rawSha256": "0df578aed419454c7382dc55ae4bdd0cc9a34fcc37334c0e04a683a38d8f6b33",
+      "bytes": 22522
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-contacts.txt",
+      "rawSha256": "6a481e768606d4ea15ebbbbed72030515c51fe0d805e48d8b1e8a4669278f6c3",
+      "bytes": 42
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-environment.json",
+      "rawSha256": "c8e28e9a23784b3d4bb8d5c4b853b1add38ae90bc13c159b6917fde7c67b0594",
+      "bytes": 4838
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-frozen-install.txt",
+      "rawSha256": "d2916818abbb03bed0689c2f2b774a819488041183e333a13a36c91b2d912f72",
+      "bytes": 1944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-wheel-build.txt",
+      "rawSha256": "f448cc7478af8d055db486bfc8f2c4b798c0e49f6ee9879881e07e037abb7c9a",
+      "bytes": 157
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-wheel-install.txt",
+      "rawSha256": "e2ae02cae0a1901616d2dd25b7a6e784d0c42bc301a5aed75f2e98cdcc5238bd",
+      "bytes": 366
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-commands.json",
+      "rawSha256": "0760bed0e3f0a9edc9bd7c5508e01128d1318b041f3674cc4a5b5a4b58183de7",
+      "bytes": 22476
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-contacts.txt",
+      "rawSha256": "70f28c9ee41a94ba14db75d2c837e82b75dffad27b470004851d1e1b79eff1fb",
+      "bytes": 1338
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-frozen-install.txt",
+      "rawSha256": "99f2be3dde54d4420467cd1393fb3c29347dd79bf99302b775bd3c5bc07a5091",
+      "bytes": 1944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-wheel-build.txt",
+      "rawSha256": "064164c4a2dd0cfc6e629a91cd454d03df9b51eed1d24fd2e28494ea61b378d7",
+      "bytes": 157
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-wheel-install.txt",
+      "rawSha256": "0da32897dcddaa8f365ac182d63f7e8ffeea46e16608c5231578f396fd05eebd",
+      "bytes": 363
+    },
+    {
+      "path": "docs/implementation/evidence/m6/author-candidates.mjs",
+      "rawSha256": "e3f31ef9b2a805fc2a0bd1c1a05b37467dd66448892d5d6824e83a5f3e536ed5",
+      "bytes": 3328
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/calibration.json",
+      "rawSha256": "7db7eba635ea39fa778b3947e2d370e647a7551841913d38a3d865126684d07b",
+      "bytes": 38743
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/calibration.txt",
+      "rawSha256": "b4a9dc8f5100d05bee063c16d2c509c5aa7ab54d5f621b7e82a6435bbfd61149",
+      "bytes": 1549
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/commands.json",
+      "rawSha256": "0db1541905cf9cabbf964b0fcc7143826808339dda199c841d4f7b5770c7bff8",
+      "bytes": 5802
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/environment.json",
+      "rawSha256": "ba689bfdb53a2ee06fb543e30b415c5a3d2f353bce9efe82854a7314a2682c48",
+      "bytes": 552
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/frozen-install.txt",
+      "rawSha256": "d76b28a3c69be46953065650f9cbb30e9696d4c84a0f7c222ab3f866cf1f537b",
+      "bytes": 1950
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/inputs.json",
+      "rawSha256": "bd5dd5b13cb525555ee191d6d2eaba5c7cf873266a1acd422b2889c22f43cddc",
+      "bytes": 4535
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel-build.txt",
+      "rawSha256": "141ac27810cb43726211e528f84a793fe2fc113d0e0a13da71fe1fbe6bb4a15b",
+      "bytes": 163
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel-install.txt",
+      "rawSha256": "fd9987ea9cf5916982ae12e41557c85e98d4d83f2eed3724bd32652919e52389",
+      "bytes": 378
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel.json",
+      "rawSha256": "5d2474a6f531071c7dee470013f011ed6e70bd5a7719ae794c3ae45f4e444b4f",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/calibration.json",
+      "rawSha256": "204bfde9b9d44ceea74810669eb656c5ed3214a9c58688e59e86840893e16e90",
+      "bytes": 39313
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/commands.json",
+      "rawSha256": "a1e304196dcb582b481c53848e58a1f911b81cc3b0bb968d9e901c366c32c1b3",
+      "bytes": 5802
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/environment.json",
+      "rawSha256": "a48956026737ce5804be5762a899816888789394e1989ef1c8e0e9171437ec9e",
+      "bytes": 552
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/frozen-install.txt",
+      "rawSha256": "90a8ef2d3688b94a1cf2dd74813730dc9b3b441af9c75115a01237610c607a35",
+      "bytes": 1950
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/inputs.json",
+      "rawSha256": "eb3e3bda30490891b7b0997f8545853105f5850515198b43bd0647b6b4228c1c",
+      "bytes": 4536
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/wheel-build.txt",
+      "rawSha256": "df7f7ee4692eab87e88f4e0a14c01c16e46c79c268c5521448325a95e8c71b9e",
+      "bytes": 163
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/wheel-install.txt",
+      "rawSha256": "01a5b4ee721c694a39985f10edc4654a85dc5e0d6b173d7de369f7df48305ef4",
+      "bytes": 378
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/wheel.json",
+      "rawSha256": "71a33a44ba32e73a2f8091ba1fa1e1ef29f37d6c572226218c2229e6f7a09678",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/calibration.json",
+      "rawSha256": "204bfde9b9d44ceea74810669eb656c5ed3214a9c58688e59e86840893e16e90",
+      "bytes": 39313
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/generation.json",
+      "rawSha256": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/commands.json",
+      "rawSha256": "e5f558030f32af5a0326d7a02c56b4d759395128ed997f84fd8dda9352b39d34",
+      "bytes": 8640
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/environment.json",
+      "rawSha256": "90fdc037ecda221fd76d5ec8337bc366b5988eb8054d400b8aaaadff17d7f0e3",
+      "bytes": 544
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/frozen-install.txt",
+      "rawSha256": "f585b036279fea39afaad0c483a8654daea8fae4e934fb65810b74da5456c057",
+      "bytes": 1948
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/inputs.json",
+      "rawSha256": "a0a08f79fc5ac1b50fd657a97bf926f584b1029d927826a9c1737611b85be865",
+      "bytes": 5136
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/wheel-build.txt",
+      "rawSha256": "cb08420692452398fd125242de7ffb662b19dee0eceefc45632412057a5699a9",
+      "bytes": 161
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/wheel-install.txt",
+      "rawSha256": "804aaec5ec175a493337143175919909b79c75084ec74c45182094263aa9d89d",
+      "bytes": 371
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/wheel.json",
+      "rawSha256": "343a3989adccaeebba2bd51c0075d6837b5bfeb2107ef933b3b1fc133496a997",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/closure.mjs",
+      "rawSha256": "69ca0ed6e1c8034ccd46927c40dc64e4c825d81c6a273de61fdbb574e2f88679",
+      "bytes": 4803
+    },
+    {
+      "path": "docs/implementation/evidence/m6/failure-source/calibration-02-bound-field.py",
+      "rawSha256": "1a127f594576a76de0fa6aeef0a38bc7cc7aae7ed59cbd118cddd1446200bd59",
+      "bytes": 10272
+    },
+    {
+      "path": "docs/implementation/evidence/m6/failure-source/upstream-public-icon-filter.mjs",
+      "rawSha256": "1a5bebf908c83a47e1190da974359f0eb55860d4f26d9afc8623989122861b81",
+      "bytes": 4209
+    },
+    {
+      "path": "docs/implementation/evidence/m6/inventory.mjs",
+      "rawSha256": "3e7d392c3adf66253932959d4692fd88a8e933e35bd1f01d46b202e6a9f24c13",
+      "bytes": 10095
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-package-integrity.json",
+      "rawSha256": "ded013953bdf73e144249e6e75346541c5dbc32d3ebc98393ab9fc16b3c4204e",
+      "bytes": 43651
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-policy-01.tap",
+      "rawSha256": "8bd99fcb98535446bdf0a3f7191d87bd6fb88e16a6dd03f45695084d9201c47f",
+      "bytes": 7895
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-policy-02.tap",
+      "rawSha256": "4c6fb04b12cb1d317c1a659eca07705b6f514e961679fb1963ca2e26aa82d428",
+      "bytes": 7892
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight-initial-status-field.json",
+      "rawSha256": "b4f1603210525de3cd9c310e2d800b75397501de51172fddb69bb5228abc2f0e",
+      "bytes": 289991
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight.json",
+      "rawSha256": "dc93d6d955022a127f2fc761b95f0641b58e268cfb81f185d498696b450bfaed",
+      "bytes": 297992
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight.mjs",
+      "rawSha256": "360ea1846f964dffc92626d2c596da3e9aa46d62be2b480c41059bb25684c066",
+      "bytes": 5466
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/cad-tests.txt",
+      "rawSha256": "7b99b5fff8ae0dd06bb59c6d8706629d45d117532b5674ef660bbb23d033ef11",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/generation.json",
+      "rawSha256": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/commands.json",
+      "rawSha256": "26cf06234a6ce1792bb45ad3cad71acc5f34368e4410553c8d0f93320ee1a6ad",
+      "bytes": 10073
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/environment.json",
+      "rawSha256": "32f67a8eea19a115606da3e231f3e8e91e6989a0dfd6c25c11dedd240bf306db",
+      "bytes": 568
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/frozen-install.txt",
+      "rawSha256": "3bae0568574212d44f4f5ef90f5a27f25d74c38bc16023d0b4e1da581c82ed11",
+      "bytes": 1954
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/inputs.json",
+      "rawSha256": "86be87af2e04911bef1a42f1d874d34b1d6952c3f403368db2eb087b07aea2d5",
+      "bytes": 7804
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/m2-contract-tests.txt",
+      "rawSha256": "e55f38f175197af9b37f7a292be8a7212322b3a46dabac0a9495d4545a8f5908",
+      "bytes": 2836
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/m6-policy-tests.txt",
+      "rawSha256": "b65234ed0c20946c37772d1fd74d8bbcc905eda032d275252dddaa17dfb6dbba",
+      "bytes": 7897
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/semantic-firewall-tests.txt",
+      "rawSha256": "a025d453712f6f37844ecb936bd96583b67237253d519ddd874840ab80bfb1c5",
+      "bytes": 1896
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/tests.xml",
+      "rawSha256": "3d66ef3ac7413b8fd352542871be1389ac7a2a81b3258ac28e12fb0c89caa3ec",
+      "bytes": 7004
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/upstream-commands.json",
+      "rawSha256": "88972173950c612de35d71f9dfed1cac2c9c1b29df27e44e75789fb16b5c9c68",
+      "bytes": 5218
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/upstream-inputs.json",
+      "rawSha256": "dcda3b5dd59481c075c843280fd641f5218b757b369d3c7e39835834f46d8c08",
+      "bytes": 126360
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel-build.txt",
+      "rawSha256": "c1403f6a0b21b694ed276a24b901a610de215a1e93257fbed88999884e21fd34",
+      "bytes": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel-install.txt",
+      "rawSha256": "310d1d6481d4e73894afda6f05975070519f4b3432d25bed5a1f9fdb060c1709",
+      "bytes": 383
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel.json",
+      "rawSha256": "b1ef3c6c9eac51ccdcd2333d291cf97eec8d4adbf05db44c295f3f77e445fb57",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/cad-tests.txt",
+      "rawSha256": "a9bf8f57cf053f2a78d2be599149cfd30401bd2cee0964031ff11fd26a70ee5d",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/generation.json",
+      "rawSha256": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/commands.json",
+      "rawSha256": "8a5d33eb010f34d1bb8b4e85400f81806ae45bf7147216ae7a9dd0c6ff123bc6",
+      "bytes": 10420
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/environment.json",
+      "rawSha256": "d4ac35033265a2527e4d1c5240de0d8bc37e341597191fe51749305bb93032f1",
+      "bytes": 568
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/frozen-install.txt",
+      "rawSha256": "23677e12531b86f69a59422f45fdefef6b1026188b1d07e8f8eae23700126786",
+      "bytes": 1954
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/inputs.json",
+      "rawSha256": "86be87af2e04911bef1a42f1d874d34b1d6952c3f403368db2eb087b07aea2d5",
+      "bytes": 7804
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/m2-contract-tests.txt",
+      "rawSha256": "ac01e24e52a0cf20cc05a6e74134e71a969a0584daa0644251e939b155b0f005",
+      "bytes": 2840
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/m6-policy-tests.txt",
+      "rawSha256": "eb7a978585822a04e042b493f65a0bb6bc2c6ef26d4fbfad6af97d4cde2ea871",
+      "bytes": 7899
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/semantic-firewall-tests.txt",
+      "rawSha256": "85db1ee46e5d4cb99c2cba4bfd894cbf668b8a307f42a25d396f3342aaf0d1e2",
+      "bytes": 1905
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/tests.xml",
+      "rawSha256": "942b3df4b27dffc11db5345b2f8f9982caf89a7c9afa4fe0dd7112d76166ab1d",
+      "bytes": 7004
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/upstream-commands.json",
+      "rawSha256": "a66e099c66a1d6d4cfe10ba5213ffc68b314535ae5506e3861a6949cddac191b",
+      "bytes": 5218
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/upstream-inputs.json",
+      "rawSha256": "dcda3b5dd59481c075c843280fd641f5218b757b369d3c7e39835834f46d8c08",
+      "bytes": 126360
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/wheel-build.txt",
+      "rawSha256": "9e8b78afc5099b032fdb14012259dccfda0f0fa6f67464dac02d0b28237676f9",
+      "bytes": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/wheel-install.txt",
+      "rawSha256": "31a575f00f9693af01974e796f5298528822c1599ecae6395f06fe129dbb9035",
+      "bytes": 386
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/wheel.json",
+      "rawSha256": "b1ef3c6c9eac51ccdcd2333d291cf97eec8d4adbf05db44c295f3f77e445fb57",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/recheck-upstream.mjs",
+      "rawSha256": "3b0d40c85babbfdf316650379e8c65342bc2d2d15b4c703dea9055ba89121997",
+      "bytes": 4200
+    },
+    {
+      "path": "docs/implementation/evidence/m6/report.mjs",
+      "rawSha256": "fd3fa20fbb106e22b4e89e3c7c088c3a69410022f1b44bf3f69693c4e225884e",
+      "bytes": 11542
+    },
+    {
+      "path": "docs/implementation/evidence/m6/reproducibility.json",
+      "rawSha256": "a9fdf438877551f8dcbea73a1bd154924be0dfa2bb16928561cead860ebbf076",
+      "bytes": 3569
+    },
+    {
+      "path": "docs/implementation/evidence/m6/run.mjs",
+      "rawSha256": "1df3afac383473aa8d634e0874f59a69e7e022b5f6eb13cd9431ea79d5d7191a",
+      "bytes": 5184
+    },
+    {
+      "path": "docs/implementation/evidence/m6/setup-analysis.mjs",
+      "rawSha256": "057b2df46cd197c9d43265a3d0fc689d7c03e7b38c6b2c48ad978117f31183dd",
+      "bytes": 2918
+    },
+    {
+      "path": "docs/implementation/evidence/m6/upstream-public-icon-filter-failure.json",
+      "rawSha256": "bc6d58de578a9ac5faa2f2cd67422c48a1fa2707ca91b22ac656d8793a305548",
+      "bytes": 517
+    },
+    {
+      "path": "docs/implementation/M6_EXECUTION_PLAN.md",
+      "rawSha256": "efe69cc1a04826f1c373e75c7802e6b0af91f089b96bed2611263d3734aab450",
+      "bytes": 4336
+    },
+    {
+      "path": "docs/implementation/M6_REPORT.md",
+      "rawSha256": "e3423c91467d5f69283f665c5907b17ab317cf026439b828fd8155811c789201",
+      "bytes": 11871
+    },
+    {
+      "path": "docs/implementation/M6_G_INSTRUCTIONAL_PLATE_REPORT.json",
+      "rawSha256": "6aded3000287e08169ed5d13e5bac2a79c86e4b136e4c5cc67fd96310637991e",
+      "bytes": 144108
+    },
+    {
+      "path": "docs/implementation/HANDOFF_M6_REMEDIATION.md",
+      "rawSha256": "86b12290b15037d9056913b76ad5f6c6dd534b83a819d4c137dec515b75d15f4",
+      "bytes": 13772
+    }
+  ],
+  "changedNames": "digital-twin/cad/tests/test_m6_plates.py\ndigital-twin/cad/twin_cad/components/plates/__init__.py\ndigital-twin/cad/twin_cad/components/plates/instructional/__init__.py\ndigital-twin/cad/twin_cad/components/plates/instructional/calibration.py\ndigital-twin/cad/twin_cad/components/plates/instructional/generate.py\ndigital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py\ndigital-twin/cad/twin_cad/components/plates/instructional/oracle.py\ndigital-twin/tools/evidence/m6-plates.mjs\ndigital-twin/validation/expected/plates/instructional/calibration-input.json\ndigital-twin/validation/expected/plates/instructional/candidate-parameters.json\ndigital-twin/validation/expected/plates/instructional/plates.test.mjs\ndigital-twin/validation/expected/plates/instructional/receipt.schema.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json\ndigital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json\ndigital-twin/validation/expected/plates/instructional/source-feature-map.json\ndocs/implementation/HANDOFF_M6_REMEDIATION.md\ndocs/implementation/M6_EXECUTION_PLAN.md\ndocs/implementation/M6_G_INSTRUCTIONAL_PLATE_REPORT.json\ndocs/implementation/M6_REPORT.md\ndocs/implementation/evidence/m2/commands.json\ndocs/implementation/evidence/m2/companion-content.txt\ndocs/implementation/evidence/m2/companion-package.txt\ndocs/implementation/evidence/m2/companion-typecheck.txt\ndocs/implementation/evidence/m2/companion-unit.txt\ndocs/implementation/evidence/m2/g-data-check.txt\ndocs/implementation/evidence/m2/m1-tests.tap\ndocs/implementation/evidence/m2/preflight-command-initial.txt\ndocs/implementation/evidence/m2/preflight-command.txt\ndocs/implementation/evidence/m2/preflight.json\ndocs/implementation/evidence/m2/types-check.txt\ndocs/implementation/evidence/m2/verify-preflight.mjs\ndocs/implementation/evidence/m6/analysis-01-source/image_analysis.py\ndocs/implementation/evidence/m6/analysis-01-source/setup-analysis.mjs\ndocs/implementation/evidence/m6/analysis-02/analysis-commands.json\ndocs/implementation/evidence/m6/analysis-02/analysis-contacts.txt\ndocs/implementation/evidence/m6/analysis-02/analysis-environment.json\ndocs/implementation/evidence/m6/analysis-02/analysis-frozen-install.txt\ndocs/implementation/evidence/m6/analysis-02/analysis-wheel-build.txt\ndocs/implementation/evidence/m6/analysis-02/analysis-wheel-install.txt\ndocs/implementation/evidence/m6/analysis-commands.json\ndocs/implementation/evidence/m6/analysis-contacts.txt\ndocs/implementation/evidence/m6/analysis-frozen-install.txt\ndocs/implementation/evidence/m6/analysis-wheel-build.txt\ndocs/implementation/evidence/m6/analysis-wheel-install.txt\ndocs/implementation/evidence/m6/author-candidates.mjs\ndocs/implementation/evidence/m6/calibration-01/calibration.json\ndocs/implementation/evidence/m6/calibration-01/calibration.txt\ndocs/implementation/evidence/m6/calibration-01/commands.json\ndocs/implementation/evidence/m6/calibration-01/environment.json\ndocs/implementation/evidence/m6/calibration-01/environment.txt\ndocs/implementation/evidence/m6/calibration-01/frozen-install.txt\ndocs/implementation/evidence/m6/calibration-01/inputs.json\ndocs/implementation/evidence/m6/calibration-01/wheel-build.txt\ndocs/implementation/evidence/m6/calibration-01/wheel-install.txt\ndocs/implementation/evidence/m6/calibration-01/wheel.json\ndocs/implementation/evidence/m6/calibration-02/calibration.json\ndocs/implementation/evidence/m6/calibration-02/calibration.txt\ndocs/implementation/evidence/m6/calibration-02/commands.json\ndocs/implementation/evidence/m6/calibration-02/environment.json\ndocs/implementation/evidence/m6/calibration-02/environment.txt\ndocs/implementation/evidence/m6/calibration-02/frozen-install.txt\ndocs/implementation/evidence/m6/calibration-02/inputs.json\ndocs/implementation/evidence/m6/calibration-02/wheel-build.txt\ndocs/implementation/evidence/m6/calibration-02/wheel-install.txt\ndocs/implementation/evidence/m6/calibration-02/wheel.json\ndocs/implementation/evidence/m6/candidate-01/calibration.json\ndocs/implementation/evidence/m6/candidate-01/calibration.txt\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg\ndocs/implementation/evidence/m6/candidate-01/candidate-artifacts/generation.json\ndocs/implementation/evidence/m6/candidate-01/commands.json\ndocs/implementation/evidence/m6/candidate-01/environment.json\ndocs/implementation/evidence/m6/candidate-01/environment.txt\ndocs/implementation/evidence/m6/candidate-01/frozen-install.txt\ndocs/implementation/evidence/m6/candidate-01/generate-candidates.txt\ndocs/implementation/evidence/m6/candidate-01/independent-shapes.txt\ndocs/implementation/evidence/m6/candidate-01/inputs.json\ndocs/implementation/evidence/m6/candidate-01/shapes.json\ndocs/implementation/evidence/m6/candidate-01/wheel-build.txt\ndocs/implementation/evidence/m6/candidate-01/wheel-install.txt\ndocs/implementation/evidence/m6/candidate-01/wheel.json\ndocs/implementation/evidence/m6/closure.mjs\ndocs/implementation/evidence/m6/failure-source/calibration-02-bound-field.py\ndocs/implementation/evidence/m6/failure-source/upstream-public-icon-filter.mjs\ndocs/implementation/evidence/m6/inventory.mjs\ndocs/implementation/evidence/m6/plate-package-integrity.json\ndocs/implementation/evidence/m6/plate-policy-01.tap\ndocs/implementation/evidence/m6/plate-policy-02.tap\ndocs/implementation/evidence/m6/preflight-initial-status-field.json\ndocs/implementation/evidence/m6/preflight.json\ndocs/implementation/evidence/m6/preflight.mjs\ndocs/implementation/evidence/m6/preservation-final.json\ndocs/implementation/evidence/m6/qualification-a-01/cad-tests.txt\ndocs/implementation/evidence/m6/qualification-a-01/calibration.json\ndocs/implementation/evidence/m6/qualification-a-01/calibration.txt\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg\ndocs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/generation.json\ndocs/implementation/evidence/m6/qualification-a-01/commands.json\ndocs/implementation/evidence/m6/qualification-a-01/environment.json\ndocs/implementation/evidence/m6/qualification-a-01/environment.txt\ndocs/implementation/evidence/m6/qualification-a-01/frozen-install.txt\ndocs/implementation/evidence/m6/qualification-a-01/g-data-check.txt\ndocs/implementation/evidence/m6/qualification-a-01/g-graph-check.txt\ndocs/implementation/evidence/m6/qualification-a-01/generate-candidates.txt\ndocs/implementation/evidence/m6/qualification-a-01/independent-shapes.txt\ndocs/implementation/evidence/m6/qualification-a-01/inputs.json\ndocs/implementation/evidence/m6/qualification-a-01/m2-contract-tests.txt\ndocs/implementation/evidence/m6/qualification-a-01/m6-policy-tests.txt\ndocs/implementation/evidence/m6/qualification-a-01/semantic-firewall-tests.txt\ndocs/implementation/evidence/m6/qualification-a-01/shapes.json\ndocs/implementation/evidence/m6/qualification-a-01/tests.xml\ndocs/implementation/evidence/m6/qualification-a-01/upstream-commands.json\ndocs/implementation/evidence/m6/qualification-a-01/upstream-inputs.json\ndocs/implementation/evidence/m6/qualification-a-01/wheel-build.txt\ndocs/implementation/evidence/m6/qualification-a-01/wheel-install.txt\ndocs/implementation/evidence/m6/qualification-a-01/wheel.json\ndocs/implementation/evidence/m6/qualification-b-01/cad-tests.txt\ndocs/implementation/evidence/m6/qualification-b-01/calibration.json\ndocs/implementation/evidence/m6/qualification-b-01/calibration.txt\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg\ndocs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/generation.json\ndocs/implementation/evidence/m6/qualification-b-01/commands.json\ndocs/implementation/evidence/m6/qualification-b-01/environment.json\ndocs/implementation/evidence/m6/qualification-b-01/environment.txt\ndocs/implementation/evidence/m6/qualification-b-01/frozen-install.txt\ndocs/implementation/evidence/m6/qualification-b-01/g-data-check.txt\ndocs/implementation/evidence/m6/qualification-b-01/g-graph-check.txt\ndocs/implementation/evidence/m6/qualification-b-01/generate-candidates.txt\ndocs/implementation/evidence/m6/qualification-b-01/independent-shapes.txt\ndocs/implementation/evidence/m6/qualification-b-01/inputs.json\ndocs/implementation/evidence/m6/qualification-b-01/m2-contract-tests.txt\ndocs/implementation/evidence/m6/qualification-b-01/m6-policy-tests.txt\ndocs/implementation/evidence/m6/qualification-b-01/semantic-firewall-tests.txt\ndocs/implementation/evidence/m6/qualification-b-01/shapes.json\ndocs/implementation/evidence/m6/qualification-b-01/tests.xml\ndocs/implementation/evidence/m6/qualification-b-01/upstream-commands.json\ndocs/implementation/evidence/m6/qualification-b-01/upstream-inputs.json\ndocs/implementation/evidence/m6/qualification-b-01/wheel-build.txt\ndocs/implementation/evidence/m6/qualification-b-01/wheel-install.txt\ndocs/implementation/evidence/m6/qualification-b-01/wheel.json\ndocs/implementation/evidence/m6/recheck-upstream.mjs\ndocs/implementation/evidence/m6/report.mjs\ndocs/implementation/evidence/m6/reproducibility.json\ndocs/implementation/evidence/m6/run.mjs\ndocs/implementation/evidence/m6/setup-analysis.mjs\ndocs/implementation/evidence/m6/upstream-public-icon-filter-failure.json",
+  "stagedNames": [],
+  "rollback": "Move ONLY the explicitly listed M6 additions to an outside-repository backup, retain private evidence/failure history, then switch to codex/m5-purchased-components. No reset/clean/history rewrite; preserve all twelve M2 diagnostics and owner data."
+}

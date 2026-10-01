@@ -1,0 +1,933 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-D",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-D",
+    "revision": 1,
+    "name": "Plate D",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-D-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-D"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-D-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-D-GRAYSCALE-MOUNT",
+      "PX-V40-IF-PLATE-D-LEFT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-D-REFERENCE",
+      "PX-V40-IF-PLATE-D-RIGHT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-D-SUPPORT-MOUNT-PATTERN"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-D-001",
+      "definitionId": "PX-V40-DEF-PLATE-D",
+      "definitionRevision": 1,
+      "role": "Plate D",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-D",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      23,
+      24,
+      25
+    ],
+    "rpi5": [
+      23,
+      24,
+      25
+    ],
+    "rpi-zero-2-w": [
+      23,
+      24,
+      25
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+      "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9",
+      "bytes": 648922,
+      "plate": "D",
+      "view": "top-down",
+      "orientation": "Four slots toward image top; wide notched opening toward bottom",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complete flat contour, six round holes, four slots and two larger cutouts visible."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+      "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+      "bytes": 983118,
+      "plate": "D",
+      "view": "top-down",
+      "orientation": "Same outline orientation as master; separate capture",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Additional face reference; a reverse-side designation is not assumed from the symmetric outline."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+      "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480",
+      "bytes": 659839,
+      "plate": "D",
+      "view": "oblique",
+      "orientation": "Whole flat plate with raised-looking edge only from sheet thickness",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows flat-sheet character and cutout edges; card and penny visible."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_04_edge-profile-upright-card.jpeg",
+      "sourceRawSha256": "7386bb04d262627186659597f2fda621c035c6032d4c899b7ca50fcea33ab7fd",
+      "bytes": 293757,
+      "plate": "D",
+      "view": "low edge profile",
+      "orientation": "Plate lies flat to the right of upright card",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Very shallow view; plate edge is soft in focus; retained unchanged."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_05_edge-profile-penny-comparison.jpeg",
+      "sourceRawSha256": "e1410bcf3c4aed42c73a09a14405e42cae29c31732f522a59c433a97e3a1e354",
+      "bytes": 387661,
+      "plate": "D",
+      "view": "low edge profile",
+      "orientation": "Plate edge and penny rim alongside on support surface",
+      "referenceCardVisibility": "absent",
+      "referencePenny": "yes",
+      "limitations": "Thickness-comparison reference only; no calibrated thickness derived."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_06_macro-edge-penny-comparison-finger-pressure.jpeg",
+      "sourceRawSha256": "98df2bd2eb15d822670f249527a73e1d3a67e1aa20ad408bb56e4ef6da64b5c6",
+      "bytes": 444152,
+      "plate": "D",
+      "view": "macro edge detail",
+      "orientation": "Fingers press plate and penny toward the support surface",
+      "referenceCardVisibility": "partial",
+      "referencePenny": "yes",
+      "limitations": "Owner thickness-comparison shot; card corner only; supports a working assumption, not exact metrology."
+    }
+  ],
+  "features": [
+    {
+      "name": "outline",
+      "observation": "Flat profile with rounded upper ears and concave sides",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "holes",
+      "observation": "Six circular through-holes",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "slots",
+      "observation": "Four elongated slots",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "central-opening",
+      "observation": "Central rectangular/square-like opening; exact square equality not assumed",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "lower-opening",
+      "observation": "Lower closed rectangular opening with upward thumb relief",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "flatness",
+      "observation": "Flat sheet, no bent flange",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_04_edge-profile-upright-card.jpeg",
+          "sourceRawSha256": "7386bb04d262627186659597f2fda621c035c6032d4c899b7ca50fcea33ab7fd"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_05_edge-profile-penny-comparison.jpeg",
+          "sourceRawSha256": "e1410bcf3c4aed42c73a09a14405e42cae29c31732f522a59c433a97e3a1e354"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_06_macro-edge-penny-comparison-finger-pressure.jpeg",
+          "sourceRawSha256": "98df2bd2eb15d822670f249527a73e1d3a67e1aa20ad408bb56e4ef6da64b5c6"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "PRACTICAL_REVIEW",
+  "shapeValidationStatus": "PASS",
+  "sourceValidationStatus": "PASS",
+  "blockerIds": [
+    "Q-03"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+    "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+    "Assembly/world numeric transforms are not solved in M6.",
+    "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+  ],
+  "instructionalOrigin": {
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "cardMetricCenterMm": [
+      28.025158088183684,
+      -49.75987680361191
+    ],
+    "axes": "RH millimeters: local X points toward primary image top; local Y toward image right; local Z through stock. No assembly pose/datum admitted."
+  },
+  "reviewedInstructionalDimensions": {
+    "confidence": "INSTRUCTIONAL_APPROXIMATION",
+    "engineeringDatum": false,
+    "profile": {
+      "kind": "sampled-outline",
+      "verticesMm": [
+        [
+          24.059542935176346,
+          -49.01550882564286
+        ],
+        [
+          27.00257253152379,
+          -48.41540601413566
+        ],
+        [
+          29.289624782642626,
+          -46.2976398135952
+        ],
+        [
+          30.632566406670342,
+          -43.616430918129566
+        ],
+        [
+          32.637246555827836,
+          -24.669303386663135
+        ],
+        [
+          31.69809586487954,
+          -22.756501613051668
+        ],
+        [
+          29.52721929332835,
+          -19.887872815379954
+        ],
+        [
+          28.97098742097068,
+          -16.527194747301877
+        ],
+        [
+          28.681268785637677,
+          17.912231876791996
+        ],
+        [
+          29.54278297749925,
+          20.5223906486797
+        ],
+        [
+          31.547822926674307,
+          23.419370505776723
+        ],
+        [
+          31.550387817423648,
+          26.225182869699413
+        ],
+        [
+          29.548582055143093,
+          42.79336906362016
+        ],
+        [
+          28.40079387679851,
+          45.32019086021154
+        ],
+        [
+          26.200278279845584,
+          47.75856030466787
+        ],
+        [
+          23.711193701557697,
+          49.13376332837605
+        ],
+        [
+          21.316929632656958,
+          49.15066968816667
+        ],
+        [
+          18.921415719915977,
+          48.39071112910176
+        ],
+        [
+          17.101148034753358,
+          46.46093694584643
+        ],
+        [
+          16.048174612553744,
+          44.1368942069314
+        ],
+        [
+          15.762956456906757,
+          41.61368868170433
+        ],
+        [
+          16.43848555039812,
+          37.53217770692328
+        ],
+        [
+          16.440881690963742,
+          33.74625038668472
+        ],
+        [
+          15.48287322998366,
+          30.06164010995578
+        ],
+        [
+          13.755990696695804,
+          26.76732933041613
+        ],
+        [
+          11.547546064575485,
+          24.055607801513556
+        ],
+        [
+          8.760551332009562,
+          22.023391687427303
+        ],
+        [
+          5.200980508747307,
+          20.57381722411591
+        ],
+        [
+          1.7334785026223827,
+          19.99704039185764
+        ],
+        [
+          -14.208769068324727,
+          19.923978758577352
+        ],
+        [
+          -15.75976482574277,
+          20.607844204409194
+        ],
+        [
+          -16.737132191563283,
+          25.188730480165628
+        ],
+        [
+          -18.000049488532618,
+          26.458348786446262
+        ],
+        [
+          -42.50744388485278,
+          26.695306713719415
+        ],
+        [
+          -43.87004815476881,
+          26.012961757437342
+        ],
+        [
+          -44.545818489762475,
+          24.059129937831525
+        ],
+        [
+          -43.97075966348928,
+          -25.591266226966614
+        ],
+        [
+          -43.188987573779144,
+          -26.944202031145437
+        ],
+        [
+          -41.829165462934384,
+          -27.32678024320972
+        ],
+        [
+          -17.924319026451062,
+          -27.13825662762026
+        ],
+        [
+          -16.284412572024628,
+          -26.262383257616115
+        ],
+        [
+          -16.094763127012392,
+          -21.527945299775922
+        ],
+        [
+          -14.840657092466586,
+          -20.460006196525175
+        ],
+        [
+          2.201079622190136,
+          -20.008805214194012
+        ],
+        [
+          5.750992472122171,
+          -20.572791768833216
+        ],
+        [
+          8.911087618017966,
+          -22.00443157665583
+        ],
+        [
+          11.49097574932049,
+          -24.01407559462883
+        ],
+        [
+          13.777984890238493,
+          -26.79141122832712
+        ],
+        [
+          15.392830709560535,
+          -29.56836221727097
+        ],
+        [
+          16.621053617708476,
+          -33.0154107147615
+        ],
+        [
+          17.08129816211501,
+          -37.229157739672466
+        ],
+        [
+          16.5852004804022,
+          -41.9223704967934
+        ],
+        [
+          16.955178157017947,
+          -44.404628772977816
+        ],
+        [
+          18.371543271329777,
+          -46.779694326122716
+        ],
+        [
+          20.64456711436197,
+          -48.47607353944187
+        ]
+      ],
+      "slots": [
+        {
+          "name": "visible.slot.1",
+          "endCentersMm": [
+            [
+              24.716043448260812,
+              -32.76924644615754
+            ],
+            [
+              24.78018884084903,
+              -17.506572470101695
+            ]
+          ],
+          "widthMm": 3.2324276708674766
+        },
+        {
+          "name": "visible.slot.2",
+          "endCentersMm": [
+            [
+              24.289400980168786,
+              17.726769033638266
+            ],
+            [
+              24.296415445397166,
+              32.83949142182888
+            ]
+          ],
+          "widthMm": 3.2489936258346277
+        },
+        {
+          "name": "visible.slot.3",
+          "endCentersMm": [
+            [
+              18.87530423046885,
+              -15.027310588951947
+            ],
+            [
+              18.930294333109806,
+              15.120347652476948
+            ]
+          ],
+          "widthMm": 3.2469220161902395
+        },
+        {
+          "name": "visible.slot.4",
+          "endCentersMm": [
+            [
+              12.851723012178162,
+              -15.145639366062671
+            ],
+            [
+              12.890955439070538,
+              15.127647637825316
+            ]
+          ],
+          "widthMm": 3.2544237140924315
+        }
+      ],
+      "cutouts": [
+        {
+          "name": "visible.central-opening",
+          "verticesMm": [
+            [
+              -5.2956682087277755,
+              -8.143312880101558
+            ],
+            [
+              -5.397058739868683,
+              7.956018998364765
+            ],
+            [
+              -17.385836001332343,
+              7.857513608057669
+            ],
+            [
+              -17.267234876466425,
+              -8.168902682340654
+            ]
+          ]
+        },
+        {
+          "name": "visible.lower-opening-with-thumb-relief",
+          "verticesMm": [
+            [
+              -30.10979425339049,
+              -24.5766316001018
+            ],
+            [
+              -30.15738285391493,
+              -4.793806236700114
+            ],
+            [
+              -28.706708499190587,
+              -2.847750347890102
+            ],
+            [
+              -28.0320966406708,
+              -0.9024345991572602
+            ],
+            [
+              -28.035686138841346,
+              0.6535911459600605
+            ],
+            [
+              -28.719598690258014,
+              2.598706049963539
+            ],
+            [
+              -30.18092754130117,
+              4.641657639687811
+            ],
+            [
+              -30.620039087467685,
+              24.04163822212968
+            ],
+            [
+              -41.621107327467286,
+              23.95816352957498
+            ],
+            [
+              -41.06302236382414,
+              -24.61359842582749
+            ]
+          ]
+        }
+      ]
+    },
+    "holes": [
+      {
+        "name": "visible.hole.1",
+        "centerMm": [
+          23.718888135509864,
+          -42.0548772865486
+        ],
+        "diameterMm": 3.238666982367355,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+      },
+      {
+        "name": "visible.hole.2",
+        "centerMm": [
+          22.856822279201346,
+          42.25273752387139
+        ],
+        "diameterMm": 3.276474178219396,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+      },
+      {
+        "name": "visible.hole.3",
+        "centerMm": [
+          0.18844585572228567,
+          -15.09254212772659
+        ],
+        "diameterMm": 3.2768563614037394,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+      },
+      {
+        "name": "visible.hole.4",
+        "centerMm": [
+          -0.09546509854695273,
+          15.23865119523651
+        ],
+        "diameterMm": 3.290412863250605,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+      },
+      {
+        "name": "visible.hole.5",
+        "centerMm": [
+          -23.147107340455744,
+          -22.326999169023747
+        ],
+        "diameterMm": 3.2882116990418746,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+      },
+      {
+        "name": "visible.hole.6",
+        "centerMm": [
+          -23.52158383143084,
+          21.98302986419105
+        ],
+        "diameterMm": 3.3080448473556237,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+      }
+    ],
+    "thickness": {
+      "valueMm": 2,
+      "confidence": "PROBABLE",
+      "basis": "Owner working same-stock hypothesis; not manufacturer-certified"
+    }
+  },
+  "proofs": {
+    "ownerAmendment": {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    "parameters": {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    "shapeReport": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    "sourceReview": {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "9025430381754b1175fe8080a4fbec74a365a2df47322075e12d0dd1552d475e",
+      "bytes": 31074
+    },
+    "brep": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    }
+  }
+}

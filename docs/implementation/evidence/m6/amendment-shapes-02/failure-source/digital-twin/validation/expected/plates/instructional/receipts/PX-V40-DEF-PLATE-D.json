@@ -1,0 +1,453 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-D",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "BLOCKED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-D",
+    "revision": 1,
+    "name": "Plate D",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-D-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-D"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-D-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-D-GRAYSCALE-MOUNT",
+      "PX-V40-IF-PLATE-D-LEFT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-D-REFERENCE",
+      "PX-V40-IF-PLATE-D-RIGHT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-D-SUPPORT-MOUNT-PATTERN"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-D-001",
+      "definitionId": "PX-V40-DEF-PLATE-D",
+      "definitionRevision": 1,
+      "role": "Plate D",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-D",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      23,
+      24,
+      25
+    ],
+    "rpi5": [
+      23,
+      24,
+      25
+    ],
+    "rpi-zero-2-w": [
+      23,
+      24,
+      25
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+      "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9",
+      "bytes": 648922,
+      "plate": "D",
+      "view": "top-down",
+      "orientation": "Four slots toward image top; wide notched opening toward bottom",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complete flat contour, six round holes, four slots and two larger cutouts visible."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+      "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+      "bytes": 983118,
+      "plate": "D",
+      "view": "top-down",
+      "orientation": "Same outline orientation as master; separate capture",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Additional face reference; a reverse-side designation is not assumed from the symmetric outline."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+      "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480",
+      "bytes": 659839,
+      "plate": "D",
+      "view": "oblique",
+      "orientation": "Whole flat plate with raised-looking edge only from sheet thickness",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows flat-sheet character and cutout edges; card and penny visible."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_04_edge-profile-upright-card.jpeg",
+      "sourceRawSha256": "7386bb04d262627186659597f2fda621c035c6032d4c899b7ca50fcea33ab7fd",
+      "bytes": 293757,
+      "plate": "D",
+      "view": "low edge profile",
+      "orientation": "Plate lies flat to the right of upright card",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Very shallow view; plate edge is soft in focus; retained unchanged."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_05_edge-profile-penny-comparison.jpeg",
+      "sourceRawSha256": "e1410bcf3c4aed42c73a09a14405e42cae29c31732f522a59c433a97e3a1e354",
+      "bytes": 387661,
+      "plate": "D",
+      "view": "low edge profile",
+      "orientation": "Plate edge and penny rim alongside on support surface",
+      "referenceCardVisibility": "absent",
+      "referencePenny": "yes",
+      "limitations": "Thickness-comparison reference only; no calibrated thickness derived."
+    },
+    {
+      "sourceImage": "Plate-D/plate-D_06_macro-edge-penny-comparison-finger-pressure.jpeg",
+      "sourceRawSha256": "98df2bd2eb15d822670f249527a73e1d3a67e1aa20ad408bb56e4ef6da64b5c6",
+      "bytes": 444152,
+      "plate": "D",
+      "view": "macro edge detail",
+      "orientation": "Fingers press plate and penny toward the support surface",
+      "referenceCardVisibility": "partial",
+      "referencePenny": "yes",
+      "limitations": "Owner thickness-comparison shot; card corner only; supports a working assumption, not exact metrology."
+    }
+  ],
+  "features": [
+    {
+      "name": "outline",
+      "observation": "Flat profile with rounded upper ears and concave sides",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "holes",
+      "observation": "Six circular through-holes",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "slots",
+      "observation": "Four elongated slots",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "central-opening",
+      "observation": "Central rectangular/square-like opening; exact square equality not assumed",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "lower-opening",
+      "observation": "Lower closed rectangular opening with upward thumb relief",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+          "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+          "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "flatness",
+      "observation": "Flat sheet, no bent flange",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-D/plate-D_03_oblique-flat-profile.jpeg",
+          "sourceRawSha256": "571a12e8477eb9bf2ec86753e89812e756ed42c69a356054aa302da011bf5480"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_04_edge-profile-upright-card.jpeg",
+          "sourceRawSha256": "7386bb04d262627186659597f2fda621c035c6032d4c899b7ca50fcea33ab7fd"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_05_edge-profile-penny-comparison.jpeg",
+          "sourceRawSha256": "e1410bcf3c4aed42c73a09a14405e42cae29c31732f522a59c433a97e3a1e354"
+        },
+        {
+          "sourceImage": "Plate-D/plate-D_06_macro-edge-penny-comparison-finger-pressure.jpeg",
+          "sourceRawSha256": "98df2bd2eb15d822670f249527a73e1d3a67e1aa20ad408bb56e4ef6da64b5c6"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "REVIEW_REQUIRED",
+  "shapeValidationStatus": "PROVISIONAL_CANDIDATE_PENDING",
+  "sourceValidationStatus": "BLOCKED",
+  "blockerIds": [
+    "Q-03",
+    "M6-CALIBRATION-UNCERTAINTY",
+    "M6-FULL-SOURCE-PROJECTION",
+    "M6-INSTRUCTIONAL-ORIENTATION"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "No full instructional admission or strict engineering G-STRUCTURE/G-CAD acceptance",
+    "Bent geometry is not silently substituted with a bounding box or flat outline",
+    "Candidate D/G/H numeric parameters are isolated from canonical model preimages"
+  ]
+}

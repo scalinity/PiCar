@@ -1,0 +1,4340 @@
+{
+  "contractVersion": 1,
+  "milestone": "M6",
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "status": "BLOCKED",
+  "implementationStatus": "PARTIAL_UNACCEPTED",
+  "engineeringGate": {
+    "name": "G-STRUCTURE/G-CAD plate admission",
+    "status": "BLOCKED",
+    "admitted": 0
+  },
+  "instructionalGate": {
+    "status": "BLOCKED",
+    "admitted": 0,
+    "blocked": 8
+  },
+  "m7Authorized": false,
+  "M6_INSTRUCTIONAL_ACCEPTED_SHA": null,
+  "branch": "codex/m6-instructional-plates",
+  "M6_START_SHA": "9112c2937bd58d89d4075a040750636b484f41e3",
+  "startTree": "795de2ce527bc3188740c836c298137e90c77aa6",
+  "acceptedUpstream": [
+    {
+      "milestone": "M0",
+      "sha": "2a934710501d71aecbd8da827925c92e49378661",
+      "tree": "0bf7ca89a7ef11b6c8b02f3940e7d621a4d70de8",
+      "subject": "M0: lock V40 source and establish digital twin baseline"
+    },
+    {
+      "milestone": "M1",
+      "sha": "22c85058f9420aaaaf376c5e312915f5b7b5288d",
+      "tree": "ac522aaf62fcf47d0409ae6b74cff0760bd33f8f",
+      "subject": "M1: establish canonical digital twin data contracts"
+    },
+    {
+      "milestone": "M2",
+      "sha": "8d8d30d0c7b077504916a26d80c211e2fc52c4e2",
+      "tree": "9d42c12071c15c6472e21954b62aa026ef4f76f1",
+      "subject": "M2: compile reversible V40 semantic graphs"
+    },
+    {
+      "milestone": "M3",
+      "sha": "baddbfe6953237d436cbedb963c6ea88d2960f05",
+      "tree": "85d298b7ae906ad3bed5a7752a126279861c9e35",
+      "subject": "M3: add durable assembly sessions and reference-first integration"
+    },
+    {
+      "milestone": "M4",
+      "sha": "4655e60ccb170cd7cadd5545f1aa4303e74145b7",
+      "tree": "e5d0f404bf195c2570e7a6f009ec989e7aac56dc",
+      "subject": "M4: qualify reproducible synthetic mechanical toolchain"
+    },
+    {
+      "milestone": "M5",
+      "sha": "75b3b7286761c41200940657c18eb4371025587d",
+      "tree": "dec85cce4d677934cdeb47db6665d72841dbbf93",
+      "subject": "M5: add instructional purchased-component geometry"
+    }
+  ],
+  "preflight": {
+    "path": "docs/implementation/evidence/m6/preflight.json",
+    "status": "PASS",
+    "retainedBindings": 1041,
+    "priorBranchM5Check": {
+      "command": "node docs/implementation/evidence/m5/instructional-closure.mjs --check --require-retained",
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "branch": "codex/m5-purchased-components",
+      "exit": 0,
+      "observedToolResult": "G-INSTRUCTIONAL-COMPONENT PASS; strictGComponent BLOCKED; fifty instructional admissions; upstreamBindingCheck PASS",
+      "note": "Executed in this turn before branch switch; do not rerun branch-hardcoded validator on M6"
+    }
+  },
+  "canonicalIdentities": {
+    "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+    "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2"
+  },
+  "graphHashes": [
+    {
+      "variantId": "rpi4",
+      "graphHash": "ce9dd71eb9728f1538e2fb311f99450cdafc0df96c91033cf0333e6bec51eac7"
+    },
+    {
+      "variantId": "rpi5",
+      "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665"
+    },
+    {
+      "variantId": "rpi-zero-2-w",
+      "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2"
+    }
+  ],
+  "toolchainHash": "be4c1f8158fe16865c7f68c821ae3d87e846c7855cac058bee4902996c806add",
+  "sourceIntegrity": {
+    "status": "PASS",
+    "scope": "M6 handoff integrity only; no plate geometry admitted",
+    "archive": {
+      "path": "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+      "rawSha256": "02e3006ee1fbd45c03abef5c5bbf5433d2ba73b9bcd750af9617d4333bd315cb",
+      "bytes": 34917896,
+      "privacy": "privateOwnerEvidence",
+      "gitTracked": false
+    },
+    "manifest": {
+      "path": "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence/PHOTO_MANIFEST.csv",
+      "rawSha256": "09fa9ab162bd49a091af575cb684109423ecb23347fba3a4ac6cd6ba36005518",
+      "bytes": 24112,
+      "privacy": "privateOwnerEvidence",
+      "gitTracked": false
+    },
+    "readme": {
+      "path": "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence/README.md",
+      "rawSha256": "963af7a406412577e5bee21922982f48fbf6cccf79603fea6e7459c947eca724",
+      "bytes": 5676,
+      "privacy": "privateOwnerEvidence",
+      "gitTracked": false
+    },
+    "crcIntegrity": "PASS",
+    "zipMatchesExtractedBytes": true,
+    "manifestMatchesActualImageBytes": true,
+    "uniqueImages": 62,
+    "counts": {
+      "Plate-A": 13,
+      "Plate-B": 7,
+      "Plate-C": 14,
+      "Plate-D": 6,
+      "Plate-E": 8,
+      "Plate-F": 6,
+      "Plate-G": 3,
+      "Plate-H": 3,
+      "Plate-E-F-Mirror-Comparison": 2
+    },
+    "unrelatedFiles": 0,
+    "commands": [
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-t",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.439Z",
+        "finishedAt": "2026-10-01T03:45:02.570Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-Z1",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.570Z",
+        "finishedAt": "2026-10-01T03:45:02.571Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/PHOTO_MANIFEST.csv"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.571Z",
+        "finishedAt": "2026-10-01T03:45:02.573Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/README.md"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.573Z",
+        "finishedAt": "2026-10-01T03:45:02.574Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_01_top-down-master.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.576Z",
+        "finishedAt": "2026-10-01T03:45:02.579Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.596Z",
+        "finishedAt": "2026-10-01T03:45:02.599Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_03_front-profile-dual-opening-face-alternate.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.615Z",
+        "finishedAt": "2026-10-01T03:45:02.618Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.634Z",
+        "finishedAt": "2026-10-01T03:45:02.636Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.652Z",
+        "finishedAt": "2026-10-01T03:45:02.655Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_06_rear-profile-single-opening-face-alternate.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.671Z",
+        "finishedAt": "2026-10-01T03:45:02.673Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.689Z",
+        "finishedAt": "2026-10-01T03:45:02.692Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_08_side-profile-front-at-right.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.708Z",
+        "finishedAt": "2026-10-01T03:45:02.710Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_09_side-oblique-front-at-right.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.726Z",
+        "finishedAt": "2026-10-01T03:45:02.729Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_10_side-profile-front-at-left.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.744Z",
+        "finishedAt": "2026-10-01T03:45:02.747Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_11_side-oblique-front-at-left.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.763Z",
+        "finishedAt": "2026-10-01T03:45:02.765Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.781Z",
+        "finishedAt": "2026-10-01T03:45:02.784Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_13_oblique-chassis-overview.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.800Z",
+        "finishedAt": "2026-10-01T03:45:02.803Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_01_top-down-large-cutout-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.818Z",
+        "finishedAt": "2026-10-01T03:45:02.821Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_02_top-view-large-cutout-face-alternate.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.836Z",
+        "finishedAt": "2026-10-01T03:45:02.839Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_03_face-on-narrow-cutout-flange.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.855Z",
+        "finishedAt": "2026-10-01T03:45:02.858Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_04_edge-profile-upright-flange.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.874Z",
+        "finishedAt": "2026-10-01T03:45:02.877Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_05_edge-profile-tilted-bracket.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.895Z",
+        "finishedAt": "2026-10-01T03:45:02.898Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_06_oblique-open-bracket.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.916Z",
+        "finishedAt": "2026-10-01T03:45:02.919Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-B/plate-B_07_oblique-inverted-bracket.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.936Z",
+        "finishedAt": "2026-10-01T03:45:02.939Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.957Z",
+        "finishedAt": "2026-10-01T03:45:02.960Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:02.978Z",
+        "finishedAt": "2026-10-01T03:45:02.982Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.000Z",
+        "finishedAt": "2026-10-01T03:45:03.003Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.020Z",
+        "finishedAt": "2026-10-01T03:45:03.023Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.040Z",
+        "finishedAt": "2026-10-01T03:45:03.043Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_06_face-on-long-slot-wall.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.060Z",
+        "finishedAt": "2026-10-01T03:45:03.065Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.082Z",
+        "finishedAt": "2026-10-01T03:45:03.087Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.104Z",
+        "finishedAt": "2026-10-01T03:45:03.106Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_09_oblique-open-interior.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.124Z",
+        "finishedAt": "2026-10-01T03:45:03.128Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.144Z",
+        "finishedAt": "2026-10-01T03:45:03.148Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.165Z",
+        "finishedAt": "2026-10-01T03:45:03.168Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.185Z",
+        "finishedAt": "2026-10-01T03:45:03.188Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.205Z",
+        "finishedAt": "2026-10-01T03:45:03.209Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.225Z",
+        "finishedAt": "2026-10-01T03:45:03.228Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-D/plate-D_01_top-down-master.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.245Z",
+        "finishedAt": "2026-10-01T03:45:03.248Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-D/plate-D_02_top-down-alternate-face-view.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.265Z",
+        "finishedAt": "2026-10-01T03:45:03.270Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-D/plate-D_03_oblique-flat-profile.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.287Z",
+        "finishedAt": "2026-10-01T03:45:03.290Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-D/plate-D_04_edge-profile-upright-card.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.306Z",
+        "finishedAt": "2026-10-01T03:45:03.309Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-D/plate-D_05_edge-profile-penny-comparison.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.324Z",
+        "finishedAt": "2026-10-01T03:45:03.328Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-D/plate-D_06_macro-edge-penny-comparison-finger-pressure.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.343Z",
+        "finishedAt": "2026-10-01T03:45:03.346Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_01_top-down-base-notch-left.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.361Z",
+        "finishedAt": "2026-10-01T03:45:03.365Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_02_top-down-base-alternate-face.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.380Z",
+        "finishedAt": "2026-10-01T03:45:03.383Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_03_tab-face-profile-narrow-tab-left.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.400Z",
+        "finishedAt": "2026-10-01T03:45:03.407Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_04_tab-face-profile-narrow-tab-right.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.424Z",
+        "finishedAt": "2026-10-01T03:45:03.428Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_05_edge-profile-three-tabs.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.445Z",
+        "finishedAt": "2026-10-01T03:45:03.451Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_06_oblique-open-tabs.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.468Z",
+        "finishedAt": "2026-10-01T03:45:03.471Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_07_oblique-inverted-base.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.488Z",
+        "finishedAt": "2026-10-01T03:45:03.491Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E/plate-E_08_oblique-tab-faces-upright-card.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.508Z",
+        "finishedAt": "2026-10-01T03:45:03.511Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-F/plate-F_01_top-down-base-and-offset-notch.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.528Z",
+        "finishedAt": "2026-10-01T03:45:03.533Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-F/plate-F_02_tab-face-profile-narrow-tab-right.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.550Z",
+        "finishedAt": "2026-10-01T03:45:03.554Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-F/plate-F_03_edge-profile-three-tabs.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.571Z",
+        "finishedAt": "2026-10-01T03:45:03.575Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-F/plate-F_04_oblique-open-tabs.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.590Z",
+        "finishedAt": "2026-10-01T03:45:03.594Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-F/plate-F_05_oblique-open-tabs-opposite-angle.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.609Z",
+        "finishedAt": "2026-10-01T03:45:03.612Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-F/plate-F_06_oblique-inverted-base.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.628Z",
+        "finishedAt": "2026-10-01T03:45:03.631Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.647Z",
+        "finishedAt": "2026-10-01T03:45:03.650Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.666Z",
+        "finishedAt": "2026-10-01T03:45:03.670Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.687Z",
+        "finishedAt": "2026-10-01T03:45:03.690Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-H/plate-H_01_top-down-notch-down.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.706Z",
+        "finishedAt": "2026-10-01T03:45:03.711Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-H/plate-H_02_top-down-notch-up.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.728Z",
+        "finishedAt": "2026-10-01T03:45:03.732Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.749Z",
+        "finishedAt": "2026-10-01T03:45:03.752Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E-F-Mirror-Comparison/plate-E-F_01_mirror-comparison-offset-tabs-down.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.768Z",
+        "finishedAt": "2026-10-01T03:45:03.771Z",
+        "exit": 0
+      },
+      {
+        "command": [
+          "/usr/bin/unzip",
+          "-p",
+          "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence.zip",
+          "PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-E-F-Mirror-Comparison/plate-E-F_02_mirror-comparison-offset-tabs-up.jpeg"
+        ],
+        "cwd": "/Users/danny/Documents/Apps/PiCar",
+        "environment": "inherited",
+        "startedAt": "2026-10-01T03:45:03.786Z",
+        "finishedAt": "2026-10-01T03:45:03.791Z",
+        "exit": 0
+      }
+    ],
+    "handling": "Original owner paths retained; ignored/untracked/unstaged; no bytes moved, copied, recompressed or published",
+    "context": {
+      "plateE": "robot RIGHT",
+      "plateF": "robot LEFT",
+      "workingThicknessMm": 2,
+      "workingThicknessConfidence": "PROBABLE",
+      "workingThicknessBasis": "Owner-reviewed photo-supported context; not calibrated or manufacturer-certified",
+      "manufacturingAdmission": false
+    }
+  },
+  "calibration": {
+    "status": "REVIEW_REQUIRED",
+    "scope": "Six views: D/G/H primary and independently corrected alternate views only",
+    "method": "Center-fixed division-model plumb-line lens fit; four card tangent-line intersections to compatible ID-1 rectangle; copper-disk penny check withheld from the card fit",
+    "references": [
+      {
+        "name": "Compatible ID-1 card",
+        "dimensionsMm": [
+          85.6,
+          53.98
+        ],
+        "url": "https://www.iso.org/standard/31432.html",
+        "limitation": "Visible card is compatible, actual card dimensional conformity/warpage not measured; withdrawn edition is a historical dimensions source"
+      },
+      {
+        "name": "US penny",
+        "diameterMm": 19.05,
+        "url": "https://www.usmint.gov/learn/coins-and-medals/circulating-coins/coin-specifications",
+        "limitation": "Detected image disk provides a consistency check, not a certified on-plane dimensional witness"
+      }
+    ],
+    "views": [
+      {
+        "plate": "G",
+        "index": 1,
+        "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+        "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468",
+        "lens": {
+          "method": "center-fixed division-model plumb-line fit",
+          "coefficient": 0.008320451625974156,
+          "imageCenter": [
+            816,
+            763
+          ],
+          "normalizerPx": 1632,
+          "onePixelSensitivityInterval": [
+            -0.09999999999999998,
+            0.128
+          ],
+          "independentIntrinsicCalibration": false
+        },
+        "perspective": {
+          "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+          "homographyUndistortedAnnotationPxToCardMm": [
+            [
+              0.05893683587419405,
+              -0.0003928251922244966,
+              -7.929033780609144
+            ],
+            [
+              -0.0006506758156251389,
+              0.0595137814860566,
+              -34.732979767627235
+            ],
+            [
+              -0.000013680427275381952,
+              -0.000025169676204773476,
+              1
+            ]
+          ],
+          "correctedCardCornersPx": [
+            [
+              138.43440793150285,
+              585.1259123414513
+            ],
+            [
+              1538.4214540665218,
+              600.4322445953002
+            ],
+            [
+              1513.3698084091109,
+              1455.1760144026396
+            ],
+            [
+              144.24661818084041,
+              1457.1506406734138
+            ]
+          ]
+        },
+        "withheldStraightEdgeRmsPx": 0.3814041666728828,
+        "pennyWithheldDiametersMm": [
+          19.045832165873325,
+          18.72898926635344
+        ],
+        "uncertainty": {
+          "state": "unresolved",
+          "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+        }
+      },
+      {
+        "plate": "G",
+        "index": 2,
+        "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+        "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+        "lens": {
+          "method": "center-fixed division-model plumb-line fit",
+          "coefficient": 0.0075170678220635775,
+          "imageCenter": [
+            784,
+            799
+          ],
+          "normalizerPx": 1598,
+          "onePixelSensitivityInterval": [
+            -0.10099999999999998,
+            0.128
+          ],
+          "independentIntrinsicCalibration": false
+        },
+        "perspective": {
+          "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+          "homographyUndistortedAnnotationPxToCardMm": [
+            [
+              0.061188143384490114,
+              0.00007645303626986558,
+              -5.978046208466145
+            ],
+            [
+              -0.0007674538503208244,
+              0.06143639957652072,
+              -40.85997350522904
+            ],
+            [
+              -0.000007157928871043262,
+              -0.000017126257804711073,
+              1
+            ]
+          ],
+          "correctedCardCornersPx": [
+            [
+              96.8669118988687,
+              666.2876514882631
+            ],
+            [
+              1464.7686722386068,
+              683.3752653469791
+            ],
+            [
+              1443.646955089524,
+              1529.6466323089428
+            ],
+            [
+              95.79845775942283,
+              1521.4103290676949
+            ]
+          ]
+        },
+        "withheldStraightEdgeRmsPx": 0.4234058561508794,
+        "pennyWithheldDiametersMm": [
+          18.88148747861187,
+          19.033053659930648
+        ],
+        "uncertainty": {
+          "state": "unresolved",
+          "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+        }
+      },
+      {
+        "plate": "H",
+        "index": 1,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6",
+        "lens": {
+          "method": "center-fixed division-model plumb-line fit",
+          "coefficient": 0.011957923247409737,
+          "imageCenter": [
+            729.5,
+            848
+          ],
+          "normalizerPx": 1696,
+          "onePixelSensitivityInterval": [
+            -0.09999999999999998,
+            0.138
+          ],
+          "independentIntrinsicCalibration": false
+        },
+        "perspective": {
+          "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+          "homographyUndistortedAnnotationPxToCardMm": [
+            [
+              0.061085681429240445,
+              0.00033906663507141593,
+              -3.860088299270458
+            ],
+            [
+              -0.0014631660645618098,
+              0.06160572753786605,
+              -47.79574867264344
+            ],
+            [
+              -0.000006845842341272215,
+              -0.000026229931278813938,
+              1
+            ]
+          ],
+          "correctedCardCornersPx": [
+            [
+              58.87722024054931,
+              777.231237044388
+            ],
+            [
+              1416.6648856630322,
+              809.4793560801654
+            ],
+            [
+              1381.9074526583445,
+              1638.9144221164802
+            ],
+            [
+              54.222184058598295,
+              1615.8748186883195
+            ]
+          ]
+        },
+        "withheldStraightEdgeRmsPx": 0.37035862230507716,
+        "pennyWithheldDiametersMm": [
+          18.597228963615425,
+          19.137198494703537
+        ],
+        "uncertainty": {
+          "state": "unresolved",
+          "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+        }
+      },
+      {
+        "plate": "H",
+        "index": 2,
+        "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+        "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+        "lens": {
+          "method": "center-fixed division-model plumb-line fit",
+          "coefficient": 0.010785394781801115,
+          "imageCenter": [
+            731.5,
+            848
+          ],
+          "normalizerPx": 1696,
+          "onePixelSensitivityInterval": [
+            -0.09799999999999998,
+            0.132
+          ],
+          "independentIntrinsicCalibration": false
+        },
+        "perspective": {
+          "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+          "homographyUndistortedAnnotationPxToCardMm": [
+            [
+              0.059766969865438474,
+              -0.0003663337700401519,
+              -1.8360477388705498
+            ],
+            [
+              -0.0007079938504444554,
+              0.0602063339555429,
+              -45.55384635605065
+            ],
+            [
+              -0.00000813226787848987,
+              -0.000025441053300547484,
+              1
+            ]
+          ],
+          "correctedCardCornersPx": [
+            [
+              35.360312787127796,
+              757.0446204831161
+            ],
+            [
+              1422.9368962109959,
+              773.361768921522
+            ],
+            [
+              1397.4990161235905,
+              1622.4484250524158
+            ],
+            [
+              40.62835920683848,
+              1616.5208614588516
+            ]
+          ]
+        },
+        "withheldStraightEdgeRmsPx": 0.3586456465118811,
+        "pennyWithheldDiametersMm": [
+          18.899141961368418,
+          18.429388462795586
+        ],
+        "uncertainty": {
+          "state": "unresolved",
+          "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+        }
+      },
+      {
+        "plate": "D",
+        "index": 1,
+        "sourceImage": "Plate-D/plate-D_01_top-down-master.jpeg",
+        "sourceRawSha256": "db1e750418cb4ebac3d881f1b379d5f05d1422ad43d0c913ac9b8bdbefb066a9",
+        "lens": {
+          "method": "center-fixed division-model plumb-line fit",
+          "coefficient": 0.013554772250260572,
+          "imageCenter": [
+            611,
+            768
+          ],
+          "normalizerPx": 1536,
+          "onePixelSensitivityInterval": [
+            -0.22599999999999998,
+            0.31300000000000006
+          ],
+          "independentIntrinsicCalibration": false
+        },
+        "perspective": {
+          "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+          "homographyUndistortedAnnotationPxToCardMm": [
+            [
+              0.09595004819410571,
+              -0.000357360706967151,
+              -27.524677261646694
+            ],
+            [
+              0.00040043047737378564,
+              0.09615939860392045,
+              -88.45048524752275
+            ],
+            [
+              -0.00000809143775638696,
+              -0.0000092859066260883,
+              1
+            ]
+          ],
+          "correctedCardCornersPx": [
+            [
+              290.286014339669,
+              918.6231108211648
+            ],
+            [
+              1166.4035964941208,
+              914.9747500082742
+            ],
+            [
+              1163.9206767991259,
+              1463.4294393925966
+            ],
+            [
+              292.3432315084216,
+              1470.9784275619447
+            ]
+          ]
+        },
+        "withheldStraightEdgeRmsPx": 0.3566156260106825,
+        "pennyWithheldDiametersMm": [
+          18.76221273917388,
+          18.897262399741418
+        ],
+        "uncertainty": {
+          "state": "unresolved",
+          "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+        }
+      },
+      {
+        "plate": "D",
+        "index": 2,
+        "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+        "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+        "lens": {
+          "method": "center-fixed division-model plumb-line fit",
+          "coefficient": 0.009839514850864312,
+          "imageCenter": [
+            704,
+            884.5
+          ],
+          "normalizerPx": 1769,
+          "onePixelSensitivityInterval": [
+            -0.21799999999999997,
+            0.28700000000000003
+          ],
+          "independentIntrinsicCalibration": false
+        },
+        "perspective": {
+          "method": "four fitted card tangent-line intersections to compatible ID-1 rectangle",
+          "homographyUndistortedAnnotationPxToCardMm": [
+            [
+              0.085815469189931,
+              0.0009204964434999626,
+              -28.034291243963644
+            ],
+            [
+              -0.0009753974557940462,
+              0.08642747339611986,
+              -90.93139740254988
+            ],
+            [
+              -0.000008804129875416114,
+              -0.000011538797178087055,
+              1
+            ]
+          ],
+          "correctedCardCornersPx": [
+            [
+              315.3574745429618,
+              1055.6712199917308
+            ],
+            [
+              1289.130494101755,
+              1066.6609630499975
+            ],
+            [
+              1275.786848452235,
+              1672.0151439296928
+            ],
+            [
+              308.8058786317906,
+              1666.459323552734
+            ]
+          ]
+        },
+        "withheldStraightEdgeRmsPx": 0.34391615384387747,
+        "pennyWithheldDiametersMm": [
+          18.903586174856876,
+          18.751859102921365
+        ],
+        "uncertainty": {
+          "state": "unresolved",
+          "reason": "Edge-fit sensitivity is quantified; lens/card warpage, reference/plate plane offsets and feature-pick bounds need joint closure before admission"
+        }
+      }
+    ],
+    "maxPennyDiameterDiscrepancyMm": 0.6206115372044145,
+    "limitations": [
+      "No independent intrinsic lens calibration",
+      "One-pixel lens sensitivity intervals are not joint metric uncertainty bounds",
+      "Card warpage, plate/card/penny plane offset and feature-picking uncertainty remain unbounded",
+      "Bent plates are not calibrated using a single oblique silhouette",
+      "Private annotations identify selected source features; they are not CAD-to-source projection overlays"
+    ]
+  },
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "sharedStock": "Owner photo-supported working hypothesis; D05/D06 edge/penny views inspected; no stronger numerical thickness inference accepted"
+  },
+  "sourceFeatureMap": "digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+  "perPlate": [
+    {
+      "definitionId": "PX-V40-DEF-PLATE-A",
+      "summary": "Thirteen views inspected; main chassis, front/rear faces and six upright flanges inventoried. Face registration and CAD not authored.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "notApplicable",
+      "viewCount": 13,
+      "stepUse": {
+        "rpi4": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          20,
+          25
+        ],
+        "rpi5": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          20,
+          25
+        ],
+        "rpi-zero-2-w": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          20,
+          25
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "main.outer-profile",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "main.circular-holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "main.slots",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "main.rectangular-cutouts",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "front.dual-openings",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "rear.single-opening",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "side.large-flanges",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "side.slotted-flanges",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "planes.bends",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "origin.instructional",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "status": "NOT_AUTHORED"
+      },
+      "sourceResidual": {
+        "status": "NOT_CLOSED"
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION",
+        "M6-BENT-FACE-REGISTRATION",
+        "M6-BENT-CAD-NOT-AUTHORED"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-B",
+      "summary": "Seven views inspected; two-face bent bracket, two large rectangular openings and mounting holes inventoried. Registration/CAD not authored.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "notApplicable",
+      "viewCount": 7,
+      "stepUse": {
+        "rpi4": [
+          14,
+          15,
+          16
+        ],
+        "rpi5": [
+          14,
+          15,
+          16
+        ],
+        "rpi-zero-2-w": [
+          14,
+          15,
+          16
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "main.outer-profile",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "main.cutout",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "main.mounting-holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "flange.cutout",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "flange.side-holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "planes.bend",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "status": "NOT_AUTHORED"
+      },
+      "sourceResidual": {
+        "status": "NOT_CLOSED"
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION",
+        "M6-BENT-FACE-REGISTRATION",
+        "M6-BENT-CAD-NOT-AUTHORED"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-C",
+      "summary": "Fourteen views inspected; four distinct faces and asymmetric cutouts/holes/slots inventoried. Multi-face registration/CAD not authored.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "notApplicable",
+      "viewCount": 14,
+      "stepUse": {
+        "rpi4": [
+          12,
+          13
+        ],
+        "rpi5": [
+          12,
+          13
+        ],
+        "rpi-zero-2-w": [
+          12,
+          13
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "camera.outer-profile",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "camera.shaped-cutout",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "camera.small-square",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "camera.slot-and-four-holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "circular-wall.outer-profile",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "circular-wall.holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "slot-wall.outer-profile",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "slot-wall.slots-and-holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "transverse.slots-and-holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "planes.multi-bend",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "status": "NOT_AUTHORED"
+      },
+      "sourceResidual": {
+        "status": "NOT_CLOSED"
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION",
+        "M6-BENT-FACE-REGISTRATION",
+        "M6-BENT-CAD-NOT-AUTHORED"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-D",
+      "summary": "Provisional sampled-outline flat BRep; six holes, four slots, two closed cutouts. Full projection and uncertainty remain open.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "notApplicable",
+      "viewCount": 6,
+      "stepUse": {
+        "rpi4": [
+          23,
+          24,
+          25
+        ],
+        "rpi5": [
+          23,
+          24,
+          25
+        ],
+        "rpi-zero-2-w": [
+          23,
+          24,
+          25
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "outline",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "slots",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "central-opening",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "lower-opening",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "flatness",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "definitionId": "PX-V40-DEF-PLATE-D",
+        "status": "PASS",
+        "scope": "Authored provisional BRep construction only",
+        "solidCount": 1,
+        "volumeMm3": 6180.367556043472,
+        "flatStockPlanesMm": [
+          0,
+          2
+        ],
+        "actualHoleCylinders": [
+          {
+            "center": [
+              23.718888135509864,
+              -42.0548772865486
+            ],
+            "radius": 1.6193334911836774,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              22.856822279201346,
+              42.25273752387139
+            ],
+            "radius": 1.638237089109698,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              0.18844585572228567,
+              -15.09254212772659
+            ],
+            "radius": 1.6384281807018697,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -0.09546509854695273,
+              15.23865119523651
+            ],
+            "radius": 1.6452064316253026,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -23.147107340455744,
+              -22.326999169023747
+            ],
+            "radius": 1.6441058495209373,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -23.52158383143084,
+              21.98302986419105
+            ],
+            "radius": 1.6540224236778118,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "actualTopBottomWireCounts": [
+          13,
+          13
+        ],
+        "slotCount": 4,
+        "closedCutoutCount": 2,
+        "openNotch": false,
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      "sourceResidual": {
+        "definitionId": "PX-V40-DEF-PLATE-D",
+        "status": "BLOCKED",
+        "scope": "Independent withheld second-view hole landmarks; full silhouette/source gate incomplete",
+        "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+        "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            0.9999829620669386,
+            -0.005837428871659164
+          ],
+          [
+            0.005837428871659164,
+            0.9999829620669386
+          ]
+        ],
+        "alignmentTranslationMm": [
+          -50.051193016438305,
+          -28.79798562675275
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          1
+        ],
+        "withheldHoleIndices": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "holeCenterResidualsMm": [
+          0.05831068635798921,
+          0.0583106863579821,
+          0.17243735820840295,
+          0.064879645621578,
+          0.20067310517130185,
+          0.14275392717975197
+        ],
+        "maxHoleCenterResidualMm": 0.20067310517130185,
+        "rmsHoleCenterResidualMm": 0.1299952961157234,
+        "holeDiameterDifferencesMm": [
+          0.012992963182243855,
+          0.021423404733142082,
+          0.01503914518436833,
+          0.0180657877590491,
+          0.017572671940766504,
+          0.021997227792918128
+        ],
+        "maxHoleDiameterDifferenceMm": 0.021997227792918128,
+        "blockers": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ],
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-E",
+      "summary": "Eight views inspected; asymmetric base, three upright hole-bearing tabs; RIGHT retained. Bent CAD not authored.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "RIGHT",
+      "viewCount": 8,
+      "stepUse": {
+        "rpi4": [
+          25,
+          26
+        ],
+        "rpi5": [
+          25,
+          26
+        ],
+        "rpi-zero-2-w": [
+          25,
+          26
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "base.outline-and-notch",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "base.hole",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "tabs.three-uprights",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "tabs.holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "planes.bends",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "handedness",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "status": "NOT_AUTHORED"
+      },
+      "sourceResidual": {
+        "status": "NOT_CLOSED"
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION",
+        "M6-BENT-FACE-REGISTRATION",
+        "M6-BENT-CAD-NOT-AUTHORED"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-F",
+      "summary": "Six views inspected; asymmetric base, three upright hole-bearing tabs; LEFT retained. Bent CAD not authored.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "LEFT",
+      "viewCount": 6,
+      "stepUse": {
+        "rpi4": [
+          25,
+          26
+        ],
+        "rpi5": [
+          25,
+          26
+        ],
+        "rpi-zero-2-w": [
+          25,
+          26
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "base.outline-and-notch",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "base.hole",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "tabs.three-uprights",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "tabs.holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "planes.bends",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "handedness",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "status": "NOT_AUTHORED"
+      },
+      "sourceResidual": {
+        "status": "NOT_CLOSED"
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION",
+        "M6-BENT-FACE-REGISTRATION",
+        "M6-BENT-CAD-NOT-AUTHORED"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-G",
+      "summary": "Provisional capsule bar BRep with three holes. Width is a provisional rounded appearance estimate, not a bounded derivation.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "notApplicable",
+      "viewCount": 3,
+      "stepUse": {
+        "rpi4": [
+          21,
+          25
+        ],
+        "rpi5": [
+          21,
+          25
+        ],
+        "rpi-zero-2-w": [
+          21,
+          25
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "outline",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "flatness",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "definitionId": "PX-V40-DEF-PLATE-G",
+        "status": "PASS",
+        "scope": "Authored provisional BRep construction only",
+        "solidCount": 1,
+        "volumeMm3": 1414.04877152611,
+        "flatStockPlanesMm": [
+          0,
+          2
+        ],
+        "actualHoleCylinders": [
+          {
+            "center": [
+              0.30802106822706055,
+              -41.711296534564646
+            ],
+            "radius": 1.6142589512647147,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              0.001464291133826734,
+              0.04827300620254249
+            ],
+            "radius": 0.97382963821981,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -0.3094853593608855,
+              41.66302352836211
+            ],
+            "radius": 1.6631950219892722,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "actualTopBottomWireCounts": [
+          4,
+          4
+        ],
+        "slotCount": 0,
+        "closedCutoutCount": 0,
+        "openNotch": false,
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      "sourceResidual": {
+        "definitionId": "PX-V40-DEF-PLATE-G",
+        "status": "BLOCKED",
+        "scope": "Independent withheld second-view hole landmarks; full silhouette/source gate incomplete",
+        "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+        "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            0.9999618394614807,
+            0.008736110164826415
+          ],
+          [
+            -0.008736110164826415,
+            0.9999618394614807
+          ]
+        ],
+        "alignmentTranslationMm": [
+          -9.693980500674485,
+          -43.03458580973021
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          2
+        ],
+        "withheldHoleIndices": [
+          1
+        ],
+        "holeCenterResidualsMm": [
+          0.11497739432824883,
+          0.06246083337241921,
+          0.11497739432824883
+        ],
+        "maxHoleCenterResidualMm": 0.11497739432824883,
+        "rmsHoleCenterResidualMm": 0.10056665802442406,
+        "holeDiameterDifferencesMm": [
+          0.09947757112317879,
+          0.04532115570376272,
+          0.0542713285371379
+        ],
+        "maxHoleDiameterDifferenceMm": 0.09947757112317879,
+        "blockers": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ],
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-H",
+      "summary": "Provisional rounded/notched flat BRep with six holes. Corner radius is a provisional appearance estimate, not an exact measured value.",
+      "engineeringStatus": "BLOCKED",
+      "instructionalStatus": "BLOCKED",
+      "handedness": "notApplicable",
+      "viewCount": 3,
+      "stepUse": {
+        "rpi4": [
+          9
+        ],
+        "rpi5": [
+          9
+        ],
+        "rpi-zero-2-w": [
+          9
+        ]
+      },
+      "featureUncertainties": [
+        {
+          "name": "outline",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "notch",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "holes",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        },
+        {
+          "name": "flatness",
+          "instructionalValue": {
+            "state": "unresolved",
+            "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+          },
+          "engineeringValue": {
+            "state": "unresolved",
+            "confidence": "UNRESOLVED",
+            "blockerIds": [
+              "Q-03"
+            ]
+          },
+          "uncertainty": {
+            "state": "unresolved",
+            "blockerIds": [
+              "M6-CALIBRATION-UNCERTAINTY",
+              "M6-FULL-SOURCE-PROJECTION"
+            ]
+          },
+          "blockerIds": [
+            "Q-03",
+            "M6-FULL-SOURCE-PROJECTION"
+          ]
+        }
+      ],
+      "shapeResult": {
+        "definitionId": "PX-V40-DEF-PLATE-H",
+        "status": "PASS",
+        "scope": "Authored provisional BRep construction only",
+        "solidCount": 1,
+        "volumeMm3": 2467.880487930145,
+        "flatStockPlanesMm": [
+          0,
+          2
+        ],
+        "actualHoleCylinders": [
+          {
+            "center": [
+              -0.0389521225729581,
+              -26.76151524153907
+            ],
+            "radius": 1.6176019581247667,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              4.992769856033085,
+              -12.829653931696942
+            ],
+            "radius": 1.3064731562812457,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              5.0290622891564425,
+              12.74968454027858
+            ],
+            "radius": 1.3123109738765053,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -4.929991135643366,
+              -12.769992113688875
+            ],
+            "radius": 1.3157120719849815,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -4.989610763770882,
+              12.803342418966096
+            ],
+            "radius": 1.321646235218275,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "center": [
+              -0.0632781232023234,
+              26.808134327680214
+            ],
+            "radius": 1.6328587739996765,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "actualTopBottomWireCounts": [
+          7,
+          7
+        ],
+        "slotCount": 0,
+        "closedCutoutCount": 0,
+        "openNotch": true,
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      "sourceResidual": {
+        "definitionId": "PX-V40-DEF-PLATE-H",
+        "status": "BLOCKED",
+        "scope": "Independent withheld second-view hole landmarks; full silhouette/source gate incomplete",
+        "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+        "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            -0.9999988009977598,
+            0.0015485486891787005
+          ],
+          [
+            -0.0015485486891787005,
+            -0.9999988009977598
+          ]
+        ],
+        "alignmentTranslationMm": [
+          13.422620335432189,
+          42.79427169482943
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          5
+        ],
+        "withheldHoleIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "holeCenterResidualsMm": [
+          0.022851625854186694,
+          0.12213754793605248,
+          0.038744709182212185,
+          0.019452483563641564,
+          0.07107823080362455,
+          0.022851625854190247
+        ],
+        "maxHoleCenterResidualMm": 0.12213754793605248,
+        "rmsHoleCenterResidualMm": 0.0617705980824378,
+        "holeDiameterDifferencesMm": [
+          0.04104751495715808,
+          0.028704515357214966,
+          0.054167239195611394,
+          0.06540782210670226,
+          0.09102817065328006,
+          0.10749614527068019
+        ],
+        "maxHoleDiameterDifferenceMm": 0.10749614527068019,
+        "blockers": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ],
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-CALIBRATION-UNCERTAINTY",
+        "M6-FULL-SOURCE-PROJECTION",
+        "M6-INSTRUCTIONAL-ORIENTATION"
+      ],
+      "manufacturingUnknowns": [
+        "exact bend radius",
+        "stock tolerance",
+        "alloy/material grade",
+        "coating thickness",
+        "manufacturing tolerance",
+        "laser-cut kerf",
+        "hole tolerance",
+        "hidden features",
+        "forming process",
+        "finish thickness",
+        "physical fit",
+        "engineering datum scheme"
+      ]
+    }
+  ],
+  "efMirror": {
+    "sourceImages": [
+      {
+        "sourceImage": "Plate-E-F-Mirror-Comparison/plate-E-F_01_mirror-comparison-offset-tabs-down.jpeg",
+        "sourceRawSha256": "3785f902c386082f2c2a92bacee0ad7e5ec5fd855ac6902228ea2cafaad1cc3b",
+        "bytes": 604617,
+        "plate": "E-F",
+        "view": "top-down comparison",
+        "orientation": "Two brackets side by side; offset extensions toward image bottom",
+        "referenceCardVisibility": "full",
+        "referencePenny": "yes",
+        "limitations": "Owner-identified E/F comparison; opposed notch/tab arrangement visible; no exact dimensional equality inferred."
+      },
+      {
+        "sourceImage": "Plate-E-F-Mirror-Comparison/plate-E-F_02_mirror-comparison-offset-tabs-up.jpeg",
+        "sourceRawSha256": "cca65d4c59a5b1bba2821f6ff479781cea57a714610fe2c680b450321f3d8c8e",
+        "bytes": 924736,
+        "plate": "E-F",
+        "view": "top-down comparison",
+        "orientation": "Two brackets side by side; offset extensions toward image top",
+        "referenceCardVisibility": "full",
+        "referencePenny": "yes",
+        "limitations": "Complementary E/F comparison view; shared frame helps compare handed contours."
+      }
+    ],
+    "identity": "E RIGHT / F LEFT",
+    "visualRelation": "Opposed offset notch/tab contours support handed counterparts",
+    "exactInstructionalCadMirroring": "NOT_PROVED",
+    "FSpecificViewsInspected": 6,
+    "ECadShape": "NOT_AUTHORED",
+    "FCadShape": "NOT_AUTHORED",
+    "validMirroredTopology": "NOT_TESTED"
+  },
+  "independentShapeValidation": {
+    "status": "PASS",
+    "scope": "Three provisional construction candidates only; actual imported BRep tested independently of generator metadata",
+    "path": "docs/implementation/evidence/m6/qualification-a-01/shapes.json",
+    "checks": [
+      "BRepCheck validity",
+      "One closed solid and positive volume",
+      "Through-thickness cylindrical hole surfaces and voids",
+      "Slot end/mid voids and external stock web",
+      "Closed cutout/notch voids",
+      "Flat stock planes and boundary wire counts"
+    ],
+    "fullEightPlateStatus": "BLOCKED"
+  },
+  "sourceValidation": {
+    "status": "BLOCKED",
+    "path": "docs/implementation/evidence/m6/qualification-a-01/shapes.json",
+    "method": "Source2 landmarks independently calibrated; actual BRep cylinder centers aligned by proper rigid 2D transform on two outer holes, no fitted scale/reflection; remaining landmarks withheld",
+    "results": [
+      {
+        "definitionId": "PX-V40-DEF-PLATE-D",
+        "status": "BLOCKED",
+        "scope": "Independent withheld second-view hole landmarks; full silhouette/source gate incomplete",
+        "sourceImage": "Plate-D/plate-D_02_top-down-alternate-face-view.jpeg",
+        "sourceRawSha256": "3c7254ec376d56603f73055dea48b79134fc8314b8db23919113a4c5850bc9f4",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            0.9999829620669386,
+            -0.005837428871659164
+          ],
+          [
+            0.005837428871659164,
+            0.9999829620669386
+          ]
+        ],
+        "alignmentTranslationMm": [
+          -50.051193016438305,
+          -28.79798562675275
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          1
+        ],
+        "withheldHoleIndices": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "holeCenterResidualsMm": [
+          0.05831068635798921,
+          0.0583106863579821,
+          0.17243735820840295,
+          0.064879645621578,
+          0.20067310517130185,
+          0.14275392717975197
+        ],
+        "maxHoleCenterResidualMm": 0.20067310517130185,
+        "rmsHoleCenterResidualMm": 0.1299952961157234,
+        "holeDiameterDifferencesMm": [
+          0.012992963182243855,
+          0.021423404733142082,
+          0.01503914518436833,
+          0.0180657877590491,
+          0.017572671940766504,
+          0.021997227792918128
+        ],
+        "maxHoleDiameterDifferenceMm": 0.021997227792918128,
+        "blockers": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ],
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      {
+        "definitionId": "PX-V40-DEF-PLATE-G",
+        "status": "BLOCKED",
+        "scope": "Independent withheld second-view hole landmarks; full silhouette/source gate incomplete",
+        "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+        "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            0.9999618394614807,
+            0.008736110164826415
+          ],
+          [
+            -0.008736110164826415,
+            0.9999618394614807
+          ]
+        ],
+        "alignmentTranslationMm": [
+          -9.693980500674485,
+          -43.03458580973021
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          2
+        ],
+        "withheldHoleIndices": [
+          1
+        ],
+        "holeCenterResidualsMm": [
+          0.11497739432824883,
+          0.06246083337241921,
+          0.11497739432824883
+        ],
+        "maxHoleCenterResidualMm": 0.11497739432824883,
+        "rmsHoleCenterResidualMm": 0.10056665802442406,
+        "holeDiameterDifferencesMm": [
+          0.09947757112317879,
+          0.04532115570376272,
+          0.0542713285371379
+        ],
+        "maxHoleDiameterDifferenceMm": 0.09947757112317879,
+        "blockers": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ],
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      },
+      {
+        "definitionId": "PX-V40-DEF-PLATE-H",
+        "status": "BLOCKED",
+        "scope": "Independent withheld second-view hole landmarks; full silhouette/source gate incomplete",
+        "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+        "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+        "alignmentMethod": "Rigid 2D alignment on two outer holes; no fitted scale or reflection",
+        "alignmentRotation": [
+          [
+            -0.9999988009977598,
+            0.0015485486891787005
+          ],
+          [
+            -0.0015485486891787005,
+            -0.9999988009977598
+          ]
+        ],
+        "alignmentTranslationMm": [
+          13.422620335432189,
+          42.79427169482943
+        ],
+        "alignmentFitHoleIndices": [
+          0,
+          5
+        ],
+        "withheldHoleIndices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "holeCenterResidualsMm": [
+          0.022851625854186694,
+          0.12213754793605248,
+          0.038744709182212185,
+          0.019452483563641564,
+          0.07107823080362455,
+          0.022851625854190247
+        ],
+        "maxHoleCenterResidualMm": 0.12213754793605248,
+        "rmsHoleCenterResidualMm": 0.0617705980824378,
+        "holeDiameterDifferencesMm": [
+          0.04104751495715808,
+          0.028704515357214966,
+          0.054167239195611394,
+          0.06540782210670226,
+          0.09102817065328006,
+          0.10749614527068019
+        ],
+        "maxHoleDiameterDifferenceMm": 0.10749614527068019,
+        "blockers": [
+          "No joint bound for lens/card warpage, planar offset and feature extraction",
+          "Full independent silhouette/slot/cutout and installed-orientation projection gate not closed"
+        ],
+        "engineeringAdmission": false,
+        "instructionalAdmission": false
+      }
+    ],
+    "limitations": [
+      "Full outline, slot, cutout and installed-orientation projection not qualified",
+      "Cross-view numeric agreement does not bound all systematic uncertainty"
+    ]
+  },
+  "tests": {
+    "runs": [
+      {
+        "label": "qualification-a-01",
+        "cadCommand": [
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+          "-m",
+          "pytest",
+          "cad/tests/test_m6_plates.py",
+          "cad/tests/test_toolchain.py",
+          "-q",
+          "--junitxml=<mirror>/tests.xml"
+        ],
+        "cad": {
+          "passed": 64,
+          "m6": 23,
+          "inheritedM4": 41,
+          "failed": 0,
+          "skipped": 0
+        },
+        "nodeAndUpstream": [
+          {
+            "name": "g-data-check",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "digital-twin/tools/compiler/upstream.mjs",
+              "--check"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:17:54.008Z",
+            "finishedAt": "2026-10-01T04:17:54.126Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": null,
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-a-01/g-data-check.txt",
+              "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+              "bytes": 99
+            }
+          },
+          {
+            "name": "g-graph-check",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "digital-twin/tools/compiler/gate.mjs",
+              "--check"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:17:54.126Z",
+            "finishedAt": "2026-10-01T04:17:54.482Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": null,
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-a-01/g-graph-check.txt",
+              "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+              "bytes": 104
+            }
+          },
+          {
+            "name": "m2-contract-tests",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "--test",
+              "--test-reporter=tap",
+              "digital-twin/validation/m2/tests/contracts.test.mjs"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:17:54.483Z",
+            "finishedAt": "2026-10-01T04:18:00.495Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": {
+              "tests": 12,
+              "pass": 12,
+              "fail": 0,
+              "skipped": 0
+            },
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-a-01/m2-contract-tests.txt",
+              "rawSha256": "e55f38f175197af9b37f7a292be8a7212322b3a46dabac0a9495d4545a8f5908",
+              "bytes": 2836
+            }
+          },
+          {
+            "name": "semantic-firewall-tests",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "--test",
+              "--test-reporter=tap",
+              "--test-name-pattern=unknown numeric with payload|owned rivet pin double-counted|probable generic HAT|official reference approximation|source limitations silently discarded|open conflict treated|resolved conflict loses|integrated cable misclassified|integrated cable endpoint|integrated lead has owner",
+              "digital-twin/validation/tests/semantic.test.mjs"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:00.496Z",
+            "finishedAt": "2026-10-01T04:18:00.826Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": {
+              "tests": 10,
+              "pass": 10,
+              "fail": 0,
+              "skipped": 0
+            },
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-a-01/semantic-firewall-tests.txt",
+              "rawSha256": "a025d453712f6f37844ecb936bd96583b67237253d519ddd874840ab80bfb1c5",
+              "bytes": 1896
+            }
+          },
+          {
+            "name": "m6-policy-tests",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "--test",
+              "--test-reporter=tap",
+              "digital-twin/validation/expected/plates/instructional/plates.test.mjs"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:00.827Z",
+            "finishedAt": "2026-10-01T04:18:00.947Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": {
+              "tests": 53,
+              "pass": 53,
+              "fail": 0,
+              "skipped": 0
+            },
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-a-01/m6-policy-tests.txt",
+              "rawSha256": "b65234ed0c20946c37772d1fd74d8bbcc905eda032d275252dddaa17dfb6dbba",
+              "bytes": 7897
+            }
+          }
+        ],
+        "commands": "docs/implementation/evidence/m6/qualification-a-01/commands.json",
+        "inputs": "docs/implementation/evidence/m6/qualification-a-01/inputs.json",
+        "log": "docs/implementation/evidence/m6/qualification-a-01/cad-tests.txt"
+      },
+      {
+        "label": "qualification-b-01",
+        "cadCommand": [
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-b-01-QyGMQQ/environment/bin/python",
+          "-m",
+          "pytest",
+          "cad/tests/test_m6_plates.py",
+          "cad/tests/test_toolchain.py",
+          "-q",
+          "--junitxml=<mirror>/tests.xml"
+        ],
+        "cad": {
+          "passed": 64,
+          "m6": 23,
+          "inheritedM4": 41,
+          "failed": 0,
+          "skipped": 0
+        },
+        "nodeAndUpstream": [
+          {
+            "name": "g-data-check",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "digital-twin/tools/compiler/upstream.mjs",
+              "--check"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-b-01-QyGMQQ",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:04.675Z",
+            "finishedAt": "2026-10-01T04:18:04.776Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": null,
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-b-01/g-data-check.txt",
+              "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+              "bytes": 99
+            }
+          },
+          {
+            "name": "g-graph-check",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "digital-twin/tools/compiler/gate.mjs",
+              "--check"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-b-01-QyGMQQ",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:04.776Z",
+            "finishedAt": "2026-10-01T04:18:05.102Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": null,
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-b-01/g-graph-check.txt",
+              "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+              "bytes": 104
+            }
+          },
+          {
+            "name": "m2-contract-tests",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "--test",
+              "--test-reporter=tap",
+              "digital-twin/validation/m2/tests/contracts.test.mjs"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-b-01-QyGMQQ",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:05.102Z",
+            "finishedAt": "2026-10-01T04:18:11.170Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": {
+              "tests": 12,
+              "pass": 12,
+              "fail": 0,
+              "skipped": 0
+            },
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-b-01/m2-contract-tests.txt",
+              "rawSha256": "ac01e24e52a0cf20cc05a6e74134e71a969a0584daa0644251e939b155b0f005",
+              "bytes": 2840
+            }
+          },
+          {
+            "name": "semantic-firewall-tests",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "--test",
+              "--test-reporter=tap",
+              "--test-name-pattern=unknown numeric with payload|owned rivet pin double-counted|probable generic HAT|official reference approximation|source limitations silently discarded|open conflict treated|resolved conflict loses|integrated cable misclassified|integrated cable endpoint|integrated lead has owner",
+              "digital-twin/validation/tests/semantic.test.mjs"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-b-01-QyGMQQ",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:11.170Z",
+            "finishedAt": "2026-10-01T04:18:11.495Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": {
+              "tests": 10,
+              "pass": 10,
+              "fail": 0,
+              "skipped": 0
+            },
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-b-01/semantic-firewall-tests.txt",
+              "rawSha256": "85db1ee46e5d4cb99c2cba4bfd894cbf668b8a307f42a25d396f3342aaf0d1e2",
+              "bytes": 1905
+            }
+          },
+          {
+            "name": "m6-policy-tests",
+            "command": [
+              "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+              "--test",
+              "--test-reporter=tap",
+              "digital-twin/validation/expected/plates/instructional/plates.test.mjs"
+            ],
+            "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-b-01-QyGMQQ",
+            "environment": {
+              "NODE_OPTIONS": null
+            },
+            "startedAt": "2026-10-01T04:18:11.495Z",
+            "finishedAt": "2026-10-01T04:18:11.617Z",
+            "exit": 0,
+            "expectedExit": 0,
+            "counts": {
+              "tests": 53,
+              "pass": 53,
+              "fail": 0,
+              "skipped": 0
+            },
+            "log": {
+              "path": "docs/implementation/evidence/m6/qualification-b-01/m6-policy-tests.txt",
+              "rawSha256": "eb7a978585822a04e042b493f65a0bb6bc2c6ef26d4fbfad6af97d4cde2ea871",
+              "bytes": 7899
+            }
+          }
+        ],
+        "commands": "docs/implementation/evidence/m6/qualification-b-01/commands.json",
+        "inputs": "docs/implementation/evidence/m6/qualification-b-01/inputs.json",
+        "log": "docs/implementation/evidence/m6/qualification-b-01/cad-tests.txt"
+      }
+    ],
+    "notExecuted": [
+      "Full eight-plate positive admission tests",
+      "Bent-wall and E/F mirror CAD tests",
+      "Full M4 54-test requalification suite (41 inherited tests actually rerun)",
+      "Full M1/M2 suites or fresh M3/native/session tests",
+      "Full M5 101 CAD tests"
+    ],
+    "counting": "Per mirror: 64 pytest + 53 M6 Node + 12 M2 + 10 semantic tests = 139; each test set repeated twice, not 278 unique tests",
+    "m4Check": {
+      "command": [
+        "node",
+        "digital-twin/tools/export/m4-gate.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "exit": 0,
+      "scope": "Fresh retained-binding check; historical 54/54 results checked, not rerun"
+    },
+    "m5Check": {
+      "command": "node docs/implementation/evidence/m5/instructional-closure.mjs --check --require-retained",
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "branch": "codex/m5-purchased-components",
+      "exit": 0,
+      "observedToolResult": "G-INSTRUCTIONAL-COMPONENT PASS; strictGComponent BLOCKED; fifty instructional admissions; upstreamBindingCheck PASS",
+      "note": "Executed in this turn before branch switch; do not rerun branch-hardcoded validator on M6"
+    }
+  },
+  "reproducibility": {
+    "status": "PASS",
+    "scope": "Three provisional D/G/H candidates only; full eight-plate M6 reproducibility remains BLOCKED",
+    "sameInputs": true,
+    "wheelA": {
+      "file": "twin_cad-0.1.0-py3-none-any.whl",
+      "rawSha256": "d9143c893de5e7da857df0200ddb7ea17456baa24b0ee93f60e099c4896901b9",
+      "bytes": 39794
+    },
+    "wheelB": {
+      "file": "twin_cad-0.1.0-py3-none-any.whl",
+      "rawSha256": "d9143c893de5e7da857df0200ddb7ea17456baa24b0ee93f60e099c4896901b9",
+      "bytes": 39794
+    },
+    "outputs": [
+      {
+        "path": "calibration.json",
+        "rawBytesEqual": true,
+        "shaA": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+        "shaB": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+        "bytesA": 39309,
+        "bytesB": 39309
+      },
+      {
+        "path": "shapes.json",
+        "rawBytesEqual": true,
+        "shaA": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+        "shaB": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+        "bytesA": 10621,
+        "bytesB": 10621
+      },
+      {
+        "path": "candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+        "rawBytesEqual": true,
+        "shaA": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+        "shaB": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+        "bytesA": 110639,
+        "bytesB": 110639
+      },
+      {
+        "path": "candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+        "rawBytesEqual": true,
+        "shaA": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+        "shaB": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+        "bytesA": 43883,
+        "bytesB": 43883
+      },
+      {
+        "path": "candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+        "rawBytesEqual": true,
+        "shaA": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+        "shaB": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+        "bytesA": 9988,
+        "bytesB": 9988
+      },
+      {
+        "path": "candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+        "rawBytesEqual": true,
+        "shaA": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+        "shaB": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+        "bytesA": 16484,
+        "bytesB": 16484
+      },
+      {
+        "path": "candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+        "rawBytesEqual": true,
+        "shaA": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+        "shaB": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+        "bytesA": 20518,
+        "bytesB": 20518
+      },
+      {
+        "path": "candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+        "rawBytesEqual": true,
+        "shaA": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+        "shaB": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+        "bytesA": 26498,
+        "bytesB": 26498
+      },
+      {
+        "path": "candidate-artifacts/generation.json",
+        "rawBytesEqual": true,
+        "shaA": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+        "shaB": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+        "bytesA": 1045,
+        "bytesB": 1045
+      }
+    ],
+    "sameInputsInclude": "CAD sources, locked dependencies, candidate parameters, calibration input, source-map photo hashes, scoped receipts, tests",
+    "normalization": "None; raw JSON, BRep and SVG bytes compared. No STEP outputs. Command timestamps and pytest XML timings differ by design.",
+    "fullM6Status": "BLOCKED"
+  },
+  "admissionSchemaStatus": "INVESTIGATION_ONLY_NOT_READY: receipts are deliberately unresolved; a reviewed bounded-value schema extension and positive admission tests are required before any PASS can be represented",
+  "unmetInstructionalWork": [
+    "Author calibrated bent geometry A/B/C/E/F",
+    "Close per-face/multi-view registration and joint uncertainty intervals",
+    "Complete silhouette/slot/cutout CAD projections with withheld residuals",
+    "Prove E-right/F-left reflected geometry as separate proper oriented solids, including F-specific source checks",
+    "Establish replaceable non-engineering instructional origins and installed orientation",
+    "Complete all eight positive and negative shape/source/admission tests",
+    "Repeat full eight-plate clean qualification before conditional local acceptance"
+  ],
+  "privateProtection": {
+    "path": "docs/implementation/evidence/m6/preservation-final.json",
+    "status": "PASS",
+    "scope": "Preservation/privacy closure only, M6 admission remains BLOCKED",
+    "head": "9112c2937bd58d89d4075a040750636b484f41e3",
+    "branch": "codex/m6-instructional-plates",
+    "acceptedTrackedDiff": "",
+    "indexEmpty": true,
+    "trackedPrivateNames": [],
+    "originalPrivateFilesVerified": 65,
+    "privateDerivedFilesIgnored": 41,
+    "publicFilesHashChecked": 140,
+    "acceptedBindingsVerified": 1041,
+    "diagnosticsUnchangedUntracked": 12,
+    "privatePixelCopyScan": "PASS: original hashes absent from authored/public outputs; derived source pixels confined to ignored private namespace",
+    "authoredPixels": "Only geometric SVG drawings and BRep candidates outside private namespace; no photographic raster outputs",
+    "sourcePublicationContractPreserved": true,
+    "noSessionStoreReadOrTested": true,
+    "instructionalGate": "BLOCKED",
+    "strictEngineeringGate": "BLOCKED",
+    "acceptanceCommit": null,
+    "m7Authorized": false,
+    "stagedNames": [],
+    "rollback": "Move ONLY the explicitly listed M6 additions to an outside-repository backup, retain private evidence/failure history, then switch to codex/m5-purchased-components. No reset/clean/history rewrite; preserve all twelve M2 diagnostics and owner data."
+  },
+  "changeScope": [
+    "digital-twin/cad/twin_cad/components/plates/",
+    "digital-twin/cad/tests/test_m6_plates.py",
+    "digital-twin/tools/evidence/m6-plates.mjs",
+    "digital-twin/validation/expected/plates/instructional/",
+    "docs/implementation/M6_EXECUTION_PLAN.md",
+    "docs/implementation/M6_REPORT.md",
+    "docs/implementation/M6_G_INSTRUCTIONAL_PLATE_REPORT.json",
+    "docs/implementation/HANDOFF_M6_REMEDIATION.md",
+    "docs/implementation/evidence/m6/"
+  ],
+  "failureHistory": [
+    {
+      "path": "docs/implementation/evidence/m6/analysis-commands.json",
+      "reason": "Initial contact-sheet workflow rejected manifest E-F label before correction; initial source retained"
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/",
+      "reason": "Coarse penny bounding box included background; retained before disk segmentation"
+    },
+    {
+      "path": "docs/implementation/evidence/m6/failure-source/calibration-02-bound-field.py",
+      "reason": "Detected penny bounds metadata accidentally reused later plate-outline box; numerical coin derivation unaffected, original retained"
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight-initial-status-field.json",
+      "reason": "Initial preflight duplicate status key overwritten by worktree string; corrected preflight separately retained"
+    },
+    {
+      "path": "docs/implementation/evidence/m6/upstream-public-icon-filter-failure.json",
+      "reason": "Overbroad mirror extension filter rejected an accepted public icon; original source retained before namespace-safe correction"
+    }
+  ],
+  "rights": "Owner-authorized local instructional investigation of private SunFounder kit photographs. Existing SunFounder manual attribution preserved; no vendor binary/pixel publication or redistribution right inferred.",
+  "rollback": "Move ONLY the explicitly listed M6 additions to an outside-repository backup, retain private evidence/failure history, then switch to codex/m5-purchased-components. No reset/clean/history rewrite; preserve all twelve M2 diagnostics and owner data.",
+  "nextHandoff": "docs/implementation/HANDOFF_M6_REMEDIATION.md",
+  "reason": "M6 is incomplete in this execution. Source access is available and useful; no conclusion that reconstruction is impossible. Five bent CAD models and the full eight-plate source/uncertainty/admission proof remain unfinished. Strict engineering acceptance is independently blocked.",
+  "artifactBindings": [
+    {
+      "path": "docs/implementation/evidence/m6/preflight.json",
+      "rawSha256": "dc93d6d955022a127f2fc761b95f0641b58e268cfb81f185d498696b450bfaed",
+      "bytes": 297992
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-package-integrity.json",
+      "rawSha256": "ded013953bdf73e144249e6e75346541c5dbc32d3ebc98393ab9fc16b3c4204e",
+      "bytes": 43651
+    },
+    {
+      "path": "docs/implementation/evidence/m6/reproducibility.json",
+      "rawSha256": "a9fdf438877551f8dcbea73a1bd154924be0dfa2bb16928561cead860ebbf076",
+      "bytes": 3569
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/inputs.json",
+      "rawSha256": "86be87af2e04911bef1a42f1d874d34b1d6952c3f403368db2eb087b07aea2d5",
+      "bytes": 7804
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/inputs.json",
+      "rawSha256": "86be87af2e04911bef1a42f1d874d34b1d6952c3f403368db2eb087b07aea2d5",
+      "bytes": 7804
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/commands.json",
+      "rawSha256": "26cf06234a6ce1792bb45ad3cad71acc5f34368e4410553c8d0f93320ee1a6ad",
+      "bytes": 10073
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/commands.json",
+      "rawSha256": "8a5d33eb010f34d1bb8b4e85400f81806ae45bf7147216ae7a9dd0c6ff123bc6",
+      "bytes": 10420
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/upstream-commands.json",
+      "rawSha256": "88972173950c612de35d71f9dfed1cac2c9c1b29df27e44e75789fb16b5c9c68",
+      "bytes": 5218
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/upstream-commands.json",
+      "rawSha256": "a66e099c66a1d6d4cfe10ba5213ffc68b314535ae5506e3861a6949cddac191b",
+      "bytes": 5218
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "cba8db887eab45da6c0e41741cc5564da463f6761ff8f97a78df105ad2ae9446",
+      "bytes": 6416
+    }
+  ]
+}

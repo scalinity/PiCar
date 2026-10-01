@@ -1,0 +1,137 @@
+[
+  {
+    "name": "frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/uv-cache"
+    },
+    "startedAt": "2026-10-01T03:52:54.057Z",
+    "finishedAt": "2026-10-01T03:53:01.114Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/calibration-01/frozen-install.txt",
+      "rawSha256": "d76b28a3c69be46953065650f9cbb30e9696d4c84a0f7c222ab3f866cf1f537b",
+      "bytes": 1950
+    }
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/wheel"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/uv-cache"
+    },
+    "startedAt": "2026-10-01T03:53:01.115Z",
+    "finishedAt": "2026-10-01T03:53:01.259Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel-build.txt",
+      "rawSha256": "141ac27810cb43726211e528f84a793fe2fc113d0e0a13da71fe1fbe6bb4a15b",
+      "bytes": 163
+    }
+  },
+  {
+    "name": "wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment/bin/python",
+      "--no-deps",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/uv-cache"
+    },
+    "startedAt": "2026-10-01T03:53:01.259Z",
+    "finishedAt": "2026-10-01T03:53:01.278Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel-install.txt",
+      "rawSha256": "fd9987ea9cf5916982ae12e41557c85e98d4d83f2eed3724bd32652919e52389",
+      "bytes": 378
+    }
+  },
+  {
+    "name": "environment",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment/bin/python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/uv-cache"
+    },
+    "startedAt": "2026-10-01T03:53:01.278Z",
+    "finishedAt": "2026-10-01T03:53:13.527Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/calibration-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "calibration",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.calibration",
+      "--package",
+      "/Users/danny/Documents/Apps/PiCar/docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/calibration.json",
+      "--private-output",
+      "/Users/danny/Documents/Apps/PiCar/digital-twin/evidence/private/m6/calibration-01"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-calibration-01-C5n1Du/uv-cache"
+    },
+    "startedAt": "2026-10-01T03:53:13.527Z",
+    "finishedAt": "2026-10-01T03:53:16.876Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/calibration-01/calibration.txt",
+      "rawSha256": "b4a9dc8f5100d05bee063c16d2c509c5aa7ab54d5f621b7e82a6435bbfd61149",
+      "bytes": 1549
+    }
+  }
+]

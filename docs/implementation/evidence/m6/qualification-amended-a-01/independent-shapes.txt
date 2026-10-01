@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/oracle.py", line 122, in <module>
+    main()
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/oracle.py", line 111, in main
+    results=[inspect_bent(d,args.artifacts) if 'bent-faces' in d['profile']['kind'] else inspect(d,args.artifacts) for d in inputs['definitions']]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-a-01-J1CI4Z/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/bent_oracle.py", line 81, in inspect_bent
+    raise ValueError('UNDECLARED_BENT_OPENING')
+ValueError: UNDECLARED_BENT_OPENING

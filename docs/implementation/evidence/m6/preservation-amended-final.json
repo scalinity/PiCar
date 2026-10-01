@@ -1,0 +1,2745 @@
+{
+  "status": "PASS",
+  "head": "9112c2937bd58d89d4075a040750636b484f41e3",
+  "branch": "codex/m6-instructional-plates",
+  "instructionalGate": "PASS",
+  "instructionalAdmitted": 8,
+  "engineeringGate": "BLOCKED",
+  "engineeringAdmitted": 0,
+  "qualifications": [
+    {
+      "label": "qualification-amended-a-02",
+      "cadPassed": 93,
+      "policyPassed": 135,
+      "m2Passed": 12,
+      "semanticPassed": 10,
+      "commands": "docs/implementation/evidence/m6/qualification-amended-a-02/commands.json",
+      "upstream": "docs/implementation/evidence/m6/qualification-amended-a-02/upstream-commands.json"
+    },
+    {
+      "label": "qualification-amended-b-02",
+      "cadPassed": 93,
+      "policyPassed": 135,
+      "m2Passed": 12,
+      "semanticPassed": 10,
+      "commands": "docs/implementation/evidence/m6/qualification-amended-b-02/commands.json",
+      "upstream": "docs/implementation/evidence/m6/qualification-amended-b-02/upstream-commands.json"
+    }
+  ],
+  "acceptedBindingsVerified": 1041,
+  "originalPrivateFilesVerified": 65,
+  "privateDerivedFilesIgnored": 115,
+  "publicFilesHashChecked": 140,
+  "diagnosticsUnchangedUntracked": 12,
+  "privatePixelCopyScan": "PASS: originals unchanged and ignored; no original hash in authored/public outputs; photo-derived pixels confined to private ignored namespace",
+  "trackedPrivateNames": [],
+  "indexEmpty": true,
+  "acceptedTrackedDiff": "",
+  "noOwnerSessionStoreReadOrTested": true,
+  "noHardwareOrRemoteActions": true,
+  "noM7Implemented": true,
+  "sourcePublicationContractPreserved": true,
+  "authoredBindings": [
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/bent_oracle.py",
+      "rawSha256": "63f1f86472eb0e7d3622b1d5487136042d9059ca00557c1dce37828ae5ac6178",
+      "bytes": 6244
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/generate.py",
+      "rawSha256": "56f258de5a1e79bdc9a497a3b87a84771f2d2b6ba10c209b4c996734c7b8f56a",
+      "bytes": 5893
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/oracle.py",
+      "rawSha256": "b7f7e95ebddf8f70724a9b341c46fd9c95c5978ac5d2fdf788b526d2b89ad053",
+      "bytes": 7617
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/components/plates/instructional/review.py",
+      "rawSha256": "5919953733ae1c2af4720e9589f2262ddad28f5599b08e6d8f47f06df7913039",
+      "bytes": 6175
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/bent-parameters.json",
+      "rawSha256": "04d91608b5b6cbf4fcebfe29c24083be51ef1373fe092f48d3a4ce8f1c84ea27",
+      "bytes": 69215
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/plates.test.mjs",
+      "rawSha256": "5c597ada4a7ef68ae8a75bcf39e887e3a26e5110ab7083c41d142b52f9e9d790",
+      "bytes": 6269
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "f03e58f9684cc9330343d2a3033e4d8bf083bb4b1b0f8e25c05d38cecf80fa42",
+      "bytes": 6916
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "9fc3b543cd3c8b7f49b4a5ec34783947143313b9bc01fad360604df9228c5334",
+      "bytes": 60977
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "121f9c2df26c9a38e4515bfea965b4c4f1953f7d6a54538c8aeb916b9d5e8d3f",
+      "bytes": 26670
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "ef07de44d35f3db57baee9ab0e875e063a229108e28555347b6f94c8387a8b1f",
+      "bytes": 57245
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "b1c3fa66f43195f95036cb176801eeafcd07827a476b54ba45903da44ddfbeb7",
+      "bytes": 30713
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "8d8315fea5d18c4b1c5b00937e5a47050411ee6f4c35749986e5a0203b2a1b38",
+      "bytes": 31382
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "ab9e52aa93b24aff46a1b0045f261c75d7fc637e3f0ed1ba91ddb1a87a65eb69",
+      "bytes": 29508
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "ede54881b190842c98b1b8134bbcba9d656058fc3fedb3037acaebb3766b41d9",
+      "bytes": 14147
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "32b940839c4cb2c70b329e80d76245c2ea8f3b3e91b99f6a03afe4d288aa753a",
+      "bytes": 17575
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/review-views.json",
+      "rawSha256": "1270971983d834d4aefdb587c90472dc53c7e0a9208c7a8ce7f84ba647684507",
+      "bytes": 18320
+    },
+    {
+      "path": "digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "digital-twin/cad/tests/test_m6_plates.py",
+      "rawSha256": "af0e211cff7141e892778492b9822c3072065e59f1287d510fec1dab519ecd45",
+      "bytes": 5070
+    },
+    {
+      "path": "digital-twin/cad/tests/test_m6_bent.py",
+      "rawSha256": "e5aa9077f2e3cc9a508e1762ef1f3451eb3ea12ae4cde09e460a5ec0be196c79",
+      "bytes": 3542
+    },
+    {
+      "path": "digital-twin/tools/evidence/m6-plates.mjs",
+      "rawSha256": "05c3ce61fb122deba4b598a888cb27a9f1ce6fd8d93432103e15609e3d0e94d3",
+      "bytes": 11207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/admit-reviewed.mjs",
+      "rawSha256": "1ec9818fad421279863a353ca14835ec11e8161eedfb6cca042f13adaaad42f3",
+      "bytes": 7204
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amended-closure.mjs",
+      "rawSha256": "a665646d3a104772e7657e20f2e7f0c8087579826c37b90375e0d9db78bdb6e1",
+      "bytes": 6487
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amended-report.mjs",
+      "rawSha256": "ec8f8923a7de6bc46d7902e6cca734a0e8ac9f723ff10cbd45fa4e4b5992b841",
+      "bytes": 14992
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amended-reproducibility.mjs",
+      "rawSha256": "35a4fb965e19b747ac6d49aaad01c66877dd4470facce483a10d8853a2329753",
+      "bytes": 2000
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/commands.json",
+      "rawSha256": "9c98f23f3174a61a10007b52642c30b4c14d1011b2864c9c281dfd0d1482c258",
+      "bytes": 8944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "65bbb49b9b481bd3fe559d1384499cc34b0a5d462d937d097803482d0cb89f54",
+      "bytes": 77493
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "dede9231d2ca889cd5d31b6dfd92b407c02b9544789cb3d7d02b16e98f62168c",
+      "bytes": 113418
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failed-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/tests/test_m6_plates.py",
+      "rawSha256": "af0e211cff7141e892778492b9822c3072065e59f1287d510fec1dab519ecd45",
+      "bytes": 5070
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/bent_oracle.py",
+      "rawSha256": "e7d88ec6bf442ecfb681bddab027220c95dc94fd345681ca2e9897f524b992f0",
+      "bytes": 4782
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/generate.py",
+      "rawSha256": "56f258de5a1e79bdc9a497a3b87a84771f2d2b6ba10c209b4c996734c7b8f56a",
+      "bytes": 5893
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/oracle.py",
+      "rawSha256": "d61915d6a34903536df7e096e9fa881a0ca19a1fdf623c9f5d737b6a981a9c22",
+      "bytes": 7495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "ee90e8cbb4ee7b5068c4f1b341c22f14c0cc0a5b00bc7a30719d0163db3d1fa8",
+      "bytes": 92380
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/bent-parameters.json",
+      "rawSha256": "5e33b8d99562a65a258e97184b9295ab161880dd7ca36d539c3c0c4c2affcea0",
+      "bytes": 68911
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/plates.test.mjs",
+      "rawSha256": "209e542e9084061342d6aa2e1f2d56e0e959fd596856f55251ba8d6455dd8a76",
+      "bytes": 4822
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "cba8db887eab45da6c0e41741cc5564da463f6761ff8f97a78df105ad2ae9446",
+      "bytes": 6416
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "db2de8fca9419d7ec9636f07ff169425764288dc0d0d623c7da45f96b2e6c65f",
+      "bytes": 27561
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "711fb778a14b08bebc4c5dfe23126e13c3a63d82f1e7e30139f9b80d9f87a9fe",
+      "bytes": 16854
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "4d7945105a15ca87c6183f5f02a7858b50b67ddff7d568920d9d69b6293a3266",
+      "bytes": 33253
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "aab790a8463ebad9ac36ea15e7d039e273ffd5efcf2747844c3a8e70632e0087",
+      "bytes": 15426
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "c54887c460d9856db4eeba2f97f08a6e30f81f330f22bfaf3cc4afff751d9931",
+      "bytes": 19495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "c25bb3d3984692474b2e95dbac16a9342b4c6ea73e3dea4f676c87e5079065a0",
+      "bytes": 17074
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "b8a0110cf99b7ba924593dd44ea8406f7b47074bc2d39b816cb55104ee4fd590",
+      "bytes": 8833
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "7506f37e5e96ed79f32944dec25ad92399da8c638f7f76149891caedabfdf81e",
+      "bytes": 10090
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/failure-source/digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/frozen-install.txt",
+      "rawSha256": "9b9505a716d998aa3c248a5fa9bec05836829c8e423c64e95cb004cb8da533fd",
+      "bytes": 1954
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/independent-shapes.txt",
+      "rawSha256": "86795f3db016733b19a06aaa60ec527663e2e167bce33a3285ce4e44bdec9461",
+      "bytes": 1449
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/inputs.json",
+      "rawSha256": "17cd4d3e387e792f34ebe01abf15af0aecaf6694bfcfea7f55b6753c9505b64d",
+      "bytes": 8409
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/wheel-build.txt",
+      "rawSha256": "b4a241e667832d712587281e12c223e3c054780607e8b13714420dd1c86438f3",
+      "bytes": 168
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/wheel-install.txt",
+      "rawSha256": "b89fdf98fe635842f8500135b5890cc40c2f10fe405bd22ae3418bf03625e03d",
+      "bytes": 385
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-01/wheel.json",
+      "rawSha256": "6e4d3c191a033093a004471616593bb4246c9ee9e98dd5b444aaae0c5c1e3201",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/commands.json",
+      "rawSha256": "d9531b124cb3f7091b78688d0c18c796124096fc358595ac311603d123ab4262",
+      "bytes": 8944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "65bbb49b9b481bd3fe559d1384499cc34b0a5d462d937d097803482d0cb89f54",
+      "bytes": 77493
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "dede9231d2ca889cd5d31b6dfd92b407c02b9544789cb3d7d02b16e98f62168c",
+      "bytes": 113418
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failed-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/tests/test_m6_bent.py",
+      "rawSha256": "9ccba4ef8c68b8eb21b3ffd267f750cff0689ae2dc64dbf1023d5be153603970",
+      "bytes": 2784
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/tests/test_m6_plates.py",
+      "rawSha256": "af0e211cff7141e892778492b9822c3072065e59f1287d510fec1dab519ecd45",
+      "bytes": 5070
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/bent_oracle.py",
+      "rawSha256": "b092b56c165bb6fbe5354ae84ccdcc801551e2e79ce52e433ddebc12ae699e7a",
+      "bytes": 5007
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/generate.py",
+      "rawSha256": "56f258de5a1e79bdc9a497a3b87a84771f2d2b6ba10c209b4c996734c7b8f56a",
+      "bytes": 5893
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/oracle.py",
+      "rawSha256": "d61915d6a34903536df7e096e9fa881a0ca19a1fdf623c9f5d737b6a981a9c22",
+      "bytes": 7495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/review.py",
+      "rawSha256": "5919953733ae1c2af4720e9589f2262ddad28f5599b08e6d8f47f06df7913039",
+      "bytes": 6175
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "ee90e8cbb4ee7b5068c4f1b341c22f14c0cc0a5b00bc7a30719d0163db3d1fa8",
+      "bytes": 92380
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/bent-parameters.json",
+      "rawSha256": "5e33b8d99562a65a258e97184b9295ab161880dd7ca36d539c3c0c4c2affcea0",
+      "bytes": 68911
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/plates.test.mjs",
+      "rawSha256": "209e542e9084061342d6aa2e1f2d56e0e959fd596856f55251ba8d6455dd8a76",
+      "bytes": 4822
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "cba8db887eab45da6c0e41741cc5564da463f6761ff8f97a78df105ad2ae9446",
+      "bytes": 6416
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "db2de8fca9419d7ec9636f07ff169425764288dc0d0d623c7da45f96b2e6c65f",
+      "bytes": 27561
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "711fb778a14b08bebc4c5dfe23126e13c3a63d82f1e7e30139f9b80d9f87a9fe",
+      "bytes": 16854
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "4d7945105a15ca87c6183f5f02a7858b50b67ddff7d568920d9d69b6293a3266",
+      "bytes": 33253
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "aab790a8463ebad9ac36ea15e7d039e273ffd5efcf2747844c3a8e70632e0087",
+      "bytes": 15426
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "c54887c460d9856db4eeba2f97f08a6e30f81f330f22bfaf3cc4afff751d9931",
+      "bytes": 19495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "c25bb3d3984692474b2e95dbac16a9342b4c6ea73e3dea4f676c87e5079065a0",
+      "bytes": 17074
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "b8a0110cf99b7ba924593dd44ea8406f7b47074bc2d39b816cb55104ee4fd590",
+      "bytes": 8833
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "7506f37e5e96ed79f32944dec25ad92399da8c638f7f76149891caedabfdf81e",
+      "bytes": 10090
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/review-views.json",
+      "rawSha256": "840cf47d43d9494136328ed08fdb9d4b61fcd8bab8e3fcb2c5e374f6340341a5",
+      "bytes": 18147
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/failure-source/digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/frozen-install.txt",
+      "rawSha256": "5981c4a0b44f41256d8e9ab0b1450d75501eaf6484daec1d8c52b13856461a85",
+      "bytes": 1955
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/independent-shapes.txt",
+      "rawSha256": "fd3c1aaabd006d1525e512aeae8cb6e5a9a7b75d42d6553692cd1744eba9de0f",
+      "bytes": 2124
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/inputs.json",
+      "rawSha256": "b2687c9a3d3be90fd15a40b9c30b866c752f7107aee24cb5197c2c2bfbbd2fb9",
+      "bytes": 8970
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/source-review-command.json",
+      "rawSha256": "d4ae40ccff3b0bbdf21ed415a1d975766506dc1da4252943e6a129c6557e5627",
+      "bytes": 2392
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/source-review.txt",
+      "rawSha256": "1702dff6c106a2c5e4e9d0ea015fe9c53b732ab308234baf5c8d0c9f8eff2bb7",
+      "bytes": 1757
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/wheel-build.txt",
+      "rawSha256": "92d6cc916b93eae70d2b67cef5145e5dbd5d455056fd1f315f55b7c19bb41fa3",
+      "bytes": 168
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/wheel-install.txt",
+      "rawSha256": "63b4a59dcc1a264fe88687b38410541af8627b634b199efe7fd4bf1602868952",
+      "bytes": 385
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/wheel.json",
+      "rawSha256": "7695322627480f519d93d2506d117806ace0bb45a4acd750df6e0cb3bd3388ad",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/commands.json",
+      "rawSha256": "125ade27621167399f987ca22d43d773b2dbd738177a1f5db418f95282ffb252",
+      "bytes": 8944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "b97f8fd3c15b07c7e1f78d8e49c9f147d87400237e7dd9b4d88bc2be9c8ad443",
+      "bytes": 89158
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "d925e92149e2e0ec93bf7b397a2fbcbd589cdff717406087ee483043a711dbfb",
+      "bytes": 116905
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failed-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/tests/test_m6_bent.py",
+      "rawSha256": "9ccba4ef8c68b8eb21b3ffd267f750cff0689ae2dc64dbf1023d5be153603970",
+      "bytes": 2784
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/tests/test_m6_plates.py",
+      "rawSha256": "af0e211cff7141e892778492b9822c3072065e59f1287d510fec1dab519ecd45",
+      "bytes": 5070
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/bent_oracle.py",
+      "rawSha256": "b28212ca476933fa41efb54305365df9b05d808dcaf52ce532bfd9b23eba59f1",
+      "bytes": 5306
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/generate.py",
+      "rawSha256": "56f258de5a1e79bdc9a497a3b87a84771f2d2b6ba10c209b4c996734c7b8f56a",
+      "bytes": 5893
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/oracle.py",
+      "rawSha256": "d61915d6a34903536df7e096e9fa881a0ca19a1fdf623c9f5d737b6a981a9c22",
+      "bytes": 7495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/cad/twin_cad/components/plates/instructional/review.py",
+      "rawSha256": "5919953733ae1c2af4720e9589f2262ddad28f5599b08e6d8f47f06df7913039",
+      "bytes": 6175
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "efc0c6ce7fe5b5bd6a6a06f3faebc4de875da7a7ba0cc32e8f5cec581fbffb7d",
+      "bytes": 92398
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/bent-parameters.json",
+      "rawSha256": "9a3c9b0de819ce1a6bbc30bf9faf473e96d773b627703ba9818cbf6dbad9271a",
+      "bytes": 68929
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/plates.test.mjs",
+      "rawSha256": "209e542e9084061342d6aa2e1f2d56e0e959fd596856f55251ba8d6455dd8a76",
+      "bytes": 4822
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "cba8db887eab45da6c0e41741cc5564da463f6761ff8f97a78df105ad2ae9446",
+      "bytes": 6416
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "db2de8fca9419d7ec9636f07ff169425764288dc0d0d623c7da45f96b2e6c65f",
+      "bytes": 27561
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "711fb778a14b08bebc4c5dfe23126e13c3a63d82f1e7e30139f9b80d9f87a9fe",
+      "bytes": 16854
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "4d7945105a15ca87c6183f5f02a7858b50b67ddff7d568920d9d69b6293a3266",
+      "bytes": 33253
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "aab790a8463ebad9ac36ea15e7d039e273ffd5efcf2747844c3a8e70632e0087",
+      "bytes": 15426
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "c54887c460d9856db4eeba2f97f08a6e30f81f330f22bfaf3cc4afff751d9931",
+      "bytes": 19495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "c25bb3d3984692474b2e95dbac16a9342b4c6ea73e3dea4f676c87e5079065a0",
+      "bytes": 17074
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "b8a0110cf99b7ba924593dd44ea8406f7b47074bc2d39b816cb55104ee4fd590",
+      "bytes": 8833
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "7506f37e5e96ed79f32944dec25ad92399da8c638f7f76149891caedabfdf81e",
+      "bytes": 10090
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/review-views.json",
+      "rawSha256": "840cf47d43d9494136328ed08fdb9d4b61fcd8bab8e3fcb2c5e374f6340341a5",
+      "bytes": 18147
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/failure-source/digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/frozen-install.txt",
+      "rawSha256": "9e47089efcec42b7a3f810ee1b28bc6f559da14f5f4f9d2cd6a5ea06a2ffab9c",
+      "bytes": 1956
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/independent-shapes.txt",
+      "rawSha256": "9b77dd219a9d5455cd0264de24945fd4d761bc7d0856e233101eb396f3fa5fe5",
+      "bytes": 1297
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/inputs.json",
+      "rawSha256": "dc2472f26e3a3852982d09edc80dae23c23e1b4a76687d4aa2797e918b218ce9",
+      "bytes": 8970
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/review-input.json",
+      "rawSha256": "3d489a1382a0358e8b4ef0f04294f62948590fb74dbf83689e69c0fc3d18231a",
+      "bytes": 18583
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/source-review-command.json",
+      "rawSha256": "d09d731b9dd3eb5297064eb535476184833c33cf6aec1200c6cc246c5dea2373",
+      "bytes": 2268
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/source-review-pending.json",
+      "rawSha256": "963c52fbf674f3884d1857b1de256aa5a50f24a75fb19998b5fb937d5eb68197",
+      "bytes": 15196
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/source-review.txt",
+      "rawSha256": "4cfd72a0699ecb6f403474004fd7a6ca83533c63a5f364da8931f18b7dc59c41",
+      "bytes": 57
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/wheel-build.txt",
+      "rawSha256": "322676a47c35d33b3d4e4171d0c8e6386f8c6da949544cb5d68065067416d618",
+      "bytes": 168
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/wheel-install.txt",
+      "rawSha256": "915e51c50555cbe9d998bc938f71d1604ff08b6eb0fd6fb2d3222dc2438f4d11",
+      "bytes": 385
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-03/wheel.json",
+      "rawSha256": "c3b16284b9e09003c31f02294c66d003dcab757fb96777aba70b706b46279207",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/cad-tests.txt",
+      "rawSha256": "2523ca62702a782b5fb4e604268e552ebf918f8d7459f6aa1e69665ce6255832",
+      "bytes": 179
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "b3bbd8c2e961dc9efffbac053dbcc2c39a89f631bda3aa318623ef22455d1259",
+      "bytes": 88834
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "f78ca91699972c49d7283129f9f11a9e7b441866fb2e8bb0e6d57a6856be8254",
+      "bytes": 116906
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/commands.json",
+      "rawSha256": "2814b904cb0a9458814dd5c8a81ddf611ae0f83b5e4747687e70821910a7431c",
+      "bytes": 10491
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/environment.json",
+      "rawSha256": "7b9f3c9d663c5fc1a288e824a8aa7e1669a70729bc0c21e4ec64751f33a5a251",
+      "bytes": 572
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/frozen-install.txt",
+      "rawSha256": "5fd9005f86d7db474d1c96ecc2cee7825f368b73e9379c5f5724376852bb7a36",
+      "bytes": 1956
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/independent-shapes.txt",
+      "rawSha256": "409dbd3ef085a70afa5ca5a99de5cd76debd385d83a1c9311ec5402bd426e4e9",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/inputs.json",
+      "rawSha256": "e80c5ea94b4586a5af21708bd521f8c646fe9fd968cd33d2803617b1c12701ef",
+      "bytes": 8970
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/review-input.json",
+      "rawSha256": "1270971983d834d4aefdb587c90472dc53c7e0a9208c7a8ce7f84ba647684507",
+      "bytes": 18320
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/source-review-command.json",
+      "rawSha256": "4c07446385321631ccf436d74fecafbba73d6c95c51fa9595d23f95ab5d73fb7",
+      "bytes": 2270
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/source-review-pending.json",
+      "rawSha256": "f86d17249f47c79469980b20a1dc1cb998b04e2913bfedbf2c6defd595303d8e",
+      "bytes": 14807
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/source-review.txt",
+      "rawSha256": "4cfd72a0699ecb6f403474004fd7a6ca83533c63a5f364da8931f18b7dc59c41",
+      "bytes": 57
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/tests.xml",
+      "rawSha256": "2629f83c65c1021a12e14ab134b36093b6835d7b038a97760ab4e7c6297187e8",
+      "bytes": 9368
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/wheel-build.txt",
+      "rawSha256": "ae89d3514d438a66aacc61db2def6d3bc5a457f84cba5681187111443cfe1c17",
+      "bytes": 168
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/wheel-install.txt",
+      "rawSha256": "04dabac5643cdedf2c99c682f2eefa2a44bee8a4a2b3dc1bf0892a86f87f303b",
+      "bytes": 385
+    },
+    {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/wheel.json",
+      "rawSha256": "963818a0d8170d5951194425ae4c8965d7fefc5dff0d447fc70c0a2a6721ad95",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-01-source/image_analysis.py",
+      "rawSha256": "8f343c8db0be67a4af0bd0d4c84667ce63feee92ca6ef418c17ad0b77a880ff6",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-01-source/setup-analysis.mjs",
+      "rawSha256": "b75a1496bdd2e3b90eea9c04f4f4f6464800270a3834735a7e5aad2576e049ed",
+      "bytes": 2906
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-commands.json",
+      "rawSha256": "0df578aed419454c7382dc55ae4bdd0cc9a34fcc37334c0e04a683a38d8f6b33",
+      "bytes": 22522
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-contacts.txt",
+      "rawSha256": "6a481e768606d4ea15ebbbbed72030515c51fe0d805e48d8b1e8a4669278f6c3",
+      "bytes": 42
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-environment.json",
+      "rawSha256": "c8e28e9a23784b3d4bb8d5c4b853b1add38ae90bc13c159b6917fde7c67b0594",
+      "bytes": 4838
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-frozen-install.txt",
+      "rawSha256": "d2916818abbb03bed0689c2f2b774a819488041183e333a13a36c91b2d912f72",
+      "bytes": 1944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-wheel-build.txt",
+      "rawSha256": "f448cc7478af8d055db486bfc8f2c4b798c0e49f6ee9879881e07e037abb7c9a",
+      "bytes": 157
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-02/analysis-wheel-install.txt",
+      "rawSha256": "e2ae02cae0a1901616d2dd25b7a6e784d0c42bc301a5aed75f2e98cdcc5238bd",
+      "bytes": 366
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-commands.json",
+      "rawSha256": "0760bed0e3f0a9edc9bd7c5508e01128d1318b041f3674cc4a5b5a4b58183de7",
+      "bytes": 22476
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-contacts.txt",
+      "rawSha256": "70f28c9ee41a94ba14db75d2c837e82b75dffad27b470004851d1e1b79eff1fb",
+      "bytes": 1338
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-frozen-install.txt",
+      "rawSha256": "99f2be3dde54d4420467cd1393fb3c29347dd79bf99302b775bd3c5bc07a5091",
+      "bytes": 1944
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-wheel-build.txt",
+      "rawSha256": "064164c4a2dd0cfc6e629a91cd454d03df9b51eed1d24fd2e28494ea61b378d7",
+      "bytes": 157
+    },
+    {
+      "path": "docs/implementation/evidence/m6/analysis-wheel-install.txt",
+      "rawSha256": "0da32897dcddaa8f365ac182d63f7e8ffeea46e16608c5231578f396fd05eebd",
+      "bytes": 363
+    },
+    {
+      "path": "docs/implementation/evidence/m6/author-bent.mjs",
+      "rawSha256": "3beae1f6688dee63a8ee3b5dc31f072540003883b62b124432d3188b0ee01f44",
+      "bytes": 9150
+    },
+    {
+      "path": "docs/implementation/evidence/m6/author-candidates.mjs",
+      "rawSha256": "e3f31ef9b2a805fc2a0bd1c1a05b37467dd66448892d5d6824e83a5f3e536ed5",
+      "bytes": 3328
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/calibration.json",
+      "rawSha256": "7db7eba635ea39fa778b3947e2d370e647a7551841913d38a3d865126684d07b",
+      "bytes": 38743
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/calibration.txt",
+      "rawSha256": "b4a9dc8f5100d05bee063c16d2c509c5aa7ab54d5f621b7e82a6435bbfd61149",
+      "bytes": 1549
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/commands.json",
+      "rawSha256": "0db1541905cf9cabbf964b0fcc7143826808339dda199c841d4f7b5770c7bff8",
+      "bytes": 5802
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/environment.json",
+      "rawSha256": "ba689bfdb53a2ee06fb543e30b415c5a3d2f353bce9efe82854a7314a2682c48",
+      "bytes": 552
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/frozen-install.txt",
+      "rawSha256": "d76b28a3c69be46953065650f9cbb30e9696d4c84a0f7c222ab3f866cf1f537b",
+      "bytes": 1950
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/inputs.json",
+      "rawSha256": "bd5dd5b13cb525555ee191d6d2eaba5c7cf873266a1acd422b2889c22f43cddc",
+      "bytes": 4535
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel-build.txt",
+      "rawSha256": "141ac27810cb43726211e528f84a793fe2fc113d0e0a13da71fe1fbe6bb4a15b",
+      "bytes": 163
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel-install.txt",
+      "rawSha256": "fd9987ea9cf5916982ae12e41557c85e98d4d83f2eed3724bd32652919e52389",
+      "bytes": 378
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-01/wheel.json",
+      "rawSha256": "5d2474a6f531071c7dee470013f011ed6e70bd5a7719ae794c3ae45f4e444b4f",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/calibration.json",
+      "rawSha256": "204bfde9b9d44ceea74810669eb656c5ed3214a9c58688e59e86840893e16e90",
+      "bytes": 39313
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/commands.json",
+      "rawSha256": "a1e304196dcb582b481c53848e58a1f911b81cc3b0bb968d9e901c366c32c1b3",
+      "bytes": 5802
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/environment.json",
+      "rawSha256": "a48956026737ce5804be5762a899816888789394e1989ef1c8e0e9171437ec9e",
+      "bytes": 552
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/frozen-install.txt",
+      "rawSha256": "90a8ef2d3688b94a1cf2dd74813730dc9b3b441af9c75115a01237610c607a35",
+      "bytes": 1950
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/inputs.json",
+      "rawSha256": "eb3e3bda30490891b7b0997f8545853105f5850515198b43bd0647b6b4228c1c",
+      "bytes": 4536
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/wheel-build.txt",
+      "rawSha256": "df7f7ee4692eab87e88f4e0a14c01c16e46c79c268c5521448325a95e8c71b9e",
+      "bytes": 163
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/wheel-install.txt",
+      "rawSha256": "01a5b4ee721c694a39985f10edc4654a85dc5e0d6b173d7de369f7df48305ef4",
+      "bytes": 378
+    },
+    {
+      "path": "docs/implementation/evidence/m6/calibration-02/wheel.json",
+      "rawSha256": "71a33a44ba32e73a2f8091ba1fa1e1ef29f37d6c572226218c2229e6f7a09678",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/calibration.json",
+      "rawSha256": "204bfde9b9d44ceea74810669eb656c5ed3214a9c58688e59e86840893e16e90",
+      "bytes": 39313
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/candidate-artifacts/generation.json",
+      "rawSha256": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/commands.json",
+      "rawSha256": "e5f558030f32af5a0326d7a02c56b4d759395128ed997f84fd8dda9352b39d34",
+      "bytes": 8640
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/environment.json",
+      "rawSha256": "90fdc037ecda221fd76d5ec8337bc366b5988eb8054d400b8aaaadff17d7f0e3",
+      "bytes": 544
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/frozen-install.txt",
+      "rawSha256": "f585b036279fea39afaad0c483a8654daea8fae4e934fb65810b74da5456c057",
+      "bytes": 1948
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/inputs.json",
+      "rawSha256": "a0a08f79fc5ac1b50fd657a97bf926f584b1029d927826a9c1737611b85be865",
+      "bytes": 5136
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/wheel-build.txt",
+      "rawSha256": "cb08420692452398fd125242de7ffb662b19dee0eceefc45632412057a5699a9",
+      "bytes": 161
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/wheel-install.txt",
+      "rawSha256": "804aaec5ec175a493337143175919909b79c75084ec74c45182094263aa9d89d",
+      "bytes": 371
+    },
+    {
+      "path": "docs/implementation/evidence/m6/candidate-01/wheel.json",
+      "rawSha256": "343a3989adccaeebba2bd51c0075d6837b5bfeb2107ef933b3b1fc133496a997",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/closure.mjs",
+      "rawSha256": "69ca0ed6e1c8034ccd46927c40dc64e4c825d81c6a273de61fdbb574e2f88679",
+      "bytes": 4803
+    },
+    {
+      "path": "docs/implementation/evidence/m6/failure-source/calibration-02-bound-field.py",
+      "rawSha256": "1a127f594576a76de0fa6aeef0a38bc7cc7aae7ed59cbd118cddd1446200bd59",
+      "bytes": 10272
+    },
+    {
+      "path": "docs/implementation/evidence/m6/failure-source/upstream-public-icon-filter.mjs",
+      "rawSha256": "1a5bebf908c83a47e1190da974359f0eb55860d4f26d9afc8623989122861b81",
+      "bytes": 4209
+    },
+    {
+      "path": "docs/implementation/evidence/m6/inventory.mjs",
+      "rawSha256": "3e7d392c3adf66253932959d4692fd88a8e933e35bd1f01d46b202e6a9f24c13",
+      "bytes": 10095
+    },
+    {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-package-integrity.json",
+      "rawSha256": "ded013953bdf73e144249e6e75346541c5dbc32d3ebc98393ab9fc16b3c4204e",
+      "bytes": 43651
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-policy-01.tap",
+      "rawSha256": "8bd99fcb98535446bdf0a3f7191d87bd6fb88e16a6dd03f45695084d9201c47f",
+      "bytes": 7895
+    },
+    {
+      "path": "docs/implementation/evidence/m6/plate-policy-02.tap",
+      "rawSha256": "4c6fb04b12cb1d317c1a659eca07705b6f514e961679fb1963ca2e26aa82d428",
+      "bytes": 7892
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight-initial-status-field.json",
+      "rawSha256": "b4f1603210525de3cd9c310e2d800b75397501de51172fddb69bb5228abc2f0e",
+      "bytes": 289991
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight.json",
+      "rawSha256": "dc93d6d955022a127f2fc761b95f0641b58e268cfb81f185d498696b450bfaed",
+      "bytes": 297992
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preflight.mjs",
+      "rawSha256": "360ea1846f964dffc92626d2c596da3e9aa46d62be2b480c41059bb25684c066",
+      "bytes": 5466
+    },
+    {
+      "path": "docs/implementation/evidence/m6/preservation-final.json",
+      "rawSha256": "00b97872a43ec5f593981ec539536c824df469d965b6161115b1eb99aca4c23d",
+      "bytes": 44122
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/tests/test_m6_plates.py",
+      "rawSha256": "f8a5714370f3f87c7a1c93a84f44bac07154f5b26d728bbf256191aa5b9669f5",
+      "bytes": 5026
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/twin_cad/components/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/twin_cad/components/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/twin_cad/components/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/twin_cad/components/plates/instructional/generate.py",
+      "rawSha256": "a07e0aaa2c27a5487f73b74716cc3e722058a94b180a58c6865ae703aeffbefc",
+      "bytes": 4492
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/twin_cad/components/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/cad/twin_cad/components/plates/instructional/oracle.py",
+      "rawSha256": "a9d388024b32bc23dc0a7a7089beb6d4571dac2b62e9d134bcdf46b35850101e",
+      "bytes": 7225
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/tools/evidence/m6-plates.mjs",
+      "rawSha256": "ea1aacbd393329adf387847750675b7a25b2c96b6dcfa7c31f7d8c4a8cae3285",
+      "bytes": 6483
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/plates.test.mjs",
+      "rawSha256": "209e542e9084061342d6aa2e1f2d56e0e959fd596856f55251ba8d6455dd8a76",
+      "bytes": 4822
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipt.schema.json",
+      "rawSha256": "cba8db887eab45da6c0e41741cc5564da463f6761ff8f97a78df105ad2ae9446",
+      "bytes": 6416
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "db2de8fca9419d7ec9636f07ff169425764288dc0d0d623c7da45f96b2e6c65f",
+      "bytes": 27561
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "711fb778a14b08bebc4c5dfe23126e13c3a63d82f1e7e30139f9b80d9f87a9fe",
+      "bytes": 16854
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "4d7945105a15ca87c6183f5f02a7858b50b67ddff7d568920d9d69b6293a3266",
+      "bytes": 33253
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "aab790a8463ebad9ac36ea15e7d039e273ffd5efcf2747844c3a8e70632e0087",
+      "bytes": 15426
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "c54887c460d9856db4eeba2f97f08a6e30f81f330f22bfaf3cc4afff751d9931",
+      "bytes": 19495
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "c25bb3d3984692474b2e95dbac16a9342b4c6ea73e3dea4f676c87e5079065a0",
+      "bytes": 17074
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "b8a0110cf99b7ba924593dd44ea8406f7b47074bc2d39b816cb55104ee4fd590",
+      "bytes": 8833
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "7506f37e5e96ed79f32944dec25ad92399da8c638f7f76149891caedabfdf81e",
+      "bytes": 10090
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/digital-twin/validation/expected/plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/docs/implementation/HANDOFF_M6_REMEDIATION.md",
+      "rawSha256": "86b12290b15037d9056913b76ad5f6c6dd534b83a819d4c137dec515b75d15f4",
+      "bytes": 13772
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/docs/implementation/M6_EXECUTION_PLAN.md",
+      "rawSha256": "efe69cc1a04826f1c373e75c7802e6b0af91f089b96bed2611263d3734aab450",
+      "bytes": 4336
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/docs/implementation/M6_G_INSTRUCTIONAL_PLATE_REPORT.json",
+      "rawSha256": "6aded3000287e08169ed5d13e5bac2a79c86e4b136e4c5cc67fd96310637991e",
+      "bytes": 144108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/docs/implementation/M6_REPORT.md",
+      "rawSha256": "e3423c91467d5f69283f665c5907b17ab317cf026439b828fd8155811c789201",
+      "bytes": 11871
+    },
+    {
+      "path": "docs/implementation/evidence/m6/prior-blocked/preservation.json",
+      "rawSha256": "69dbd63f4ed72a2b579e09411338bdcc33b51675bb4b542f0d0974e4fc886ca3",
+      "bytes": 8485
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/cad-tests.txt",
+      "rawSha256": "7b99b5fff8ae0dd06bb59c6d8706629d45d117532b5674ef660bbb23d033ef11",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/candidate-artifacts/generation.json",
+      "rawSha256": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/commands.json",
+      "rawSha256": "26cf06234a6ce1792bb45ad3cad71acc5f34368e4410553c8d0f93320ee1a6ad",
+      "bytes": 10073
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/environment.json",
+      "rawSha256": "32f67a8eea19a115606da3e231f3e8e91e6989a0dfd6c25c11dedd240bf306db",
+      "bytes": 568
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/frozen-install.txt",
+      "rawSha256": "3bae0568574212d44f4f5ef90f5a27f25d74c38bc16023d0b4e1da581c82ed11",
+      "bytes": 1954
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/inputs.json",
+      "rawSha256": "86be87af2e04911bef1a42f1d874d34b1d6952c3f403368db2eb087b07aea2d5",
+      "bytes": 7804
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/m2-contract-tests.txt",
+      "rawSha256": "e55f38f175197af9b37f7a292be8a7212322b3a46dabac0a9495d4545a8f5908",
+      "bytes": 2836
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/m6-policy-tests.txt",
+      "rawSha256": "b65234ed0c20946c37772d1fd74d8bbcc905eda032d275252dddaa17dfb6dbba",
+      "bytes": 7897
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/semantic-firewall-tests.txt",
+      "rawSha256": "a025d453712f6f37844ecb936bd96583b67237253d519ddd874840ab80bfb1c5",
+      "bytes": 1896
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/tests.xml",
+      "rawSha256": "3d66ef3ac7413b8fd352542871be1389ac7a2a81b3258ac28e12fb0c89caa3ec",
+      "bytes": 7004
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/upstream-commands.json",
+      "rawSha256": "88972173950c612de35d71f9dfed1cac2c9c1b29df27e44e75789fb16b5c9c68",
+      "bytes": 5218
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/upstream-inputs.json",
+      "rawSha256": "dcda3b5dd59481c075c843280fd641f5218b757b369d3c7e39835834f46d8c08",
+      "bytes": 126360
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel-build.txt",
+      "rawSha256": "c1403f6a0b21b694ed276a24b901a610de215a1e93257fbed88999884e21fd34",
+      "bytes": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel-install.txt",
+      "rawSha256": "310d1d6481d4e73894afda6f05975070519f4b3432d25bed5a1f9fdb060c1709",
+      "bytes": 383
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel.json",
+      "rawSha256": "b1ef3c6c9eac51ccdcd2333d291cf97eec8d4adbf05db44c295f3f77e445fb57",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/commands.json",
+      "rawSha256": "565b71f25104ea96d9f9e5e3a3a77af72161cb19c03c723243ca8b026b6ca693",
+      "bytes": 9259
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug-commands.json",
+      "rawSha256": "8d4f50b391a8a9acd2d2aaea6711cf8b5e9b4e655b798fecacae3b6d4d057d08",
+      "bytes": 2266
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug-oracle.txt",
+      "rawSha256": "d5a494099a5e6db1635ad2d4a78cfd82015cb18d5c6180c7bd936677338c4135",
+      "bytes": 1290
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug-wheel-build.txt",
+      "rawSha256": "5bbc7bf773c492cd968ff504ef4f5bc592410a6b6f3691964cc890cc31390254",
+      "bytes": 181
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug-wheel-install.txt",
+      "rawSha256": "d6b88c5e3d73ae295820cfa3ccca4b8f852a205f07ff65c15c620196a45980be",
+      "bytes": 609
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug2-commands.json",
+      "rawSha256": "e093762f8f9084320c4a88c92b9932242cbe9ca6cb2d29535125fc2a7ab40527",
+      "bytes": 2680
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug2-oracle.txt",
+      "rawSha256": "5729548d84b7f2c70b1b47697ddf1b267b653b1d350cc96a7058c454bc0e927a",
+      "bytes": 246
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug2-tests.txt",
+      "rawSha256": "0002972da4cde99b0829c1251228a34e4b784c878df507a814d224a0d4774ec0",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug2-wheel-build.txt",
+      "rawSha256": "5cf91a036f5bb6d5559c23818f0fc18f68ab45194519b1f16a7169ae90646c33",
+      "bytes": 182
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/debug2-wheel-install.txt",
+      "rawSha256": "07c9fed758a2a76d699b20674280edc6ae644da61d672a5317c260905de26f6e",
+      "bytes": 615
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "b3bbd8c2e961dc9efffbac053dbcc2c39a89f631bda3aa318623ef22455d1259",
+      "bytes": 88834
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "f78ca91699972c49d7283129f9f11a9e7b441866fb2e8bb0e6d57a6856be8254",
+      "bytes": 116906
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failed-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/bent-parameters.json",
+      "rawSha256": "04d91608b5b6cbf4fcebfe29c24083be51ef1373fe092f48d3a4ce8f1c84ea27",
+      "bytes": 69215
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/calibration-input.json",
+      "rawSha256": "0e6b8225b0019ee47308ff307b76d1883cda6104156fe35ccbc9ea61c74b6142",
+      "bytes": 3873
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/candidate-parameters.json",
+      "rawSha256": "6c0413d931491c478d2e3d072119d5e58987edfdcbf3491cc634b5d5991a6247",
+      "bytes": 23621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/plates.test.mjs",
+      "rawSha256": "07eadfea413855f0dddffc19d52b386cf521f59762d3badca329cf96d6af1fb9",
+      "bytes": 6203
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipt.schema.json",
+      "rawSha256": "f03e58f9684cc9330343d2a3033e4d8bf083bb4b1b0f8e25c05d38cecf80fa42",
+      "bytes": 6916
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-A.json",
+      "rawSha256": "e6065058a9f9f0572cd26d3a62d9b6ebddbe6bdc458d16294c45127ddd41f0c2",
+      "bytes": 60977
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-B.json",
+      "rawSha256": "10c763859af6c76fd31cf38d778adc99bc85ec024cbcafc12055b5e2ce371a79",
+      "bytes": 26670
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-C.json",
+      "rawSha256": "e684e08cdebe5b4c985028248a8425c69234cd66e0d1ac89d930514836dc2c7c",
+      "bytes": 57245
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-D.json",
+      "rawSha256": "34dbcf8af4ffdfe2deee3ebec8f35546070b52854494d7d06e53ccb03b264c26",
+      "bytes": 30713
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-E.json",
+      "rawSha256": "5f815e9b7725325534242d854e3c8849a933764e97257ac8e956341b089e56ea",
+      "bytes": 31382
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-F.json",
+      "rawSha256": "949bdf809931715fcc4a6e4551c2b1759601b71acb112cfb8d6c449c2dfe47fa",
+      "bytes": 29508
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-G.json",
+      "rawSha256": "6a99cab4789966bceea313888375c73d31b267eec639aea57aaf696b0b7e443b",
+      "bytes": 14147
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/receipts/PX-V40-DEF-PLATE-H.json",
+      "rawSha256": "d168096c3f1070afcbc44976b5979e3eccbe301a49554c471de986026340698c",
+      "bytes": 17575
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/review-views.json",
+      "rawSha256": "1270971983d834d4aefdb587c90472dc53c7e0a9208c7a8ce7f84ba647684507",
+      "bytes": 18320
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/expected-plates/instructional/source-feature-map.json",
+      "rawSha256": "0ceacbf9779c3398f76e9c839dad0ff68afcaa29b28c3e30f4c3179cab180c55",
+      "bytes": 136872
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/__init__.py",
+      "rawSha256": "5131ec5adb6a7c76435966879b36c01e809b22e62079b365b8c49319da70008e",
+      "bytes": 86
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/__init__.py",
+      "rawSha256": "33e9d336031d067cc2e43a8b5679f6c1c7ee946fa3a1265dae05e1d2ea8ec20c",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/bent_oracle.py",
+      "rawSha256": "7ff7bc996b8e1ce61a3bcef5d9f4e84136686445ee761dbe9ac5fddf49f1970c",
+      "bytes": 6047
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/calibration.py",
+      "rawSha256": "274a8b151a015df7723be3aa0d3d92472ed49b9bb026a5655705bccb4807b50d",
+      "bytes": 10302
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/generate.py",
+      "rawSha256": "56f258de5a1e79bdc9a497a3b87a84771f2d2b6ba10c209b4c996734c7b8f56a",
+      "bytes": 5893
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/image_analysis.py",
+      "rawSha256": "e44433ad75a5d43f497b4984f33d6a116080445be43a2da67c9df5b1bc974a6e",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/oracle.py",
+      "rawSha256": "b7f7e95ebddf8f70724a9b341c46fd9c95c5978ac5d2fdf788b526d2b89ad053",
+      "bytes": 7617
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/plates/instructional/review.py",
+      "rawSha256": "5919953733ae1c2af4720e9589f2262ddad28f5599b08e6d8f47f06df7913039",
+      "bytes": 6175
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/tests/test_m5_instructional.py",
+      "rawSha256": "faf0172c782938739dcfab902fe362ea5cfa80e59e137bc387725f4e175b8b87",
+      "bytes": 3121
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/tests/test_m5_vendor.py",
+      "rawSha256": "0a3ae45459db1deccc6cba9450c4b68341e0309e491a4cc2d5f4213c59c9a20f",
+      "bytes": 1684
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/tests/test_m6_bent.py",
+      "rawSha256": "e5aa9077f2e3cc9a508e1762ef1f3451eb3ea12ae4cde09e460a5ec0be196c79",
+      "bytes": 3542
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/tests/test_m6_plates.py",
+      "rawSha256": "af0e211cff7141e892778492b9822c3072065e59f1287d510fec1dab519ecd45",
+      "bytes": 5070
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/failure-source/tests/test_toolchain.py",
+      "rawSha256": "e83d5cd3de493ab53a1502ab134638fd0a4e99dc72e126d967d98033a2b0f549",
+      "bytes": 6712
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/frozen-install.txt",
+      "rawSha256": "54c08cf564a090158074acfc1f001034fac9a82b03712bac69522146bf9ce645",
+      "bytes": 1962
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/independent-shapes.txt",
+      "rawSha256": "f950c7bd2385f00aa8834b85385da2fd100077da1115023d3ab84e168a68a3f3",
+      "bytes": 1102
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/inputs.json",
+      "rawSha256": "90b03cf401d7e4c82ef10a35ec650edb3023c8b8dd08fd56804ce30641162465",
+      "bytes": 8971
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/wheel-build.txt",
+      "rawSha256": "27a87465e316e8f30aba2691af01680c5d5ddf7615938a248c6eeafcd276eafa",
+      "bytes": 175
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/wheel-install.txt",
+      "rawSha256": "b285f4011f9193b7a47e93906df7d3fc40629a2c335ac34552ea25fcef939edd",
+      "bytes": 399
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-01/wheel.json",
+      "rawSha256": "96fef0277f222e8324eb924818cf0dcd93ed72ab48bef8f8536977ba67729253",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/cad-tests.txt",
+      "rawSha256": "8fea85a16bcfd1191032981b537ca77aeb7956b45f3ea1493d43b0c4bf15564d",
+      "bytes": 179
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "b3bbd8c2e961dc9efffbac053dbcc2c39a89f631bda3aa318623ef22455d1259",
+      "bytes": 88834
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "f78ca91699972c49d7283129f9f11a9e7b441866fb2e8bb0e6d57a6856be8254",
+      "bytes": 116906
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/candidate-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/commands.json",
+      "rawSha256": "3dfd4a033af346ee0738a25a82f46889c0f739d766a94e8b31eafed42b259191",
+      "bytes": 10862
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/environment.json",
+      "rawSha256": "b8f221d6811c0f28abb7adeb2bf079e28ee1a15db04a7eab8ea5ecb07648142d",
+      "bytes": 600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/frozen-install.txt",
+      "rawSha256": "bcc08da5b226f169f356719038f5346214864c51835076ff8ce297d332043ca5",
+      "bytes": 1963
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/independent-shapes.txt",
+      "rawSha256": "5729548d84b7f2c70b1b47697ddf1b267b653b1d350cc96a7058c454bc0e927a",
+      "bytes": 246
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/inputs.json",
+      "rawSha256": "6d81681ffde95da5de21f93455507b46848a201900c617b7481b78cb3d19e7c0",
+      "bytes": 8971
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/m2-contract-tests.txt",
+      "rawSha256": "6953073b1e0cac12fa87679754711d447be2489fdbc1ca3f6cf91bfd7f780c27",
+      "bytes": 2841
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/m6-policy-tests.txt",
+      "rawSha256": "7f0a041c2e42d95f8370709bc4b6ba1413ac61f5ea84233d364a6d647e80e8e2",
+      "bytes": 20264
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/semantic-firewall-tests.txt",
+      "rawSha256": "76079005d183c8a19ccdb3cb755006a58a1bf2c9f26e5d3be99457ca34699c01",
+      "bytes": 1904
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/shapes.json",
+      "rawSha256": "3f4304356f92176c35967a1993316e2fb50cb4ecb21d9d8d0a459c10d3f73c0f",
+      "bytes": 45192
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/tests.xml",
+      "rawSha256": "2f231f67279f59f522cd5a6e5158470024c5719cb6ae5b290823bba96fe2ba8a",
+      "bytes": 9567
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/upstream-commands.json",
+      "rawSha256": "36d0908eb7f546c01446447cff8b0b74c7a4f2f82700c410166713c5a73f3921",
+      "bytes": 5301
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/upstream-inputs.json",
+      "rawSha256": "37013f008a13a74c6b1294a593908267512e0a1e7f6e28e090d5b46ab5f0980e",
+      "bytes": 132099
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/wheel-build.txt",
+      "rawSha256": "172b379a1c05fbda69d8487d5ec575c3173b9c0f7377ebfb9a5d23735c0e54d6",
+      "bytes": 175
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/wheel-install.txt",
+      "rawSha256": "9dfb2cf61dfa3e0da89b0abe0315170319243ee204e6347be79d3c86bf002c1b",
+      "bytes": 402
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-a-02/wheel.json",
+      "rawSha256": "269a8fb176ae4dd79fbd17e60bf36ef2ca88af9fdf776babaf18d14172079961",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/cad-tests.txt",
+      "rawSha256": "fc487c7c49851bc2ca0fc718ad21805f3a685a7b54c09a7243786bb700ff23b3",
+      "bytes": 179
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-A.svg",
+      "rawSha256": "6800722a7ad672306584ea048e4453c6dc021147f0f6edb4398fd5cbf8376275",
+      "bytes": 216587
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-B.brep",
+      "rawSha256": "ccbf80c50de6557da810f4bac7a39d6bb0c7ccd61274a0581128e25a30187ab4",
+      "bytes": 15165
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-B.svg",
+      "rawSha256": "1bc18fec24982720c68d3b213fce98eed513800aa90c832c678c41fd78d90768",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "b3bbd8c2e961dc9efffbac053dbcc2c39a89f631bda3aa318623ef22455d1259",
+      "bytes": 88834
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-C.svg",
+      "rawSha256": "f78ca91699972c49d7283129f9f11a9e7b441866fb2e8bb0e6d57a6856be8254",
+      "bytes": 116906
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-E.brep",
+      "rawSha256": "396a42fe5b3965ee0ab91c28e25910d5feb582c86e3483edc3623f161145c88b",
+      "bytes": 14618
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-E.svg",
+      "rawSha256": "bcda42ff236083247bad819ef81c5fba65cd836b6276647d966a69a040adc605",
+      "bytes": 21115
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-F.brep",
+      "rawSha256": "51aa7463b8b8a3caf392609ab65cd73f483124a6027e1d9c588da139c4a6ae17",
+      "bytes": 10108
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-F.svg",
+      "rawSha256": "05649b78558db6ff8c879039e24fecedd4d6a9991c6f43fd3d5f9f089f2fbd59",
+      "bytes": 21353
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/candidate-artifacts/generation.json",
+      "rawSha256": "e923599048a7755704e62578fcd220ede50d109dd9e0abc79e8670fddd1145e3",
+      "bytes": 2435
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/commands.json",
+      "rawSha256": "0589d19f05c619839fd4b2ca73180b77460f5dfe7ca5b712f570a85fc04d7efa",
+      "bytes": 10862
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/environment.json",
+      "rawSha256": "bef30d6e42928379e85d4c9f5021212f3c379112f07ed79594f137ba2dca1c12",
+      "bytes": 600
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/frozen-install.txt",
+      "rawSha256": "7a673503fa523a06709a4cb42e4d92b90e41b0b4434244816f0f2e7140793033",
+      "bytes": 1962
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/independent-shapes.txt",
+      "rawSha256": "5729548d84b7f2c70b1b47697ddf1b267b653b1d350cc96a7058c454bc0e927a",
+      "bytes": 246
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/inputs.json",
+      "rawSha256": "6d81681ffde95da5de21f93455507b46848a201900c617b7481b78cb3d19e7c0",
+      "bytes": 8971
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/m2-contract-tests.txt",
+      "rawSha256": "c2416bf554ccced38cec8541dbcda49f5efa140cca987714d87049408090a078",
+      "bytes": 2841
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/m6-policy-tests.txt",
+      "rawSha256": "96176190a7ba3d7120e13ff7699972d1b456eaebf185b34ac88a0f2728ba9345",
+      "bytes": 20278
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/semantic-firewall-tests.txt",
+      "rawSha256": "92cd7c8c01154c01ad9b8f0a617fc38ab1d36714cddde4f6fad1891c528a0050",
+      "bytes": 1904
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/shapes.json",
+      "rawSha256": "3f4304356f92176c35967a1993316e2fb50cb4ecb21d9d8d0a459c10d3f73c0f",
+      "bytes": 45192
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/tests.xml",
+      "rawSha256": "db232f102c36d395ccfc1c9445a967738101ac0469927bf83452c98065d502d5",
+      "bytes": 9567
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/upstream-commands.json",
+      "rawSha256": "7e3df7a3984912b6868570ab13151f999f6cf73c5fb56a9e4706209a268969c1",
+      "bytes": 5301
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/upstream-inputs.json",
+      "rawSha256": "37013f008a13a74c6b1294a593908267512e0a1e7f6e28e090d5b46ab5f0980e",
+      "bytes": 132099
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/wheel-build.txt",
+      "rawSha256": "425d78d7eef8e8d2a7bce77d6bc4b1b5d378f8365149737f72a3d8734bc40675",
+      "bytes": 175
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/wheel-install.txt",
+      "rawSha256": "56824ba6bee246bb750a591f49719f64e75462135fb6f291cdb49d3c6cefd037",
+      "bytes": 402
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-amended-b-02/wheel.json",
+      "rawSha256": "269a8fb176ae4dd79fbd17e60bf36ef2ca88af9fdf776babaf18d14172079961",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/cad-tests.txt",
+      "rawSha256": "a9bf8f57cf053f2a78d2be599149cfd30401bd2cee0964031ff11fd26a70ee5d",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/calibration.json",
+      "rawSha256": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytes": 39309
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawSha256": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytes": 110639
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawSha256": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytes": 43883
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawSha256": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytes": 9988
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawSha256": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytes": 16484
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawSha256": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytes": 26498
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/candidate-artifacts/generation.json",
+      "rawSha256": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytes": 1045
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/commands.json",
+      "rawSha256": "8a5d33eb010f34d1bb8b4e85400f81806ae45bf7147216ae7a9dd0c6ff123bc6",
+      "bytes": 10420
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/environment.json",
+      "rawSha256": "d4ac35033265a2527e4d1c5240de0d8bc37e341597191fe51749305bb93032f1",
+      "bytes": 568
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/frozen-install.txt",
+      "rawSha256": "23677e12531b86f69a59422f45fdefef6b1026188b1d07e8f8eae23700126786",
+      "bytes": 1954
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/inputs.json",
+      "rawSha256": "86be87af2e04911bef1a42f1d874d34b1d6952c3f403368db2eb087b07aea2d5",
+      "bytes": 7804
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/m2-contract-tests.txt",
+      "rawSha256": "ac01e24e52a0cf20cc05a6e74134e71a969a0584daa0644251e939b155b0f005",
+      "bytes": 2840
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/m6-policy-tests.txt",
+      "rawSha256": "eb7a978585822a04e042b493f65a0bb6bc2c6ef26d4fbfad6af97d4cde2ea871",
+      "bytes": 7899
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/semantic-firewall-tests.txt",
+      "rawSha256": "85db1ee46e5d4cb99c2cba4bfd894cbf668b8a307f42a25d396f3342aaf0d1e2",
+      "bytes": 1905
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/shapes.json",
+      "rawSha256": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytes": 10621
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/tests.xml",
+      "rawSha256": "942b3df4b27dffc11db5345b2f8f9982caf89a7c9afa4fe0dd7112d76166ab1d",
+      "bytes": 7004
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/upstream-commands.json",
+      "rawSha256": "a66e099c66a1d6d4cfe10ba5213ffc68b314535ae5506e3861a6949cddac191b",
+      "bytes": 5218
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/upstream-inputs.json",
+      "rawSha256": "dcda3b5dd59481c075c843280fd641f5218b757b369d3c7e39835834f46d8c08",
+      "bytes": 126360
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/wheel-build.txt",
+      "rawSha256": "9e8b78afc5099b032fdb14012259dccfda0f0fa6f67464dac02d0b28237676f9",
+      "bytes": 167
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/wheel-install.txt",
+      "rawSha256": "31a575f00f9693af01974e796f5298528822c1599ecae6395f06fe129dbb9035",
+      "bytes": 386
+    },
+    {
+      "path": "docs/implementation/evidence/m6/qualification-b-01/wheel.json",
+      "rawSha256": "b1ef3c6c9eac51ccdcd2333d291cf97eec8d4adbf05db44c295f3f77e445fb57",
+      "bytes": 149
+    },
+    {
+      "path": "docs/implementation/evidence/m6/recheck-upstream.mjs",
+      "rawSha256": "e238d922898bfa3987bd63392be17691058946b51d6fe09433ab753b41508746",
+      "bytes": 4465
+    },
+    {
+      "path": "docs/implementation/evidence/m6/report.mjs",
+      "rawSha256": "fd3fa20fbb106e22b4e89e3c7c088c3a69410022f1b44bf3f69693c4e225884e",
+      "bytes": 11542
+    },
+    {
+      "path": "docs/implementation/evidence/m6/reproducibility-amended.json",
+      "rawSha256": "6e0cf918a2e56c34c0db755764afcd0572f9d87534a8835d4ad64d5626ea8af1",
+      "bytes": 5436
+    },
+    {
+      "path": "docs/implementation/evidence/m6/reproducibility.json",
+      "rawSha256": "a9fdf438877551f8dcbea73a1bd154924be0dfa2bb16928561cead860ebbf076",
+      "bytes": 3569
+    },
+    {
+      "path": "docs/implementation/evidence/m6/review-run.mjs",
+      "rawSha256": "c8d64fd499961a02134c3ea718bcb9215b3a2ac01d523c1e1d29a813852893b5",
+      "bytes": 2113
+    },
+    {
+      "path": "docs/implementation/evidence/m6/run.mjs",
+      "rawSha256": "704463977f9853555a37c72b2c71e419abb517b2e0f2256b48c9bc2cd48688cb",
+      "bytes": 5403
+    },
+    {
+      "path": "docs/implementation/evidence/m6/setup-analysis.mjs",
+      "rawSha256": "057b2df46cd197c9d43265a3d0fc689d7c03e7b38c6b2c48ad978117f31183dd",
+      "bytes": 2918
+    },
+    {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "9025430381754b1175fe8080a4fbec74a365a2df47322075e12d0dd1552d475e",
+      "bytes": 31074
+    },
+    {
+      "path": "docs/implementation/evidence/m6/upstream-public-icon-filter-failure.json",
+      "rawSha256": "bc6d58de578a9ac5faa2f2cd67422c48a1fa2707ca91b22ac656d8793a305548",
+      "bytes": 517
+    },
+    {
+      "path": "docs/implementation/M6_EXECUTION_PLAN.md",
+      "rawSha256": "99bdde2dddfc48f48bf8d535ab5aea089898000938b199cab5ce20efc14175de",
+      "bytes": 5038
+    },
+    {
+      "path": "docs/implementation/M6_REPORT.md",
+      "rawSha256": "107c5bff01009b9dbbd3b70108905c14961fc7ea5d02f483687959a44608d55b",
+      "bytes": 9196
+    },
+    {
+      "path": "docs/implementation/M6_G_INSTRUCTIONAL_PLATE_REPORT.json",
+      "rawSha256": "1ab64091620a188a0054505e3ba429bd16c906bb2d65e4532ce7fd3e2dceccbe",
+      "bytes": 143990
+    },
+    {
+      "path": "docs/implementation/HANDOFF_M6_REMEDIATION.md",
+      "rawSha256": "e788067bb58013a7e66d2242fa942d7be78a0001f2c9f01dc5b7ca8644abe97c",
+      "bytes": 14491
+    }
+  ],
+  "rollback": "Revert only the M6 acceptance and documentation receipt commits after checking later owner changes; retain private sources, prior failure receipts and M2 diagnostics. No reset/clean/history rewrite."
+}

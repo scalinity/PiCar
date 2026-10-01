@@ -1,0 +1,1490 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-C",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-C",
+    "revision": 1,
+    "name": "Plate C",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-C-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-C"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-C-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-C-CAMERA-MOUNT",
+      "PX-V40-IF-PLATE-C-REFERENCE",
+      "PX-V40-IF-PLATE-C-TILT-HORN-MOUNT"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-C-001",
+      "definitionId": "PX-V40-DEF-PLATE-C",
+      "definitionRevision": 1,
+      "role": "Plate C",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-C",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      12,
+      13
+    ],
+    "rpi5": [
+      12,
+      13
+    ],
+    "rpi-zero-2-w": [
+      12,
+      13
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+      "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896",
+      "bytes": 534018,
+      "plate": "C",
+      "view": "top-down",
+      "orientation": "Camera-cutout face between side walls; small square left and short slot right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Central shaped opening, four mounting holes, small square cutout and short slot visible."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+      "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e",
+      "bytes": 820601,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Camera-cutout face between edge-on side walls; short slot at image top",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Clear face outline and cutout arrangement; card below; numbered source suffix preserved in manifest."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+      "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8",
+      "bytes": 506256,
+      "plate": "C",
+      "view": "near top-down",
+      "orientation": "Camera-cutout face toward camera; short slot above main opening",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Alternate face view with offset notch in the main opening and small square cutout visible."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+      "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66",
+      "bytes": 482516,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Asymmetric side wall with large circular opening and two four-hole clusters",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Three larger edge holes and two small-hole rows visible; card and penny below wall height."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+      "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9",
+      "bytes": 327757,
+      "plate": "C",
+      "view": "low face-on profile",
+      "orientation": "Circular-hole wall nearest camera; bracket rests on an angled edge",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Wall outline, large opening and small-hole rows; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+      "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e",
+      "bytes": 836718,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Opposite side wall with two long slots and three edge holes",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Features of the opposite wall can be seen through the slots; do not assign those to this wall."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+      "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884",
+      "bytes": 973952,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Narrow transverse face with two parallel slots and three central holes",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Slots appear vertical in the image; side walls seen edge-on; card and penny visible."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+      "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f",
+      "bytes": 266103,
+      "plate": "C",
+      "view": "low face-on profile",
+      "orientation": "Narrow transverse face faces camera; slots run horizontally in image",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Shows three central holes, two slots and spacing between side walls; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+      "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71",
+      "bytes": 686052,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Open interior with circular-hole wall left and long-slot wall right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows inner camera-cutout face, transverse face and multi-bend relationships."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+      "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c",
+      "bytes": 608319,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Circular-hole wall nearest camera; narrow slotted transverse face visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Useful cross-view of the two distinct walls and inner slotted face."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+      "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43",
+      "bytes": 675601,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Camera-cutout face nearest camera; circular-hole wall at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows shaped opening, mounting holes and asymmetric wall relationship."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+      "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04",
+      "bytes": 626404,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Long-slot wall at image right; narrow slotted transverse face toward camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary view of inner face and side-wall bends; flat card and penny nearby."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+      "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692",
+      "bytes": 551846,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Camera-cutout face uppermost; circular-hole wall shaded near camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Inverted whole-part view of opening, tabs and connected faces; flat card nearby."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+      "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd",
+      "bytes": 569753,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Shaded camera-cutout face at image left; narrow slotted face at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Complementary interior/bend view; lower contrast on the shaded face."
+    }
+  ],
+  "features": [
+    {
+      "name": "camera.outer-profile",
+      "observation": "Camera face outline and lower corner notches",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "camera.shaped-cutout",
+      "observation": "Large rectangular opening with offset shoulder/notch",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "camera.small-square",
+      "observation": "Small square opening",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "camera.slot-and-four-holes",
+      "observation": "Short slot and four mounting holes",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "circular-wall.outer-profile",
+      "observation": "Asymmetric side-wall polygon with visible edge notches",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+          "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "circular-wall.holes",
+      "observation": "Large circular opening, three edge holes and two four-hole clusters",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+          "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "slot-wall.outer-profile",
+      "observation": "Opposite side-wall polygon",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "slot-wall.slots-and-holes",
+      "observation": "Two long slots and three edge holes; opposite-wall features visible through slots are excluded",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "transverse.slots-and-holes",
+      "observation": "Two elongated slots and three central holes in narrow transverse face",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "planes.multi-bend",
+      "observation": "Four distinct faces; relative wall spacing, inclination/bends and tabs require a joint multi-view registration",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+          "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "PRACTICAL_REVIEW",
+  "shapeValidationStatus": "PASS",
+  "sourceValidationStatus": "PASS",
+  "blockerIds": [
+    "Q-03"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+    "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+    "Assembly/world numeric transforms are not solved in M6.",
+    "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+  ],
+  "instructionalOrigin": {
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "axes": "Origin at camera-face front-edge midpoint. +X across side walls toward slotted wall, +Y toward transverse face, +Z toward the open bracket interior. Camera-face normal is a part-local direction; V40 S12/S13 establishes camera role, not a measured robot/world pose.",
+    "units": "mm"
+  },
+  "reviewedInstructionalDimensions": {
+    "confidence": "INSTRUCTIONAL_APPROXIMATION",
+    "engineeringDatum": false,
+    "profile": {
+      "kind": "bent-faces",
+      "faces": [
+        {
+          "name": "camera-face",
+          "originMm": [
+            0,
+            0,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ],
+          "outlineMm": [
+            [
+              -15,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              17,
+              1
+            ],
+            [
+              17,
+              35
+            ],
+            [
+              -17,
+              35
+            ],
+            [
+              -17,
+              1
+            ],
+            [
+              -15,
+              1
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                -12.724137931034484,
+                27.93103448275862
+              ],
+              "diameterMm": 2.5,
+              "name": "camera-face.hole.1"
+            },
+            {
+              "centerMm": [
+                -0.10344827586206762,
+                27.862068965517242
+              ],
+              "diameterMm": 2.5,
+              "name": "camera-face.hole.2"
+            },
+            {
+              "centerMm": [
+                -12.724137931034484,
+                6.758620689655173
+              ],
+              "diameterMm": 2.5,
+              "name": "camera-face.hole.3"
+            },
+            {
+              "centerMm": [
+                -0.1724137931034484,
+                6.758620689655173
+              ],
+              "diameterMm": 2.5,
+              "name": "camera-face.hole.4"
+            }
+          ],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  -9.482758620689655,
+                  27.79310344827586
+                ],
+                [
+                  -3.7586206896551726,
+                  27.79310344827586
+                ]
+              ],
+              "widthMm": 2.4,
+              "name": "camera-face.slot.1"
+            }
+          ],
+          "cutouts": [
+            {
+              "name": "camera.shaped-window",
+              "verticesMm": [
+                [
+                  -14.724137931034482,
+                  21.93103448275862
+                ],
+                [
+                  -12.241379310344827,
+                  21.93103448275862
+                ],
+                [
+                  -12.241379310344827,
+                  23.586206896551722
+                ],
+                [
+                  -7.137931034482758,
+                  23.586206896551722
+                ],
+                [
+                  -7.137931034482758,
+                  21.93103448275862
+                ],
+                [
+                  4.448275862068964,
+                  21.93103448275862
+                ],
+                [
+                  4.448275862068964,
+                  12.551724137931034
+                ],
+                [
+                  -14.724137931034482,
+                  12.551724137931034
+                ]
+              ]
+            },
+            {
+              "name": "camera.small-square",
+              "verticesMm": [
+                [
+                  -12.379310344827587,
+                  11.724137931034482
+                ],
+                [
+                  -8.931034482758621,
+                  11.724137931034482
+                ],
+                [
+                  -8.931034482758621,
+                  8.275862068965518
+                ],
+                [
+                  -12.379310344827587,
+                  8.275862068965518
+                ]
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+              "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+              "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+              "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+            }
+          ]
+        },
+        {
+          "name": "circular-wall",
+          "originMm": [
+            -17,
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              39,
+              0
+            ],
+            [
+              52,
+              13
+            ],
+            [
+              54,
+              40
+            ],
+            [
+              23,
+              42
+            ],
+            [
+              -1,
+              21
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                47.42702702702702,
+                37.18063063063063
+              ],
+              "diameterMm": 3.4,
+              "name": "circular-wall.hole.1"
+            },
+            {
+              "centerMm": [
+                47.55765765765766,
+                27.98243243243243
+              ],
+              "diameterMm": 3.4,
+              "name": "circular-wall.hole.2"
+            },
+            {
+              "centerMm": [
+                47.64594594594594,
+                18.532882882882884
+              ],
+              "diameterMm": 3.4,
+              "name": "circular-wall.hole.3"
+            },
+            {
+              "centerMm": [
+                17.77027027027027,
+                25.6981981981982
+              ],
+              "diameterMm": 9,
+              "name": "circular-wall.hole.4"
+            },
+            {
+              "centerMm": [
+                30.79009009009009,
+                36.622972972972974
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.5"
+            },
+            {
+              "centerMm": [
+                28.954504504504502,
+                35.31666666666667
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.6"
+            },
+            {
+              "centerMm": [
+                27.045495495495494,
+                33.95810810810811
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.7"
+            },
+            {
+              "centerMm": [
+                25.20990990990991,
+                32.6518018018018
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.8"
+            },
+            {
+              "centerMm": [
+                10.27837837837838,
+                18.81801801801802
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.9"
+            },
+            {
+              "centerMm": [
+                8.442792792792794,
+                17.511711711711712
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.10"
+            },
+            {
+              "centerMm": [
+                6.533783783783784,
+                16.153153153153152
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.11"
+            },
+            {
+              "centerMm": [
+                4.698198198198199,
+                14.846846846846846
+              ],
+              "diameterMm": 1.7,
+              "name": "circular-wall.hole.12"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+              "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+              "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+              "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+              "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+            }
+          ]
+        },
+        {
+          "name": "slotted-wall",
+          "originMm": [
+            15,
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              39,
+              0
+            ],
+            [
+              52,
+              13
+            ],
+            [
+              54,
+              40
+            ],
+            [
+              23,
+              42
+            ],
+            [
+              -1,
+              21
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                48.5,
+                17
+              ],
+              "diameterMm": 3.4,
+              "name": "slotted-wall.hole.1"
+            },
+            {
+              "centerMm": [
+                48.5,
+                26.5
+              ],
+              "diameterMm": 3.4,
+              "name": "slotted-wall.hole.2"
+            },
+            {
+              "centerMm": [
+                48.5,
+                35.5
+              ],
+              "diameterMm": 3.4,
+              "name": "slotted-wall.hole.3"
+            }
+          ],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  5.6,
+                  16.6
+                ],
+                [
+                  32.4,
+                  36.9
+                ]
+              ],
+              "widthMm": 4,
+              "name": "slotted-wall.slot.1"
+            },
+            {
+              "endCentersMm": [
+                [
+                  17.3,
+                  10.7
+                ],
+                [
+                  35.1,
+                  24.4
+                ]
+              ],
+              "widthMm": 4,
+              "name": "slotted-wall.slot.2"
+            }
+          ],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+              "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+              "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+              "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+            }
+          ]
+        },
+        {
+          "name": "transverse-face",
+          "originMm": [
+            0,
+            33,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              -17,
+              0
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              17,
+              24
+            ],
+            [
+              -17,
+              24
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                -12,
+                12
+              ],
+              "diameterMm": 3,
+              "name": "transverse-face.hole.1"
+            },
+            {
+              "centerMm": [
+                0,
+                12
+              ],
+              "diameterMm": 3,
+              "name": "transverse-face.hole.2"
+            },
+            {
+              "centerMm": [
+                12,
+                12
+              ],
+              "diameterMm": 3,
+              "name": "transverse-face.hole.3"
+            }
+          ],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  -12,
+                  6
+                ],
+                [
+                  12,
+                  6
+                ]
+              ],
+              "widthMm": 3,
+              "name": "transverse-face.slot.1"
+            },
+            {
+              "endCentersMm": [
+                [
+                  -12,
+                  18
+                ],
+                [
+                  12,
+                  18
+                ]
+              ],
+              "widthMm": 3,
+              "name": "transverse-face.slot.2"
+            }
+          ],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+              "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+              "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+              "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+            },
+            {
+              "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+              "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+            }
+          ]
+        }
+      ]
+    },
+    "holes": [],
+    "thickness": {
+      "valueMm": 2,
+      "confidence": "PROBABLE",
+      "basis": "Owner common instructional stock instruction"
+    }
+  },
+  "proofs": {
+    "ownerAmendment": {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    "parameters": {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    "shapeReport": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    "sourceReview": {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "5ea0920bbae8c9c2e54220acbdf20b6a592e482e4a4719cd106fe96c5885874c",
+      "bytes": 30990
+    },
+    "brep": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-C.brep",
+      "rawSha256": "b3bbd8c2e961dc9efffbac053dbcc2c39a89f631bda3aa318623ef22455d1259",
+      "bytes": 88834
+    }
+  }
+}

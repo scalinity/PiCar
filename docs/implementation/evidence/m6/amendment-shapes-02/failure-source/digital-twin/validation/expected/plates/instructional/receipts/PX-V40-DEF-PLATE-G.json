@@ -1,0 +1,281 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-G",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "BLOCKED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-G",
+    "revision": 1,
+    "name": "Plate G",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-G-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-G"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-G-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-G-CENTER-PIVOT",
+      "PX-V40-IF-PLATE-G-LEFT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-G-REFERENCE",
+      "PX-V40-IF-PLATE-G-RIGHT-CARRIER-PIVOT"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-G-001",
+      "definitionId": "PX-V40-DEF-PLATE-G",
+      "definitionRevision": 1,
+      "role": "Plate G",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-G",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      21,
+      25
+    ],
+    "rpi5": [
+      21,
+      25
+    ],
+    "rpi-zero-2-w": [
+      21,
+      25
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+      "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468",
+      "bytes": 642806,
+      "plate": "G",
+      "view": "top-down",
+      "orientation": "Long bar horizontal; larger holes at both rounded ends",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Whole outline and smaller middle hole visible; card below and penny above."
+    },
+    {
+      "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+      "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb",
+      "bytes": 783289,
+      "plate": "G",
+      "view": "top-down",
+      "orientation": "Long bar approximately horizontal in image",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Second distinct overhead exposure; reverse-face identity is not asserted."
+    },
+    {
+      "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+      "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554",
+      "bytes": 674678,
+      "plate": "G",
+      "view": "oblique",
+      "orientation": "Bar runs diagonally; flat sheet edge visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows both end holes, smaller middle hole and rounded ends."
+    }
+  ],
+  "features": [
+    {
+      "name": "outline",
+      "observation": "Straight flat linkage/bar with rounded ends",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+          "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+          "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "holes",
+      "observation": "Two larger end holes and one smaller middle hole",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-G/plate-G_01_top-down-master-three-hole-bar.jpeg",
+          "sourceRawSha256": "beab979e3797599625f268d93fb5bc3e54d43b7b37512d05b8c9eaf59788b468"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_02_top-down-alternate-three-hole-bar.jpeg",
+          "sourceRawSha256": "c43e2ad0fffdb00f42650a3098b7d28e88048585a77a78a8d2fc558cc2a305cb"
+        },
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "flatness",
+      "observation": "No bend supported",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-G/plate-G_03_oblique-flat-three-hole-bar.jpeg",
+          "sourceRawSha256": "90febd954baa84dd853664d06bfc2ca1c399745858d16a25e31f7e7869e7a554"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "REVIEW_REQUIRED",
+  "shapeValidationStatus": "PROVISIONAL_CANDIDATE_PENDING",
+  "sourceValidationStatus": "BLOCKED",
+  "blockerIds": [
+    "Q-03",
+    "M6-CALIBRATION-UNCERTAINTY",
+    "M6-FULL-SOURCE-PROJECTION",
+    "M6-INSTRUCTIONAL-ORIENTATION"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "No full instructional admission or strict engineering G-STRUCTURE/G-CAD acceptance",
+    "Bent geometry is not silently substituted with a bounding box or flat outline",
+    "Candidate D/G/H numeric parameters are isolated from canonical model preimages"
+  ]
+}

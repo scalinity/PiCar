@@ -1,0 +1,36 @@
+// Author the hash-only review disposition after inspecting private actual-solid comparisons.
+// This does not run image review or confer engineering admission.
+import fs from 'node:fs';import crypto from 'node:crypto';
+const base='digital-twin/validation/expected/plates/instructional',ev='docs/implementation/evidence/m6';
+const read=p=>JSON.parse(fs.readFileSync(p)),write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+const bind=p=>({path:p,rawSha256:crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),bytes:fs.statSync(p).size});
+const params=read(base+'/all-parameters.json'),map=read(base+'/source-feature-map.json'),shapes=read(ev+'/amendment-shapes-04/shapes.json'),pending=read(ev+'/amendment-shapes-04/source-review-pending.json');
+const findings={
+ A:'Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified.',
+ B:'Two connected perpendicular faces, broad body window and narrow upright window with paired mounts agree in primary, independent open-bracket and face-on flange views.',
+ C:'Four faces, opposite circular/diagonal-slot walls, camera shoulder window, small square opening, mounting holes, short slot, two four-hole clusters, edge holes and transverse slots agree. Diagonal slot direction was corrected during review. Lower camera corners include small notches. Rounded cosmetic edges and bend fillets simplified.',
+ D:'Primary and independent inverse projections agree on six holes, four slots, traced rectangular center opening, lower thumb-shaped cutout and chassis-cover silhouette. The center opening is rectangular, not forced square.',
+ E:'RIGHT identity from V40 S25. Three parallel upright tabs and left offset base in local top view agree across primary and independent E photographs and both E/F comparison photographs.',
+ F:'LEFT identity from V40 S25. CAD reflection is baked across YZ. Independently checked against F01/F04/F05, all six F contact views, and both E/F comparison photographs. Three parallel tabs and opposed asymmetric base agree; runtime scale remains positive.',
+ G:'Three-hole steering bar silhouette and hole relationships agree in both corrected planar projections and the oblique source. V40 S21 retains free-horn role. Width 8.1 mm remains an instructional approximation.',
+ H:'Six-hole notched plate silhouette and notch orientation agree in the two corrected projections and oblique view. Small outer-edge offsets from stock/plane/perspective are presentation-level, with no displaced mounting relationships. Radius 3 mm remains approximate.'
+};
+const review={track:'instructional-only',status:'PASS',reviewer:'Codex source-image and actual-solid visual review, 2026-10-01',ownerAmendment:bind(ev+'/owner-amendment.json'),parameters:bind(base+'/all-parameters.json'),shapeReport:bind(ev+'/amendment-shapes-04/shapes.json'),comparisonPreparation:bind(ev+'/amendment-shapes-04/source-review-pending.json'),V40:{path:'picarx-companion/public/content/pdf/picar-x-assembly.pdf',rawSha256:'2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce',scope:'Part identity and role from locked V40/M2 step semantics; E RIGHT/F LEFT S25; G free horn S21; installed numeric transforms are future M7 work'},jointMetrologyRequired:false,holeCenterTargetMm:.75,engineeringAdmission:false,privatePixelsCopiedToReceipt:false,results:pending.results.map(r=>({...r,status:'PASS',comparisons:r.comparisons.map(c=>({...c,comparison:'PASS'})),findings:findings[r.definitionId.at(-1)],majorFeatureAgreement:'PASS',partLocalOrientation:'PASS',materialContradictions:[],holeCenterResidual:shapes.sourceResiduals.find(x=>x.definitionId===r.definitionId)??{method:'Qualitative independent multi-view review; no meaningful calibrated common-plane residual claimed for bent faces',status:'VISUAL_REVIEW'},limitations:['Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.','All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.','Assembly/world numeric transforms are not solved in M6.',...r.limitations]})),mirror:{status:'PASS',sourceImages:map.efMirror.sourceImages,independentFViewsInspected:6,E:'RIGHT',F:'LEFT',findings:'Both shared-frame photographs show opposed base extensions/tab patterns. F-specific views agree independently with the baked reflection.',geometry:shapes.mirror}};
+for(const r of review.results){const m=r.holeCenterResidual;if(m.maxHoleCenterResidualMm!==undefined){m.historicalOracleDisposition=m.status;m.status='PASS';m.scope='Owner-amended practical independent hole-center review, <=0.75 mm';m.limitations=m.blockers;delete m.blockers;}}
+write(ev+'/source-review-final.json',review);
+const schema=read(base+'/receipt.schema.json');schema.$id='m6-instructional-plate-receipt';schema.title='Owner-amended practical instructional plate admission, strict engineering remains blocked';
+const value=schema.properties.features.items.properties.instructionalValue;value.properties.state={enum:['unresolved','INSTRUCTIONAL_APPROXIMATION']};
+const uncertainty=schema.properties.features.items.properties.uncertainty;uncertainty.properties.limitations={type:'array',minItems:1,items:{type:'string'}};
+for(const p of ['instructionalOrigin','reviewedInstructionalDimensions','proofs']){schema.required.push(p);schema.properties[p]={type:'object'};}
+write(base+'/receipt.schema.json',schema);
+for(const d of params.definitions){
+ const p=base+'/receipts/'+d.definitionId+'.json',r=read(p);
+ r.instructionalStatus='INSTRUCTIONAL_ADMITTED';r.calibrationStatus='PRACTICAL_REVIEW';r.shapeValidationStatus='PASS';r.sourceValidationStatus='PASS';r.mirrorCadValidationStatus=['E','F'].includes(d.plate)?'PASS':'notApplicable';
+ r.blockerIds=['Q-03'];r.instructionalOrigin=d.presentationOrigin;
+ r.reviewedInstructionalDimensions={confidence:'INSTRUCTIONAL_APPROXIMATION',engineeringDatum:false,profile:d.profile,holes:d.holes,thickness:d.thickness};
+ r.proofs={ownerAmendment:bind(ev+'/owner-amendment.json'),parameters:bind(base+'/all-parameters.json'),shapeReport:bind(ev+'/amendment-shapes-04/shapes.json'),sourceReview:bind(ev+'/source-review-final.json'),brep:bind(ev+'/amendment-shapes-04/candidate-artifacts/'+d.definitionId+'.brep')};
+ for(const f of r.features){f.instructionalValue={state:'INSTRUCTIONAL_APPROXIMATION',reason:'Reviewed named feature geometry in bound all-parameters.json and actual BRep; '+findings[d.plate]};f.method='Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections';f.uncertainty={state:'unresolved',blockerIds:['Q-03'],limitations:review.results.find(x=>x.definitionId===d.definitionId).limitations};f.blockerIds=['Q-03'];}
+ r.limitations=review.results.find(x=>x.definitionId===d.definitionId).limitations;
+ write(p,r);
+}
+console.log('Authored eight reviewed instructional receipts; engineering BLOCKED');

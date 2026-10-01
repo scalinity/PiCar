@@ -1,0 +1,219 @@
+[
+  {
+    "name": "frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:10:36.201Z",
+    "finishedAt": "2026-10-01T04:10:44.691Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/frozen-install.txt",
+      "rawSha256": "3bae0568574212d44f4f5ef90f5a27f25d74c38bc16023d0b4e1da581c82ed11",
+      "bytes": 1954
+    }
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/wheel"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:10:44.691Z",
+    "finishedAt": "2026-10-01T04:10:44.860Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel-build.txt",
+      "rawSha256": "c1403f6a0b21b694ed276a24b901a610de215a1e93257fbed88999884e21fd34",
+      "bytes": 167
+    }
+  },
+  {
+    "name": "wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "--no-deps",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:10:44.860Z",
+    "finishedAt": "2026-10-01T04:10:44.884Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/wheel-install.txt",
+      "rawSha256": "310d1d6481d4e73894afda6f05975070519f4b3432d25bed5a1f9fdb060c1709",
+      "bytes": 383
+    }
+  },
+  {
+    "name": "environment",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:10:44.884Z",
+    "finishedAt": "2026-10-01T04:11:00.745Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "calibration",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.calibration",
+      "--package",
+      "/Users/danny/Documents/Apps/PiCar/docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/calibration.json",
+      "--private-output",
+      "/Users/danny/Documents/Apps/PiCar/digital-twin/evidence/private/m6/qualification-a-01"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:11:00.745Z",
+    "finishedAt": "2026-10-01T04:11:04.337Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    }
+  },
+  {
+    "name": "generate-candidates",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.generate",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/candidate-artifacts"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:11:04.337Z",
+    "finishedAt": "2026-10-01T04:11:31.730Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/generate-candidates.txt",
+      "rawSha256": "6f21fbd307ec03ee8c8e898dfbdce3273b958cda0d684aeebea3c8886c6d73be",
+      "bytes": 66
+    }
+  },
+  {
+    "name": "independent-shapes",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.oracle",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin/validation/expected/plates/instructional/candidate-parameters.json",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/candidate-artifacts",
+      "--calibration",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/calibration.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/shapes.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:11:31.730Z",
+    "finishedAt": "2026-10-01T04:11:33.483Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/independent-shapes.txt",
+      "rawSha256": "0e14b97320779894d3dfd567cc96a7e4a432bc06e152eee91c8e55bf79dfc60f",
+      "bytes": 238
+    }
+  },
+  {
+    "name": "cad-tests",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment/bin/python",
+      "-m",
+      "pytest",
+      "cad/tests/test_m6_plates.py",
+      "cad/tests/test_toolchain.py",
+      "-q",
+      "--junitxml=/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/tests.xml"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-a-01-gHZ6GN/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:11:33.483Z",
+    "finishedAt": "2026-10-01T04:11:39.491Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/qualification-a-01/cad-tests.txt",
+      "rawSha256": "7b99b5fff8ae0dd06bb59c6d8706629d45d117532b5674ef660bbb23d033ef11",
+      "bytes": 99
+    }
+  }
+]

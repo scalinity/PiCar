@@ -1,0 +1,1829 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-A",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-A",
+    "revision": 1,
+    "name": "Plate A",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-A-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-A"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-A-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-A-FRONT-SUPPORT-PATTERN",
+      "PX-V40-IF-PLATE-A-LEFT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-A-LOOP-CONTACT-SURFACE",
+      "PX-V40-IF-PLATE-A-MOTOR-LEFT-MOUNT",
+      "PX-V40-IF-PLATE-A-MOTOR-RIGHT-MOUNT",
+      "PX-V40-IF-PLATE-A-PAN-HORN-MOUNT",
+      "PX-V40-IF-PLATE-A-REAR-DECK-SUPPORT-PATTERN",
+      "PX-V40-IF-PLATE-A-REFERENCE",
+      "PX-V40-IF-PLATE-A-RIGHT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-A-STEERING-MOUNT",
+      "PX-V40-IF-PLATE-A-ULTRASONIC-MOUNT"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-A-001",
+      "definitionId": "PX-V40-DEF-PLATE-A",
+      "definitionRevision": 1,
+      "role": "Plate A",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-A",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      25
+    ],
+    "rpi5": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      25
+    ],
+    "rpi-zero-2-w": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      25
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+      "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e",
+      "bytes": 676870,
+      "plate": "A",
+      "view": "top-down",
+      "orientation": "Main chassis face; dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Full footprint, cutouts, slots and upright-flange positions; card, penny and quarter visible."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+      "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d",
+      "bytes": 444893,
+      "plate": "A",
+      "view": "face-on profile",
+      "orientation": "Dual-opening front flange faces the camera",
+      "referenceCardVisibility": "partial",
+      "referencePenny": "yes",
+      "limitations": "Two large circular openings, small side holes and central slots; card and coins partly cropped at image left."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_03_front-profile-dual-opening-face-alternate.jpeg",
+      "sourceRawSha256": "9282a3fb8d17c29e6defed1ce1df1e2d30e5b326300553c8c6b686ff69982743",
+      "bytes": 292300,
+      "plate": "A",
+      "view": "low face-on profile",
+      "orientation": "Dual-opening front flange faces the camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Alternate front profile with upright card; metal edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+      "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6",
+      "bytes": 366783,
+      "plate": "A",
+      "view": "oblique",
+      "orientation": "Dual-opening front flange nearest camera; chassis recedes behind",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Front face, chassis depth and upright side flanges; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+      "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7",
+      "bytes": 487490,
+      "plate": "A",
+      "view": "face-on profile",
+      "orientation": "Single-opening rear flange nearest camera",
+      "referenceCardVisibility": "partial",
+      "referencePenny": "yes",
+      "limitations": "Rear flange and two side flanges visible; card and coins partly visible at image right."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_06_rear-profile-single-opening-face-alternate.jpeg",
+      "sourceRawSha256": "8e2b925809f442bcd043ecbdadca680a7f8fc18f8dfb5bf80f1af66cdfc87e21",
+      "bytes": 332559,
+      "plate": "A",
+      "view": "low face-on profile",
+      "orientation": "Single-opening rear flange nearest camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Alternate rear profile with upright card; foreground rear face is clearer than distant faces."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+      "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc",
+      "bytes": 380869,
+      "plate": "A",
+      "view": "oblique",
+      "orientation": "Single-opening rear flange nearest camera; front flange in background",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Shows rear/side bend relationships and main chassis surface; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+      "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e",
+      "bytes": 305336,
+      "plate": "A",
+      "view": "side profile",
+      "orientation": "Dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Low side view of large and slotted flanges; upright card; metal edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_09_side-oblique-front-at-right.jpeg",
+      "sourceRawSha256": "d69efadae430b442646dcef3419998268a6b1eb71ec15f2d667437670e253c92",
+      "bytes": 384890,
+      "plate": "A",
+      "view": "low side oblique",
+      "orientation": "Dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Large side flange, central slotted flange and front flange; upright card and both coins visible."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+      "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb",
+      "bytes": 292344,
+      "plate": "A",
+      "view": "side profile",
+      "orientation": "Dual-opening front flange at image left",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Opposite side arrangement; upright card; metal edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_11_side-oblique-front-at-left.jpeg",
+      "sourceRawSha256": "130485842332939dfa8ee9c7028ed2fd49067b19ad62cf46ef7917e9baaf91f8",
+      "bytes": 386319,
+      "plate": "A",
+      "view": "low side oblique",
+      "orientation": "Dual-opening front flange at image left",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Central slotted flange and large side flange; upright card and both coins visible."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+      "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e",
+      "bytes": 462817,
+      "plate": "A",
+      "view": "side oblique",
+      "orientation": "Dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Higher side view shows chassis surface and multiple bent flanges; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+      "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff",
+      "bytes": 513179,
+      "plate": "A",
+      "view": "oblique overview",
+      "orientation": "Dual-opening front flange at image right; open chassis face visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Whole-part context with card lying flat, penny and quarter; shows how all flanges relate."
+    }
+  ],
+  "features": [
+    {
+      "name": "main.outer-profile",
+      "observation": "Complex chassis outline and two carrier ears",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "main.circular-holes",
+      "observation": "Visible deck mounting holes, carrier-ear holes and two front hole clusters; locations/count closure requires detailed tracing",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "main.slots",
+      "observation": "Six narrow central slots, two carrier-ear slots and one wider forward deck slot",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "main.rectangular-cutouts",
+      "observation": "Two deck rectangular openings",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "front.dual-openings",
+      "observation": "Two large circular openings; two side holes and two central short slots",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+          "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_03_front-profile-dual-opening-face-alternate.jpeg",
+          "sourceRawSha256": "9282a3fb8d17c29e6defed1ce1df1e2d30e5b326300553c8c6b686ff69982743"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+          "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "rear.single-opening",
+      "observation": "Rear flange circular opening",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+          "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_06_rear-profile-single-opening-face-alternate.jpeg",
+          "sourceRawSha256": "8e2b925809f442bcd043ecbdadca680a7f8fc18f8dfb5bf80f1af66cdfc87e21"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+          "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "side.large-flanges",
+      "observation": "Paired large side flanges with circular openings, small holes and open edge notches",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_09_side-oblique-front-at-right.jpeg",
+          "sourceRawSha256": "d69efadae430b442646dcef3419998268a6b1eb71ec15f2d667437670e253c92"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+          "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_11_side-oblique-front-at-left.jpeg",
+          "sourceRawSha256": "130485842332939dfa8ee9c7028ed2fd49067b19ad62cf46ef7917e9baaf91f8"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "side.slotted-flanges",
+      "observation": "Paired central side flanges with long slots",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_09_side-oblique-front-at-right.jpeg",
+          "sourceRawSha256": "d69efadae430b442646dcef3419998268a6b1eb71ec15f2d667437670e253c92"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+          "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_11_side-oblique-front-at-left.jpeg",
+          "sourceRawSha256": "130485842332939dfa8ee9c7028ed2fd49067b19ad62cf46ef7917e9baaf91f8"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "planes.bends",
+      "observation": "Relative plane orientation and six upright flanges; exact angles/radii not derived",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+          "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+          "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+          "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+          "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+          "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "origin.instructional",
+      "observation": "No Plate A production datum or numerical instructional anchor established",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Complex deck, front dual-opening upright, rear opening upright, two large and two short side flanges, visible mounting holes, ear/body slots and cutouts agree. Forward is toward dual-opening front; local +Z toward flanges. Small corners/bend transitions remain simplified."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "PRACTICAL_REVIEW",
+  "shapeValidationStatus": "PASS",
+  "sourceValidationStatus": "PASS",
+  "blockerIds": [
+    "Q-03"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+    "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+    "Assembly/world numeric transforms are not solved in M6.",
+    "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+  ],
+  "instructionalOrigin": {
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "axes": "Origin at rear deck bend center. +X forward toward dual-opening front face, +Y toward robot left in the V40 chassis convention, +Z toward upright flanges; presentation datum only.",
+    "units": "mm"
+  },
+  "reviewedInstructionalDimensions": {
+    "confidence": "INSTRUCTIONAL_APPROXIMATION",
+    "engineeringDatum": false,
+    "profile": {
+      "kind": "bent-faces",
+      "faces": [
+        {
+          "name": "deck",
+          "originMm": [
+            0,
+            0,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            1,
+            0
+          ],
+          "outlineMm": [
+            [
+              0,
+              -37.33075435203095
+            ],
+            [
+              65.76402321083172,
+              -37.33075435203095
+            ],
+            [
+              82.20502901353966,
+              -19.148936170212767
+            ],
+            [
+              115.47388781431334,
+              -19.148936170212767
+            ],
+            [
+              125.53191489361703,
+              -22.243713733075435
+            ],
+            [
+              127.07930367504835,
+              -41.3926499032882
+            ],
+            [
+              129.40038684719536,
+              -45.64796905222437
+            ],
+            [
+              133.4622823984526,
+              -47.77562862669246
+            ],
+            [
+              137.9110251450677,
+              -46.22823984526112
+            ],
+            [
+              140.81237911025144,
+              -43.133462282398455
+            ],
+            [
+              140.61895551257254,
+              -28.239845261121857
+            ],
+            [
+              139.26499032882012,
+              -24.177949709864603
+            ],
+            [
+              141.3926499032882,
+              -19.922630560928432
+            ],
+            [
+              172.72727272727272,
+              -19.922630560928432
+            ],
+            [
+              173.6943907156673,
+              -17.988394584139265
+            ],
+            [
+              173.6943907156673,
+              16.827852998065765
+            ],
+            [
+              171.56673114119923,
+              19.148936170212767
+            ],
+            [
+              141.58607350096713,
+              19.148936170212767
+            ],
+            [
+              139.26499032882012,
+              21.47001934235977
+            ],
+            [
+              140.2321083172147,
+              37.13733075435203
+            ],
+            [
+              142.16634429400386,
+              42.5531914893617
+            ],
+            [
+              140.2321083172147,
+              46.03481624758221
+            ],
+            [
+              136.55705996131528,
+              47.77562862669246
+            ],
+            [
+              133.07543520309477,
+              46.808510638297875
+            ],
+            [
+              129.59381044487426,
+              44.10058027079304
+            ],
+            [
+              128.23984526112187,
+              40.61895551257253
+            ],
+            [
+              126.11218568665377,
+              23.984526112185687
+            ],
+            [
+              123.21083172147002,
+              20.889748549323016
+            ],
+            [
+              82.97872340425532,
+              20.889748549323016
+            ],
+            [
+              66.92456479690523,
+              39.65183752417795
+            ],
+            [
+              0,
+              40.2321083172147
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                13.926499032882012,
+                26.499032882011605
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.1"
+            },
+            {
+              "centerMm": [
+                72.34042553191489,
+                25.145067698259187
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.2"
+            },
+            {
+              "centerMm": [
+                91.48936170212767,
+                10.251450676982593
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.3"
+            },
+            {
+              "centerMm": [
+                91.29593810444874,
+                -9.284332688588007
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.4"
+            },
+            {
+              "centerMm": [
+                71.95357833655706,
+                -23.791102514506772
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.5"
+            },
+            {
+              "centerMm": [
+                13.926499032882012,
+                -23.21083172147002
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.6"
+            },
+            {
+              "centerMm": [
+                135.39651837524178,
+                19.148936170212767
+              ],
+              "diameterMm": 2.5,
+              "name": "deck.hole.7"
+            },
+            {
+              "centerMm": [
+                134.4294003868472,
+                -41.19922630560929
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.8"
+            },
+            {
+              "centerMm": [
+                135.7833655705996,
+                41.19922630560929
+              ],
+              "diameterMm": 3,
+              "name": "deck.hole.9"
+            },
+            {
+              "centerMm": [
+                135.00967117988395,
+                -8.51063829787234
+              ],
+              "diameterMm": 2.5,
+              "name": "deck.hole.10"
+            },
+            {
+              "centerMm": [
+                157.4468085106383,
+                14.313346228239846
+              ],
+              "diameterMm": 3.5,
+              "name": "deck.hole.11"
+            },
+            {
+              "centerMm": [
+                156.86653771760155,
+                -15.087040618955513
+              ],
+              "diameterMm": 3.5,
+              "name": "deck.hole.12"
+            },
+            {
+              "centerMm": [
+                167.31141199226306,
+                -0.3868471953578337
+              ],
+              "diameterMm": 8,
+              "name": "deck.hole.13"
+            },
+            {
+              "centerMm": [
+                167.50483558994196,
+                14.119922630560929
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.14"
+            },
+            {
+              "centerMm": [
+                167.50483558994196,
+                11.992263056092844
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.15"
+            },
+            {
+              "centerMm": [
+                167.50483558994196,
+                9.671179883945841
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.16"
+            },
+            {
+              "centerMm": [
+                167.50483558994196,
+                7.350096711798839
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.17"
+            },
+            {
+              "centerMm": [
+                166.92456479690523,
+                -9.284332688588007
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.18"
+            },
+            {
+              "centerMm": [
+                166.92456479690523,
+                -11.218568665377177
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.19"
+            },
+            {
+              "centerMm": [
+                166.92456479690523,
+                -13.346228239845262
+              ],
+              "diameterMm": 1.4,
+              "name": "deck.hole.20"
+            }
+          ],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  66.92456479690523,
+                  12.379110251450678
+                ],
+                [
+                  76.59574468085107,
+                  12.379110251450678
+                ]
+              ],
+              "widthMm": 1.5,
+              "name": "deck.slot.1"
+            },
+            {
+              "endCentersMm": [
+                [
+                  101.74081237911025,
+                  11.798839458413926
+                ],
+                [
+                  110.83172147001935,
+                  11.798839458413926
+                ]
+              ],
+              "widthMm": 1.5,
+              "name": "deck.slot.2"
+            },
+            {
+              "endCentersMm": [
+                [
+                  66.92456479690523,
+                  0.5802707930367504
+                ],
+                [
+                  76.59574468085107,
+                  0.5802707930367504
+                ]
+              ],
+              "widthMm": 1.5,
+              "name": "deck.slot.3"
+            },
+            {
+              "endCentersMm": [
+                [
+                  101.74081237911025,
+                  0
+                ],
+                [
+                  110.83172147001935,
+                  0
+                ]
+              ],
+              "widthMm": 1.5,
+              "name": "deck.slot.4"
+            },
+            {
+              "endCentersMm": [
+                [
+                  66.92456479690523,
+                  -11.02514506769826
+                ],
+                [
+                  76.59574468085107,
+                  -11.02514506769826
+                ]
+              ],
+              "widthMm": 1.5,
+              "name": "deck.slot.5"
+            },
+            {
+              "endCentersMm": [
+                [
+                  101.74081237911025,
+                  -11.60541586073501
+                ],
+                [
+                  110.83172147001935,
+                  -11.60541586073501
+                ]
+              ],
+              "widthMm": 1.5,
+              "name": "deck.slot.6"
+            },
+            {
+              "endCentersMm": [
+                [
+                  131.72147001934235,
+                  36.7504835589942
+                ],
+                [
+                  131.52804642166345,
+                  25.338491295938105
+                ]
+              ],
+              "widthMm": 3,
+              "name": "deck.slot.7"
+            },
+            {
+              "endCentersMm": [
+                [
+                  131.14119922630562,
+                  -25.72533849129594
+                ],
+                [
+                  131.14119922630562,
+                  -36.7504835589942
+                ]
+              ],
+              "widthMm": 3,
+              "name": "deck.slot.8"
+            },
+            {
+              "endCentersMm": [
+                [
+                  124.1779497098646,
+                  6.189555125725339
+                ],
+                [
+                  124.1779497098646,
+                  -7.350096711798839
+                ]
+              ],
+              "widthMm": 6,
+              "name": "deck.slot.9"
+            }
+          ],
+          "cutouts": [
+            {
+              "name": "rear.deck.rectangle",
+              "verticesMm": [
+                [
+                  37.71760154738878,
+                  8.897485493230175
+                ],
+                [
+                  46.808510638297875,
+                  8.897485493230175
+                ],
+                [
+                  46.808510638297875,
+                  -6.963249516441006
+                ],
+                [
+                  37.71760154738878,
+                  -6.963249516441006
+                ]
+              ]
+            },
+            {
+              "name": "forward.deck.rectangle",
+              "verticesMm": [
+                [
+                  129.20696324951643,
+                  16.44100580270793
+                ],
+                [
+                  141.19922630560927,
+                  16.44100580270793
+                ],
+                [
+                  141.19922630560927,
+                  -6.382978723404255
+                ],
+                [
+                  129.20696324951643,
+                  -6.382978723404255
+                ]
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+              "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+              "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+            }
+          ]
+        },
+        {
+          "name": "front.dual-opening",
+          "originMm": [
+            172,
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              -30,
+              0
+            ],
+            [
+              30,
+              0
+            ],
+            [
+              30,
+              24
+            ],
+            [
+              -30,
+              24
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                -15,
+                12
+              ],
+              "diameterMm": 19,
+              "name": "front.dual-opening.hole.1"
+            },
+            {
+              "centerMm": [
+                15,
+                12
+              ],
+              "diameterMm": 19,
+              "name": "front.dual-opening.hole.2"
+            },
+            {
+              "centerMm": [
+                -27,
+                12
+              ],
+              "diameterMm": 3,
+              "name": "front.dual-opening.hole.3"
+            },
+            {
+              "centerMm": [
+                27,
+                12
+              ],
+              "diameterMm": 3,
+              "name": "front.dual-opening.hole.4"
+            }
+          ],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  -4,
+                  21
+                ],
+                [
+                  4,
+                  21
+                ]
+              ],
+              "widthMm": 2.5,
+              "name": "front.dual-opening.slot.1"
+            },
+            {
+              "endCentersMm": [
+                [
+                  -4,
+                  3.5
+                ],
+                [
+                  4,
+                  3.5
+                ]
+              ],
+              "widthMm": 3.5,
+              "name": "front.dual-opening.slot.2"
+            }
+          ],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+              "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_03_front-profile-dual-opening-face-alternate.jpeg",
+              "sourceRawSha256": "9282a3fb8d17c29e6defed1ce1df1e2d30e5b326300553c8c6b686ff69982743"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+              "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6"
+            }
+          ]
+        },
+        {
+          "name": "rear.single-opening",
+          "originMm": [
+            0,
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              -16,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              16,
+              24
+            ],
+            [
+              -16,
+              24
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                0,
+                12
+              ],
+              "diameterMm": 12,
+              "name": "rear.single-opening.hole.1"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+              "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_06_rear-profile-single-opening-face-alternate.jpeg",
+              "sourceRawSha256": "8e2b925809f442bcd043ecbdadca680a7f8fc18f8dfb5bf80f1af66cdfc87e21"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+              "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc"
+            }
+          ]
+        },
+        {
+          "name": "left.large-flange",
+          "originMm": [
+            0,
+            38,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              64,
+              0
+            ],
+            [
+              64,
+              27
+            ],
+            [
+              0,
+              27
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              0,
+              7
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                41,
+                14
+              ],
+              "diameterMm": 12,
+              "name": "left.large-flange.hole.1"
+            },
+            {
+              "centerMm": [
+                20,
+                6
+              ],
+              "diameterMm": 3,
+              "name": "left.large-flange.hole.2"
+            },
+            {
+              "centerMm": [
+                20,
+                23
+              ],
+              "diameterMm": 3,
+              "name": "left.large-flange.hole.3"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+              "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+              "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+              "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+            }
+          ]
+        },
+        {
+          "name": "right.large-flange",
+          "originMm": [
+            0,
+            -36.5,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              64,
+              0
+            ],
+            [
+              64,
+              27
+            ],
+            [
+              0,
+              27
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              0,
+              7
+            ]
+          ],
+          "holes": [
+            {
+              "centerMm": [
+                41,
+                14
+              ],
+              "diameterMm": 12,
+              "name": "right.large-flange.hole.1"
+            },
+            {
+              "centerMm": [
+                20,
+                6
+              ],
+              "diameterMm": 3,
+              "name": "right.large-flange.hole.2"
+            },
+            {
+              "centerMm": [
+                20,
+                23
+              ],
+              "diameterMm": 3,
+              "name": "right.large-flange.hole.3"
+            }
+          ],
+          "slots": [],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+              "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+              "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+              "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+            }
+          ]
+        },
+        {
+          "name": "left.slotted-flange",
+          "originMm": [
+            83,
+            19,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              39,
+              0
+            ],
+            [
+              39,
+              21
+            ],
+            [
+              0,
+              21
+            ]
+          ],
+          "holes": [],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  5,
+                  17
+                ],
+                [
+                  34,
+                  17
+                ]
+              ],
+              "widthMm": 3,
+              "name": "left.slotted-flange.slot.1"
+            }
+          ],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+              "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+              "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+              "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+            }
+          ]
+        },
+        {
+          "name": "right.slotted-flange",
+          "originMm": [
+            83,
+            -18,
+            0
+          ],
+          "u": [
+            1,
+            0,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            1
+          ],
+          "outlineMm": [
+            [
+              0,
+              0
+            ],
+            [
+              39,
+              0
+            ],
+            [
+              39,
+              21
+            ],
+            [
+              0,
+              21
+            ]
+          ],
+          "holes": [],
+          "slots": [
+            {
+              "endCentersMm": [
+                [
+                  5,
+                  17
+                ],
+                [
+                  34,
+                  17
+                ]
+              ],
+              "widthMm": 3,
+              "name": "right.slotted-flange.slot.1"
+            }
+          ],
+          "cutouts": [],
+          "sources": [
+            {
+              "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+              "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+              "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+            },
+            {
+              "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+              "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+            }
+          ]
+        }
+      ]
+    },
+    "holes": [],
+    "thickness": {
+      "valueMm": 2,
+      "confidence": "PROBABLE",
+      "basis": "Owner common instructional stock instruction"
+    }
+  },
+  "proofs": {
+    "ownerAmendment": {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    "parameters": {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    "shapeReport": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    "sourceReview": {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "9025430381754b1175fe8080a4fbec74a365a2df47322075e12d0dd1552d475e",
+      "bytes": 31074
+    },
+    "brep": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-A.brep",
+      "rawSha256": "dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137",
+      "bytes": 163153
+    }
+  }
+}

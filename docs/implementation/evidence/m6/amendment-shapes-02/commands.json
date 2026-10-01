@@ -1,0 +1,193 @@
+[
+  {
+    "name": "frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:53:24.578Z",
+    "finishedAt": "2026-10-01T04:53:39.468Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/frozen-install.txt",
+      "rawSha256": "5981c4a0b44f41256d8e9ab0b1450d75501eaf6484daec1d8c52b13856461a85",
+      "bytes": 1955
+    }
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/wheel"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:53:39.469Z",
+    "finishedAt": "2026-10-01T04:53:39.648Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/wheel-build.txt",
+      "rawSha256": "92d6cc916b93eae70d2b67cef5145e5dbd5d455056fd1f315f55b7c19bb41fa3",
+      "bytes": 168
+    }
+  },
+  {
+    "name": "wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/bin/python",
+      "--no-deps",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:53:39.648Z",
+    "finishedAt": "2026-10-01T04:53:39.676Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/wheel-install.txt",
+      "rawSha256": "63b4a59dcc1a264fe88687b38410541af8627b634b199efe7fd4bf1602868952",
+      "bytes": 385
+    }
+  },
+  {
+    "name": "environment",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/bin/python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:53:39.676Z",
+    "finishedAt": "2026-10-01T04:54:17.858Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "calibration",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.calibration",
+      "--package",
+      "/Users/danny/Documents/Apps/PiCar/docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin/validation/expected/plates/instructional/calibration-input.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/calibration.json",
+      "--private-output",
+      "/Users/danny/Documents/Apps/PiCar/digital-twin/evidence/private/m6/amendment-shapes-02"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:54:17.859Z",
+    "finishedAt": "2026-10-01T04:54:25.970Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/calibration.txt",
+      "rawSha256": "e3c1f667f284684eaae2c66e29e3986d556c4aaa31e9d52bcc820fc717a28e7c",
+      "bytes": 1555
+    }
+  },
+  {
+    "name": "generate-candidates",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.generate",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/candidate-artifacts"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:54:25.970Z",
+    "finishedAt": "2026-10-01T04:55:30.148Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/generate-candidates.txt",
+      "rawSha256": "a081d0209ca50bc42fde59acd9b353f68bc8d9d058470de58990e3a34d05480d",
+      "bytes": 88
+    }
+  },
+  {
+    "name": "independent-shapes",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/bin/python",
+      "-m",
+      "twin_cad.components.plates.instructional.oracle",
+      "--parameters",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/candidate-artifacts",
+      "--calibration",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/calibration.json",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/shapes.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/uv-cache"
+    },
+    "startedAt": "2026-10-01T04:55:30.148Z",
+    "finishedAt": "2026-10-01T04:55:31.994Z",
+    "exit": 1,
+    "expectedExit": 0,
+    "log": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-02/independent-shapes.txt",
+      "rawSha256": "fd3c1aaabd006d1525e512aeae8cb6e5a9a7b75d42d6553692cd1744eba9de0f",
+      "bytes": 2124
+    }
+  }
+]

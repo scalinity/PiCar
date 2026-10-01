@@ -1,0 +1,149 @@
+{
+  "scope": "Read-only original-lock adoption checks and selected non-session tests in disposable mirror",
+  "originalLocksRestoredOnlyInMirror": [
+    {
+      "source": "digital-twin/validation/m4/prior-m1/pyproject.toml",
+      "destination": "digital-twin/pyproject.toml",
+      "rawSha256": "ac8198750cdeca2b6c893a7c7df2d348eef78f04eecbcf87bb0f89d29193fc00",
+      "bytes": 153
+    },
+    {
+      "source": "digital-twin/validation/m4/prior-m1/uv.lock",
+      "destination": "digital-twin/uv.lock",
+      "rawSha256": "97e6877d35570239e5f27ec48eb11c8e6f8985627c254e354bb3adade9580e19",
+      "bytes": 964
+    }
+  ],
+  "gitAccess": "Read-only merge-base ancestry query through live object database; no checkout/index/session operations",
+  "commands": [
+    {
+      "name": "g-data-check",
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "digital-twin/tools/compiler/upstream.mjs",
+        "--check"
+      ],
+      "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu",
+      "environment": {
+        "NODE_OPTIONS": null
+      },
+      "startedAt": "2026-10-01T05:19:17.054Z",
+      "finishedAt": "2026-10-01T05:19:17.183Z",
+      "exit": 0,
+      "expectedExit": 0,
+      "counts": null,
+      "log": {
+        "path": "docs/implementation/evidence/m6/qualification-amended-b-02/g-data-check.txt",
+        "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+        "bytes": 99
+      }
+    },
+    {
+      "name": "g-graph-check",
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "digital-twin/tools/compiler/gate.mjs",
+        "--check"
+      ],
+      "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu",
+      "environment": {
+        "NODE_OPTIONS": null
+      },
+      "startedAt": "2026-10-01T05:19:17.183Z",
+      "finishedAt": "2026-10-01T05:19:17.574Z",
+      "exit": 0,
+      "expectedExit": 0,
+      "counts": null,
+      "log": {
+        "path": "docs/implementation/evidence/m6/qualification-amended-b-02/g-graph-check.txt",
+        "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+        "bytes": 104
+      }
+    },
+    {
+      "name": "m2-contract-tests",
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "--test",
+        "--test-reporter=tap",
+        "digital-twin/validation/m2/tests/contracts.test.mjs"
+      ],
+      "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu",
+      "environment": {
+        "NODE_OPTIONS": null
+      },
+      "startedAt": "2026-10-01T05:19:17.574Z",
+      "finishedAt": "2026-10-01T05:19:24.209Z",
+      "exit": 0,
+      "expectedExit": 0,
+      "counts": {
+        "tests": 12,
+        "pass": 12,
+        "fail": 0,
+        "skipped": 0
+      },
+      "log": {
+        "path": "docs/implementation/evidence/m6/qualification-amended-b-02/m2-contract-tests.txt",
+        "rawSha256": "c2416bf554ccced38cec8541dbcda49f5efa140cca987714d87049408090a078",
+        "bytes": 2841
+      }
+    },
+    {
+      "name": "semantic-firewall-tests",
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "--test",
+        "--test-reporter=tap",
+        "--test-name-pattern=unknown numeric with payload|owned rivet pin double-counted|probable generic HAT|official reference approximation|source limitations silently discarded|open conflict treated|resolved conflict loses|integrated cable misclassified|integrated cable endpoint|integrated lead has owner",
+        "digital-twin/validation/tests/semantic.test.mjs"
+      ],
+      "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu",
+      "environment": {
+        "NODE_OPTIONS": null
+      },
+      "startedAt": "2026-10-01T05:19:24.210Z",
+      "finishedAt": "2026-10-01T05:19:24.579Z",
+      "exit": 0,
+      "expectedExit": 0,
+      "counts": {
+        "tests": 10,
+        "pass": 10,
+        "fail": 0,
+        "skipped": 0
+      },
+      "log": {
+        "path": "docs/implementation/evidence/m6/qualification-amended-b-02/semantic-firewall-tests.txt",
+        "rawSha256": "92cd7c8c01154c01ad9b8f0a617fc38ab1d36714cddde4f6fad1891c528a0050",
+        "bytes": 1904
+      }
+    },
+    {
+      "name": "m6-policy-tests",
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "--test",
+        "--test-reporter=tap",
+        "digital-twin/validation/expected/plates/instructional/plates.test.mjs"
+      ],
+      "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-qualification-amended-b-02-uUiXdu",
+      "environment": {
+        "NODE_OPTIONS": null
+      },
+      "startedAt": "2026-10-01T05:19:24.579Z",
+      "finishedAt": "2026-10-01T05:19:24.746Z",
+      "exit": 0,
+      "expectedExit": 0,
+      "counts": {
+        "tests": 135,
+        "pass": 135,
+        "fail": 0,
+        "skipped": 0
+      },
+      "log": {
+        "path": "docs/implementation/evidence/m6/qualification-amended-b-02/m6-policy-tests.txt",
+        "rawSha256": "96176190a7ba3d7120e13ff7699972d1b456eaebf185b34ac88a0f2728ba9345",
+        "bytes": 20278
+      }
+    }
+  ]
+}

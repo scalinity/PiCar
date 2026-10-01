@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "m6-instructional-plate-receipt",
+  "title": "Owner-amended practical instructional plate admission, strict engineering remains blocked",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gate",
+    "definitionId",
+    "track",
+    "engineeringStatus",
+    "instructionalStatus",
+    "handedness",
+    "protectedDefinition",
+    "protectedInstances",
+    "stepUse",
+    "sourceImages",
+    "features",
+    "thickness",
+    "manufacturingUnknowns",
+    "calibrationStatus",
+    "shapeValidationStatus",
+    "sourceValidationStatus",
+    "blockerIds",
+    "engineeringAdmission",
+    "runtimeScale",
+    "presentationAnchorEngineeringInterface",
+    "syntheticM4DatumUsed",
+    "hiddenFeaturesInvented",
+    "exactBendRadiusClaim",
+    "sourcePrivate",
+    "privatePixelsInAuthoredArtifacts",
+    "mirrorCadValidationStatus",
+    "limitations",
+    "instructionalOrigin",
+    "reviewedInstructionalDimensions",
+    "proofs"
+  ],
+  "properties": {
+    "gate": {
+      "const": "G-INSTRUCTIONAL-PLATE"
+    },
+    "definitionId": {
+      "type": "string",
+      "pattern": "^PX-V40-DEF-PLATE-[A-H]$"
+    },
+    "track": {
+      "const": "instructional-only"
+    },
+    "engineeringStatus": {
+      "const": "BLOCKED"
+    },
+    "instructionalStatus": {
+      "enum": [
+        "BLOCKED",
+        "INSTRUCTIONAL_ADMITTED"
+      ]
+    },
+    "handedness": {
+      "enum": [
+        "RIGHT",
+        "LEFT",
+        "notApplicable"
+      ]
+    },
+    "protectedDefinition": {},
+    "protectedInstances": {},
+    "stepUse": {},
+    "sourceImages": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceImage",
+          "sourceRawSha256",
+          "bytes",
+          "plate",
+          "view",
+          "orientation",
+          "referenceCardVisibility",
+          "referencePenny",
+          "limitations"
+        ],
+        "properties": {
+          "sourceImage": {
+            "type": "string"
+          },
+          "sourceRawSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "plate": {
+            "type": "string"
+          },
+          "view": {
+            "type": "string"
+          },
+          "orientation": {
+            "type": "string"
+          },
+          "referenceCardVisibility": {
+            "type": "string"
+          },
+          "referencePenny": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "observation",
+          "sourceImages",
+          "method",
+          "instructionalValue",
+          "engineeringValue",
+          "uncertainty",
+          "blockerIds"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "sourceImages": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "sourceImage",
+                "sourceRawSha256"
+              ],
+              "properties": {
+                "sourceImage": {
+                  "type": "string"
+                },
+                "sourceRawSha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            }
+          },
+          "method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instructionalValue": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "reason"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "unresolved",
+                  "INSTRUCTIONAL_APPROXIMATION"
+                ]
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          },
+          "engineeringValue": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "confidence",
+              "blockerIds"
+            ],
+            "properties": {
+              "state": {
+                "const": "unresolved"
+              },
+              "confidence": {
+                "const": "UNRESOLVED"
+              },
+              "blockerIds": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "uncertainty": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "blockerIds"
+            ],
+            "properties": {
+              "state": {
+                "const": "unresolved"
+              },
+              "blockerIds": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "blockerIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "thickness": {},
+    "manufacturingUnknowns": {},
+    "calibrationStatus": {},
+    "shapeValidationStatus": {},
+    "sourceValidationStatus": {},
+    "blockerIds": {},
+    "engineeringAdmission": {
+      "const": false
+    },
+    "runtimeScale": {
+      "const": [
+        1,
+        1,
+        1
+      ]
+    },
+    "presentationAnchorEngineeringInterface": {
+      "const": false
+    },
+    "syntheticM4DatumUsed": {
+      "const": false
+    },
+    "hiddenFeaturesInvented": {
+      "const": []
+    },
+    "exactBendRadiusClaim": {
+      "const": false
+    },
+    "sourcePrivate": {
+      "const": true
+    },
+    "privatePixelsInAuthoredArtifacts": {
+      "const": false
+    },
+    "mirrorCadValidationStatus": {},
+    "limitations": {},
+    "instructionalOrigin": {
+      "type": "object"
+    },
+    "reviewedInstructionalDimensions": {
+      "type": "object"
+    },
+    "proofs": {
+      "type": "object"
+    }
+  }
+}

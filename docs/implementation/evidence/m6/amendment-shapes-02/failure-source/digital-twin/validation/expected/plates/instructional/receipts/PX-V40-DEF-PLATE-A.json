@@ -1,0 +1,756 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-A",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "BLOCKED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-A",
+    "revision": 1,
+    "name": "Plate A",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-A-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-A"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-A-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-A-FRONT-SUPPORT-PATTERN",
+      "PX-V40-IF-PLATE-A-LEFT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-A-LOOP-CONTACT-SURFACE",
+      "PX-V40-IF-PLATE-A-MOTOR-LEFT-MOUNT",
+      "PX-V40-IF-PLATE-A-MOTOR-RIGHT-MOUNT",
+      "PX-V40-IF-PLATE-A-PAN-HORN-MOUNT",
+      "PX-V40-IF-PLATE-A-REAR-DECK-SUPPORT-PATTERN",
+      "PX-V40-IF-PLATE-A-REFERENCE",
+      "PX-V40-IF-PLATE-A-RIGHT-CARRIER-PIVOT",
+      "PX-V40-IF-PLATE-A-STEERING-MOUNT",
+      "PX-V40-IF-PLATE-A-ULTRASONIC-MOUNT"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-A-001",
+      "definitionId": "PX-V40-DEF-PLATE-A",
+      "definitionRevision": 1,
+      "role": "Plate A",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-A",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      25
+    ],
+    "rpi5": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      25
+    ],
+    "rpi-zero-2-w": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      25
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+      "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e",
+      "bytes": 676870,
+      "plate": "A",
+      "view": "top-down",
+      "orientation": "Main chassis face; dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Full footprint, cutouts, slots and upright-flange positions; card, penny and quarter visible."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+      "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d",
+      "bytes": 444893,
+      "plate": "A",
+      "view": "face-on profile",
+      "orientation": "Dual-opening front flange faces the camera",
+      "referenceCardVisibility": "partial",
+      "referencePenny": "yes",
+      "limitations": "Two large circular openings, small side holes and central slots; card and coins partly cropped at image left."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_03_front-profile-dual-opening-face-alternate.jpeg",
+      "sourceRawSha256": "9282a3fb8d17c29e6defed1ce1df1e2d30e5b326300553c8c6b686ff69982743",
+      "bytes": 292300,
+      "plate": "A",
+      "view": "low face-on profile",
+      "orientation": "Dual-opening front flange faces the camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Alternate front profile with upright card; metal edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+      "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6",
+      "bytes": 366783,
+      "plate": "A",
+      "view": "oblique",
+      "orientation": "Dual-opening front flange nearest camera; chassis recedes behind",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Front face, chassis depth and upright side flanges; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+      "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7",
+      "bytes": 487490,
+      "plate": "A",
+      "view": "face-on profile",
+      "orientation": "Single-opening rear flange nearest camera",
+      "referenceCardVisibility": "partial",
+      "referencePenny": "yes",
+      "limitations": "Rear flange and two side flanges visible; card and coins partly visible at image right."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_06_rear-profile-single-opening-face-alternate.jpeg",
+      "sourceRawSha256": "8e2b925809f442bcd043ecbdadca680a7f8fc18f8dfb5bf80f1af66cdfc87e21",
+      "bytes": 332559,
+      "plate": "A",
+      "view": "low face-on profile",
+      "orientation": "Single-opening rear flange nearest camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Alternate rear profile with upright card; foreground rear face is clearer than distant faces."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+      "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc",
+      "bytes": 380869,
+      "plate": "A",
+      "view": "oblique",
+      "orientation": "Single-opening rear flange nearest camera; front flange in background",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Shows rear/side bend relationships and main chassis surface; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+      "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e",
+      "bytes": 305336,
+      "plate": "A",
+      "view": "side profile",
+      "orientation": "Dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Low side view of large and slotted flanges; upright card; metal edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_09_side-oblique-front-at-right.jpeg",
+      "sourceRawSha256": "d69efadae430b442646dcef3419998268a6b1eb71ec15f2d667437670e253c92",
+      "bytes": 384890,
+      "plate": "A",
+      "view": "low side oblique",
+      "orientation": "Dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Large side flange, central slotted flange and front flange; upright card and both coins visible."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+      "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb",
+      "bytes": 292344,
+      "plate": "A",
+      "view": "side profile",
+      "orientation": "Dual-opening front flange at image left",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Opposite side arrangement; upright card; metal edges are soft in focus."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_11_side-oblique-front-at-left.jpeg",
+      "sourceRawSha256": "130485842332939dfa8ee9c7028ed2fd49067b19ad62cf46ef7917e9baaf91f8",
+      "bytes": 386319,
+      "plate": "A",
+      "view": "low side oblique",
+      "orientation": "Dual-opening front flange at image left",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Central slotted flange and large side flange; upright card and both coins visible."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+      "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e",
+      "bytes": 462817,
+      "plate": "A",
+      "view": "side oblique",
+      "orientation": "Dual-opening front flange at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Higher side view shows chassis surface and multiple bent flanges; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+      "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff",
+      "bytes": 513179,
+      "plate": "A",
+      "view": "oblique overview",
+      "orientation": "Dual-opening front flange at image right; open chassis face visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Whole-part context with card lying flat, penny and quarter; shows how all flanges relate."
+    }
+  ],
+  "features": [
+    {
+      "name": "main.outer-profile",
+      "observation": "Complex chassis outline and two carrier ears",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "main.circular-holes",
+      "observation": "Visible deck mounting holes, carrier-ear holes and two front hole clusters; locations/count closure requires detailed tracing",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "main.slots",
+      "observation": "Six narrow central slots, two carrier-ear slots and one wider forward deck slot",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "main.rectangular-cutouts",
+      "observation": "Two deck rectangular openings",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "front.dual-openings",
+      "observation": "Two large circular openings; two side holes and two central short slots",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+          "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_03_front-profile-dual-opening-face-alternate.jpeg",
+          "sourceRawSha256": "9282a3fb8d17c29e6defed1ce1df1e2d30e5b326300553c8c6b686ff69982743"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+          "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "rear.single-opening",
+      "observation": "Rear flange circular opening",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+          "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_06_rear-profile-single-opening-face-alternate.jpeg",
+          "sourceRawSha256": "8e2b925809f442bcd043ecbdadca680a7f8fc18f8dfb5bf80f1af66cdfc87e21"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+          "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "side.large-flanges",
+      "observation": "Paired large side flanges with circular openings, small holes and open edge notches",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_09_side-oblique-front-at-right.jpeg",
+          "sourceRawSha256": "d69efadae430b442646dcef3419998268a6b1eb71ec15f2d667437670e253c92"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+          "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_11_side-oblique-front-at-left.jpeg",
+          "sourceRawSha256": "130485842332939dfa8ee9c7028ed2fd49067b19ad62cf46ef7917e9baaf91f8"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "side.slotted-flanges",
+      "observation": "Paired central side flanges with long slots",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_09_side-oblique-front-at-right.jpeg",
+          "sourceRawSha256": "d69efadae430b442646dcef3419998268a6b1eb71ec15f2d667437670e253c92"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+          "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_11_side-oblique-front-at-left.jpeg",
+          "sourceRawSha256": "130485842332939dfa8ee9c7028ed2fd49067b19ad62cf46ef7917e9baaf91f8"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "planes.bends",
+      "observation": "Relative plane orientation and six upright flanges; exact angles/radii not derived",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_02_front-profile-dual-opening-face.jpeg",
+          "sourceRawSha256": "5281f4caf26146ea06efb82bbc60ef0c858ee7a694108718ae20f30d6a871c4d"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_04_front-oblique-dual-opening-face.jpeg",
+          "sourceRawSha256": "ff3a47419cfec8cc3f779772c418999ef53eedfb3cf3d760d27cf71e923725f6"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_05_rear-profile-single-opening-face.jpeg",
+          "sourceRawSha256": "74a545c9ced031a39e6aefb89ce760cdf872707e316ac0d7385760e5eaa2cfc7"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_07_rear-oblique-single-opening-face.jpeg",
+          "sourceRawSha256": "631898199a2a22bae38b6ecfa553ad4c80c326c97da3713caeece4343286eacc"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_08_side-profile-front-at-right.jpeg",
+          "sourceRawSha256": "ae2b5bab1e367785205474396d2db01514bbe13d035a1baafd269264c223f61e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_10_side-profile-front-at-left.jpeg",
+          "sourceRawSha256": "62db553d1f9dab2fae41236d760592a8fe051b30fecf4911646363b6f5ae80fb"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_12_side-oblique-front-at-right-alternate.jpeg",
+          "sourceRawSha256": "a8d2a4e11c1e161bd08d702bac584ad2b42d9a4c07fe9176850d3ce029ef894e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "origin.instructional",
+      "observation": "No Plate A production datum or numerical instructional anchor established",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-A/plate-A_01_top-down-master.jpeg",
+          "sourceRawSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e"
+        },
+        {
+          "sourceImage": "Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+          "sourceRawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "NOT_CLOSED",
+  "shapeValidationStatus": "BLOCKED",
+  "sourceValidationStatus": "BLOCKED",
+  "blockerIds": [
+    "Q-03",
+    "M6-CALIBRATION-UNCERTAINTY",
+    "M6-FULL-SOURCE-PROJECTION",
+    "M6-INSTRUCTIONAL-ORIENTATION",
+    "M6-BENT-FACE-REGISTRATION",
+    "M6-BENT-CAD-NOT-AUTHORED"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "No full instructional admission or strict engineering G-STRUCTURE/G-CAD acceptance",
+    "Bent geometry is not silently substituted with a bounding box or flat outline",
+    "Candidate D/G/H numeric parameters are isolated from canonical model preimages"
+  ]
+}

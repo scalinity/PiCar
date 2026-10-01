@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "scope": "Three provisional D/G/H candidates only; full eight-plate M6 reproducibility remains BLOCKED",
+  "sameInputs": true,
+  "wheelA": {
+    "file": "twin_cad-0.1.0-py3-none-any.whl",
+    "rawSha256": "d9143c893de5e7da857df0200ddb7ea17456baa24b0ee93f60e099c4896901b9",
+    "bytes": 39794
+  },
+  "wheelB": {
+    "file": "twin_cad-0.1.0-py3-none-any.whl",
+    "rawSha256": "d9143c893de5e7da857df0200ddb7ea17456baa24b0ee93f60e099c4896901b9",
+    "bytes": 39794
+  },
+  "outputs": [
+    {
+      "path": "calibration.json",
+      "rawBytesEqual": true,
+      "shaA": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "shaB": "74b15588aab7edf6b4331ff8080ac5a60c7b6360272972adad5007522b9a352a",
+      "bytesA": 39309,
+      "bytesB": 39309
+    },
+    {
+      "path": "shapes.json",
+      "rawBytesEqual": true,
+      "shaA": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "shaB": "da88f4dd04f941130c16e401939f8a94aa01aadafd11e6a4aea2113e51485fc9",
+      "bytesA": 10621,
+      "bytesB": 10621
+    },
+    {
+      "path": "candidate-artifacts/PX-V40-DEF-PLATE-D.brep",
+      "rawBytesEqual": true,
+      "shaA": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "shaB": "b97ea779b0a47cd9b7624d0c4982893fa8bcea760c4e1418decbddbce5294029",
+      "bytesA": 110639,
+      "bytesB": 110639
+    },
+    {
+      "path": "candidate-artifacts/PX-V40-DEF-PLATE-D.svg",
+      "rawBytesEqual": true,
+      "shaA": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "shaB": "8566a6bd1ecb6bb94764a7da2cc4da0b56a8fcc254bd7858356620477d868a20",
+      "bytesA": 43883,
+      "bytesB": 43883
+    },
+    {
+      "path": "candidate-artifacts/PX-V40-DEF-PLATE-G.brep",
+      "rawBytesEqual": true,
+      "shaA": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "shaB": "8b30b0f6ae36fea322c5873ddd9a24213ed9de36ac589d006996130485b812cc",
+      "bytesA": 9988,
+      "bytesB": 9988
+    },
+    {
+      "path": "candidate-artifacts/PX-V40-DEF-PLATE-G.svg",
+      "rawBytesEqual": true,
+      "shaA": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "shaB": "6aebb57d7599feb565b8fa7f2ace3aae5d005120129ea94b40abbbb72d5dc54f",
+      "bytesA": 16484,
+      "bytesB": 16484
+    },
+    {
+      "path": "candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawBytesEqual": true,
+      "shaA": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "shaB": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytesA": 20518,
+      "bytesB": 20518
+    },
+    {
+      "path": "candidate-artifacts/PX-V40-DEF-PLATE-H.svg",
+      "rawBytesEqual": true,
+      "shaA": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "shaB": "501bfc429952313655a01ef12947317754fca84325092fe0d9249248107ef1c2",
+      "bytesA": 26498,
+      "bytesB": 26498
+    },
+    {
+      "path": "candidate-artifacts/generation.json",
+      "rawBytesEqual": true,
+      "shaA": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "shaB": "1c76c0ded2ba9ccf14b228128e7b2ebc4da27b164f73defc77ec109455924429",
+      "bytesA": 1045,
+      "bytesB": 1045
+    }
+  ],
+  "sameInputsInclude": "CAD sources, locked dependencies, candidate parameters, calibration input, source-map photo hashes, scoped receipts, tests",
+  "normalization": "None; raw JSON, BRep and SVG bytes compared. No STEP outputs. Command timestamps and pytest XML timings differ by design.",
+  "fullM6Status": "BLOCKED"
+}

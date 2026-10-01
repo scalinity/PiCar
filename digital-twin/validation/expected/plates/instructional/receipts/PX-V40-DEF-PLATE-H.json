@@ -1,0 +1,465 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-H",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-H",
+    "revision": 1,
+    "name": "Plate H",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-H-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-H"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-H-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-H-BACKING-MOUNT",
+      "PX-V40-IF-PLATE-H-REFERENCE"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-H-001",
+      "definitionId": "PX-V40-DEF-PLATE-H",
+      "definitionRevision": 1,
+      "role": "Plate H",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-H",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      9
+    ],
+    "rpi5": [
+      9
+    ],
+    "rpi-zero-2-w": [
+      9
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+      "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6",
+      "bytes": 987916,
+      "plate": "H",
+      "view": "top-down",
+      "orientation": "Central rectangular notch opens toward image bottom",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Six holes, rounded outer corners and notch outline visible."
+    },
+    {
+      "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+      "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5",
+      "bytes": 876138,
+      "plate": "H",
+      "view": "top-down",
+      "orientation": "Central rectangular notch opens toward image top",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary face/orientation view; no measured dimensional symmetry claimed."
+    },
+    {
+      "sourceImage": "Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg",
+      "sourceRawSha256": "148567fc6df4f888a8d9532f6b9f6f59d550e7596be2f9a75eeae28cb7aaa456",
+      "bytes": 587613,
+      "plate": "H",
+      "view": "oblique",
+      "orientation": "Flat notched plate runs diagonally beside card",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows six hole openings, rectangular notch and flat sheet edge."
+    }
+  ],
+  "features": [
+    {
+      "name": "outline",
+      "observation": "Flat bracket with rounded outer corners",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+          "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+          "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg",
+          "sourceRawSha256": "148567fc6df4f888a8d9532f6b9f6f59d550e7596be2f9a75eeae28cb7aaa456"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Six-hole notched plate silhouette and notch orientation agree in the two corrected projections and oblique view. Small outer-edge offsets from stock/plane/perspective are presentation-level, with no displaced mounting relationships. Radius 3 mm remains approximate."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "notch",
+      "observation": "Central rectangular open edge notch",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+          "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+          "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg",
+          "sourceRawSha256": "148567fc6df4f888a8d9532f6b9f6f59d550e7596be2f9a75eeae28cb7aaa456"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Six-hole notched plate silhouette and notch orientation agree in the two corrected projections and oblique view. Small outer-edge offsets from stock/plane/perspective are presentation-level, with no displaced mounting relationships. Radius 3 mm remains approximate."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "holes",
+      "observation": "Six visible through-holes; end holes larger than the four inner holes",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+          "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_02_top-down-notch-up.jpeg",
+          "sourceRawSha256": "15086140c89fbfc865c8472ecfa03e6c4fc3862b6e57eb2be6d43cdfe454d9d5"
+        },
+        {
+          "sourceImage": "Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg",
+          "sourceRawSha256": "148567fc6df4f888a8d9532f6b9f6f59d550e7596be2f9a75eeae28cb7aaa456"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Six-hole notched plate silhouette and notch orientation agree in the two corrected projections and oblique view. Small outer-edge offsets from stock/plane/perspective are presentation-level, with no displaced mounting relationships. Radius 3 mm remains approximate."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    },
+    {
+      "name": "flatness",
+      "observation": "No bend supported",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-H/plate-H_03_oblique-six-hole-notched-plate.jpeg",
+          "sourceRawSha256": "148567fc6df4f888a8d9532f6b9f6f59d550e7596be2f9a75eeae28cb7aaa456"
+        }
+      ],
+      "method": "Multi-view feature reconstruction with card-scaled face-on estimates and profile/oblique consistency review; D/G/H also use calibrated independent rigid second-view projections",
+      "instructionalValue": {
+        "state": "INSTRUCTIONAL_APPROXIMATION",
+        "reason": "Reviewed named feature geometry in bound all-parameters.json and actual BRep; Six-hole notched plate silhouette and notch orientation agree in the two corrected projections and oblique view. Small outer-edge offsets from stock/plane/perspective are presentation-level, with no displaced mounting relationships. Radius 3 mm remains approximate."
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "Q-03"
+        ],
+        "limitations": [
+          "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+          "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+          "Assembly/world numeric transforms are not solved in M6.",
+          "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+        ]
+      },
+      "blockerIds": [
+        "Q-03"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "PRACTICAL_REVIEW",
+  "shapeValidationStatus": "PASS",
+  "sourceValidationStatus": "PASS",
+  "blockerIds": [
+    "Q-03"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "Lens/card tolerance/warpage, annotation picking, stock-plane offset and full perspective error budget are not jointly closed.",
+    "All dimensions and bend/corner treatment are replaceable instructional approximations, not manufacturing or fit evidence.",
+    "Assembly/world numeric transforms are not solved in M6.",
+    "Approximate dimensions, stock and bend/edge treatment; no engineering or physical fit claim"
+  ],
+  "instructionalOrigin": {
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "cardMetricCenterMm": [
+      44.191580621503995,
+      -13.121501473011858
+    ],
+    "axes": "RH millimeters: local X points toward primary image top; local Y toward image right; local Z through stock. No assembly pose/datum admitted."
+  },
+  "reviewedInstructionalDimensions": {
+    "confidence": "INSTRUCTIONAL_APPROXIMATION",
+    "engineeringDatum": false,
+    "profile": {
+      "kind": "rounded-notched-rectangle",
+      "xMin": -11.490584168116705,
+      "xMax": 11.652231959296081,
+      "yMin": -29.35537776290124,
+      "yMax": 29.89352200002117,
+      "cornerRadiusMm": 3,
+      "cornerBasis": "Visible H_01 rounded corner occupies approximately 50 annotation pixels relative to card; provisional rounded appearance estimate",
+      "notchVerticesMm": [
+        [
+          -10.322843831275838,
+          -7.0144809585776
+        ],
+        [
+          -5.228339673207785,
+          -7.122833040807365
+        ],
+        [
+          -5.129427176994999,
+          7.077337487104884
+        ],
+        [
+          -10.232042557638781,
+          7.2181548710154715
+        ]
+      ]
+    },
+    "holes": [
+      {
+        "name": "visible.hole.1",
+        "centerMm": [
+          -0.0389521225729581,
+          -26.76151524153907
+        ],
+        "diameterMm": 3.2352039162495334,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+      },
+      {
+        "name": "visible.hole.2",
+        "centerMm": [
+          4.992769856033085,
+          -12.829653931696942
+        ],
+        "diameterMm": 2.6129463125624914,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+      },
+      {
+        "name": "visible.hole.3",
+        "centerMm": [
+          5.0290622891564425,
+          12.74968454027858
+        ],
+        "diameterMm": 2.6246219477530106,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+      },
+      {
+        "name": "visible.hole.4",
+        "centerMm": [
+          -4.929991135643366,
+          -12.769992113688875
+        ],
+        "diameterMm": 2.631424143969963,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+      },
+      {
+        "name": "visible.hole.5",
+        "centerMm": [
+          -4.989610763770882,
+          12.803342418966096
+        ],
+        "diameterMm": 2.64329247043655,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+      },
+      {
+        "name": "visible.hole.6",
+        "centerMm": [
+          -0.0632781232023234,
+          26.808134327680214
+        ],
+        "diameterMm": 3.265717547999353,
+        "sourceImage": "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "sourceRawSha256": "76e71949e77d3d003195b3883f608ee0e98a1cc90c1cc895d9cb1aa30f420de6"
+      }
+    ],
+    "thickness": {
+      "valueMm": 2,
+      "confidence": "PROBABLE",
+      "basis": "Owner working same-stock hypothesis; not manufacturer-certified"
+    }
+  },
+  "proofs": {
+    "ownerAmendment": {
+      "path": "docs/implementation/evidence/m6/owner-amendment.json",
+      "rawSha256": "04346ed73c72c4472fdaf4953f9d562b5222c36a4e2549c2da45f47bc0e82133",
+      "bytes": 392
+    },
+    "parameters": {
+      "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+      "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+      "bytes": 92684
+    },
+    "shapeReport": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/shapes.json",
+      "rawSha256": "a0ff21f7c2ca711380292e77b17c97914466e0c4e7fa90efcff81fdc0b04976d",
+      "bytes": 45004
+    },
+    "sourceReview": {
+      "path": "docs/implementation/evidence/m6/source-review-final.json",
+      "rawSha256": "9025430381754b1175fe8080a4fbec74a365a2df47322075e12d0dd1552d475e",
+      "bytes": 31074
+    },
+    "brep": {
+      "path": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "rawSha256": "74ee259783c40df13b2a6064232f00abad9aef472ea1f093ee0fc728e451ba90",
+      "bytes": 20518
+    }
+  }
+}

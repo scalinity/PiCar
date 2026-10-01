@@ -1,0 +1,4 @@
+# Preserve native CAD serializer bytes; generated BReps are opaque geometric data.
+**/*.brep -text -diff
+# CadQuery SVG emits whitespace-only indentation lines; retain raw reproducibility.
+**/*.svg whitespace=-blank-at-eol

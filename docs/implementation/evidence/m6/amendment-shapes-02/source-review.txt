@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/review.py", line 100, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/review.py", line 94, in main
+    if view['plate']==plate:refs.append(flat_projection(shape,d,view,cal,shapes,args.package,args.output/(plate+'-'+str(view['index'])+'-projection.png')))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/review.py", line 55, in flat_projection
+    row=next(r for r in manifest(package) if r['relative_path']==view['sourceImage'])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m6-amendment-shapes-02-Izf8bT/environment/lib/python3.12/site-packages/twin_cad/components/plates/instructional/review.py", line 55, in <genexpr>
+    row=next(r for r in manifest(package) if r['relative_path']==view['sourceImage'])
+                                                                 ~~~~^^^^^^^^^^^^^^^
+KeyError: 'sourceImage'

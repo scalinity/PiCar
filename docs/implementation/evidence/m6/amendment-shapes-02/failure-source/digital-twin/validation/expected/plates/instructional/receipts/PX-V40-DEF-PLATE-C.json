@@ -1,0 +1,842 @@
+{
+  "gate": "G-INSTRUCTIONAL-PLATE",
+  "definitionId": "PX-V40-DEF-PLATE-C",
+  "track": "instructional-only",
+  "engineeringStatus": "BLOCKED",
+  "instructionalStatus": "BLOCKED",
+  "handedness": "notApplicable",
+  "protectedDefinition": {
+    "id": "PX-V40-DEF-PLATE-C",
+    "revision": 1,
+    "name": "Plate C",
+    "componentClass": "plate",
+    "identityClaimId": "PX-CLAIM-PLATE-C-DESIGNATION",
+    "quantityUnit": "count",
+    "variantIds": [
+      "rpi4",
+      "rpi5",
+      "rpi-zero-2-w"
+    ],
+    "geometrySourceRefs": [
+      "PX-V40-GEOM-PLATE-C"
+    ],
+    "measurementRefs": [
+      "PX-V40-MEAS-PLATE-C-GEOMETRY-LENGTH"
+    ],
+    "interfaceRefs": [
+      "PX-V40-IF-PLATE-C-CAMERA-MOUNT",
+      "PX-V40-IF-PLATE-C-REFERENCE",
+      "PX-V40-IF-PLATE-C-TILT-HORN-MOUNT"
+    ],
+    "connectionPointRefs": [],
+    "ownedElements": [],
+    "appearanceRefs": [],
+    "blockerIds": [
+      "Q-03"
+    ]
+  },
+  "protectedInstances": [
+    {
+      "id": "PX-V40-INS-PLATE-C-001",
+      "definitionId": "PX-V40-DEF-PLATE-C",
+      "definitionRevision": 1,
+      "role": "Plate C",
+      "supplyOrigin": "kit",
+      "inventoryLotId": "PX-V40-LOT-PLATE-C",
+      "variantIds": [
+        "rpi4",
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "disposition": "available",
+      "ownerInstanceRef": {
+        "state": "notApplicable",
+        "reason": "Standalone planned stock; owned elements stay within the parent definition."
+      },
+      "installedByOperationRef": {
+        "state": "notApplicable",
+        "reason": "M1 authoring inventory; no M2 operation authored."
+      },
+      "blockerIds": [
+        "Q-03",
+        "Q-01",
+        "Q-13"
+      ]
+    }
+  ],
+  "stepUse": {
+    "rpi4": [
+      12,
+      13
+    ],
+    "rpi5": [
+      12,
+      13
+    ],
+    "rpi-zero-2-w": [
+      12,
+      13
+    ]
+  },
+  "sourceImages": [
+    {
+      "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+      "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896",
+      "bytes": 534018,
+      "plate": "C",
+      "view": "top-down",
+      "orientation": "Camera-cutout face between side walls; small square left and short slot right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Central shaped opening, four mounting holes, small square cutout and short slot visible."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+      "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e",
+      "bytes": 820601,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Camera-cutout face between edge-on side walls; short slot at image top",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Clear face outline and cutout arrangement; card below; numbered source suffix preserved in manifest."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+      "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8",
+      "bytes": 506256,
+      "plate": "C",
+      "view": "near top-down",
+      "orientation": "Camera-cutout face toward camera; short slot above main opening",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Alternate face view with offset notch in the main opening and small square cutout visible."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+      "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66",
+      "bytes": 482516,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Asymmetric side wall with large circular opening and two four-hole clusters",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Three larger edge holes and two small-hole rows visible; card and penny below wall height."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+      "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9",
+      "bytes": 327757,
+      "plate": "C",
+      "view": "low face-on profile",
+      "orientation": "Circular-hole wall nearest camera; bracket rests on an angled edge",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Wall outline, large opening and small-hole rows; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+      "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e",
+      "bytes": 836718,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Opposite side wall with two long slots and three edge holes",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Features of the opposite wall can be seen through the slots; do not assign those to this wall."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+      "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884",
+      "bytes": 973952,
+      "plate": "C",
+      "view": "near face-on",
+      "orientation": "Narrow transverse face with two parallel slots and three central holes",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Slots appear vertical in the image; side walls seen edge-on; card and penny visible."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+      "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f",
+      "bytes": 266103,
+      "plate": "C",
+      "view": "low face-on profile",
+      "orientation": "Narrow transverse face faces camera; slots run horizontally in image",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Shows three central holes, two slots and spacing between side walls; upright card alongside."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+      "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71",
+      "bytes": 686052,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Open interior with circular-hole wall left and long-slot wall right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows inner camera-cutout face, transverse face and multi-bend relationships."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+      "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c",
+      "bytes": 608319,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Circular-hole wall nearest camera; narrow slotted transverse face visible",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Useful cross-view of the two distinct walls and inner slotted face."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+      "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43",
+      "bytes": 675601,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Camera-cutout face nearest camera; circular-hole wall at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Shows shaped opening, mounting holes and asymmetric wall relationship."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+      "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04",
+      "bytes": 626404,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Long-slot wall at image right; narrow slotted transverse face toward camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "yes",
+      "limitations": "Complementary view of inner face and side-wall bends; flat card and penny nearby."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+      "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692",
+      "bytes": 551846,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Camera-cutout face uppermost; circular-hole wall shaded near camera",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Inverted whole-part view of opening, tabs and connected faces; flat card nearby."
+    },
+    {
+      "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+      "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd",
+      "bytes": 569753,
+      "plate": "C",
+      "view": "oblique",
+      "orientation": "Shaded camera-cutout face at image left; narrow slotted face at image right",
+      "referenceCardVisibility": "full",
+      "referencePenny": "no",
+      "limitations": "Complementary interior/bend view; lower contrast on the shaded face."
+    }
+  ],
+  "features": [
+    {
+      "name": "camera.outer-profile",
+      "observation": "Camera face outline and lower corner notches",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "camera.shaped-cutout",
+      "observation": "Large rectangular opening with offset shoulder/notch",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "camera.small-square",
+      "observation": "Small square opening",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "camera.slot-and-four-holes",
+      "observation": "Short slot and four mounting holes",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "circular-wall.outer-profile",
+      "observation": "Asymmetric side-wall polygon with visible edge notches",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+          "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "circular-wall.holes",
+      "observation": "Large circular opening, three edge holes and two four-hole clusters",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+          "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "slot-wall.outer-profile",
+      "observation": "Opposite side-wall polygon",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "slot-wall.slots-and-holes",
+      "observation": "Two long slots and three edge holes; opposite-wall features visible through slots are excluded",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "transverse.slots-and-holes",
+      "observation": "Two elongated slots and three central holes in narrow transverse face",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    },
+    {
+      "name": "planes.multi-bend",
+      "observation": "Four distinct faces; relative wall spacing, inclination/bends and tabs require a joint multi-view registration",
+      "sourceImages": [
+        {
+          "sourceImage": "Plate-C/plate-C_01_top-down-camera-cutout-face.jpeg",
+          "sourceRawSha256": "c5ea7c8e403e7e1662315b85caa9ce68f2e0730e714c9ddd22e94566c1f31896"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_02_face-on-camera-cutout-face.jpeg",
+          "sourceRawSha256": "799ac8a4738c6a8858e1e5ddfbc8b9a84c17802712ca8d44ab10103999c4a63e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_03_top-view-camera-cutout-face-alternate.jpeg",
+          "sourceRawSha256": "d6040d9f60bad99fa13810f5c663892c58c2a37acd47055642890758af90f4c8"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_04_face-on-circular-hole-wall.jpeg",
+          "sourceRawSha256": "589d4678237d36721a9aba28a7d37283d3704d76ec105cdbfdfd459a7a0fea66"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_05_low-profile-circular-hole-wall.jpeg",
+          "sourceRawSha256": "eec5f2e10dbb3892bc0076344ec2fc0c5abd7994ab024bbbbfc6d97edfc140e9"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_06_face-on-long-slot-wall.jpeg",
+          "sourceRawSha256": "3ea6e0dd2fac8710b9811322144147ccb7ff049bc0b86498fab561955454228e"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_07_face-on-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "b4fdb2758a004cd25734c81153139091368bec64ba833e22933aa1f024f08884"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_08_low-profile-two-slot-three-hole-face.jpeg",
+          "sourceRawSha256": "9142747ca5532d59d181f600e876b432f5a5dbbed4db913783fb35a808964e8f"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_09_oblique-open-interior.jpeg",
+          "sourceRawSha256": "ef3fc306dff8e71d07dec7c2bbe4300acbc5105f9f131774b36aeb319dd2ef71"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_10_oblique-circular-hole-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "5d8dd7bef57a604ba3b1943b4b2c4952f02337f3834627060b1dff8102f0185c"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_11_oblique-camera-cutout-face-and-circular-wall.jpeg",
+          "sourceRawSha256": "8e8c048d6336520f11c35b9af1d71399313e35f1c3e6b7d1fdbd3ac9fbb1ef43"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_12_oblique-long-slot-wall-and-slotted-face.jpeg",
+          "sourceRawSha256": "a88f84b37b243a0246d371f5aefc49739f59f41bdcf5588d8287686d18175a04"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_13_oblique-inverted-camera-cutout-face.jpeg",
+          "sourceRawSha256": "80cb0d458b5fe24ec7697a275cb4737aef3e91e0dabca4f407f7719be4f50692"
+        },
+        {
+          "sourceImage": "Plate-C/plate-C_14_oblique-camera-cutout-face-and-inner-slots.jpeg",
+          "sourceRawSha256": "99782ac1829a8dd8a85436ebf0c07983ee0e457d4a26d6a0662de830a8a692dd"
+        }
+      ],
+      "method": "Manifest-resolved manual multi-view inspection; metric calibration is separately scoped to D/G/H views 01/02",
+      "instructionalValue": {
+        "state": "unresolved",
+        "reason": "Candidate values for D/G/H exist separately; full feature source/uncertainty admission is not closed"
+      },
+      "engineeringValue": {
+        "state": "unresolved",
+        "confidence": "UNRESOLVED",
+        "blockerIds": [
+          "Q-03"
+        ]
+      },
+      "uncertainty": {
+        "state": "unresolved",
+        "blockerIds": [
+          "M6-CALIBRATION-UNCERTAINTY",
+          "M6-FULL-SOURCE-PROJECTION"
+        ]
+      },
+      "blockerIds": [
+        "Q-03",
+        "M6-FULL-SOURCE-PROJECTION"
+      ]
+    }
+  ],
+  "thickness": {
+    "valueMm": 2,
+    "confidence": "PROBABLE",
+    "manufacturerCertified": false,
+    "basis": "Owner photo-supported working hypothesis; D05/D06/penny support only; no stronger derivation"
+  },
+  "manufacturingUnknowns": [
+    "exact bend radius",
+    "stock tolerance",
+    "alloy/material grade",
+    "coating thickness",
+    "manufacturing tolerance",
+    "laser-cut kerf",
+    "hole tolerance",
+    "hidden features",
+    "forming process",
+    "finish thickness",
+    "physical fit",
+    "engineering datum scheme"
+  ],
+  "calibrationStatus": "NOT_CLOSED",
+  "shapeValidationStatus": "BLOCKED",
+  "sourceValidationStatus": "BLOCKED",
+  "blockerIds": [
+    "Q-03",
+    "M6-CALIBRATION-UNCERTAINTY",
+    "M6-FULL-SOURCE-PROJECTION",
+    "M6-INSTRUCTIONAL-ORIENTATION",
+    "M6-BENT-FACE-REGISTRATION",
+    "M6-BENT-CAD-NOT-AUTHORED"
+  ],
+  "engineeringAdmission": false,
+  "runtimeScale": [
+    1,
+    1,
+    1
+  ],
+  "presentationAnchorEngineeringInterface": false,
+  "syntheticM4DatumUsed": false,
+  "hiddenFeaturesInvented": [],
+  "exactBendRadiusClaim": false,
+  "sourcePrivate": true,
+  "privatePixelsInAuthoredArtifacts": false,
+  "mirrorCadValidationStatus": "notApplicable",
+  "limitations": [
+    "No full instructional admission or strict engineering G-STRUCTURE/G-CAD acceptance",
+    "Bent geometry is not silently substituted with a bounding box or flat outline",
+    "Candidate D/G/H numeric parameters are isolated from canonical model preimages"
+  ]
+}
