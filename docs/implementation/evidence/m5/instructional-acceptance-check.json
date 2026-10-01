@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "head": "75b3b7286761c41200940657c18eb4371025587d",
+  "implementationSHA": "75b3b7286761c41200940657c18eb4371025587d",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "digital-twin/tools/export/m4-gate.mjs",
+        "--check"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-01T03:24:09.511Z",
+      "finishedAt": "2026-10-01T03:24:09.716Z",
+      "exit": 0,
+      "stdout": "G-TOOLCHAIN PASS: two clean 54/54 executions, complete independent fixture witnesses, exact bindings and explicit M4 lock adoption.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+        "docs/implementation/evidence/m5/instructional-closure.mjs",
+        "--check",
+        "--require-retained"
+      ],
+      "cwd": "/Users/danny/Documents/Apps/PiCar",
+      "environmentOverrides": {},
+      "startedAt": "2026-10-01T03:24:09.716Z",
+      "finishedAt": "2026-10-01T03:24:35.671Z",
+      "exit": 0,
+      "stdout": "{\"gate\":\"G-INSTRUCTIONAL-COMPONENT\",\"status\":\"PASS\",\"strictGComponent\":\"BLOCKED\",\"counts\":{\"ENGINEERING_ADMITTED\":0,\"ENGINEERING_PARTIAL\":3,\"ENGINEERING_BLOCKED\":47,\"INSTRUCTIONAL_ADMITTED\":50,\"INSTRUCTIONAL_BLOCKED\":0},\"upstreamBindingCheck\":\"PASS\",\"M6Implemented\":false}\n",
+      "stderr": ""
+    }
+  ],
+  "receiptBindings": "Exact current/raw/retained Git bytes PASS",
+  "M4Ancestry": "PASS",
+  "upstreamTrackedChanges": [],
+  "M6Implemented": false
+}

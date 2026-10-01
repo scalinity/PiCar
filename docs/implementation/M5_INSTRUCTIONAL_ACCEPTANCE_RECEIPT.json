@@ -1,0 +1,83 @@
+{
+  "milestone": "M5 instructional purchased components only",
+  "status": "ACCEPTED_INSTRUCTIONAL",
+  "M5_INSTRUCTIONAL_ACCEPTED_SHA": "75b3b7286761c41200940657c18eb4371025587d",
+  "strictEngineeringAcceptedSHA": null,
+  "tree": "dec85cce4d677934cdeb47db6665d72841dbbf93",
+  "subject": "M5: add instructional purchased-component geometry",
+  "parent": "5a4077285f4d31d69b0959527e480037be1ee8db",
+  "branch": "codex/m5-purchased-components",
+  "explicitlyStagedFiles": 399,
+  "gate": "G-INSTRUCTIONAL-COMPONENT",
+  "gateStatus": "PASS",
+  "strictGComponent": "BLOCKED",
+  "counts": {
+    "ENGINEERING_ADMITTED": 0,
+    "ENGINEERING_PARTIAL": 3,
+    "ENGINEERING_BLOCKED": 47,
+    "INSTRUCTIONAL_ADMITTED": 50,
+    "INSTRUCTIONAL_BLOCKED": 0
+  },
+  "bindings": [
+    {
+      "path": "docs/implementation/M5_INSTRUCTIONAL_GATE_REPORT.json",
+      "rawSha256": "5468db1efc78463f1e7af623a4888d60d45d70ec99908037846f280933a35658",
+      "bytes": 285354,
+      "gitBlob": "7fc77edeae8bd045536311c887ae3ac0c9a50e64"
+    },
+    {
+      "path": "docs/implementation/M5_INSTRUCTIONAL_REPORT.md",
+      "rawSha256": "67cc6140d10b83fc875f59ae5f6bd03e0094f3dd36e8c8d52d2203a7874910ac",
+      "bytes": 13389,
+      "gitBlob": "ed68b746949527341b20ecae4bd62445a113a19c"
+    },
+    {
+      "path": "docs/implementation/M5_GATE_REPORT.json",
+      "rawSha256": "5d121edf4ac3a15b076dd0e30f80e3f2804a665aa3e079bbe689de6a4e056581",
+      "bytes": 243626,
+      "gitBlob": "8c81ccad8521b9756fe4ba96fce43134f0c01ffa"
+    },
+    {
+      "path": "docs/digital-twin/INSTRUCTIONAL_GEOMETRY_POLICY.md",
+      "rawSha256": "43054605f64a0f035da0971b2034ff604f9a2e47c2538c0f0413993f62fad817",
+      "bytes": 7075,
+      "gitBlob": "fa1562953a23e6fb6549fd3448cd331f44e075c8"
+    },
+    {
+      "path": "docs/implementation/M5_OWNER_POLICY_AMENDMENT.md",
+      "rawSha256": "7f72eef65c1f3945df8aa0f4c0c33c808a4de1da19714748ddc6489bb3f1bd3e",
+      "bytes": 41626,
+      "gitBlob": "f0c1409133066aadaaf6f5f908d4af9fc36f1209"
+    },
+    {
+      "path": "docs/implementation/evidence/m5/plate-package-integrity.json",
+      "rawSha256": "e2323d7deaaa50ccede2a261fb412e8142a2343d3710065cb8a03e68098a5bc1",
+      "bytes": 43651,
+      "gitBlob": "5525dac17b054eacdd37275b27f23eda5bf644b5"
+    }
+  ],
+  "canonicalIdentities": {
+    "schemaHash": "046808956ce49b8cbe8f1e0e2a8c4f63b250a67f2011e969990fb9a0ef6826e1",
+    "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2"
+  },
+  "originalM2Diagnostics": "Twelve unchanged and untracked",
+  "sourcePublication": false,
+  "hardwareActions": false,
+  "ownerSessionTests": false,
+  "remoteWrites": false,
+  "M6InstructionalAuthorization": "YES: instructional gate PASS, accepted local commit and verified private plate package PASS",
+  "M6Implemented": false,
+  "selfBinding": false,
+  "descendantClassification": "This acceptance receipt and HANDOFF_M6.md belong to a subsequent documentation-only commit, not another implementation checkpoint",
+  "stagingWhitespaceFailure": {
+    "rawSha256": "dc9c4625f35b31c0af494a4b6590d34fc8a0461fd34cac4e4d462ae111b0d2a8",
+    "bytes": 611792,
+    "rawLocalPath": "docs/implementation/evidence/m5/instructional-staging-whitespace-failure.txt",
+    "losslessArchivePath": "docs/implementation/evidence/m5/instructional-staging-whitespace-failure.txt.gz",
+    "losslessArchiveRawSha256": "135ffe42472fea3b0fe76ec29a43bb9b9f3775365fefd92133dba6210a816d1f",
+    "reason": "Native BRep/SVG exporter trailing spaces and failed TAP indentation; new narrowly scoped attributes preserve exact bytes. Root/M4 attributes unchanged."
+  },
+  "allGateInputBindingsRetainedInGit": true,
+  "privateSourceInputs": "Raw SHA256/length verified; private/vendor originals remain ignored and are not Git-retained. Only hash-only receipt files and authored public-safe geometry are retained."
+}
