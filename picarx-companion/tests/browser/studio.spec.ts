@@ -48,7 +48,11 @@ test('collapsing instructions and resizing keep the camera; the canvas fills the
   await page.waitForTimeout(300);
   const resized = await diag(page, (d) => d.camera());
   expect(close(resized.position, before.position, 1e-12) && close(resized.target, before.target, 1e-12)).toBe(true);
-  expect(resized.aspect).toBeCloseTo(1100 / 700, 3);
+  // The camera frames the canvas area the panels leave uncovered; the canvas is a window around that frame.
+  const insets = await page.evaluate(() => (window as any).__studio.inspection().insets as number[]);
+  const [l, t, r, bottom] = insets, vw = 1100 - l - r, vh = 700 - t - bottom;
+  expect(resized.aspect).toBeCloseTo(vw / vh, 3);
+  expect((resized as any).view).toMatchObject({ enabled: true, fullWidth: vw, fullHeight: vh, offsetX: -l, offsetY: -t, width: 1100, height: 700 });
   const box = await page.locator('.studio-viewport canvas').boundingBox();
   expect([box!.width, box!.height]).toEqual([1100, 700]);
   await page.getByRole('button', { name: 'Show instructions' }).click();
@@ -65,20 +69,20 @@ test('fullscreen enters and leaves through the browser Fullscreen API', async ({
   await page.waitForFunction(() => document.fullscreenElement === null);
 });
 
-test('readiness is labelled and later steps are not offered as instruction', async ({ page }) => {
+test('readiness is labelled: every step opens, S07 and S09 in Review, and M7 acceptance is stated separately', async ({ page }) => {
   await open(page, '#/studio/rpi5/7');
-  await expect(page.locator('.studio-notice')).toContainText('Step 7 opens in a later Studio update. Showing step 2.');
-  await expect(page.locator('.studio-preview-chip')).toHaveText('Preview');
+  await expect(page.locator('.studio-notice')).toHaveCount(0);
+  await expect(page.locator('.studio-mode-chip')).toHaveText('Review');
   await expect(page.locator('.studio-truths')).toContainText('M7 has accepted 0 of 58 steps');
   await expect(page.locator('.studio-truths')).toContainText('never marks a step done');
-  await expect(page.locator('.studio-rail-later[data-display="PREVIEW_BLOCKED_RELATION"]')).toHaveText('7');
-  await expect(page.locator('.studio-rail-later[data-display="REVIEW_REFUSED_CANDIDATE"]')).toHaveText('9');
-  await expect(page.locator('.studio-rail a')).toHaveText(['Parts', '1', '2']);
+  await expect(page.locator('.studio-rail a')).toHaveText(['Parts', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+  await expect(page.locator('.studio-rail a[data-mode="review"]')).toHaveText(['7', '9']);
+  await expect(page.locator('.studio-rail-later')).toHaveCount(0);
 });
 
 test('selecting a part shows its source identity', async ({ page }) => {
   await open(page, '#/studio/rpi5/2');
-  await page.getByRole('button', { name: /USB mini microphone accessory/ }).click();
+  await page.getByRole('button', { name: /USB mini microphone/ }).click();
   await expect(page.locator('.studio-inspector')).toContainText('PX-V40-INS-USB-MICROPHONE-001');
   await expect(page.locator('.studio-inspector')).toContainText('M5 instructional proxy');
   await page.keyboard.press('Escape');
@@ -371,7 +375,7 @@ test('the first frame drawn follows the first render, which follows canvas creat
   await seekTo(page, await diag(page, (d) => d.duration)); // paused: nothing asks for frames
   const before = (await perf()).activeFrames;
   await page.waitForTimeout(1500);
-  await page.getByRole('button', { name: 'Hide instructions' }).click(); // one isolated redraw after the idle wait
+  await page.getByRole('button', { name: /Raspberry Pi 5/ }).click(); // one isolated redraw (a selection) after the idle wait
   await page.evaluate(() => new Promise(requestAnimationFrame));
   expect((await perf()).activeFrames, 'an idle wait and an isolated redraw add no frame time').toBe(before);
   await page.keyboard.press('p');
@@ -404,4 +408,184 @@ test('the companion pages remain reachable from the Studio', async ({ page }) =>
   await expect(page.locator('.topbar')).toBeVisible();
   await page.getByRole('link', { name: 'Studio' }).click();
   await expect(page.locator('.studio')).toBeVisible();
+});
+
+// ==== Studio 2: the complete tray, every step on both boards, review states, inspection and the manual panel.
+const EVIDENCE = '../docs/implementation/evidence/studio-2';
+const placedPositions = (page: Page, ids: string[]) => page.evaluate((list) => Object.fromEntries(list.map((id) => [id, (window as any).__studio.instance(id).position])), ids);
+const styleOf = (page: Page, id: string) => page.evaluate((x) => (window as any).__studio.style(x), id);
+
+for (const variant of ['rpi5', 'rpi-zero-2-w'] as const) {
+  test(`${variant}: the parts tray draws every required piece and each is visible from the tray camera`, async ({ page, browserName }) => {
+    const errors = errorsOf(page);
+    await open(page, `#/studio/${variant}/0`);
+    await page.waitForTimeout(1200); // the framing area settles beside the panels
+    const tray = manifest.variants[variant].tray;
+    const roots: any[] = await page.evaluate(() => (window as any).__studio.roots());
+    const solids = roots.filter((r) => !r.tile), tiles = roots.filter((r) => r.tile);
+    expect(solids.map((r) => r.id).sort()).toEqual(Object.keys(tray.instances).sort());
+    expect(tiles.map((r) => r.id).sort()).toEqual(Object.keys(tray.tiles).sort());
+    for (const r of roots) {
+      expect(r.drawn, r.id).toBe(true);
+      expect(r.meshes, r.id).toBeGreaterThan(0);
+      expect(r.triangles, r.id).toBeGreaterThan(0);
+      expect(r.min[1], `${r.id} above the floor`).toBeGreaterThanOrEqual(manifest.variants[variant].floorYM - 1e-4);
+    }
+    const census: Record<string, number> = await page.evaluate(() => (window as any).__studio.census());
+    for (const id of [...Object.keys(tray.instances), ...Object.keys(tray.tiles)]) expect(census[id], `${id} visible pixels`).toBeGreaterThan(3);
+    await expect(page.getByTestId('tray-inventory')).toHaveText(`${tray.inventory.required} pieces · ${tray.inventory.modeled} modelled · ${tray.inventory.tiles} shown as tiles`);
+    fs.mkdirSync(EVIDENCE, { recursive: true });
+    fs.writeFileSync(`${EVIDENCE}/tray-runtime-census-${variant}-${browserName}.json`, JSON.stringify({ variant, browserName, packId: manifest.packId, viewport: page.viewportSize(),
+      drawn: solids.length, tiles: tiles.length, notVisible: Object.entries(census).filter(([, n]) => n === 0).map(([id]) => id),
+      minVisiblePixels: Math.min(...Object.values(census)), visiblePixels: census }, null, 1) + '\n');
+    expect(errors).toEqual([]);
+  });
+
+  test(`${variant}: every step opens; Preview ends exactly on its closure poses, Review never plays`, async ({ page }) => {
+    const errors = errorsOf(page);
+    for (const s of manifest.variants[variant].steps) {
+      await open(page, `#/studio/${variant}/${s.printedNumber}`);
+      await page.waitForFunction((k) => (window as any).__studio.state().key === k, `${variant}/${s.printedNumber}`);
+      await expect(page.locator('.studio-mode-chip')).toHaveText(s.mode === 'review' ? 'Review' : 'Preview');
+      await expect(page.locator('.studio-step-title')).toHaveText(s.title);
+      const duration = await diag(page, (d) => d.duration);
+      if (s.mode === 'review') {
+        expect(duration).toBe(0);
+        await page.keyboard.press(' ');
+        expect(await diag(page, (d) => d.state().playing)).toBe(false);
+        await expect(page.locator('.studio-transport-note')).toContainText('not played as an installation');
+        await expect(page.locator('.studio-review')).toBeVisible();
+      } else if (duration > 0) await seekTo(page, duration);
+      const live = await placedPositions(page, Object.keys(s.placements));
+      for (const [id, pose] of Object.entries<any>(s.placements)) expect(close(live[id], pose.translationM, 1e-9), `S${s.printedNumber} ${id}`).toBe(true);
+    }
+    expect(errors).toEqual([]);
+  });
+}
+
+test('switching boards on every step keeps the step in both directions; a common tile keeps its selection', async ({ page }) => {
+  const errors = errorsOf(page);
+  await open(page, '#/studio/rpi5/0');
+  const tools = page.locator('.studio-group', { hasText: 'Tools' });
+  await tools.locator('summary').click();
+  await tools.getByRole('button', { name: /Wrench/ }).click();
+  await switchBoard(page, 'Zero 2 W', 'rpi-zero-2-w/0');
+  expect(await diag(page, (d) => d.state().selection)).toBe('PX-V40-INS-WRENCH-001');
+  expect(await styleOf(page, 'PX-V40-INS-WRENCH-001')).toBe('selected');
+  for (let n = 1; n <= 9; n++) {
+    await page.locator('.studio-rail a', { hasText: String(n) }).click();
+    await page.waitForFunction((k) => (window as any).__studio.state().key === k, `rpi-zero-2-w/${n}`);
+    await switchBoard(page, 'Pi 5', `rpi5/${n}`);
+    await switchBoard(page, 'Zero 2 W', `rpi-zero-2-w/${n}`);
+  }
+  expect(errors).toEqual([]);
+});
+
+test('isolate, ghost, explode and the deck clip are presentation only and fully reversible', async ({ page }) => {
+  const errors = errorsOf(page);
+  await open(page, '#/studio/rpi5/4');
+  await seekTo(page, await diag(page, (d) => d.duration));
+  const ids = Object.keys(manifest.variants.rpi5.steps[3].placements);
+  const before = await placedPositions(page, ids);
+  await page.keyboard.press('g');
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-PLATE-A-001')).toBe('ghost'); // not one of this step's parts
+  expect(await styleOf(page, 'PX-V40-INS-ROBOT-HAT-001')).toBe('normal');
+  await page.keyboard.press('g');
+  await page.keyboard.press('o');
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-PLATE-A-001')).toBe('hidden');
+  expect((await page.evaluate(() => (window as any).__studio.census()))['PX-V40-INS-PLATE-A-001'], 'a hidden part draws nothing').toBe(0);
+  await page.keyboard.press('o');
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-PLATE-A-001')).toBe('normal');
+  await page.keyboard.press('e');
+  await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().explode)).toBe(1);
+  const exploded = await placedPositions(page, ids);
+  expect(exploded['PX-V40-INS-ROBOT-HAT-001'][1] - before['PX-V40-INS-ROBOT-HAT-001'][1], 'the HAT lifts').toBeGreaterThan(0.005);
+  expect(exploded['PX-V40-INS-ROBOT-HAT-001'][1] - before['PX-V40-INS-ROBOT-HAT-001'][1]).toBeGreaterThan(exploded['PX-V40-INS-PI5-001'][1] - before['PX-V40-INS-PI5-001'][1]);
+  await seekTo(page, 0.5); // seeking with the explosion on stays deterministic
+  await seekTo(page, await diag(page, (d) => d.duration));
+  expect(await placedPositions(page, ids)).toEqual(exploded);
+  await page.keyboard.press('e');
+  await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().explode)).toBe(0);
+  expect(await placedPositions(page, ids), 'explosion off returns the exact closure poses').toEqual(before);
+  await page.keyboard.press('c');
+  await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().clip !== null)).toBe(true);
+  expect(await page.evaluate(() => (window as any).__studio.viewport().board().materials().some((m: any) => m.clippingPlanes?.length === 2))).toBe(true);
+  await page.getByRole('button', { name: 'Reset inspection' }).click();
+  await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().clip)).toBeNull();
+  expect(await page.evaluate(() => (window as any).__studio.viewport().board().materials().some((m: any) => m.clippingPlanes?.length))).toBe(false);
+  for (const id of ids) expect(await styleOf(page, id)).toBe('normal');
+  expect(errors).toEqual([]);
+});
+
+test('S07 Review names the unresolved connection and tints its two ends; S08 says previewing it does not certify S07', async ({ page }) => {
+  await open(page, '#/studio/rpi5/7');
+  await expect(page.locator('.studio-review')).toContainText('PX-V40-CONN-07-COMMON-BATTERY');
+  await expect(page.locator('.studio-review')).toContainText('Battery lead to the Robot HAT');
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-BATTERY-001')).toBe('focus');
+  expect(await styleOf(page, 'PX-V40-INS-ROBOT-HAT-001')).toBe('focus');
+  await open(page, '#/studio/rpi5/8');
+  await expect(page.locator('.studio-dependency')).toHaveText('Step 7 is still under review. Previewing step 8 does not certify step 7.');
+});
+
+test('S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it', async ({ page }) => {
+  await open(page, '#/studio/rpi5/9');
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-ULTRASONIC-001')).toBe('focus');
+  await expect(page.locator('.studio-conflicts li')).toHaveCount(4);
+  await page.getByRole('button', { name: /Pan servo horn × Plate H/ }).click();
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-PLATE-A-001')).toBe('ghost');
+  expect(await styleOf(page, 'PX-V40-INS-HORN-PAN-001')).toBe('focus');
+  expect(await styleOf(page, 'PX-V40-INS-PLATE-H-001')).toBe('focus');
+  expect(await diag(page, (d) => d.state().cameraMode)).toBe('manual');
+  await page.evaluate(() => { window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'Escape' })); });
+  expect(await diag(page, (d) => d.state().conflict)).toBeNull();
+  await expect.poll(() => styleOf(page, 'PX-V40-INS-PLATE-A-001')).toBe('normal');
+  await page.locator('.studio-conflicts').getByRole('button').first().click();
+  await page.locator('.studio-parts').getByRole('button', { name: /Ultrasonic module/ }).first().click();
+  await expect(page.locator('.studio-inspector')).toContainText('refused candidate');
+});
+
+test('the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection', async ({ page }) => {
+  await open(page, '#/studio/rpi5/3');
+  const panel = page.locator('.studio-drawer .studio-manual-canvas');
+  await expect(panel).toHaveAttribute('data-ready', 'true', { timeout: 15000 });
+  await expect(panel).toHaveAttribute('data-page', '1');
+  await expect(page.locator('.studio-manual')).toContainText('Printed Step 3 · rpi5 · page 1 of the V40 booklet');
+  await page.getByRole('button', { name: /Raspberry Pi 5/ }).click();
+  await page.getByRole('button', { name: 'Enlarge' }).click();
+  await expect(page.locator('.studio-manual-overlay .studio-manual-canvas')).toHaveAttribute('data-ready', 'true', { timeout: 15000 });
+  const press = () => page.evaluate(() => { window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' })); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'Escape' })); });
+  await press();
+  await expect(page.locator('.studio-manual-overlay')).toHaveCount(0);
+  expect(await diag(page, (d) => d.state().selection), 'the same press must not also clear the selection').toBe('PX-V40-INS-PI5-001');
+  await press();
+  expect(await diag(page, (d) => d.state().selection)).toBeNull();
+  await open(page, '#/studio/rpi-zero-2-w/3');
+  await expect(page.locator('.studio-manual')).toContainText('Printed Step 3 · rpi-zero-2-w');
+});
+
+// Picking in the 3D view: a click selects the part under the cursor (tray tiles' drawn edges never catch it), and a
+// click alone keeps the guided view; moving the camera hands it to the user.
+test('a click in the view selects the part under the cursor and keeps the guided view; a drag yields to manual', async ({ page }) => {
+  await open(page, '#/studio/rpi5/4');
+  await seekTo(page, await diag(page, (d) => d.duration));
+  await page.waitForTimeout(1100);
+  for (const id of ['PX-V40-INS-ROBOT-HAT-001', 'PX-V40-INS-PLATE-A-001']) {
+    const at = await page.evaluate((x) => {
+      const vp = (window as any).__studio.viewport(), o = vp.scene.getObjectByName(x);
+      const min = [Infinity, Infinity, Infinity], max = [-Infinity, -Infinity, -Infinity];
+      o.updateWorldMatrix(true, true);
+      o.traverse((m: any) => { if (!m.isMesh || m.userData.pickTarget) return; m.geometry.computeBoundingBox(); const b = m.geometry.boundingBox.clone().applyMatrix4(m.matrixWorld);
+        for (let i = 0; i < 3; i++) { min[i] = Math.min(min[i], b.min.getComponent(i)); max[i] = Math.max(max[i], b.max.getComponent(i)); } });
+      const v = o.position.clone().set((min[0] + max[0]) / 2, max[1], (min[2] + max[2]) / 2).project(vp.camera), r = vp.gl.domElement.getBoundingClientRect();
+      return [r.left + ((v.x + 1) / 2) * r.width, r.top + ((1 - v.y) / 2) * r.height];
+    }, id);
+    await page.mouse.click(at[0], at[1]);
+    await expect.poll(() => diag(page, (d) => d.state().selection)).toBe(id);
+    expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+  }
+  await page.mouse.move(600, 400);
+  await page.mouse.down();
+  await page.mouse.move(700, 420, { steps: 8 });
+  await page.mouse.up();
+  await expect.poll(() => diag(page, (d) => d.state().cameraMode)).toBe('manual');
 });

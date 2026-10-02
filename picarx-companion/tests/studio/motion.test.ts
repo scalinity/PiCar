@@ -54,6 +54,51 @@ describe.each(['rpi5', 'rpi-zero-2-w'] as const)('%s', (variant) => {
   });
 });
 
+// Studio 2: every Preview step on both boards, and the two Review steps.
+const PREVIEW = [1, 2, 3, 4, 5, 6, 8];
+describe.each(['rpi5', 'rpi-zero-2-w'] as const)('%s, all steps', (variant) => {
+  const v = manifest.variants[variant];
+  it.each(PREVIEW)('S%i: ends exactly on the closure poses (the same objects), every other part in the tray', (n) => {
+    const timeline = timelineFor(v, n, timing);
+    const end = statesAt(v, timeline, timeline.duration);
+    for (const [id, pose] of Object.entries(v.steps[n - 1].placements)) expect(end.get(id)).toEqual({ pose, phase: 'installed', placed: true });
+    for (const [id, pose] of Object.entries(v.steps[n - 1].placements)) expect(end.get(id)!.pose).toBe(pose);
+    for (const [id, st] of end) if (!v.steps[n - 1].placements[id]) expect(st.pose).toBe(v.tray.instances[id]);
+  });
+  it.each(PREVIEW)('S%i: starts from the previous closure, with only what this closure newly places moving', (n) => {
+    const timeline = timelineFor(v, n, timing), entry = v.steps[n - 1];
+    expect(timeline.tracks.map((k) => k.instanceId).sort()).toEqual([...entry.newlyPlacedInstanceIds].sort());
+    const start = statesAt(v, timeline, 0), before = n > 1 ? v.steps[n - 2].placements : {};
+    for (const [id, pose] of Object.entries(before)) expect(start.get(id)!.pose).toEqual(pose);
+    for (const id of entry.newlyPlacedInstanceIds) expect(start.get(id)!.pose).toBe(v.tray.instances[id]);
+  });
+  it.each(PREVIEW)('S%i: any order of seeking gives identical poses (replay, scrub, backward seek)', (n) => {
+    const timeline = timelineFor(v, n, timing), d = timeline.duration;
+    const times = [0, d * 0.37, d, d * 0.12, d * 0.81, d * 0.37, 0, d];
+    const forward = times.map((t) => JSON.stringify([...statesAt(v, timeline, t)]));
+    const backward = [...times].reverse().map((t) => JSON.stringify([...statesAt(v, timeline, t)])).reverse();
+    expect(backward).toEqual(forward);
+    expect(forward[0]).toBe(forward[6]);
+    expect(forward[2]).toBe(forward[7]);
+  });
+  it('S03 and S06 move nothing: the ribbon and the tape have no solid, and the battery stays in the tray until S07', () => {
+    expect(timelineFor(v, 3, timing).duration).toBe(0);
+    expect(timelineFor(v, 6, timing).duration).toBe(0);
+    expect(statesAt(v, timelineFor(v, 6, timing), 0).get('PX-V40-INS-BATTERY-001')!.phase).toBe('tray');
+  });
+  it('S07 and S09 open in Review on their recorded state and never play', () => {
+    for (const n of [7, 9]) {
+      const timeline = timelineFor(v, n, timing);
+      expect(timeline).toEqual({ step: n, duration: 0, tracks: [] });
+      const at = statesAt(v, timeline, 0);
+      for (const [id, pose] of Object.entries(v.steps[n - 1].placements)) {
+        expect(at.get(id)!.pose).toBe(pose);
+        expect(at.get(id)!.phase).toBe(n === 9 ? 'candidate' : 'installed');
+      }
+    }
+  });
+});
+
 it('derives step durations from the stage timing (S01: 9 parts, S02: 6 parts on the Pi 5)', () => {
   const v = manifest.variants.rpi5;
   expect(timelineFor(v, 0, timing).duration).toBe(0);

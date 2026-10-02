@@ -5,13 +5,14 @@ import path from 'node:path';
 import { parseRoute, studioHref } from '../../src/lib/router';
 
 const files = (dir: string): string[] => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? files(path.join(dir, e.name)) : [path.join(dir, e.name)]));
-const studioSources = [...files('src/features/assembly-3d'), 'src/pages/Studio.tsx'];
+// The Studio's own modules, and the shared booklet loader its manual panel uses.
+const studioSources = [...files('src/features/assembly-3d'), 'src/pages/Studio.tsx', 'src/lib/v40-pdf.ts', 'src/lib/v40-pdf-identity.ts'];
 
-it('has no path to the session ledger, repository or native commands', () => {
+it('has no path to the session ledger, Setup persistence, repository or native commands', () => {
   for (const file of studioSources) {
     const text = fs.readFileSync(file, 'utf8');
     const imports = [...text.matchAll(/from\s+['"]([^'"]+)['"]|import\(\s*['"]([^'"]+)['"]\s*\)/g)].map((m) => m[1] ?? m[2]);
-    for (const spec of imports) expect(spec, file).not.toMatch(/assembly-session|\/platform\/|repository|plugin-/);
+    for (const spec of imports) expect(spec, file).not.toMatch(/assembly-session|progress-store|\/platform\/|repository|plugin-/);
     expect(text, file).not.toMatch(/\binvoke\(|localStorage|indexedDB/);
   }
 });

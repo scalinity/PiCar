@@ -1,12 +1,15 @@
 // Pure, deterministic step presentation: pose = f(step, t). No frame integration, no state.
-// Two phases per introduced part:
+// Two phases per part the step's closure places (and the previous closure did not):
 //   bring-in  tray -> staged start, an arc over the chassis. Presentation travel only, never an assembly path.
 //   approach  staged start -> final pose along the M7 recipe's axis (non-physical staging, stagingOnly).
-// At t >= duration every pose is the closure pose object itself, so endpoints equal the source exactly.
+// At t >= duration every pose is the closure pose object itself, so endpoints equal the source exactly. A review step
+// (a blocked relation, a refused candidate) has no timeline: it opens on its recorded state and never plays.
 import type { Pose, Quat, StepEntry, Vec3, VariantEntry } from '../assets/pack';
 
-export type Phase = 'installed' | 'tray' | 'waiting' | 'bring-in' | 'approach';
-export type InstanceState = { pose: Pose; phase: Phase; placed: boolean };
+// candidate: a pose from a refused step's candidate record, shown for review and never as an installation.
+export type Phase = 'installed' | 'candidate' | 'tray' | 'waiting' | 'bring-in' | 'approach';
+// progress: how far an approach has run (0 to 1), so presentation offsets can follow a part in without a jump.
+export type InstanceState = { pose: Pose; phase: Phase; placed: boolean; progress?: number };
 export type Timing = { bringInS: number; approachS: number; staggerS: number };
 type Track = { instanceId: string; start: number; bringIn: number; approach: number; from: Pose; staged: Pose; final: Pose };
 export type Timeline = { step: number; duration: number; tracks: Track[] };
@@ -40,12 +43,13 @@ export function slerp(a: Quat, b: Quat, u: number): Quat {
 }
 
 export function timelineFor(variant: VariantEntry, step: number, timing: Timing): Timeline {
-  if (step === 0) return { step, duration: 0, tracks: [] };
+  if (step === 0 || !variant.steps[step - 1].operable) return { step, duration: 0, tracks: [] };
   const entry = variant.steps[step - 1];
   const recipes = new Map(entry.recipes.map((r) => [r.instanceId, r]));
-  const introduced = entry.introducedInstanceIds.filter((id) => entry.placements[id]);
+  // What this closure places that the previous one did not: a part can be introduced in one step and placed in a later one.
+  const placing = entry.newlyPlacedInstanceIds;
   // The workpiece an operation attaches to (no recipe) arrives first, then parts in M7 install order.
-  const order = [...introduced.filter((id) => !recipes.has(id)), ...entry.recipes.map((r) => r.instanceId).filter((id) => introduced.includes(id))];
+  const order = [...placing.filter((id) => !recipes.has(id)), ...entry.recipes.map((r) => r.instanceId).filter((id) => placing.includes(id))];
   const tracks = order.map((instanceId, i): Track => {
     const final = entry.placements[instanceId], recipe = recipes.get(instanceId);
     return { instanceId, start: i * timing.staggerS, bringIn: timing.bringInS, approach: recipe ? timing.approachS : 0,
@@ -63,7 +67,7 @@ function trackState(track: Track, t: number): InstanceState {
   }
   if (track.approach > 0 && local < track.bringIn + track.approach) {
     const v = easeInOutCubic(clamp01((local - track.bringIn) / track.approach));
-    return { pose: { translationM: lerp(track.staged.translationM, track.final.translationM, v), rotationXYZW: track.final.rotationXYZW }, phase: 'approach', placed: false };
+    return { pose: { translationM: lerp(track.staged.translationM, track.final.translationM, v), rotationXYZW: track.final.rotationXYZW }, phase: 'approach', placed: false, progress: v };
   }
   return { pose: track.final, phase: 'installed', placed: true };
 }
@@ -78,7 +82,7 @@ export function statesAt(variant: VariantEntry, timeline: Timeline, t: number): 
     const placement = entry?.placements[id];
     const track = moving.get(id);
     if (track) out.set(id, t >= timeline.duration ? { pose: placement!, phase: 'installed', placed: true } : trackState(track, t));
-    else if (placement) out.set(id, { pose: placement, phase: 'installed', placed: true });
+    else if (placement) out.set(id, { pose: placement, phase: entry!.candidatePlacements ? 'candidate' : 'installed', placed: true });
     else out.set(id, { pose: tray, phase: 'tray', placed: false });
   }
   return out;

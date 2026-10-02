@@ -1,16 +1,20 @@
 // GPU resource ownership for the Studio viewport. Each class has one creation point and one disposal boundary:
 //   pack-cached     decoded part geometries and their source materials (assets/pack.ts): kept for the app's lifetime so
 //                   a board switch or a later visit reuses them, and never disposed here.
-//   board-owned     one board's instance materials (normal and highlight) and its key light with the light's shadow map
-//                   (createBoard): released once a rebuilt board has replaced it in the scene, or when the viewport closes.
+//   board-owned     one board's instance materials (normal, selected, review focus, ghost), its tray tiles and pick targets
+//                   (their geometry and materials) and its key light with the light's shadow map (createBoard): released once
+//                   a rebuilt board has replaced it in the scene, or when the viewport closes. Inspection never touches the
+//                   pack's source materials: ghosting and clipping act on this board's own copies.
 //   renderer-owned  the PMREM environment render target whose texture lights the scene (createEnvironment): released with
 //                   the viewport. The light-card scene it is rendered from is released as soon as the environment exists.
 // Owners register when the frame loop adopts them, never during render, so `owned()` lists exactly what is live.
 import {
-  Color, DirectionalLight, DoubleSide, Group, Mesh, MeshBasicMaterial, MeshPhysicalMaterial, PlaneGeometry, PMREMGenerator, Scene,
+  BoxGeometry, BufferGeometry, Color, DirectionalLight, DoubleSide, Float32BufferAttribute, Group, LineDashedMaterial, LineLoop, Mesh, MeshBasicMaterial,
+  MeshPhysicalMaterial, MeshStandardMaterial, Plane, PlaneGeometry, PMREMGenerator, Scene, Vector3,
   type Material, type Texture, type WebGLRenderer,
 } from 'three';
 import type { LightSpec, LoadedPack, Vec3 } from '../assets/pack';
+import type { Style } from '../motion/inspect';
 import type { StudioVariant } from '../../../lib/router';
 
 export type Owner = { label: string; dispose(): void };
@@ -25,33 +29,46 @@ export function own(label: string, release: () => void): Owner {
 
 export const owned = (): string[] => [...live].map((o) => o.label).sort();
 
-const SELECT_COLOR = new Color('#55aaa4');
+const SELECT_COLOR = new Color('#55aaa4'), FOCUS_COLOR = new Color('#c58ae5');
 export const direction = (azimuthDeg: number, elevationDeg: number): Vec3 => {
   const az = (azimuthDeg * Math.PI) / 180, el = (elevationDeg * Math.PI) / 180;
   return [Math.cos(el) * Math.sin(az), Math.sin(el), Math.cos(el) * Math.cos(az)]; // CAD spherical -> runtime basis
 };
 
+// Parts smaller than this get an invisible pick target of at least PICK_M, so an M1.5 screw can be clicked.
+const SMALL_M = 0.008, PICK_M = 0.011;
+const HIDDEN_LAYER = 1; // neither the camera, the raycaster nor the shadow pass sees layer 1
+
 export type Board = {
-  variant: StudioVariant; ids: ReadonlySet<string>; roots: Map<string, Group>; normal: Map<Mesh, Material>; highlighted: Map<Mesh, Material>;
-  keyLight: DirectionalLight; release(): void;
+  variant: StudioVariant; ids: ReadonlySet<string>; roots: Map<string, Group>; tiles: Map<string, Group>;
+  keyLight: DirectionalLight; style(id: string, style: Style): void; styleOf(id: string): Style; setClip(clip: { heightM: number; trayGuardX: number } | null): void;
+  materials(): Material[]; release(): void;
 };
 
-// One board's scene content. Instance roots clone the pack's part nodes, sharing their geometry (pack-cached); the
-// materials and the key light are new and belong to this board.
+// One board's scene content. Instance roots clone the pack's part nodes, sharing their geometry (pack-cached); every
+// material, tile, pick target and the key light are new and belong to this board.
 export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
-  const materials = new Map<string, MeshPhysicalMaterial>(), highlight = new Map<string, MeshPhysicalMaterial>();
+  const v = pack.manifest.variants[variant];
+  const sets = new Map<string, Record<Exclude<Style, 'hidden'>, MeshPhysicalMaterial>>();
   for (const [id, m] of Object.entries(pack.manifest.materials)) {
-    const base = new MeshPhysicalMaterial({ color: new Color(...m.baseColor), metalness: m.metallic, roughness: m.roughness,
+    const normal = new MeshPhysicalMaterial({ color: new Color(...m.baseColor), metalness: m.metallic, roughness: m.roughness,
       clearcoat: m.clearcoat ?? 0, clearcoatRoughness: m.clearcoatRoughness ?? 0 });
-    base.name = id;
-    materials.set(id, base);
-    const lit = base.clone();
-    lit.emissive = SELECT_COLOR;
-    lit.emissiveIntensity = 0.2; // a tint, not a wash: the finishes stay readable while selected
-    highlight.set(id, lit);
+    normal.name = id;
+    const selected = normal.clone();
+    selected.emissive = SELECT_COLOR;
+    selected.emissiveIntensity = 0.2; // a tint, not a wash: the finishes stay readable while selected
+    const focus = normal.clone();
+    focus.emissive = FOCUS_COLOR;
+    focus.emissiveIntensity = 0.26;
+    const ghost = normal.clone();
+    Object.assign(ghost, { transparent: true, opacity: 0.12, depthWrite: false });
+    sets.set(id, { normal, selected, focus, ghost });
   }
-  const roots = new Map<string, Group>(), normal = new Map<Mesh, Material>(), highlighted = new Map<Mesh, Material>();
-  for (const id of Object.keys(pack.manifest.variants[variant].tray.instances)) {
+  const meshSets = new Map<Mesh, Record<Exclude<Style, 'hidden'>, Material>>();
+  const pickMaterial = new MeshBasicMaterial({ visible: false });
+  const pickGeometries = new Map<string, BoxGeometry>();
+  const roots = new Map<string, Group>();
+  for (const id of Object.keys(v.tray.instances)) {
     const definitionId = pack.manifest.instances[id].definitionId;
     const root = new Group();
     root.name = id;
@@ -59,16 +76,87 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
     root.add(pack.definitions.get(definitionId)!.clone());
     root.traverse((o) => {
       if (!(o instanceof Mesh)) return;
-      const materialId = (o.material as Material).userData.materialId as string;
-      o.material = materials.get(materialId)!;
-      normal.set(o, materials.get(materialId)!);
-      highlighted.set(o, highlight.get(materialId)!);
+      const set = sets.get((o.material as Material).userData.materialId as string)!;
+      o.material = set.normal;
+      meshSets.set(o, set);
     });
+    const b = pack.manifest.definitions[definitionId].boundsM, size = b.max.map((x, i) => x - b.min[i]);
+    if (Math.max(...size) < SMALL_M) {
+      let geometry = pickGeometries.get(definitionId);
+      if (!geometry) pickGeometries.set(definitionId, geometry = new BoxGeometry(...size.map((s) => Math.max(s, PICK_M)) as Vec3));
+      const pick = new Mesh(geometry, pickMaterial);
+      pick.position.set(...b.min.map((x, i) => (x + b.max[i]) / 2) as Vec3);
+      pick.userData.pickTarget = true;
+      root.add(pick);
+    }
     roots.set(id, root);
   }
+  // Tray tiles: a flat matte card with a dashed edge on the floor for each instance with no trusted solid.
+  const tileFace = { normal: new MeshStandardMaterial({ color: '#2a2723', roughness: 0.95, metalness: 0 }),
+    ghost: new MeshStandardMaterial({ color: '#2a2723', roughness: 0.95, metalness: 0, transparent: true, opacity: 0.3, depthWrite: false }) };
+  const tileEdge: Record<'normal' | 'selected' | 'focus', LineDashedMaterial> = {
+    normal: new LineDashedMaterial({ color: '#8f8a82', dashSize: 0.003, gapSize: 0.002 }),
+    selected: new LineDashedMaterial({ color: '#55aaa4', dashSize: 0.003, gapSize: 0.0012 }),
+    focus: new LineDashedMaterial({ color: '#d9cfc2', dashSize: 0.003, gapSize: 0.0012 }),
+  };
+  const tileGeometries: BufferGeometry[] = [];
+  const tiles = new Map<string, Group>();
+  for (const [id, t] of Object.entries(v.tray.tiles)) {
+    const [hx, hz] = t.halfExtentsM;
+    const group = new Group();
+    group.name = id;
+    group.userData = { instanceId: id, tile: true };
+    group.position.set(t.centreM[0], v.floorYM + 0.0006, t.centreM[2]);
+    const faceGeometry = new PlaneGeometry(hx * 2, hz * 2);
+    faceGeometry.rotateX(-Math.PI / 2);
+    const face = new Mesh(faceGeometry, tileFace.normal);
+    face.receiveShadow = true;
+    face.userData.tileFace = true;
+    const edgeGeometry = new BufferGeometry();
+    edgeGeometry.setAttribute('position', new Float32BufferAttribute([-hx, 0.0002, -hz, hx, 0.0002, -hz, hx, 0.0002, hz, -hx, 0.0002, hz], 3));
+    const edge = new LineLoop(edgeGeometry, tileEdge.normal);
+    edge.computeLineDistances();
+    // The edge is drawing only: lines are raycast within a threshold of one world unit (a metre here), so a pickable
+    // edge would catch clicks meant for parts anywhere near the tray. The tile's face is what selects it.
+    edge.raycast = () => {};
+    group.add(face, edge);
+    tileGeometries.push(faceGeometry, edgeGeometry);
+    tiles.set(id, group);
+  }
+  // Styles swap this board's own materials; hidden moves a part to a layer nothing renders, picks or shadows.
+  const styles = new Map<string, Style>();
+  const style = (id: string, s: Style): void => {
+    if ((styles.get(id) ?? 'normal') === s) return;
+    styles.set(id, s);
+    const root = roots.get(id), tile = tiles.get(id);
+    root?.traverse((o) => {
+      o.layers.set(s === 'hidden' ? HIDDEN_LAYER : 0);
+      const set = o instanceof Mesh ? meshSets.get(o) : undefined;
+      if (set) (o as Mesh).material = set[s === 'hidden' ? 'normal' : s];
+    });
+    tile?.traverse((o) => {
+      o.layers.set(s === 'hidden' ? HIDDEN_LAYER : 0);
+      if (o instanceof Mesh) o.material = s === 'ghost' ? tileFace.ghost : tileFace.normal;
+      if (o instanceof LineLoop) o.material = s === 'selected' ? tileEdge.selected : s === 'focus' ? tileEdge.focus : tileEdge.normal;
+    });
+  };
+  // Deck clip: renderer clipping on this board's materials only. With clipIntersection a fragment is cut only when it is
+  // above the deck height and on the assembly's side of the tray guard, so the tray is never cut.
+  const clipPlanes = [new Plane(new Vector3(0, -1, 0), 0), new Plane(new Vector3(-1, 0, 0), 0)];
+  const partMaterials = (): MeshPhysicalMaterial[] => [...sets.values()].flatMap((s) => [s.normal, s.selected, s.focus, s.ghost]);
+  let clipping = false;
+  const setClip = (clip: { heightM: number; trayGuardX: number } | null): void => {
+    if (clip) { clipPlanes[0].constant = clip.heightM; clipPlanes[1].constant = clip.trayGuardX; }
+    if (Boolean(clip) === clipping) return;
+    clipping = Boolean(clip);
+    for (const m of partMaterials()) {
+      Object.assign(m, { clippingPlanes: clip ? clipPlanes : null, clipIntersection: true, clipShadows: true });
+      m.needsUpdate = true; // clipping changes the shader program
+    }
+  };
   // The key light's shadow rig depends only on the pack and board, so it survives step changes with its shadow map.
   const key = pack.manifest.lighting.lights.find((l) => l.id === 'key')!;
-  const kd = direction(key.azimuthDeg, key.elevationDeg), centre = pack.manifest.variants[variant].tray.camera.targetM;
+  const kd = direction(key.azimuthDeg, key.elevationDeg), centre = v.centreM;
   const keyLight = new DirectionalLight(new Color(...key.color), 0.9);
   keyLight.position.set(centre[0] + kd[0] * 1.5, centre[1] + kd[1] * 1.5, centre[2] + kd[2] * 1.5);
   keyLight.target.position.set(...centre);
@@ -77,11 +165,14 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
   keyLight.shadow.radius = 5;
   keyLight.shadow.bias = -0.0002;
   keyLight.shadow.normalBias = 0.0004;
-  Object.assign(keyLight.shadow.camera, { left: -0.45, right: 0.45, top: 0.45, bottom: -0.45, near: 0.5, far: 2.6 });
+  Object.assign(keyLight.shadow.camera, { left: -0.5, right: 0.5, top: 0.5, bottom: -0.5, near: 0.5, far: 2.6 });
+  const owned = (): Material[] => [...partMaterials(), pickMaterial, tileFace.normal, tileFace.ghost, ...Object.values(tileEdge)];
   return {
-    variant, ids: new Set(roots.keys()), roots, normal, highlighted, keyLight,
+    variant, ids: new Set([...roots.keys(), ...tiles.keys()]), roots, tiles, keyLight, style, styleOf: (id) => styles.get(id) ?? 'normal', setClip,
+    materials: owned,
     release: () => {
-      for (const m of [...materials.values(), ...highlight.values()]) m.dispose();
+      for (const m of owned()) m.dispose();
+      for (const g of [...pickGeometries.values(), ...tileGeometries]) g.dispose();
       keyLight.dispose(); // its shadow map render target
     },
   };

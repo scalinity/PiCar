@@ -1,30 +1,10 @@
-import { bytesToHex } from '@noble/hashes/utils';
-import { sha256 } from '@noble/hashes/sha256';
 import { useState } from 'react';
-import * as pdfjs from 'pdfjs-dist';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
-import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 import { update, useProgress } from '../lib/progress-store';
+import { forgetV40Pdf, loadV40Pdf } from '../lib/v40-pdf';
 
-pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
-
-// Lazy per-URL document cache; loading starts on first mount (ref callback),
-// not at module import.
-const docCache = new Map<string, Promise<PDFDocumentProxy>>();
-const loadDoc = (url: string) => {
-  let p = docCache.get(url);
-  if (!p) {
-    p = (async () => {
-      if (url !== '/content/pdf/picar-x-assembly.pdf') throw Error('UNLOCKED_PDF');
-      const response = await fetch(url); if (!response.ok) throw Error('PDF_UNAVAILABLE');
-      const data = new Uint8Array(await response.arrayBuffer());
-      if (bytesToHex(sha256(data)) !== '2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce') throw Error('V40_PDF_HASH');
-      return pdfjs.getDocument({ data }).promise;
-    })();
-    docCache.set(url, p);
-  }
-  return p;
-};
+// Loading starts on first mount (ref callback), not at module import.
+const loadDoc = loadV40Pdf;
 
 export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?: number }) {
   const { pdfLastPage } = useProgress();
@@ -83,7 +63,7 @@ export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?:
         </span>
       </div>
       <div className="pdf-canvas-wrap">
-        {failed && <p className="pdf-error" role="alert">Could not load the verified V40 PDF. Source text remains available.<button className="button" onClick={() => { docCache.delete(src); setFailed(false); }}>Retry exact booklet</button></p>}
+        {failed && <p className="pdf-error" role="alert">Could not load the verified V40 PDF. Source text remains available.<button className="button" onClick={() => { forgetV40Pdf(src); setFailed(false); }}>Retry exact booklet</button></p>}
         {doc && (
           <canvas
             key={`${page}@${zoom}`}
