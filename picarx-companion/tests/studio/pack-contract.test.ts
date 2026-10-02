@@ -106,8 +106,30 @@ describe('runtime pack validation', () => {
     const old = { ...parsed(), contract: 'picar-studio-pack/1' };
     expect((await problems(await consistent(old, glbBytes), glbBytes)).some((p) => p.startsWith('MANIFEST_CONTRACT'))).toBe(true);
     const m = parsed();
-    m.variants.rpi5.steps[6].operable = true; // S07 is PREVIEW_BLOCKED_RELATION
+    Object.assign(m.variants.rpi5.steps[6], { mode: 'preview', operable: true }); // S07 is PREVIEW_BLOCKED_RELATION
     expect((await problems(await consistent(m, glbBytes), glbBytes)).some((p) => p.startsWith('MANIFEST_OPERABLE_NOT_READY'))).toBe(true);
+  });
+
+  // Studio 2: modes, the tray's tiles and groups, and step parts.
+  const rejects = async (change: (m: any) => void, code: string) => {
+    const m = parsed();
+    change(m);
+    expect(await problems(await consistent(m, glbBytes), glbBytes)).toContain(code);
+  };
+  it('refuses a step whose mode and operability disagree', () => rejects((m) => { m.variants.rpi5.steps[2].operable = false; }, 'MANIFEST_STEP rpi5 S03'));
+  it('refuses review mode on a step that is not blocked or refused', () => rejects((m) => { Object.assign(m.variants.rpi5.steps[2], { mode: 'review', operable: false }); }, 'MANIFEST_REVIEW_DISPLAY rpi5 S03'));
+  it('refuses an opened step without a guided camera', () => rejects((m) => { m.variants['rpi-zero-2-w'].steps[6].camera = null; }, 'MANIFEST_OPENED_CAMERA rpi-zero-2-w S07'));
+  it('refuses a tray slot missing from every group, or listed twice', async () => {
+    await rejects((m) => { const g = m.variants.rpi5.tray.groups.find((x: any) => x.id === 'tools'); g.instanceIds.pop(); }, 'MANIFEST_TRAY_GROUPS rpi5');
+    await rejects((m) => { const g = m.variants.rpi5.tray.groups.find((x: any) => x.id === 'tools'); g.instanceIds.push(g.instanceIds[0]); }, 'MANIFEST_TRAY_GROUPS rpi5');
+  });
+  it('refuses a tile with no schematic entry, and a schematic entry that is also drawn', async () => {
+    await rejects((m) => { delete m.schematic['PX-V40-INS-WRENCH-001']; }, 'MANIFEST_TRAY_TILE rpi5 PX-V40-INS-WRENCH-001');
+    await rejects((m) => { m.schematic['PX-V40-INS-PLATE-A-001'] = { ...m.schematic['PX-V40-INS-WRENCH-001'] }; }, 'MANIFEST_SCHEMATIC_INSTANCE PX-V40-INS-PLATE-A-001');
+  });
+  it('refuses a step part that is neither drawn nor a tile, and a newly placed part with no placement', async () => {
+    await rejects((m) => { m.variants.rpi5.steps[0].stepParts.push({ instanceId: 'PX-V40-INS-WHEEL-FRONT-001', use: 'new' }); }, 'MANIFEST_STEP_PARTS rpi5 S01');
+    await rejects((m) => { m.variants.rpi5.steps[5].newlyPlacedInstanceIds.push('PX-V40-INS-BATTERY-001'); }, 'MANIFEST_NEWLY_PLACED rpi5 S06');
   });
 
   it('checks nothing past a manifest it cannot parse', async () => {

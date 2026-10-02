@@ -1,6 +1,6 @@
 {
- "packId": "7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a",
- "contract": "picar-studio-pack/2",
+ "packId": "466de8923467aca572814e543467268e420d5a668cd035ee92a5fbe64a8a9130",
+ "contract": "picar-studio-pack/3",
  "classification": {
   "capability": "provisionalReview",
   "label": "Assembly Studio preview pack, not a G-GEOMETRY runtime pack",
@@ -41,36 +41,45 @@
  },
  "source": {
   "repository": {
-   "head": "04b78057d8a52009e37f29df83cd44258c241e52",
-   "branch": "studio/s1-pro-full-remediation"
+   "head": "a26592259dcd6ef09fa791086148092653b1750e",
+   "branch": "studio/s2-all-steps"
   },
   "chain": {
-   "label": "s1r-01",
+   "label": "s2-01",
    "mode": "source-mode dev loop, not an M7 qualification",
    "closureVerify": {
     "status": "PASS",
-    "sha256": "25752ccd7f19530f0b6287caa004cac75a81290531c330a52ce969203ac5d283"
+    "sha256": "641d4f2f3472694a98b986ccb8a34e60f096a7ba48e8d5e675912808b22a19cf"
    },
    "studioChain": {
-    "sha256": "e222b43a7642dee6f76cc0a0787a06110fc7da288635e82c0160b15522bcc878"
+    "sha256": "5ea0bca29c31cf5f0367dbbe87e789725127d787d1fe387685f48e750bf01c85"
    }
   },
   "tessellation": {
-   "label": "s1r-01",
-   "meshesSha256": "c6361901932a36acf9cee36fc226fb1aecdde88aded96d0772274bcbc8cfc735",
-   "binSha256": "79fb47f982ad0c8d8bd05780904b16eb122f627a7ae972afe8fd9d9f6692ef88",
+   "label": "s2-01",
+   "meshesSha256": "3c38fa21dbacd32ae679dd59e32993c4543ec41555bbe1e139acd820ff77ec15",
+   "binSha256": "b4e19ab1891fba207150aa1ed1a26a68997f8a87e0be4645bdd1a47add662376",
    "linearDeflectionMm": 0.02,
    "angularDeflectionRad": 0.15
   },
   "revisionRegistry": {
    "path": "digital-twin/validation/expected/m7/instructional-revisions/revision-artifacts.json",
-   "sha256": "1282efda8dc59facc4b05d4120c8cc3f0fac8024b7afecaace28664f89566998"
+   "sha256": "eaf92fb4e7005749402dc4655b168d2d44859ff58bb5ae395c1bc118754752b9"
   },
   "inputs": {
-   "digital-twin/assemblies/v40/presentation/studio/stage.json": "bf2d2278e7d75a59976cb4f72882032fdc78245d8e45689174ab9b0972ea8723",
+   "digital-twin/assemblies/v40/presentation/studio/stage.json": "e01b6d942335a2f1d64e2727adb98ae0a232c96394886e1cecf9f8efefb6233b",
    "digital-twin/presentation/materials/studio-materials.json": "2b195241a3d5521158810020b8f95743f0de642b0273876fa5c215f25b235469",
    "docs/implementation/M7_G_INSTRUCTIONAL_ASSEMBLY_REPORT.json": "4a26bc817c98b0d45244c82579692507edebff053ea0d0ff6f65e667ed309d7d",
-   "digital-twin/assemblies/v40/presentation/instructional/product-scope.json": "dafa4956bb8928e60ae6096612456c3c9d80eec752a5760d61c23e7ee083f38e"
+   "digital-twin/assemblies/v40/presentation/instructional/product-scope.json": "dafa4956bb8928e60ae6096612456c3c9d80eec752a5760d61c23e7ee083f38e",
+   "digital-twin/validation/expected/m5/instructional-parameters.json": "9b37c3f37007a34149c62f2e46c404bee1c4588830f4d41922629e6b2b9501db",
+   "digital-twin/components/definitions/parts.json": "530ff54294ebf363de6fccd188878959ffa4c8766b8fc6769fdfb2c69022d5f3",
+   "digital-twin/components/instances/planned-stock.json": "9dc38dc8bac4b829d02e6d662c1391afb0e423bfc3efcc02415d869dbf51dec1",
+   "digital-twin/components/inventory/tools.json": "0710de2deda782c3c632e8de0a645d31d2b607ca27df3facfb5bf79ddcd84dc8",
+   "digital-twin/assemblies/v40/steps/source-intents.json": "4a499e80ee93c616637785ded22d4b28fc811a657ca6350b23f9deed64a6de7f",
+   "digital-twin/assemblies/v40/connections/cables.json": "df846346c918cd2ad5fbeafa30b4743ff9e3e549e402640c6cb45f47cf24100f",
+   "digital-twin/validation/m2/runtime-registry.json": "231b5df34360f923428db992afa2595185c610f0862353c715955e8fbdd05214",
+   "digital-twin/validation/m2/rpi5/compiled-graph.json": "832c7b4cda68a069574f5555a6ad5969224ab35565dab79c91125bf8fd5eb82b",
+   "digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json": "257e045b191fdff4ec7b04565c17d73231af3efc1f1cf47e837b9b928584f91e"
   },
   "m7Gate": {
    "gate": "G-INSTRUCTIONAL-ASSEMBLY",
@@ -98,8 +107,8 @@
  "assets": {
   "parts": {
    "path": "parts.glb",
-   "sha256": "006eebfa02ec60c6abb9228e19ab84ded54c9dff9f8c019ed01209c0e7062f92",
-   "bytes": 1697156
+   "sha256": "ca680e34b2ef3cd63472848c66e8523fd2c6dbe3dae2be23944bc6ea0b197757",
+   "bytes": 1707308
   }
  },
  "materials": {
@@ -1440,7 +1449,7 @@
     "meshSha256": "b5d495409dff212d046a15268ff58ded470e21a086aefcee011ec5979b0e1a6a",
     "record": {
      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json",
-     "sha256": "5d1c94e887f5663d220f13a3207d70db76e1eed18b0f75e109e7257b334f800e",
+     "sha256": "793150829f8f3b9954a0daa31af9c961b2b9388e9f1684007f7d2ebccb8429ac",
      "schema": "picar-studio-display-check/1"
     },
     "relation": {
@@ -1639,7 +1648,7 @@
       }
      ]
     },
-    "overlapsChain": "s1r-01",
+    "overlapsChain": "s2-01",
     "vendorCrossCheck": {
      "vendorSolids": 2689,
      "method": "footprint IoU of each detail part with the best-matching vendor solid; numbers only",
@@ -2083,11 +2092,11 @@
    "node": "PX-V40-DEF-PLATE-A",
    "artifact": {
     "path": "digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep",
-    "sha256": "2e0347dbef81f3d007fdf4d5278da74ac9cf1357e821ca50fab975e6fdbb40a0",
-    "bytes": 152497
+    "sha256": "2348ebddc570041cbe42d3d0ea9ce4f3da279bb24fb1df3607116be1db01b495",
+    "bytes": 153747
    },
-   "meshSha256": "04262cea7d4b819d271b04c886c7bc6d321a40f989a6c2377bc6335aab4b62a5",
-   "approximation": "Studio fidelity revision: Plate A outline rebuilt from the calibrated owner photograph as mirror-symmetric lines and true arcs; holes, slots, flanges and walls unchanged, non-engineering",
+   "meshSha256": "0a379b17f18c730bc7779d1036ef437b8b196103337ce9daa6b21f8c677e6cfd",
+   "approximation": "Studio fidelity correction: Plate A pan-hub screw holes rebuilt as two mirror-image rows of four from the calibrated owner photograph (the trace had four and three); outline as revision 01, every other feature unchanged, non-engineering",
    "boundsM": {
     "min": [
      -0.04750308145963713,
@@ -2104,8 +2113,8 @@
     {
      "index": 0,
      "materialId": "aluminium-bead-blasted",
-     "triangles": 15984,
-     "volumeMm3": 29573.40543225287
+     "triangles": 16324,
+     "volumeMm3": 29570.32667145238
     }
    ]
   },
@@ -2440,7 +2449,10 @@
   "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
    "name": "M2.5x18+6 standoff",
+   "recordName": "M2.5x18+6 standoff",
    "role": "printed-stock-1",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2449,7 +2461,10 @@
   "PX-V40-INS-M25X18PLUS6-STANDOFF-002": {
    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
    "name": "M2.5x18+6 standoff",
+   "recordName": "M2.5x18+6 standoff",
    "role": "printed-stock-2",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2458,7 +2473,10 @@
   "PX-V40-INS-M25X18PLUS6-STANDOFF-003": {
    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
    "name": "M2.5x18+6 standoff",
+   "recordName": "M2.5x18+6 standoff",
    "role": "printed-stock-3",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5"
    ]
@@ -2466,7 +2484,10 @@
   "PX-V40-INS-M25X18PLUS6-STANDOFF-004": {
    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
    "name": "M2.5x18+6 standoff",
+   "recordName": "M2.5x18+6 standoff",
    "role": "printed-stock-4",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5"
    ]
@@ -2474,7 +2495,10 @@
   "PX-V40-INS-M25X6-SCREW-001": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-1",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2483,7 +2507,10 @@
   "PX-V40-INS-M25X6-SCREW-002": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-2",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2492,7 +2519,10 @@
   "PX-V40-INS-M25X6-SCREW-003": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-3",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2501,7 +2531,10 @@
   "PX-V40-INS-M25X6-SCREW-004": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-4",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2510,7 +2543,10 @@
   "PX-V40-INS-PLATE-A-001": {
    "definitionId": "PX-V40-DEF-PLATE-A",
    "name": "Plate A",
+   "recordName": "Plate A",
    "role": "Plate A",
+   "componentClass": "plate",
+   "group": "plates",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2519,7 +2555,10 @@
   "PX-V40-INS-M25X18-STANDOFF-001": {
    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
    "name": "M2.5x18 standoff",
+   "recordName": "M2.5x18 standoff",
    "role": "printed-stock-1",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5"
    ]
@@ -2527,7 +2566,10 @@
   "PX-V40-INS-M25X18-STANDOFF-002": {
    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
    "name": "M2.5x18 standoff",
+   "recordName": "M2.5x18 standoff",
    "role": "printed-stock-2",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5"
    ]
@@ -2535,7 +2577,10 @@
   "PX-V40-INS-M25X18-STANDOFF-003": {
    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
    "name": "M2.5x18 standoff",
+   "recordName": "M2.5x18 standoff",
    "role": "printed-stock-3",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5"
    ]
@@ -2543,23 +2588,32 @@
   "PX-V40-INS-M25X18-STANDOFF-004": {
    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
    "name": "M2.5x18 standoff",
+   "recordName": "M2.5x18 standoff",
    "role": "printed-stock-4",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi5"
    ]
   },
   "PX-V40-INS-PI5-001": {
    "definitionId": "PX-V40-DEF-PI5",
-   "name": "Raspberry Pi5; user-supplied revision/header/cooler unresolved",
+   "name": "Raspberry Pi 5",
+   "recordName": "Raspberry Pi5; user-supplied revision/header/cooler unresolved",
    "role": "selected user board",
+   "componentClass": "piBoard",
+   "group": "electronics",
    "variants": [
     "rpi5"
    ]
   },
   "PX-V40-INS-USB-MICROPHONE-001": {
    "definitionId": "PX-V40-DEF-USB-MICROPHONE",
-   "name": "USB mini microphone accessory",
+   "name": "USB mini microphone",
+   "recordName": "USB mini microphone accessory",
    "role": "USB mini microphone accessory",
+   "componentClass": "connector",
+   "group": "electronics",
    "variants": [
     "rpi5"
    ]
@@ -2567,7 +2621,10 @@
   "PX-V40-INS-M25X6-SCREW-005": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-5",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2576,7 +2633,10 @@
   "PX-V40-INS-M25X6-SCREW-006": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-6",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2585,7 +2645,10 @@
   "PX-V40-INS-M25X6-SCREW-007": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-7",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2594,7 +2657,10 @@
   "PX-V40-INS-M25X6-SCREW-008": {
    "definitionId": "PX-V40-DEF-M25X6-SCREW",
    "name": "M2.5x6 screw",
+   "recordName": "M2.5x6 screw",
    "role": "printed-stock-8",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2602,8 +2668,11 @@
   },
   "PX-V40-INS-ROBOT-HAT-001": {
    "definitionId": "PX-V40-DEF-ROBOT-HAT",
-   "name": "Robot HAT revision unresolved",
+   "name": "Robot HAT",
+   "recordName": "Robot HAT revision unresolved",
    "role": "Robot HAT revision unresolved",
+   "componentClass": "robotHat",
+   "group": "electronics",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2612,7 +2681,10 @@
   "PX-V40-INS-M3-NUT-001": {
    "definitionId": "PX-V40-DEF-M3-NUT",
    "name": "M3 nut",
+   "recordName": "M3 nut",
    "role": "printed-stock-1",
+   "componentClass": "nut",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2621,7 +2693,10 @@
   "PX-V40-INS-M3-NUT-002": {
    "definitionId": "PX-V40-DEF-M3-NUT",
    "name": "M3 nut",
+   "recordName": "M3 nut",
    "role": "printed-stock-2",
+   "componentClass": "nut",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2630,7 +2705,10 @@
   "PX-V40-INS-M3-NUT-003": {
    "definitionId": "PX-V40-DEF-M3-NUT",
    "name": "M3 nut",
+   "recordName": "M3 nut",
    "role": "printed-stock-3",
+   "componentClass": "nut",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2639,7 +2717,10 @@
   "PX-V40-INS-M3-NUT-004": {
    "definitionId": "PX-V40-DEF-M3-NUT",
    "name": "M3 nut",
+   "recordName": "M3 nut",
    "role": "printed-stock-4",
+   "componentClass": "nut",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2648,7 +2729,10 @@
   "PX-V40-INS-M3X25-SCREW-001": {
    "definitionId": "PX-V40-DEF-M3X25-SCREW",
    "name": "M3x25 screw",
+   "recordName": "M3x25 screw",
    "role": "printed-stock-1",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2657,7 +2741,10 @@
   "PX-V40-INS-M3X25-SCREW-002": {
    "definitionId": "PX-V40-DEF-M3X25-SCREW",
    "name": "M3x25 screw",
+   "recordName": "M3x25 screw",
    "role": "printed-stock-2",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2666,7 +2753,10 @@
   "PX-V40-INS-M3X25-SCREW-003": {
    "definitionId": "PX-V40-DEF-M3X25-SCREW",
    "name": "M3x25 screw",
+   "recordName": "M3x25 screw",
    "role": "printed-stock-3",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2675,7 +2765,10 @@
   "PX-V40-INS-M3X25-SCREW-004": {
    "definitionId": "PX-V40-DEF-M3X25-SCREW",
    "name": "M3x25 screw",
+   "recordName": "M3x25 screw",
    "role": "printed-stock-4",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2683,8 +2776,11 @@
   },
   "PX-V40-INS-MOTOR-LEFT-001": {
    "definitionId": "PX-V40-DEF-MOTOR-LEFT",
-   "name": "TT Motor left role",
+   "name": "Left TT motor",
+   "recordName": "TT Motor left role",
    "role": "TT Motor left role",
+   "componentClass": "motor",
+   "group": "actuators",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2692,8 +2788,11 @@
   },
   "PX-V40-INS-MOTOR-RIGHT-001": {
    "definitionId": "PX-V40-DEF-MOTOR-RIGHT",
-   "name": "TT Motor right role",
+   "name": "Right TT motor",
+   "recordName": "TT Motor right role",
    "role": "TT Motor right role",
+   "componentClass": "motor",
+   "group": "actuators",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2702,7 +2801,10 @@
   "PX-V40-INS-SPRING-WASHER-001": {
    "definitionId": "PX-V40-DEF-SPRING-WASHER",
    "name": "Spring washer",
+   "recordName": "Spring washer",
    "role": "printed-stock-1",
+   "componentClass": "washer",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2711,7 +2813,10 @@
   "PX-V40-INS-SPRING-WASHER-002": {
    "definitionId": "PX-V40-DEF-SPRING-WASHER",
    "name": "Spring washer",
+   "recordName": "Spring washer",
    "role": "printed-stock-2",
+   "componentClass": "washer",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2720,7 +2825,10 @@
   "PX-V40-INS-SPRING-WASHER-003": {
    "definitionId": "PX-V40-DEF-SPRING-WASHER",
    "name": "Spring washer",
+   "recordName": "Spring washer",
    "role": "printed-stock-3",
+   "componentClass": "washer",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2729,7 +2837,10 @@
   "PX-V40-INS-SPRING-WASHER-004": {
    "definitionId": "PX-V40-DEF-SPRING-WASHER",
    "name": "Spring washer",
+   "recordName": "Spring washer",
    "role": "printed-stock-4",
+   "componentClass": "washer",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2738,7 +2849,10 @@
   "PX-V40-INS-BATTERY-001": {
    "definitionId": "PX-V40-DEF-BATTERY",
    "name": "Battery",
+   "recordName": "Battery",
    "role": "Battery",
+   "componentClass": "battery",
+   "group": "electronics",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2746,8 +2860,11 @@
   },
   "PX-V40-INS-HORN-PAN-001": {
    "definitionId": "PX-V40-DEF-HORN-PAN",
-   "name": "Horn pan role",
+   "name": "Pan servo horn",
+   "recordName": "Horn pan role",
    "role": "Horn pan role",
+   "componentClass": "horn",
+   "group": "actuators",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2756,7 +2873,10 @@
   "PX-V40-INS-M15X3-SCREW-001": {
    "definitionId": "PX-V40-DEF-M15X3-SCREW",
    "name": "M1.5x3 screw",
+   "recordName": "M1.5x3 screw",
    "role": "printed-stock-1",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2765,7 +2885,10 @@
   "PX-V40-INS-M15X3-SCREW-002": {
    "definitionId": "PX-V40-DEF-M15X3-SCREW",
    "name": "M1.5x3 screw",
+   "recordName": "M1.5x3 screw",
    "role": "printed-stock-2",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2774,7 +2897,10 @@
   "PX-V40-INS-M15X3-SCREW-003": {
    "definitionId": "PX-V40-DEF-M15X3-SCREW",
    "name": "M1.5x3 screw",
+   "recordName": "M1.5x3 screw",
    "role": "printed-stock-3",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2783,7 +2909,10 @@
   "PX-V40-INS-M15X3-SCREW-004": {
    "definitionId": "PX-V40-DEF-M15X3-SCREW",
    "name": "M1.5x3 screw",
+   "recordName": "M1.5x3 screw",
    "role": "printed-stock-4",
+   "componentClass": "screw",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2792,7 +2921,10 @@
   "PX-V40-INS-PLATE-H-001": {
    "definitionId": "PX-V40-DEF-PLATE-H",
    "name": "Plate H",
+   "recordName": "Plate H",
    "role": "Plate H",
+   "componentClass": "plate",
+   "group": "plates",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2801,7 +2933,10 @@
   "PX-V40-INS-R3080-RIVET-001": {
    "definitionId": "PX-V40-DEF-R3080-RIVET",
    "name": "R3080 rivet",
+   "recordName": "R3080 rivet",
    "role": "printed-stock-1",
+   "componentClass": "rivet",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2810,7 +2945,10 @@
   "PX-V40-INS-R3080-RIVET-002": {
    "definitionId": "PX-V40-DEF-R3080-RIVET",
    "name": "R3080 rivet",
+   "recordName": "R3080 rivet",
    "role": "printed-stock-2",
+   "componentClass": "rivet",
+   "group": "fasteners",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2819,7 +2957,10 @@
   "PX-V40-INS-ULTRASONIC-001": {
    "definitionId": "PX-V40-DEF-ULTRASONIC",
    "name": "Ultrasonic module",
+   "recordName": "Ultrasonic module",
    "role": "Ultrasonic module",
+   "componentClass": "ultrasonic",
+   "group": "electronics",
    "variants": [
     "rpi5",
     "rpi-zero-2-w"
@@ -2828,7 +2969,10 @@
   "PX-V40-INS-M25X11-STANDOFF-001": {
    "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
    "name": "M2.5x11 standoff",
+   "recordName": "M2.5x11 standoff",
    "role": "printed-stock-1",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi-zero-2-w"
    ]
@@ -2836,7 +2980,10 @@
   "PX-V40-INS-M25X11-STANDOFF-002": {
    "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
    "name": "M2.5x11 standoff",
+   "recordName": "M2.5x11 standoff",
    "role": "printed-stock-2",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi-zero-2-w"
    ]
@@ -2844,7 +2991,10 @@
   "PX-V40-INS-M25X30-STANDOFF-001": {
    "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
    "name": "M2.5x30 standoff",
+   "recordName": "M2.5x30 standoff",
    "role": "printed-stock-1",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi-zero-2-w"
    ]
@@ -2852,16 +3002,102 @@
   "PX-V40-INS-M25X30-STANDOFF-002": {
    "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
    "name": "M2.5x30 standoff",
+   "recordName": "M2.5x30 standoff",
    "role": "printed-stock-2",
+   "componentClass": "standoff",
+   "group": "fasteners",
    "variants": [
     "rpi-zero-2-w"
    ]
   },
   "PX-V40-INS-ZERO2W-001": {
    "definitionId": "PX-V40-DEF-ZERO2W",
-   "name": "Raspberry Pi Zero2W; user-supplied revision/header/cooler unresolved",
+   "name": "Raspberry Pi Zero 2 W",
+   "recordName": "Raspberry Pi Zero2W; user-supplied revision/header/cooler unresolved",
    "role": "selected user board",
+   "componentClass": "piBoard",
+   "group": "electronics",
    "variants": [
+    "rpi-zero-2-w"
+   ]
+  }
+ },
+ "schematic": {
+  "PX-V40-INS-SCREWDRIVER-01-001": {
+   "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+   "name": "Screwdriver 1",
+   "recordName": "First depicted screwdriver",
+   "role": "First depicted screwdriver",
+   "componentClass": "tool",
+   "group": "tools",
+   "representation": "No instructional geometry: the kit tool is listed as a tile.",
+   "variants": [
+    "rpi5",
+    "rpi-zero-2-w"
+   ]
+  },
+  "PX-V40-INS-SCREWDRIVER-02-001": {
+   "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+   "name": "Screwdriver 2",
+   "recordName": "Second depicted screwdriver",
+   "role": "Second depicted screwdriver",
+   "componentClass": "tool",
+   "group": "tools",
+   "representation": "No instructional geometry: the kit tool is listed as a tile.",
+   "variants": [
+    "rpi5",
+    "rpi-zero-2-w"
+   ]
+  },
+  "PX-V40-INS-RIBBON-FPC-001": {
+   "definitionId": "PX-V40-DEF-RIBBON-FPC",
+   "name": "FPC camera ribbon",
+   "recordName": "FPC camera ribbon",
+   "role": "FPC camera ribbon",
+   "componentClass": "cable",
+   "group": "cables",
+   "representation": "No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile.",
+   "variants": [
+    "rpi5",
+    "rpi-zero-2-w"
+   ]
+  },
+  "PX-V40-INS-WRENCH-001": {
+   "definitionId": "PX-V40-DEF-WRENCH",
+   "name": "Wrench",
+   "recordName": "Wrench",
+   "role": "Wrench",
+   "componentClass": "tool",
+   "group": "tools",
+   "representation": "No instructional geometry: the kit tool is listed as a tile.",
+   "variants": [
+    "rpi5",
+    "rpi-zero-2-w"
+   ]
+  },
+  "PX-V40-INS-HOOK-002": {
+   "definitionId": "PX-V40-DEF-HOOK",
+   "name": "Hook tape",
+   "recordName": "Hook tape stock",
+   "role": "preallocated S06 cut piece; amount unknown",
+   "componentClass": "consumable",
+   "group": "supplies",
+   "representation": "No defined shape: cut from tape stock, so it is shown as a tile.",
+   "variants": [
+    "rpi5",
+    "rpi-zero-2-w"
+   ]
+  },
+  "PX-V40-INS-LOOP-002": {
+   "definitionId": "PX-V40-DEF-LOOP",
+   "name": "Loop tape",
+   "recordName": "Loop tape stock",
+   "role": "preallocated S06 cut piece; amount unknown",
+   "componentClass": "consumable",
+   "group": "supplies",
+   "representation": "No defined shape: cut from tape stock, so it is shown as a tile.",
+   "variants": [
+    "rpi5",
     "rpi-zero-2-w"
    ]
   }
@@ -2871,132 +3107,17 @@
    "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
    "floorYM": -0.027549999999999998,
+   "centreM": [
+    -0.2632554659025689,
+    0.009575000000000004,
+    0.195386750483559
+   ],
    "tray": {
     "label": "Parts tray: presentation layout only, not a physical assembly state",
     "instances": {
-     "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       -0.02057649817049288
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X18PLUS6-STANDOFF-002": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       0.0031970045214033817
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X18PLUS6-STANDOFF-003": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       0.026970507213299643
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X18PLUS6-STANDOFF-004": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       0.050744009905195904
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-001": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.07394326125114403
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-002": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.09656826125114404
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-003": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.11919326125114404
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-004": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.14181826125114405
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
      "PX-V40-INS-PLATE-A-001": {
       "translationM": [
-       -0.18786730545390443,
+       -0.17376730545390442,
        -0.000049999999999997156,
        -0.02346324951644101
       ],
@@ -3007,13 +3128,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 1
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "plates"
      },
-     "PX-V40-INS-M25X18-STANDOFF-001": {
+     "PX-V40-INS-PLATE-H-001": {
       "translationM": [
-       -0.14286422399426735,
+       -0.2614250514481717,
        -0.027049999999999998,
-       0.17142350182950714
+       -0.01316324951644101
       ],
       "rotationXYZW": [
        0,
@@ -3021,59 +3144,16 @@
        0,
        1
       ],
-      "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-M25X18-STANDOFF-002": {
-      "translationM": [
-       -0.14286422399426735,
-       -0.027049999999999998,
-       0.1951970045214034
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-M25X18-STANDOFF-003": {
-      "translationM": [
-       -0.14286422399426735,
-       -0.027049999999999998,
-       0.21897050721329964
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-M25X18-STANDOFF-004": {
-      "translationM": [
-       -0.14286422399426735,
-       -0.027049999999999998,
-       0.2427440099051959
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 2
+      "orientation": "part-local",
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "plates"
      },
      "PX-V40-INS-PI5-001": {
       "translationM": [
-       -0.25423152944817173,
+       -0.1217342239942673,
        -0.02575,
-       0.06453675048355899
+       0.260536750483559
       ],
       "rotationXYZW": [
        0,
@@ -3082,13 +3162,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 2
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "electronics"
      },
      "PX-V40-INS-USB-MICROPHONE-001": {
       "translationM": [
-       -0.26523152944817174,
+       -0.1552342239942673,
        -0.027049999999999998,
-       0.08253675048355899
+       0.269536750483559
       ],
       "rotationXYZW": [
        0,
@@ -3097,73 +3179,15 @@
        1
       ],
       "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-M25X6-SCREW-005": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.126849250483559
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M25X6-SCREW-006": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.149474250483559
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M25X6-SCREW-007": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.17209925048355898
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M25X6-SCREW-008": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.19472425048355899
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "electronics"
      },
      "PX-V40-INS-ROBOT-HAT-001": {
       "translationM": [
-       -0.32823152944817174,
+       -0.1212342239942673,
        -0.027049999999999998,
-       0.04153675048355899
+       0.367536750483559
       ],
       "rotationXYZW": [
        0,
@@ -3172,131 +3196,47 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 4
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "electronics"
      },
-     "PX-V40-INS-M3-NUT-001": {
+     "PX-V40-INS-BATTERY-001": {
       "translationM": [
-       -0.32823152944817174,
-       -0.024149999999999998,
-       0.06288538204485883
+       -0.23971422399426728,
+       -0.027049999999999998,
+       0.172536750483559
       ],
       "rotationXYZW": [
        0,
        0,
-       0.7071067811865475,
-       0.7071067811865476
+       0,
+       1
       ],
       "orientation": "installed",
-      "firstStep": 5
+      "firstStep": 6,
+      "required": "introduced",
+      "group": "electronics"
      },
-     "PX-V40-INS-M3-NUT-002": {
+     "PX-V40-INS-ULTRASONIC-001": {
       "translationM": [
-       -0.32823152944817174,
-       -0.024149999999999998,
-       0.08758264516745846
+       -0.2335642239942673,
+       -0.02005,
+       0.251536750483559
       ],
       "rotationXYZW": [
        0,
        0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3-NUT-003": {
-      "translationM": [
-       -0.3306315294481717,
-       -0.024149999999999998,
-       0.11227990829005811
-      ],
-      "rotationXYZW": [
        0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
+       1
       ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3-NUT-004": {
-      "translationM": [
-       -0.3306315294481717,
-       -0.024149999999999998,
-       0.13697717141265778
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-001": {
-      "translationM": [
-       -0.32988152944817173,
-       -0.024274999999999998,
-       0.1611008029739576
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-002": {
-      "translationM": [
-       -0.32988152944817173,
-       -0.024274999999999998,
-       0.1846508029739576
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-003": {
-      "translationM": [
-       -0.3532315294481717,
-       -0.024274999999999998,
-       0.20820080297395763
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-004": {
-      "translationM": [
-       -0.3532315294481717,
-       -0.024274999999999998,
-       0.23175080297395764
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
+      "orientation": "part-local",
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "electronics"
      },
      "PX-V40-INS-MOTOR-LEFT-001": {
       "translationM": [
-       -0.4312315294481717,
+       -0.37358042944817177,
        -0.008049999999999998,
        0.03253675048355899
       ],
@@ -3307,13 +3247,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 5
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "actuators"
      },
      "PX-V40-INS-MOTOR-RIGHT-001": {
       "translationM": [
-       -0.4222315294481717,
+       -0.36458042944817176,
        -0.008049999999999998,
-       0.106536750483559
+       0.09753675048355899
       ],
       "rotationXYZW": [
        1,
@@ -3322,88 +3264,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-001": {
-      "translationM": [
-       -0.40223152944817175,
-       -0.02405101155956928,
-       0.12753468231058304
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-002": {
-      "translationM": [
-       -0.40223152944817175,
-       -0.02405101155956928,
-       0.1515058278870708
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-003": {
-      "translationM": [
-       -0.4030315294481717,
-       -0.02405101155956928,
-       0.17547697346355853
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-004": {
-      "translationM": [
-       -0.4030315294481717,
-       -0.02405101155956928,
-       0.19944811904004628
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-BATTERY-001": {
-      "translationM": [
-       -0.4872315294481717,
-       -0.027049999999999998,
-       -0.02346324951644101
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 6
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "actuators"
      },
      "PX-V40-INS-HORN-PAN-001": {
       "translationM": [
-       -0.46623152944817176,
+       -0.35908042944817176,
        -0.027049999999999998,
-       0.06838675048355898
+       0.11038675048355899
       ],
       "rotationXYZW": [
        0,
@@ -3412,13 +3281,491 @@
        0.7071067811865476
       ],
       "orientation": "installed",
-      "firstStep": 8
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "actuators"
+     },
+     "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
+      "translationM": [
+       -0.34808042944817175,
+       -0.027049999999999998,
+       0.141236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18PLUS6-STANDOFF-002": {
+      "translationM": [
+       -0.34808042944817175,
+       -0.027049999999999998,
+       0.16023675048355898
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18PLUS6-STANDOFF-003": {
+      "translationM": [
+       -0.34808042944817175,
+       -0.027049999999999998,
+       0.17923675048355897
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18PLUS6-STANDOFF-004": {
+      "translationM": [
+       -0.34808042944817175,
+       -0.027049999999999998,
+       0.198236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-001": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.025674999999999996,
+       0.141236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-002": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.025674999999999996,
+       0.16023675048355898
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-003": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.025674999999999996,
+       0.17923675048355897
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-004": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.025674999999999996,
+       0.198236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-005": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.02105,
+       0.21723675048355898
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-006": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.02105,
+       0.236236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-007": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.02105,
+       0.255236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-008": {
+      "translationM": [
+       -0.36705542944817177,
+       -0.02105,
+       0.274236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18-STANDOFF-001": {
+      "translationM": [
+       -0.39346792944817177,
+       -0.027049999999999998,
+       0.141236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18-STANDOFF-002": {
+      "translationM": [
+       -0.39346792944817177,
+       -0.027049999999999998,
+       0.16023675048355898
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18-STANDOFF-003": {
+      "translationM": [
+       -0.39346792944817177,
+       -0.027049999999999998,
+       0.17923675048355897
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18-STANDOFF-004": {
+      "translationM": [
+       -0.39346792944817177,
+       -0.027049999999999998,
+       0.198236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-001": {
+      "translationM": [
+       -0.4090279294481718,
+       -0.024149999999999998,
+       0.141236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-002": {
+      "translationM": [
+       -0.4090279294481718,
+       -0.024149999999999998,
+       0.16023675048355898
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-003": {
+      "translationM": [
+       -0.4114279294481718,
+       -0.024149999999999998,
+       0.17923675048355897
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-004": {
+      "translationM": [
+       -0.4114279294481718,
+       -0.024149999999999998,
+       0.198236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-001": {
+      "translationM": [
+       -0.42596292944817177,
+       -0.024274999999999998,
+       0.141236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-002": {
+      "translationM": [
+       -0.42596292944817177,
+       -0.024274999999999998,
+       0.16023675048355898
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-003": {
+      "translationM": [
+       -0.44931292944817175,
+       -0.024274999999999998,
+       0.17923675048355897
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-004": {
+      "translationM": [
+       -0.44931292944817175,
+       -0.024274999999999998,
+       0.198236750483559
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-001": {
+      "translationM": [
+       -0.4641615132647747,
+       -0.02405101155956928,
+       0.14124910952233916
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-002": {
+      "translationM": [
+       -0.4641615132647747,
+       -0.02405101155956928,
+       0.16024910952233914
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-003": {
+      "translationM": [
+       -0.4649615132647747,
+       -0.02405101155956928,
+       0.17924910952233916
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-004": {
+      "translationM": [
+       -0.4649615132647747,
+       -0.02405101155956928,
+       0.19824910952233915
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
      },
      "PX-V40-INS-M15X3-SCREW-001": {
       "translationM": [
-       -0.4506190294481717,
+       -0.47802651326477474,
        -0.02405,
-       0.091624250483559
+       0.141236750483559
       ],
       "rotationXYZW": [
        0,
@@ -3427,13 +3774,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 8
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
      },
      "PX-V40-INS-M15X3-SCREW-002": {
       "translationM": [
-       -0.4506190294481717,
+       -0.47802651326477474,
        -0.02405,
-       0.11239925048355899
+       0.16023675048355898
       ],
       "rotationXYZW": [
        0,
@@ -3442,13 +3791,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 8
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
      },
      "PX-V40-INS-M15X3-SCREW-003": {
       "translationM": [
-       -0.4506190294481717,
+       -0.47802651326477474,
        -0.02405,
-       0.133174250483559
+       0.17923675048355897
       ],
       "rotationXYZW": [
        0,
@@ -3457,13 +3808,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 8
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
      },
      "PX-V40-INS-M15X3-SCREW-004": {
       "translationM": [
-       -0.4506190294481717,
+       -0.47802651326477474,
        -0.02405,
-       0.15394925048355898
+       0.198236750483559
       ],
       "rotationXYZW": [
        0,
@@ -3472,28 +3825,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 8
-     },
-     "PX-V40-INS-PLATE-H-001": {
-      "translationM": [
-       -0.4791250514481717,
-       -0.027049999999999998,
-       0.183636750483559
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "part-local",
-      "firstStep": 9
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
      },
      "PX-V40-INS-R3080-RIVET-001": {
       "translationM": [
-       -0.45173152944817174,
+       -0.5035140132647747,
        -0.026049999999999997,
-       0.21433675048355902
+       0.141236750483559
       ],
       "rotationXYZW": [
        0,
@@ -3502,13 +3842,15 @@
        1
       ],
       "orientation": "part-local",
-      "firstStep": 9
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "fasteners"
      },
      "PX-V40-INS-R3080-RIVET-002": {
       "translationM": [
-       -0.45173152944817174,
+       -0.5035140132647747,
        -0.026049999999999997,
-       0.237336750483559
+       0.16023675048355898
       ],
       "rotationXYZW": [
        0,
@@ -3517,41 +3859,337 @@
        1
       ],
       "orientation": "part-local",
-      "firstStep": 9
-     },
-     "PX-V40-INS-ULTRASONIC-001": {
-      "translationM": [
-       -0.5521804294481718,
-       -0.02005,
-       -0.02346324951644101
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "part-local",
-      "firstStep": 9
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "fasteners"
      }
+    },
+    "tiles": {
+     "PX-V40-INS-HOOK-002": {
+      "centreM": [
+       -0.3437804294481717,
+       -0.027049999999999998,
+       0.327236750483559
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 6,
+      "required": "used",
+      "group": "supplies"
+     },
+     "PX-V40-INS-LOOP-002": {
+      "centreM": [
+       -0.3437804294481717,
+       -0.027049999999999998,
+       0.388236750483559
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 6,
+      "required": "used",
+      "group": "supplies"
+     },
+     "PX-V40-INS-RIBBON-FPC-001": {
+      "centreM": [
+       -0.5590140132647748,
+       -0.027049999999999998,
+       0.0025367504835589897
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 3,
+      "required": "introduced",
+      "group": "cables"
+     },
+     "PX-V40-INS-SCREWDRIVER-01-001": {
+      "centreM": [
+       -0.5590140132647748,
+       -0.027049999999999998,
+       0.07653675048355899
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 1,
+      "required": "tool",
+      "group": "tools"
+     },
+     "PX-V40-INS-SCREWDRIVER-02-001": {
+      "centreM": [
+       -0.5590140132647748,
+       -0.027049999999999998,
+       0.13753675048355898
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 1,
+      "required": "tool",
+      "group": "tools"
+     },
+     "PX-V40-INS-WRENCH-001": {
+      "centreM": [
+       -0.5590140132647748,
+       -0.027049999999999998,
+       0.19853675048355898
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 5,
+      "required": "tool",
+      "group": "tools"
+     }
+    },
+    "groups": [
+     {
+      "id": "plates",
+      "label": "Plates",
+      "instanceIds": [
+       "PX-V40-INS-PLATE-A-001",
+       "PX-V40-INS-PLATE-H-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.29078042944817173,
+        -0.027049999999999998,
+        -0.02346324951644101
+       ],
+       "max": [
+        -0.1262642239942673,
+        -0.000049999999999997156,
+        0.150536750483559
+       ]
+      },
+      "labelM": [
+       -0.29878042944817174,
+       -0.027049999999999998,
+       -0.02346324951644101
+      ]
+     },
+     {
+      "id": "electronics",
+      "label": "Electronics",
+      "instanceIds": [
+       "PX-V40-INS-PI5-001",
+       "PX-V40-INS-USB-MICROPHONE-001",
+       "PX-V40-INS-ROBOT-HAT-001",
+       "PX-V40-INS-BATTERY-001",
+       "PX-V40-INS-ULTRASONIC-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.23971422399426728,
+        -0.027049999999999998,
+        0.172536750483559
+       ],
+       "max": [
+        -0.1207342239942673,
+        -0.005649999999999997,
+        0.367536750483559
+       ]
+      },
+      "labelM": [
+       -0.2477142239942673,
+       -0.027049999999999998,
+       0.172536750483559
+      ]
+     },
+     {
+      "id": "actuators",
+      "label": "Motors and servos",
+      "instanceIds": [
+       "PX-V40-INS-MOTOR-LEFT-001",
+       "PX-V40-INS-MOTOR-RIGHT-001",
+       "PX-V40-INS-HORN-PAN-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.37608042944817177,
+        -0.027049999999999998,
+        -0.02346324951644101
+       ],
+       "max": [
+        -0.34208042944817174,
+        -0.008049999999999998,
+        0.11423675048355898
+       ]
+      },
+      "labelM": [
+       -0.3840804294481717,
+       -0.027049999999999998,
+       -0.02346324951644101
+      ]
+     },
+     {
+      "id": "fasteners",
+      "label": "Fasteners",
+      "instanceIds": [
+       "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+       "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+       "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+       "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+       "PX-V40-INS-M25X6-SCREW-001",
+       "PX-V40-INS-M25X6-SCREW-002",
+       "PX-V40-INS-M25X6-SCREW-003",
+       "PX-V40-INS-M25X6-SCREW-004",
+       "PX-V40-INS-M25X18-STANDOFF-001",
+       "PX-V40-INS-M25X18-STANDOFF-002",
+       "PX-V40-INS-M25X18-STANDOFF-003",
+       "PX-V40-INS-M25X18-STANDOFF-004",
+       "PX-V40-INS-M25X6-SCREW-005",
+       "PX-V40-INS-M25X6-SCREW-006",
+       "PX-V40-INS-M25X6-SCREW-007",
+       "PX-V40-INS-M25X6-SCREW-008",
+       "PX-V40-INS-M3-NUT-001",
+       "PX-V40-INS-M3-NUT-002",
+       "PX-V40-INS-M3-NUT-003",
+       "PX-V40-INS-M3-NUT-004",
+       "PX-V40-INS-M3X25-SCREW-001",
+       "PX-V40-INS-M3X25-SCREW-002",
+       "PX-V40-INS-M3X25-SCREW-003",
+       "PX-V40-INS-M3X25-SCREW-004",
+       "PX-V40-INS-SPRING-WASHER-001",
+       "PX-V40-INS-SPRING-WASHER-002",
+       "PX-V40-INS-SPRING-WASHER-003",
+       "PX-V40-INS-SPRING-WASHER-004",
+       "PX-V40-INS-M15X3-SCREW-001",
+       "PX-V40-INS-M15X3-SCREW-002",
+       "PX-V40-INS-M15X3-SCREW-003",
+       "PX-V40-INS-M15X3-SCREW-004",
+       "PX-V40-INS-R3080-RIVET-001",
+       "PX-V40-INS-R3080-RIVET-002"
+      ],
+      "boundsM": {
+       "min": [
+        -0.5060140132647748,
+        -0.027049999999999998,
+        0.13788811892225913
+       ],
+       "max": [
+        -0.34558042944817174,
+        -0.003049999999999997,
+        0.276549250483559
+       ]
+      },
+      "labelM": [
+       -0.5140140132647748,
+       -0.027049999999999998,
+       0.136236750483559
+      ]
+     },
+     {
+      "id": "supplies",
+      "label": "Supplies",
+      "instanceIds": [
+       "PX-V40-INS-HOOK-002",
+       "PX-V40-INS-LOOP-002"
+      ],
+      "boundsM": {
+       "min": [
+        -0.35878042944817173,
+        -0.027049999999999998,
+        0.30123675048355897
+       ],
+       "max": [
+        -0.32878042944817176,
+        -0.027049999999999998,
+        0.414236750483559
+       ]
+      },
+      "labelM": [
+       -0.36678042944817174,
+       -0.027049999999999998,
+       0.30123675048355897
+      ]
+     },
+     {
+      "id": "cables",
+      "label": "Cables",
+      "instanceIds": [
+       "PX-V40-INS-RIBBON-FPC-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.5740140132647749,
+        -0.027049999999999998,
+        -0.02346324951644101
+       ],
+       "max": [
+        -0.5440140132647748,
+        -0.027049999999999998,
+        0.02853675048355899
+       ]
+      },
+      "labelM": [
+       -0.5820140132647749,
+       -0.027049999999999998,
+       -0.02346324951644101
+      ]
+     },
+     {
+      "id": "tools",
+      "label": "Tools",
+      "instanceIds": [
+       "PX-V40-INS-SCREWDRIVER-01-001",
+       "PX-V40-INS-SCREWDRIVER-02-001",
+       "PX-V40-INS-WRENCH-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.5740140132647749,
+        -0.027049999999999998,
+        0.05053675048355899
+       ],
+       "max": [
+        -0.5440140132647748,
+        -0.027049999999999998,
+        0.224536750483559
+       ]
+      },
+      "labelM": [
+       -0.5820140132647749,
+       -0.027049999999999998,
+       0.05053675048355899
+      ]
+     }
+    ],
+    "inventory": {
+     "required": 50,
+     "modeled": 44,
+     "tiles": 6,
+     "canonical": 156,
+     "notRequired": 106,
+     "spares": 37,
+     "scope": "Every instance printed steps 1 to 9 introduce or use, and the kit tools they require",
+     "canonicalSource": "digital-twin/components/instances/planned-stock.json: printed-stock claims, not a count of the owner's loose kit"
     },
     "camera": {
      "targetM": [
-      -0.25233867399426735,
-      0.009575000000000004,
-      0.11108375586735152
+      -0.34737411862952106,
+      -0.013549999999999998,
+      0.195386750483559
      ],
      "positionM": [
-      -0.5591810960544389,
-      0.7907798287496247,
-      0.8002631196083351
+      -0.8251594077344253,
+      0.7510662956224393,
+      0.19538675048355902
      ],
      "verticalFovDeg": 30,
      "spec": {
-      "subject": "everything",
-      "azimuthDeg": -24,
-      "elevationDeg": 46,
-      "fit": 0.85
+      "subject": "tray",
+      "azimuthDeg": -90,
+      "elevationDeg": 58,
+      "fit": 0.74
      }
     }
    },
@@ -3568,6 +4206,7 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "preview",
      "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
@@ -3581,6 +4220,81 @@
       "PX-V40-INS-PLATE-A-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+      "PX-V40-INS-M25X6-SCREW-001",
+      "PX-V40-INS-M25X6-SCREW-002",
+      "PX-V40-INS-M25X6-SCREW-003",
+      "PX-V40-INS-M25X6-SCREW-004",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-01",
+      "parts": "Plate A ×1. Pi4/Pi5: M2.5x18+6 nylon standoff ×4. Zero2W: M2.5x30 ×2 and M2.5x11 ×2.",
+      "hardware": "M2.5x6 screw ×4 for every branch.",
+      "tools": "Matched screwdriver; hand placement of nylon standoffs. Driver size/torque unresolved.",
+      "orientation": "Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram.",
+      "connection": "Plate-A rear-deck mounting holes -> screw bearing stack -> standoff base faces; all standoff axes normal to the mounting plane. Four physical support positions; branch chooses support types.",
+      "variant": "4× M2.5x18+6"
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-01",
+       "severity": "caution",
+       "text": "Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
        "translationM": [
@@ -4021,6 +4735,7 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "preview",
      "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M25X18-STANDOFF-001",
@@ -4031,6 +4746,74 @@
       "PX-V40-INS-USB-MICROPHONE-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M25X18-STANDOFF-001",
+      "PX-V40-INS-M25X18-STANDOFF-002",
+      "PX-V40-INS-M25X18-STANDOFF-003",
+      "PX-V40-INS-M25X18-STANDOFF-004",
+      "PX-V40-INS-PI5-001",
+      "PX-V40-INS-USB-MICROPHONE-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PI5-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-02",
+      "parts": "Selected Raspberry Pi ×1, user-supplied. Pi4/Pi5: M2.5x18 standoff ×4; USB mini microphone ×1 shown in the shared panel. Zero2W: M2.5x18+6 standoff ×2.",
+      "hardware": "No additional separate screw is prescribed in this panel; upper standoffs fasten the board.",
+      "tools": "Hand fastening/matched tool if needed; no guessed torque.",
+      "orientation": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+      "connection": "Pi mounting holes -> step-1 supports; upper standoff bearing faces clamp the selected board. Zero2W uses two short support positions, leaving tall HAT supports available.",
+      "variant": "Pi5; 4× M2.5x18; USB microphone panel"
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-02",
+       "severity": "caution",
+       "text": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X18-STANDOFF-001": {
        "translationM": [
@@ -4520,10 +5303,40 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [],
      "introducedZeroSolidInstanceIds": [
       "PX-V40-INS-RIBBON-FPC-001"
+     ],
+     "newlyPlacedInstanceIds": [],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-RIBBON-FPC-001",
+       "use": "new"
+      },
+      {
+       "instanceId": "PX-V40-INS-PI5-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-03",
+      "parts": "One selected camera ribbon: Pi4 FFC; Pi5/Zero2W FPC. Alternative cable stock remains noninstalled.",
+      "hardware": "None.",
+      "tools": "Hands; do not force latch.",
+      "orientation": "Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”.",
+      "connection": "Selected cable Pi-end -> selected Pi camera connector; latch open/insertion/latch closed are separate presentation phases of one atomic connection operation. Camera end remains free.",
+      "variant": "FPC"
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-03",
+       "severity": "caution",
+       "text": "Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”."
+      }
      ],
      "placements": {
       "PX-V40-INS-M25X18-STANDOFF-001": {
@@ -4803,21 +5616,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.007300000000000001,
-       0.0752683752417795
+       -0.0006605415860734994,
+       0.02825,
+       0.031536750483558994
       ],
       "positionM": [
-       -0.20207136167860773,
-       0.2058521741196942,
-       0.3534913045536354
+       -0.10854446207292615,
+       0.2929284397265151,
+       0.3279453859434246
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "placed-parts",
+       "azimuthDeg": -20,
+       "elevationDeg": 40,
+       "fit": 2
       }
      }
     },
@@ -4833,7 +5646,8 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M25X6-SCREW-005",
       "PX-V40-INS-M25X6-SCREW-006",
@@ -4842,6 +5656,81 @@
       "PX-V40-INS-ROBOT-HAT-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M25X6-SCREW-005",
+      "PX-V40-INS-M25X6-SCREW-006",
+      "PX-V40-INS-M25X6-SCREW-007",
+      "PX-V40-INS-M25X6-SCREW-008",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-ROBOT-HAT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-003",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18-STANDOFF-004",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-PI5-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-04",
+      "parts": "Robot HAT ×1.",
+      "hardware": "M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.",
+      "tools": "Matched screwdriver.",
+      "orientation": "No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.",
+      "connection": "HAT GPIO connector -> Pi header; HAT holes -> four prepared support positions; screw bearing faces -> HAT/support stack.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-04",
+       "severity": "caution",
+       "text": "No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X18-STANDOFF-001": {
        "translationM": [
@@ -5345,21 +6234,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.010600000000000002,
-       0.0752683752417795
+       -0.0011605415860734994,
+       0.04070000000000001,
+       0.04303675048355899
       ],
       "positionM": [
-       -0.20380053041072418,
-       0.21085064482658586,
-       0.35587130113396453
+       -0.12829958462880922,
+       0.19785249979509303,
+       0.21802863071358675
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
+       "subject": "new",
        "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "elevationDeg": 36,
+       "fit": 1.6
       }
      }
     },
@@ -5375,7 +6264,8 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M3-NUT-001",
       "PX-V40-INS-M3-NUT-002",
@@ -5393,6 +6283,114 @@
       "PX-V40-INS-SPRING-WASHER-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M3-NUT-001",
+      "PX-V40-INS-M3-NUT-002",
+      "PX-V40-INS-M3-NUT-003",
+      "PX-V40-INS-M3-NUT-004",
+      "PX-V40-INS-M3X25-SCREW-001",
+      "PX-V40-INS-M3X25-SCREW-002",
+      "PX-V40-INS-M3X25-SCREW-003",
+      "PX-V40-INS-M3X25-SCREW-004",
+      "PX-V40-INS-MOTOR-LEFT-001",
+      "PX-V40-INS-MOTOR-RIGHT-001",
+      "PX-V40-INS-SPRING-WASHER-001",
+      "PX-V40-INS-SPRING-WASHER-002",
+      "PX-V40-INS-SPRING-WASHER-003",
+      "PX-V40-INS-SPRING-WASHER-004"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-MOTOR-LEFT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-MOTOR-RIGHT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-WRENCH-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-05",
+      "parts": "TT motor ×2; separate left/right role instances.",
+      "hardware": "M3x25 screw ×4; spring washer ×4; M3 nut ×4.",
+      "tools": "Matched screwdriver and kit wrench; no assumed wrench size or torque.",
+      "orientation": "Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role.",
+      "connection": "Each motor mounting interface -> Plate A rear side-wall holes through the exact screw/washer/nut stack. Shaft interfaces remain available for rear wheels.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-05",
+       "severity": "caution",
+       "text": "Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X18-STANDOFF-001": {
        "translationM": [
@@ -6362,21 +7360,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.010600000000000002,
-       0.0752683752417795
+       0.00025,
+       -0.0125,
+       0.023
       ],
       "positionM": [
-       -0.20380053041072418,
-       0.21085064482658586,
-       0.35587130113396453
+       -0.16870844880947453,
+       0.06287179443254771,
+       -0.1783568383678361
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "new",
+       "azimuthDeg": -140,
+       "elevationDeg": 16,
+       "fit": 1.3
       }
      }
     },
@@ -6392,11 +7390,49 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-BATTERY-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-BATTERY-001",
+       "use": "new"
+      },
+      {
+       "instanceId": "PX-V40-INS-HOOK-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-LOOP-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-06",
+      "parts": "Battery ×1 staged; hook tape piece ×1 and loop tape piece ×1 allocated from supplied material.",
+      "hardware": "No mechanical fastener.",
+      "tools": "Hands; cutting tool only if material actually requires cutting, not an invented mandatory tool.",
+      "orientation": "Hook on battery, loop on chassis underside as printed.",
+      "connection": "Hook piece -> battery contact surface; loop piece -> underside of Plate A. Adhesive extents/thickness unresolved, not rigid dimensional constraints.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-06",
+       "severity": "caution",
+       "text": "Hook on battery, loop on chassis underside as printed."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X18-STANDOFF-001": {
        "translationM": [
@@ -6936,21 +7972,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.010600000000000002,
-       0.0752683752417795
+       -0.2802473267212195,
+       -0.01705,
+       0.293386750483559
       ],
       "positionM": [
-       -0.20380053041072418,
-       0.21085064482658586,
-       0.35587130113396453
+       -0.6522336271107001,
+       0.45999448247386626,
+       0.5081531411482787
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "tray-parts",
+       "azimuthDeg": -60,
+       "elevationDeg": 48,
+       "fit": 1.15
       }
      }
     },
@@ -6966,9 +8002,48 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "review",
      "operable": false,
      "introducedInstanceIds": [],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-BATTERY-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-BATTERY-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-ROBOT-HAT-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [
+      "PX-V40-INS-BATTERY-001",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-07",
+      "parts": "No new battery: use the same instance prepared in S06.",
+      "hardware": "No new fastener.",
+      "tools": "Hands.",
+      "orientation": "Connector orientation must match its keyed interface; connected does not mean switch ON.",
+      "connection": "Battery hook surface -> A loop surface; battery lead -> HAT BATTERY connector. Mount compliance and exact envelope require evidence.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-07",
+       "severity": "caution",
+       "text": "Connector orientation must match its keyed interface; connected does not mean switch ON."
+      }
+     ],
      "placements": {
       "PX-V40-INS-BATTERY-001": {
        "translationM": [
@@ -7431,7 +8506,7 @@
       {
        "definitionId": "PX-V40-DEF-PI5",
        "status": "CHECKED",
-       "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
+       "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
        "overlaps": [
         {
          "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
@@ -7559,29 +8634,29 @@
      "source": {
       "kind": "closure",
       "file": "chain/closures/rpi5-S07-closure.json",
-      "sha256": "76ce90825500b888ec80b9690cbdafb1dde497f474634d3cb7e41ac5c2b3df39",
+      "sha256": "3635864d3b873283e4b566ed70d8591f65a749fd652c4116eae94a7dc4b00fc7",
       "status": "BLOCKED",
-      "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
+      "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
       "closureVerify": "BLOCKED"
      },
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.010600000000000002,
-       0.0752683752417795
+       -0.0011605415860734994,
+       0.013100000000000002,
+       0.0657683752417795
       ],
       "positionM": [
-       -0.20380053041072418,
-       0.21085064482658586,
-       0.35587130113396453
+       -0.19460182428774916,
+       0.04854688519025503,
+       0.3420311575538156
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "focus",
+       "azimuthDeg": -35,
+       "elevationDeg": 6,
+       "fit": 1.25
       }
      }
     },
@@ -7597,7 +8672,8 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-HORN-PAN-001",
       "PX-V40-INS-M15X3-SCREW-001",
@@ -7606,6 +8682,65 @@
       "PX-V40-INS-M15X3-SCREW-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-HORN-PAN-001",
+      "PX-V40-INS-M15X3-SCREW-001",
+      "PX-V40-INS-M15X3-SCREW-002",
+      "PX-V40-INS-M15X3-SCREW-003",
+      "PX-V40-INS-M15X3-SCREW-004"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-HORN-PAN-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-08",
+      "parts": "Pan-role servo arm/horn ×1.",
+      "hardware": "M1.5x3 screw ×4.",
+      "tools": "Matched screwdriver.",
+      "orientation": "Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body.",
+      "connection": "Pan horn mounting holes -> Plate A front mounting holes; preserve spline/bore access for S19.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-08",
+       "severity": "caution",
+       "text": "Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body."
+      }
+     ],
      "placements": {
       "PX-V40-INS-BATTERY-001": {
        "translationM": [
@@ -7635,9 +8770,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-001": {
        "translationM": [
-        0.013346228239845262,
+        0.014863511379744978,
         0.002,
-        0.16692456479690523
+        0.16726381970895599
        ],
        "rotationXYZW": [
         0,
@@ -7648,9 +8783,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-002": {
        "translationM": [
-        0.009284332688588007,
+        0.008972559213448151,
         0.002,
-        0.16692456479690523
+        0.1673395352640522
        ],
        "rotationXYZW": [
         0,
@@ -7661,9 +8796,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-003": {
        "translationM": [
-        -0.007350096711798839,
+        -0.00799588827494239,
         0.002,
-        0.16750483558994197
+        0.16755762826233783
        ],
        "rotationXYZW": [
         0,
@@ -7674,9 +8809,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-004": {
        "translationM": [
-        -0.014119922630560928,
+        -0.013886840441239216,
         0.002,
-        0.16750483558994197
+        0.16763334381743406
        ],
        "rotationXYZW": [
         0,
@@ -8133,7 +9268,7 @@
       {
        "definitionId": "PX-V40-DEF-PI5",
        "status": "CHECKED",
-       "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
+       "closureRfc8785Sha256": "e05c3a809491cbe45f20174fb1b7676769527ff754db0cfe3cd1282148c4ff56",
        "overlaps": [
         {
          "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
@@ -8200,9 +9335,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         0.013346228239845262,
+         0.014863511379744978,
          0.032,
-         0.16692456479690523
+         0.16726381970895599
         ],
         "rotationXYZW": [
          0,
@@ -8231,9 +9366,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         0.009284332688588007,
+         0.008972559213448151,
          0.032,
-         0.16692456479690523
+         0.1673395352640522
         ],
         "rotationXYZW": [
          0,
@@ -8262,9 +9397,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         -0.007350096711798839,
+         -0.00799588827494239,
          0.032,
-         0.16750483558994197
+         0.16755762826233783
         ],
         "rotationXYZW": [
          0,
@@ -8293,9 +9428,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         -0.014119922630560928,
+         -0.013886840441239216,
          0.032,
-         0.16750483558994197
+         0.16763334381743406
         ],
         "rotationXYZW": [
          0,
@@ -8384,9 +9519,9 @@
      "source": {
       "kind": "closure",
       "file": "chain/closures/rpi5-S08-closure.json",
-      "sha256": "ed16c9bbd7a85f2581c3b5defc452fdda96a427fe9717b079667daa5e000f27c",
+      "sha256": "a9b7fb66feeaaf43cb071404dabc346bbaaeb2e7effe9ddb293dbf532b626b89",
       "status": "COMPLETE",
-      "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
+      "closureRfc8785Sha256": "e05c3a809491cbe45f20174fb1b7676769527ff754db0cfe3cd1282148c4ff56",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [
@@ -8398,21 +9533,21 @@
      ],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.010600000000000002,
-       0.0752683752417795
+       0.0003868471953578343,
+       0.0003125,
+       0.16731141199226307
       ],
       "positionM": [
-       -0.20380053041072418,
-       0.21085064482658586,
-       0.35587130113396453
+       -0.03236530936404749,
+       0.09162961079526523,
+       0.2986731370529069
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "new",
+       "azimuthDeg": -14,
+       "elevationDeg": 34,
+       "fit": 2.4
       }
      }
     },
@@ -8428,6 +9563,7 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "review",
      "operable": false,
      "introducedInstanceIds": [
       "PX-V40-INS-PLATE-H-001",
@@ -8436,6 +9572,57 @@
       "PX-V40-INS-ULTRASONIC-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-ULTRASONIC-001",
+      "PX-V40-INS-PLATE-H-001",
+      "PX-V40-INS-R3080-RIVET-001",
+      "PX-V40-INS-R3080-RIVET-002"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-ULTRASONIC-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-H-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-R3080-RIVET-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-R3080-RIVET-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [
+      "PX-V40-INS-HORN-PAN-001",
+      "PX-V40-INS-PLATE-H-001",
+      "PX-V40-INS-ULTRASONIC-001",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-09",
+      "parts": "Ultrasonic module ×1; Plate H ×1.",
+      "hardware": "R3080 rivet ×2.",
+      "tools": "Hands / printed rivet insert-push-lock procedure.",
+      "orientation": "Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket.",
+      "connection": "Ultrasonic mounting holes, Plate A front interface and H backing plate form the printed two-rivet stack; exact layer normals/grip require geometry.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-09",
+       "severity": "caution",
+       "text": "Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket."
+      }
+     ],
      "placements": {
       "PX-V40-INS-BATTERY-001": {
        "translationM": [
@@ -8465,9 +9652,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-001": {
        "translationM": [
-        0.013346228239845262,
+        0.014863511379744978,
         0.002,
-        0.16692456479690523
+        0.16726381970895599
        ],
        "rotationXYZW": [
         0,
@@ -8478,9 +9665,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-002": {
        "translationM": [
-        0.009284332688588007,
+        0.008972559213448151,
         0.002,
-        0.16692456479690523
+        0.1673395352640522
        ],
        "rotationXYZW": [
         0,
@@ -8491,9 +9678,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-003": {
        "translationM": [
-        -0.007350096711798839,
+        -0.00799588827494239,
         0.002,
-        0.16750483558994197
+        0.16755762826233783
        ],
        "rotationXYZW": [
         0,
@@ -8504,9 +9691,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-004": {
        "translationM": [
-        -0.014119922630560928,
+        -0.013886840441239216,
         0.002,
-        0.16750483558994197
+        0.16763334381743406
        ],
        "rotationXYZW": [
         0,
@@ -9260,7 +10447,7 @@
       "stage": "closure",
       "reason": "FORBIDDEN_PRESENTATION_PENETRATION",
       "candidateRecord": "chain/steps/rpi5-S09-record.json",
-      "candidateSha256": "424cd2cf336d854016ef26edac3715fdb8a05332c4d1ccd66967b2f546cba704"
+      "candidateSha256": "e9d23f834f01faac156715d8817c20b10edae368531f712dfc0140e8179133f8"
      },
      "dependencyWarnings": [
       {
@@ -9271,21 +10458,21 @@
      ],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.009575000000000004,
-       0.0806683752417795
+       -0.0001967610000000004,
+       -0.013425,
+       0.1709
       ],
       "positionM": [
-       -0.21259753873198464,
-       0.2184664793873957,
-       0.37337934434158193
+       -0.07605886545402807,
+       0.058644123458968765,
+       0.37932941897975003
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "new",
+       "azimuthDeg": -20,
+       "elevationDeg": 18,
+       "fit": 1.7
       }
      }
     }
@@ -9295,132 +10482,17 @@
    "graphHash": "65d5c89cf2dc2cec53424ac1e689772aee0c788086b6f01eea7efb3576c213c2",
    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
    "floorYM": -0.027549999999999998,
+   "centreM": [
+    -0.2783054659025688,
+    0.006075000000000003,
+    0.21385
+   ],
    "tray": {
     "label": "Parts tray: presentation layout only, not a physical assembly state",
     "instances": {
-     "PX-V40-INS-M25X11-STANDOFF-001": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       -0.0021132486540518703
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X11-STANDOFF-002": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       0.021660254037844395
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X30-STANDOFF-001": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       0.04543375672974065
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X30-STANDOFF-002": {
-      "translationM": [
-       -0.1198642239942673,
-       -0.027049999999999998,
-       0.06920725942163693
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-001": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.09240651076758505
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-002": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.11503151076758505
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-003": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.13765651076758506
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X6-SCREW-004": {
-      "translationM": [
-       -0.11967672399426729,
-       -0.025674999999999996,
-       0.16028151076758504
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 1
-     },
      "PX-V40-INS-PLATE-A-001": {
       "translationM": [
-       -0.18786730545390443,
+       -0.17376730545390442,
        -0.000049999999999997156,
        -0.005
       ],
@@ -9431,433 +10503,15 @@
        0
       ],
       "orientation": "installed",
-      "firstStep": 1
-     },
-     "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
-      "translationM": [
-       -0.14286422399426735,
-       -0.003049999999999997,
-       0.18988675134594815
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-M25X18PLUS6-STANDOFF-002": {
-      "translationM": [
-       -0.14286422399426735,
-       -0.003049999999999997,
-       0.2136602540378444
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-ZERO2W-001": {
-      "translationM": [
-       -0.28323152944817176,
-       -0.027049999999999998,
-       -0.005
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 2
-     },
-     "PX-V40-INS-M25X6-SCREW-005": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.0803125
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M25X6-SCREW-006": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.1029375
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M25X6-SCREW-007": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.1255625
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M25X6-SCREW-008": {
-      "translationM": [
-       -0.25554402944817173,
-       -0.02105,
-       0.1481875
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-ROBOT-HAT-001": {
-      "translationM": [
-       -0.3092315294481717,
-       -0.027049999999999998,
-       0.1685
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 4
-     },
-     "PX-V40-INS-M3-NUT-001": {
-      "translationM": [
-       -0.25323152944817173,
-       -0.024149999999999998,
-       0.25484863156129983
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3-NUT-002": {
-      "translationM": [
-       -0.25323152944817173,
-       -0.024149999999999998,
-       0.2795458946838995
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3-NUT-003": {
-      "translationM": [
-       -0.3296315294481717,
-       -0.024149999999999998,
-       -0.0016513684387001702
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3-NUT-004": {
-      "translationM": [
-       -0.3296315294481717,
-       -0.024149999999999998,
-       0.023045894683899486
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-001": {
-      "translationM": [
-       -0.3288815294481717,
-       -0.024274999999999998,
-       0.047169526245199316
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-002": {
-      "translationM": [
-       -0.3288815294481717,
-       -0.024274999999999998,
-       0.07071952624519932
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-003": {
-      "translationM": [
-       -0.3522315294481717,
-       -0.024274999999999998,
-       0.09426952624519931
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-M3X25-SCREW-004": {
-      "translationM": [
-       -0.3522315294481717,
-       -0.024274999999999998,
-       0.11781952624519931
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-MOTOR-LEFT-001": {
-      "translationM": [
-       -0.3562315294481717,
-       -0.008049999999999998,
-       0.19459452624519932
-      ],
-      "rotationXYZW": [
-       1,
-       0,
-       0,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-MOTOR-RIGHT-001": {
-      "translationM": [
-       -0.34723152944817176,
-       -0.008049999999999998,
-       0.2685945262451993
-      ],
-      "rotationXYZW": [
-       1,
-       0,
-       0,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-001": {
-      "translationM": [
-       -0.32723152944817174,
-       -0.02405101155956928,
-       0.28959245807222334
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-002": {
-      "translationM": [
-       -0.37423152944817173,
-       -0.02405101155956928,
-       -0.0020020681729759483
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-003": {
-      "translationM": [
-       -0.37503152944817175,
-       -0.02405101155956928,
-       0.0219690774035118
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-SPRING-WASHER-004": {
-      "translationM": [
-       -0.37503152944817175,
-       -0.02405101155956928,
-       0.045940222979999557
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       -0.7071067811865475,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 5
-     },
-     "PX-V40-INS-BATTERY-001": {
-      "translationM": [
-       -0.41223152944817176,
-       -0.027049999999999998,
-       0.06691343672946326
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       0,
-       1
-      ],
-      "orientation": "installed",
-      "firstStep": 6
-     },
-     "PX-V40-INS-HORN-PAN-001": {
-      "translationM": [
-       -0.39123152944817174,
-       -0.027049999999999998,
-       0.15876343672946325
-      ],
-      "rotationXYZW": [
-       0,
-       0.7071067811865475,
-       0,
-       0.7071067811865476
-      ],
-      "orientation": "installed",
-      "firstStep": 8
-     },
-     "PX-V40-INS-M15X3-SCREW-001": {
-      "translationM": [
-       -0.3756190294481717,
-       -0.02405,
-       0.18200093672946324
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 8
-     },
-     "PX-V40-INS-M15X3-SCREW-002": {
-      "translationM": [
-       -0.3756190294481717,
-       -0.02405,
-       0.20277593672946326
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 8
-     },
-     "PX-V40-INS-M15X3-SCREW-003": {
-      "translationM": [
-       -0.3756190294481717,
-       -0.02405,
-       0.22355093672946325
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 8
-     },
-     "PX-V40-INS-M15X3-SCREW-004": {
-      "translationM": [
-       -0.3756190294481717,
-       -0.02405,
-       0.24432593672946326
-      ],
-      "rotationXYZW": [
-       0,
-       0,
-       1,
-       0
-      ],
-      "orientation": "installed",
-      "firstStep": 8
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "plates"
      },
      "PX-V40-INS-PLATE-H-001": {
       "translationM": [
-       -0.4041250514481717,
+       -0.2614250514481717,
        -0.027049999999999998,
-       0.27401343672946327
+       0.005300000000000001
       ],
       "rotationXYZW": [
        0,
@@ -9866,13 +10520,15 @@
        1
       ],
       "orientation": "part-local",
-      "firstStep": 9
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "plates"
      },
-     "PX-V40-INS-R3080-RIVET-001": {
+     "PX-V40-INS-ZERO2W-001": {
       "translationM": [
-       -0.45398042944817174,
-       -0.026049999999999997,
-       -0.0025
+       -0.1570842239942673,
+       -0.027049999999999998,
+       0.191
       ],
       "rotationXYZW": [
        0,
@@ -9880,14 +10536,16 @@
        0,
        1
       ],
-      "orientation": "part-local",
-      "firstStep": 9
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "electronics"
      },
-     "PX-V40-INS-R3080-RIVET-002": {
+     "PX-V40-INS-ROBOT-HAT-001": {
       "translationM": [
-       -0.45398042944817174,
-       -0.026049999999999997,
-       0.0205
+       -0.1700842239942673,
+       -0.027049999999999998,
+       0.265
       ],
       "rotationXYZW": [
        0,
@@ -9895,14 +10553,33 @@
        0,
        1
       ],
-      "orientation": "part-local",
-      "firstStep": 9
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "electronics"
+     },
+     "PX-V40-INS-BATTERY-001": {
+      "translationM": [
+       -0.2320642239942673,
+       -0.027049999999999998,
+       0.191
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 6,
+      "required": "introduced",
+      "group": "electronics"
      },
      "PX-V40-INS-ULTRASONIC-001": {
       "translationM": [
-       -0.47718042944817174,
+       -0.22591422399426728,
        -0.02005,
-       0.041
+       0.27
       ],
       "rotationXYZW": [
        0,
@@ -9911,26 +10588,929 @@
        1
       ],
       "orientation": "part-local",
-      "firstStep": 9
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "electronics"
+     },
+     "PX-V40-INS-MOTOR-LEFT-001": {
+      "translationM": [
+       -0.37358042944817177,
+       -0.008049999999999998,
+       0.051000000000000004
+      ],
+      "rotationXYZW": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "actuators"
+     },
+     "PX-V40-INS-MOTOR-RIGHT-001": {
+      "translationM": [
+       -0.36458042944817176,
+       -0.008049999999999998,
+       0.116
+      ],
+      "rotationXYZW": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "actuators"
+     },
+     "PX-V40-INS-HORN-PAN-001": {
+      "translationM": [
+       -0.35908042944817176,
+       -0.027049999999999998,
+       0.12885
+      ],
+      "rotationXYZW": [
+       0,
+       0.7071067811865475,
+       0,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "actuators"
+     },
+     "PX-V40-INS-M25X11-STANDOFF-001": {
+      "translationM": [
+       -0.33898042944817175,
+       -0.027049999999999998,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X11-STANDOFF-002": {
+      "translationM": [
+       -0.33898042944817175,
+       -0.027049999999999998,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X30-STANDOFF-001": {
+      "translationM": [
+       -0.3739804294481717,
+       -0.027049999999999998,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X30-STANDOFF-002": {
+      "translationM": [
+       -0.3739804294481717,
+       -0.027049999999999998,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-001": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.025674999999999996,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-002": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.025674999999999996,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-003": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.025674999999999996,
+       0.1977
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-004": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.025674999999999996,
+       0.2167
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "installed",
+      "firstStep": 1,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-005": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.02105,
+       0.2357
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-006": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.02105,
+       0.2547
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-007": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.02105,
+       0.2737
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X6-SCREW-008": {
+      "translationM": [
+       -0.39295542944817174,
+       -0.02105,
+       0.2927
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 4,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
+      "translationM": [
+       -0.4235679294481718,
+       -0.003049999999999997,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M25X18PLUS6-STANDOFF-002": {
+      "translationM": [
+       -0.4235679294481718,
+       -0.003049999999999997,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 2,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-001": {
+      "translationM": [
+       -0.43912792944817175,
+       -0.024149999999999998,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-002": {
+      "translationM": [
+       -0.43912792944817175,
+       -0.024149999999999998,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-003": {
+      "translationM": [
+       -0.44152792944817176,
+       -0.024149999999999998,
+       0.1977
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3-NUT-004": {
+      "translationM": [
+       -0.44152792944817176,
+       -0.024149999999999998,
+       0.2167
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-001": {
+      "translationM": [
+       -0.4560629294481717,
+       -0.024274999999999998,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-002": {
+      "translationM": [
+       -0.4560629294481717,
+       -0.024274999999999998,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-003": {
+      "translationM": [
+       -0.4794129294481717,
+       -0.024274999999999998,
+       0.1977
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M3X25-SCREW-004": {
+      "translationM": [
+       -0.4794129294481717,
+       -0.024274999999999998,
+       0.2167
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-001": {
+      "translationM": [
+       -0.4942615132647747,
+       -0.02405101155956928,
+       0.15971235903878017
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-002": {
+      "translationM": [
+       -0.4942615132647747,
+       -0.02405101155956928,
+       0.17871235903878016
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-003": {
+      "translationM": [
+       -0.49506151326477466,
+       -0.02405101155956928,
+       0.19771235903878018
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-SPRING-WASHER-004": {
+      "translationM": [
+       -0.49506151326477466,
+       -0.02405101155956928,
+       0.21671235903878017
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       -0.7071067811865475,
+       0.7071067811865476
+      ],
+      "orientation": "installed",
+      "firstStep": 5,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M15X3-SCREW-001": {
+      "translationM": [
+       -0.5081265132647748,
+       -0.02405,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M15X3-SCREW-002": {
+      "translationM": [
+       -0.5081265132647748,
+       -0.02405,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M15X3-SCREW-003": {
+      "translationM": [
+       -0.5081265132647748,
+       -0.02405,
+       0.1977
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-M15X3-SCREW-004": {
+      "translationM": [
+       -0.5081265132647748,
+       -0.02405,
+       0.2167
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "orientation": "installed",
+      "firstStep": 8,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-R3080-RIVET-001": {
+      "translationM": [
+       -0.5336140132647748,
+       -0.026049999999999997,
+       0.15969999999999998
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "part-local",
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "fasteners"
+     },
+     "PX-V40-INS-R3080-RIVET-002": {
+      "translationM": [
+       -0.5336140132647748,
+       -0.026049999999999997,
+       0.1787
+      ],
+      "rotationXYZW": [
+       0,
+       0,
+       0,
+       1
+      ],
+      "orientation": "part-local",
+      "firstStep": 9,
+      "required": "introduced",
+      "group": "fasteners"
      }
+    },
+    "tiles": {
+     "PX-V40-INS-HOOK-002": {
+      "centreM": [
+       -0.3437804294481717,
+       -0.027049999999999998,
+       0.3457
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 6,
+      "required": "used",
+      "group": "supplies"
+     },
+     "PX-V40-INS-LOOP-002": {
+      "centreM": [
+       -0.3437804294481717,
+       -0.027049999999999998,
+       0.4067
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 6,
+      "required": "used",
+      "group": "supplies"
+     },
+     "PX-V40-INS-RIBBON-FPC-001": {
+      "centreM": [
+       -0.5891140132647747,
+       -0.027049999999999998,
+       0.021
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 3,
+      "required": "introduced",
+      "group": "cables"
+     },
+     "PX-V40-INS-SCREWDRIVER-01-001": {
+      "centreM": [
+       -0.5891140132647747,
+       -0.027049999999999998,
+       0.095
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 1,
+      "required": "tool",
+      "group": "tools"
+     },
+     "PX-V40-INS-SCREWDRIVER-02-001": {
+      "centreM": [
+       -0.5891140132647747,
+       -0.027049999999999998,
+       0.156
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 1,
+      "required": "tool",
+      "group": "tools"
+     },
+     "PX-V40-INS-WRENCH-001": {
+      "centreM": [
+       -0.5891140132647747,
+       -0.027049999999999998,
+       0.217
+      ],
+      "halfExtentsM": [
+       0.015,
+       0.026000000000000002
+      ],
+      "firstStep": 5,
+      "required": "tool",
+      "group": "tools"
+     }
+    },
+    "groups": [
+     {
+      "id": "plates",
+      "label": "Plates",
+      "instanceIds": [
+       "PX-V40-INS-PLATE-A-001",
+       "PX-V40-INS-PLATE-H-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.29078042944817173,
+        -0.027049999999999998,
+        -0.005
+       ],
+       "max": [
+        -0.1262642239942673,
+        -0.000049999999999997156,
+        0.169
+       ]
+      },
+      "labelM": [
+       -0.29878042944817174,
+       -0.027049999999999998,
+       -0.005
+      ]
+     },
+     {
+      "id": "electronics",
+      "label": "Electronics",
+      "instanceIds": [
+       "PX-V40-INS-ZERO2W-001",
+       "PX-V40-INS-ROBOT-HAT-001",
+       "PX-V40-INS-BATTERY-001",
+       "PX-V40-INS-ULTRASONIC-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.2320642239942673,
+        -0.027049999999999998,
+        0.191
+       ],
+       "max": [
+        -0.11408422399426729,
+        -0.005649999999999997,
+        0.33
+       ]
+      },
+      "labelM": [
+       -0.24006422399426727,
+       -0.027049999999999998,
+       0.191
+      ]
+     },
+     {
+      "id": "actuators",
+      "label": "Motors and servos",
+      "instanceIds": [
+       "PX-V40-INS-MOTOR-LEFT-001",
+       "PX-V40-INS-MOTOR-RIGHT-001",
+       "PX-V40-INS-HORN-PAN-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.37608042944817177,
+        -0.027049999999999998,
+        -0.005
+       ],
+       "max": [
+        -0.34208042944817174,
+        -0.008049999999999998,
+        0.13269999999999998
+       ]
+      },
+      "labelM": [
+       -0.3840804294481717,
+       -0.027049999999999998,
+       -0.005
+      ]
+     },
+     {
+      "id": "fasteners",
+      "label": "Fasteners",
+      "instanceIds": [
+       "PX-V40-INS-M25X11-STANDOFF-001",
+       "PX-V40-INS-M25X11-STANDOFF-002",
+       "PX-V40-INS-M25X30-STANDOFF-001",
+       "PX-V40-INS-M25X30-STANDOFF-002",
+       "PX-V40-INS-M25X6-SCREW-001",
+       "PX-V40-INS-M25X6-SCREW-002",
+       "PX-V40-INS-M25X6-SCREW-003",
+       "PX-V40-INS-M25X6-SCREW-004",
+       "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+       "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+       "PX-V40-INS-M25X6-SCREW-005",
+       "PX-V40-INS-M25X6-SCREW-006",
+       "PX-V40-INS-M25X6-SCREW-007",
+       "PX-V40-INS-M25X6-SCREW-008",
+       "PX-V40-INS-M3-NUT-001",
+       "PX-V40-INS-M3-NUT-002",
+       "PX-V40-INS-M3-NUT-003",
+       "PX-V40-INS-M3-NUT-004",
+       "PX-V40-INS-M3X25-SCREW-001",
+       "PX-V40-INS-M3X25-SCREW-002",
+       "PX-V40-INS-M3X25-SCREW-003",
+       "PX-V40-INS-M3X25-SCREW-004",
+       "PX-V40-INS-SPRING-WASHER-001",
+       "PX-V40-INS-SPRING-WASHER-002",
+       "PX-V40-INS-SPRING-WASHER-003",
+       "PX-V40-INS-SPRING-WASHER-004",
+       "PX-V40-INS-M15X3-SCREW-001",
+       "PX-V40-INS-M15X3-SCREW-002",
+       "PX-V40-INS-M15X3-SCREW-003",
+       "PX-V40-INS-M15X3-SCREW-004",
+       "PX-V40-INS-R3080-RIVET-001",
+       "PX-V40-INS-R3080-RIVET-002"
+      ],
+      "boundsM": {
+       "min": [
+        -0.5361140132647747,
+        -0.027049999999999998,
+        0.15635136843870015
+       ],
+       "max": [
+        -0.33648042944817175,
+        0.002950000000000003,
+        0.2950125
+       ]
+      },
+      "labelM": [
+       -0.5441140132647747,
+       -0.027049999999999998,
+       0.1547
+      ]
+     },
+     {
+      "id": "supplies",
+      "label": "Supplies",
+      "instanceIds": [
+       "PX-V40-INS-HOOK-002",
+       "PX-V40-INS-LOOP-002"
+      ],
+      "boundsM": {
+       "min": [
+        -0.35878042944817173,
+        -0.027049999999999998,
+        0.3197
+       ],
+       "max": [
+        -0.32878042944817176,
+        -0.027049999999999998,
+        0.4327
+       ]
+      },
+      "labelM": [
+       -0.36678042944817174,
+       -0.027049999999999998,
+       0.3197
+      ]
+     },
+     {
+      "id": "cables",
+      "label": "Cables",
+      "instanceIds": [
+       "PX-V40-INS-RIBBON-FPC-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.6041140132647748,
+        -0.027049999999999998,
+        -0.005
+       ],
+       "max": [
+        -0.5741140132647747,
+        -0.027049999999999998,
+        0.047
+       ]
+      },
+      "labelM": [
+       -0.6121140132647748,
+       -0.027049999999999998,
+       -0.005
+      ]
+     },
+     {
+      "id": "tools",
+      "label": "Tools",
+      "instanceIds": [
+       "PX-V40-INS-SCREWDRIVER-01-001",
+       "PX-V40-INS-SCREWDRIVER-02-001",
+       "PX-V40-INS-WRENCH-001"
+      ],
+      "boundsM": {
+       "min": [
+        -0.6041140132647748,
+        -0.027049999999999998,
+        0.069
+       ],
+       "max": [
+        -0.5741140132647747,
+        -0.027049999999999998,
+        0.243
+       ]
+      },
+      "labelM": [
+       -0.6121140132647748,
+       -0.027049999999999998,
+       0.069
+      ]
+     }
+    ],
+    "inventory": {
+     "required": 47,
+     "modeled": 41,
+     "tiles": 6,
+     "canonical": 156,
+     "notRequired": 109,
+     "spares": 37,
+     "scope": "Every instance printed steps 1 to 9 introduce or use, and the kit tools they require",
+     "canonicalSource": "digital-twin/components/instances/planned-stock.json: printed-stock claims, not a count of the owner's loose kit"
     },
     "camera": {
      "targetM": [
-      -0.2148386739942673,
-      0.006075000000000003,
-      0.1437828359108435
+      -0.359099118629521,
+      -0.012049999999999998,
+      0.21385
      ],
      "positionM": [
-      -0.49637548859438196,
-      0.7228530698630643,
-      0.7761248747105547
+      -0.8573679502814818,
+      0.7853468160375754,
+      0.21385000000000004
      ],
      "verticalFovDeg": 30,
      "spec": {
-      "subject": "everything",
-      "azimuthDeg": -24,
-      "elevationDeg": 46,
-      "fit": 0.85
+      "subject": "tray",
+      "azimuthDeg": -90,
+      "elevationDeg": 58,
+      "fit": 0.74
      }
     }
    },
@@ -9947,6 +11527,7 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "preview",
      "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M25X11-STANDOFF-001",
@@ -9960,6 +11541,81 @@
       "PX-V40-INS-PLATE-A-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M25X11-STANDOFF-001",
+      "PX-V40-INS-M25X11-STANDOFF-002",
+      "PX-V40-INS-M25X30-STANDOFF-001",
+      "PX-V40-INS-M25X30-STANDOFF-002",
+      "PX-V40-INS-M25X6-SCREW-001",
+      "PX-V40-INS-M25X6-SCREW-002",
+      "PX-V40-INS-M25X6-SCREW-003",
+      "PX-V40-INS-M25X6-SCREW-004",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M25X11-STANDOFF-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X11-STANDOFF-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X30-STANDOFF-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X30-STANDOFF-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-01",
+      "parts": "Plate A ×1. Pi4/Pi5: M2.5x18+6 nylon standoff ×4. Zero2W: M2.5x30 ×2 and M2.5x11 ×2.",
+      "hardware": "M2.5x6 screw ×4 for every branch.",
+      "tools": "Matched screwdriver; hand placement of nylon standoffs. Driver size/torque unresolved.",
+      "orientation": "Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram.",
+      "connection": "Plate-A rear-deck mounting holes -> screw bearing stack -> standoff base faces; all standoff axes normal to the mounting plane. Four physical support positions; branch chooses support types.",
+      "variant": "2× M2.5x30 + 2× M2.5x11"
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-01",
+       "severity": "caution",
+       "text": "Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X11-STANDOFF-001": {
        "translationM": [
@@ -10400,6 +12056,7 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "preview",
      "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
@@ -10407,6 +12064,51 @@
       "PX-V40-INS-ZERO2W-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-INS-ZERO2W-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-ZERO2W-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X11-STANDOFF-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X11-STANDOFF-002",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-02",
+      "parts": "Selected Raspberry Pi ×1, user-supplied. Pi4/Pi5: M2.5x18 standoff ×4; USB mini microphone ×1 shown in the shared panel. Zero2W: M2.5x18+6 standoff ×2.",
+      "hardware": "No additional separate screw is prescribed in this panel; upper standoffs fasten the board.",
+      "tools": "Hand fastening/matched tool if needed; no guessed torque.",
+      "orientation": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.",
+      "connection": "Pi mounting holes -> step-1 supports; upper standoff bearing faces clamp the selected board. Zero2W uses two short support positions, leaving tall HAT supports available.",
+      "variant": "Zero2W; 2× M2.5x18+6; header readiness required"
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-02",
+       "severity": "caution",
+       "text": "GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X11-STANDOFF-001": {
        "translationM": [
@@ -10733,10 +12435,40 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [],
      "introducedZeroSolidInstanceIds": [
       "PX-V40-INS-RIBBON-FPC-001"
+     ],
+     "newlyPlacedInstanceIds": [],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-RIBBON-FPC-001",
+       "use": "new"
+      },
+      {
+       "instanceId": "PX-V40-INS-ZERO2W-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-03",
+      "parts": "One selected camera ribbon: Pi4 FFC; Pi5/Zero2W FPC. Alternative cable stock remains noninstalled.",
+      "hardware": "None.",
+      "tools": "Hands; do not force latch.",
+      "orientation": "Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”.",
+      "connection": "Selected cable Pi-end -> selected Pi camera connector; latch open/insertion/latch closed are separate presentation phases of one atomic connection operation. Camera end remains free.",
+      "variant": "FPC"
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-03",
+       "severity": "caution",
+       "text": "Use the exact printed contact/stiffener orientation for that board connector; do not generalize a screen-space “blue side up”."
+      }
      ],
      "placements": {
       "PX-V40-INS-M25X11-STANDOFF-001": {
@@ -10946,21 +12678,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.003800000000000001,
-       0.08700000000000001
+       0.012000967117988395,
+       0.0178,
+       0.04294003868471954
       ],
       "positionM": [
-       -0.18258810905439846,
-       0.18321480872407594,
-       0.33840653264792175
+       -0.06111740242713988,
+       0.19718591663351484,
+       0.24383110795729807
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "placed-parts",
+       "azimuthDeg": -20,
+       "elevationDeg": 40,
+       "fit": 2
       }
      }
     },
@@ -10976,7 +12708,8 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M25X6-SCREW-005",
       "PX-V40-INS-M25X6-SCREW-006",
@@ -10985,6 +12718,86 @@
       "PX-V40-INS-ROBOT-HAT-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M25X6-SCREW-005",
+      "PX-V40-INS-M25X6-SCREW-006",
+      "PX-V40-INS-M25X6-SCREW-007",
+      "PX-V40-INS-M25X6-SCREW-008",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-ROBOT-HAT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X30-STANDOFF-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-M25X30-STANDOFF-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-ZERO2W-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-04",
+      "parts": "Robot HAT ×1.",
+      "hardware": "M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.",
+      "tools": "Matched screwdriver.",
+      "orientation": "No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.",
+      "connection": "HAT GPIO connector -> Pi header; HAT holes -> four prepared support positions; screw bearing faces -> HAT/support stack.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-04",
+       "severity": "caution",
+       "text": "No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision."
+      },
+      {
+       "id": "PX-V40-WARN-ZERO2W-HEADER",
+       "severity": "critical",
+       "text": "Zero2W GPIO header readiness and supplied microphone compatibility remain unresolved under Q-14. No header or adapter installation is inferred; reference projection does not authorize physical electrical completion."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X11-STANDOFF-001": {
        "translationM": [
@@ -11418,21 +13231,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.007100000000000001,
-       0.08700000000000001
+       -0.0011605415860734994,
+       0.0337,
+       0.04303675048355899
       ],
       "positionM": [
-       -0.18430372487488741,
-       0.18819996712490702,
-       0.34076787524571706
+       -0.12829958462880922,
+       0.19085249979509303,
+       0.21802863071358675
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
+       "subject": "new",
        "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "elevationDeg": 36,
+       "fit": 1.6
       }
      }
     },
@@ -11448,7 +13261,8 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-M3-NUT-001",
       "PX-V40-INS-M3-NUT-002",
@@ -11466,6 +13280,114 @@
       "PX-V40-INS-SPRING-WASHER-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-M3-NUT-001",
+      "PX-V40-INS-M3-NUT-002",
+      "PX-V40-INS-M3-NUT-003",
+      "PX-V40-INS-M3-NUT-004",
+      "PX-V40-INS-M3X25-SCREW-001",
+      "PX-V40-INS-M3X25-SCREW-002",
+      "PX-V40-INS-M3X25-SCREW-003",
+      "PX-V40-INS-M3X25-SCREW-004",
+      "PX-V40-INS-MOTOR-LEFT-001",
+      "PX-V40-INS-MOTOR-RIGHT-001",
+      "PX-V40-INS-SPRING-WASHER-001",
+      "PX-V40-INS-SPRING-WASHER-002",
+      "PX-V40-INS-SPRING-WASHER-003",
+      "PX-V40-INS-SPRING-WASHER-004"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3-NUT-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M3X25-SCREW-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-MOTOR-LEFT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-MOTOR-RIGHT-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-SPRING-WASHER-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-WRENCH-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-05",
+      "parts": "TT motor ×2; separate left/right role instances.",
+      "hardware": "M3x25 screw ×4; spring washer ×4; M3 nut ×4.",
+      "tools": "Matched screwdriver and kit wrench; no assumed wrench size or torque.",
+      "orientation": "Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role.",
+      "connection": "Each motor mounting interface -> Plate A rear side-wall holes through the exact screw/washer/nut stack. Shaft interfaces remain available for rear wheels.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-05",
+       "severity": "caution",
+       "text": "Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X11-STANDOFF-001": {
        "translationM": [
@@ -12365,21 +14287,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.007100000000000001,
-       0.0845
+       0.00025,
+       -0.0125,
+       0.023
       ],
       "positionM": [
-       -0.1880156425953537,
-       0.19184598697103714,
-       0.3433768916864434
+       -0.16870844880947453,
+       0.06287179443254771,
+       -0.1783568383678361
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "new",
+       "azimuthDeg": -140,
+       "elevationDeg": 16,
+       "fit": 1.3
       }
      }
     },
@@ -12395,11 +14317,49 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-BATTERY-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-BATTERY-001",
+       "use": "new"
+      },
+      {
+       "instanceId": "PX-V40-INS-HOOK-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-LOOP-002",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-06",
+      "parts": "Battery ×1 staged; hook tape piece ×1 and loop tape piece ×1 allocated from supplied material.",
+      "hardware": "No mechanical fastener.",
+      "tools": "Hands; cutting tool only if material actually requires cutting, not an invented mandatory tool.",
+      "orientation": "Hook on battery, loop on chassis underside as printed.",
+      "connection": "Hook piece -> battery contact surface; loop piece -> underside of Plate A. Adhesive extents/thickness unresolved, not rigid dimensional constraints.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-06",
+       "severity": "caution",
+       "text": "Hook on battery, loop on chassis underside as printed."
+      }
+     ],
      "placements": {
       "PX-V40-INS-M25X11-STANDOFF-001": {
        "translationM": [
@@ -12869,21 +14829,21 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.007100000000000001,
-       0.0845
+       -0.2764223267212195,
+       -0.01705,
+       0.31185
       ],
       "positionM": [
-       -0.1880156425953537,
-       0.19184598697103714,
-       0.3433768916864434
+       -0.6538527340463627,
+       0.46697614059658843,
+       0.5297595472695216
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "tray-parts",
+       "azimuthDeg": -60,
+       "elevationDeg": 48,
+       "fit": 1.15
       }
      }
     },
@@ -12899,9 +14859,48 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "review",
      "operable": false,
      "introducedInstanceIds": [],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-BATTERY-001"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-BATTERY-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-ROBOT-HAT-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [
+      "PX-V40-INS-BATTERY-001",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-07",
+      "parts": "No new battery: use the same instance prepared in S06.",
+      "hardware": "No new fastener.",
+      "tools": "Hands.",
+      "orientation": "Connector orientation must match its keyed interface; connected does not mean switch ON.",
+      "connection": "Battery hook surface -> A loop surface; battery lead -> HAT BATTERY connector. Mount compliance and exact envelope require evidence.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-07",
+       "severity": "caution",
+       "text": "Connector orientation must match its keyed interface; connected does not mean switch ON."
+      }
+     ],
      "placements": {
       "PX-V40-INS-BATTERY-001": {
        "translationM": [
@@ -13422,29 +15421,29 @@
      "source": {
       "kind": "closure",
       "file": "chain/closures/rpi-zero-2-w-S07-closure.json",
-      "sha256": "c12bdb9229d3ef7c1669fc786e86a42740a5e4b89d272c8004d87af5b55658b8",
+      "sha256": "9aea62ce3156265dcdd062211f0f4f4c06ccfa2709dad3cd8e18f414493318b6",
       "status": "BLOCKED",
-      "closureRfc8785Sha256": "747d5cae3e6dfc7a33a6ce9946217e10303aa682d3e2e96f68a1115cdc9e48be",
+      "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
       "closureVerify": "BLOCKED"
      },
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.007100000000000001,
-       0.0845
+       -0.0011605415860734994,
+       0.009600000000000001,
+       0.0657683752417795
       ],
       "positionM": [
-       -0.1880156425953537,
-       0.19184598697103714,
-       0.3433768916864434
+       -0.19024759961787477,
+       0.04424900120287659,
+       0.33581268027062705
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "focus",
+       "azimuthDeg": -35,
+       "elevationDeg": 6,
+       "fit": 1.25
       }
      }
     },
@@ -13460,7 +15459,8 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
-     "operable": false,
+     "mode": "preview",
+     "operable": true,
      "introducedInstanceIds": [
       "PX-V40-INS-HORN-PAN-001",
       "PX-V40-INS-M15X3-SCREW-001",
@@ -13469,6 +15469,65 @@
       "PX-V40-INS-M15X3-SCREW-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-HORN-PAN-001",
+      "PX-V40-INS-M15X3-SCREW-001",
+      "PX-V40-INS-M15X3-SCREW-002",
+      "PX-V40-INS-M15X3-SCREW-003",
+      "PX-V40-INS-M15X3-SCREW-004"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-HORN-PAN-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-003",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-M15X3-SCREW-004",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-01-001",
+       "use": "tool"
+      },
+      {
+       "instanceId": "PX-V40-INS-SCREWDRIVER-02-001",
+       "use": "tool"
+      }
+     ],
+     "focusInstanceIds": [],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-08",
+      "parts": "Pan-role servo arm/horn ×1.",
+      "hardware": "M1.5x3 screw ×4.",
+      "tools": "Matched screwdriver.",
+      "orientation": "Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body.",
+      "connection": "Pan horn mounting holes -> Plate A front mounting holes; preserve spline/bore access for S19.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-08",
+       "severity": "caution",
+       "text": "Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body."
+      }
+     ],
      "placements": {
       "PX-V40-INS-BATTERY-001": {
        "translationM": [
@@ -13498,9 +15557,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-001": {
        "translationM": [
-        0.013346228239845262,
+        0.014863511379744978,
         0.002,
-        0.16692456479690523
+        0.16726381970895599
        ],
        "rotationXYZW": [
         0,
@@ -13511,9 +15570,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-002": {
        "translationM": [
-        0.009284332688588007,
+        0.008972559213448151,
         0.002,
-        0.16692456479690523
+        0.1673395352640522
        ],
        "rotationXYZW": [
         0,
@@ -13524,9 +15583,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-003": {
        "translationM": [
-        -0.007350096711798839,
+        -0.00799588827494239,
         0.002,
-        0.16750483558994197
+        0.16755762826233783
        ],
        "rotationXYZW": [
         0,
@@ -13537,9 +15596,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-004": {
        "translationM": [
-        -0.014119922630560928,
+        -0.013886840441239216,
         0.002,
-        0.16750483558994197
+        0.16763334381743406
        ],
        "rotationXYZW": [
         0,
@@ -13996,9 +16055,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         0.013346228239845262,
+         0.014863511379744978,
          0.032,
-         0.16692456479690523
+         0.16726381970895599
         ],
         "rotationXYZW": [
          0,
@@ -14027,9 +16086,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         0.009284332688588007,
+         0.008972559213448151,
          0.032,
-         0.16692456479690523
+         0.1673395352640522
         ],
         "rotationXYZW": [
          0,
@@ -14058,9 +16117,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         -0.007350096711798839,
+         -0.00799588827494239,
          0.032,
-         0.16750483558994197
+         0.16755762826233783
         ],
         "rotationXYZW": [
          0,
@@ -14089,9 +16148,9 @@
        "approachDistanceM": 0.03,
        "stagedStart": {
         "translationM": [
-         -0.014119922630560928,
+         -0.013886840441239216,
          0.032,
-         0.16750483558994197
+         0.16763334381743406
         ],
         "rotationXYZW": [
          0,
@@ -14177,9 +16236,9 @@
      "source": {
       "kind": "closure",
       "file": "chain/closures/rpi-zero-2-w-S08-closure.json",
-      "sha256": "25275a62add909609d23ce491ff73c505d56e8334399a21a53147fb3f15a9888",
+      "sha256": "6f00758685cdcb14e76f3c5d329c5bc0a3c7dc29e6c4a2a177de44a8d2d52eb0",
       "status": "COMPLETE",
-      "closureRfc8785Sha256": "b7647dff627305624f8edf09ec7cee2f18069e03ba9eefaf0dba162ec5e87fa9",
+      "closureRfc8785Sha256": "7cac0258785a7f16aa7eca07d2db11381026cee38fe70813df6958ebdf0a2ee2",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [
@@ -14191,21 +16250,21 @@
      ],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.007100000000000001,
-       0.0845
+       0.0003868471953578343,
+       0.0003125,
+       0.16731141199226307
       ],
       "positionM": [
-       -0.1880156425953537,
-       0.19184598697103714,
-       0.3433768916864434
+       -0.03236530936404749,
+       0.09162961079526523,
+       0.2986731370529069
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "new",
+       "azimuthDeg": -14,
+       "elevationDeg": 34,
+       "fit": 2.4
       }
      }
     },
@@ -14221,6 +16280,7 @@
       "admittedRows": 0,
       "requiredRows": 58
      },
+     "mode": "review",
      "operable": false,
      "introducedInstanceIds": [
       "PX-V40-INS-PLATE-H-001",
@@ -14229,6 +16289,57 @@
       "PX-V40-INS-ULTRASONIC-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "newlyPlacedInstanceIds": [
+      "PX-V40-INS-ULTRASONIC-001",
+      "PX-V40-INS-PLATE-H-001",
+      "PX-V40-INS-R3080-RIVET-001",
+      "PX-V40-INS-R3080-RIVET-002"
+     ],
+     "stepParts": [
+      {
+       "instanceId": "PX-V40-INS-ULTRASONIC-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-H-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-R3080-RIVET-001",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-R3080-RIVET-002",
+       "use": "placed"
+      },
+      {
+       "instanceId": "PX-V40-INS-PLATE-A-001",
+       "use": "uses"
+      }
+     ],
+     "focusInstanceIds": [
+      "PX-V40-INS-HORN-PAN-001",
+      "PX-V40-INS-PLATE-H-001",
+      "PX-V40-INS-ULTRASONIC-001",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "instruction": {
+      "record": "digital-twin/assemblies/v40/steps/source-intents.json",
+      "id": "PX-V40-STEP-09",
+      "parts": "Ultrasonic module ×1; Plate H ×1.",
+      "hardware": "R3080 rivet ×2.",
+      "tools": "Hands / printed rivet insert-push-lock procedure.",
+      "orientation": "Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket.",
+      "connection": "Ultrasonic mounting holes, Plate A front interface and H backing plate form the printed two-rivet stack; exact layer normals/grip require geometry.",
+      "variant": null
+     },
+     "warnings": [
+      {
+       "id": "PX-V40-WARN-STEP-09",
+       "severity": "caution",
+       "text": "Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket."
+      }
+     ],
      "placements": {
       "PX-V40-INS-BATTERY-001": {
        "translationM": [
@@ -14258,9 +16369,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-001": {
        "translationM": [
-        0.013346228239845262,
+        0.014863511379744978,
         0.002,
-        0.16692456479690523
+        0.16726381970895599
        ],
        "rotationXYZW": [
         0,
@@ -14271,9 +16382,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-002": {
        "translationM": [
-        0.009284332688588007,
+        0.008972559213448151,
         0.002,
-        0.16692456479690523
+        0.1673395352640522
        ],
        "rotationXYZW": [
         0,
@@ -14284,9 +16395,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-003": {
        "translationM": [
-        -0.007350096711798839,
+        -0.00799588827494239,
         0.002,
-        0.16750483558994197
+        0.16755762826233783
        ],
        "rotationXYZW": [
         0,
@@ -14297,9 +16408,9 @@
       },
       "PX-V40-INS-M15X3-SCREW-004": {
        "translationM": [
-        -0.014119922630560928,
+        -0.013886840441239216,
         0.002,
-        0.16750483558994197
+        0.16763334381743406
        ],
        "rotationXYZW": [
         0,
@@ -15005,7 +17116,7 @@
       "stage": "closure",
       "reason": "FORBIDDEN_PRESENTATION_PENETRATION",
       "candidateRecord": "chain/steps/rpi-zero-2-w-S09-record.json",
-      "candidateSha256": "633d2c29f9b90c4076ea7fc4e3aa7275db426d621ae8b5efad8f8e86adfaa739"
+      "candidateSha256": "68b502ade8434123fa1a89982068177e717651ca1de073420916786216f84973"
      },
      "dependencyWarnings": [
       {
@@ -15016,21 +17127,21 @@
      ],
      "camera": {
       "targetM": [
-       0.00006942873268492278,
-       0.006075000000000003,
-       0.08990000000000001
+       -0.0001967610000000004,
+       -0.013425,
+       0.1709
       ],
       "positionM": [
-       -0.1966674638359356,
-       0.1993192119651971,
-       0.36068510202112886
+       -0.07605886545402807,
+       0.058644123458968765,
+       0.37932941897975003
       ],
       "verticalFovDeg": 30,
       "spec": {
-       "subject": "state",
-       "azimuthDeg": -36,
-       "elevationDeg": 30,
-       "fit": 0.9
+       "subject": "new",
+       "azimuthDeg": -20,
+       "elevationDeg": 18,
+       "fit": 1.7
       }
      }
     }
@@ -15038,7 +17149,7 @@
   }
  },
  "validation": {
-  "checks": 200,
+  "checks": 347,
   "failed": 0,
   "withheld": [],
   "summary": [
@@ -15052,7 +17163,13 @@
    "display",
    "display-binding",
    "bounds",
+   "tray-geometry",
    "proper-rotations",
+   "preview-recipes",
+   "preview-holds",
+   "preview-represented",
+   "tray-complete",
+   "camera",
    "recipe",
    "basis-roundtrip",
    "mount-feature",

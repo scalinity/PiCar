@@ -14,18 +14,38 @@ export type Display = 'PREVIEW_SOURCE_REVALIDATED' | 'PREVIEW_BLOCKED_RELATION' 
 
 export type Recipe = { instanceId: string; approachAxis: Vec3; approachDistanceM: number; stagedStart: Pose; segments: string[]; stagingOnly: boolean };
 export type StudioCamera = { positionM: Vec3; targetM: Vec3; verticalFovDeg: number };
+// preview plays as instruction; review opens a blocked or refused state without playing it; closed is not opened.
+export type Mode = 'preview' | 'review' | 'closed';
+// How a part figures in a step: placed (moves into its pose now), new (first appears, stays in the tray), uses
+// (an earlier part this step works on, or supply cut from stock), tool.
+export type PartUse = 'placed' | 'new' | 'uses' | 'tool';
+export type Conflict = { instances: string[]; volumeMm3: number; reason?: string };
+// The step's source intent, quoted from the repository record; never generated text.
+export type Instruction = { record: string; id: string; parts: string; hardware: string; tools: string; orientation: string; connection: string; variant: string | null };
 export type StepEntry = {
-  printedNumber: number; stepId: string; title: string; sourcePanel: string; display: Display; operable: boolean;
+  printedNumber: number; stepId: string; title: string; sourcePanel: string; display: Display; mode: Mode; operable: boolean;
   assembly: { gate: string; status: string; admittedRows: number; requiredRows: number };
-  introducedInstanceIds: string[]; introducedZeroSolidInstanceIds: string[]; placements: Record<string, Pose>; candidatePlacements: boolean;
-  recipes: Recipe[]; blockers: { id: string; connectionIds?: string[] }[]; conflicts: { instances: string[]; volumeMm3: number }[];
+  introducedInstanceIds: string[]; introducedZeroSolidInstanceIds: string[]; newlyPlacedInstanceIds: string[];
+  stepParts: { instanceId: string; use: PartUse }[]; focusInstanceIds: string[];
+  instruction: Instruction; warnings: { id: string; severity: string; text: string }[];
+  placements: Record<string, Pose>; candidatePlacements: boolean;
+  recipes: Recipe[]; blockers: { id: string; connectionIds?: string[] }[]; conflicts: Conflict[]; carriedUnframedConnectionIds: string[];
   displayChecks: DisplayCheck[];
-  dependencyWarnings: { printedNumber: number; text: string }[]; limitations: string[]; approximationFlags: string[];
-  claims: Record<string, string>; source: { kind: string; file?: string; sha256?: string; closureVerify?: string; closureRfc8785Sha256?: string };
+  dependencyWarnings: { printedNumber: number; display: Display; text: string }[]; limitations: string[]; approximationFlags: string[];
+  claims: Record<string, string>; source: { kind: string; file?: string; sha256?: string; closureVerify?: string; closureRfc8785Sha256?: string; candidateRecord?: string };
   camera: StudioCamera | null;
 };
-export type TrayPose = Pose & { orientation: 'installed' | 'part-local'; firstStep: number };
-export type VariantEntry = { graphHash: string; floorYM: number; tray: { label: string; instances: Record<string, TrayPose>; camera: StudioCamera }; steps: StepEntry[] };
+export type Required = 'introduced' | 'used' | 'tool';
+export type TrayPose = Pose & { orientation: 'installed' | 'part-local'; firstStep: number; required: Required; group: string };
+// A flat floor tile for an instance with no trusted solid; half extents along runtime x and z.
+export type TrayTile = { centreM: Vec3; halfExtentsM: [number, number]; firstStep: number; required: Required; group: string };
+export type TrayGroup = { id: string; label: string; instanceIds: string[]; boundsM: { min: Vec3; max: Vec3 }; labelM: Vec3 };
+export type Inventory = { required: number; modeled: number; tiles: number; canonical: number; notRequired: number; spares: number; scope: string; canonicalSource: string };
+export type VariantEntry = {
+  graphHash: string; floorYM: number; centreM: Vec3;
+  tray: { label: string; instances: Record<string, TrayPose>; tiles: Record<string, TrayTile>; groups: TrayGroup[]; inventory: Inventory; camera: StudioCamera };
+  steps: StepEntry[];
+};
 export type MaterialSpec = { label: string; basis: string; baseColor: Vec3; metallic: number; roughness: number; clearcoat?: number; clearcoatRoughness?: number };
 // A registered display model's check against one placed state: CHECKED against that exact closure, or NOT_CHECKED.
 export type DisplayCheck = { definitionId: string; status: 'CHECKED' | 'NOT_CHECKED'; closureRfc8785Sha256?: string; overlaps: { instanceId: string; volumeMm3: number }[] };
@@ -36,7 +56,8 @@ export type DisplayDetail = {
 };
 export type DisplayWithheld = { label: string; artifact: { path: string; sha256: string }; problems: string[] };
 export type DefinitionEntry = { name: string; kind: string; approximation: string; artifact: { path: string; sha256: string }; boundsM: { min: Vec3; max: Vec3 }; display?: DisplayDetail; displayWithheld?: DisplayWithheld };
-export type InstanceEntry = { definitionId: string; name: string; role: string; variants: StudioVariant[] };
+export type InstanceEntry = { definitionId: string; name: string; recordName: string; role: string; componentClass: string; group: string; variants: StudioVariant[] };
+export type SchematicEntry = InstanceEntry & { representation: string };
 export type LightSpec = { id: string; azimuthDeg: number; elevationDeg: number; distanceM: number; sizeM: [number, number]; color: Vec3; runtimeIntensity: number };
 export type StudioManifest = {
   packId: string; contract: string; basis: string; unit: string;
@@ -47,8 +68,12 @@ export type StudioManifest = {
   lighting: { background: string; runtimeEnvironmentBase: Vec3; pool: { css: string }; lights: LightSpec[] };
   timing: { bringInS: number; approachS: number; staggerS: number; easing: string };
   readinessKinds: Record<Display, string>;
-  definitions: Record<string, DefinitionEntry>; instances: Record<string, InstanceEntry>; variants: Record<StudioVariant, VariantEntry>;
+  definitions: Record<string, DefinitionEntry>; instances: Record<string, InstanceEntry>; schematic: Record<string, SchematicEntry>;
+  variants: Record<StudioVariant, VariantEntry>;
 };
+
+// Name and registry entry of any tray slot: a drawn solid or a tile.
+export const entryOf = (m: StudioManifest, id: string): InstanceEntry | SchematicEntry | undefined => m.instances[id] ?? m.schematic[id];
 
 // Load phases as performance.now() marks: fetch both files, verify them against the pack contract, decode, build.
 export type LoadTimings = { fetchStart: number; manifestFetched: number; glbFetched: number; verified: number; decoded: number; built: number; glbBytes: number };

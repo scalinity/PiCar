@@ -34,6 +34,14 @@ const GATE_REPORT = 'docs/implementation/M7_G_INSTRUCTIONAL_ASSEMBLY_REPORT.json
 const STEPS = 9;
 const DISPLAY_DIR = 'digital-twin/validation/expected/m7/fidelity/display';
 const M = 'twin_cad.assemblies.instructional';
+// Records the tray and the instruction drawer are built from; each is a pack input, so editing one makes the pack STALE.
+const PARTS = 'digital-twin/components/definitions/parts.json';
+const STOCK = 'digital-twin/components/instances/planned-stock.json';
+const TOOLS = 'digital-twin/components/inventory/tools.json';
+const INTENTS = 'digital-twin/assemblies/v40/steps/source-intents.json';
+const CABLES = 'digital-twin/assemblies/v40/connections/cables.json';
+const REGISTRY = 'digital-twin/validation/m2/runtime-registry.json';
+const graphPath = (variant) => `digital-twin/validation/m2/${variant}/compiled-graph.json`;
 
 const rel = (p) => path.relative(ROOT, p).split(path.sep).join('/');
 const read = (p) => fs.readFileSync(path.isAbsolute(p) ? p : path.join(ROOT, p));
@@ -101,7 +109,7 @@ function studioDefinitions() {
   const kind = kindsByDefinition();
   const defs = new Set();
   for (const variant of activeVariants()) {
-    const graph = json(`digital-twin/validation/m2/${variant}/compiled-graph.json`);
+    const graph = json(graphPath(variant));
     const defOf = Object.fromEntries(graph.instances.map((i) => [i.id, i.definitionId]));
     for (let n = 1; n <= STEPS; n++) for (const id of graph.steps[n - 1].introducedInstanceIds) if (isSolidKind(kind[defOf[id]])) defs.add(defOf[id]);
   }
@@ -138,7 +146,8 @@ function displayRecords() {
 }
 
 const activeVariants = () => json(`${PRESENTATION}/instructional/product-scope.json`).activeProductVariants;
-const kindsByDefinition = () => ({ ...Object.fromEntries(json('digital-twin/validation/expected/m5/instructional-parameters.json').definitions.map((d) => [d.definitionId, d.recipe])) });
+const KINDS = 'digital-twin/validation/expected/m5/instructional-parameters.json';
+const kindsByDefinition = () => ({ ...Object.fromEntries(json(KINDS).definitions.map((d) => [d.definitionId, d.recipe])) });
 const isSolidKind = (k) => k !== 'schematic' && k !== 'abstract';
 const kindOf = (kinds, id) => kinds[id] ?? (id.includes('-PLATE-') ? 'plate' : fail('UNKNOWN_DEFINITION_KIND', id));
 
@@ -208,7 +217,7 @@ function buildPack({ chain, tessellation }) {
   const registrySha = sha(read(REVISION_REGISTRY));
   check('revision-registry', registrySha === studioChain.revisionRegistry.sha256, 'the revision registry is the one the chain run selected artifacts with');
 
-  const graphs = Object.fromEntries(activeVariants().map((v) => [v, json(`digital-twin/validation/m2/${v}/compiled-graph.json`)]));
+  const graphs = Object.fromEntries(activeVariants().map((v) => [v, json(graphPath(v))]));
   const definitionOf = Object.fromEntries(Object.values(graphs).flatMap((g) => g.instances.map((i) => [i.id, i.definitionId])));
   const sources = {}, consumed = new Set();
   for (const variant of activeVariants()) for (let n = 1; n <= STEPS; n++) {
@@ -309,21 +318,42 @@ function buildPack({ chain, tessellation }) {
   });
 
   // Variants, steps, tray and cameras.
-  const instances = {};
+  const instances = {}, schematic = {};
   const variants = {};
   const vfov = stage.camera.verticalFovDeg;
+  const classOf = Object.fromEntries(json(PARTS).map((d) => [d.id, d.componentClass]));
+  const stock = json(STOCK), toolRecords = json(TOOLS), intents = json(INTENTS), connections = json(CABLES), warningText = Object.fromEntries(json(REGISTRY).warnings.map((w) => [w.id, w]));
+  const T = stage.tray;
+  const groupOf = (definitionId) => T.groups.find((g) => g.classes.includes(classOf[definitionId]))?.id ?? fail('TRAY_GROUP', `${definitionId} (${classOf[definitionId]})`);
+  // A part has a drawn solid when its instructional recipe is a solid kind; tools have no instructional definition.
+  const isSolid = (definitionId) => classOf[definitionId] !== 'tool' && isSolidKind(kindOf(kinds, definitionId));
+  // Tool requirements name a category; the kit's tool instances of that category satisfy it. Which depicted
+  // screwdriver a step needs is unresolved (Q-06, Q-13), so every matching kit tool is listed.
+  const toolCategory = Object.fromEntries(toolRecords.map((t) => [t.id, t.category]));
+  const toolInstances = (requirementId, variant) => stock.filter((s) => s.variantIds.includes(variant) && classOf[s.definitionId] === 'tool'
+    && names[s.definitionId].toLowerCase().includes(toolCategory[requirementId] ?? fail('TOOL_CATEGORY', requirementId))).map((s) => s.id);
+  const runtimeBounds = (b) => { const a = pointToRuntime(b.min), c = pointToRuntime(b.max); return { min: a.map((v, i) => Math.min(v, c[i])), max: a.map((v, i) => Math.max(v, c[i])) }; };
+  const finite = (b) => Number.isFinite(b.min[0]);
   for (const variant of activeVariants()) {
     const graph = graphs[variant];
     const inst = Object.fromEntries(graph.instances.map((i) => [i.id, i]));
     const steps = [];
     let previous = null;
-    const firstStepOf = {}, installedRotation = {};
+    const installedRotation = {};
+    // Every instance S01-S09 introduce or use, and the kit tools their tool requirements name: the tray's scope.
+    const required = new Map();
+    for (let n = 1; n <= STEPS; n++) {
+      const step = graph.steps[n - 1];
+      for (const id of step.introducedInstanceIds) if (!required.has(id)) required.set(id, { firstStep: n, how: 'introduced' });
+      for (const id of step.usedInstanceIds) if (!required.has(id)) required.set(id, { firstStep: n, how: 'used' });
+      for (const req of step.toolRequirementIds) for (const id of toolInstances(req, variant)) if (!required.has(id)) required.set(id, { firstStep: n, how: 'tool' });
+    }
+    for (const id of required.keys()) if (isSolid(inst[id].definitionId)) check(`tray-geometry:${variant}:${id}`, Boolean(cadBounds[inst[id].definitionId]), 'a required solid has tessellated geometry');
     for (let n = 1; n <= STEPS; n++) {
       const step = graph.steps[n - 1];
       const key = `${variant}-S${pad(n)}`;
       const src = sources[key];
-      const introducedSolid = step.introducedInstanceIds.filter((id) => isSolidKind(kindOf(kinds, inst[id].definitionId)));
-      for (const id of step.introducedInstanceIds) firstStepOf[id] ??= n;
+      const introducedSolid = step.introducedInstanceIds.filter((id) => isSolid(inst[id].definitionId));
       let entry;
       if (src.kind === 'closure') {
         const c = src.closure, r = src.readiness;
@@ -357,11 +387,39 @@ function buildPack({ chain, tessellation }) {
       }
       const placementsRt = Object.fromEntries(entry.placements.map((p) => [p.instanceId, poseToRuntime(p)]));
       const bounds = unionBounds(entry.placements.map((p) => worldBounds(cadBounds[inst[p.instanceId].definitionId], p.rotation, p.translationMm)));
+      const placementsCad = Object.fromEntries(entry.placements.map((p) => [p.instanceId, p]));
+      const before = steps[n - 2]?._placementsCad ?? {};
+      const newlyPlaced = entry.placements.map((p) => p.instanceId).filter((id) => !before[id]);
+      // Preview plays as instruction; review opens without playing (an unresolved relation, a refused candidate).
+      const mode = !stage.operableSteps.includes(n) || entry.display === 'UNAVAILABLE' ? 'closed' : entry.display === 'PREVIEW_SOURCE_REVALIDATED' ? 'preview' : 'review';
+      const stepParts = [];
+      const addPart = (id, use) => { if (!stepParts.some((p) => p.instanceId === id)) stepParts.push({ instanceId: id, use }); };
+      for (const id of newlyPlaced) addPart(id, 'placed');
+      for (const id of step.introducedInstanceIds) addPart(id, 'new');
+      for (const id of step.usedInstanceIds) addPart(id, 'uses');
+      for (const req of step.toolRequirementIds) for (const id of toolInstances(req, variant)) addPart(id, 'tool');
+      const intent = intents.find((x) => x.printedNumber === n) ?? fail('SOURCE_INTENT', key);
+      // Review steps name the parts their blocker is about: an unresolved connection's two ends, or the refused conflicts.
+      const focusInstanceIds = [...new Set([
+        ...entry.blockers.flatMap((b) => (b.connectionIds ?? []).flatMap((c) => { const r = connections.find((x) => x.id === c) ?? fail('CONNECTION', c); return [r.cableInstanceId, r.targetInstanceId]; })),
+        ...entry.conflicts.flatMap((c) => c.instances)])];
+      if (mode === 'preview') {
+        const noRecipe = newlyPlaced.filter((id) => !entry.recipes.some((r) => r.instanceId === id));
+        check(`preview-recipes:${key}`, noRecipe.length <= 1, `every part this step places has an M7 recipe except the workpiece it attaches to (${noRecipe.join(', ') || 'none'})`);
+        const moved = Object.entries(before).filter(([id, a]) => { const b = placementsCad[id];
+          return !b || a.translationMm.some((v, i) => Math.abs(v - b.translationMm[i]) > 1e-9) || a.rotation.flat().some((v, i) => Math.abs(v - b.rotation.flat()[i]) > 1e-12); }).map(([id]) => id);
+        check(`preview-holds:${key}`, moved.length === 0, moved.length ? `earlier parts change pose, which the recipes do not represent: ${moved.join(', ')}` : 'every earlier part keeps its closure pose');
+        check(`preview-represented:${key}`, stepParts.every((p) => required.has(p.instanceId)), 'every part this step names is in the tray scope');
+      }
       steps.push({
         printedNumber: n, stepId: step.id, title: step.title, sourcePanel: step.sourcePanel,
         display: entry.display, assembly: { gate: gate.gate, status: gate.status, admittedRows: gate.currentProductDeliveryCoverage.complete, requiredRows: gate.currentProductDeliveryCoverage.required },
-        operable: stage.operableSteps.includes(n) && entry.display === 'PREVIEW_SOURCE_REVALIDATED',
+        mode, operable: mode === 'preview',
         introducedInstanceIds: introducedSolid, introducedZeroSolidInstanceIds: step.introducedInstanceIds.filter((id) => !introducedSolid.includes(id)),
+        newlyPlacedInstanceIds: newlyPlaced, stepParts, focusInstanceIds,
+        instruction: { record: INTENTS, id: intent.id, parts: intent.introducedParts, hardware: intent.introducedHardware, tools: intent.tools,
+          orientation: intent.orientation, connection: intent.connectionIntent, variant: intent.variantDetails?.[variant] ?? null },
+        warnings: step.warningIds.map((id) => warningText[id]).filter(Boolean).map(({ id, severity, text }) => ({ id, severity, text })),
         placements: placementsRt, candidatePlacements: entry.candidate === true,
         // Bound display models placed in this state: CHECKED against this exact closure, or NOT_CHECKED (a refused
         // candidate state the record never measured), so an empty overlap list always means "checked, none found".
@@ -371,48 +429,119 @@ function buildPack({ chain, tessellation }) {
           stagedStart: poseToRuntime(r.stagedStart), segments: r.segments, anchor: r.anchor, stagingOnly: r.stagingOnly === true })),
         blockers: entry.blockers, conflicts: entry.conflicts, carriedUnframedConnectionIds: entry.carriedUnframedConnectionIds, zeroSolidInstanceIds: entry.zeroSolidInstanceIds,
         limitations: entry.limitations, approximationFlags: entry.approximationFlags, claims: entry.claims, source: entry.source,
-        dependencyWarnings: [], _boundsCad: bounds,
+        dependencyWarnings: [], _boundsCad: bounds, _placementsCad: placementsCad,
       });
     }
     for (const s of steps) s.dependencyWarnings = steps.filter((e) => e.printedNumber < s.printedNumber && e.display !== 'PREVIEW_SOURCE_REVALIDATED')
       .map((e) => ({ printedNumber: e.printedNumber, display: e.display, text: `S${pad(e.printedNumber)} is ${e.display === 'UNAVAILABLE' ? 'unavailable' : 'not revalidated'}; previewing S${pad(s.printedNumber)} does not certify S${pad(e.printedNumber)}` }));
 
-    // Parts tray: every S01-S09 solid instance, a labelled presentation layout beside the chassis.
-    const trayIds = Object.keys(firstStepOf).filter((id) => isSolidKind(kindOf(kinds, inst[id].definitionId)))
-      .sort((a, b) => firstStepOf[a] - firstStepOf[b] || inst[a].definitionId.localeCompare(inst[b].definitionId) || a.localeCompare(b));
-    const assembled = unionBounds(steps.map((s) => s._boundsCad).filter((b) => Number.isFinite(b.min[0])));
+    // Parts tray: every instance in the tray scope, in labelled bins beside the chassis (stage.json tray). A solid keeps
+    // the orientation a closure verified for it, else its part-local one; an instance with no trusted solid (a cable,
+    // tape stock, a tool) gets a flat tile, never invented geometry.
+    const assembled = unionBounds(steps.map((s) => s._boundsCad).filter(finite));
     const floorZ = assembled.min[2];
-    const tray = {};
-    const startX = assembled.min[0];
-    let cursorX = startX, rowTop = assembled.min[1] - stage.tray.offsetMm, rowDepth = 0;
-    for (const id of trayIds) {
-      const verified = installedRotation[id];
-      const R = verified ?? [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
-      const b = worldBounds(cadBounds[inst[id].definitionId], R, [0, 0, 0]);
-      const dx = b.max[0] - b.min[0], dy = b.max[1] - b.min[1];
-      if (cursorX > startX && cursorX + dx > startX + stage.tray.rowLengthMm) { cursorX = startX; rowTop -= rowDepth + stage.tray.gapMm; rowDepth = 0; }
-      const t = [cursorX - b.min[0], rowTop - dy - b.min[1], floorZ - b.min[2]];
-      tray[id] = { ...poseToRuntime({ translationMm: t, rotation: R }), orientation: verified ? 'installed' : 'part-local', firstStep: firstStepOf[id] };
-      cursorX += dx + stage.tray.gapMm; rowDepth = Math.max(rowDepth, dy);
+    const order = (a, b) => required.get(a).firstStep - required.get(b).firstStep || inst[a].definitionId.localeCompare(inst[b].definitionId) || a.localeCompare(b);
+    const footprint = (id) => {
+      const definitionId = inst[id].definitionId;
+      if (!isSolid(definitionId)) return { dx: T.tileMm[0], dy: T.tileMm[1], tile: true };
+      const R = installedRotation[id] ?? [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+      const b = worldBounds(cadBounds[definitionId], R, [0, 0, 0]);
+      return { dx: b.max[0] - b.min[0], dy: b.max[1] - b.min[1], dz: b.max[2] - b.min[2], b, R, verified: Boolean(installedRotation[id]) };
+    };
+    const tray = {}, tiles = {}, groups = [], boxOf = {};
+    let shelfTop = assembled.min[1] - T.offsetMm;
+    for (const shelf of T.shelves) {
+      let cursorX = assembled.min[0], shelfDepth = 0;
+      for (const gid of shelf) {
+        const group = T.groups.find((g) => g.id === gid) ?? fail('TRAY_SHELF_GROUP', gid);
+        const ids = [...required.keys()].filter((id) => groupOf(inst[id].definitionId) === gid).sort(order);
+        if (!ids.length) continue;
+        // Rows: one per definition where identical pieces must be countable, otherwise a flow wrapped at the group width.
+        const rows = [];
+        if (group.rowPerDefinition) for (const id of ids) { const row = rows.find((r) => inst[r[0]].definitionId === inst[id].definitionId); if (row) row.push(id); else rows.push([id]); }
+        else {
+          let row = [], width = 0;
+          for (const id of ids) { const f = footprint(id); if (row.length && width + f.dx > T.groupWidthMm) { rows.push(row); row = []; width = 0; } row.push(id); width += f.dx + T.gapMm; }
+          rows.push(row);
+        }
+        let rowTop = shelfTop, blockWidth = 0;
+        for (const row of rows) {
+          // Seen from the tray camera, a tall row rises over the row behind it; reserve that band so nothing is hidden.
+          const feet = row.map(footprint), depth = Math.max(...feet.map((f) => f.dy));
+          rowTop -= T.occlusion * Math.max(0, ...feet.map((f) => f.dz ?? 0));
+          const centreY = rowTop - depth / 2;
+          const pitch = group.rowPerDefinition ? Math.max(T.minPitchMm, ...feet.map((f) => f.dx)) + T.gapMm : null;
+          let x = cursorX;
+          row.forEach((id, k) => {
+            const f = feet[k], left = pitch ? x + (pitch - T.gapMm - f.dx) / 2 : x;
+            const common = { firstStep: required.get(id).firstStep, required: required.get(id).how, group: gid };
+            if (f.tile) {
+              boxOf[id] = { min: [left, centreY - f.dy / 2, floorZ], max: [left + f.dx, centreY + f.dy / 2, floorZ] };
+              // Runtime half extents [x, z]: runtime x is CAD y, runtime z is CAD x.
+              tiles[id] = { centreM: pointToRuntime([left + f.dx / 2, centreY, floorZ]), halfExtentsM: [(f.dy / 2) * SCALE, (f.dx / 2) * SCALE], ...common };
+            } else {
+              const t = [left - f.b.min[0], centreY - (f.b.min[1] + f.b.max[1]) / 2, floorZ - f.b.min[2]];
+              boxOf[id] = worldBounds(cadBounds[inst[id].definitionId], f.R, t);
+              tray[id] = { ...poseToRuntime({ translationMm: t, rotation: f.R }), orientation: f.verified ? 'installed' : 'part-local', ...common };
+            }
+            x += pitch ?? f.dx + T.gapMm;
+          });
+          blockWidth = Math.max(blockWidth, x - T.gapMm - cursorX);
+          rowTop -= depth + T.gapMm;
+        }
+        // The label sits in a band along the group's near edge (away from the chassis), so no part of the group covers it.
+        const blockBottom = rowTop + T.gapMm;
+        groups.push({ id: gid, label: group.label, instanceIds: ids, boundsM: runtimeBounds(unionBounds(ids.map((id) => boxOf[id]))),
+          labelM: pointToRuntime([cursorX, blockBottom - T.labelBandMm / 2, floorZ]) });
+        shelfDepth = Math.max(shelfDepth, shelfTop - blockBottom + T.labelBandMm);
+        cursorX += blockWidth + T.groupGapMm;
+      }
+      shelfTop -= shelfDepth + T.groupGapMm;
     }
-    const trayBounds = unionBounds(trayIds.map((id) => worldBounds(cadBounds[inst[id].definitionId], rotationToCad(matrixFromQuaternion(tray[id].rotationXYZW)), pointToCad(tray[id].translationM))));
+    check(`tray-complete:${variant}`, [...required.keys()].every((id) => Boolean(tray[id]) !== Boolean(tiles[id])) && Object.keys(tray).length + Object.keys(tiles).length === required.size,
+      `each of the ${required.size} instances in the tray scope has exactly one slot, a solid or a tile`);
+    const trayBounds = unionBounds(Object.values(boxOf));
     const everything = unionBounds([assembled, trayBounds]);
+
+    // Guided cameras (stage.json camera): each step names what it frames.
     const cameraSpec = (n) => ({ ...stage.camera.default, ...(stage.camera.steps[String(n)] ?? {}) });
-    const subject = (n, b) => (cameraSpec(n).subject === 'everything' ? everything : b);
     for (const s of steps) {
-      const b = subject(s.printedNumber, s._boundsCad);
-      s.camera = Number.isFinite(b.min[0]) ? cameraFor(cameraSpec(s.printedNumber), b, vfov) : null;
-      delete s._boundsCad;
+      const at = (id) => (s._placementsCad[id] ? worldBounds(cadBounds[inst[id].definitionId], s._placementsCad[id].rotation, s._placementsCad[id].translationMm) : boxOf[id]);
+      const listed = s.stepParts.map((p) => p.instanceId);
+      const subjects = {
+        tray: trayBounds, everything, state: s._boundsCad,
+        new: s.newlyPlacedInstanceIds.length ? unionBounds(s.newlyPlacedInstanceIds.map(at)) : s._boundsCad,
+        parts: unionBounds(listed.filter((id) => classOf[inst[id].definitionId] !== 'tool').map(at)),
+        'placed-parts': unionBounds(listed.filter((id) => s._placementsCad[id]).map(at)),
+        'tray-parts': unionBounds(listed.filter((id) => !s._placementsCad[id] && classOf[inst[id].definitionId] !== 'tool').map(at)),
+        focus: unionBounds(s.focusInstanceIds.map(at)),
+      };
+      const spec = cameraSpec(s.printedNumber), b = subjects[spec.subject] ?? fail('CAMERA_SUBJECT', `${variant} S${pad(s.printedNumber)} ${spec.subject}`);
+      s.camera = finite(b) ? cameraFor(spec, b, vfov) : null;
+      if (s.mode !== 'closed') check(`camera:${variant}-S${pad(s.printedNumber)}`, s.camera !== null, `an opened step has a guided camera (subject ${spec.subject})`);
+      delete s._boundsCad; delete s._placementsCad;
     }
 
-    for (const id of trayIds) {
-      instances[id] ??= { definitionId: inst[id].definitionId, name: names[inst[id].definitionId] ?? inst[id].definitionId, role: inst[id].role, variants: [] };
-      instances[id].variants.push(variant);
+    for (const id of required.keys()) {
+      const definitionId = inst[id].definitionId;
+      const base = { definitionId, name: stage.displayNames[definitionId] ?? names[definitionId] ?? definitionId, recordName: names[definitionId] ?? definitionId,
+        role: inst[id].role, componentClass: classOf[definitionId], group: groupOf(definitionId) };
+      if (tray[id]) (instances[id] ??= { ...base, variants: [] }).variants.push(variant);
+      else (schematic[id] ??= { ...base, representation: T.representations[classOf[definitionId]] ?? fail('TRAY_REPRESENTATION', classOf[definitionId]), variants: [] }).variants.push(variant);
     }
+    const canonical = stock.filter((s) => s.variantIds.includes(variant));
+    const trayCamera = { tray: trayBounds, everything }[cameraSpec(0).subject] ?? fail('CAMERA_SUBJECT', `${variant} S00 ${cameraSpec(0).subject}`);
     variants[variant] = {
       graphHash: graph.graphHash, modelHash: graph.modelHash,
-      floorYM: (floorZ - json(STAGE).lighting.floor.gapMm) * SCALE,
-      tray: { label: 'Parts tray: presentation layout only, not a physical assembly state', instances: tray, camera: cameraFor(cameraSpec(0), everything, vfov) },
+      floorYM: (floorZ - stage.lighting.floor.gapMm) * SCALE,
+      centreM: pointToRuntime(everything.min.map((v, i) => (v + everything.max[i]) / 2)),
+      tray: {
+        label: 'Parts tray: presentation layout only, not a physical assembly state', instances: tray, tiles, groups,
+        inventory: { required: required.size, modeled: Object.keys(tray).length, tiles: Object.keys(tiles).length, canonical: canonical.length,
+          notRequired: canonical.length - required.size, spares: canonical.filter((s) => s.disposition === 'backup').length,
+          scope: 'Every instance printed steps 1 to 9 introduce or use, and the kit tools they require', canonicalSource: `${STOCK}: printed-stock claims, not a count of the owner's loose kit` },
+        camera: cameraFor(cameraSpec(0), trayCamera, vfov),
+      },
       steps,
     };
 
@@ -457,14 +586,15 @@ function buildPack({ chain, tessellation }) {
         studioChain: { sha256: sha(fs.readFileSync(studioChainFile)) } },
       tessellation: { label: tessellation, meshesSha256: sha(fs.readFileSync(path.join(tessDir, 'meshes.json'))), binSha256: index.binSha256, linearDeflectionMm: index.linearDeflectionMm, angularDeflectionRad: index.angularDeflectionRad },
       revisionRegistry: { path: REVISION_REGISTRY, sha256: registrySha },
-      inputs: Object.fromEntries([STAGE, MATERIALS, GATE_REPORT, `${PRESENTATION}/instructional/product-scope.json`].map((p) => [p, sha(read(p))])),
+      inputs: Object.fromEntries([STAGE, MATERIALS, GATE_REPORT, `${PRESENTATION}/instructional/product-scope.json`, KINDS, PARTS, STOCK, TOOLS, INTENTS, CABLES, REGISTRY,
+        ...activeVariants().map(graphPath)].map((p) => [p, sha(read(p))])),
       m7Gate: { gate: gate.gate, status: gate.status, coverage: gate.currentProductDeliveryCoverage },
     },
     assets: { parts: { path: 'parts.glb', sha256: glbSha, bytes: glb.byteLength } },
     materials: Object.fromEntries(materialsUsed.map(({ id, ...m }) => [id, m])),
     lighting: stage.lighting,
     timing: stage.timing,
-    definitions, instances, variants,
+    definitions, instances, schematic, variants,
   };
   // The producer enforces the same contract the runtime loader enforces (pack-contract.ts) before writing anything.
   const contractProblems = [...manifestProblems({ ...manifest, packId: '0'.repeat(64) }), ...glbProblems(glbJson(glb), manifest)];

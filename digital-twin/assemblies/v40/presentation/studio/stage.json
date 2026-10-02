@@ -1,18 +1,41 @@
 {
-  "contract": "picar-studio-stage/1",
+  "contract": "picar-studio-stage/2",
   "track": "presentation-only",
   "note": "Display policy only: timing, framing, lighting and the parts-tray layout. Never assembly truth; final poses always come from the M7 closures.",
   "angles": "Azimuth and elevation are measured in the CAD frame around the subject: azimuth 0 looks at the robot from its front (+X), positive turns toward robot left (+Y); elevation is above the deck plane.",
-  "operableSteps": [0, 1, 2],
+  "operableSteps": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "operableNote": "The states the Studio opens. A step plays as instruction (Preview) only when its closure is PREVIEW_SOURCE_REVALIDATED and passes the pack's preview checks; a blocked or refused step opens in Review and never plays.",
   "timing": { "bringInS": 1.0, "approachS": 1.4, "staggerS": 0.2, "easing": "easeInOutCubic" },
   "camera": {
     "verticalFovDeg": 30,
+    "subjects": "tray: the parts tray; everything: tray and every placed state; state: what is placed in this step; new: what this step places; parts: this step's parts where they are now (installed, in the tray or as a tile); placed-parts: those of them that are installed; tray-parts: those of them still in the tray or shown as tiles (tools aside); focus: the parts a review step names (the unresolved connection's ends, the refused conflicts)",
     "default": { "subject": "state", "azimuthDeg": -36, "elevationDeg": 30, "fit": 0.9 },
     "steps": {
-      "0": { "subject": "everything", "azimuthDeg": -24, "elevationDeg": 46, "fit": 0.85 },
+      "0": { "subject": "tray", "azimuthDeg": -90, "elevationDeg": 58, "fit": 0.74 },
       "1": { "subject": "state", "azimuthDeg": -34, "elevationDeg": 34, "fit": 0.92 },
-      "2": { "subject": "state", "azimuthDeg": -38, "elevationDeg": 28, "fit": 0.86 }
+      "2": { "subject": "state", "azimuthDeg": -38, "elevationDeg": 28, "fit": 0.86 },
+      "3": { "subject": "placed-parts", "azimuthDeg": -20, "elevationDeg": 40, "fit": 2.0 },
+      "4": { "subject": "new", "azimuthDeg": -36, "elevationDeg": 36, "fit": 1.6 },
+      "5": { "subject": "new", "azimuthDeg": -140, "elevationDeg": 16, "fit": 1.3 },
+      "6": { "subject": "tray-parts", "azimuthDeg": -60, "elevationDeg": 48, "fit": 1.15 },
+      "7": { "subject": "focus", "azimuthDeg": -35, "elevationDeg": 6, "fit": 1.25 },
+      "8": { "subject": "new", "azimuthDeg": -14, "elevationDeg": 34, "fit": 2.4 },
+      "9": { "subject": "new", "azimuthDeg": -20, "elevationDeg": 18, "fit": 1.7 }
     }
+  },
+  "displayNames": {
+    "note": "Labels the Studio shows for definitions whose registry name carries a status note; the inspector also states the registry name.",
+    "PX-V40-DEF-PI5": "Raspberry Pi 5",
+    "PX-V40-DEF-ZERO2W": "Raspberry Pi Zero 2 W",
+    "PX-V40-DEF-ROBOT-HAT": "Robot HAT",
+    "PX-V40-DEF-HORN-PAN": "Pan servo horn",
+    "PX-V40-DEF-MOTOR-LEFT": "Left TT motor",
+    "PX-V40-DEF-MOTOR-RIGHT": "Right TT motor",
+    "PX-V40-DEF-USB-MICROPHONE": "USB mini microphone",
+    "PX-V40-DEF-SCREWDRIVER-01": "Screwdriver 1",
+    "PX-V40-DEF-SCREWDRIVER-02": "Screwdriver 2",
+    "PX-V40-DEF-HOOK": "Hook tape",
+    "PX-V40-DEF-LOOP": "Loop tape"
   },
   "hero": { "variant": "rpi5", "step": 2, "camera": "the manifest camera of that step, so the reference render and the app share one framing", "resolution": [2400, 1500], "samples": 512 },
   "lighting": {
@@ -28,5 +51,25 @@
       { "id": "top", "azimuthDeg": 0, "elevationDeg": 86, "distanceM": 1.0, "sizeM": [0.8, 0.8], "spreadDeg": 60, "color": [1.0, 0.99, 0.97], "blenderPowerW": 1.2, "runtimeIntensity": 0.7 }
     ]
   },
-  "tray": { "side": "right", "offsetMm": 70, "gapMm": 18, "rowLengthMm": 300 }
+  "tray": {
+    "note": "A presentation layout beside the chassis on the robot's right, never an assembly state. Every instance printed steps 1-9 introduce or use, and the kit tools their tool requirements name, gets one slot: a solid at its own pose, or a flat tile when no trusted solid exists. Shelves run along the robot's length (rear to front) and step away from the chassis; fastener groups give each definition its own row so identical pieces can be counted. Each row also reserves occlusion x its tallest height, the band a tall row covers of the row behind it from the tray camera.",
+    "side": "right", "offsetMm": 60, "gapMm": 9, "minPitchMm": 10, "groupGapMm": 22, "labelBandMm": 16, "groupWidthMm": 200,
+    "tileMm": [52, 30], "occlusion": 0.7,
+    "groups": [
+      { "id": "plates", "label": "Plates", "classes": ["plate"] },
+      { "id": "electronics", "label": "Electronics", "classes": ["piBoard", "robotHat", "camera", "ultrasonic", "grayscale", "connector", "battery"] },
+      { "id": "actuators", "label": "Motors and servos", "classes": ["motor", "servo", "horn"] },
+      { "id": "wheels", "label": "Wheels", "classes": ["wheel"] },
+      { "id": "fasteners", "label": "Fasteners", "classes": ["standoff", "screw", "nut", "washer", "rivet"], "rowPerDefinition": true },
+      { "id": "cables", "label": "Cables", "classes": ["cable"] },
+      { "id": "supplies", "label": "Supplies", "classes": ["consumable"] },
+      { "id": "tools", "label": "Tools", "classes": ["tool"] }
+    ],
+    "shelves": [["plates", "electronics"], ["actuators", "wheels", "fasteners", "supplies"], ["cables", "tools"]],
+    "representations": {
+      "cable": "No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile.",
+      "consumable": "No defined shape: cut from tape stock, so it is shown as a tile.",
+      "tool": "No instructional geometry: the kit tool is listed as a tile."
+    }
+  }
 }

@@ -3,6 +3,8 @@
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
+import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
 const PACK = path.resolve('src/generated/studio');
@@ -107,14 +109,46 @@ describe('units, axes and transforms', () => {
 
 describe('readiness is labelled separately from assembly acceptance', () => {
   const steps = (v: string) => manifest.variants[v].steps as any[];
-  it.each(['rpi5', 'rpi-zero-2-w'])('%s: S01-S02 operable previews, S07 blocked relation, S09 refused candidate', (v) => {
-    expect(steps(v).filter((s) => s.operable).map((s) => s.printedNumber)).toEqual([1, 2]);
-    expect(steps(v)[6]).toMatchObject({ display: 'PREVIEW_BLOCKED_RELATION', operable: false });
-    expect(steps(v)[6].blockers[0].id).toBe('UNFRAMED_TOUCHED_CABLE_END');
-    expect(steps(v)[8]).toMatchObject({ display: 'REVIEW_REFUSED_CANDIDATE', operable: false, candidatePlacements: true });
-    expect(steps(v)[8].conflicts.length).toBeGreaterThan(0);
-    expect(steps(v)[7].dependencyWarnings.map((w: any) => w.printedNumber)).toContain(7);
+  it.each(['rpi5', 'rpi-zero-2-w'])('%s: S01-S06 and S08 play as Preview, S07 and S09 open in Review, nothing is closed', (v) => {
+    expect(steps(v).filter((s) => s.operable).map((s) => s.printedNumber)).toEqual([1, 2, 3, 4, 5, 6, 8]);
+    expect(steps(v).map((s) => s.mode)).toEqual(['preview', 'preview', 'preview', 'preview', 'preview', 'preview', 'review', 'preview', 'review']);
+    for (const s of steps(v).filter((x) => x.mode === 'preview')) expect(s).toMatchObject({ display: 'PREVIEW_SOURCE_REVALIDATED', candidatePlacements: false, source: { kind: 'closure', closureVerify: 'PASS' } });
+    expect(steps(v)[6]).toMatchObject({ display: 'PREVIEW_BLOCKED_RELATION', mode: 'review', operable: false });
+    expect(steps(v)[6].blockers).toEqual([{ id: 'UNFRAMED_TOUCHED_CABLE_END', connectionIds: ['PX-V40-CONN-07-COMMON-BATTERY'] }]);
+    expect(steps(v)[6].focusInstanceIds).toEqual(['PX-V40-INS-BATTERY-001', 'PX-V40-INS-ROBOT-HAT-001']); // the lead's two ends
+    expect(steps(v)[8]).toMatchObject({ display: 'REVIEW_REFUSED_CANDIDATE', mode: 'review', operable: false, candidatePlacements: true });
+    expect(steps(v)[8].conflicts.map((c: any) => [c.instances.join(' x '), Math.round(c.volumeMm3 * 1000) / 1000])).toEqual([
+      ['PX-V40-INS-HORN-PAN-001 x PX-V40-INS-PLATE-H-001', 101.071], ['PX-V40-INS-HORN-PAN-001 x PX-V40-INS-ULTRASONIC-001', 2.026],
+      ['PX-V40-INS-PLATE-A-001 x PX-V40-INS-PLATE-H-001', 12.955], ['PX-V40-INS-PLATE-A-001 x PX-V40-INS-ULTRASONIC-001', 51.25]]);
+    expect(steps(v)[7].dependencyWarnings.map((w: any) => w.printedNumber)).toEqual([7]);
     for (const s of steps(v)) expect(s.assembly).toMatchObject({ gate: 'G-INSTRUCTIONAL-ASSEMBLY', status: 'BLOCKED', admittedRows: 0, requiredRows: 58 });
+  });
+  it.each(['rpi5', 'rpi-zero-2-w'])('%s: animates what each closure newly places, so the battery moves in S07 (placed there, introduced in S06)', (v) => {
+    expect(steps(v)[5].introducedInstanceIds).toContain('PX-V40-INS-BATTERY-001');
+    expect(steps(v)[5].newlyPlacedInstanceIds).toEqual([]);
+    expect(steps(v)[6].newlyPlacedInstanceIds).toEqual(['PX-V40-INS-BATTERY-001']);
+    for (const s of steps(v)) {
+      const before = s.printedNumber > 1 ? Object.keys(steps(v)[s.printedNumber - 2].placements) : [];
+      expect(s.newlyPlacedInstanceIds.sort()).toEqual(Object.keys(s.placements).filter((id) => !before.includes(id)).sort());
+    }
+  });
+  it('quotes each step\'s source intent and warnings from the repository records, never generated text', () => {
+    const intents = JSON.parse(fs.readFileSync(path.resolve('../digital-twin/assemblies/v40/steps/source-intents.json'), 'utf8'));
+    const registry = JSON.parse(fs.readFileSync(path.resolve('../digital-twin/validation/m2/runtime-registry.json'), 'utf8'));
+    for (const v of ['rpi5', 'rpi-zero-2-w']) for (const s of steps(v)) {
+      const i = intents.find((x: any) => x.printedNumber === s.printedNumber);
+      expect(s.instruction).toEqual({ record: 'digital-twin/assemblies/v40/steps/source-intents.json', id: i.id, parts: i.introducedParts, hardware: i.introducedHardware,
+        tools: i.tools, orientation: i.orientation, connection: i.connectionIntent, variant: i.variantDetails?.[v] ?? null });
+      for (const w of s.warnings) expect(registry.warnings.find((x: any) => x.id === w.id).text).toBe(w.text);
+    }
+  });
+  it('authors a guided camera for the tray and every step, and every opened state has one', () => {
+    const stage = JSON.parse(fs.readFileSync(path.resolve('../digital-twin/assemblies/v40/presentation/studio/stage.json'), 'utf8'));
+    expect(Object.keys(stage.camera.steps).sort()).toEqual(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+    for (const v of ['rpi5', 'rpi-zero-2-w']) {
+      expect(manifest.variants[v].tray.camera).toBeTruthy();
+      for (const s of steps(v)) expect(s.camera).toBeTruthy();
+    }
   });
   it('binds the detailed Pi 5 to the closures it was checked against, and marks the refused S09 candidate NOT_CHECKED', () => {
     const def = manifest.definitions['PX-V40-DEF-PI5'];
@@ -131,6 +165,56 @@ describe('readiness is labelled separately from assembly acceptance', () => {
     const placedSomewhere = new Set(steps('rpi5').filter((s) => !s.candidatePlacements).flatMap((s) => Object.keys(s.placements)));
     for (const [id, t] of Object.entries<any>(tray)) expect(t.orientation).toBe(placedSomewhere.has(id) ? 'installed' : 'part-local');
     expect(tray['PX-V40-INS-PLATE-H-001'].orientation).toBe('part-local');
+  });
+});
+
+describe('parts tray completeness (Studio 2)', () => {
+  const read = (p: string) => JSON.parse(fs.readFileSync(path.resolve('..', p), 'utf8'));
+  const stock = read('digital-twin/components/instances/planned-stock.json'), parts = read('digital-twin/components/definitions/parts.json');
+  const tools = read('digital-twin/components/inventory/tools.json');
+  const kinds = Object.fromEntries(read('digital-twin/validation/expected/m5/instructional-parameters.json').definitions.map((d: any) => [d.definitionId, d.recipe]));
+  const classOf = Object.fromEntries(parts.map((d: any) => [d.id, d.componentClass]));
+  // Derived here from the records, independently of the pack build: every instance S01-S09 introduce or use, and the
+  // kit tools of each required tool category.
+  const required = (v: string) => {
+    const graph = read(`digital-twin/validation/m2/${v}/compiled-graph.json`), ids = new Set<string>();
+    for (const s of graph.steps.slice(0, 9)) {
+      for (const id of [...s.introducedInstanceIds, ...s.usedInstanceIds]) ids.add(id);
+      for (const req of s.toolRequirementIds) {
+        const category = tools.find((t: any) => t.id === req).category;
+        for (const x of stock) if (x.variantIds.includes(v) && classOf[x.definitionId] === 'tool' && parts.find((d: any) => d.id === x.definitionId).name.toLowerCase().includes(category)) ids.add(x.id);
+      }
+    }
+    return ids;
+  };
+  const defOf = Object.fromEntries(stock.map((s: any) => [s.id, s.definitionId]));
+  const solid = (id: string) => classOf[defOf[id]] !== 'tool' && kinds[defOf[id]] !== 'schematic' && kinds[defOf[id]] !== 'abstract';
+  it.each([['rpi5', 50, 44], ['rpi-zero-2-w', 47, 41]] as const)('%s: every required instance is drawn or a tile, none missing or extra (%i = %i + tiles)', (v, total, drawn) => {
+    const tray = manifest.variants[v].tray, need = required(v);
+    expect(need.size).toBe(total);
+    expect(Object.keys(tray.instances).sort()).toEqual([...need].filter(solid).sort());
+    expect(Object.keys(tray.tiles).sort()).toEqual([...need].filter((id) => !solid(id)).sort());
+    expect(Object.keys(tray.instances).length).toBe(drawn);
+    expect(Object.keys(tray.tiles).sort()).toEqual(['PX-V40-INS-HOOK-002', 'PX-V40-INS-LOOP-002', 'PX-V40-INS-RIBBON-FPC-001', 'PX-V40-INS-SCREWDRIVER-01-001', 'PX-V40-INS-SCREWDRIVER-02-001', 'PX-V40-INS-WRENCH-001']);
+    expect(tray.inventory).toMatchObject({ required: total, modeled: drawn, tiles: total - drawn, canonical: 156, notRequired: 156 - total });
+    // Groups partition the slots; identities stay per instance.
+    expect(tray.groups.flatMap((g: any) => g.instanceIds).sort()).toEqual([...need].sort());
+  });
+  it('passes the independent tray audit: required = drawn + represented, nothing missing, duplicated or overlapping', () => {
+    const out = fs.mkdtempSync(path.join(os.tmpdir(), 'tray-audit-'));
+    execFileSync('node', [path.join(TOOLS, 'tray-audit.mjs'), '--label', 'test', '--out', out], { cwd: path.resolve('..') });
+    const report = JSON.parse(fs.readFileSync(path.join(out, 'tray-audit-test.json'), 'utf8'));
+    for (const v of ['rpi5', 'rpi-zero-2-w']) {
+      expect(report.variants[v].invariant).toBe('HOLDS');
+      expect(report.variants[v].counts).toMatchObject({ missingCount: 0, duplicateUnexpectedCount: 0, coincidentTrayPairs: 0 });
+    }
+    fs.rmSync(out, { recursive: true });
+  });
+  it('shows plain display names, keeping the registry name beside each', () => {
+    for (const e of [...Object.values<any>(manifest.instances), ...Object.values<any>(manifest.schematic)]) {
+      expect(e.name).not.toMatch(/unresolved|role|depicted|;/);
+      expect(e.recordName).toBe(parts.find((d: any) => d.id === e.definitionId).name);
+    }
   });
 });
 

@@ -3,13 +3,16 @@
 // two sides cannot drift. SHA-256 comes from Web Crypto, which Node and the app's secure context both provide.
 import canonicalize from 'canonicalize';
 
-export const PACK_CONTRACT = 'picar-studio-pack/2';
+export const PACK_CONTRACT = 'picar-studio-pack/3';
 export const PARTS_CONTRACT = 'picar-studio-parts/1';
 export const PACK_ID_DOMAIN = 'picar-studio:pack\n';
 export const RUNTIME_BASIS = 'RH-YUP-ZFORWARD';
 export const RUNTIME_UNIT = 'm';
 export const VARIANTS = ['rpi5', 'rpi-zero-2-w'] as const;
 export const DISPLAYS = ['PREVIEW_SOURCE_REVALIDATED', 'PREVIEW_BLOCKED_RELATION', 'REVIEW_REFUSED_CANDIDATE', 'UNAVAILABLE'] as const;
+// preview plays as instruction; review opens a blocked or refused state without playing it; closed is not opened.
+export const MODES = ['preview', 'review', 'closed'] as const;
+export const PART_USES = ['placed', 'new', 'uses', 'tool'] as const;
 const STEPS = 9;
 
 // The pack ID is the SHA-256 of a domain tag followed by the RFC 8785 canonical manifest without its packId.
@@ -73,21 +76,41 @@ export function manifestProblems(m: unknown): string[] {
     need(isObject(i) && typeof i.definitionId === 'string' && i.definitionId in m.definitions && Array.isArray(i.variants)
       && i.variants.every((v: string) => (VARIANTS as readonly string[]).includes(v)), `MANIFEST_INSTANCE ${id}`);
   }
+  // Instances with no trusted solid: listed and shown as tray tiles, never drawn as geometry.
+  if (!need(isObject(m.schematic), 'MANIFEST_SCHEMATIC')) return out;
+  for (const [id, i] of Object.entries<Json>(m.schematic)) {
+    need(isObject(i) && typeof i.definitionId === 'string' && !(i.definitionId in m.definitions) && typeof i.name === 'string' && typeof i.representation === 'string'
+      && !(id in m.instances) && Array.isArray(i.variants) && i.variants.every((v: string) => (VARIANTS as readonly string[]).includes(v)), `MANIFEST_SCHEMATIC_INSTANCE ${id}`);
+  }
   if (!need(isObject(m.variants) && VARIANTS.every((v) => isObject(m.variants[v])), 'MANIFEST_VARIANTS')) return out;
   for (const v of VARIANTS) {
     const entry = m.variants[v];
-    const tray: Json = entry.tray?.instances;
-    if (!need(finite(entry.floorYM) && isObject(tray) && camera(entry.tray?.camera), `MANIFEST_TRAY ${v}`)) continue;
+    const tray: Json = entry.tray?.instances, tiles: Json = entry.tray?.tiles;
+    if (!need(finite(entry.floorYM) && vec(entry.centreM, 3) && isObject(tray) && isObject(tiles) && Array.isArray(entry.tray?.groups) && camera(entry.tray?.camera), `MANIFEST_TRAY ${v}`)) continue;
     for (const [id, p] of Object.entries<Json>(tray)) need(id in m.instances && pose(p), `MANIFEST_TRAY_POSE ${v} ${id}`);
+    for (const [id, t] of Object.entries<Json>(tiles)) need(id in m.schematic && isObject(t) && vec(t.centreM, 3) && vec(t.halfExtentsM, 2), `MANIFEST_TRAY_TILE ${v} ${id}`);
+    // Every tray slot belongs to exactly one labelled group, and every group lists only slots.
+    const grouped = entry.tray.groups.flatMap((g: Json) => (Array.isArray(g?.instanceIds) ? g.instanceIds : [null]));
+    const slots = [...Object.keys(tray), ...Object.keys(tiles)];
+    need(entry.tray.groups.every((g: Json) => isObject(g) && typeof g.label === 'string' && vec(g.labelM, 3) && vec(g.boundsM?.min, 3) && vec(g.boundsM?.max, 3))
+      && grouped.length === slots.length && new Set(grouped).size === grouped.length && grouped.every((id: string) => slots.includes(id)), `MANIFEST_TRAY_GROUPS ${v}`);
+    const known = (id: unknown): boolean => typeof id === 'string' && (id in tray || id in tiles);
     if (!need(Array.isArray(entry.steps) && entry.steps.length === STEPS, `MANIFEST_STEPS ${v}`)) continue;
     entry.steps.forEach((s: Json, i: number) => {
       const at = `${v} S${String(i + 1).padStart(2, '0')}`;
-      if (!need(isObject(s) && s.printedNumber === i + 1 && (DISPLAYS as readonly string[]).includes(s.display) && typeof s.operable === 'boolean', `MANIFEST_STEP ${at}`)) return;
+      if (!need(isObject(s) && s.printedNumber === i + 1 && (DISPLAYS as readonly string[]).includes(s.display) && (MODES as readonly string[]).includes(s.mode)
+        && s.operable === (s.mode === 'preview'), `MANIFEST_STEP ${at}`)) return;
       // Readiness the runtime relies on: only a closure the verifier passed, at its verified hash, is instruction.
       need(!s.operable || (s.display === 'PREVIEW_SOURCE_REVALIDATED' && s.source?.kind === 'closure' && s.source?.closureVerify === 'PASS'
         && hex64(s.source?.closureRfc8785Sha256) && s.candidatePlacements === false), `MANIFEST_OPERABLE_NOT_READY ${at}`);
+      // Review never plays: it is only for a blocked relation or a refused candidate.
+      need(s.mode !== 'review' || s.display === 'PREVIEW_BLOCKED_RELATION' || s.display === 'REVIEW_REFUSED_CANDIDATE', `MANIFEST_REVIEW_DISPLAY ${at}`);
       need(s.candidatePlacements !== true || s.display === 'REVIEW_REFUSED_CANDIDATE', `MANIFEST_CANDIDATE_DISPLAY ${at}`);
       need(isObject(s.placements) && Object.entries<Json>(s.placements).every(([id, p]) => id in tray && pose(p)), `MANIFEST_PLACEMENTS ${at}`);
+      need(Array.isArray(s.newlyPlacedInstanceIds) && s.newlyPlacedInstanceIds.every((id: string) => id in (s.placements ?? {})), `MANIFEST_NEWLY_PLACED ${at}`);
+      need(Array.isArray(s.stepParts) && s.stepParts.every((p: Json) => known(p?.instanceId) && (PART_USES as readonly string[]).includes(p.use))
+        && Array.isArray(s.focusInstanceIds) && s.focusInstanceIds.every(known), `MANIFEST_STEP_PARTS ${at}`);
+      need(s.mode === 'closed' || camera(s.camera), `MANIFEST_OPENED_CAMERA ${at}`);
       need(Array.isArray(s.recipes) && s.recipes.every((r: Json) => r.instanceId in (s.placements ?? {}) && vec(r.approachAxis, 3)
         && finite(r.approachDistanceM) && pose(r.stagedStart)), `MANIFEST_RECIPES ${at}`);
       need(Array.isArray(s.displayChecks) && s.displayChecks.every((d: Json) => d.definitionId in m.definitions
