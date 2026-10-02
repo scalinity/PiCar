@@ -1,6 +1,6 @@
 # Assembly Studio 1 handoff
 
-Studio 1 is a local checkpoint on `studio/s1-assembly-studio`. It is a presentation slice, not M7 acceptance: `G-INSTRUCTIONAL-ASSEMBLY` stays BLOCKED at 0/58, and the M7 work it reads stays uncommitted in this checkout (`HANDOFF_M7_REMEDIATION.md`, "Studio 1 changes to M7-owned paths").
+Studio 1 is a checkpoint on `studio/s1-assembly-studio`, followed by the M7 review checkpoint and pushed for external review. It is a presentation slice, not M7 acceptance: `G-INSTRUCTIONAL-ASSEMBLY` stays BLOCKED at 0/58, and the M7 work it reads is committed for review, not accepted (`HANDOFF_M7_REMEDIATION.md`, "Studio 1 changes to M7-owned paths").
 
 ## State at close
 
@@ -37,10 +37,10 @@ STUDIO 2 — COMPLETE S01–S09 FOR BOTH BOARDS IN THE ASSEMBLY STUDIO
 
 IDENTITY AND SCOPE
 Repository /Users/danny/Documents/Apps/PiCar: a PiCar-X (SunFounder Z0104V40) digital twin with a React/Tauri companion app, a personal single-user tool on the owner's Mac. Deliver Studio 2 as defined in docs/digital-twin/ASSEMBLY_STUDIO_PLAN.md ("Studio 2 — complete S01–S09 for both boards"): every printed step S01–S09 opens in the companion's #/studio for rpi5 and rpi-zero-2-w; S03–S06 and S08 play as Preview instruction; S07 and S09 open in review mode; the drawer shows the printed manual panel, the part list, limitations and the M7 status; inspection adds isolate, ghost others, explode around the step and a deck clip plane. rpi4 stays PRESERVED_NON_TARGET.
-Authorized for this assignment: local frontend builds, type checks, browser tests, the coordinated dev server, bounded Tauri debug builds and native fullscreen testing, Blender command-line automation, pinned frontend dependencies where a feature needs one, and local commits staged by explicit path. Not authorized: pushing, any M7 acceptance claim, M8 work, changes to the M3 session store, reading or changing the owner's session database.
+Authorized for this assignment: local frontend builds, type checks, browser tests, the coordinated dev server, bounded Tauri debug builds and native fullscreen testing, Blender command-line automation, pinned frontend dependencies where a feature needs one, and local commits staged by explicit path. Not authorized: pushing unless the owner asks for a review push, any M7 acceptance claim, M8 work, changes to the M3 session store, reading or changing the owner's session database.
 
 WHAT ELSE IS IN FLIGHT
-M7 instructional assembly is BLOCKED (G-INSTRUCTIONAL-ASSEMBLY 0/58) and all of its work is uncommitted in this same checkout. M7 owns digital-twin/cad/twin_cad/assemblies/, digital-twin/cad/tests/test_m7_*.py, digital-twin/assemblies/v40/presentation/instructional/, digital-twin/validation/expected/m7/, docs/implementation/M7_* and docs/implementation/HANDOFF_M7_REMEDIATION.md. Never stage, commit, reset, clean or stash anything under those paths: they are the only copy, and M7 commits them itself when its gate passes. Studio 1's fidelity revisions and the Pi 5 display model live there; HANDOFF_M7_REMEDIATION.md, section "Studio 1 changes to M7-owned paths", lists them.
+M7 instructional assembly is BLOCKED (G-INSTRUCTIONAL-ASSEMBLY 0/58); its work is committed on this branch as a review checkpoint, not accepted. M7 owns digital-twin/cad/twin_cad/assemblies/, digital-twin/cad/tests/test_m7_*.py, digital-twin/assemblies/v40/presentation/instructional/, digital-twin/validation/expected/m7/, docs/implementation/M7_* and docs/implementation/HANDOFF_M7_REMEDIATION.md. Change nothing there except what a Studio change forces (an additive fidelity revision, or an M7 test assertion that a store change invalidates); record each in HANDOFF_M7_REMEDIATION.md and commit it separately from Studio files. Never reset, clean or stash those paths. Studio 1's fidelity revisions and the Pi 5 display model live there; HANDOFF_M7_REMEDIATION.md, section "Studio 1 changes to M7-owned paths", lists them.
 One integration owner per working tree. Before writing anything, confirm no other Claude or Codex session is writing here (pgrep -fl "claude|codex", then list files modified in the last hour outside node_modules, target and .git); if one is, stop and say so.
 Cut branch studio/s2-all-steps from studio/s1-assembly-studio. Never check out codex/m7-instructional-assemblies: it lacks the tracked Studio files and the plate-generator change the Plate A fidelity revision rebuilds through.
 Do not start Studio 3 (session ledger, owner-recorded completion, photos) or Studio 4.
@@ -48,7 +48,7 @@ Do not start Studio 3 (session ledger, owner-recorded completion, photos) or Stu
 STARTUP ORDER
 1. Read CLAUDE.md at the repository root: the geometry fidelity bars and the rule that the M7 overlap checks are never weakened.
 2. Read docs/digital-twin/ASSEMBLY_STUDIO_PLAN.md and docs/digital-twin/ASSEMBLY_STUDIO_PIPELINE.md in full, then docs/implementation/HANDOFF_STUDIO_1.md "State at close".
-3. Run git status --porcelain | head -80, git log --oneline -5 and git branch --show-current. Expect the Studio 1 checkpoint at the tip of studio/s1-assembly-studio and the M7 roots untracked.
+3. Run git status --porcelain | head -80, git log --oneline -5 and git branch --show-current. Expect the M7 review checkpoint at the tip of studio/s1-assembly-studio, after the Studio 1 checkpoint, with M7's paths tracked apart from the superseded evidence .gitignore excludes.
 4. Run node digital-twin/tools/studio/studio.mjs check from the repository root. It must print packId 2c1e54e477106b6b00dd986bd6e8ac5d056da50523ba27bf79e3cbf86be6289b with problems [] before anything changes; if not, stop and report what differs.
 5. Read, in this order: picarx-companion/src/pages/Studio.tsx; picarx-companion/src/features/assembly-3d/ (assets/pack.ts, motion/evaluate.ts, scene/StudioScene.tsx, state/studio-store.ts, ui/StudioChrome.tsx); digital-twin/tools/studio/studio.mjs, especially the "operable:" line that decides step operability from stage.json operableSteps and the display status; digital-twin/assemblies/v40/presentation/studio/stage.json; picarx-companion/tests/browser/studio.spec.ts and picarx-companion/tests/studio/*.test.ts; picarx-companion/src/components/PdfViewer.tsx.
 6. Resume rule: if studio/s2-all-steps exists or stage.json operableSteps already extends past [0, 1, 2], inspect what landed (git log, git diff studio/s1-assembly-studio) and continue from it; do not restart.
@@ -80,9 +80,9 @@ Report each check as RUN / PASS, RUN / FAIL with its output, or NOT RUN; an unru
 - Native: from picarx-companion with ~/.cargo/bin on PATH, pnpm tauri build --debug --bundles app, then open src-tauri/target/debug/bundle/macos/picarx-companion.app. Test entering fullscreen, Escape to leave, Escape with a part selected, every step on both boards, and the performance overlay (p). Capture the window with screencapture -x -o -l<windowId>, taking the window id from CGWindowListCopyWindowInfo through osascript -l JavaScript, into the evidence folder.
 
 CLOSE-OUT
-1. Commit Studio 2 locally on studio/s2-all-steps: stage by explicit path, never under the M7 roots or .claude/, inspect git diff --cached --name-only and --stat before committing, no attribution trailers, no push.
+1. Commit Studio 2 locally on studio/s2-all-steps: stage by explicit path, M7-root changes in their own commit and never anything under .claude/, inspect git diff --cached --name-only and --stat before committing, no attribution trailers, and push only if the owner asks.
 2. Update ASSEMBLY_STUDIO_PLAN.md and ASSEMBLY_STUDIO_PIPELINE.md to the current design only, with no history notes.
-3. If anything under an M7 root changed, append the exact files and reasons to HANDOFF_M7_REMEDIATION.md (it stays uncommitted).
+3. If anything under an M7 root changed, append the exact files and reasons to HANDOFF_M7_REMEDIATION.md.
 4. Write docs/implementation/HANDOFF_STUDIO_2.md with the state at close and the Studio 3 kickoff prompt.
 5. Do not start Studio 3. Do not call any Studio checkpoint M7 acceptance or describe S01–S09 as assembly-validated: M7 stays at 0/58 until its own gate passes.
 6. Print last: the verification table, the capture paths, what the owner should inspect first, and the Studio 3 kickoff prompt.
