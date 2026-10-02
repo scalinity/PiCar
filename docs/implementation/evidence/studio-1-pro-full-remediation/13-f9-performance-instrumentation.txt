@@ -1,0 +1,13 @@
+# F9 performance instrumentation
+
+## unit
+ ✓ tests/studio/perf.test.ts > keeps a real 120 ms stall inside an active stretch 1ms
+ ✓ tests/studio/perf.test.ts > does not count an idle gap or a hidden page as frame time 0ms
+ ✓ tests/studio/perf.test.ts > recovers the pixel ratio on a 60 Hz display that comfortably keeps up 3ms
+ ✓ tests/studio/perf.test.ts > degrades a slow stretch and does not oscillate back before its back-off has passed 6ms
+ ✓ tests/studio/perf.test.ts > estimates the display period from the fastest steady frames, so a 120 Hz display is held to its own cadence 3ms
+      Tests  5 passed (5)
+(Studio 1 semantics these replace: intervals of 100 ms or more were discarded as idle; DPR recovery needed a 12.5 ms mean, unreachable at 60 Hz; first frame was stamped at Canvas creation; the start mark was module evaluation.)
+
+## browser (Chromium + WebKit)
+  6 passed (47.9s)

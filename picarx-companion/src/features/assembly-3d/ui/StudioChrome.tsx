@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { studioHref, type StudioVariant } from '../../../lib/router';
-import type { Display, DisplayDetail, LoadedPack, StepEntry, Vec3 } from '../assets/pack';
+import type { Display, DisplayCheck, DisplayDetail, LoadedPack, StepEntry, Vec3 } from '../assets/pack';
+import { vendorAgreement } from './fidelity';
 import { statesAt, type Phase, type Timeline } from '../motion/evaluate';
 import {
   focusSelection, pause, play, replay, resetCamera, rewind, seek, select, toggleDrawer, useStudio,
@@ -23,11 +24,27 @@ const PHASE_TEXT: Record<Phase, string> = {
   'bring-in': 'Being brought in from the tray (presentation travel)', approach: 'Staged approach from the M7 recipe (not a measured insertion path)',
 };
 
-function displaySummary(display: DisplayDetail): string {
-  const offsets = (display.vendorCrossCheck?.parts ?? []).flatMap((p) => (p.centreOffsetXYMm ? [Math.hypot(...p.centreOffsetXYMm)] : []));
-  const agreement = offsets.length ? ` Its parts sit within ${Math.max(...offsets.filter((o) => o < 1)).toFixed(2)} mm of the maker's own model.` : '';
-  return `A detailed model drawn from ${display.source.split(' (')[0]}.${agreement}`;
+// The matched subset of the maker's-model cross-check, stated as a subset, with every unmatched part named.
+function fidelityText(display: DisplayDetail): string {
+  const holes = display.relation.mountingHoles?.maxCentreDeviationMm;
+  const holeText = holes === undefined || holes === null ? '' : ` Mounting holes, measured on both shapes, agree within ${holes.toFixed(2)} mm.`;
+  if (!display.vendorCrossCheck) return `No maker's model was available to compare against.${holeText}`;
+  const a = vendorAgreement(display.vendorCrossCheck.parts);
+  const subset = a.matched ? ` Among those, centres differ by at most ${a.maxOffsetMm!.toFixed(2)} mm (median ${a.medianOffsetMm!.toFixed(2)} mm).` : '';
+  const rest = a.unmatched.length ? ` Not matched closely, so not counted above: ${a.unmatched.join(', ')}.` : '';
+  return `${a.matched} of ${a.total} detail parts match a part of the maker's own model (footprint overlap at least half).${subset}${rest}${holeText}`;
 }
+
+function checkText(pack: LoadedPack, check: DisplayCheck | undefined): string {
+  if (!check) return 'Not placed in this step.';
+  if (check.status === 'NOT_CHECKED') return 'Not checked against this state, so any overlap here is unmeasured.';
+  if (!check.overlaps.length) return 'Checked against this step’s closure: no overlap with any other part.';
+  return `Checked against this step’s closure; overlaps with ${check.overlaps.map((o) => `the ${pack.manifest.instances[o.instanceId].name} ${o.volumeMm3 >= 10 ? Math.round(o.volumeMm3) : o.volumeMm3.toFixed(1)} mm³`).join(', ')}.`;
+}
+
+const ArtifactFile = ({ artifact }: { artifact: { path: string; sha256: string } }) => (
+  <code title={artifact.sha256}>{artifact.path.split('/').pop()} ({artifact.sha256.slice(0, 10)})</code>
+);
 
 // Display-detail checks: large overlaps are findings; stud contacts in mounting holes are the hole-clearance class M7
 // records. A state the detailed model was never checked against says so, rather than reading as "no overlaps".
@@ -110,11 +127,17 @@ function Inspector({ pack, variant, timeline }: { pack: LoadedPack; variant: Stu
         <dt>Role</dt><dd>{instance.role}</dd>
         <dt>Now</dt><dd>{state ? PHASE_TEXT[state.phase] : '—'}</dd>
         {definition.display ? (<>
-          <dt>Shown as</dt><dd>{displaySummary(definition.display)}</dd>
-          <dt>Checked as</dt><dd>{definition.approximation}. Assembly checks use this simpler shape.</dd>
-        </>) : (<dt>Shape</dt>)}
-        {!definition.display && <dd>{definition.approximation}</dd>}
-        <dt>Shape file</dt><dd><code title={definition.artifact.sha256}>{definition.artifact.path.split("/").pop()} ({definition.artifact.sha256.slice(0, 10)})</code></dd>
+          <dt>Displayed shape</dt>
+          <dd data-artifact="displayed">A detailed model drawn from {definition.display.source.split(' (')[0]}. <ArtifactFile artifact={definition.display.artifact} /></dd>
+          <dt>Checked shape</dt>
+          <dd data-artifact="checked">{definition.approximation}. The assembly checks use this shape, not the one shown. <ArtifactFile artifact={definition.artifact} /></dd>
+          <dt>Matched reference features</dt><dd>{fidelityText(definition.display)}</dd>
+          <dt>In this step</dt><dd>{checkText(pack, step?.displayChecks.find((c) => c.definitionId === instance.definitionId))}</dd>
+        </>) : (<>
+          {definition.displayWithheld && (<><dt>Detailed model</dt><dd>{definition.displayWithheld.label}.</dd></>)}
+          <dt>Shape</dt>
+          <dd data-artifact="checked">{definition.approximation}. Shown and checked as this shape. <ArtifactFile artifact={definition.artifact} /></dd>
+        </>)}
         <dt>Pose from</dt><dd>{(state?.placed || state?.phase === 'approach') && step?.source.file ? <code title={step.source.sha256}>{step.source.file.split('/').pop()}</code> : `Tray layout${tray?.orientation === 'part-local' ? ', part-local orientation (no installed pose yet)' : ''}`}</dd>
       </dl>
       <button type="button" className="studio-link-button" onClick={focusSelection}>Frame this part</button>
@@ -241,10 +264,10 @@ export function PerfHud() {
   const ms = (x?: number) => (x === undefined ? '—' : `${x.toFixed(1)} ms`);
   return (
     <div className="studio-perf" aria-label="Performance">
-      <div><b>{p.fps.toFixed(0)}</b> fps · frame {ms(p.meanMs)} · p95 {ms(p.p95Ms)}</div>
+      <div><b>{p.activeFps.toFixed(0)}</b> fps over {p.activeFrames} active frames · mean {ms(p.activeMeanMs)} · p95 {ms(p.activeP95Ms)} · display ≈ {ms(p.displayPeriodMs)}</div>
       <div>{p.width}×{p.height} css px · dpr {p.dpr} · {p.calls} draws · {p.triangles.toLocaleString()} tris</div>
       <div>{p.load ? <>manifest {ms(p.load.manifestFetched - p.load.fetchStart)} · glb {ms(p.load.glbFetched - p.load.manifestFetched)} · verify {ms(p.load.verified - p.load.glbFetched)} · decode {ms(p.load.decoded - p.load.verified)} · build {ms(p.load.built - p.load.decoded)}</> : 'load —'}</div>
-      <div>load to first frame {ms(p.firstFrameMs)}</div>
+      <div>page start → canvas {ms(p.openToCanvasMs)} · first render {ms(p.openToFirstRenderMs)} · first frame drawn {ms(p.openToFirstFrameDrawnMs)}</div>
     </div>
   );
 }

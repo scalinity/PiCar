@@ -5,12 +5,13 @@
 //   node digital-twin/tools/studio/studio.mjs chain --python <frozen-env-python> --label <label>
 //   node digital-twin/tools/studio/studio.mjs tessellate --python <frozen-env-python> --chain <label> --label <label>
 //   node digital-twin/tools/studio/studio.mjs pack --chain <label> --tessellation <label>
-//   node digital-twin/tools/studio/studio.mjs blender [--blender <path>] [--render] [--reset-presentation]
+//   node digital-twin/tools/studio/studio.mjs blender [--blender <path>] [--render | --preview] [--reset-presentation] [--remove-unowned] [--check]
 //   node digital-twin/tools/studio/studio.mjs check [--dir <pack dir>]
 //
-// `check` reports two separate things: PACK_INTEGRITY (the manifest and GLB form the frozen pack they claim to) and
+// `check` reports three separate things: PACK_INTEGRITY (the manifest and GLB form the frozen pack they claim to),
 // SOURCE_FRESHNESS (the pack still matches the closures, verification, artifacts, tessellation, display checks and
-// inputs on disk now). Exit 0 when both hold, 1 when integrity fails, 3 when an intact pack is not FRESH.
+// inputs on disk now) and the Blender presentation snapshot (presentation.mjs: CURRENT for this pack and configuration).
+// Exit 0 when all three hold, 1 when integrity fails, 3 when an intact pack is not FRESH or its presentation not CURRENT.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -21,6 +22,7 @@ import { CAD_BASIS, RUNTIME_BASIS, C, SCALE, pointToRuntime, directionToRuntime,
   poseToRuntime, matrixFromQuaternion, isProperRotation } from './basis.mjs';
 import { PACK_CONTRACT, PARTS_CONTRACT, packIdPreimage, manifestProblems, glbJson, glbProblems } from '../../../picarx-companion/src/features/assembly-3d/assets/pack-contract.ts';
 import { REVISION_REGISTRY, closureReadiness, verifierIndex, tessellationProblems, displayCheckProblems, displayChecksFor, checkFreshness } from './sources.mjs';
+import { checkPresentation } from './presentation.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const GEN = path.join(ROOT, 'digital-twin/generated/studio');
@@ -508,11 +510,13 @@ export function checkPackFreshness(dir = PACK_DIR, root = ROOT) {
 function runBlender(opts) {
   const blender = opts.blender ?? '/Applications/Blender.app/Contents/MacOS/Blender';
   const script = path.join(ROOT, 'digital-twin/presentation/blender/build_studio_scene.py');
-  const extra = [opts.render ? '--render' : null, opts.preview ? '--preview' : null, opts['reset-presentation'] ? '--reset-presentation' : null].filter(Boolean);
-  const blend = path.join(ROOT, 'digital-twin/presentation/blender/picar-studio.blend');
-  const argv = [...(fs.existsSync(blend) ? [blend] : []), '--background', '--factory-startup', '--python', script, '--', '--root', ROOT, ...extra];
+  const flags = ['render', 'preview', 'reset-presentation', 'remove-unowned', 'check'].filter((f) => opts[f]).map((f) => `--${f}`);
+  // Scratch copies for tests: another .blend, receipt, render folder or report than the tracked ones.
+  const paths = ['blend', 'receipt', 'renders', 'report'].filter((f) => typeof opts[f] === 'string').flatMap((f) => [`--${f}`, path.resolve(opts[f])]);
+  const blend = typeof opts.blend === 'string' ? path.resolve(opts.blend) : path.join(ROOT, 'digital-twin/presentation/blender/picar-studio.blend');
+  const argv = [...(fs.existsSync(blend) ? [blend] : []), '--background', '--factory-startup', '--python', script, '--', '--root', ROOT, ...flags, ...paths];
   const r = spawnSync(blender, argv, { cwd: ROOT, encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'pipe'] });
-  const lines = `${r.stdout}\n${r.stderr}`.split('\n').filter((l) => l.startsWith('[studio]') || /Error|Traceback/.test(l));
+  const lines = `${r.stdout}\n${r.stderr}`.split('\n').filter((l) => l.startsWith('[studio]') || /Error|Traceback|^[A-Z][A-Z_]{5,}\b/.test(l)); // [studio] lines, errors and refusal codes
   console.log(lines.join('\n'));
   if (r.status !== 0) fail('BLENDER_FAILED', String(r.status));
 }
@@ -529,8 +533,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const dir = opts.dir ? path.resolve(opts.dir) : PACK_DIR;
       const { packId, status, problems, notes } = checkPack(dir);
       const freshness = status === 'PASS' ? checkPackFreshness(dir) : { status: 'NOT_CHECKED', problems: ['PACK_INTEGRITY failed'] };
-      console.log(JSON.stringify({ packId, integrity: { status, problems, notes }, freshness }, null, 1));
-      process.exitCode = status !== 'PASS' ? 1 : freshness.status !== 'FRESH' ? 3 : 0;
+      const presentation = checkPresentation(ROOT, packId); // the tracked .blend and render against this pack
+      console.log(JSON.stringify({ packId, integrity: { status, problems, notes }, freshness, presentation }, null, 1));
+      process.exitCode = status !== 'PASS' ? 1 : freshness.status !== 'FRESH' || presentation.status !== 'CURRENT' ? 3 : 0;
     }
     else { console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 10).join('\n')); process.exitCode = 2; }
   } catch (e) { console.error(e.message); process.exitCode = 1; }

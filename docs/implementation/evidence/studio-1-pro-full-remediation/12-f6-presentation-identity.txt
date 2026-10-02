@@ -1,0 +1,32 @@
+# F6 Blender presentation identity
+
+## unit: presentation freshness (presentation.mjs)
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is CURRENT while every recorded input matches 2ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is STALE for a pack other than the one the .blend was built from 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is STALE once digital-twin/assemblies/v40/presentation/studio/stage.json changes 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is STALE once digital-twin/presentation/materials/studio-materials.json changes 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is STALE once digital-twin/presentation/blender/build_studio_scene.py changes 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is STALE when the .blend was saved after its receipt 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is STALE when the render is not the one the receipt names 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > refuses a receipt whose recipe was edited after its identity was derived 1ms
+ ✓ tests/studio/presentation.test.ts > presentation snapshot > is UNVERIFIABLE without a receipt 1ms
+      Tests  9 passed (9)
+
+## Blender self-test on scratch copies of the tracked .blend (node digital-twin/tools/studio/presentation-selftest.mjs <scratch>), Blender 5.2.2 LTS
+PASS a run refuses objects outside the owned collections (SCENE_OWNERSHIP UNOWNED_SCENE_OBJECT Camera; UNOWNED_SCENE_OBJECT Cube; UNOWNED_SCENE_OBJECT Light; UNOWNED_COLLECTION Collection (pass --remove-unowned to delete objects outside the owned collections))
+PASS --remove-unowned deletes them and lists each in the receipt (object Cube (MESH), object Light (LIGHT), object Camera (CAMERA), collection Collection)
+PASS a rebuild reproduces the same presentation identity (cf84a58c6bd2)
+PASS source collections hold the same counts after rebuilds (no duplicates) ({"STUDIO-PRESENTATION":6,"STUDIO-SOURCE-DEFINITIONS":21,"STUDIO-SOURCE-INSTANCES":15,"STUDIO-SOURCE-TRAY":44})
+PASS --check accepts the .blend its receipt describes
+PASS --check reports an edit saved after the receipt
+PASS the edit survives a normal source rebuild (key light 7 W -> 10.5 W)
+PASS and the presentation identity changes with it (e69995e838c4)
+PASS --reset-presentation restores the configured presentation (key light 7 W)
+PASS and changes the presentation identity (cf84a58c6bd2)
+PASS a reset presentation equals the configured one before the edit
+11 passed, 0 failed
+
+First run of the self-test: the ownership rule treated Blender's .001 name suffix as duplication; hero and tray copies share instance IDs, so the rule now checks the picar_instance_id / picar_definition_id tags for presence and uniqueness, with exact counts. The studio.mjs blender output filter also now shows refusal codes.
+
+## Finding: the Studio 1 .blend held Blender's factory startup Collection (Cube 2 m at the origin, a point Light, a Camera), renderable, outside every owned collection; the builder created the file from --factory-startup and never removed them.
+Effect on the Studio 1 reference render: quarter-size Cycles renders (32 samples, denoised) of a scratch copy with and without the factory objects: no visible difference; mean absolute pixel difference 0.01139, 2.3 % of pixels over 2 %, max 0.157. That is within sampling noise for a changed scene, so the historical render is not shown to be affected and not certified unaffected.

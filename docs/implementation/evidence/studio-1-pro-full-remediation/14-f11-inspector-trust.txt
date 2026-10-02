@@ -1,0 +1,14 @@
+# F11 inspector trust
+
+## unit
+ ✓ tests/studio/fidelity.test.ts > classifies the Pi 5 cross-check: 25 of 33 matched, the 8 weak matches named and not counted 1ms
+ ✓ tests/studio/fidelity.test.ts > counts a well-matched part with a large offset, and does not count a poorly matched part with a small one 0ms
+      Tests  2 passed (2)
+
+## RED before the fix (Chromium): no displayed-artifact identity in the inspector
+    Error: expect(locator).toHaveAttribute(expected) failed
+    Expected: "afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a"
+    Error: element(s) not found
+
+## GREEN (Chromium + WebKit, with the existing source-identity test)
+  4 passed (8.8s)

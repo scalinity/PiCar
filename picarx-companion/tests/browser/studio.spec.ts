@@ -356,6 +356,47 @@ test('board switches and Studio visits do not accumulate GPU resources', async (
   expect(errors).toEqual([]);
 });
 
+// ---- Performance instrumentation (F9): marks in their real order; only active stretches are frame time.
+test('the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames', async ({ page }) => {
+  await open(page, '#/studio/rpi5/2');
+  const perf = () => diag(page, (d) => (d as any).perf());
+  await page.waitForFunction(() => (window as any).__studio.perf().openToFirstFrameDrawnMs !== undefined);
+  const p = await perf();
+  expect(p.openToCanvasMs).toBeGreaterThan(0);
+  expect(p.openToFirstRenderMs).toBeGreaterThanOrEqual(p.openToCanvasMs);
+  expect(p.openToFirstFrameDrawnMs).toBeGreaterThan(p.openToFirstRenderMs);
+  await page.getByRole('button', { name: 'Replay from the start' }).click();
+  await page.waitForTimeout(1500);
+  expect((await perf()).activeFrames, 'playback is an active stretch').toBeGreaterThan(20);
+  await seekTo(page, await diag(page, (d) => d.duration)); // paused: nothing asks for frames
+  const before = (await perf()).activeFrames;
+  await page.waitForTimeout(1500);
+  await page.getByRole('button', { name: 'Hide instructions' }).click(); // one isolated redraw after the idle wait
+  await page.evaluate(() => new Promise(requestAnimationFrame));
+  expect((await perf()).activeFrames, 'an idle wait and an isolated redraw add no frame time').toBe(before);
+  await page.keyboard.press('p');
+  await expect(page.locator('.studio-perf')).toContainText('active frames');
+  await expect(page.locator('.studio-perf')).toContainText('first frame drawn');
+});
+
+// ---- Inspector trust (F11): the displayed shape and the checked shape are both identified; fidelity is a named subset.
+test('the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset', async ({ page }) => {
+  await open(page, '#/studio/rpi5/2');
+  const pi5 = manifest.definitions['PX-V40-DEF-PI5'];
+  await page.getByRole('button', { name: manifest.instances['PX-V40-INS-PI5-001'].name }).click();
+  const inspector = page.locator('.studio-inspector');
+  await expect(inspector.locator('[data-artifact="displayed"] code')).toHaveAttribute('title', pi5.display.artifact.sha256);
+  await expect(inspector.locator('[data-artifact="checked"] code')).toHaveAttribute('title', pi5.artifact.sha256);
+  await expect(inspector).toContainText('Matched reference features');
+  await expect(inspector).toContainText('25 of 33');
+  await expect(inspector).toContainText('micro HDMI 0');
+  await expect(inspector).toContainText('449 mm³'); // the known microphone overlap in this state
+  await page.getByRole('button', { name: manifest.instances['PX-V40-INS-USB-MICROPHONE-001'].name }).click();
+  await expect(inspector.locator('[data-artifact="displayed"]')).toHaveCount(0);
+  await expect(inspector.locator('[data-artifact="checked"] code')).toHaveAttribute('title', manifest.definitions['PX-V40-DEF-USB-MICROPHONE'].artifact.sha256);
+  await expect(inspector).toContainText('Shown and checked as this shape');
+});
+
 test('the companion pages remain reachable from the Studio', async ({ page }) => {
   await open(page, '#/studio');
   await page.getByRole('link', { name: 'Reference' }).click();

@@ -9,17 +9,17 @@ import { owned } from '../features/assembly-3d/scene/resources';
 import {
   focusSelection, getStudioState, pause, play, resetCamera, seek, select, toggleDrawer, togglePerf,
 } from '../features/assembly-3d/state/studio-store';
-import { perf, perfSnapshot } from '../features/assembly-3d/state/perf';
+import { markHidden, perf, perfSnapshot } from '../features/assembly-3d/state/perf';
 import { setFullscreen, useFullscreen } from '../features/assembly-3d/state/fullscreen';
 import { escapePresses } from '../features/assembly-3d/state/escape';
 import { isTauri } from '@tauri-apps/api/core';
 import { CameraBar, Dock, Drawer, Header, PerfHud } from '../features/assembly-3d/ui/StudioChrome';
 import '../styles/studio.css';
 
-perf.mountedAt ||= performance.now();
 const diagnostics = import.meta.env.DEV || /[?&]diagnostics\b/.test(location.hash);
 
 export default function Studio({ variant = 'rpi5', step: requested = 0 }: { variant?: StudioVariant; step?: number }) {
+  perf.openedAt ??= performance.now(); // the page's first render this session: its code is loaded, its pack not yet
   const pack = use(loadPack());
   const fullscreen = useFullscreen();
   perf.load ??= pack.timings;
@@ -56,6 +56,7 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
     const escape = escapePresses(() => { if (getStudioState().selection) select(null); else void setFullscreen(false, el); });
     window.addEventListener('keydown', escape.keydown);
     window.addEventListener('keyup', escape.keyup);
+    document.addEventListener('visibilitychange', markHidden); // hidden time is never frame time
     if (diagnostics) {
       (window as unknown as { __studio?: unknown }).__studio = {
         packId: pack.manifest.packId, variant, step, duration: timeline.duration,
@@ -70,7 +71,7 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
         },
       };
     }
-    return () => { window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); };
+    return () => { window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); document.removeEventListener('visibilitychange', markHidden); };
   };
 
   return (

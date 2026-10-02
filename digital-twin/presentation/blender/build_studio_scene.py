@@ -13,6 +13,13 @@ Ownership inside the .blend:
 Geometry and poses are never edited here: meshes come from the pack (CAD tessellation) and placements from the
 manifest (M7 closures). The glTF importer's Y-up to Z-up mapping B and its inverse are the only basis handling;
 instance matrices use the same B, so the scene round-trips to the runtime basis exactly.
+
+Presentation identity (presentation-receipt.json). The pack ID identifies geometry and poses; a presentation snapshot also
+depends on the stage and material configuration, this builder, the Blender build and the presentation-owned state kept
+between runs. The receipt records all of them, a fingerprint of that state, the .blend's bytes and the render it made, and
+derives presentationId from them; `studio.mjs check` reports whether the snapshot is still current. Every object in the
+scene must belong to an owned collection: a run refuses unowned objects unless --remove-unowned is given, which deletes
+them and lists them in the receipt. --check verifies an existing .blend against its receipt without changing anything.
 """
 import hashlib
 import json
@@ -28,12 +35,26 @@ ROOT = Path(argv[argv.index('--root') + 1])
 RENDER = '--render' in argv
 RESET = '--reset-presentation' in argv
 PREVIEW = '--preview' in argv  # quarter resolution, 64 samples, written to the ignored generated folder
+CHECK = '--check' in argv
+REMOVE_UNOWNED = '--remove-unowned' in argv
+
+
+def option(name, default):
+    return Path(argv[argv.index(name) + 1]) if name in argv else default
+
+
 PACK = ROOT / 'picarx-companion/src/generated/studio'
-BLEND = ROOT / 'digital-twin/presentation/blender/picar-studio.blend'
-RENDERS = ROOT / 'digital-twin/presentation/blender/renders'
-REPORT = ROOT / 'digital-twin/generated/studio/blender-report.json'
-MATERIALS = json.loads((ROOT / 'digital-twin/presentation/materials/studio-materials.json').read_text())
-STAGE = json.loads((ROOT / 'digital-twin/assemblies/v40/presentation/studio/stage.json').read_text())
+BLEND = option('--blend', ROOT / 'digital-twin/presentation/blender/picar-studio.blend')
+RECEIPT = option('--receipt', ROOT / 'digital-twin/presentation/blender/presentation-receipt.json')
+RENDERS = option('--renders', ROOT / 'digital-twin/presentation/blender/renders')
+REPORT = option('--report', ROOT / 'digital-twin/generated/studio/blender-report.json')
+STAGE_PATH = 'digital-twin/assemblies/v40/presentation/studio/stage.json'
+MATERIALS_PATH = 'digital-twin/presentation/materials/studio-materials.json'
+BUILDER_PATH = 'digital-twin/presentation/blender/build_studio_scene.py'
+MATERIALS = json.loads((ROOT / MATERIALS_PATH).read_text())
+STAGE = json.loads((ROOT / STAGE_PATH).read_text())
+SOURCE_COLLECTIONS = ('STUDIO-SOURCE-DEFINITIONS', 'STUDIO-SOURCE-INSTANCES', 'STUDIO-SOURCE-TRAY')
+PRESENTATION = 'STUDIO-PRESENTATION'
 
 # glTF (runtime) -> Blender basis, as the glTF importer maps it: (x, y, z) -> (x, -z, y).
 B = Matrix(((1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (0, 0, 0, 1)))
@@ -219,7 +240,8 @@ def build_presentation(manifest, step):
     existing = bpy.data.collections.get('STUDIO-PRESENTATION')
     if existing is not None and not RESET:
         log('presentation collection kept (camera, lights, floor); pass --reset-presentation to rebuild it')
-        return
+        return 'kept'
+    built = 'reset' if existing is not None else 'created'
     target = collection('STUDIO-PRESENTATION')
     camera_spec = step['camera']
     center = to_blender_point(camera_spec['targetM'])
@@ -266,6 +288,7 @@ def build_presentation(manifest, step):
     linear = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in srgb]
     world.node_tree.nodes['Background'].inputs['Color'].default_value = (*linear, 1.0)
     world.node_tree.nodes['Background'].inputs['Strength'].default_value = 1.0
+    return built
 
 
 def by_id(sockets, identifier):
@@ -338,31 +361,184 @@ def render_settings():
     scene.unit_settings.length_unit = 'MILLIMETERS'
 
 
+def sha256(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
+
+
+def rounded(value):
+    """Plain JSON values for the fingerprint: floats to 1e-6, Blender vectors and colours as lists."""
+    if isinstance(value, float):
+        return round(value, 6) + 0.0
+    if isinstance(value, (bool, int, str)) or value is None:
+        return value
+    try:
+        return [rounded(v) for v in value]
+    except TypeError:
+        return str(value)
+
+
+def ownership(expected):
+    """Every scene object must sit in exactly one owned collection; source collections hold exactly what this run built."""
+    owned = {name: bpy.data.collections.get(name) for name in (*SOURCE_COLLECTIONS, PRESENTATION)}
+    homes = {}
+    for name, coll in owned.items():
+        for obj in (coll.all_objects if coll else []):
+            homes.setdefault(obj.name, []).append(name)
+    scene = bpy.context.scene
+    problems = [f'UNOWNED_SCENE_OBJECT {o.name}' for o in sorted(scene.objects, key=lambda o: o.name) if o.name not in homes]
+    problems += [f'OBJECT_IN_TWO_OWNED_COLLECTIONS {n}' for n, h in sorted(homes.items()) if len(h) > 1]
+    top = [c.name for c in scene.collection.children if c.name not in owned]
+    problems += [f'UNOWNED_COLLECTION {n}' for n in sorted(top)]
+    counts = {name: len(coll.all_objects) if coll else 0 for name, coll in owned.items()}
+    problems += [f'SOURCE_COUNT {n} {counts[n]} expected {v}' for n, v in expected.items() if counts[n] != v]
+    # Hero and tray copies share instance IDs, so Blender suffixes object names; identity is the tag each object carries,
+    # which must be present and unique within its collection.
+    for name in SOURCE_COLLECTIONS:
+        key = 'picar_definition_id' if name == 'STUDIO-SOURCE-DEFINITIONS' else 'picar_instance_id'
+        objs = list(owned[name].objects) if owned[name] else []
+        ids = [o.get(key) for o in objs]
+        problems += [f'UNTAGGED_SOURCE_OBJECT {name} {o.name}' for o in objs if o.get(key) is None]
+        problems += [f'DUPLICATE_SOURCE_OBJECT {name} {i}' for i in sorted({i for i in ids if i is not None and ids.count(i) > 1})]
+    return {'counts': counts, 'problems': problems}
+
+
+def remove_unowned():
+    """Delete scene objects and top-level collections outside the owned collections (for example Blender's factory
+    startup Cube, Light and Camera). Only with --remove-unowned; every removal is listed in the receipt."""
+    owned = {n for n in (*SOURCE_COLLECTIONS, PRESENTATION)}
+    keep = {o.name for n in owned if bpy.data.collections.get(n) for o in bpy.data.collections[n].all_objects}
+    removed = []
+    for obj in [o for o in bpy.context.scene.objects if o.name not in keep]:
+        removed.append(f'object {obj.name} ({obj.type})')
+        bpy.data.objects.remove(obj, do_unlink=True)
+    for coll in [c for c in bpy.context.scene.collection.children if c.name not in owned]:
+        removed.append(f'collection {coll.name}')
+        bpy.data.collections.remove(coll)
+    return removed
+
+
+def presentation_state():
+    """Fingerprint of the presentation-owned state a rebuild keeps or derives: STUDIO-PRESENTATION objects and their
+    data, the MAT-studio-* node trees, the world and the render settings."""
+    scene = bpy.context.scene
+    objects = []
+    coll = bpy.data.collections.get(PRESENTATION)
+    for obj in sorted(coll.all_objects if coll else [], key=lambda o: o.name):
+        row = {'name': obj.name, 'type': obj.type, 'matrix': rounded([list(r) for r in obj.matrix_world]), 'hideRender': obj.hide_render,
+               'shadowCatcher': obj.is_shadow_catcher}
+        data = obj.data
+        if obj.type == 'LIGHT':
+            row['light'] = {k: rounded(getattr(data, k, None)) for k in ('type', 'energy', 'color', 'shape', 'size', 'size_y', 'spread')}
+        elif obj.type == 'CAMERA':
+            row['camera'] = {k: rounded(getattr(data, k)) for k in ('lens', 'sensor_fit', 'angle_y', 'clip_start', 'clip_end')}
+        elif obj.type == 'MESH':
+            row['mesh'] = {'vertices': len(data.vertices), 'materials': [m.name if m else None for m in data.materials]}
+        objects.append(row)
+    materials = []
+    for mat in sorted((m for m in bpy.data.materials if m.name.startswith('MAT-studio-')), key=lambda m: m.name):
+        nodes = sorted(mat.node_tree.nodes, key=lambda n: n.name) if mat.use_nodes and mat.node_tree else []
+        materials.append({
+            'name': mat.name,
+            'nodes': [{'name': n.name, 'type': n.bl_idname,
+                       'inputs': {s.identifier: rounded(s.default_value) for s in n.inputs if hasattr(s, 'default_value') and not s.is_linked}} for n in nodes],
+            'links': sorted(f'{l.from_node.name}.{l.from_socket.identifier}>{l.to_node.name}.{l.to_socket.identifier}' for l in (mat.node_tree.links if nodes else [])),
+        })
+    world = scene.world
+    background = world.node_tree.nodes.get('Background') if world and world.use_nodes else None
+    render = scene.render
+    return {
+        'objects': objects, 'materials': materials,
+        'world': {'color': rounded(background.inputs['Color'].default_value), 'strength': rounded(background.inputs['Strength'].default_value)} if background else None,
+        'render': {'engine': render.engine, 'samples': scene.cycles.samples, 'resolution': [render.resolution_x, render.resolution_y],
+                   'viewTransform': scene.view_settings.view_transform, 'look': scene.view_settings.look, 'filmTransparent': render.film_transparent},
+    }
+
+
+def recipe_for(pack_id, hero, state):
+    build_hash = bpy.app.build_hash.decode() if isinstance(bpy.app.build_hash, bytes) else str(bpy.app.build_hash)
+    return {'packId': pack_id, 'hero': {'variant': hero['variant'], 'step': hero['step']},
+            'inputs': {p: sha256((ROOT / p).read_bytes()) for p in (STAGE_PATH, MATERIALS_PATH, BUILDER_PATH)},
+            'blender': {'version': bpy.app.version_string, 'buildHash': build_hash},
+            'presentationStateSha256': sha256(canonical(state).encode())}
+
+
+def presentation_id(recipe):
+    return sha256(('picar-studio:presentation\n' + canonical(recipe)).encode())
+
+
+def check_only():
+    """Verify the open .blend against its receipt: same presentation state, same ownership, nothing unowned."""
+    receipt = json.loads(RECEIPT.read_text())
+    state = presentation_state()
+    own = ownership({n: receipt['ownership']['counts'][n] for n in SOURCE_COLLECTIONS})
+    problems = list(own['problems'])
+    actual = sha256(canonical(state).encode())
+    if actual != receipt['recipe']['presentationStateSha256']:
+        problems.append(f"PRESENTATION_STATE_CHANGED expected={receipt['recipe']['presentationStateSha256']} actual={actual}")
+    if bpy.context.scene.get('picar_presentation_id') != receipt['presentationId']:
+        problems.append('PRESENTATION_ID_NOT_IN_BLEND')
+    print('[studio] check ' + json.dumps({'presentationId': receipt['presentationId'], 'problems': problems}), flush=True)
+    if problems:
+        raise SystemExit('PRESENTATION_CHECK_FAILED')
+
+
 def main():
+    if CHECK:
+        return check_only()
     manifest = json.loads((PACK / 'manifest.json').read_text())
     hero = STAGE['hero']
     variant = manifest['variants'][hero['variant']]
     step = variant['steps'][hero['step'] - 1]
     if not step['operable']:
         raise SystemExit('HERO_STEP_NOT_DISPLAY_READY')
+    # A new .blend starts as Blender's factory scene, none of which is presentation work; an existing one is only cleaned
+    # on request, so nothing someone placed there deliberately disappears silently.
+    removed = remove_unowned() if REMOVE_UNOWNED or not bpy.data.filepath else []
+    for item in removed:
+        log('removed unowned', item)
     meshes = import_definitions(manifest)
     objects = place_instances('STUDIO-SOURCE-INSTANCES', manifest, meshes, step['placements'])
-    place_instances('STUDIO-SOURCE-TRAY', manifest, meshes, {k: v for k, v in variant['tray']['instances'].items()}, hidden=True)
+    tray = place_instances('STUDIO-SOURCE-TRAY', manifest, meshes, {k: v for k, v in variant['tray']['instances'].items()}, hidden=True)
     validate(manifest, meshes, objects, step['placements'])
-    build_presentation(manifest, step)
+    built = build_presentation(manifest, step)
     render_settings()
-    bpy.context.scene['picar_pack_id'] = manifest['packId']
-    bpy.context.scene['picar_state'] = f"{hero['variant']} S{hero['step']:02d} after (M7 closure, display {step['display']})"
+    owned = ownership({'STUDIO-SOURCE-DEFINITIONS': len(meshes), 'STUDIO-SOURCE-INSTANCES': len(objects), 'STUDIO-SOURCE-TRAY': len(tray)})
+    if owned['problems']:
+        raise SystemExit('SCENE_OWNERSHIP ' + '; '.join(owned['problems']) + ' (pass --remove-unowned to delete objects outside the owned collections)')
+    state = presentation_state()
+    recipe = recipe_for(manifest['packId'], hero, state)
+    pid = presentation_id(recipe)
+    scene = bpy.context.scene
+    scene['picar_pack_id'] = manifest['packId']
+    scene['picar_presentation_id'] = pid
+    scene['picar_state'] = f"{hero['variant']} S{hero['step']:02d} after (M7 closure, display {step['display']})"
     BLEND.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(BLEND), compress=True)
-    log('saved', BLEND.relative_to(ROOT))
+    log('saved', BLEND, 'presentation', pid)
+    render = None
     if RENDER or PREVIEW:
         folder = ROOT / 'digital-twin/generated/studio/previews' if PREVIEW else RENDERS
         folder.mkdir(parents=True, exist_ok=True)
-        out = folder / f"{manifest['packId'][:12]}-{hero['variant']}-S{hero['step']:02d}.png"
-        bpy.context.scene.render.filepath = str(out)
+        out = folder / f"{manifest['packId'][:12]}-{pid[:12]}-{hero['variant']}-S{hero['step']:02d}.png"
+        scene.render.filepath = str(out)
         bpy.ops.render.render(write_still=True)
-        log('rendered', out.relative_to(ROOT))
+        log('rendered', out)
+        render = {'path': out.relative_to(ROOT).as_posix() if out.is_relative_to(ROOT) else str(out), 'sha256': sha256(out.read_bytes()),
+                  'preview': PREVIEW, 'samples': scene.cycles.samples, 'resolutionPercentage': scene.render.resolution_percentage}
+    receipt = {
+        'contract': 'picar-studio-presentation/1', 'presentationId': pid, 'recipe': recipe,
+        'presentation': {'built': built, 'removedUnowned': removed},
+        'ownership': {'counts': owned['counts'], 'unowned': []},
+        'blend': {'path': BLEND.relative_to(ROOT).as_posix() if BLEND.is_relative_to(ROOT) else str(BLEND), 'sha256': sha256(BLEND.read_bytes())},
+        'render': render,
+    }
+    RECEIPT.parent.mkdir(parents=True, exist_ok=True)
+    RECEIPT.write_text(json.dumps(receipt, indent=1, sort_keys=True) + '\n')
+    log('receipt', RECEIPT, json.dumps({'presentationId': pid, 'built': built, 'counts': owned['counts']}))
 
 
 main()
