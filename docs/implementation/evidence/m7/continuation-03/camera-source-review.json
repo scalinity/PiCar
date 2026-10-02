@@ -1,0 +1,41 @@
+{
+  "id": "PX-M7-S03-SOURCE-CORRESPONDENCE-03",
+  "track": "instructional-only",
+  "source": {
+    "url": "https://raw.githubusercontent.com/raspberrypi/documentation/master/documentation/asciidoc/accessories/camera/install.adoc",
+    "path": "digital-twin/cad/source-vault/m7/b7776dadcdac81d462e0b06a5d19afa840d232ea39c263bd15587d1b25618777.adoc",
+    "rawSha256": "b7776dadcdac81d462e0b06a5d19afa840d232ea39c263bd15587d1b25618777",
+    "bytes": 6755,
+    "retrievedOn": "2026-10-01",
+    "applicability": "Raspberry Pi board connector family guidance only; not SunFounder camera identity or cable metrology",
+    "redistribution": "No source publication authorized"
+  },
+  "findings": [
+    {
+      "variant": "rpi5",
+      "supported": "Either CAM/DISP0 or CAM/DISP1 accepts a camera; choose the connector nearest micro HDMI as a prospective documented presentation choice, with alternate remaining unused. V40 shared Pi4 illustration does not prescribe a Pi5-specific port number.",
+      "unresolved": "Exact textual CAM/DISP number to that selected physical position and qualified mating contact face/latch surface normal remain unadopted; no metric cable insertion transform authored.",
+      "existingSourceInspection": "Actual acquired STEP has two vertical connector bodies at native X near49 and55, spanning Y0.5..16.5; old two interior camera blocks do not depict these endpoints."
+    },
+    {
+      "variant": "rpi-zero-2-w",
+      "supported": "Camera socket is on the short edge opposite SD; locked source has a horizontal insertion/pull latch procedure.",
+      "unresolved": "Qualified native socket/contact/stiffener frame absent from existing BRep. Drawing establishes edge/outline but not internal contact normal/seating plane. Existing proxy interior camera block cannot be used as an actual socket."
+    }
+  ],
+  "commonRelation": "Metallic cable contacts face away from movable flap. This relation is supported independently of cable color; a numeric normal cannot be inferred from blue/orange appearance alone.",
+  "protectedSemantics": "FPC same retained cable instance in both active variants; historical Pi4 FFC preserved. No kit pin map, cable length/bend/metric route or camera-module OEM identity inferred.",
+  "sourcesExhausted": [
+    "Locked V40 page1 separate green/blueS03 closeups",
+    "Already acquired applicable Pi5 and Zero reference drawings",
+    "Actual Pi5 STEP2689-solid topology/22 contact leaves perconnector",
+    "Acquired SunFounder camera/assembly HTML",
+    "Local camera_module_pic.png and1.10_camera.png describe module, not per-board connector contacts",
+    "Official RaspberryPi installation textual snapshot"
+  ],
+  "remainingRemedy": "Source-backed mechanical connector wrapper/revision with independently identified flap/contact faces and port label correspondence. Do not substitute the old schematic blocks. No owner capture requirement.",
+  "sourceConflictEstablished": false,
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "status": "PARTIAL_SOURCE_CORRESPONDENCE_NO_FRAME_ADOPTION"
+}

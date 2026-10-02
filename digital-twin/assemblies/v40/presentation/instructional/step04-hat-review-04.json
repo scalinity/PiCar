@@ -1,0 +1,31 @@
+{
+  "id": "PX-M7-S04-HAT-MOUNT-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-04",
+  "hatInstanceId": "PX-V40-INS-ROBOT-HAT-001",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665,
+    "pdfPage": 1,
+    "method": "Visual review of the locked V40 printed step 4 green Pi4/Pi5 panel and blue Zero2W panel, rendered privately; no source pixels are copied into authored output",
+    "observation": "The Robot HAT is lowered straight down onto the standoff tops above the Pi board. Four M2.5x6 screws enter from the top of the HAT at its four mounting corners. The HAT keeps the Pi board's orientation so its underside GPIO socket lies over the board header. The ribbon exits from under the HAT's near edge.",
+    "reviewStatus": "PASS"
+  },
+  "placement": {
+    "orientationRule": "The HAT keeps the board's rotation: its mounting pattern (58 x 49) and its underside socket must lie over the board's own pattern and header.",
+    "positionRule": "Planar translation is the least-squares fit of the four HAT mounting bores to the four support axes of the step's screw stacks; vertical position is the highest support top, so the HAT rests on it.",
+    "screwRule": "Each M2.5x6 screw is coaxial with its stack's standoff axis (accepted ordered stack: screw, HAT, standoff), head seated on the HAT top, shank pointing down.",
+    "heightMismatchNote": "Where the kit's standoffs differ slightly in stock height (Zero2W: 32.0 mm tall posts against 32.6 mm upper bodies) the HAT rests on the highest and the remaining standoff keeps a declared approximate-height gap of at most 1.0 mm."
+  },
+  "approach": {"axis": [0, 0, -1], "distanceMm": 30},
+  "gapBudgetMm": 1.0,
+  "limitations": [
+    "The adopted HAT proxy is a 65 x 56 mm presentation envelope. V40 step 4 and 29 panels and the SunFounder Robot HAT V4.4 render indicate a Pi-sized board (about 85 x 56 mm) with the speaker and motor connectors toward the rear end; the proxy's outline and top-feature layout are not source-faithful. Placement uses only the mounting pattern and socket, which are unaffected",
+    "Actual HAT revision stays unresolved (Q-07); socket depth is schematic and is not a seating height. The socket and header touch at one interface plane by authored dimensions only",
+    "A declared approximate-height gap between the HAT and a standoff reflects stock height differences in authored proxies, not a measured clearance",
+    "No thread engagement, torque, fit or installation sweep is claimed"
+  ],
+  "engineeringBlockerIds": ["Q-07", "Q-14"]
+}

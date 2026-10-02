@@ -95,3 +95,14 @@ picarx-companion/logs/
 
 # Blender's automatic save backups.
 *.blend1
+
+# M7 evidence that review does not need: superseded qualification runs (the current
+# pair, a-14 and b-14, stays tracked), archived copies of earlier M7 file versions and
+# an archived documents set. They stay on disk and in
+# ../PiCar-preservation/2026-10-02-studio1-close/; M7's acceptance manifest
+# (candidate-files.json) still lists them, so that commit adds them with git add -f.
+/docs/implementation/evidence/m7/qualification-a-0[1-9]/
+/docs/implementation/evidence/m7/qualification-a-1[0-3]/
+/docs/implementation/evidence/m7/qualification-b-0[1-9]/
+/docs/implementation/evidence/m7/continuation-*/prior-blocked-*/
+/docs/implementation/evidence/m7/continuation-01/qualified-07-documents/

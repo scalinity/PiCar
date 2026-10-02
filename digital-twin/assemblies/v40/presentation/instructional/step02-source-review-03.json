@@ -1,0 +1,182 @@
+{
+  "id": "PX-M7-S02-BOARD-MOUNT-03",
+  "revision": 3,
+  "track": "instructional-only",
+  "sourceBindings": [
+    {
+      "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+      "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+      "bytes": 11048665
+    },
+    {
+      "path": "digital-twin/assemblies/v40/presentation/instructional/pi5-board-direction-review-02.json",
+      "rawSha256": "017c6d5ea728e153a44c4a0767a1028af01dc0692ac83666aad1108827f90b1e",
+      "bytes": 4807
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/candidate-sources.json",
+      "rawSha256": "0e7772f2ca556482fafd72634193b9b224884b5c9cb7e58b47dc9e519994f462",
+      "bytes": 22780
+    },
+    {
+      "path": "digital-twin/assemblies/v40/presentation/instructional/step01-source-review-03.json",
+      "rawSha256": "a7715aa078d3e48a0a7334ab1a02b5a27bf01a60e3690de10cc165d91075dfbd",
+      "bytes": 7818
+    }
+  ],
+  "sourcePanel": "Separate green Pi5 and blue Zero2W S02 page 1",
+  "basis": "RH-XFORWARD-YLEFT-ZUP",
+  "variants": {
+    "rpi5": {
+      "definitionId": "PX-V40-DEF-PI5",
+      "instanceId": "PX-V40-INS-PI5-001",
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "componentUp": [
+        0,
+        0,
+        1
+      ],
+      "gpioRobotSide": [
+        0,
+        -1,
+        0
+      ],
+      "portsDirection": [
+        -1,
+        0,
+        0
+      ],
+      "supportPairings": [
+        {
+          "localHole": [
+            61.5,
+            3.5
+          ],
+          "supportId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001"
+        },
+        {
+          "localHole": [
+            3.5,
+            3.5
+          ],
+          "supportId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002"
+        },
+        {
+          "localHole": [
+            3.5,
+            52.5
+          ],
+          "supportId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003"
+        },
+        {
+          "localHole": [
+            61.5,
+            52.5
+          ],
+          "supportId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004"
+        }
+      ],
+      "pcbBottomHeightMm": 20,
+      "microphone": "Planned installed; port engagement frame not yet admitted. Never hide it or claim full S02."
+    },
+    "rpi-zero-2-w": {
+      "definitionId": "PX-V40-DEF-ZERO2W",
+      "instanceId": "PX-V40-INS-ZERO2W-001",
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "componentUp": [
+        0,
+        0,
+        1
+      ],
+      "gpioRobotSide": [
+        0,
+        1,
+        0
+      ],
+      "portsDirection": [
+        0,
+        -1,
+        0
+      ],
+      "cameraShortEdgeDirection": [
+        1,
+        0,
+        0
+      ],
+      "supportPairings": [
+        {
+          "localHole": [
+            3.5,
+            26.5
+          ],
+          "supportId": "PX-V40-INS-M25X11-STANDOFF-001"
+        },
+        {
+          "localHole": [
+            61.5,
+            26.5
+          ],
+          "supportId": "PX-V40-INS-M25X11-STANDOFF-002"
+        }
+      ],
+      "pcbBottomHeightMm": 13,
+      "tallSupports": "HAT-only; not Pi board mounting endpoints",
+      "microphone": "Accessory, Q-14; no adapter procedure invented",
+      "headerReadiness": "Q-14 remains explicit. Visible optional header marker is not proof that owner hardware has a soldered header."
+    }
+  },
+  "placementPolicy": {
+    "method": "Single proper board rotation; least-squares translation from accepted actual support centers. No per-hole/per-header adjustment.",
+    "maximumSchematicCenterResidualMm": 1.5,
+    "budgetPurpose": "Authored presentation matching budget for independently admitted approximate Plate A holes, not physical hole tolerance or fit certificate",
+    "basis": "Official mount spacings versus photo-traced instructional plate centers; report all raw discrepancies. 1.5mm display residual cap is not evidence of metrological uncertainty.",
+    "blockedIfAboveBudget": true,
+    "axisAndRollBudgetRad": 0.00001
+  },
+  "scale": [
+    1,
+    1,
+    1
+  ],
+  "installationSweep": "BLOCKED no bounded path test",
+  "physicalFit": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "supersedesPresentationAnchorOnly": {
+    "path": "digital-twin/assemblies/v40/presentation/instructional/step02-source-review-02.json",
+    "rawSha256": "2cb0e3e5d84536e7bc0f4fc316b10bc18d37b6dcf5216568ad6b0319f7ddb2ea",
+    "bytes": 4447
+  }
+}

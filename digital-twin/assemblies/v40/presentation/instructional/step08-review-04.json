@@ -1,0 +1,31 @@
+{
+  "id": "PX-M7-S08-PAN-HORN-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-08",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665,
+    "pdfPage": 2,
+    "method": "Visual review of the locked V40 printed step 8 panel and the step 19 closeup that shows the pan shaft meeting this horn, rendered privately; no source pixels are copied into authored output",
+    "observation": "The pan horn (servo arm) lies under the front deck, lengthwise across the car, its round hub at the deck's large round hole. Four M1.5x3 screws enter from the deck top, two on each side of the hub, through the deck's small hole rows into the horn."
+  },
+  "placement": {
+    "hub": "The horn hub axis is the axis of the deck's large round front hole (the pan axis); the hub rises into that hole.",
+    "horn": "The horn plate lies directly under the deck: its top face touches the deck underside; its long axis runs across the car (installed Y), centred on the hub.",
+    "screws": "Four screws sit in the first and last hole of each deck hole row beside the hub, head on the deck top, shank pointing down, assigned to screws 001..004 in descending installed-Y order.",
+    "stackOrderNote": "The accepted ordered stack lists screw, horn, plate. V40 shows the screw head on the deck top and the horn beneath, so the stack is used here for membership and ownership only, not as a physical sequence."
+  },
+  "approach": {"hornAxis": [0, 0, 1], "hornDistanceMm": 30, "screwAxis": [0, 0, -1], "screwDistanceMm": 30,
+               "note": "Nonphysical exploded staging only; the horn rises from below and the screws drop from above."},
+  "limitations": [
+    "The pan horn is the additive instructional revision of the supplied long double-arm horn (34 mm tip to tip, tapered arms, 7.7 mm hub, 12 attachment holes at a derived 2.1 mm pitch); V40 S08 and S13 draw a two-sided horn with screws on both sides of the hub, and the printed package shows two long double-arm horns and one single-arm horn, so pan and tilt take the double-arm and steering the single-arm. The large and small cross horns are unused spare stock. Dimensions are DERIVED to about 2 to 6 percent from penny-scaled photographs; spline form, hub recess and thread geometry are not modelled",
+    "The four deck screws sit in the traced deck holes, which agree with the derived horn hole row only to within about 0.9 mm; each screw therefore has a scoped overlap with solid horn plate beside the hole, and no screw-to-horn-hole alignment is claimed",
+    "Deck small-hole rows are photo-traced (four on one side, three on the other) and are not manufacturer positions; the 1.4 mm holes are smaller than the 1.5 mm screws, so each screw has a declared small clearance overlap with the deck",
+    "The accepted ordered stack for this step lists the horn before the plate, which is not the physical order shown in V40; it is used for membership only",
+    "Pan zero angle and horn clocking about the hub are not established; the arm is placed symmetrically across the car as a presentation gauge",
+    "No installation sweep, thread engagement or fit is claimed"
+  ],
+  "engineeringBlockerIds": []
+}

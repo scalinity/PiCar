@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "scope": "Two S01 static solution records, independent static/board observations, and authored wheel only; no complete master, installation sweep or runtime pack",
+  "runs": [
+    {
+      "label": "qualification-a-04",
+      "status": "PASS",
+      "tests": {
+        "python": {
+          "pass": 91,
+          "M7": 50,
+          "inheritedM4": 41
+        },
+        "M7Policy": 25,
+        "M5Policy": 98,
+        "M6Policy": 135,
+        "M2Contracts": 12,
+        "total": 361,
+        "fail": 0,
+        "skipped": 0
+      },
+      "originalLockChecks": [
+        "G-DATA PASS in isolated original-lock mirror",
+        "G-GRAPH PASS in isolated original-lock mirror"
+      ],
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/commands.json",
+        "rawSha256": "cab19846ab7d98e344366e9d80e8396a9ed09a7169b74f8dc741a2ba34b1710f",
+        "bytes": 17355
+      },
+      "inputs": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/inputs.json",
+        "rawSha256": "ff5a960ac7d89de54c5b4411ea662946672d03bbb2740f5e26df07dfb5381456",
+        "bytes": 150341
+      },
+      "upstreamInputs": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/upstream-inputs.json",
+        "rawSha256": "632f2295a6428cd19cda6f2f122405014a65654d8b825e3d490f56773e2cee09",
+        "bytes": 145399
+      },
+      "testsXML": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/tests.xml",
+        "rawSha256": "6ed9055986ea5c939fd9c42ee5e91e99033fee63fb52d97c338af0d54977184a",
+        "bytes": 10395
+      },
+      "observations": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/observations.json",
+        "rawSha256": "ab8261228dc5cb554fdb12bdabc9a1497e49993b25221d4e640aeffa4679c889",
+        "bytes": 9648
+      },
+      "wheel": {
+        "file": "twin_cad-0.1.0-py3-none-any.whl",
+        "rawSha256": "c2e6236b695f63ea62811ca54d6e62ff475cfe470c5c39508a17fa9222a2c0f4",
+        "bytes": 54990
+      }
+    },
+    {
+      "label": "qualification-b-04",
+      "status": "PASS",
+      "tests": {
+        "python": {
+          "pass": 91,
+          "M7": 50,
+          "inheritedM4": 41
+        },
+        "M7Policy": 25,
+        "M5Policy": 98,
+        "M6Policy": 135,
+        "M2Contracts": 12,
+        "total": 361,
+        "fail": 0,
+        "skipped": 0
+      },
+      "originalLockChecks": [
+        "G-DATA PASS in isolated original-lock mirror",
+        "G-GRAPH PASS in isolated original-lock mirror"
+      ],
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/commands.json",
+        "rawSha256": "23f9083b5372f7b9fd7288dc8578080e64f26ccdc4cf9e578c4537f248f0130f",
+        "bytes": 17355
+      },
+      "inputs": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/inputs.json",
+        "rawSha256": "ff5a960ac7d89de54c5b4411ea662946672d03bbb2740f5e26df07dfb5381456",
+        "bytes": 150341
+      },
+      "upstreamInputs": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/upstream-inputs.json",
+        "rawSha256": "632f2295a6428cd19cda6f2f122405014a65654d8b825e3d490f56773e2cee09",
+        "bytes": 145399
+      },
+      "testsXML": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/tests.xml",
+        "rawSha256": "986ef044208d59b0f8f05f9027f0883d62432d64f76f804be3e9b09620f098c5",
+        "bytes": 10395
+      },
+      "observations": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/observations.json",
+        "rawSha256": "ab8261228dc5cb554fdb12bdabc9a1497e49993b25221d4e640aeffa4679c889",
+        "bytes": 9648
+      },
+      "wheel": {
+        "file": "twin_cad-0.1.0-py3-none-any.whl",
+        "rawSha256": "c2e6236b695f63ea62811ca54d6e62ff475cfe470c5c39508a17fa9222a2c0f4",
+        "bytes": 54990
+      }
+    }
+  ],
+  "rawComparisons": [
+    {
+      "artifact": "solutions/rpi5-S01.json",
+      "rawEqual": true,
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/solutions/rpi5-S01.json",
+        "rawSha256": "375f1bd1bd18c9dca606be6d094421a2795ba4235d455c2216edcfb3b9003ff3",
+        "bytes": 14275
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/solutions/rpi5-S01.json",
+        "rawSha256": "375f1bd1bd18c9dca606be6d094421a2795ba4235d455c2216edcfb3b9003ff3",
+        "bytes": 14275
+      }
+    },
+    {
+      "artifact": "solutions/rpi-zero-2-w-S01.json",
+      "rawEqual": true,
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/solutions/rpi-zero-2-w-S01.json",
+        "rawSha256": "705677fd4cedce8259031f61dc2695f866b2856a64cfe70387e043522ee25a4f",
+        "bytes": 14557
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/solutions/rpi-zero-2-w-S01.json",
+        "rawSha256": "705677fd4cedce8259031f61dc2695f866b2856a64cfe70387e043522ee25a4f",
+        "bytes": 14557
+      }
+    },
+    {
+      "artifact": "observations.json",
+      "rawEqual": true,
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-04/observations.json",
+        "rawSha256": "ab8261228dc5cb554fdb12bdabc9a1497e49993b25221d4e640aeffa4679c889",
+        "bytes": 9648
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-04/observations.json",
+        "rawSha256": "ab8261228dc5cb554fdb12bdabc9a1497e49993b25221d4e640aeffa4679c889",
+        "bytes": 9648
+      }
+    }
+  ],
+  "rawDifferences": [],
+  "normalizationApplied": false,
+  "rawFloat64Preserved": true,
+  "geometry": "Existing admitted M5/M6 BReps were imported independently twice; no new component CAD was generated",
+  "timingAndPathDifferences": "Actual command ledgers/XML contain distinct fresh mirror paths/times and are retained; they are not geometry/solution equality claims",
+  "failedAttempts": [
+    "initial-policy-tests.txt: 24 pass / 1 failed wrong fixture path; corrected to actual allocations.json",
+    "qualification-a-01: denied tracked required app icon before build",
+    "qualification-a-02: missing M5 instructional input snapshot",
+    "qualification-a-03: OCP generalized-matrix transformation API rejected rigid matrix; fixed with gp_Trsf"
+  ],
+  "cleanLabels": [
+    "qualification-a-04",
+    "qualification-b-04"
+  ]
+}

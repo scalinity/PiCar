@@ -1,0 +1,36 @@
+{
+  "id": "PX-M7-S05-DRIVE-MOTORS-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-05",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665,
+    "pdfPage": 1,
+    "method": "Visual review of the locked V40 printed step 5 panel, rendered privately; no source pixels are copied into authored output",
+    "observation": "The two motors sit between the rear flanges of Plate A with their output shafts passing outward through the large flange holes. Two M3x25 screws per motor enter from the outside through the small flange holes and the gearbox; a spring washer and an M3 nut thread on from the inside, arrows pointing outward. The motor cans point toward the rear and the motor wires face inward."
+  },
+  "placement": {
+    "shaft": "The motor shaft axis is the axis of the large (12 mm) flange hole; the shaft leaves the gearbox on the outer side and passes through the flange.",
+    "gearbox": "The gearbox face that carries the shaft is flush with the flange face on the chassis-centre side.",
+    "canDirection": "Toward the rear (installed -X). This is the only direction in which the flange's two small holes, 21 mm behind the shaft hole, pass through the gearbox body; the V40 panel shows the same direction.",
+    "stackOrderAlongScrew": "screw head on the outer flange face, flange, gearbox, spring washer, nut (accepted ordered stack)",
+    "screwToHole": "Screws 001 and 003 use the first small hole (smaller flange-local v), screws 002 and 004 the second; 001/002 belong to the robot-LEFT motor and 003/004 to the RIGHT motor"
+  },
+  "approach": {
+    "motorDistanceMm": 30,
+    "motorTravel": "Diagonal: outward along the shaft and up (unit of 0, outward, +1). The exploded start is below and inboard so the can clears the central rear wall; only the start pose is checked, no path is claimed.",
+    "screwDistanceMm": 30,
+    "washerNutDistanceMm": 12,
+    "note": "Nonphysical exploded staging only. Washers and nuts arrive from the chassis-centre side, the screws from outside."
+  },
+  "limitations": [
+    "The motor proxy has no mounting bores or thread detail: each screw passes through the gearbox as a declared omitted-bore proxy overlap bounded by the screw's own shank volume, not an engagement or fit",
+    "The motor's two mounting-hole positions are not modelled; the gearbox is placed from its output shaft and flange face, and screw paths are taken from the traced Plate A flange holes",
+    "Plate A flange hole positions are photo-traced approximations; the 2 mm thickness is probable, not measured",
+    "Motor wires and leads are zero-solid schematic and are not routed; no electrical, torque or retention claim",
+    "Spring washer opening roll and nut hex roll about the screw axis are deterministic presentation gauges, not measured orientations"
+  ],
+  "engineeringBlockerIds": ["Q-03", "Q-04", "Q-06"]
+}

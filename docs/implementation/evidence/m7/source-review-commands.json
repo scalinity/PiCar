@@ -1,0 +1,113 @@
+{
+  "scope": "Retrospective actual source inspection tool ledger; exact command parameters, no invented timing",
+  "cwd": "/Users/danny/Documents/Apps/PiCar",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665
+  },
+  "commands": [
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "1",
+        "-singlefile",
+        "-scale-to",
+        "2400",
+        "-png",
+        "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+        "/tmp/picar-m7-source-review/page-1"
+      ],
+      "observedExit": 0
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "2",
+        "-l",
+        "3",
+        "-scale-to",
+        "2400",
+        "-png",
+        "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+        "/tmp/picar-m7-source-review/page"
+      ],
+      "observedExit": 0
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-f",
+        "1",
+        "-singlefile",
+        "-scale-to",
+        "4800",
+        "-png",
+        "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+        "/tmp/picar-m7-source-review/page-1-detail"
+      ],
+      "observedExit": 0
+    },
+    {
+      "command": [
+        "sips",
+        "-c",
+        "820",
+        "1160",
+        "--cropOffset",
+        "1730",
+        "2440",
+        "/tmp/picar-m7-source-review/page-1-detail.png",
+        "--out",
+        "/tmp/picar-m7-source-review/zero-step1.png"
+      ],
+      "observedExit": 0
+    },
+    {
+      "command": [
+        "sips",
+        "-c",
+        "820",
+        "1130",
+        "--cropOffset",
+        "1730",
+        "3590",
+        "/tmp/picar-m7-source-review/page-1-detail.png",
+        "--out",
+        "/tmp/picar-m7-source-review/zero-step2.png"
+      ],
+      "observedExit": 0
+    },
+    {
+      "command": [
+        "sips",
+        "-c",
+        "660",
+        "1160",
+        "--cropOffset",
+        "65",
+        "3560",
+        "/tmp/picar-m7-source-review/page-1-detail.png",
+        "--out",
+        "/tmp/picar-m7-source-review/pi5-step2.png"
+      ],
+      "observedExit": 0
+    }
+  ],
+  "viewed": [
+    "page-1.png",
+    "page-2.png",
+    "zero-step1.png",
+    "zero-step2.png",
+    "pi5-step2.png"
+  ],
+  "unavailableView": {
+    "path": "/tmp/picar-m7-source-review/page-3.png",
+    "error": "unable to locate image; actual booklet contains two pages",
+    "claimMade": false
+  },
+  "pixelOutputs": "Outside repository /tmp/picar-m7-source-review only, never a Git candidate",
+  "sourceInspectionClaim": "Printed installed direction and branch relationships, not dimensional calibration"
+}

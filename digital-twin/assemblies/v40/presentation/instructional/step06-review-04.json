@@ -1,0 +1,24 @@
+{
+  "id": "PX-M7-S06-HOOK-LOOP-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-06",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665,
+    "pdfPage": 2,
+    "method": "Visual review of the locked V40 printed step 6 panel, rendered privately; no source pixels are copied into authored output",
+    "observation": "Hook tape is stuck to the flat face of the battery pack, and loop tape to a rectangular patch on the chassis underside between the rear deck cutout and the front oval slot. The battery stays off the chassis in this step."
+  },
+  "relation": {
+    "batteryState": "Introduced to the tray; not yet installed, so it has no pose and no implicit transform.",
+    "consumables": "Hook and loop tape are zero-solid stock abstractions allocated and applied by the accepted graph; their lengths stay unresolved (Q-11). The two applications are recorded, not drawn as solids."
+  },
+  "limitations": [
+    "Hook and loop tape are zero-solid abstractions: no tape geometry, thickness or exact patch size is authored, and the allocated amounts remain unresolved (Q-11)",
+    "The battery is a tutorial envelope with no safety, capacity or voltage claim; its placement belongs to the next step",
+    "No installation sweep, adhesion or fit is claimed"
+  ],
+  "engineeringBlockerIds": ["Q-11"]
+}

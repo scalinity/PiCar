@@ -1,0 +1,609 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "label": "qualification-a-14",
+      "tests": {
+        "python": 235,
+        "M7Python": 194,
+        "inheritedM4Python": 41,
+        "M7Policy": 28,
+        "M5Policy": 98,
+        "M6Policy": 135,
+        "M2Contracts": 12,
+        "total": 508,
+        "fail": 0,
+        "skipped": 0
+      },
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/commands.json",
+        "rawSha256": "3b86583ee29dcd778b6bc43218abd5cd4416b47c644fcac3733026904db0745c",
+        "bytes": 31938
+      },
+      "environment": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/environment.json",
+        "rawSha256": "c6dd9144bf8562ae55bd10cf9fe755d9dfc76a332f9a535ca5a3df4bb36ff449",
+        "bytes": 1057
+      },
+      "inputs": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/inputs.json",
+        "rawSha256": "4288aea61f53b2ba58ff56bd180ee4d46e5efd31dc8daf671ab36d4cbca8f703",
+        "bytes": 154669
+      },
+      "upstreamInputs": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/upstream-inputs.json",
+        "rawSha256": "632f2295a6428cd19cda6f2f122405014a65654d8b825e3d490f56773e2cee09",
+        "bytes": 145399
+      },
+      "wheel": {
+        "file": "twin_cad-0.1.0-py3-none-any.whl",
+        "rawSha256": "012427aff96a95475bf27bb94e87da38adc4d57c2f3d730e3140673900b688fc",
+        "bytes": 89226
+      },
+      "outputs": [
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/solutions/rpi5-S01.json",
+          "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+          "bytes": 14278
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+          "bytes": 14560
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/observations.json",
+          "rawSha256": "bdac9b9ce4f453f1770268c1e42963a25097e33780f0f0029334319bb091069c",
+          "bytes": 9739
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/correspondence.json",
+          "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+          "bytes": 10011
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+          "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+          "bytes": 28733
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/pi5-revision-candidate.json",
+          "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+          "bytes": 3070
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/rpi5-S02-board.json",
+          "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+          "bytes": 7382
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+          "bytes": 6645
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/solutions/rpi5-S01.json",
+          "rawSha256": "9816f4954085d0ecf386e78c01b0ec25ceb2747079e0104c70734d211323e98f",
+          "bytes": 14348
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "f80f7342f1664ed51c360aeb26ddb02d930a7050ded2e8a2556f60fe69b7b5bd",
+          "bytes": 14630
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/rpi5-S02-board.json",
+          "rawSha256": "e90cbff3432682cc77fd41cb08b0f3be2ad38f7d24a86c0cc42ff25550a52168",
+          "bytes": 7397
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "1ed0f63758ab010cec82a1a9ee6bf5bdaa42d528e1669905ef6a4389809c7305",
+          "bytes": 6615
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/PX-V40-DEF-ZERO2W-INSTRUCTIONAL-02.brep",
+          "rawSha256": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17",
+          "bytes": 23021
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/zero-header-candidate.json",
+          "rawSha256": "c7c53a7bac94dfec3240724fdfed79b2b3759a0e2113bcfd0a90056f6c91ed49",
+          "bytes": 2618
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor-observations.json",
+          "rawSha256": "6f4a7422f8da8bd652aa19f33844d81ccbfa3bd9291798f7c6127b534b70c0b2",
+          "bytes": 7704
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/anchor-board-observations.json",
+          "rawSha256": "e2ea21c966aa067a9d8cca36571481332b669bd29ec066fd3c0f347c4ebf73f5",
+          "bytes": 4719
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+          "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+          "bytes": 45060
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/hat-feature-candidate.json",
+          "rawSha256": "d0d1065a498ff344b30c4f3da5252ba7914596f3009db7c0ce42ff9783916b30",
+          "bytes": 2419
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/rpi5-S02-uppers.json",
+          "rawSha256": "19725e16df4a581804cf635a0327b104822231eee1c81e5d632e7f35c4f045fd",
+          "bytes": 11657
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/rpi-zero-2-w-S02-uppers.json",
+          "rawSha256": "f47e178c7b10fb23f9ed8b4e266c67457b54e80f750212e81ed9de33080c59b4",
+          "bytes": 9006
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-14/engagement-observations.json",
+          "rawSha256": "f53b53b054192294e59a00111554dd209f7230e49e029b50b43cb0df1bec31d6",
+          "bytes": 11016
+        }
+      ],
+      "originalLockChecks": [
+        "G-DATA PASS",
+        "G-GRAPH PASS"
+      ]
+    },
+    {
+      "label": "qualification-b-14",
+      "tests": {
+        "python": 235,
+        "M7Python": 194,
+        "inheritedM4Python": 41,
+        "M7Policy": 28,
+        "M5Policy": 98,
+        "M6Policy": 135,
+        "M2Contracts": 12,
+        "total": 508,
+        "fail": 0,
+        "skipped": 0
+      },
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/commands.json",
+        "rawSha256": "8fe636a23e531194132c97b7eefad3cc4f67d8c6810db4b6f80d6598adfc0341",
+        "bytes": 31938
+      },
+      "environment": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/environment.json",
+        "rawSha256": "4b79b11c4f4331028e2b5d6b05d0198256796145549eeda7487b25104f1bd00c",
+        "bytes": 1057
+      },
+      "inputs": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/inputs.json",
+        "rawSha256": "4288aea61f53b2ba58ff56bd180ee4d46e5efd31dc8daf671ab36d4cbca8f703",
+        "bytes": 154669
+      },
+      "upstreamInputs": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/upstream-inputs.json",
+        "rawSha256": "632f2295a6428cd19cda6f2f122405014a65654d8b825e3d490f56773e2cee09",
+        "bytes": 145399
+      },
+      "wheel": {
+        "file": "twin_cad-0.1.0-py3-none-any.whl",
+        "rawSha256": "012427aff96a95475bf27bb94e87da38adc4d57c2f3d730e3140673900b688fc",
+        "bytes": 89226
+      },
+      "outputs": [
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/solutions/rpi5-S01.json",
+          "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+          "bytes": 14278
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+          "bytes": 14560
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/observations.json",
+          "rawSha256": "bdac9b9ce4f453f1770268c1e42963a25097e33780f0f0029334319bb091069c",
+          "bytes": 9739
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/correspondence.json",
+          "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+          "bytes": 10011
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+          "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+          "bytes": 28733
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/pi5-revision-candidate.json",
+          "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+          "bytes": 3070
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/rpi5-S02-board.json",
+          "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+          "bytes": 7382
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+          "bytes": 6645
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/solutions/rpi5-S01.json",
+          "rawSha256": "9816f4954085d0ecf386e78c01b0ec25ceb2747079e0104c70734d211323e98f",
+          "bytes": 14348
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "f80f7342f1664ed51c360aeb26ddb02d930a7050ded2e8a2556f60fe69b7b5bd",
+          "bytes": 14630
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/rpi5-S02-board.json",
+          "rawSha256": "e90cbff3432682cc77fd41cb08b0f3be2ad38f7d24a86c0cc42ff25550a52168",
+          "bytes": 7397
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "1ed0f63758ab010cec82a1a9ee6bf5bdaa42d528e1669905ef6a4389809c7305",
+          "bytes": 6615
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/PX-V40-DEF-ZERO2W-INSTRUCTIONAL-02.brep",
+          "rawSha256": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17",
+          "bytes": 23021
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/zero-header-candidate.json",
+          "rawSha256": "c7c53a7bac94dfec3240724fdfed79b2b3759a0e2113bcfd0a90056f6c91ed49",
+          "bytes": 2618
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor-observations.json",
+          "rawSha256": "6f4a7422f8da8bd652aa19f33844d81ccbfa3bd9291798f7c6127b534b70c0b2",
+          "bytes": 7704
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/anchor-board-observations.json",
+          "rawSha256": "e2ea21c966aa067a9d8cca36571481332b669bd29ec066fd3c0f347c4ebf73f5",
+          "bytes": 4719
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+          "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+          "bytes": 45060
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/hat-feature-candidate.json",
+          "rawSha256": "d0d1065a498ff344b30c4f3da5252ba7914596f3009db7c0ce42ff9783916b30",
+          "bytes": 2419
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/rpi5-S02-uppers.json",
+          "rawSha256": "19725e16df4a581804cf635a0327b104822231eee1c81e5d632e7f35c4f045fd",
+          "bytes": 11657
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/rpi-zero-2-w-S02-uppers.json",
+          "rawSha256": "f47e178c7b10fb23f9ed8b4e266c67457b54e80f750212e81ed9de33080c59b4",
+          "bytes": 9006
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-b-14/engagement-observations.json",
+          "rawSha256": "f53b53b054192294e59a00111554dd209f7230e49e029b50b43cb0df1bec31d6",
+          "bytes": 11016
+        }
+      ],
+      "originalLockChecks": [
+        "G-DATA PASS",
+        "G-GRAPH PASS"
+      ]
+    }
+  ],
+  "rawComparisons": [
+    {
+      "artifact": "solutions/rpi5-S01.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/solutions/rpi5-S01.json",
+        "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+        "bytes": 14278
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/solutions/rpi5-S01.json",
+        "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+        "bytes": 14278
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "solutions/rpi-zero-2-w-S01.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/solutions/rpi-zero-2-w-S01.json",
+        "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+        "bytes": 14560
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/solutions/rpi-zero-2-w-S01.json",
+        "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+        "bytes": 14560
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "observations.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/observations.json",
+        "rawSha256": "bdac9b9ce4f453f1770268c1e42963a25097e33780f0f0029334319bb091069c",
+        "bytes": 9739
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/observations.json",
+        "rawSha256": "bdac9b9ce4f453f1770268c1e42963a25097e33780f0f0029334319bb091069c",
+        "bytes": 9739
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "correspondence.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/correspondence.json",
+        "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+        "bytes": 10011
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/correspondence.json",
+        "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+        "bytes": 10011
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+        "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+        "bytes": 28733
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+        "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+        "bytes": 28733
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "remediation/pi5-revision-candidate.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/pi5-revision-candidate.json",
+        "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+        "bytes": 3070
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/pi5-revision-candidate.json",
+        "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+        "bytes": 3070
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "remediation/rpi5-S02-board.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/rpi5-S02-board.json",
+        "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+        "bytes": 7382
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/rpi5-S02-board.json",
+        "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+        "bytes": 7382
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "remediation/rpi-zero-2-w-S02-board.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/remediation/rpi-zero-2-w-S02-board.json",
+        "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+        "bytes": 6645
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/remediation/rpi-zero-2-w-S02-board.json",
+        "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+        "bytes": 6645
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor/solutions/rpi5-S01.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/solutions/rpi5-S01.json",
+        "rawSha256": "9816f4954085d0ecf386e78c01b0ec25ceb2747079e0104c70734d211323e98f",
+        "bytes": 14348
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/solutions/rpi5-S01.json",
+        "rawSha256": "9816f4954085d0ecf386e78c01b0ec25ceb2747079e0104c70734d211323e98f",
+        "bytes": 14348
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor/solutions/rpi-zero-2-w-S01.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/solutions/rpi-zero-2-w-S01.json",
+        "rawSha256": "f80f7342f1664ed51c360aeb26ddb02d930a7050ded2e8a2556f60fe69b7b5bd",
+        "bytes": 14630
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/solutions/rpi-zero-2-w-S01.json",
+        "rawSha256": "f80f7342f1664ed51c360aeb26ddb02d930a7050ded2e8a2556f60fe69b7b5bd",
+        "bytes": 14630
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor/boards/rpi5-S02-board.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/rpi5-S02-board.json",
+        "rawSha256": "e90cbff3432682cc77fd41cb08b0f3be2ad38f7d24a86c0cc42ff25550a52168",
+        "bytes": 7397
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/rpi5-S02-board.json",
+        "rawSha256": "e90cbff3432682cc77fd41cb08b0f3be2ad38f7d24a86c0cc42ff25550a52168",
+        "bytes": 7397
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor/boards/rpi-zero-2-w-S02-board.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/rpi-zero-2-w-S02-board.json",
+        "rawSha256": "1ed0f63758ab010cec82a1a9ee6bf5bdaa42d528e1669905ef6a4389809c7305",
+        "bytes": 6615
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/rpi-zero-2-w-S02-board.json",
+        "rawSha256": "1ed0f63758ab010cec82a1a9ee6bf5bdaa42d528e1669905ef6a4389809c7305",
+        "bytes": 6615
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor/boards/PX-V40-DEF-ZERO2W-INSTRUCTIONAL-02.brep",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/PX-V40-DEF-ZERO2W-INSTRUCTIONAL-02.brep",
+        "rawSha256": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17",
+        "bytes": 23021
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/PX-V40-DEF-ZERO2W-INSTRUCTIONAL-02.brep",
+        "rawSha256": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17",
+        "bytes": 23021
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor/boards/zero-header-candidate.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/zero-header-candidate.json",
+        "rawSha256": "c7c53a7bac94dfec3240724fdfed79b2b3759a0e2113bcfd0a90056f6c91ed49",
+        "bytes": 2618
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor/boards/zero-header-candidate.json",
+        "rawSha256": "c7c53a7bac94dfec3240724fdfed79b2b3759a0e2113bcfd0a90056f6c91ed49",
+        "bytes": 2618
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor-observations.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor-observations.json",
+        "rawSha256": "6f4a7422f8da8bd652aa19f33844d81ccbfa3bd9291798f7c6127b534b70c0b2",
+        "bytes": 7704
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor-observations.json",
+        "rawSha256": "6f4a7422f8da8bd652aa19f33844d81ccbfa3bd9291798f7c6127b534b70c0b2",
+        "bytes": 7704
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "anchor-board-observations.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/anchor-board-observations.json",
+        "rawSha256": "e2ea21c966aa067a9d8cca36571481332b669bd29ec066fd3c0f347c4ebf73f5",
+        "bytes": 4719
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/anchor-board-observations.json",
+        "rawSha256": "e2ea21c966aa067a9d8cca36571481332b669bd29ec066fd3c0f347c4ebf73f5",
+        "bytes": 4719
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+        "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+        "bytes": 45060
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+        "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+        "bytes": 45060
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "engagement/hat-feature-candidate.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/hat-feature-candidate.json",
+        "rawSha256": "d0d1065a498ff344b30c4f3da5252ba7914596f3009db7c0ce42ff9783916b30",
+        "bytes": 2419
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/hat-feature-candidate.json",
+        "rawSha256": "d0d1065a498ff344b30c4f3da5252ba7914596f3009db7c0ce42ff9783916b30",
+        "bytes": 2419
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "engagement/rpi5-S02-uppers.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/rpi5-S02-uppers.json",
+        "rawSha256": "19725e16df4a581804cf635a0327b104822231eee1c81e5d632e7f35c4f045fd",
+        "bytes": 11657
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/rpi5-S02-uppers.json",
+        "rawSha256": "19725e16df4a581804cf635a0327b104822231eee1c81e5d632e7f35c4f045fd",
+        "bytes": 11657
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "engagement/rpi-zero-2-w-S02-uppers.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/rpi-zero-2-w-S02-uppers.json",
+        "rawSha256": "f47e178c7b10fb23f9ed8b4e266c67457b54e80f750212e81ed9de33080c59b4",
+        "bytes": 9006
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/engagement/rpi-zero-2-w-S02-uppers.json",
+        "rawSha256": "f47e178c7b10fb23f9ed8b4e266c67457b54e80f750212e81ed9de33080c59b4",
+        "bytes": 9006
+      },
+      "rawEqual": true
+    },
+    {
+      "artifact": "engagement-observations.json",
+      "a": {
+        "path": "docs/implementation/evidence/m7/qualification-a-14/engagement-observations.json",
+        "rawSha256": "f53b53b054192294e59a00111554dd209f7230e49e029b50b43cb0df1bec31d6",
+        "bytes": 11016
+      },
+      "b": {
+        "path": "docs/implementation/evidence/m7/qualification-b-14/engagement-observations.json",
+        "rawSha256": "f53b53b054192294e59a00111554dd209f7230e49e029b50b43cb0df1bec31d6",
+        "bytes": 11016
+      },
+      "rawEqual": true
+    }
+  ],
+  "rawDifferences": [],
+  "normalizationApplied": false,
+  "rawFloat64Preserved": true,
+  "sourceGeometryCopies": 0,
+  "commandXMLDifferences": "Actual timestamps, test durations and independent mirror/cache/environment paths differ and remain retained.",
+  "priorFailureHistory": "All earlier witnesses and failures preserved. a09/a10 revealed incorrect installed PlateA anchor, a11/a12 revealed Zero2W asymmetric header proxy overlap. a13 discovery passes232Python but predates final actual-shape corruption tests and coverage/source labels; only a14/b14 witness current inputs."
+}

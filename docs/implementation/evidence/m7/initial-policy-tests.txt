@@ -1,0 +1,54 @@
+✔ two active delivery boards preserve all three historical graphs (3.22525ms)
+✔ reject scope mutation Pi4 active (1.461584ms)
+✔ reject scope mutation Pico (0.102792ms)
+✔ reject scope mutation generic Pi (0.109166ms)
+✔ reject scope mutation 87 product target (0.124875ms)
+✔ reject scope mutation Pi4 blocked (0.139416ms)
+✔ reject scope mutation drop historical Pi4 (0.063125ms)
+✔ reject scope mutation collapse FPC variants (0.316208ms)
+✔ reject scope mutation lose Q14 (0.064791ms)
+✔ reject instructional engineering promotion G-CAD (0.160167ms)
+✔ reject instructional engineering promotion G-GEOMETRY (0.036125ms)
+✔ reject instructional engineering promotion engineeringMeasurement (0.02675ms)
+✔ reject instructional engineering promotion engineeringInterface (0.028375ms)
+✔ reject instructional engineering promotion engineeringSolver (0.019166ms)
+✔ reject instructional engineering promotion engineeringRoute (0.034625ms)
+✔ reject instructional engineering promotion manufacturing (0.031417ms)
+✔ reject instructional engineering promotion physicalFit (0.019958ms)
+✔ 58 honest incomplete rows cannot become assembly acceptance (0.160167ms)
+✔ reject report mutation missing row (3.227459ms)
+✔ reject report mutation duplicate row (3.229083ms)
+✔ reject report mutation Pi4 failed (2.936ms)
+✔ reject report mutation generator self PASS (3.024834ms)
+✔ reject report mutation engineering promotion (2.829042ms)
+✔ S21 free joint, E-right/F-left, servo roles, wheels and temporary P11 preserved (1.738459ms)
+✖ Zero2W accessory and Pi5 microphone remain separate (0.162708ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 24
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 73659.608125
+
+✖ failing tests:
+
+test at digital-twin/assemblies/v40/presentation/instructional/gate.test.mjs:19:1
+✖ Zero2W accessory and Pi5 microphone remain separate (0.162708ms)
+  Error: ENOENT: no such file or directory, open '/Users/danny/Documents/Apps/PiCar/digital-twin/components/inventory/variant-allocations.json'
+      at Object.openSync (node:fs:779:18)
+      at Object.readFileSync (node:fs:625:35)
+      at read (file:///Users/danny/Documents/Apps/PiCar/digital-twin/assemblies/v40/presentation/instructional/gate.test.mjs:3:29)
+      at TestContext.<anonymous> (file:///Users/danny/Documents/Apps/PiCar/digital-twin/assemblies/v40/presentation/instructional/gate.test.mjs:19:80)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/danny/Documents/Apps/PiCar/digital-twin/components/inventory/variant-allocations.json'
+  }

@@ -1,0 +1,104 @@
+{
+ "id": "PX-STUDIO-FIDELITY-REVISIONS-02",
+ "track": "instructional-only",
+ "engineeringAdmission": false,
+ "runtimeAdmission": false,
+ "purpose": "Studio fidelity: S01-S09 standoffs as hexagonal nylon standoffs with bores and studs, screws as pan heads with a cross recess. Part-local frames, lengths, across-flats, stud and head sizes are the accepted M5 values, so step poses stay valid.",
+ "basis": {
+  "shape": "V40 manual illustrations draw the M2.5 standoffs hexagonal and the screws with pan heads; V40 step 1 calls the standoffs nylon.",
+  "dimensions": "Accepted M5 instructional parameters (presentation estimates). Bores use the thread's nominal diameter; threads are not modelled. Recess sizes are presentation choices.",
+  "notVerified": "No owner photograph of the standoffs or screws is held; the across-flats and head profile are not measured."
+ },
+ "definitions": [
+  {
+   "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+   "kind": "hex-standoff",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M25X18PLUS6-STANDOFF.brep",
+   "parameters": {
+    "acrossFlatsMm": 5,
+    "lengthMm": 18,
+    "boreDiameterMm": 2.5,
+    "boreDepthMm": 6,
+    "studDiameterMm": 2.5,
+    "studLengthMm": 6,
+    "chamferMm": 0.3
+   }
+  },
+  {
+   "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+   "kind": "hex-standoff",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M25X18-STANDOFF.brep",
+   "parameters": {
+    "acrossFlatsMm": 5,
+    "lengthMm": 18,
+    "boreDiameterMm": 2.5,
+    "chamferMm": 0.3
+   }
+  },
+  {
+   "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
+   "kind": "hex-standoff",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M25X11-STANDOFF.brep",
+   "parameters": {
+    "acrossFlatsMm": 5,
+    "lengthMm": 11,
+    "boreDiameterMm": 2.5,
+    "chamferMm": 0.3
+   }
+  },
+  {
+   "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
+   "kind": "hex-standoff",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M25X30-STANDOFF.brep",
+   "parameters": {
+    "acrossFlatsMm": 5,
+    "lengthMm": 30,
+    "boreDiameterMm": 2.5,
+    "chamferMm": 0.3
+   }
+  },
+  {
+   "definitionId": "PX-V40-DEF-M25X6-SCREW",
+   "kind": "pan-screw",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M25X6-SCREW.brep",
+   "parameters": {
+    "diameterMm": 2.5,
+    "lengthMm": 6,
+    "headDiameterMm": 4.625,
+    "headHeightMm": 1.375,
+    "recessWidthMm": 0.6,
+    "recessLengthMm": 2.6,
+    "recessDepthMm": 0.8
+   }
+  },
+  {
+   "definitionId": "PX-V40-DEF-M3X25-SCREW",
+   "kind": "pan-screw",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M3X25-SCREW.brep",
+   "parameters": {
+    "diameterMm": 3,
+    "lengthMm": 25,
+    "headDiameterMm": 5.55,
+    "headHeightMm": 1.65,
+    "recessWidthMm": 0.7,
+    "recessLengthMm": 3.1,
+    "recessDepthMm": 0.95
+   }
+  },
+  {
+   "definitionId": "PX-V40-DEF-M15X3-SCREW",
+   "kind": "pan-screw",
+   "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-M15X3-SCREW.brep",
+   "parameters": {
+    "diameterMm": 1.5,
+    "lengthMm": 3,
+    "headDiameterMm": 2.775,
+    "headHeightMm": 0.825,
+    "recessWidthMm": 0.4,
+    "recessLengthMm": 1.6,
+    "recessDepthMm": 0.5
+   }
+  }
+ ],
+ "label": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering"
+}

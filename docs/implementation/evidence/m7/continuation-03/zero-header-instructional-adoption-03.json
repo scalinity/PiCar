@@ -1,0 +1,84 @@
+{
+  "id": "zero-header-instructional-adoption-03",
+  "revision": 3,
+  "definitionId": "PX-V40-DEF-ZERO2W",
+  "definitionRevision": 1,
+  "instructionalArtifactRevision": 2,
+  "track": "instructional-only",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED_SCOPED_REPRESENTATION",
+  "scope": "Centered optional header reference envelope only; Q-14 remains unresolved; original five other solids and all four PCB bores preserved.",
+  "originalArtifact": {
+    "bytes": 22954,
+    "path": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-ZERO2W.brep",
+    "rawSha256": "fe6b2ea1cef92b099c4d08c6ffba552f3a7e00f038fb966a3081defc3f3febbc"
+  },
+  "originalReceipt": {
+    "bytes": 25057,
+    "path": "digital-twin/validation/expected/m5/instructional-receipts/PX-V40-DEF-ZERO2W.json",
+    "rawSha256": "7691b9502c586e18305fe9d07bf5531b768087de76c1b1af6f6b442e18b25176"
+  },
+  "newArtifact": {
+    "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/PX-V40-DEF-ZERO2W-INSTRUCTIONAL-02.brep",
+    "rawSha256": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17",
+    "bytes": 23021
+  },
+  "candidateReceipt": {
+    "path": "docs/implementation/evidence/m7/qualification-a-14/anchor/boards/zero-header-candidate.json",
+    "rawSha256": "c7c53a7bac94dfec3240724fdfed79b2b3759a0e2113bcfd0a90056f6c91ed49",
+    "bytes": 2618
+  },
+  "independentProofBindings": [
+    {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/anchor-board-observations.json",
+      "rawSha256": "e2ea21c966aa067a9d8cca36571481332b669bd29ec066fd3c0f347c4ebf73f5",
+      "bytes": 4719
+    },
+    {
+      "path": "docs/implementation/evidence/m7/qualification-b-14/anchor-board-observations.json",
+      "rawSha256": "e2ea21c966aa067a9d8cca36571481332b669bd29ec066fd3c0f347c4ebf73f5",
+      "bytes": 4719
+    }
+  ],
+  "twoRunBinding": {
+    "path": "docs/implementation/evidence/m7/continuation-03/reproducibility.json",
+    "rawSha256": "3d163eabe9542d5066e9e0e283f54b80a85a237d3f85be6c6d7f971d2f8b1c15",
+    "bytes": 25942
+  },
+  "sourceLimitations": [
+    "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry.",
+    "Planar drawing supplies outline and mounting-center locations in mm.",
+    "Bore diameter, PCB thickness, full connector envelopes and optional header/cooler configuration are not dimensioned.",
+    "Exact supplied revision and source-supported production datum remain unestablished.",
+    "Redistribution rights not established for this PDF.",
+    "Header x extent is an openly authored estimate from planar source, not an engineering dimension.",
+    "Original schematic y width, z height retained; no physical tolerance or unknown actual header configuration resolved.",
+    "Exact camera marker remains unrevised and blocked for insertion use."
+  ],
+  "blockerIds": [
+    "Q-10"
+  ],
+  "mustNotDrive": [
+    "G-COMPONENT",
+    "engineeringMeasurement",
+    "engineeringInterface",
+    "engineeringRoute",
+    "engineeringSolver",
+    "G-CAD",
+    "G-GEOMETRY",
+    "manufacturing",
+    "physicalFit",
+    "torque",
+    "engagement",
+    "electricalVoltage",
+    "batterySafety",
+    "collisionGuarantee"
+  ],
+  "engineeringStatus": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "physicalFit": "BLOCKED",
+  "installationMating": "BLOCKED",
+  "fullM7Gate": "BLOCKED",
+  "historicalAcceptanceUnchanged": true,
+  "inventoryItemIncrement": 0
+}

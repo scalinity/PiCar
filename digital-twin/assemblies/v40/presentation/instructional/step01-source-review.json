@@ -1,0 +1,209 @@
+{
+  "id": "PX-M7-S01-INSTRUCTIONAL-SOURCE-01",
+  "revision": 1,
+  "track": "instructional-only",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665
+  },
+  "parameterSource": {
+    "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+    "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+    "bytes": 92684
+  },
+  "plateAAnchor": {
+    "instanceId": "PX-V40-INS-PLATE-A-001",
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "translationMm": [
+      0,
+      0,
+      0
+    ],
+    "rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "axes": "Origin at rear deck bend center. +X forward toward dual-opening front face, +Y toward robot left in the V40 chassis convention, +Z toward upright flanges; presentation datum only."
+  },
+  "sourceInspection": {
+    "method": "Independent visual review of locked V40 PDF page 1 green Pi4/Pi5 S01 and blue Zero2W S01/S02 panels; source pixels remain outside authored output",
+    "reviewer": "Codex current assignment",
+    "direction": "Front is the dual-opening upright. Rear deck is the single-opening end. +Y is robot LEFT. Short Zero2W supports are on the near robot RIGHT row; tall supports are on robot LEFT. Screw arrows approach upward from underside; standoff arrows seat downward from above.",
+    "sourceScope": "Printed relationships and directions only; no calibrated installed metrology",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "pdfPage": 1,
+    "panels": [
+      "printed step 1 Pi5",
+      "printed step 1 Zero2W",
+      "printed step 2 Zero2W"
+    ],
+    "reviewStatus": "PASS"
+  },
+  "positions": [
+    {
+      "name": "rear.left",
+      "plateFeature": "deck.hole.1",
+      "centerMm": [
+        13.926499032882012,
+        26.499032882011605,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false
+    },
+    {
+      "name": "front.left",
+      "plateFeature": "deck.hole.2",
+      "centerMm": [
+        72.34042553191489,
+        25.145067698259187,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false
+    },
+    {
+      "name": "front.right",
+      "plateFeature": "deck.hole.5",
+      "centerMm": [
+        71.95357833655706,
+        -23.791102514506772,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false
+    },
+    {
+      "name": "rear.right",
+      "plateFeature": "deck.hole.6",
+      "centerMm": [
+        13.926499032882012,
+        -23.21083172147002,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false
+    }
+  ],
+  "variantAllocations": {
+    "rpi5": [
+      {
+        "position": "rear.left",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-001"
+      },
+      {
+        "position": "front.left",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-002"
+      },
+      {
+        "position": "front.right",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-003"
+      },
+      {
+        "position": "rear.right",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-004"
+      }
+    ],
+    "rpi-zero-2-w": [
+      {
+        "position": "rear.left",
+        "standoffInstanceId": "PX-V40-INS-M25X30-STANDOFF-001",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-001"
+      },
+      {
+        "position": "front.left",
+        "standoffInstanceId": "PX-V40-INS-M25X30-STANDOFF-002",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-002"
+      },
+      {
+        "position": "front.right",
+        "standoffInstanceId": "PX-V40-INS-M25X11-STANDOFF-001",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-003"
+      },
+      {
+        "position": "rear.right",
+        "standoffInstanceId": "PX-V40-INS-M25X11-STANDOFF-002",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-004"
+      }
+    ]
+  },
+  "presentationRevision": "S01-01",
+  "uncertainty": {
+    "state": "unboundedEngineering",
+    "sourceLimitations": [
+      "M6 plate thickness 2 mm PROBABLE",
+      "Photo-supported hole positions and sharp bends are instructional approximations",
+      "Presentation frames and support correspondence are replaceable",
+      "M5 standoff blind bores and thread engagement are omitted",
+      "No engineering datum, physical fit, production tolerance or torque claim"
+    ]
+  },
+  "approachOffsetMm": {
+    "standoff": 30,
+    "screw": -30
+  },
+  "approachPurpose": "Nonphysical exploded staging only; no admitted installation sweep",
+  "numericalResidualBudgetMm": 0.001,
+  "numericalAngularBudgetRad": 0.00001
+}

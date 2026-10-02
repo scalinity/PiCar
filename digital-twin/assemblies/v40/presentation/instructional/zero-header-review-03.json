@@ -1,0 +1,50 @@
+{
+  "id": "PX-M7-ZERO2W-HEADER-REVIEW-03",
+  "revision": 3,
+  "variantId": "rpi-zero-2-w",
+  "definitionId": "PX-V40-DEF-ZERO2W",
+  "track": "instructional-only",
+  "sourceBindings": [
+    {
+      "path": "digital-twin/validation/expected/m5/candidate-sources.json",
+      "rawSha256": "0e7772f2ca556482fafd72634193b9b224884b5c9cb7e58b47dc9e519994f462",
+      "bytes": 22780
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/instructional-receipts/PX-V40-DEF-ZERO2W.json",
+      "rawSha256": "7691b9502c586e18305fe9d07bf5531b768087de76c1b1af6f6b442e18b25176",
+      "bytes": 25057
+    },
+    {
+      "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+      "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+      "bytes": 11048665
+    }
+  ],
+  "primaryDrawing": {
+    "path": "digital-twin/cad/source-vault/m5/58a9cb559ec2747af2581b0e0a95890fabc3d2c627c8192b7b485f612345692d.pdf",
+    "rawSha256": "58a9cb559ec2747af2581b0e0a95890fabc3d2c627c8192b7b485f612345692d",
+    "bytes": 163618
+  },
+  "observations": [
+    "Official planar drawing shows the 20-by-2 GPIO footprint centered along the 65mm edge between the two mounting corners. Original authored 39mm marker begins at x5.2 and is asymmetric about x32.5; it intersects the rear support body by 11.511497135772883 mm3 in the retained a12 test.",
+    "Planar illustration scaled by explicit 65mm outline supports a roughly 51mm centered header footprint. New x7.1..57.9 body is a presentation estimate, not a dimensioned manufacturer envelope.",
+    "Preserve the entire PCB and four bore centers, all three original port markers, original camera marker, and original optional configuration. Q-14 remains explicit."
+  ],
+  "headerBoundsMm": [
+    7.1,
+    25.5,
+    1.6,
+    57.9,
+    27.6,
+    9.6
+  ],
+  "scope": "Centered reference footprint representation only; no header pin map, actual soldered-header readiness, contact heights, HAT mating or fit.",
+  "sourceLimitations": [
+    "Header x extent is an openly authored estimate from planar source, not an engineering dimension.",
+    "Original schematic y width, z height retained; no physical tolerance or unknown actual header configuration resolved.",
+    "Exact camera marker remains unrevised and blocked for insertion use."
+  ],
+  "engineeringAdmission": false,
+  "runtimeAdmission": false
+}

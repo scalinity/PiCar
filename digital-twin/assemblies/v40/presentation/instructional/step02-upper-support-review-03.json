@@ -1,0 +1,205 @@
+{
+  "id": "PX-M7-S02-UPPER-SUPPORTS-03",
+  "revision": 3,
+  "track": "instructional-only",
+  "sourceBindings": [
+    {
+      "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+      "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+      "bytes": 11048665
+    },
+    {
+      "path": "digital-twin/assemblies/v40/presentation/instructional/step02-source-review-03.json",
+      "rawSha256": "f417d1ed7809bfd36aef94fe0647e66f939ae82a215258580755f513f254019d",
+      "bytes": 4694
+    }
+  ],
+  "sourceLocators": [
+    "V40 page1 greenS02 shows four female/female M2.5x18 bodies above PCB on lower +6 male supports",
+    "V40 page1 blueS02 closeup shows two M2.5x18+6 bodies with six-millimetre male ends below bodies and insertion arrows DOWN into PCB"
+  ],
+  "variants": {
+    "rpi5": {
+      "upperStacks": [
+        {
+          "operationId": "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-001",
+          "connectionId": "PX-V40-CONN-02-PI5-HARDWARE-M25X18-STANDOFF-001",
+          "upperInstanceId": "PX-V40-INS-M25X18-STANDOFF-001",
+          "orderedContactStack": [
+            {
+              "instanceId": "PX-V40-INS-M25X18-STANDOFF-001",
+              "interfaceId": "PX-V40-IF-M25X18-STANDOFF-BEARING-OR-GRIP"
+            },
+            {
+              "instanceId": "PX-V40-INS-PI5-001",
+              "interfaceId": "PX-V40-IF-PI5-MOUNT-PATTERN"
+            },
+            {
+              "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+              "interfaceId": "PX-V40-IF-M25X18PLUS6-STANDOFF-UPPER-BEARING"
+            }
+          ],
+          "lowerInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001"
+        },
+        {
+          "operationId": "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-002",
+          "connectionId": "PX-V40-CONN-02-PI5-HARDWARE-M25X18-STANDOFF-002",
+          "upperInstanceId": "PX-V40-INS-M25X18-STANDOFF-002",
+          "orderedContactStack": [
+            {
+              "instanceId": "PX-V40-INS-M25X18-STANDOFF-002",
+              "interfaceId": "PX-V40-IF-M25X18-STANDOFF-BEARING-OR-GRIP"
+            },
+            {
+              "instanceId": "PX-V40-INS-PI5-001",
+              "interfaceId": "PX-V40-IF-PI5-MOUNT-PATTERN"
+            },
+            {
+              "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+              "interfaceId": "PX-V40-IF-M25X18PLUS6-STANDOFF-UPPER-BEARING"
+            }
+          ],
+          "lowerInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002"
+        },
+        {
+          "operationId": "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-003",
+          "connectionId": "PX-V40-CONN-02-PI5-HARDWARE-M25X18-STANDOFF-003",
+          "upperInstanceId": "PX-V40-INS-M25X18-STANDOFF-003",
+          "orderedContactStack": [
+            {
+              "instanceId": "PX-V40-INS-M25X18-STANDOFF-003",
+              "interfaceId": "PX-V40-IF-M25X18-STANDOFF-BEARING-OR-GRIP"
+            },
+            {
+              "instanceId": "PX-V40-INS-PI5-001",
+              "interfaceId": "PX-V40-IF-PI5-MOUNT-PATTERN"
+            },
+            {
+              "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+              "interfaceId": "PX-V40-IF-M25X18PLUS6-STANDOFF-UPPER-BEARING"
+            }
+          ],
+          "lowerInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003"
+        },
+        {
+          "operationId": "PX-V40-OP-02-PI5-HARDWARE-M25X18-STANDOFF-004",
+          "connectionId": "PX-V40-CONN-02-PI5-HARDWARE-M25X18-STANDOFF-004",
+          "upperInstanceId": "PX-V40-INS-M25X18-STANDOFF-004",
+          "orderedContactStack": [
+            {
+              "instanceId": "PX-V40-INS-M25X18-STANDOFF-004",
+              "interfaceId": "PX-V40-IF-M25X18-STANDOFF-BEARING-OR-GRIP"
+            },
+            {
+              "instanceId": "PX-V40-INS-PI5-001",
+              "interfaceId": "PX-V40-IF-PI5-MOUNT-PATTERN"
+            },
+            {
+              "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+              "interfaceId": "PX-V40-IF-M25X18PLUS6-STANDOFF-UPPER-BEARING"
+            }
+          ],
+          "lowerInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004"
+        }
+      ],
+      "maleDirection": "Lower support male UP into female upper support",
+      "upperRotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "roll": "Deterministic presentation gauge about cylindrical axis; not source-measured thread index",
+      "micStatus": "BLOCKED exact applicable Pi5 USB socket/cavity/plug correspondence not established"
+    },
+    "rpi-zero-2-w": {
+      "upperStacks": [
+        {
+          "operationId": "PX-V40-OP-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-001",
+          "connectionId": "PX-V40-CONN-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-001",
+          "upperInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+          "orderedContactStack": [
+            {
+              "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+              "interfaceId": "PX-V40-IF-M25X18PLUS6-STANDOFF-BEARING-OR-GRIP"
+            },
+            {
+              "instanceId": "PX-V40-INS-ZERO2W-001",
+              "interfaceId": "PX-V40-IF-ZERO2W-MOUNT-PATTERN"
+            },
+            {
+              "instanceId": "PX-V40-INS-M25X11-STANDOFF-001",
+              "interfaceId": "PX-V40-IF-M25X11-STANDOFF-UPPER-BEARING"
+            }
+          ],
+          "lowerInstanceId": "PX-V40-INS-M25X11-STANDOFF-001"
+        },
+        {
+          "operationId": "PX-V40-OP-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-002",
+          "connectionId": "PX-V40-CONN-02-ZERO2W-HARDWARE-M25X18PLUS6-STANDOFF-002",
+          "upperInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+          "orderedContactStack": [
+            {
+              "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+              "interfaceId": "PX-V40-IF-M25X18PLUS6-STANDOFF-BEARING-OR-GRIP"
+            },
+            {
+              "instanceId": "PX-V40-INS-ZERO2W-001",
+              "interfaceId": "PX-V40-IF-ZERO2W-MOUNT-PATTERN"
+            },
+            {
+              "instanceId": "PX-V40-INS-M25X11-STANDOFF-002",
+              "interfaceId": "PX-V40-IF-M25X11-STANDOFF-UPPER-BEARING"
+            }
+          ],
+          "lowerInstanceId": "PX-V40-INS-M25X11-STANDOFF-002"
+        }
+      ],
+      "maleDirection": "Upper support male DOWN through PCB into short lower support",
+      "upperRotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "roll": "Deterministic presentation gauge about cylindrical axis; not source-measured thread index",
+      "micStatus": "PRESERVED_ACCESSORY_Q14"
+    }
+  },
+  "approachOffsetMm": 30,
+  "numericPlacementBudgetMm": 0.001,
+  "axisBudgetRad": 0.00001,
+  "mountCorrespondenceCapMm": 1.5,
+  "physicalUncertainty": "UNRESOLVED",
+  "physicalFit": "BLOCKED",
+  "installationSweep": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "sourceLimitations": [
+    "Presentation-only functional approximation; not physical fit/thread depth/engagement.",
+    "M6 stock 2mm PROBABLE, approximate plate-local frames; no production datum.",
+    "Body/end contacts describe authored solids and visible source order; physical uncertainties unresolved."
+  ]
+}

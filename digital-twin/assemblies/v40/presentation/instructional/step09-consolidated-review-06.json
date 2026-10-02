@@ -1,0 +1,87 @@
+{
+  "id": "PX-M7-S09-CONSOLIDATED-REVIEW-06",
+  "revision": 6,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-09",
+  "evidenceReceipt": "digital-twin/assemblies/v40/presentation/instructional/s09-consolidated-evidence-receipt-06.json",
+  "fitTrace": "digital-twin/assemblies/v40/presentation/instructional/s09-fit-trace-06.json",
+  "fitMeasurements": "digital-twin/assemblies/v40/presentation/instructional/s09-fit-measurements-06.json",
+  "plateAReview": "digital-twin/assemblies/v40/presentation/instructional/step09-plate-a-review-05.json",
+  "statusWord": "DERIVED",
+  "physicalFit": {
+    "images": [
+      {"file": "s09-fit_01_front-straight-on-card.jpeg", "sha256": "02372bac33f2f3eb92be890275dde1c035949d61c12df0c3ca2b5c816d04d5c5", "use": "measured: cans, deck-side slot, crystal, end holes"},
+      {"file": "s09-fit_03_side-profile-card.jpeg", "sha256": "e2d7bb51c684738ec47ca6323831253f71dc8149fedbd3965f97f79cb42d8220", "use": "orientation only: board behind the wall, cans forward, connector behind the board"},
+      {"file": "s09-fit_05_rear-straight-on.jpeg", "sha256": "a5a0454ffd8e1623c4714d9bb7b51f8b96a1775dbd2f4bdf4812afff2072a243", "use": "orientation only: board centred between the end holes, rear components, connector, pan hole just behind the board"}
+    ],
+    "observed": [
+      "Both supplied cans sit in both Plate A openings at once (owner-observed mating; owner-confirmed assembly context).",
+      "The board lies behind the wall, front face toward the wall inner face; the cans project forward through the openings by about 10 mm past the wall outer face.",
+      "The crystal sits inside the deck-side slot; the crystal edge of the board is the edge toward the deck (installed up).",
+      "The 4-pin connector is on the board's rear face at the edge away from the deck, and its housing projects past the wall's free edge (installed down). Connector-down is now observed, not inferred.",
+      "The board's ends lie inside the two wall end holes, so the rivets pass beside the module.",
+      "Rear components (three SOIC packages, passives, transducer pins) stand proud of the board's rear face over most of the area Plate H would cover.",
+      "V40 S08 (locked PDF page 2, sha256 2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce) draws the pan servo arm under the deck, across the car, directly behind the wall and visible through the deck-side slot; V40 S09 draws the arm's splined hub above the module's top region. Neither panel shows Plate H's notch."
+    ],
+    "fitMeasurementsMm": {
+      "scale": "wall end-hole spacing 53.570 mm in plane, 11.495 px/mm; the card stands nearer the camera (12.27 px/mm) and is not used",
+      "deckSideSlot": {"nearCanEdge": -4.58, "deckSideEdge": -9.94, "height": 5.36, "length": 11.59, "agreesWithContinuation07": "height 5.39, edges -4.42 and -9.81"},
+      "crystal": {"nearCanEdge": -5.32, "deckSideEdge": -9.66, "across": 4.34, "length": 10.56, "centreFromHoleLine": -7.49,
+                  "clearanceInSlot": {"nearCanSide": 0.74, "deckSide": 0.28, "leftEnd": 0.33, "rightEnd": 0.70}},
+      "canRims": {"spacingAtRimPlane": 26.56, "diameterAtRimPlane": [17.31, 16.92], "note": "The rims stand about 11 mm nearer the camera than the wall, so their spacing reads larger than at the wall; 25.85 at the wall corresponds to a 2.7 percent rim magnification, consistent with the camera distance."},
+      "uncertainty": "Line fits 0.2 to 0.9 px rms (about 0.02 to 0.08 mm); scale 0.6 percent; slot and crystal values about +-0.15 mm"
+    }
+  },
+  "ultrasonicReconciliation": {
+    "decision": "The observed simultaneous fit outranks the standalone photo spacing. Both cans (diameter 16.6 +- 1.0) pass both openings (diameter 17.0 +- 0.4, 25.85 +- 0.25 apart), so each can is within 0.2 mm of its opening centre and the can spacing is 25.85 +- 0.65 mm. The standalone 28.4 mm estimate is withdrawn; in the measured wall it puts 72.5 mm3 of can into the wall (diagnostic Dc).",
+    "preparedRevision": {
+      "supersedes": "digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-ULTRASONIC.brep (sha256 85b56dab1fbf2ad9b1729b6d910813f53783bcf1f26a4365bcdd71bb72b7656f), itself superseding the M5 artifact 6210457683452a15ebebf864990269f3313d77c8b788790dd73146665fba6148",
+      "changes": [
+        {"parameter": "canSpacingMm", "old": 28.4, "new": 25.85, "uncertainty": 0.65, "basis": "physical fit plus the Continuation 07 opening spacing"},
+        {"parameter": "crystal", "old": "9.8 x 4.5 x 3.8, flush with the crystal edge (centre 6.4 from the can axis)", "new": "10.56 x 4.34, centre 7.47 from the can axis toward the crystal edge", "uncertainty": 0.15, "basis": "crystal measured inside the deck-side slot in s09-fit_01"},
+        {"parameter": "canOffsetTowardCrystalMm", "old": 1.6, "new": "0.6 to 0.95, unresolved", "basis": "the measured crystal reaches 9.64 mm from the can axis, past a board edge 8.65 mm from it; the rear view puts the board edge about 9.3 mm from the axis. A board-edge measurement is needed before this is changed."}
+      ],
+      "unchanged": ["board 46.2 x 20.5 x 1.6", "can diameter 16.6 and height 12.8", "rear connector parameters (the profile and rear views agree with them only coarsely)", "5 V versus V40 3V3 conflict OPEN", "OEM identity unresolved"],
+      "diagnosticArtifactSha256": "22d5f8a2796303ba9dca539a40b44d8dc28a867a03d2ec47aaf1969ea2565d30",
+      "diagnosticArtifactNote": "Can-spacing change only, built by revisions.py from hardware-revisions-04.json with canSpacingMm 25.85; the crystal change is not in this artifact",
+      "adopted": false
+    }
+  },
+  "plateAStatus": {
+    "holeLine": "Continuation 07 classification B stands: deck underside to end-hole centre 11.0 mm (10.4 to 11.65). The fit photograph adds nothing that changes it.",
+    "contradictedFeatures": "Openings (25.85 apart, diameter 17.0; trace 30 and 19), deck-side slot (5.36 to 5.39 tall, -4.4 to -9.9 from the hole line; trace 3.5 tall, -6.75 to -10.25) and wall width (58.2; trace 60) are contradicted by two independent photographs each. The slot is a rounded rectangle with small corner radii, not the full-radius stadium of the M6 representation.",
+    "wallPosition": "Consistency grade only: photo 10 puts the wall outer face 8.31 mm ahead of the pan-hole centre (trace 6.69), and the rear fit view shows the pan hole just behind the board. Needs a caliper check before adoption.",
+    "adopted": false
+  },
+  "diagnostic": {
+    "method": "Scratch-only mirror of the inputs the unchanged overlap_probe reads, serving a diagnostic Plate A and ultrasonic module through the normal revision resolver; S09 placements from the source-built chain (run r2) shifted only by the wall and hole-line moves that step09 would derive from the revised wall. Not a closure and not adopted.",
+    "plateAParameterChanges": "front.dual-opening face: outline +-29.1 x 24; openings diameter 17.0 at u +-12.925 and v = hole line; end holes unchanged (diameter 3 at u +-27, v = hole line); slot.2 replaced by end centres u +-3.055 at v = hole line - 7.115, width 5.39; slot.1 unchanged; D3 also moves the face origin x by +1.62",
+    "cases": [
+      {"name": "Dc", "holeLineV": 12.0, "canSpacing": 28.4, "wallShift": 0, "plateASha256": "9d6e8d4ba0af598dacd99508cbd4d3ce8de7a3986384a739422ceeab256a299a",
+       "volumesMm3": {"hornPlateH": 101.071, "plateAModule": 72.524, "plateAPlateH": 12.955, "hornModule": 2.026}},
+      {"name": "D1", "holeLineV": 12.0, "canSpacing": 25.85, "wallShift": 0, "plateASha256": "9d6e8d4ba0af598dacd99508cbd4d3ce8de7a3986384a739422ceeab256a299a",
+       "volumesMm3": {"hornPlateH": 101.071, "plateAModule": 6.979, "plateAPlateH": 12.955, "hornModule": 2.026}},
+      {"name": "D2", "holeLineV": 12.76, "canSpacing": 25.85, "wallShift": 0, "plateASha256": "1ff415356117086f556a9c58eb9e1bfd6f4eb4b2cae9b6c5dd6ecf1ce53e826f",
+       "volumesMm3": {"hornPlateH": 73.466, "plateAModule": 6.979, "plateAPlateH": 0, "hornModule": 0.215}},
+      {"name": "D3", "holeLineV": 12.76, "canSpacing": 25.85, "wallShift": 1.62, "plateASha256": "d3bfaee727adeaee35445b0ab9ee58a22387ccc5b70216eca0ac307a51017a94",
+       "volumesMm3": {"hornPlateH": 7.189, "plateAModule": 6.979, "plateAPlateH": 0, "hornModule": 0},
+       "where": {"hornPlateH": "horn hub disc only: x 170.02..171.16, y -3.4..4.2, z -2.2..-0.56", "plateAModule": "crystal corners against the slot's full-radius ends plus a 0.27 mm sliver at the far edge"}}
+    ],
+    "identicalOnBothVariants": true,
+    "otherPlateAPairs": "Unchanged in every case (battery and four horn screws, existing scoped overlaps); no new overlap with S01 to S08 parts"
+  },
+  "remainingContradiction": {
+    "pair": "pan horn vs Plate H",
+    "statement": "V40 puts the horn plate directly under the deck behind the wall; the rivet holes put Plate H's top edge about 0.5 to 1.0 mm below the deck underside (hole line 11.0, Plate H half-height 10.25); the horn plate is 2.2 +- 0.5 mm thick. So Plate H's top edge and the horn plate share 1.2 to 2.2 mm of height. In plan they clear only if Plate H sits flush on the board and the wall is as far forward as photo 10 suggests, and then only the hub disc remains (D3, 7.2 mm3, or zero with the notch up). But the rear components stand about 1.5 mm proud of the board where Plate H would rest; on them Plate H sits back under the whole arm in either notch orientation.",
+    "classification": "ACTUAL SOURCE AMBIGUITY in the assembled vertical and depth stack: Plate H notch orientation, whether Plate H bears on the rear components, and how its top edge meets the horn are not shown by V40 or by any photograph of the parts assembled together",
+    "notMoved": "No pose was moved and no notch orientation was chosen to reduce volume"
+  },
+  "smallestEvidence": [
+    "A photograph of the actual front assembled through S09 (horn screwed under the deck, module in the wall, Plate H riveted), taken from behind and below like s09-fit_04/05, showing which way Plate H's notch faces, whether Plate H rests on the rear chips, and where its top edge meets the horn hub and arm",
+    "Calipers: pan-hole centre to the wall outer face; horn plate thickness at the arm; module board edge (crystal side) to the near can edge"
+  ],
+  "s09Status": "BLOCKED",
+  "engineeringStatus": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false
+}

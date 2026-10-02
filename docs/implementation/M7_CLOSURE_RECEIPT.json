@@ -1,0 +1,107 @@
+{
+  "milestone": "M7",
+  "status": "BLOCKED",
+  "chiralityBlocker": "RESOLVED",
+  "rootCause": "C. V40_SOURCE_INTERPRETATION_ERROR",
+  "instructionalAcceptedSHA": null,
+  "engineeringAcceptedSHA": null,
+  "implementationSHA": null,
+  "documentationHEAD": "d8b95f2b7fbe8cc67c7b38e8272b662c6ac804ca",
+  "branch": "codex/m7-instructional-assemblies",
+  "activeProductVariants": [
+    "rpi5",
+    "rpi-zero-2-w"
+  ],
+  "preservedNonTarget": [
+    {
+      "variantId": "rpi4",
+      "status": "PRESERVED_NON_TARGET"
+    }
+  ],
+  "requiredActiveCoverage": 58,
+  "achievedCompleteCoverage": 0,
+  "completeByVariant": {
+    "rpi5": 0,
+    "rpi-zero-2-w": 0
+  },
+  "staticObservationsPassed": 2,
+  "partialBoardObservationsPassed": 2,
+  "report": {
+    "path": "docs/implementation/M7_G_INSTRUCTIONAL_ASSEMBLY_REPORT.json",
+    "rawSha256": "4a26bc817c98b0d45244c82579692507edebff053ea0d0ff6f65e667ed309d7d",
+    "bytes": 2016339
+  },
+  "humanReport": {
+    "path": "docs/implementation/M7_REPORT.md",
+    "rawSha256": "f959338192b2e502b7d2100354138393554f88cad34b6411fceabf922fc17924",
+    "bytes": 10788
+  },
+  "remediationHandoff": {
+    "path": "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+    "rawSha256": "d43a25677e45640b7912631cbb6192f50cb4383d983b427caa4cd1c56669455a",
+    "bytes": 18062
+  },
+  "readOnlyGateCheck": {
+    "path": "docs/implementation/evidence/m7/continuation-03/gate-check-command.json",
+    "rawSha256": "4fedaaa9f2681d653879b708dbf15be9688df7af5ade97f1a84871ba88dde24c",
+    "bytes": 529
+  },
+  "reproducibility": {
+    "path": "docs/implementation/evidence/m7/continuation-03/reproducibility.json",
+    "rawSha256": "3d163eabe9542d5066e9e0e283f54b80a85a237d3f85be6c6d7f971d2f8b1c15",
+    "bytes": 25942
+  },
+  "preservation": {
+    "path": "docs/implementation/evidence/m7/continuation-03/preservation.json",
+    "rawSha256": "3e152b213f339f5bc843633a2def5ac905c0771c5abdce13e7b67c25e31c4b5a",
+    "bytes": 1224
+  },
+  "preflight": {
+    "path": "docs/implementation/evidence/m7/continuation-03/preflight.json",
+    "rawSha256": "2ae013b51c7c5aeaf0458cec69ccd6ff16037c3778636e5e090527886c109c4e",
+    "bytes": 98174
+  },
+  "pi5InstructionalAdoption": {
+    "path": "docs/implementation/evidence/m7/continuation-02/pi5-instructional-adoption-02.json",
+    "rawSha256": "d1d8dad4d575d51448ead6bb3e0048af75137c50f8c606a8448b867e66153325",
+    "bytes": 4118
+  },
+  "cleanRuns": [
+    "qualification-a-14",
+    "qualification-b-14"
+  ],
+  "testsPerCleanRun": 508,
+  "localCommitCreated": false,
+  "remoteWrites": false,
+  "M8Authorization": "NO",
+  "M8Implemented": false,
+  "candidateManifest": "docs/implementation/evidence/m7/candidate-files.json",
+  "candidatePurpose": "Review and additive rollback only; not acceptance staging authorization",
+  "selfExcluded": true,
+  "upperSupportObservationsPassed": 2,
+  "zeroHeaderInstructionalAdoption": {
+    "path": "docs/implementation/evidence/m7/continuation-03/zero-header-instructional-adoption-03.json",
+    "rawSha256": "1c2a5795078311b7a03cbb40b9e8be3ff5145bb9a89d206bb23b648df610899f",
+    "bytes": 3463
+  },
+  "hatFeatureInstructionalAdoption": {
+    "path": "docs/implementation/evidence/m7/continuation-03/hat-feature-instructional-adoption-03.json",
+    "rawSha256": "303d2ba701d5e339bea5122bfc0dd4049cc339e87f8b110be9285953cd7ca2e9",
+    "bytes": 3238
+  },
+  "retainedFailureOutputBindings": {
+    "path": "docs/implementation/evidence/m7/continuation-03/retained-failure-output-bindings.json",
+    "rawSha256": "45bec566a12817c8b82446e89b26d4e45e07b96310c5addbd82f8fd804c123d4",
+    "bytes": 24069
+  },
+  "sourceBindingCheck": {
+    "path": "docs/implementation/evidence/m7/continuation-03/source-binding-check.json",
+    "rawSha256": "a67b401d4c553039e872d68eded3575e4171da1aac27b646ad79a0ed92e2e318",
+    "bytes": 6408
+  },
+  "currentSourceAnchor": {
+    "path": "digital-twin/assemblies/v40/presentation/instructional/step01-source-review-03.json",
+    "rawSha256": "a7715aa078d3e48a0a7334ab1a02b5a27bf01a60e3690de10cc165d91075dfbd",
+    "bytes": 7818
+  }
+}

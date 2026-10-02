@@ -1,0 +1,225 @@
+{
+  "id": "PX-M7-HARDWARE-REVISIONS-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "evidenceReceipt": "digital-twin/assemblies/v40/presentation/instructional/hardware-evidence-receipt-04.json",
+  "derivation": {
+    "tool": "digital-twin/cad/twin_cad/assemblies/instructional/hardware_photo.py",
+    "standard": "Reference-scaled photograph measurement, instructional grade. A payment card (ISO/IEC 7810 ID-1, 85.60 x 53.98 mm) or a US one-cent coin (19.05 mm) in the same photograph supplies scale; the reference and the part are assumed near coplanar. Values are DERIVED with the stated relative uncertainty. They are not manufacturer VERIFIED and carry no engineering authority.",
+    "statusWord": "DERIVED"
+  },
+  "definitions": [
+    {
+      "definitionId": "PX-V40-DEF-ULTRASONIC",
+      "kind": "ultrasonic",
+      "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-ULTRASONIC.brep",
+      "reason": "The M5 proxy placed the transducer cans 23 mm apart (a quarter and three quarters of the board) and omitted the crystal and the rear connector. The supplied module has cans 28.4 mm apart that sit 1.6 mm off the board centre line toward the crystal edge, so the proxy crossed the 30 mm wall openings and could not show the connector orientation.",
+      "sourceImages": [
+        "Ultrasonic-Module/ultrasonic_01_front-top-down-card-penny.jpeg",
+        "Ultrasonic-Module/ultrasonic_03_rear-pcb-top-down-card-penny.jpeg",
+        "Ultrasonic-Module/ultrasonic_10_connector-edge-profile-penny.jpeg",
+        "Ultrasonic-Module/ultrasonic_09_tilted-side-profile-card.jpeg"
+      ],
+      "frame": "x along the 46 mm board length, y across it with the crystal edge at y=0 and the connector edge at y=width, z through the board with the transducer cans on +z and the connector on -z",
+      "parameters": {
+        "boardLengthMm": 46.2,
+        "boardWidthMm": 20.5,
+        "boardThicknessMm": 1.6,
+        "canSpacingMm": 28.4,
+        "canRadiusMm": 8.3,
+        "canHeightMm": 12.8,
+        "canRecessRadiusMm": 7.0,
+        "canRecessDepthMm": 1.5,
+        "canOffsetTowardCrystalMm": 1.6,
+        "cornerHoleInsetMm": 1.4,
+        "cornerHoleRadiusMm": 1.1,
+        "crystalLengthMm": 9.8,
+        "crystalWidthMm": 4.5,
+        "crystalHeightMm": 3.8,
+        "connectorWidthMm": 14.0,
+        "connectorRearHeightMm": 7.0,
+        "connectorOutsideEdgeMm": 5.2,
+        "connectorOnBoardMm": 2.0
+      },
+      "uncertainty": {
+        "boardLengthMm": 0.5,
+        "canSpacingMm": 0.6,
+        "canRadiusMm": 0.5,
+        "canHeightMm": 0.8,
+        "canOffsetTowardCrystalMm": 0.5,
+        "connectorRearHeightMm": 1.0
+      },
+      "notDerived": [
+        "board thickness (profile photographs bound it between about 1.3 and 1.6 mm; the M5 value 1.6 is kept)",
+        "transducer mesh recess depth and radius (authored presentation recess)",
+        "rear integrated circuits and passives, about 1.3 to 1.8 mm tall, are not represented",
+        "exact OEM identity and revision; the 5 V versus V40 3V3 conflict stays open"
+      ]
+    },
+    {
+      "definitionId": "PX-V40-DEF-HORN-PAN",
+      "kind": "horn-double",
+      "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-HORN-PAN.brep",
+      "reason": "V40 S08 and S13 draw a two-sided horn with screws on both sides of the hub; the supplied long double-arm horn is 34 mm long with a tapered arm and a hub centred on the arm, not the M5 26 mm bar with a mid-arm boss.",
+      "sourceImages": [
+        "Servo-Horns/servo-horn_02_family-top-down-penny.jpeg",
+        "Servo-Horns/servo-horn_04_long-double-arm-top-down-penny.jpeg",
+        "Servo-Horns/servo-horn_05_long-double-arm-raised-hub-oblique-penny.jpeg",
+        "Servo-Horns/servo-horn_12_family-edge-profile-penny.jpeg"
+      ],
+      "frame": "hub centre at the origin, arm along x, plate on z 0..thickness, raised hub on +z",
+      "parameters": {
+        "halfLengthMm": 17.0,
+        "armWidthAtHubMm": 5.9,
+        "armWidthAtTipMm": 4.0,
+        "hubRadiusMm": 3.85,
+        "plateThicknessMm": 2.2,
+        "hubRiseMm": 2.5,
+        "boreRadiusMm": 1.15,
+        "holePitchMm": 2.1,
+        "firstHoleMm": 4.7,
+        "holesPerSide": 6,
+        "holeRadiusMm": 0.55
+      },
+      "uncertainty": {"halfLengthMm": 0.8, "hubRadiusMm": 0.4, "plateThicknessMm": 0.5, "hubRiseMm": 0.7},
+      "notDerived": ["spline tooth count and form", "hub recess profile", "screw thread geometry"]
+    },
+    {
+      "definitionId": "PX-V40-DEF-HORN-TILT",
+      "kind": "horn-double",
+      "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-HORN-TILT.brep",
+      "reason": "V40 S13 draws the same two-sided horn as S08 on the C plate; the supplied package holds two long double-arm horns for the pan and tilt servos.",
+      "sourceImages": [
+        "Servo-Horns/servo-horn_02_family-top-down-penny.jpeg",
+        "Servo-Horns/servo-horn_04_long-double-arm-top-down-penny.jpeg"
+      ],
+      "frame": "hub centre at the origin, arm along x, plate on z 0..thickness, raised hub on +z",
+      "parameters": {
+        "halfLengthMm": 17.0,
+        "armWidthAtHubMm": 5.9,
+        "armWidthAtTipMm": 4.0,
+        "hubRadiusMm": 3.85,
+        "plateThicknessMm": 2.2,
+        "hubRiseMm": 2.5,
+        "boreRadiusMm": 1.15,
+        "holePitchMm": 2.1,
+        "firstHoleMm": 4.7,
+        "holesPerSide": 6,
+        "holeRadiusMm": 0.55
+      },
+      "uncertainty": {"halfLengthMm": 0.8, "hubRadiusMm": 0.4, "plateThicknessMm": 0.5, "hubRiseMm": 0.7},
+      "notDerived": ["spline tooth count and form", "hub recess profile", "screw thread geometry"]
+    },
+    {
+      "definitionId": "PX-V40-DEF-HORN-STEERING",
+      "kind": "horn-single",
+      "supersedes": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-HORN-STEERING.brep",
+      "reason": "V40 S21 and S22 draw a one-sided horn: a round hub with a single tapered arm. The supplied single-arm horn is 20.6 mm long end to end.",
+      "sourceImages": [
+        "Servo-Horns/servo-horn_02_family-top-down-penny.jpeg",
+        "Servo-Horns/servo-horn_10_single-arm-top-down-penny.jpeg",
+        "Servo-Horns/servo-horn_11_single-arm-raised-hub-oblique-penny.jpeg"
+      ],
+      "frame": "hub centre at the origin, arm along +x, plate on z 0..thickness, raised hub on +z",
+      "parameters": {
+        "tipDistanceMm": 16.55,
+        "armWidthAtHubMm": 5.8,
+        "armWidthAtTipMm": 3.4,
+        "hubRadiusMm": 4.05,
+        "plateThicknessMm": 2.2,
+        "hubRiseMm": 2.5,
+        "boreRadiusMm": 1.15,
+        "holePitchMm": 2.1,
+        "firstHoleMm": 4.7,
+        "holesPerSide": 6,
+        "holeRadiusMm": 0.55
+      },
+      "uncertainty": {"tipDistanceMm": 0.9, "hubRadiusMm": 0.4, "plateThicknessMm": 0.5, "hubRiseMm": 0.7},
+      "notDerived": ["spline tooth count and form", "hub recess profile", "screw thread geometry"]
+    },
+    {
+      "definitionId": "PX-V40-DEF-PLATE-H",
+      "kind": "plate-h-outline",
+      "supersedes": "docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-H.brep",
+      "reason": "Card-scaled silhouettes of both private Plate H photographs agree at every brightness threshold: the plate is about 20.7 mm tall with a notch about 5.2 mm deep, while the accepted M6 outline is 23.14 mm tall with a 6.36 mm notch. The M6 hole centres, notch width and notch floor are kept exactly; only the outer edges move inward.",
+      "sourceImages": [
+        "Plate-H/plate-H_01_top-down-notch-down.jpeg",
+        "Plate-H/plate-H_02_top-down-notch-up.jpeg"
+      ],
+      "sourceImageRoot": "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence/",
+      "frame": "the M6 plate frame: x across the short side, y along the long side, thickness on z 0..2; the notch opens toward -x",
+      "measurements": {
+        "photo01NotchDown": {"lengthMm": 59.6, "heightMm": 20.7, "notchWidthMm": 14.2, "notchDepthMm": 5.1, "pxPerMm": 20.71, "cardDistortion": 0.017},
+        "photo02NotchUp": {"lengthMm": 59.4, "heightMm": 20.8, "notchWidthMm": 14.4, "notchDepthMm": 5.3, "pxPerMm": 20.99, "cardDistortion": 0.014}
+      },
+      "parameters": {
+        "thicknessMm": 2.0,
+        "halfHeightMm": 10.25,
+        "centreXMm": -0.05,
+        "yMinMm": -29.355378,
+        "yMaxMm": 29.893522,
+        "cornerRadiusMm": 3.0,
+        "notchFloorXMm": -5.129427,
+        "notchYMinMm": -7.122833,
+        "notchYMaxMm": 7.218155,
+        "endHoles": [[-0.038952, -26.761515, 1.617602], [-0.063278, 26.808134, 1.632859]],
+        "innerHoles": [[-4.929991, -12.769992, 1.315712], [4.99277, -12.829654, 1.306473], [-4.989611, 12.803342, 1.321646], [5.029062, 12.749685, 1.312311]]
+      },
+      "uncertainty": {"heightMm": 0.5, "notchDepthMm": 0.4},
+      "notDerived": [
+        "the photograph silhouettes are about 0.8 mm larger in length than the M6 hole-validated length, so a mask edge bias of up to 0.4 mm per edge is possible; the height here is the card-scaled value corrected by the aspect ratio against the M6 length, 20.75 x 58.74 / 59.5 rounded to 20.5",
+        "corner radius (kept at the approximate 3 mm of M6)",
+        "stock thickness (kept at 2 mm)"
+      ]
+    }
+  ],
+  "unusedPhysicalHorns": ["large cross horn", "small cross horn"],
+  "reviews": [
+    {
+      "definitionIds": ["PX-V40-DEF-SERVO-PAN", "PX-V40-DEF-SERVO-TILT", "PX-V40-DEF-SERVO-STEERING"],
+      "outcome": "NO_REVISION",
+      "evidence": "Servo-SF006C/ (10 photographs); the owner states all three supplied servos are identical, so one body geometry serves the three role instances",
+      "measured": {
+        "bodyWidthAcrossTabsMm": 31.9,
+        "bodyWidthMm": 22.3,
+        "bodyHeightMm": 22.7,
+        "bossAndShaftHeightMm": 7.7,
+        "bodyThicknessMm": [12.5, 13.6],
+        "uncertaintyMm": 1.5,
+        "label": "SunFounder Digital Servo SF006C, Clutch Gear",
+        "shaftOffsetFromBodyCentreMm": 4.7
+      },
+      "currentProxyMm": {"length": 23, "width": 12, "height": 24, "tabLength": 32, "bossHeight": 3, "shaftHeight": 3, "shaftX": 6},
+      "reason": "Every proxy dimension is within about 1.5 mm of the photographed servo (body 23 x 12 x 24 against 22.3 x about 13 x 22.7, tabs 32 against 31.9, boss plus shaft 6 against 7.7), which is inside the derivation uncertainty, so no additive artifact is made. Pan, tilt and steering keep separate instances and the M2 identities; no internal gears or spline standard are inferred.",
+      "notDerived": ["integrated lead path and connector geometry", "output spline form", "mounting-tab hole positions"]
+    },
+    {
+      "definitionIds": ["PX-V40-DEF-MOTOR-LEFT", "PX-V40-DEF-MOTOR-RIGHT"],
+      "outcome": "REVISION_WARRANTED_NOT_YET_ADOPTED",
+      "evidence": "Drive-Motor/ (8 photographs); the owner states both supplied drive motors are identical, so one geometry serves the left and right instances",
+      "measured": {
+        "gearboxLengthMm": 40.0,
+        "gearboxDepthAlongShaftMm": 20.8,
+        "gearboxThirdDimensionMm": 22.5,
+        "shaftDiameterMm": 6.0,
+        "shaftTotalLengthMm": 39.0,
+        "shaftStubMm": [9.3, 7.5],
+        "shaftFromTailEndMm": 13.1,
+        "collarDiameterMm": 14.3,
+        "collarLengthMm": 9.7,
+        "canAndCapDiameterMm": 20.5,
+        "canAndCapLengthMm": 18.0,
+        "overallLengthMm": 74.0,
+        "tailTabMm": 5.2,
+        "mountHoleSpacingMm": 17.0,
+        "mountHolesFromShaftTowardCanMm": 21.0,
+        "uncertaintyFraction": 0.08
+      },
+      "currentProxyMm": {"length": 32, "width": 20, "height": 19, "canLength": 24, "canRadius": 9, "shaftRadius": 2.4, "shaftExtension": 9, "shaftX": 10},
+      "reason": "The gearbox is 25 percent longer and 18 percent wider in its third dimension than the proxy, the shaft sits 13 mm from the tail end instead of 10 mm and extends on both sides, and the two large mounting holes (about 17 mm apart and 21 mm from the shaft) match the Plate A flange screw holes (17 mm apart and 21 mm from the shaft hole), which the M5 proxy cannot show.",
+      "adoptionPlan": "Author a shared motor revision in the existing local frame (x along the motor axis with the can on +x, y along the shaft); give it the two mounting bores so the S05 screws pass through real holes; re-derive S05 from the shaft axis and the hole pair; stop treating the motor as a bore-less member in the closure contact policy so any screw-to-bore interference is measured; then revalidate S05, S07 (battery clearance), S27 (rear-drive semantics) and the closures downstream of them. Left and right remain separate instances with their own leads."
+    }
+  ],
+  "engineeringAdmission": false,
+  "runtimeAdmission": false
+}

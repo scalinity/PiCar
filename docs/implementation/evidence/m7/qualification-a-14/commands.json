@@ -1,0 +1,693 @@
+[
+  {
+    "name": "frozen-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "sync",
+      "--frozen",
+      "--group",
+      "m4",
+      "--python",
+      "3.12.14",
+      "--no-install-package",
+      "twin-cad"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:09:34.111Z",
+    "finishedAt": "2026-10-01T17:09:45.806Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/frozen-install.txt",
+      "rawSha256": "96cfea5c0e37ebf5953a9b9dbe5cdb96071d5ed7c7550e6d3d74a1177960d575",
+      "bytes": 1955
+    }
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "build",
+      "--wheel",
+      "--no-build-isolation",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "cad",
+      "--out-dir",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/wheel"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:09:45.806Z",
+    "finishedAt": "2026-10-01T17:09:45.968Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/wheel-build.txt",
+      "rawSha256": "93f3ae52254c497c751226c0443349403f7f944595e61218f245e1f4fbb65f4d",
+      "bytes": 167
+    }
+  },
+  {
+    "name": "wheel-install",
+    "command": [
+      "/opt/homebrew/bin/uv",
+      "pip",
+      "install",
+      "--python",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "--no-deps",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/wheel/twin_cad-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:09:45.968Z",
+    "finishedAt": "2026-10-01T17:09:45.992Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/wheel-install.txt",
+      "rawSha256": "4fff506ec111f318fad6d55059485cbd6b769d306d097c32f2738ee80dbf29be",
+      "bytes": 383
+    }
+  },
+  {
+    "name": "environment",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad",
+      "environment"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:09:45.992Z",
+    "finishedAt": "2026-10-01T17:09:59.160Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/environment.txt",
+      "rawSha256": "c3a8a5fb5f3961ba858eb87589eae986f3192819dca0e8e3174ee3a7c20bb028",
+      "bytes": 207
+    }
+  },
+  {
+    "name": "generate",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.generate",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:09:59.160Z",
+    "finishedAt": "2026-10-01T17:09:59.669Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/generate.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "independent-observations",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.verify",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/observations.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:09:59.669Z",
+    "finishedAt": "2026-10-01T17:10:15.775Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/independent-observations.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "pi5-revision-and-board-candidates",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.remediate",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:10:15.775Z",
+    "finishedAt": "2026-10-01T17:10:18.371Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/pi5-revision-and-board-candidates.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "primary-source-and-independent-correspondence",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.correspondence",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--source-root",
+      "/Users/danny/Documents/Apps/PiCar",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/correspondence.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:10:18.371Z",
+    "finishedAt": "2026-10-01T17:11:04.558Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/primary-source-and-independent-correspondence.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "installed-anchor-generate",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.anchor_generate",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/solutions"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:11:04.558Z",
+    "finishedAt": "2026-10-01T17:11:04.998Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/installed-anchor-generate.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "independent-installed-anchor",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.anchor_verify",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/solutions",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor-observations.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:11:04.998Z",
+    "finishedAt": "2026-10-01T17:11:07.831Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/independent-installed-anchor.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "installed-anchor-board-candidates",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.anchor_boards",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/solutions",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/boards"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:11:07.832Z",
+    "finishedAt": "2026-10-01T17:11:10.329Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/installed-anchor-board-candidates.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "independent-installed-anchor-boards",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.anchor_correspondence",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/solutions",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation",
+      "--boards",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/boards",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor-board-observations.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:11:10.330Z",
+    "finishedAt": "2026-10-01T17:11:13.334Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/independent-installed-anchor-boards.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "upper-support-and-hat-candidates",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.engagement",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/solutions",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation",
+      "--boards",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/boards",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/engagement"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:11:13.334Z",
+    "finishedAt": "2026-10-01T17:11:16.083Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/upper-support-and-hat-candidates.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "independent-upper-support-and-hat-features",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "twin_cad.assemblies.instructional.engagement_verify",
+      "--root",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "--solutions",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/solutions",
+      "--artifacts",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation",
+      "--boards",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/anchor/boards",
+      "--engagement",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/engagement",
+      "--output",
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/engagement-observations.json"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "startedAt": "2026-10-01T17:11:16.083Z",
+    "finishedAt": "2026-10-01T17:11:20.134Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/independent-upper-support-and-hat-features.txt",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "name": "cad-tests",
+    "command": [
+      "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment/bin/python",
+      "-m",
+      "pytest",
+      "cad/tests/test_m7_instructional.py",
+      "cad/tests/test_m7_correspondence.py",
+      "cad/tests/test_m7_engagement.py",
+      "cad/tests/test_m7_anchor.py",
+      "cad/tests/test_toolchain.py",
+      "-q",
+      "--junitxml=/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/tests.xml"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/digital-twin",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:11:20.134Z",
+    "finishedAt": "2026-10-01T17:12:11.533Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/cad-tests.txt",
+      "rawSha256": "09e6ad7eca535732a3c2884c77da4a473f3f6fb3f971baf580f9d31dd60b770a",
+      "bytes": 341
+    }
+  },
+  {
+    "name": "m7-policy-tests",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "digital-twin/assemblies/v40/presentation/instructional/gate.test.mjs"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:12:11.533Z",
+    "finishedAt": "2026-10-01T17:12:14.560Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 28,
+      "pass": 28,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/m7-policy-tests.txt",
+      "rawSha256": "ee160c5c4835f43b2407e33694a3a7efe3b2705ef508a25685ba3347584f804c",
+      "bytes": 4934
+    }
+  },
+  {
+    "name": "m5-policy-tests",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "digital-twin/validation/expected/m5/instructional.test.mjs"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/upstream",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:12:14.561Z",
+    "finishedAt": "2026-10-01T17:12:15.114Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 98,
+      "pass": 98,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/m5-policy-tests.txt",
+      "rawSha256": "50b6163bf8575f8fea91b47e7226a5ae09289e3d7231828b5ebd5f5411152f91",
+      "bytes": 19083
+    }
+  },
+  {
+    "name": "m6-policy-tests",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "digital-twin/validation/expected/plates/instructional/plates.test.mjs"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/upstream",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:12:15.114Z",
+    "finishedAt": "2026-10-01T17:12:15.268Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 135,
+      "pass": 135,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/m6-policy-tests.txt",
+      "rawSha256": "4395d3030c93bfaf8885bd30199bb70b44078063795f4c244ecfef6737387d96",
+      "bytes": 20275
+    }
+  },
+  {
+    "name": "g-data-check",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "digital-twin/tools/compiler/upstream.mjs",
+      "--check"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/upstream",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:12:15.269Z",
+    "finishedAt": "2026-10-01T17:12:15.386Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/g-data-check.txt",
+      "rawSha256": "e71c042e3ce79cc564f4e35807be22e9fe03f982c8d862a12e7fdd34039e3947",
+      "bytes": 99
+    }
+  },
+  {
+    "name": "g-graph-check",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "digital-twin/tools/compiler/gate.mjs",
+      "--check"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/upstream",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:12:15.386Z",
+    "finishedAt": "2026-10-01T17:12:15.756Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": null,
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/g-graph-check.txt",
+      "rawSha256": "103240e63483c8c6e16075497dfc37a85f2decadb7ba9b67b51946282f9481b4",
+      "bytes": 104
+    }
+  },
+  {
+    "name": "m2-contract-tests",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.2/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "digital-twin/validation/m2/tests/contracts.test.mjs"
+    ],
+    "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/upstream",
+    "environment": {
+      "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/environment",
+      "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/uv-cache",
+      "PYTHONPATH": "UNSET",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PICAR_M7_ROOT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg",
+      "PICAR_M7_SOLUTIONS": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/solutions",
+      "PICAR_M7_REMEDIATION": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-14-sY90pg/remediation"
+    },
+    "startedAt": "2026-10-01T17:12:15.756Z",
+    "finishedAt": "2026-10-01T17:12:22.326Z",
+    "exit": 0,
+    "expectedExit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0
+    },
+    "log": {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/m2-contract-tests.txt",
+      "rawSha256": "a106bd35ac44021ce80f3a146eaa2109943d77d36c5cd1ccfcae39ebca2c84d0",
+      "bytes": 2837
+    }
+  }
+]

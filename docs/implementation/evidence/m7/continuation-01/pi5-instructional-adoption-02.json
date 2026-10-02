@@ -1,0 +1,93 @@
+{
+  "id": "PX-M5-INSTRUCTIONAL-PI5-ADOPTION-02",
+  "revision": 2,
+  "definitionId": "PX-V40-DEF-PI5",
+  "definitionRevision": 1,
+  "instructionalArtifactRevision": 2,
+  "variantId": "rpi5",
+  "track": "instructional-only",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED",
+  "scope": "Scoped recognition/outline/mount pattern/header side/USB-Ethernet bank order only; no camera insertion, USB engagement, HAT mating or whole M7 admission.",
+  "engineeringGate": "G-COMPONENT",
+  "engineeringStatus": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "oldArtifact": {
+    "bytes": 30310,
+    "path": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-PI5.brep",
+    "rawSha256": "b0808d160df5729a7c18264e9953f98af7e822ada4eb194fbb1301da5ac65c66"
+  },
+  "newArtifact": {
+    "path": "docs/implementation/evidence/m7/qualification-a-07/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+    "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+    "bytes": 28733
+  },
+  "oldReceipt": {
+    "bytes": 26211,
+    "path": "digital-twin/validation/expected/m5/instructional-receipts/PX-V40-DEF-PI5.json",
+    "rawSha256": "dc207daceb0c3006d028c4b5f655b6e88e3d09bf94c1e8ed17927b0af0e639d1"
+  },
+  "newCandidateReceipt": {
+    "path": "docs/implementation/evidence/m7/qualification-a-07/remediation/pi5-revision-candidate.json",
+    "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+    "bytes": 3070
+  },
+  "independentProofBindings": [
+    {
+      "path": "docs/implementation/evidence/m7/qualification-a-07/correspondence.json",
+      "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+      "bytes": 10011
+    },
+    {
+      "path": "docs/implementation/evidence/m7/qualification-b-07/correspondence.json",
+      "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+      "bytes": 10011
+    }
+  ],
+  "twoRunBinding": {
+    "path": "docs/implementation/evidence/m7/continuation-01/reproducibility.json",
+    "rawSha256": "cd0d0ba5214f78a9236d3813de4477c6269397de5788107b5983514b28853d06",
+    "bytes": 12284
+  },
+  "sourceReview": {
+    "path": "digital-twin/assemblies/v40/presentation/instructional/pi5-board-direction-review-02.json",
+    "rawSha256": "017c6d5ea728e153a44c4a0767a1028af01dc0692ac83666aad1108827f90b1e",
+    "bytes": 4807
+  },
+  "reason": "Separate historical source-view interpretation error corrected in M7, plus source-proven Pi5 port bank ordering corrected additively in authored CAD. PCB/header/holes/other connectors retained. No mirror or negative scale.",
+  "affectedDownstreamInputs": [
+    "rpi5 S02 board-direction/mount correspondence candidate and future dependent Pi5 presentations; no canonical engineering/semantic inputs"
+  ],
+  "sourceLimitations": [
+    "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry.",
+    "Dimensions are approximate and reference-only; not for producing production data.",
+    "Not all components are shown; dimensions may change and manufacturing tolerances are unbounded here.",
+    "Supplied revision/header/cooler configuration remains unknown.",
+    "Redistribution rights not established for this PDF.",
+    "Embedded licence provides MIT rights subject to preserving copyright and licence notices.",
+    "Embedded disclaimer limits geometry to guidance, without accuracy guarantee and possibly outdated.",
+    "Fitment requires manufacturer information and suitable physical measurements; none were performed.",
+    "Individual solid ownership, omissions and exact supplied board configuration are not established."
+  ],
+  "blockerIds": [
+    "Q-10"
+  ],
+  "mustNotDrive": [
+    "G-COMPONENT",
+    "engineeringMeasurement",
+    "engineeringInterface",
+    "engineeringRoute",
+    "engineeringSolver",
+    "G-CAD",
+    "G-GEOMETRY",
+    "manufacturing",
+    "physicalFit",
+    "torque",
+    "engagement",
+    "electricalVoltage",
+    "batterySafety",
+    "collisionGuarantee"
+  ],
+  "historicalM5AcceptanceUnchanged": true,
+  "fullM7Gate": "BLOCKED"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "PX-M7-S09-PLATE-A-REVIEW-05",
+  "revision": 5,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-09",
+  "evidenceReceipt": "digital-twin/assemblies/v40/presentation/instructional/plate-a-s09-evidence-receipt-05.json",
+  "trace": "digital-twin/assemblies/v40/presentation/instructional/plate-a-s09-trace-05.json",
+  "measurements": "digital-twin/assemblies/v40/presentation/instructional/plate-a-s09-measurements-05.json",
+  "statusWord": "DERIVED",
+  "ownerContext": "The two large circular openings in the front upright wall are where the ultrasonic module's two transducer cans fit (owner-confirmed assembly relationship, not a dimension).",
+  "metricImages": [
+    {"file": "plate-A-s09_02_front-wall-square-card-primary.jpeg", "sha256": "63b558eff88edb789b4adefa039df3e4182845518d697d4359de765dac1b92a2", "use": "primary square-on wall measurement"},
+    {"file": "plate-A-s09_03_front-wall-square-close-card.jpeg", "sha256": "c9728c1f66e6d9a822de55d1e06fc5a893419b39fc32092486039f6fbe1e8507", "use": "second square-on wall measurement"},
+    {"file": "plate-A-s09_01_front-wall-straight-on-low-angle-card.jpeg", "sha256": "8b47689e40d160e875a4d34b3d1d9950c8cd48ce1c3ea4c3cce278c967dcafed", "use": "third square-on wall measurement; its card agrees with the in-plane reference to 0.02 percent"},
+    {"file": "plate-A-s09_10_top-down-full-plate-A-card.jpeg", "sha256": "088d75fec2cb9f7ceb73f9b66c8574c2883167582660867dc11dfecbe03e2967", "use": "deck consistency check against the M6 trace only"}
+  ],
+  "orientationOnlyImages": ["plate-A-s09_04", "plate-A-s09_05", "plate-A-s09_06", "plate-A-s09_07", "plate-A-s09_08", "plate-A-s09_09", "plate-A-s09_11", "plate-A-s09_12"],
+  "calibration": {
+    "reference": "Wall end-hole spacing 53.570 mm, equal to the Plate H end-hole spacing because one R3080 rivet passes through each wall end hole and its Plate H end hole; it lies in the measured plane, so the card's distance from the wall does not enter",
+    "cardCrossCheck": {"photo01": {"cardPxPerMm": 17.373, "referencePxPerMm": 17.370}, "photo02": {"cardPxPerMm": 17.903, "referencePxPerMm": 18.451}, "photo03": {"cardPxPerMm": 17.939, "referencePxPerMm": 18.467},
+                       "reading": "In photo 01 the card gives the same scale to 0.02 percent, an independent check of the 53.57 mm spacing. In photos 02 and 03 the card stands about 3 percent nearer the camera than the wall and is not used for lengths."},
+    "perspective": "Square-on views only. Distances along the wall height are divided by the vertical-to-horizontal axis ratio of the two fitted opening ellipses (0.990, 0.990, 1.004); oblique views are used for orientation only and never measured."
+  },
+  "frontWall": {
+    "frame": "Distances along the wall height from the end-hole centre line; positive toward the free edge, negative toward the deck. The chassis rests deck-down with its walls up in all three photographs.",
+    "values": [
+      {"quantity": "deck outer face (table contact of the bend) to end-hole centre", "perPhotoMm": [12.83, 12.69], "derivedMm": 12.76, "uncertaintyMm": 0.35, "m6TraceMm": 12.0},
+      {"quantity": "wall end-portion lower edge to end-hole centre", "perPhotoMm": [10.95, 11.32, 10.91, 11.40], "derivedMm": 11.15, "uncertaintyMm": 0.3, "m6TraceMm": null,
+       "note": "The wall is 58 mm wide but joins the deck only through the central tongue; its end portions have a free lower edge about 1.3 to 1.9 mm above the table"},
+      {"quantity": "free edge to end-hole centre", "perPhotoMm": [11.24, 11.35, 11.45], "derivedMm": 11.35, "uncertaintyMm": 0.25, "m6TraceMm": 12.0},
+      {"quantity": "front wall total height, deck outer face to free edge", "perPhotoMm": [24.07, 24.04], "derivedMm": 24.05, "uncertaintyMm": 0.4, "m6TraceMm": 24.0},
+      {"quantity": "wall width", "perPhotoMm": [58.39, 58.08, 58.07], "derivedMm": 58.2, "uncertaintyMm": 0.4, "m6TraceMm": 60.0},
+      {"quantity": "end-hole diameter", "perPhotoMm": [3.17, 3.4, 3.38, 3.45, 3.4, 3.33], "derivedMm": 3.35, "uncertaintyMm": 0.2, "m6TraceMm": 3.0},
+      {"quantity": "deck-side slot (installed top slot), deck-side edge to end-hole centre", "perPhotoMm": [9.71, 9.9], "derivedMm": 9.81, "uncertaintyMm": 0.3, "m6TraceMm": 10.25},
+      {"quantity": "deck-side slot, far edge to end-hole centre", "perPhotoMm": [4.47, 4.39, 4.41], "derivedMm": 4.42, "uncertaintyMm": 0.25, "m6TraceMm": 6.75},
+      {"quantity": "deck-side slot height", "derivedMm": 5.4, "uncertaintyMm": 0.35, "m6TraceMm": 3.5,
+       "note": "From the deck outer face it spans about 2.95 to 8.34 mm; the M6 trace spans 1.75 to 5.25 mm"},
+      {"quantity": "free-edge-side slot, height and distance of its far edge below the free edge", "derivedMm": [2.97, 0.99], "uncertaintyMm": 0.3, "m6TraceMm": [2.5, 1.75]},
+      {"quantity": "large opening centre spacing", "perPhotoMm": [25.87, 25.8, 25.88], "derivedMm": 25.85, "uncertaintyMm": 0.25, "m6TraceMm": 30.0},
+      {"quantity": "large opening diameter", "perPhotoMm": [16.66, 17.34, 16.6, 17.42, 17.02, 17.15], "derivedMm": 17.0, "uncertaintyMm": 0.4, "m6TraceMm": 19.0},
+      {"quantity": "large opening centres relative to the end-hole line", "derivedMm": 0.24, "uncertaintyMm": 0.2, "m6TraceMm": 0.0,
+       "note": "On the end-hole line within 0.35 mm in every photograph; centred between the end holes within 0.4 mm"}
+    ]
+  },
+  "deckConsistency": {
+    "image": "plate-A-s09_10",
+    "orientation": "Chassis resting on its walls, deck outer face toward the camera",
+    "scale": "M6 deck tongue width 39.07 mm measured in the same plane; the card lies about 24 mm lower and is not used",
+    "values": [
+      {"quantity": "pan hole diameter", "derivedMm": 8.06, "m6TraceMm": 8.0},
+      {"quantity": "pan-hole centre to deck front edge", "derivedMm": 6.55, "m6TraceMm": 6.38},
+      {"quantity": "pan-hole centre to front-bend silhouette (outer wall face plane seen from above)", "derivedMm": 8.31, "m6TraceMm": 6.69,
+       "note": "The M6 trace puts the wall outer face at the deck front edge; the photograph shows a 1.76 mm bend beyond it. A bend outer radius of 1.76 mm also bounds the sheet thickness at or below about 1.76 mm (inner radius cannot be negative)."}
+    ],
+    "grade": "Consistency check of the M6 deck trace; its scale is the trace itself, so it is not an independent length"
+  },
+  "decision": {
+    "quantity": "deck underside (installed; the deck inner face) to wall end-hole centre",
+    "derivation": "deck outer face to hole centre 12.76 +- 0.35 minus the sheet thickness. The thickness is not measured directly: M6 records 2 mm as PROBABLE, the bend bounds it at or below about 1.76 mm, and the end-portion edge gap gives 1.3 to 1.9 mm. With t in 1.5..2.0 mm the value is 10.76..11.26 mm; the end-portion lower edge read directly gives 11.15 +- 0.3.",
+    "derivedMm": 11.0,
+    "rangeMm": [10.4, 11.65],
+    "oldTraceMm": 10.0,
+    "decisionBoundaryMm": 12.45,
+    "classification": "B_OLD_TRACE_SUPPORTED",
+    "reason": "The whole uncertainty range lies below the 12.45 mm a 20.5 mm Plate H needs to clear a 2.2 mm horn plate under the deck, by at least 0.8 mm, so the hole line cannot be the input that resolves S09. The best estimate is about 1 mm lower than the trace; that is a refinement, not the remedy. Plate A is not revised."
+  },
+  "consequencesForS09": {
+    "basis": "Analytic estimates from the derived values above, not a solid model; Plate A is unchanged in the chain, so the closure still sees the M6 geometry.",
+    "items": [
+      {"pair": "Plate A vs ultrasonic (crystal against the wall)", "estimate": "Explained by the M6 slot trace: the measured deck-side slot is 5.4 mm tall and spans about 2.95 to 8.34 mm from the deck outer face, against a 4.5 mm crystal spanning about 2.6 to 7.1 mm below the deck underside when the can axes sit on the opening line (0.24 mm beyond the end-hole line). The crystal would pass 0.5 mm beyond the slot's far edge, inside the combined uncertainty of slot edge, crystal width and can offset; the M6 trace left 2.85 mm"},
+      {"pair": "Plate A vs Plate H", "estimate": "Plate H top at about -0.75 mm (11.0 - 10.25) is below the deck underside; no overlap"},
+      {"pair": "horn vs ultrasonic", "estimate": "Board top edge about 2.6 mm below the deck underside, under the 2.2 mm horn plate, and the hub front stays behind the board; no overlap"},
+      {"pair": "horn vs Plate H", "estimate": "Plate H top at about -0.75 mm still shares about 1.45 mm of height with the 2.2 mm horn plate. In plan, if the wall outer face is 8.31 mm ahead of the hub (consistency grade) and the sheet about 1.6 to 1.76 mm, the arm front edge clears Plate H and only the 3.85 mm hub disc can reach it, by 0 to about 0.9 mm depending on the unmeasured board and Plate H thicknesses; with the M6 hub-to-wall distance the overlap stays"},
+      {"pair": "ultrasonic cans vs openings (owner-confirmed relation)", "estimate": "NEW CONTRADICTION. The openings are 25.85 +- 0.25 mm apart and 17.0 +- 0.4 mm across; the module revision has cans 28.4 +- 0.6 mm apart and 16.6 mm across. Both cans cannot sit in both openings: each would be 1.3 mm off its opening centre against 0.2 mm of radial slack. Only the joint extremes of both uncertainty bands meet."}
+    ]
+  },
+  "s09Status": "BLOCKED",
+  "remainingEvidence": [
+    "Ultrasonic module: centre-to-centre spacing of the two transducer cans and the can outer diameter, by calipers (or outer edge to outer edge across both cans); the photo-derived 28.4 mm conflicts with the measured 25.85 mm opening spacing and the owner-confirmed fit",
+    "Plate A sheet thickness and Plate H thickness, by calipers",
+    "Pan-hole centre to the front wall inner face, by calipers along the deck",
+    "Module board thickness and the height of its rear components, which set where Plate H rests",
+    "Optional: one side-on photograph of the assembled front (deck, horn, module, Plate H) showing whether Plate H's top edge meets the horn hub"
+  ],
+  "plateARevision": null,
+  "engineeringStatus": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false
+}

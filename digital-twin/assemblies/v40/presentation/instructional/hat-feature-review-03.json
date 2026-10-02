@@ -1,0 +1,89 @@
+{
+  "id": "PX-M7-HAT-FEATURES-03",
+  "revision": 3,
+  "definitionId": "PX-V40-DEF-ROBOT-HAT",
+  "definitionRevision": 1,
+  "instructionalArtifactRevision": 2,
+  "track": "instructional-only",
+  "sourceBindings": [
+    {
+      "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+      "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+      "bytes": 11048665
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/instructional-receipts/PX-V40-DEF-ROBOT-HAT.json",
+      "rawSha256": "df0888429d929ee7ed6db912b0ce234328731e41b6d028449bc5c33740a7cc07",
+      "bytes": 62036
+    },
+    {
+      "path": "picarx-companion/public/content/img/img/robot_hat_pic.png",
+      "rawSha256": "3f2630fc99f4dea0d577ffd7fe1a905695cca81f2e3ca01356afb16a0c3fa97b",
+      "bytes": 983667
+    }
+  ],
+  "locators": [
+    "LockedV40 page1 BOM RobotHAT four corner bores, green/blueS04 four mounting screws, GPIO mating under board",
+    "Local official robot_hat_pic.png visible four bores and male header pass-through; familyV4 reference only, not kit revision identification",
+    "Pi board compatible mounting relationship from lockedS04 and acquired reference58x49 hole pattern"
+  ],
+  "parameters": {
+    "mountCentersMm": [
+      [
+        3.5,
+        3.5
+      ],
+      [
+        61.5,
+        3.5
+      ],
+      [
+        3.5,
+        52.5
+      ],
+      [
+        61.5,
+        52.5
+      ]
+    ],
+    "holeRadiusMm": 1.4,
+    "socketBoundsMm": [
+      6.8,
+      47.6,
+      -10,
+      57.8,
+      52.6,
+      0
+    ],
+    "socketMouthBoundsMm": [
+      7.8,
+      48.6,
+      -10,
+      56.8,
+      51.6,
+      -2
+    ]
+  },
+  "parameterBasis": {
+    "mountPattern": "Source-supported Pi-compatible four-hole relation, numerical placement reference approximation",
+    "holeRadius": "Authored instructional estimate, not tolerance/standard",
+    "socketFootprint": "Authored outline for source-visible GPIO mating region; not a pin map",
+    "socketDepth": "Authored schematic10mm; actual installed depth/height UNKNOWN, excluded from any mating solve"
+  },
+  "preserve": [
+    "Original HAT identity/receipt/artifact",
+    "All original top-side solids unchanged",
+    "Actual board revision unknown Q07",
+    "Canonical geometry and all blockers"
+  ],
+  "adoptionScope": "Four PCB bores and underside open GPIO representation only; no installed HAT contact, pin engagement, screw access or per-variant solved height",
+  "physicalFit": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "sourceLimitations": [
+    "V40 rendering supports feature presence/order/orientation, not hidden dimensions.",
+    "FamilyV4 photo does not identify supplied revision.",
+    "Socket opening is an explicit new schematic representation, not an engineering interface.",
+    "Original top markers may obstruct access; independent report must retain any overlap rather than claim screw clearance."
+  ]
+}

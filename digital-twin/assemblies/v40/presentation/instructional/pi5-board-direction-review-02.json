@@ -1,0 +1,125 @@
+{
+  "id": "PX-M7-S02-PI5-DIRECTION-02",
+  "revision": 2,
+  "track": "instructional-only",
+  "variantId": "rpi5",
+  "stepId": "PX-V40-STEP-02",
+  "supersedesForCurrentConsumption": {
+    "path": "digital-twin/assemblies/v40/presentation/instructional/pi5-board-direction-review.json",
+    "rawSha256": "aeeb789eb52ba3df0d7590b7c1dedfd507b5b5d8fd2c679142f0827420df5e5b",
+    "bytes": 2233
+  },
+  "oldConclusion": "Rear -X, GPIO +Y, top +Z required a reflection. The far edge was incorrectly called robot LEFT.",
+  "rootCause": "C. V40_SOURCE_INTERPRETATION_ERROR",
+  "sourceBindings": [
+    {
+      "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+      "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+      "bytes": 11048665
+    },
+    {
+      "path": "digital-twin/cad/source-vault/m5/5dd680d6c1f5e7aa9c7b020695e315d04aac862df82ff01d4e9041cd0668d7f2.pdf",
+      "rawSha256": "5dd680d6c1f5e7aa9c7b020695e315d04aac862df82ff01d4e9041cd0668d7f2",
+      "bytes": 174949
+    },
+    {
+      "path": "digital-twin/cad/source-vault/m5/6841637b4cfa97637bf34b529bfe896f24d9634b2c40b57a156781f55d88f06f.zip",
+      "rawSha256": "6841637b4cfa97637bf34b529bfe896f24d9634b2c40b57a156781f55d88f06f",
+      "bytes": 13270704
+    },
+    {
+      "path": "digital-twin/cad/source-vault/m5/78164070c1cc7ab854382950d2e85926c6e35432f1e5a146b733397a7c6afb44.step",
+      "rawSha256": "78164070c1cc7ab854382950d2e85926c6e35432f1e5a146b733397a7c6afb44",
+      "bytes": 77627469
+    },
+    {
+      "path": "digital-twin/cad/source-vault/m5/4ca2d350552b24137e55587e13fb09a249b757c6af49652ff02ea524d154c7fc.txt",
+      "rawSha256": "4ca2d350552b24137e55587e13fb09a249b757c6af49652ff02ea524d154c7fc",
+      "bytes": 1881
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-PI5.brep",
+      "rawSha256": "b0808d160df5729a7c18264e9953f98af7e822ada4eb194fbb1301da5ac65c66",
+      "bytes": 30310
+    },
+    {
+      "path": "digital-twin/validation/expected/m5/instructional-receipts/PX-V40-DEF-PI5.json",
+      "rawSha256": "dc207daceb0c3006d028c4b5f655b6e88e3d09bf94c1e8ed17927b0af0e639d1",
+      "bytes": 26211
+    }
+  ],
+  "sourceRefs": [
+    "PX-EV-PHOTO-04",
+    "PX-M5-EV-PI5-DRAWING",
+    "PX-M5-EV-PI5-STEP-ZIP"
+  ],
+  "pdfPage": 1,
+  "viewReview": {
+    "method": "Direct enlarged top-oblique locked V40 S01/S02 and manufacturer component-side orthographic drawing; actual STEP topology independently imported",
+    "frontIdentification": "Plate A dual-opening flange/front arms are toward lower-left. Rear single-opening flange is toward upper-right. Visible component faces establish view from above.",
+    "screenForward": [
+      -1,
+      1
+    ],
+    "screenRobotLeft": [
+      1,
+      1
+    ],
+    "screenUp": [
+      0,
+      -1
+    ],
+    "screenCoordinates": "x right, y down; qualitative signs only, not calibrated metric projection",
+    "parityProof": "Using screen y upward, forward=(-1,-1), robot-left=(1,-1) have positive 2D cross product. Viewed from above, +X cross +Y is +Z. The earlier far-edge +Y assignment would reverse this sign.",
+    "correctedReading": "Near/lower-right long board edge is robot LEFT +Y; far/upper-left GPIO long edge is robot RIGHT -Y in green S02."
+  },
+  "requiredInstalledDirections": {
+    "usbEthernetOutward": [
+      -1,
+      0,
+      0
+    ],
+    "gpioSide": [
+      0,
+      -1,
+      0
+    ],
+    "pcbComponentNormal": [
+      0,
+      0,
+      1
+    ]
+  },
+  "properRotation": [
+    [
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      -1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "scale": [
+    1,
+    1,
+    1
+  ],
+  "sharedPanelApplicability": "Printed green panel explicitly applies to Pi4/Pi5 but depicts Pi4 connector order. It supports board rearward bank/top/header side; official Pi5 drawing/STEP govern Pi5 Ethernet-vs-USB ordering. Do not copy Pi4 socket order to Pi5.",
+  "separateProxyDefect": {
+    "id": "M7-PI5-PORT-ORDER",
+    "reason": "Accepted M5 Pi5 recipe places the larger lower-height Ethernet-shaped block at +Y beside GPIO; official Pi5 drawing/STEP put Ethernet at low Y and USB pairs toward GPIO high Y. This defect is not the cause of the reflection triple.",
+    "remediation": "Additive Pi5 instructional CAD revision preserves PCB/header/holes and other schematic groups; corrects only Ethernet and outer USB bank member Y placement at CAD authoring time."
+  },
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "sourcePixelsCopied": false,
+  "sourceLimits": "Shared printed board drawing states Pi4 or Pi5 and depicts the source installation; actual user revision/cooler remain unknown. This review is not board metrology. No approximate numeric dimensions are required for the signed direction check."
+}

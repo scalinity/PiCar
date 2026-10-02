@@ -1,0 +1,82 @@
+{
+  "id": "hat-feature-instructional-adoption-03",
+  "revision": 3,
+  "definitionId": "PX-V40-DEF-ROBOT-HAT",
+  "definitionRevision": 1,
+  "instructionalArtifactRevision": 2,
+  "track": "instructional-only",
+  "instructionalStatus": "INSTRUCTIONAL_ADMITTED_SCOPED_REPRESENTATION",
+  "scope": "Four actual approximate PCB bores and schematic open underside socket only; original ten top components preserved; unknown HAT revision and actual seating depth remain explicit.",
+  "originalArtifact": {
+    "bytes": 34813,
+    "path": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-ROBOT-HAT.brep",
+    "rawSha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a"
+  },
+  "originalReceipt": {
+    "bytes": 62036,
+    "path": "digital-twin/validation/expected/m5/instructional-receipts/PX-V40-DEF-ROBOT-HAT.json",
+    "rawSha256": "df0888429d929ee7ed6db912b0ce234328731e41b6d028449bc5c33740a7cc07"
+  },
+  "newArtifact": {
+    "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+    "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+    "bytes": 45060
+  },
+  "candidateReceipt": {
+    "path": "docs/implementation/evidence/m7/qualification-a-14/engagement/hat-feature-candidate.json",
+    "rawSha256": "d0d1065a498ff344b30c4f3da5252ba7914596f3009db7c0ce42ff9783916b30",
+    "bytes": 2419
+  },
+  "independentProofBindings": [
+    {
+      "path": "docs/implementation/evidence/m7/qualification-a-14/engagement-observations.json",
+      "rawSha256": "f53b53b054192294e59a00111554dd209f7230e49e029b50b43cb0df1bec31d6",
+      "bytes": 11016
+    },
+    {
+      "path": "docs/implementation/evidence/m7/qualification-b-14/engagement-observations.json",
+      "rawSha256": "f53b53b054192294e59a00111554dd209f7230e49e029b50b43cb0df1bec31d6",
+      "bytes": 11016
+    }
+  ],
+  "twoRunBinding": {
+    "path": "docs/implementation/evidence/m7/continuation-03/reproducibility.json",
+    "rawSha256": "3d163eabe9542d5066e9e0e283f54b80a85a237d3f85be6c6d7f971d2f8b1c15",
+    "bytes": 25942
+  },
+  "sourceLimitations": [
+    "Uncalibrated photograph of printed imagery, not loose physical stock or measured geometry.",
+    "V40 rendering supports feature presence/order/orientation, not hidden dimensions.",
+    "FamilyV4 photo does not identify supplied revision.",
+    "Socket opening is an explicit new schematic representation, not an engineering interface.",
+    "Original top markers may obstruct access; independent report must retain any overlap rather than claim screw clearance."
+  ],
+  "blockerIds": [
+    "Q-07",
+    "Q-17"
+  ],
+  "mustNotDrive": [
+    "G-COMPONENT",
+    "engineeringMeasurement",
+    "engineeringInterface",
+    "engineeringRoute",
+    "engineeringSolver",
+    "G-CAD",
+    "G-GEOMETRY",
+    "manufacturing",
+    "physicalFit",
+    "torque",
+    "engagement",
+    "electricalVoltage",
+    "batterySafety",
+    "collisionGuarantee"
+  ],
+  "engineeringStatus": "BLOCKED",
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "physicalFit": "BLOCKED",
+  "installationMating": "BLOCKED",
+  "fullM7Gate": "BLOCKED",
+  "historicalAcceptanceUnchanged": true,
+  "inventoryItemIncrement": 0
+}

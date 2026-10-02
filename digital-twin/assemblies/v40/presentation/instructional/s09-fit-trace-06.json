@@ -1,0 +1,33 @@
+{
+  "id": "PX-M7-S09-FIT-TRACE-06",
+  "revision": 6,
+  "track": "instructional-only",
+  "evidenceReceipt": "digital-twin/assemblies/v40/presentation/instructional/s09-consolidated-evidence-receipt-06.json",
+  "tool": "digital-twin/cad/twin_cad/assemblies/instructional/plate_a_photo.py",
+  "method": "The straight-on physical-fit photograph shows the supplied module behind the actual Plate A with both cans in the openings and the crystal inside the deck-side slot. Seeds and narrow bands are native-pixel positions read from a private enlarged view; each line is the strongest smoothed gradient in its band. The crystal face stands about 1.8 mm in front of the wall's outer face, a magnification under 1 percent at this camera distance, so slot and crystal are compared in one plane.",
+  "reference": {
+    "name": "Front-wall end-hole spacing, equal to the Plate H end-hole spacing because one R3080 rivet passes through each wall end hole and the matching Plate H end hole (V40 S09)",
+    "valueMm": 53.569649,
+    "source": "PX-V40-DEF-PLATE-H end holes in hardware-revisions-04.json",
+    "uncertaintyMm": 0.3,
+    "inPlane": true
+  },
+  "images": [
+    {"file": "s09-fit_01_front-straight-on-card.jpeg", "role": "front-wall-square-on", "sigmaPx": 1.0, "features": [
+      {"name": "endHoleLeft", "kind": "circle", "seedPx": [795, 937], "radiusBandPx": [8, 24]},
+      {"name": "endHoleRight", "kind": "circle", "seedPx": [1411, 941], "radiusBandPx": [8, 24]},
+      {"name": "canRimLeft", "kind": "circle", "seedPx": [958, 940], "radiusBandPx": [85, 110]},
+      {"name": "canRimRight", "kind": "circle", "seedPx": [1265, 940], "radiusBandPx": [85, 110]},
+      {"name": "slotNearCanEdge", "kind": "line", "fromPx": [1060, 991.7], "toPx": [1150, 991.7], "bandPx": [-4, 4], "stations": 24},
+      {"name": "slotDeckSideEdge", "kind": "line", "fromPx": [1060, 1055], "toPx": [1150, 1055], "bandPx": [-2.5, 2.5], "stations": 24},
+      {"name": "crystalNearCanEdge", "kind": "line", "fromPx": [1070, 1000], "toPx": [1140, 1000], "bandPx": [-4, 3.5], "stations": 24},
+      {"name": "crystalDeckSideEdge", "kind": "line", "fromPx": [1070, 1050], "toPx": [1140, 1050], "bandPx": [-2.5, 2.5], "stations": 24},
+      {"name": "slotLeftEnd", "kind": "line", "fromPx": [1039.3, 1010], "toPx": [1039.3, 1040], "bandPx": [-1.2, 1.2], "stations": 12},
+      {"name": "slotRightEnd", "kind": "line", "fromPx": [1171.7, 1010], "toPx": [1171.7, 1040], "bandPx": [-3, 3], "stations": 12},
+      {"name": "crystalLeftEnd", "kind": "line", "fromPx": [1041.7, 1015], "toPx": [1041.7, 1035], "bandPx": [-1.2, 1.5], "stations": 10},
+      {"name": "crystalRightEnd", "kind": "line", "fromPx": [1165, 1015], "toPx": [1165, 1035], "bandPx": [-3, 3], "stations": 10}
+    ]}
+  ],
+  "engineeringAdmission": false,
+  "runtimeAdmission": false
+}

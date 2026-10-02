@@ -1,0 +1,73 @@
+{
+  "id": "PX-M7-PLATE-A-S09-TRACE-05",
+  "revision": 5,
+  "track": "instructional-only",
+  "evidenceReceipt": "digital-twin/assemblies/v40/presentation/instructional/plate-a-s09-evidence-receipt-05.json",
+  "tool": "digital-twin/cad/twin_cad/assemblies/instructional/plate_a_photo.py",
+  "method": "Seeds and search bands are native-pixel positions read from private views of each photograph; the tool replaces each seed with the strongest smoothed grey-level gradient inside its band and fits circles and lines to those edge points. Only the three square-on front-wall photographs are measured; oblique and top-down views are used for orientation only.",
+  "reference": {
+    "name": "Front-wall end-hole spacing, equal to the Plate H end-hole spacing because one R3080 rivet passes through each wall end hole and the matching Plate H end hole (V40 S09)",
+    "valueMm": 53.569649,
+    "source": "PX-V40-DEF-PLATE-H end holes (-0.038952, -26.761515) and (-0.063278, 26.808134) in hardware-revisions-04.json, kept from the M6 hole-validated plate",
+    "uncertaintyMm": 0.3,
+    "inPlane": true
+  },
+  "images": [
+    {"file": "plate-A-s09_02_front-wall-square-card-primary.jpeg", "role": "front-wall-square-on", "sigmaPx": 1.5, "features": [
+      {"name": "endHoleLeft", "kind": "circle", "seedPx": [1060, 1285], "radiusBandPx": [18, 42]},
+      {"name": "endHoleRight", "kind": "circle", "seedPx": [2048, 1270], "radiusBandPx": [18, 42]},
+      {"name": "openingLeft", "kind": "circle", "seedPx": [1308, 1278], "radiusBandPx": [130, 180]},
+      {"name": "openingRight", "kind": "circle", "seedPx": [1785, 1267], "radiusBandPx": [130, 180]},
+      {"name": "freeEdge", "kind": "line", "fromPx": [1150, 1072], "toPx": [1950, 1062], "bandPx": [-25, 25]},
+      {"name": "lowerPlateEdgeLeft", "kind": "line", "fromPx": [1065, 1482], "toPx": [1200, 1482], "bandPx": [-15, 15]},
+      {"name": "lowerPlateEdgeRight", "kind": "line", "fromPx": [1905, 1476], "toPx": [2045, 1476], "bandPx": [-15, 15]},
+      {"name": "tongueBottom", "kind": "line", "fromPx": [1300, 1509], "toPx": [1820, 1505], "bandPx": [-15, 15]},
+      {"name": "upperSlotTop", "kind": "line", "fromPx": [1470, 1090], "toPx": [1620, 1090], "bandPx": [-12, 12], "stations": 20},
+      {"name": "upperSlotBottom", "kind": "line", "fromPx": [1470, 1142], "toPx": [1620, 1142], "bandPx": [-12, 12], "stations": 20},
+      {"name": "lowerSlotTop", "kind": "line", "fromPx": [1465, 1362], "toPx": [1625, 1362], "bandPx": [-12, 12], "stations": 20},
+      {"name": "lowerSlotBottom", "kind": "line", "fromPx": [1465, 1458], "toPx": [1625, 1458], "bandPx": [-12, 12], "stations": 20},
+      {"name": "wallEdgeLeft", "kind": "line", "fromPx": [1018, 1120], "toPx": [1018, 1440], "bandPx": [-15, 15]},
+      {"name": "wallEdgeRight", "kind": "line", "fromPx": [2093, 1110], "toPx": [2093, 1430], "bandPx": [-15, 15]}
+    ]},
+    {"file": "plate-A-s09_03_front-wall-square-close-card.jpeg", "role": "front-wall-square-on", "sigmaPx": 1.5, "features": [
+      {"name": "endHoleLeft", "kind": "circle", "seedPx": [1090, 1343], "radiusBandPx": [18, 44]},
+      {"name": "endHoleRight", "kind": "circle", "seedPx": [2075, 1317], "radiusBandPx": [18, 44]},
+      {"name": "openingLeft", "kind": "circle", "seedPx": [1338, 1333], "radiusBandPx": [130, 180]},
+      {"name": "openingRight", "kind": "circle", "seedPx": [1815, 1317], "radiusBandPx": [130, 180]},
+      {"name": "freeEdge", "kind": "line", "fromPx": [1120, 1132], "toPx": [2020, 1115], "bandPx": [-25, 25]},
+      {"name": "lowerPlateEdgeLeft", "kind": "line", "fromPx": [1085, 1535], "toPx": [1220, 1535], "bandPx": [-18, 18]},
+      {"name": "lowerPlateEdgeRight", "kind": "line", "fromPx": [1975, 1520], "toPx": [2100, 1520], "bandPx": [-18, 18]},
+      {"name": "tongueBottom", "kind": "line", "fromPx": [1290, 1565], "toPx": [1880, 1560], "bandPx": [-18, 18]},
+      {"name": "upperSlotTop", "kind": "line", "fromPx": [1485, 1142], "toPx": [1655, 1142], "bandPx": [-12, 12], "stations": 20},
+      {"name": "upperSlotBottom", "kind": "line", "fromPx": [1485, 1195], "toPx": [1655, 1195], "bandPx": [-12, 12], "stations": 20},
+      {"name": "lowerSlotTop", "kind": "line", "fromPx": [1485, 1413], "toPx": [1670, 1413], "bandPx": [-12, 12], "stations": 20},
+      {"name": "lowerSlotBottom", "kind": "line", "fromPx": [1485, 1512], "toPx": [1670, 1512], "bandPx": [-12, 12], "stations": 20},
+      {"name": "wallEdgeLeft", "kind": "line", "fromPx": [1045, 1170], "toPx": [1045, 1490], "bandPx": [-15, 15]},
+      {"name": "wallEdgeRight", "kind": "line", "fromPx": [2123, 1160], "toPx": [2123, 1480], "bandPx": [-15, 15]}
+    ]},
+    {"file": "plate-A-s09_01_front-wall-straight-on-low-angle-card.jpeg", "role": "front-wall-square-on", "sigmaPx": 1.5, "features": [
+      {"name": "endHoleLeft", "kind": "circle", "seedPx": [1672, 793], "radiusBandPx": [16, 44]},
+      {"name": "endHoleRight", "kind": "circle", "seedPx": [2602, 810], "radiusBandPx": [16, 44]},
+      {"name": "openingLeft", "kind": "circle", "seedPx": [1910, 795], "radiusBandPx": [120, 175]},
+      {"name": "openingRight", "kind": "circle", "seedPx": [2365, 800], "radiusBandPx": [120, 175]},
+      {"name": "freeEdge", "kind": "line", "fromPx": [1720, 599], "toPx": [2560, 603], "bandPx": [-25, 25]},
+      {"name": "upperSlotTop", "kind": "line", "fromPx": [2065, 622], "toPx": [2220, 622], "bandPx": [-12, 12], "stations": 20},
+      {"name": "upperSlotBottom", "kind": "line", "fromPx": [2065, 670], "toPx": [2220, 670], "bandPx": [-12, 12], "stations": 20},
+      {"name": "lowerSlotTop", "kind": "line", "fromPx": [2050, 882], "toPx": [2220, 882], "bandPx": [-12, 12], "stations": 20},
+      {"name": "wallEdgeLeft", "kind": "line", "fromPx": [1630, 650], "toPx": [1630, 940], "bandPx": [-18, 18]},
+      {"name": "wallEdgeRight", "kind": "line", "fromPx": [2640, 650], "toPx": [2640, 940], "bandPx": [-18, 18]}
+    ]},
+    {"file": "plate-A-s09_10_top-down-full-plate-A-card.jpeg", "role": "deck-top-down-consistency", "sigmaPx": 1.2,
+     "orientation": "Chassis resting on its walls, deck outer face toward the camera: the deck hides the middle of the front wall's inner face while the wall end portions beyond the 39 mm tongue show theirs, and only the bend shows beyond the deck front edge.",
+     "tongueWidthMm": 39.071566, "tongueWidthSource": "PX-V40-DEF-PLATE-A deck outline y 19.148936 and -19.922630 for x 141.4 to 171.6 (M6 trace)",
+     "features": [
+      {"name": "panHole", "kind": "circle", "seedPx": [1382.5, 826], "radiusBandPx": [20, 46]},
+      {"name": "deckFrontEdge", "kind": "line", "fromPx": [1434.5, 705], "toPx": [1434.5, 950], "bandPx": [-10, 10]},
+      {"name": "bendOuterEdge", "kind": "line", "fromPx": [1448.5, 705], "toPx": [1448.5, 950], "bandPx": [-8, 8]},
+      {"name": "tongueEdgeA", "kind": "line", "fromPx": [1250, 672.5], "toPx": [1415, 672.5], "bandPx": [-12, 12]},
+      {"name": "tongueEdgeB", "kind": "line", "fromPx": [1250, 980], "toPx": [1415, 980], "bandPx": [-12, 12]}
+    ]}
+  ],
+  "engineeringAdmission": false,
+  "runtimeAdmission": false
+}

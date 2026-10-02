@@ -1,0 +1,21 @@
+{
+  "id": "PX-M7-G-INSTRUCTIONAL-ASSEMBLY-01",
+  "revision": 1,
+  "track": "instructional-only",
+  "gate": "G-INSTRUCTIONAL-ASSEMBLY",
+  "scopeRef": "product-scope.json",
+  "requiredChecks": ["upstreamReceiptClosure", "exactSemanticOwnership", "independentSourceDirection", "properRigidTransforms", "independentFeatureResiduals", "intendedDOF", "contactClassification", "explicitMotionCapability", "twoCleanQualifications", "upstreamPreservation"],
+  "instructionalStatus": ["INSTRUCTIONAL_ADMITTED", "BLOCKED"],
+  "nonTargetStatus": "PRESERVED_NON_TARGET",
+  "requiredActiveCoverage": 58,
+  "engineeringAdmission": false,
+  "engineeringGate": "G-CAD",
+  "engineeringStatus": "BLOCKED",
+  "runtimeAdmission": false,
+  "requireInstallationSweepForSweepClaim": true,
+  "missingPosePolicy": "BLOCKED_NO_IDENTITY_FALLBACK",
+  "allowedNumericPurpose": "replaceable instructional presentation only",
+  "mustNotDrive": ["G-CAD", "G-GEOMETRY", "engineeringMeasurement", "engineeringInterface", "engineeringSolver", "engineeringRoute", "manufacturing", "physicalFit", "torque", "engagement", "electricalVoltage", "batterySafety", "collisionGuarantee"],
+  "physicalUncertainty": "UNRESOLVED; never equal to presentation residual budget",
+  "gatePassRule": "All 58 required closures independently pass; complete report rows or policy tests alone cannot admit an assembly"
+}

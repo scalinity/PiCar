@@ -1,0 +1,49 @@
+{
+  "id": "PX-M7-S09-ULTRASONIC-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-09",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665,
+    "pdfPage": 2,
+    "method": "Visual review of the locked V40 printed step 9 panel and its rivet insert/push/lock closeup, rendered privately; no source pixels are copied into authored output",
+    "observation": "The ultrasonic module sits just behind the front wall with its two transducers pointing forward through the wall's two large openings. The H plate lies directly behind the module. Two R3080 rivets enter from the front through the wall's small end holes into the H plate, clamping the module between them."
+  },
+  "hardwareEvidence": {
+    "receipt": "digital-twin/assemblies/v40/presentation/instructional/hardware-evidence-receipt-04.json",
+    "revisions": "digital-twin/assemblies/v40/presentation/instructional/hardware-revisions-04.json",
+    "revisedDefinitions": ["PX-V40-DEF-ULTRASONIC", "PX-V40-DEF-PLATE-H"]
+  },
+  "placement": {
+    "module": "Board plane parallel to the front wall, its front face against the inner face of the wall, the two transducer cans pointing forward (+X) through the openings with their axes on the opening height and centred across the car; the crystal edge is up and the rear connector edge is down.",
+    "plateH": "Flat behind the module, its front face against the module rear face, long axis across the car (installed Y), its end holes on the wall's small-hole axes; the notch faces down over the module's rear connector.",
+    "rivets": "Each rivet head bears on the wall's outer face at a small end hole, shank pointing inward (-X) through the wall and the H plate end hole beside the module end.",
+    "stackOrderNote": "The accepted ordered stack lists rivet, module, wall, H plate. The physical order from the front is rivet head, wall, module, H plate; the stack is used for membership and ownership only."
+  },
+  "approach": {"moduleAxis": [1, 0, 0], "plateHAxis": [1, 0, 0], "rivetAxis": [-1, 0, 0], "moduleDistanceMm": 30, "plateHDistanceMm": 30, "rivetDistanceMm": 30,
+               "note": "Nonphysical exploded staging only; module and H plate come from behind the wall, the rivets from the front."},
+  "limitations": [
+    "The module is the additive instructional revision derived from the supplied-hardware photographs: a 46.2 x 20.5 mm board, transducer cans 28.4 mm apart and 1.6 mm off the board centre line toward the crystal edge, a crystal on that edge and a 4-pin connector on the rear of the opposite edge. Values are DERIVED to about 2 to 6 percent, not manufacturer verified; the exact OEM identity and revision stay unresolved and the 5 V versus V40 3V3 conflict stays open",
+    "The traced wall openings are 30 mm apart and the cans 28.4 mm apart, so each can sits 0.8 mm off its opening centre with 0.4 mm of radial slack; this is a derived relation, not a measured fit",
+    "The connector edge is placed down because a connector-up board would put its connector about 5 mm into the deck; V40 does not show the connector, and the rear connector passing through the Plate H notch (notch 14.3 mm, connector about 14.0 mm) is a derived coincidence, not a source-stated relation",
+    "Plate H is the additive instructional revision: its photographed outline is about 20.5 mm tall with a notch about 5.2 mm deep, against 23.14 mm and 6.36 mm in the accepted M6 outline; the M6 hole centres, notch width and notch floor are kept, and the end-hole axes remain the rivet axes",
+    "Rear integrated circuits and passives of the module, about 1.3 to 1.8 mm tall, are not represented, so Plate H is shown resting on the board rear face",
+    "The rivets pass beside the module ends, so the module is held between wall and H plate by clamping, not by its own corner holes",
+    "The rivet proxy shows only its unlocked body with the pin lifted; the locked pin state is not represented, and no rivet strength, grip range or retention is claimed",
+    "The accepted ordered stack lists the module before the wall, which is not the physical order shown in V40; it is used for membership only",
+    "No installation sweep or fit is claimed"
+  ],
+  "knownBlockers": {
+    "status": "OPEN",
+    "note": "With the supplied-hardware revisions the cumulative state still contains forbidden positive-volume overlaps, so the S09 closure is refused. Volumes are for rpi5 and are re-measured by the independent verifier.",
+    "overlaps": [
+      {"instances": ["PX-V40-INS-HORN-PAN-001", "PX-V40-INS-PLATE-H-001"], "approxMm3": 101, "classification": "source assembly contradiction", "note": "The pan horn arm (x up to about 170 mm, z -2.2..0, y within about 17 mm of the hub) occupies the same space as Plate H (x 168.4..170.4, top at z +0.2). With the notch up the overlap falls to about 45 mm3 but the plate then meets the module connector."},
+      {"instances": ["PX-V40-INS-PLATE-A-001", "PX-V40-INS-ULTRASONIC-001"], "approxMm3": 51, "classification": "missing physical feature", "note": "The module crystal (about 4.5 mm across, 3.8 mm tall) reaches into wall material below the traced top slot (3.5 mm tall)."},
+      {"instances": ["PX-V40-INS-PLATE-A-001", "PX-V40-INS-PLATE-H-001"], "approxMm3": 13, "classification": "derived-uncertainty residual", "note": "Plate H top is 0.2 mm above the deck underside; the derived plate height is uncertain by about 0.5 mm and the traced hole line by about 0.75 mm."},
+      {"instances": ["PX-V40-INS-HORN-PAN-001", "PX-V40-INS-ULTRASONIC-001"], "approxMm3": 2, "classification": "proxy limitation", "note": "The horn hub edge (hub radius 3.85 mm about the traced pan hole) reaches 0.8 mm into the board top edge."}
+    ]
+  },
+  "engineeringBlockerIds": []
+}

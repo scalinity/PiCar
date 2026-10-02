@@ -1,0 +1,178 @@
+TAP version 13
+# Subtest: two active delivery boards preserve all three historical graphs
+ok 1 - two active delivery boards preserve all three historical graphs
+  ---
+  duration_ms: 0.42075
+  type: 'test'
+  ...
+# Subtest: reject scope mutation Pi4 active
+ok 2 - reject scope mutation Pi4 active
+  ---
+  duration_ms: 0.653083
+  type: 'test'
+  ...
+# Subtest: reject scope mutation Pico
+ok 3 - reject scope mutation Pico
+  ---
+  duration_ms: 0.139541
+  type: 'test'
+  ...
+# Subtest: reject scope mutation generic Pi
+ok 4 - reject scope mutation generic Pi
+  ---
+  duration_ms: 0.115541
+  type: 'test'
+  ...
+# Subtest: reject scope mutation 87 product target
+ok 5 - reject scope mutation 87 product target
+  ---
+  duration_ms: 0.091958
+  type: 'test'
+  ...
+# Subtest: reject scope mutation Pi4 blocked
+ok 6 - reject scope mutation Pi4 blocked
+  ---
+  duration_ms: 0.13125
+  type: 'test'
+  ...
+# Subtest: reject scope mutation drop historical Pi4
+ok 7 - reject scope mutation drop historical Pi4
+  ---
+  duration_ms: 0.068667
+  type: 'test'
+  ...
+# Subtest: reject scope mutation collapse FPC variants
+ok 8 - reject scope mutation collapse FPC variants
+  ---
+  duration_ms: 0.064375
+  type: 'test'
+  ...
+# Subtest: reject scope mutation lose Q14
+ok 9 - reject scope mutation lose Q14
+  ---
+  duration_ms: 0.071416
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion G-CAD
+ok 10 - reject instructional engineering promotion G-CAD
+  ---
+  duration_ms: 0.171583
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion G-GEOMETRY
+ok 11 - reject instructional engineering promotion G-GEOMETRY
+  ---
+  duration_ms: 0.047791
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion engineeringMeasurement
+ok 12 - reject instructional engineering promotion engineeringMeasurement
+  ---
+  duration_ms: 0.033542
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion engineeringInterface
+ok 13 - reject instructional engineering promotion engineeringInterface
+  ---
+  duration_ms: 0.02
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion engineeringSolver
+ok 14 - reject instructional engineering promotion engineeringSolver
+  ---
+  duration_ms: 0.037125
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion engineeringRoute
+ok 15 - reject instructional engineering promotion engineeringRoute
+  ---
+  duration_ms: 0.026708
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion manufacturing
+ok 16 - reject instructional engineering promotion manufacturing
+  ---
+  duration_ms: 0.020875
+  type: 'test'
+  ...
+# Subtest: reject instructional engineering promotion physicalFit
+ok 17 - reject instructional engineering promotion physicalFit
+  ---
+  duration_ms: 0.025167
+  type: 'test'
+  ...
+# Subtest: 58 honest incomplete rows cannot become assembly acceptance
+ok 18 - 58 honest incomplete rows cannot become assembly acceptance
+  ---
+  duration_ms: 0.176042
+  type: 'test'
+  ...
+# Subtest: reject report mutation missing row
+ok 19 - reject report mutation missing row
+  ---
+  duration_ms: 3.284125
+  type: 'test'
+  ...
+# Subtest: reject report mutation duplicate row
+ok 20 - reject report mutation duplicate row
+  ---
+  duration_ms: 3.146625
+  type: 'test'
+  ...
+# Subtest: reject report mutation Pi4 failed
+ok 21 - reject report mutation Pi4 failed
+  ---
+  duration_ms: 3.170541
+  type: 'test'
+  ...
+# Subtest: reject report mutation generator self PASS
+ok 22 - reject report mutation generator self PASS
+  ---
+  duration_ms: 3.510083
+  type: 'test'
+  ...
+# Subtest: reject report mutation engineering promotion
+ok 23 - reject report mutation engineering promotion
+  ---
+  duration_ms: 3.107917
+  type: 'test'
+  ...
+# Subtest: S21 free joint, E-right/F-left, servo roles, wheels and temporary P11 preserved
+ok 24 - S21 free joint, E-right/F-left, servo roles, wheels and temporary P11 preserved
+  ---
+  duration_ms: 1.715375
+  type: 'test'
+  ...
+# Subtest: Zero2W accessory and Pi5 microphone remain separate
+ok 25 - Zero2W accessory and Pi5 microphone remain separate
+  ---
+  duration_ms: 0.493541
+  type: 'test'
+  ...
+# Subtest: current coverage cannot repeat resolved chirality as an active blocker
+ok 26 - current coverage cannot repeat resolved chirality as an active blocker
+  ---
+  duration_ms: 0.0485
+  type: 'test'
+  ...
+# Subtest: revised board directions and separate Zero2W supports are retained
+ok 27 - revised board directions and separate Zero2W supports are retained
+  ---
+  duration_ms: 0.209084
+  type: 'test'
+  ...
+# Subtest: revision03 anchor maps source-local flange up to installed down with explicit corner aliases
+ok 28 - revision03 anchor maps source-local flange up to installed down with explicit corner aliases
+  ---
+  duration_ms: 0.125875
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3141.722208

@@ -1,0 +1,44 @@
+{
+  "id": "PX-M7-S02-USB-MICROPHONE-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "variantId": "rpi5",
+  "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+  "boardInstanceId": "PX-V40-INS-PI5-001",
+  "connectionId": "PX-V40-CONN-02-PI5-MICROPHONE",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665
+  },
+  "sourceInspection": {
+    "method": "Visual review of the locked V40 PDF page 1, printed step 2 green Pi4/Pi5 panel and its circled USB Mini Microphone detail, rendered privately; source pixels are not copied into authored output",
+    "observation": "The red arrow carries a flat USB-A plug horizontally into an opening of the rear-facing stacked USB block, wide face horizontal. The arrow tip lands on the upper opening of the stack.",
+    "sourceRefs": ["PX-EV-PHOTO-04"],
+    "pdfPage": 1,
+    "reviewStatus": "PASS"
+  },
+  "selection": {
+    "choiceKind": "PRESENTATION_CHOICE_AMONG_EQUIVALENT_OPENINGS",
+    "usbBlock": "gpioSideUsbStack",
+    "usbBlockRule": "Of the two rear USB blocks of the adopted Pi5 artifact, the one with the larger board-local Y (nearest the GPIO header side).",
+    "opening": "upper",
+    "openingCenterFractionOfBlockHeight": 0.75,
+    "basis": "The manual shows the plug entering the upper opening of a rear USB stack. The accepted graph interface PX-V40-IF-PI5-USB-PORT has an unresolved frame (Q-10), so which equivalent opening an owner uses is not source-determined and remains open.",
+    "q10": "UNRESOLVED"
+  },
+  "plug": {
+    "insertionAxisLocal": [1, 0, 0],
+    "wideAxisLocal": [0, 1, 0],
+    "thinAxisLocal": [0, 0, 1],
+    "wideAxisParallelToBoardPlane": true,
+    "seatedDepthRule": "Authored plug length is fully inside the port block; the body face is flush with the mouth plane."
+  },
+  "approach": {"axis": [1, 0, 0], "distanceMm": 30},
+  "limitations": [
+    "Pi5 USB opening choice is a presentation choice among equivalent openings; Q-10 stays unresolved",
+    "USB port cavity is omitted from the Pi5 proxy; plug-in-port overlap is a declared omitted-cavity proxy overlap, not a fit or engagement result",
+    "Plug and port dimensions are authored presentation proxies; no USB electrical, mechanical retention or allocation claim"
+  ],
+  "engineeringBlockerIds": ["Q-03", "Q-06", "Q-10", "Q-14"]
+}

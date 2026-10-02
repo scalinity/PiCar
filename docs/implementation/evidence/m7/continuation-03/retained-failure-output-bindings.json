@@ -1,0 +1,472 @@
+{
+  "attempts": [
+    {
+      "label": "qualification-a-09",
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-a-09/commands.json",
+        "rawSha256": "78357d3fe45cff2cfb6dfe4fb3e451b26b514684caab1d18a59d74fd31367177",
+        "bytes": 14395
+      },
+      "failedCommand": {
+        "name": "independent-upper-support-and-hat-features",
+        "command": [
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/environment/bin/python",
+          "-m",
+          "twin_cad.assemblies.instructional.engagement_verify",
+          "--root",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj",
+          "--solutions",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/solutions",
+          "--artifacts",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/remediation",
+          "--engagement",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/engagement",
+          "--output",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/engagement-observations.json"
+        ],
+        "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/digital-twin",
+        "environment": {
+          "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/environment",
+          "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-09-80dEKj/uv-cache",
+          "PYTHONPATH": "UNSET",
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "startedAt": "2026-10-01T16:40:49.755Z",
+        "finishedAt": "2026-10-01T16:40:52.866Z",
+        "exit": 1,
+        "expectedExit": 0,
+        "signal": null,
+        "counts": null,
+        "log": {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/independent-upper-support-and-hat-features.txt",
+          "rawSha256": "cd08f1f06f67bfcf1089709884c816b452d5f9295a4eb2a795837fe811b76c76",
+          "bytes": 1422
+        }
+      },
+      "actualOutputs": [
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+          "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+          "bytes": 45060
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/engagement/hat-feature-candidate.json",
+          "rawSha256": "883a3c8458f18f2a7587b101d6a567e0ce408cd19780beb58a63c9730ff29e69",
+          "bytes": 2419
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/engagement/rpi-zero-2-w-S02-uppers.json",
+          "rawSha256": "1869b7c6380fd5a9ed55aee39cbdcf79e14a5b999504f10fa08069054f03e201",
+          "bytes": 9005
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/engagement/rpi5-S02-uppers.json",
+          "rawSha256": "d6d4279abbe29d5c4fbcf132e2e559be4d707ef71f8442ef1dadff375b10eb62",
+          "bytes": 11653
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+          "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+          "bytes": 28733
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/remediation/pi5-revision-candidate.json",
+          "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+          "bytes": 3070
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/remediation/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+          "bytes": 6645
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/remediation/rpi5-S02-board.json",
+          "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+          "bytes": 7382
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+          "bytes": 14560
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-09/failed-outputs/solutions/rpi5-S01.json",
+          "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+          "bytes": 14278
+        }
+      ]
+    },
+    {
+      "label": "qualification-a-10",
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-a-10/commands.json",
+        "rawSha256": "ec40f42be2313521f049cd3b59b423e52c60170290139fd42157bc4931a6f004",
+        "bytes": 14395
+      },
+      "failedCommand": {
+        "name": "independent-upper-support-and-hat-features",
+        "command": [
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/environment/bin/python",
+          "-m",
+          "twin_cad.assemblies.instructional.engagement_verify",
+          "--root",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA",
+          "--solutions",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/solutions",
+          "--artifacts",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/remediation",
+          "--engagement",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/engagement",
+          "--output",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/engagement-observations.json"
+        ],
+        "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/digital-twin",
+        "environment": {
+          "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/environment",
+          "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-10-45Y9jA/uv-cache",
+          "PYTHONPATH": "UNSET",
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "startedAt": "2026-10-01T16:43:58.282Z",
+        "finishedAt": "2026-10-01T16:44:01.016Z",
+        "exit": 1,
+        "expectedExit": 0,
+        "signal": null,
+        "counts": null,
+        "log": {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/independent-upper-support-and-hat-features.txt",
+          "rawSha256": "d6fb3e54dd4f05e3de1e4289b6fdab42fe13bc13d9bf06d5c3b436ae8f59e850",
+          "bytes": 1539
+        }
+      },
+      "actualOutputs": [
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+          "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+          "bytes": 45060
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/engagement/hat-feature-candidate.json",
+          "rawSha256": "8ac1f77b88e568d0e047fa80b208e15649dfdaa6c66b6ce22293a89ba80e97da",
+          "bytes": 2419
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/engagement/rpi-zero-2-w-S02-uppers.json",
+          "rawSha256": "42ca4c20bef0f777ddaf31b34aecb7017274c23b10c66fb6ac95a61d59e75f66",
+          "bytes": 9005
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/engagement/rpi5-S02-uppers.json",
+          "rawSha256": "b3d49e30cf2a25e1bc1d7f55f011acd780066b6f3cbcf4d2ea7a7dac6b70bbed",
+          "bytes": 11653
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+          "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+          "bytes": 28733
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/remediation/pi5-revision-candidate.json",
+          "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+          "bytes": 3070
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/remediation/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+          "bytes": 6645
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/remediation/rpi5-S02-board.json",
+          "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+          "bytes": 7382
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+          "bytes": 14560
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-10/failed-outputs/solutions/rpi5-S01.json",
+          "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+          "bytes": 14278
+        }
+      ]
+    },
+    {
+      "label": "qualification-a-11",
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-a-11/commands.json",
+        "rawSha256": "fefdf5feacbf8f88218fb4d2c130f33e06a5700ddad64f4ec3ee9dc517f0e97c",
+        "bytes": 21112
+      },
+      "failedCommand": {
+        "name": "independent-upper-support-and-hat-features",
+        "command": [
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/environment/bin/python",
+          "-m",
+          "twin_cad.assemblies.instructional.engagement_verify",
+          "--root",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD",
+          "--solutions",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/anchor/solutions",
+          "--artifacts",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/remediation",
+          "--boards",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/anchor/boards",
+          "--engagement",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/engagement",
+          "--output",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/engagement-observations.json"
+        ],
+        "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/digital-twin",
+        "environment": {
+          "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/environment",
+          "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-11-BPHwRD/uv-cache",
+          "PYTHONPATH": "UNSET",
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "startedAt": "2026-10-01T16:55:09.809Z",
+        "finishedAt": "2026-10-01T16:55:13.858Z",
+        "exit": 1,
+        "expectedExit": 0,
+        "signal": null,
+        "counts": null,
+        "log": {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/independent-upper-support-and-hat-features.txt",
+          "rawSha256": "1faa44333d4ee9a59f3879bfee6d1c57d6c885790ed964cf96fc06a342c8c510",
+          "bytes": 1453
+        }
+      },
+      "actualOutputs": [
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/anchor/boards/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "a80a957c6b4de237476e6e15132440da700c11a123f614d5a9ff39fe4b96d1a0",
+          "bytes": 6658
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/anchor/boards/rpi5-S02-board.json",
+          "rawSha256": "548d08e55ba20d09f6b34ea4324ee0ffdbd0329ad0a0f50e4b88acff96289b8f",
+          "bytes": 7397
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/anchor/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "59f8d16bbc64cea5f80614eedfabf5c374f6d2a2daf7026b813d4a411aadb3cb",
+          "bytes": 14630
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/anchor/solutions/rpi5-S01.json",
+          "rawSha256": "d7fc32b877db73adcb7d084d7c4ea73794db2bb8cb4981fbd69b10be7a63633d",
+          "bytes": 14348
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/anchor-board-observations.json",
+          "rawSha256": "df0676f11f633edda4e1b8c4c9577bef6d241da64779beb727bf223dad097640",
+          "bytes": 4366
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/anchor-observations.json",
+          "rawSha256": "6f4a7422f8da8bd652aa19f33844d81ccbfa3bd9291798f7c6127b534b70c0b2",
+          "bytes": 7704
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/correspondence.json",
+          "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+          "bytes": 10011
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+          "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+          "bytes": 45060
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/engagement/hat-feature-candidate.json",
+          "rawSha256": "41247bdb5b50d11c9125f22e4f6e6ec101590c74123e37b473463c3af24eadd6",
+          "bytes": 2419
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/engagement/rpi-zero-2-w-S02-uppers.json",
+          "rawSha256": "d07951b6d69c50b5d6df011bb65384b9c9e90d5d784e41a0a09039f32e947008",
+          "bytes": 9006
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/engagement/rpi5-S02-uppers.json",
+          "rawSha256": "b83357d349bac9faf826c3a4e84bef6a085e1fbc85d781536266a486dfe7cbed",
+          "bytes": 11657
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/observations.json",
+          "rawSha256": "bdac9b9ce4f453f1770268c1e42963a25097e33780f0f0029334319bb091069c",
+          "bytes": 9739
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+          "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+          "bytes": 28733
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/remediation/pi5-revision-candidate.json",
+          "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+          "bytes": 3070
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/remediation/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+          "bytes": 6645
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/remediation/rpi5-S02-board.json",
+          "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+          "bytes": 7382
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+          "bytes": 14560
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-11/failed-outputs/solutions/rpi5-S01.json",
+          "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+          "bytes": 14278
+        }
+      ]
+    },
+    {
+      "label": "qualification-a-12",
+      "commands": {
+        "path": "docs/implementation/evidence/m7/qualification-a-12/commands.json",
+        "rawSha256": "d4e9cf36acf725f768684fea025b03d4a26a7b16a077aa105d8d8fa36c90c1b9",
+        "bytes": 21112
+      },
+      "failedCommand": {
+        "name": "independent-upper-support-and-hat-features",
+        "command": [
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/environment/bin/python",
+          "-m",
+          "twin_cad.assemblies.instructional.engagement_verify",
+          "--root",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3",
+          "--solutions",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/anchor/solutions",
+          "--artifacts",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/remediation",
+          "--boards",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/anchor/boards",
+          "--engagement",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/engagement",
+          "--output",
+          "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/engagement-observations.json"
+        ],
+        "cwd": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/digital-twin",
+        "environment": {
+          "UV_PROJECT_ENVIRONMENT": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/environment",
+          "UV_CACHE_DIR": "/private/var/folders/_q/nsgwvvj51zlcw71s_yzz0s100000gn/T/picar-m7-qualification-a-12-fo1ly3/uv-cache",
+          "PYTHONPATH": "UNSET",
+          "PYTHONDONTWRITEBYTECODE": "1"
+        },
+        "startedAt": "2026-10-01T16:58:58.580Z",
+        "finishedAt": "2026-10-01T16:59:01.997Z",
+        "exit": 1,
+        "expectedExit": 0,
+        "signal": null,
+        "counts": null,
+        "log": {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/independent-upper-support-and-hat-features.txt",
+          "rawSha256": "143f81cc5d331b2f8627a8bbcb4d584c2fc656669974c863e56f00e41af9dcc4",
+          "bytes": 2160
+        }
+      },
+      "actualOutputs": [
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/anchor/boards/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "a80a957c6b4de237476e6e15132440da700c11a123f614d5a9ff39fe4b96d1a0",
+          "bytes": 6658
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/anchor/boards/rpi5-S02-board.json",
+          "rawSha256": "548d08e55ba20d09f6b34ea4324ee0ffdbd0329ad0a0f50e4b88acff96289b8f",
+          "bytes": 7397
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/anchor/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "59f8d16bbc64cea5f80614eedfabf5c374f6d2a2daf7026b813d4a411aadb3cb",
+          "bytes": 14630
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/anchor/solutions/rpi5-S01.json",
+          "rawSha256": "d7fc32b877db73adcb7d084d7c4ea73794db2bb8cb4981fbd69b10be7a63633d",
+          "bytes": 14348
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/anchor-board-observations.json",
+          "rawSha256": "df0676f11f633edda4e1b8c4c9577bef6d241da64779beb727bf223dad097640",
+          "bytes": 4366
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/anchor-observations.json",
+          "rawSha256": "6f4a7422f8da8bd652aa19f33844d81ccbfa3bd9291798f7c6127b534b70c0b2",
+          "bytes": 7704
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/correspondence.json",
+          "rawSha256": "43877990c734b92534ffa866b31ce1b5c242e5b2bbee04aff80c57f54498fbb6",
+          "bytes": 10011
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+          "rawSha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+          "bytes": 45060
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/engagement/hat-feature-candidate.json",
+          "rawSha256": "61257731d2595fb5df61ba397a266a0a08932d742041bcff49f49e25a2ea7783",
+          "bytes": 2419
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/engagement/rpi-zero-2-w-S02-uppers.json",
+          "rawSha256": "e3d6a8e07b5b86760d3d4fb0f957b885c0870963010b51f19eae74c8cfae4eac",
+          "bytes": 9006
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/engagement/rpi5-S02-uppers.json",
+          "rawSha256": "89cce8866fed5a5e0730c7e5f583545a622b3faf29e030bd010920f18347c166",
+          "bytes": 11657
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/observations.json",
+          "rawSha256": "bdac9b9ce4f453f1770268c1e42963a25097e33780f0f0029334319bb091069c",
+          "bytes": 9739
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+          "rawSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+          "bytes": 28733
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/remediation/pi5-revision-candidate.json",
+          "rawSha256": "783727d1d98df14b7939bc477b8710109f87af55c11a2bc50f4a5ab0a06a4735",
+          "bytes": 3070
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/remediation/rpi-zero-2-w-S02-board.json",
+          "rawSha256": "6aaa243e03408be691ad6993a1a7b557f17a566d94862cc6958d019e9cf3e520",
+          "bytes": 6645
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/remediation/rpi5-S02-board.json",
+          "rawSha256": "f77fbbfd5442dda218c04f1dde3c3f3115fc2e3d1389e99c5aa23f1d8bb4d2e9",
+          "bytes": 7382
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/solutions/rpi-zero-2-w-S01.json",
+          "rawSha256": "42b6258d23a15e64119b0f45a669e7633535ba31b661df81be481c86b23c4754",
+          "bytes": 14560
+        },
+        {
+          "path": "docs/implementation/evidence/m7/qualification-a-12/failed-outputs/solutions/rpi5-S01.json",
+          "rawSha256": "f3286a68408a2e024e6125e05a702be8bf9a955544202dfd0518f2769fe39d88",
+          "bytes": 14278
+        }
+      ]
+    }
+  ]
+}

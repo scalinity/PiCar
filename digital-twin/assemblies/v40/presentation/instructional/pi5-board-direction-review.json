@@ -1,0 +1,21 @@
+{
+  "id": "PX-M7-S02-PI5-DIRECTION-01",
+  "revision": 1,
+  "track": "instructional-only",
+  "variantId": "rpi5",
+  "stepId": "PX-V40-STEP-02",
+  "sourceRefs": ["PX-EV-PHOTO-04"],
+  "pdfPath": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+  "pdfSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+  "pdfPage": 1,
+  "sourcePanel": "Green shared Raspberry Pi 4 or Pi 5 printed step 2, checked against A front dual-opening / rear single-opening topology; not a generic board inference",
+  "inspection": "Enlarged source panel: rear USB/Ethernet bank at single-opening end, GPIO on far robot-left edge, top-side components above PCB. Blue Zero2W step 2 separately shows GPIO near robot-right edge; do not reuse Pi5 orientation.",
+  "requiredInstalledDirections": {"usbEthernetOutward": [-1,0,0], "gpioSide": [0,1,0], "pcbComponentNormal": [0,0,1]},
+  "acceptedProxyPath": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-PI5.brep",
+  "knownProxyRepresentation": "PCB, separate header, three rear-bank port solids and additional simplified connector solids",
+  "requiredProof": "Extract edge-side vectors from actual header/USB-bank solid extents and PCB normal. A single proper rigid rotation must map all three source directions; a reflected, upside-down or port-swapped alternative must fail.",
+  "engineeringAdmission": false,
+  "privatePixelsCopied": false,
+  "sourceLimitation": "Shared printed board drawing states Pi4 or Pi5 and depicts the source installation; actual user revision/cooler remain unknown. This review is not board metrology. No approximate numeric dimensions are required for the signed direction check.",
+  "remediationIfBlocked": "Review the accepted Pi5 proxy's signed header/port correspondence against exact Pi5 source and V40 branch, then author an additive replaceable instructional geometry revision with independent source/BRep checks. Preserve the old M5 receipt/artifact; no negative scale, per-port transform cheat or canonical engineering promotion. Requalify affected receipts before S02 placement. If a more applicable source resolves the shared-panel orientation differently, retain both sources and the reason for scope resolution."
+}

@@ -1,0 +1,29 @@
+{
+  "id": "PX-M7-S07-BATTERY-SOURCE-04",
+  "revision": 4,
+  "track": "instructional-only",
+  "stepId": "PX-V40-STEP-07",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665,
+    "pdfPage": 2,
+    "method": "Visual review of the locked V40 printed steps 6 and 7 panels (chassis shown upside down), rendered privately; no source pixels are copied into authored output",
+    "observation": "The battery lies lengthwise on the loop-tape patch under the deck, between the slotted flange tabs, its wire end toward the rear, pressed up against the deck underside (red arrow up)."
+  },
+  "placement": {
+    "orientation": "Long axis along the car (installed X); wire end toward the rear. The proxy box frame is kept (identity rotation).",
+    "vertical": "The battery's top face touches the deck underside, which is the installed plane Z=0.",
+    "longitudinal": "Its rear face touches the front faces of the rear motor gearboxes (nearest clear position); the front face then ends just before the deck's oval front slot.",
+    "lateral": "Centred between the inner faces of the two slotted flanges."
+  },
+  "approach": {"axis": [0, 0, 1], "distanceMm": 30, "note": "Nonphysical exploded start straight below the final position."},
+  "limitations": [
+    "The adopted battery envelope is 38 mm wide while the photo-traced slotted-flange inner gap is 35 mm; the V40 panel shows the battery snug between the tabs, so the traced gap is slightly narrow. The resulting interference is declared and bounded to at most 2 mm depth on every face, not hidden",
+    "Hook and loop tape are zero-solid; the adhesion contact is the touching top face and carries no strength, fit or safety claim",
+    "The battery is an external tutorial envelope with no capacity, voltage or safety claim; its integral lead is a zero-solid schematic",
+    "The battery lead's HAT-end connector frame is not established, so the connect operation of this step stays BLOCKED until the Robot HAT battery connector has a source-backed frame",
+    "No installation sweep or fit is claimed"
+  ],
+  "engineeringBlockerIds": ["Q-03", "Q-04", "Q-06"]
+}

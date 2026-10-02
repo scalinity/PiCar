@@ -1,0 +1,261 @@
+{
+  "id": "PX-M7-S01-INSTRUCTIONAL-SOURCE-03",
+  "revision": 3,
+  "track": "instructional-only",
+  "source": {
+    "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+    "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+    "bytes": 11048665
+  },
+  "parameterSource": {
+    "path": "digital-twin/validation/expected/plates/instructional/all-parameters.json",
+    "rawSha256": "624b59b88a219be70d9820944d6e2205c14e13184ba0ccc387c14b8c824754a7",
+    "bytes": 92684
+  },
+  "plateAAnchor": {
+    "instanceId": "PX-V40-INS-PLATE-A-001",
+    "kind": "replaceable",
+    "engineeringDatum": false,
+    "translationMm": [
+      0,
+      0,
+      2
+    ],
+    "rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "axes": "Installed robot +X toward dual openings, +Y LEFT, +Z above deck. M6 local +Z points toward loose-part upright flanges; installed Rx180 maps flanges down. Local left/right labels remain historical feature names, not installed sides."
+  },
+  "sourceInspection": {
+    "method": "Independent visual review of locked V40 PDF page 1 green Pi4/Pi5 S01 and blue Zero2W S01/S02 panels; source pixels remain outside authored output",
+    "reviewer": "Codex current assignment",
+    "direction": "V40 green/blueS01/S02 shows deck above all vertical flanges. M6 PlateA13 depicts loose-part opposite face with upright flanges. Whole-part Rx180 is a proper rotation, no mirror. Map local Y to installed -Y; preserve shortLEFT/tallRIGHT in global robot coordinates.",
+    "sourceScope": "Printed relationships and directions only; no calibrated installed metrology",
+    "sourceRefs": [
+      "PX-EV-PHOTO-04"
+    ],
+    "pdfPage": 1,
+    "panels": [
+      "printed step 1 Pi5",
+      "printed step 1 Zero2W",
+      "printed step 2 Zero2W"
+    ],
+    "reviewStatus": "PASS",
+    "correction": "Prior left/right reading was reversed. Pi5 positions/types remain byte-equivalent numerically; Zero2W support types must change sides. Old solutions/review and 36-pair static checks are retained as historical numeric observations, not current source-side proof."
+  },
+  "positions": [
+    {
+      "name": "rear.right",
+      "plateFeature": "deck.hole.1",
+      "centerMm": [
+        13.926499032882012,
+        -26.499032882011605,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false,
+      "partLocalCenterMm": [
+        13.926499032882012,
+        26.499032882011605,
+        0
+      ],
+      "partLocalName": "rear.left"
+    },
+    {
+      "name": "front.right",
+      "plateFeature": "deck.hole.2",
+      "centerMm": [
+        72.34042553191489,
+        -25.145067698259187,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false,
+      "partLocalCenterMm": [
+        72.34042553191489,
+        25.145067698259187,
+        0
+      ],
+      "partLocalName": "front.left"
+    },
+    {
+      "name": "front.left",
+      "plateFeature": "deck.hole.5",
+      "centerMm": [
+        71.95357833655706,
+        23.791102514506772,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false,
+      "partLocalCenterMm": [
+        71.95357833655706,
+        -23.791102514506772,
+        0
+      ],
+      "partLocalName": "front.right"
+    },
+    {
+      "name": "rear.left",
+      "plateFeature": "deck.hole.6",
+      "centerMm": [
+        13.926499032882012,
+        23.21083172147002,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "rollAxis": [
+        1,
+        0,
+        0
+      ],
+      "sourceBinding": "PDF page 1 rear-deck corner support pattern",
+      "engineeringInterface": false,
+      "partLocalCenterMm": [
+        13.926499032882012,
+        -23.21083172147002,
+        0
+      ],
+      "partLocalName": "rear.right"
+    }
+  ],
+  "variantAllocations": {
+    "rpi5": [
+      {
+        "position": "rear.left",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-001"
+      },
+      {
+        "position": "front.left",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-002"
+      },
+      {
+        "position": "front.right",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-003"
+      },
+      {
+        "position": "rear.right",
+        "standoffInstanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-004"
+      }
+    ],
+    "rpi-zero-2-w": [
+      {
+        "position": "rear.left",
+        "standoffInstanceId": "PX-V40-INS-M25X11-STANDOFF-001",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-001"
+      },
+      {
+        "position": "front.left",
+        "standoffInstanceId": "PX-V40-INS-M25X11-STANDOFF-002",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-002"
+      },
+      {
+        "position": "front.right",
+        "standoffInstanceId": "PX-V40-INS-M25X30-STANDOFF-002",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-003"
+      },
+      {
+        "position": "rear.right",
+        "standoffInstanceId": "PX-V40-INS-M25X30-STANDOFF-001",
+        "screwInstanceId": "PX-V40-INS-M25X6-SCREW-004"
+      }
+    ]
+  },
+  "presentationRevision": "S01-02",
+  "uncertainty": {
+    "state": "unboundedEngineering",
+    "sourceLimitations": [
+      "M6 plate thickness 2 mm PROBABLE",
+      "Photo-supported hole positions and sharp bends are instructional approximations",
+      "Presentation frames and support correspondence are replaceable",
+      "M5 standoff blind bores and thread engagement are omitted",
+      "No engineering datum, physical fit, production tolerance or torque claim"
+    ]
+  },
+  "approachOffsetMm": {
+    "standoff": 30,
+    "screw": -30
+  },
+  "approachPurpose": "Nonphysical exploded staging only; no admitted installation sweep",
+  "numericalResidualBudgetMm": 0.001,
+  "numericalAngularBudgetRad": 0.00001,
+  "previousReviewBinding": {
+    "path": "digital-twin/assemblies/v40/presentation/instructional/step01-source-review.json",
+    "rawSha256": "a3b5883295536429253219c5db21e42cdff9066294acfc72372a314e908267df",
+    "bytes": 5681
+  },
+  "supersedesPresentationAnchorOnly": {
+    "path": "digital-twin/assemblies/v40/presentation/instructional/step01-source-review-02.json",
+    "rawSha256": "5b8b2858687afc0535f7d8346877f47ef251b11a5582a2de582bbc6f0dec1fa2",
+    "bytes": 6176
+  },
+  "anchorSourceProof": {
+    "sourceBindings": [
+      {
+        "path": "picarx-companion/public/content/pdf/picar-x-assembly.pdf",
+        "rawSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+        "bytes": 11048665
+      },
+      {
+        "path": "docs/PiCar Plate Pictures/PiCar-X-Z0104V40-Plate-Photo-Evidence/Plate-A/plate-A_13_oblique-chassis-overview.jpeg",
+        "rawSha256": "0c95f73d7a5be98c3cc13f8ad0025470d85b2094086dc3bde7538495071b18ff",
+        "bytes": 513179
+      }
+    ],
+    "partLocalPoseNotInstalled": true,
+    "forbiddenAlternative": "Historical identity anchor places Pi5 port proxy inside rear vertical face; actual S02 Boolean226.432mm³ retaineda10",
+    "historicalM6BytesUnchanged": true
+  }
+}
