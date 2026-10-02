@@ -1,4 +1,5 @@
 {
+ "schema": "picar-studio-display-check/1",
  "definitionId": "PX-V40-DEF-PI5",
  "kind": "display-detail",
  "track": "presentation-only",
@@ -409,6 +410,11 @@
   }
  ],
  "relation": {
+  "instructionalArtifact": {
+   "definitionId": "PX-V40-DEF-PI5",
+   "path": "chain:remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+   "sha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c"
+  },
   "pcbBoxMm": [
    0.0,
    0.0,
@@ -417,24 +423,48 @@
    56.0,
    1.6
   ],
-  "mountingHolesMm": [
-   [
-    3.5,
-    3.5
+  "mountingHoles": {
+   "method": "vertical cylinder features measured on each artifact, centres in the shared board frame",
+   "displayRadiusMm": 1.35,
+   "instructionalRadiusMm": 1.4,
+   "display": [
+    [
+     3.5,
+     3.5
+    ],
+    [
+     3.5,
+     52.5
+    ],
+    [
+     61.5,
+     3.5
+    ],
+    [
+     61.5,
+     52.5
+    ]
    ],
-   [
-    61.5,
-    3.5
+   "instructional": [
+    [
+     3.5,
+     3.5
+    ],
+    [
+     3.5,
+     52.5
+    ],
+    [
+     61.5,
+     3.5
+    ],
+    [
+     61.5,
+     52.5
+    ]
    ],
-   [
-    3.5,
-    52.5
-   ],
-   [
-    61.5,
-    52.5
-   ]
-  ],
+   "maxCentreDeviationMm": 0.0
+  },
   "instructionalSolids": [
    {
     "instructionalSolid": 0,
@@ -576,181 +606,306 @@
   ]
  },
  "overlaps": {
-  "chain": "s1-04",
-  "method": "boolean common of the placed detail board with every other placed part in each rpi5 closure",
+  "chain": "s1r-01",
+  "method": "boolean common of the placed detail board with every other placed part in each closure that places the board",
+  "displayArtifactSha256": "afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a",
+  "instructionalArtifactSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+  "partArtifacts": {
+   "PX-V40-DEF-BATTERY": "f685c1a07cf87d4fe7da7703366fd939681a69e654209aeaff7355f019485959",
+   "PX-V40-DEF-HORN-PAN": "679f73c27d72a64c328825620363f6cc814823eb81cb28c04b0872f05846da83",
+   "PX-V40-DEF-M15X3-SCREW": "abfc6198cb2f02f5c654b0ab67dbc5ebfd864c5c7fd9cbae78619e53a3bd531f",
+   "PX-V40-DEF-M25X18-STANDOFF": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2",
+   "PX-V40-DEF-M25X18PLUS6-STANDOFF": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645",
+   "PX-V40-DEF-M25X6-SCREW": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0",
+   "PX-V40-DEF-M3-NUT": "44d15801ffa667dcd9d41899b3585d721e34db728c44e351d2fe781aade1051e",
+   "PX-V40-DEF-M3X25-SCREW": "81c967b6db28ff4c5b9fdacc21ab2e3ac6f8e1e20b2a7b4e0a5455577c955c95",
+   "PX-V40-DEF-MOTOR-LEFT": "c8070624580bcadc7977fc7474e3cbb63050c56ede728aab4e481d590a7b2f53",
+   "PX-V40-DEF-MOTOR-RIGHT": "a24177197ccbaef8b6568a50b45cf03c3342a801a574272d093460c4a147a383",
+   "PX-V40-DEF-PLATE-A": "2e0347dbef81f3d007fdf4d5278da74ac9cf1357e821ca50fab975e6fdbb40a0",
+   "PX-V40-DEF-ROBOT-HAT": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a",
+   "PX-V40-DEF-SPRING-WASHER": "18e52787eca8bbab49f0a0af9ef14f648dc87086ee1db1a17b12ae20df845841",
+   "PX-V40-DEF-USB-MICROPHONE": "8fd263478941111924fa0ee96c6b0ca027c3fcc188d24f9a37c310ad45b7f51e"
+  },
+  "closures": [
+   {
+    "variantId": "rpi5",
+    "step": 2,
+    "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 3,
+    "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa"
+   }
+  ],
   "positive": [
    {
+    "variantId": "rpi5",
     "step": 2,
+    "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 2,
+    "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 2,
+    "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 2,
+    "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 2,
+    "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    },
    {
+    "variantId": "rpi5",
     "step": 3,
+    "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 3,
+    "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 3,
+    "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 3,
+    "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 3,
+    "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    },
    {
+    "variantId": "rpi5",
     "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    },
    {
+    "variantId": "rpi5",
     "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    },
    {
+    "variantId": "rpi5",
     "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    },
    {
+    "variantId": "rpi5",
     "step": 7,
+    "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 7,
+    "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 7,
+    "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 7,
+    "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 7,
+    "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    },
    {
+    "variantId": "rpi5",
     "step": 8,
+    "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
     "volumeMm3": 0.1778
    },
    {
+    "variantId": "rpi5",
     "step": 8,
+    "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
     "volumeMm3": 1.2932
    },
    {
+    "variantId": "rpi5",
     "step": 8,
+    "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
     "volumeMm3": 1.849
    },
    {
+    "variantId": "rpi5",
     "step": 8,
+    "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
     "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
     "volumeMm3": 2.8276
    },
    {
+    "variantId": "rpi5",
     "step": 8,
+    "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
     "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
     "volumeMm3": 448.992
    }
