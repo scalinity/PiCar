@@ -17,7 +17,7 @@ A step can be display-ready while its assembly content is unaccepted; it is then
 
 Display statuses per step and variant:
 
-- `PREVIEW_SOURCE_REVALIDATED` — the source-mode chain produced the closure and the independent `closure_verify` passed it in the pack build. Ordinary instructional mode, labelled Preview until M7 admits the row.
+- `PREVIEW_SOURCE_REVALIDATED` — the source-mode chain produced the closure and the independent `closure_verify` passed it at the closure's exact canonical hash, which the pack records. Ordinary instructional mode, labelled Preview until M7 admits the row. A pack whose recorded sources have since changed reads `STALE` in `studio.mjs check` and is not presented as revalidated.
 - `PREVIEW_BLOCKED_RELATION` — placements verified, but a relationship the step needs is unresolved (S07 battery lead). Review mode: the step opens, the blocker is named, auto-play is not offered as instruction.
 - `REVIEW_REFUSED_CANDIDATE` — the closure check refused the cumulative state (S09). Only the refused record's candidate placements exist, labelled with their source and the measured conflicts. Review mode only.
 - `UNAVAILABLE` — no source record. Parts stay in the tray.
@@ -30,7 +30,7 @@ The parts tray is a presentation layout, not an inferred physical state. A compo
 
 - Scoped CAD tessellation of the resolved M5/M6/M7 artifacts for every S01–S09 instance of both active boards, shared per definition.
 - One Studio pack (`parts.glb` + `manifest.json`), separately versioned, labelled `provisionalReview`, never a G-GEOMETRY pack.
-- A reproducible Blender project built from that pack, with presentation materials, lighting and camera, and one Cycles reference render.
+- A reproducible Blender project built from that pack, with presentation materials, lighting and camera, and one Cycles reference render, identified by a presentation receipt (pack, configuration, builder, Blender build, presentation-state fingerprint) separate from the pack ID.
 - `#/studio` in the companion: full-viewport canvas, global chrome hidden, native fullscreen in Tauri with a browser Fullscreen API fallback, orbit/pan/zoom, reset and focus, part selection with source identity, a collapsible instruction drawer, a compact step control, readiness labelling.
 - Operable content: the labelled tray state (S00), S01 and S02 for Pi 5, through the same manifest and renderer that already carries Zero 2 W. S03–S09 appear in the step rail with their display status but are not operable until Studio 2.
 - No progress writes: the Studio route does not import the session store.

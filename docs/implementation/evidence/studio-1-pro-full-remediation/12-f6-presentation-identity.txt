@@ -30,3 +30,62 @@ First run of the self-test: the ownership rule treated Blender's .001 name suffi
 
 ## Finding: the Studio 1 .blend held Blender's factory startup Collection (Cube 2 m at the origin, a point Light, a Camera), renderable, outside every owned collection; the builder created the file from --factory-startup and never removed them.
 Effect on the Studio 1 reference render: quarter-size Cycles renders (32 samples, denoised) of a scratch copy with and without the factory objects: no visible difference; mean absolute pixel difference 0.01139, 2.3 % of pixels over 2 %, max 0.157. That is within sampling noise for a changed scene, so the historical render is not shown to be affected and not certified unaffected.
+
+## Self-test rerun against the committed builder (845db0a), starting from the Studio 1 .blend (git show d8b9bd4:digital-twin/presentation/blender/picar-studio.blend)
+PASS a run refuses objects outside the owned collections (SCENE_OWNERSHIP UNOWNED_SCENE_OBJECT Camera; UNOWNED_SCENE_OBJECT Cube; UNOWNED_SCENE_OBJECT Light; UNOWNED_COLLECTION Collection (pass --remove-unowned to delete objects outside the owned collections))
+PASS --remove-unowned deletes them and lists each in the receipt (object Cube (MESH), object Light (LIGHT), object Camera (CAMERA), collection Collection)
+PASS a rebuild reproduces the same presentation identity (ee036e1a73f2)
+PASS source collections hold the same counts after rebuilds (no duplicates) ({"STUDIO-PRESENTATION":6,"STUDIO-SOURCE-DEFINITIONS":21,"STUDIO-SOURCE-INSTANCES":15,"STUDIO-SOURCE-TRAY":44})
+PASS --check accepts the .blend its receipt describes
+PASS --check reports an edit saved after the receipt
+PASS the edit survives a normal source rebuild (key light 7 W -> 10.5 W)
+PASS and the presentation identity changes with it (7c9b49691a86)
+PASS --reset-presentation restores the configured presentation (key light 7 W)
+PASS and changes the presentation identity (ee036e1a73f2)
+PASS a reset presentation equals the configured one before the edit
+11 passed, 0 failed
+
+## Tracked project rebuilt from pack 7dcd6252a32a (HEAD 845db0a)
+$ node digital-twin/tools/studio/studio.mjs blender --render --remove-unowned
+[studio] removed unowned object Cube (MESH)
+[studio] removed unowned object Light (LIGHT)
+[studio] removed unowned object Camera (CAMERA)
+[studio] removed unowned collection Collection
+[studio] validation PASS: 21 definitions (worst bounds error 5.01e-09 m), 15 instances (worst pose error 0.00e+00)
+[studio] presentation collection kept (camera, lights, floor); pass --reset-presentation to rebuild it
+[studio] saved /Users/danny/Documents/Apps/PiCar/digital-twin/presentation/blender/picar-studio.blend presentation ee036e1a73f2349408883fe0a1c545aa0ceb19ff24c67316d69f61a422769c63
+[studio] rendered /Users/danny/Documents/Apps/PiCar/digital-twin/presentation/blender/renders/7dcd6252a32a-ee036e1a73f2-rpi5-S02.png
+[studio] receipt /Users/danny/Documents/Apps/PiCar/digital-twin/presentation/blender/presentation-receipt.json {"presentationId": "ee036e1a73f2349408883fe0a1c545aa0ceb19ff24c67316d69f61a422769c63", "built": "kept", "counts": {"STUDIO-SOURCE-DEFINITIONS": 21, "STUDIO-SOURCE-INSTANCES": 15, "STUDIO-SOURCE-TRAY": 44, "STUDIO-PRESENTATION": 6}}
+exit 0
+
+Studio 1 .blend SHA-256 before the rebuild: fda6079495d3ff2c39c39d168550ba44ba9e92987e9fbd72b833578a15f20c1c
+
+## Presentation identities
+new: ee036e1a73f2349408883fe0a1c545aa0ceb19ff24c67316d69f61a422769c63 (pack 7dcd6252a32a, builder 845db0a, Blender 5.2.2 LTS d13f752e3b9c, presentation kept)
+Studio 1, derived after the fact (the Studio 1 builder recorded none): recipe with pack 2c1e54e47710, the Studio 1 builder's SHA-256, the same stage and materials (unchanged since d8b9bd4) and today's fingerprint of the kept presentation:
+ "historicalPresentationIdDerived": "0e26648a779d677332859a6deca5580f5f550194e490a8aba7fb79f5e8958e07",
+Why it changed: the pack (contract 2 and source bindings; same GLB) and the builder (F6). The presentation-owned state did not change: a --reset-presentation rebuild fingerprints identically to the kept one.
+
+$ node digital-twin/tools/studio/studio.mjs check
+{
+ "packId": "7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a",
+ "integrity": {
+  "status": "PASS",
+  "problems": [],
+  "notes": []
+ },
+ "freshness": {
+  "status": "FRESH",
+  "problems": []
+ },
+ "presentation": {
+  "status": "CURRENT",
+  "presentationId": "ee036e1a73f2349408883fe0a1c545aa0ceb19ff24c67316d69f61a422769c63",
+  "problems": []
+ }
+}
+exit 0
+
+$ node digital-twin/tools/studio/studio.mjs blender --check
+[studio] check {"presentationId": "ee036e1a73f2349408883fe0a1c545aa0ceb19ff24c67316d69f61a422769c63", "problems": []}
+exit 0

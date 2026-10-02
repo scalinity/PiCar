@@ -1,0 +1,65 @@
+$ pnpm tauri build --debug --bundles app
+# rustc rustc 1.99.0 (b940084d7 2026-09-28) / node v26.10.0 / pnpm 10.34.6
+
+> picarx-companion@0.1.0 tauri /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tauri build --debug --bundles app
+
+        Info Looking up installed tauri packages to check mismatched versions...
+     Running beforeBuildCommand `pnpm build`
+
+> picarx-companion@0.1.0 build /Users/danny/Documents/Apps/PiCar/picarx-companion
+> tsx tools/content-pipeline/entry.ts build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 216 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                        0.47 kB │ gzip:   0.30 kB
+dist/assets/manifest-x35VW8vK.json                   369.27 kB │ gzip:  32.61 kB
+dist/assets/pdf.worker.min-DEtVeC4l.mjs            1,255.07 kB
+dist/assets/parts-D5JuusVg.glb                     1,697.16 kB
+dist/assets/Assembly-CLSY7huw.css                      0.62 kB │ gzip:   0.37 kB
+dist/assets/Studio-DpkolCfp.css                        8.58 kB │ gzip:   2.48 kB
+dist/assets/index-mFZyHRrV.css                        11.33 kB │ gzip:   3.02 kB
+dist/assets/repository-XjNXla3P.js                     0.81 kB │ gzip:   0.46 kB
+dist/assets/indexed-db-aJgfgRGl.js                     7.09 kB │ gzip:   2.46 kB
+dist/assets/documentation-source-lock-QoK-uPjO.js     16.68 kB │ gzip:   1.55 kB
+dist/assets/Assembly-CZSdUUVg.js                      17.20 kB │ gzip:   4.32 kB
+dist/assets/_m3-locked-ledger-D2B_noOo.js             38.06 kB │ gzip:   9.93 kB
+dist/assets/search-index-C1TSHRBG.js                  85.87 kB │ gzip:   4.91 kB
+dist/assets/search-index-DfwM_xVL.js                  85.87 kB │ gzip:   4.92 kB
+dist/assets/search-index-CbLVMrqN.js                  87.22 kB │ gzip:   4.93 kB
+dist/assets/Studio-DeTsc1_Z.js                       244.66 kB │ gzip:  76.08 kB
+dist/assets/runtime-registry-Cd27iB5b.js             568.22 kB │ gzip:  29.70 kB
+dist/assets/compiled-graph-BrAN1xmX.js               627.21 kB │ gzip:  23.51 kB
+dist/assets/compiled-graph-Va1C-Idr.js               636.70 kB │ gzip:  23.83 kB
+dist/assets/compiled-graph-dDnaW3_W.js               636.70 kB │ gzip:  23.87 kB
+dist/assets/pack-JjZLWbeA.js                         799.91 kB │ gzip: 207.22 kB
+dist/assets/index-CFw2wxT7.js                      2,067.16 kB │ gzip: 391.19 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.25s
+Safe mirror/dist exclusions and static bytes verified
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.79s
+       Built application at: /Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri/target/debug/picarx-companion
+    Bundling picarx-companion.app (/Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri/target/debug/bundle/macos/picarx-companion.app)
+    Finished 1 bundle at:
+        /Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri/target/debug/bundle/macos/picarx-companion.app
+
+exit 0
+
+# Rebuilt twice for the window-placement fix (commit 7991eb2); the native checks ran on the last build.
+$ pnpm tauri build --debug --bundles app   (after the fix)
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.43s
+       Built application at: /Users/danny/Documents/Apps/PiCar/picarx-companion/src-tauri/target/debug/picarx-companion
+    Finished 1 bundle at:
+exit 0
+$ cargo check --features m3-persistence   (src-tauri; the M3 setup branch that also calls the placement)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.44s (no warnings, no errors)
+$ open the bundle twice; System Events window frame
+23, 36, 1121, 704 (both launches; work area 1168 x 733 below a 22 pt menu bar)

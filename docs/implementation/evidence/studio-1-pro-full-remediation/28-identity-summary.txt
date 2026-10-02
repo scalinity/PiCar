@@ -1,0 +1,14 @@
+# Identity summary
+pack (Studio 1, historical):   2c1e54e477106b6b00dd986bd6e8ac5d056da50523ba27bf79e3cbf86be6289b  contract picar-studio-pack/1, chain s1-04
+pack (remediation):            7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a  contract picar-studio-pack/2, chain s1r-01, tessellation s1r-01, built at 04b7805
+  why it changed: contract 2 and the recorded source bindings (canonical closure hashes and verdicts, studio-chain.json, revision
+  registry, mesh hashes, display record); parts.glb is byte-identical (006eebfa02ec60c6abb9228e19ab84ded54c9dff9f8c019ed01209c0e7062f92),
+  s1r-01 reproduces s1-04's 18 closure/refusal files and closure-observations.json byte for byte, mesh bytes unchanged
+  (binSha256 79fb47f982ad...).
+presentation (Studio 1, derived after the fact): 0e26648a779d677332859a6deca5580f5f550194e490a8aba7fb79f5e8958e07
+presentation (remediation):    ee036e1a73f2349408883fe0a1c545aa0ceb19ff24c67316d69f61a422769c63  Blender 5.2.2 LTS (d13f752e3b9c), presentation kept
+  why it changed: the pack and the builder; stage.json, studio-materials.json and the presentation-owned state did not change.
+display record PX-V40-DEF-PI5: BRep afd18f9adcd7... unchanged; record now schema picar-studio-display-check/1, bound to
+  instructional artifact ff4f5415e698... and rpi5 S02-S08 closures by canonical hash.
+studio.mjs check (tracked pack): integrity PASS, freshness FRESH, presentation CURRENT, exit 0
+studio.mjs check on the Studio 1 pack: integrity PASS (frozen pair), freshness UNVERIFIABLE (no bindings recorded)

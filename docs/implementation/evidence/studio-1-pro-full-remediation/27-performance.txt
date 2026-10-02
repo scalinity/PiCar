@@ -1,0 +1,17 @@
+# Performance, re-measured under the F9 definitions (native debug bundle, native fullscreen, Pi 5 S02 replay)
+1168 x 729 CSS px at DPR 2, 236 draw calls, 172,122 triangles (the same scene and window as the Studio 1 measurement)
+
+Active frames (previous frame asked for the next, or the user moving the view; page visible), last 120 during the S02 replay:
+  60 fps, mean 16.7 ms, p95 18.0 ms, display period estimate 16.0 ms
+Load phases: manifest fetch 3.0 ms, GLB fetch 24.0 ms, verify (contract, pack ID, GLB SHA-256) 5.0 ms, decode 4.0 ms, build 0.0 ms
+  (WKWebView's performance.now() resolves to 1 ms)
+From the Studio page's first render this session (code loaded, pack not yet fetched): canvas 364.0 ms, first render 365.0 ms,
+  first frame drawn (next animation frame after the first render) 388.0 ms
+
+Historical Studio 1 evidence, kept as recorded and not comparable metric for metric: 57 fps, 17.5 ms mean, 23.0 ms p95,
+418 ms "load to first frame" (GLB 21 ms, decode 5 ms). Those intervals excluded any gap of 100 ms or more and included
+idle-to-active gaps under 100 ms; "load to first frame" ran from module evaluation to Canvas creation.
+What changed: the metric definitions (which intervals count; which marks bound the start-up time) and the implementation
+(the loader now hashes and validates the pack before decoding, the 5 ms verify phase; the frame loop renders the damping tail).
+The scene, draw calls and triangle count are identical, so the difference in frame time is not a scene change; under the new
+definition the S02 replay runs at the 60 Hz display cadence.

@@ -1,0 +1,19 @@
+$ npx playwright test -c playwright.legacy.config.ts   (VITE_M3_ENABLED=0: preservation.spec.ts and *.legacy.spec.ts, Chromium + WebKit)
+npm notice run picarx-companion@0.1.0 npx
+npm notice run 'playwright' test -c playwright.legacy.config.ts --reporter=list
+
+Running 10 tests using 1 worker
+
+  ✓   1 [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (271ms)
+  ✓   2 [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (214ms)
+  ✓   3 [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (186ms)
+  ✓   4 [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (902ms)
+  ✓   5 [chromium] › tests/browser/studio.legacy.spec.ts:12:1 › a legacy record stays valid for M3 migration after the Studio is used and left open (5.6s)
+  ✓   6 [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (370ms)
+  ✓   7 [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (306ms)
+  ✓   8 [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (287ms)
+  ✓   9 [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (763ms)
+  ✓  10 [webkit] › tests/browser/studio.legacy.spec.ts:12:1 › a legacy record stays valid for M3 migration after the Studio is used and left open (1.2s)
+
+  10 passed (11.6s)
+exit 0

@@ -1,0 +1,34 @@
+# Native validation: debug bundle (pnpm tauri build --debug --bundles app), macOS, legacy persistence mode (default features)
+# Driven by hand through computer use; right-button pans posted as CoreGraphics events (JXA); window captures with
+# screencapture -x -o -l<windowId>. Frontend in the bundle confirmed to be the remediated code (pack contract 2,
+# "Matched reference features"). Navigation used only Studio URLs and Home, so the owner's legacy setup record was not written.
+
+ 1 launch Studio                         PASS  pack 7dcd6252a32a loaded through the byte-verifying loader (Web Crypto in WKWebView)   captures/native-01-studio-tray.png
+ 2 S01                                   PASS  opens and plays
+ 3 S02                                   PASS  opens and plays; drawer shows the bound display check (449 mm3 microphone, studs to 2.8 mm3)
+ 4 playback                              PASS  plays to 3.4 s / 3.4 s
+ 5 scrub                                 PASS  drag to 1.4 s, then to the end
+ 6 select Pi 5-specific part             PASS  from the part list; inspector shows displayed shape PX-V40-DEF-PI5.display.brep (afd18f9adc) and checked shape PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep (ff4f5415e6), 25 of 33 matched with the 8 others named, this step's closure check   captures/native-02-inspector-displayed-and-checked.png
+ 7 switch to Zero 2 W                    PASS  selection cleared, inspector shows its hint, Frame part disabled
+ 8 focus (F)                             PASS  no error; the step plays on to 2.8 s / 2.8 s
+ 9 switch back to Pi 5                   PASS
+10 select a common part (Plate A, S01)   PASS
+11 retained highlight and focus          PASS  after switching to Zero 2 W Plate A stays selected and tinted; Frame part frames it   captures/native-03-common-part-kept-and-framed-on-zero2w.png
+12 manual pan                            PASS  right-button drag; camera manual ("Resume guided view")   captures/native-04-panned-before-resize.png
+13 resize                                PASS  window to its 1100 x 700 minimum; the panned view is kept
+14 enter fullscreen                      PASS  native fullscreen; the panned view is kept   captures/native-05-fullscreen-pan-kept.png
+15 exit fullscreen                       PASS  by a separate Escape press (step 17); the panned view is kept
+16 long Escape press                     PASS  Escape held 1.5 s with Plate A selected: selection cleared, still fullscreen
+17 selection + Escape                    PASS  first press cleared the selection only; a separate press left fullscreen
+18 performance HUD                       PASS  p opens it; labels state active frames, display period and the page-start marks   captures/native-06-fullscreen-s02-performance-hud.png
+19 leave Studio                          PASS  to Home three times
+20 re-enter Studio                       PASS  three times; viewport rebuilt with lighting, pack reused
+21 repeated board switching              PASS  eight rapid alternating clicks, then S02: renders at 60 fps, no error
+
+Observations (not F1-F11):
+- On macOS a right-button pan that starts over empty space clears the selection: contextmenu fires on right-button down, which
+  React Three Fiber reports as a missed click with no movement. Present in Studio 1 as well; recorded, not fixed.
+- "Resume guided view" restarting playback was suspected once and did not reproduce in two controlled attempts (guided and manual
+  camera, from the end of a step): the timeline stays put.
+- Window placement: every launch opened the window partly off-screen (1440 x 900 configured on a 1168 x 733 work area). Fixed
+  at the owner's request in commit 7991eb2; two later launches opened at (23, 36) 1121 x 704, centred. native-01 predates that fix.

@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-// Blender presentation identity self-test (F6). Works only on scratch copies of the tracked .blend; never writes a tracked
-// file. Needs Blender, so it is run on demand rather than in the unit suite:
-//   node digital-twin/tools/studio/presentation-selftest.mjs <scratch dir>
+// Blender presentation identity self-test (F6). Works only on a scratch copy of a .blend (the tracked one by default);
+// never writes a tracked file. The first two checks need a .blend holding objects outside the owned collections, such as
+// the Studio 1 project (git show d8b9bd4:digital-twin/presentation/blender/picar-studio.blend). Needs Blender, so it is
+// run on demand rather than in the unit suite:
+//   node digital-twin/tools/studio/presentation-selftest.mjs <scratch dir> [<source .blend>]
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -12,7 +14,7 @@ const BLENDER = '/Applications/Blender.app/Contents/MacOS/Blender';
 const dir = path.resolve(process.argv[2] ?? fail('usage: presentation-selftest.mjs <scratch dir>'));
 fs.mkdirSync(dir, { recursive: true });
 const blend = path.join(dir, 'selftest.blend');
-fs.copyFileSync(path.join(ROOT, 'digital-twin/presentation/blender/picar-studio.blend'), blend);
+fs.copyFileSync(process.argv[3] ? path.resolve(process.argv[3]) : path.join(ROOT, 'digital-twin/presentation/blender/picar-studio.blend'), blend);
 const results = [];
 function fail(message) { throw Error(message); }
 function expect(label, ok, detail = '') { results.push({ label, ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'} ${label}${detail ? ` (${detail})` : ''}`); }
