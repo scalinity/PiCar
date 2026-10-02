@@ -18,16 +18,23 @@ export type StepEntry = {
   assembly: { gate: string; status: string; admittedRows: number; requiredRows: number };
   introducedInstanceIds: string[]; introducedZeroSolidInstanceIds: string[]; placements: Record<string, Pose>; candidatePlacements: boolean;
   recipes: Recipe[]; blockers: { id: string; connectionIds?: string[] }[]; conflicts: { instances: string[]; volumeMm3: number }[];
-  displayChecks: { definitionId: string; instanceId: string; volumeMm3: number }[];
+  displayChecks: DisplayCheck[];
   dependencyWarnings: { printedNumber: number; text: string }[]; limitations: string[]; approximationFlags: string[];
-  claims: Record<string, string>; source: { kind: string; file?: string; sha256?: string; closureVerify?: string };
+  claims: Record<string, string>; source: { kind: string; file?: string; sha256?: string; closureVerify?: string; closureRfc8785Sha256?: string };
   camera: StudioCamera | null;
 };
 export type TrayPose = Pose & { orientation: 'installed' | 'part-local'; firstStep: number };
 export type VariantEntry = { graphHash: string; floorYM: number; tray: { label: string; instances: Record<string, TrayPose>; camera: StudioCamera }; steps: StepEntry[] };
 export type MaterialSpec = { label: string; basis: string; baseColor: Vec3; metallic: number; roughness: number; clearcoat?: number; clearcoatRoughness?: number };
-export type DisplayDetail = { label: string; source: string; artifact: { path: string; sha256: string }; vendorCrossCheck?: { parts: { part: string; centreOffsetXYMm?: [number, number] }[] } };
-export type DefinitionEntry = { name: string; kind: string; approximation: string; artifact: { path: string; sha256: string }; boundsM: { min: Vec3; max: Vec3 }; display?: DisplayDetail };
+// A registered display model's check against one placed state: CHECKED against that exact closure, or NOT_CHECKED.
+export type DisplayCheck = { definitionId: string; status: 'CHECKED' | 'NOT_CHECKED'; closureRfc8785Sha256?: string; overlaps: { instanceId: string; volumeMm3: number }[] };
+export type VendorPart = { part: string; footprintIoU?: number; centreOffsetXYMm?: [number, number]; vendorMatch?: null };
+export type DisplayDetail = {
+  label: string; source: string; artifact: { path: string; sha256: string }; record: { path: string; sha256: string; schema: string };
+  relation: { mountingHoles?: { maxCentreDeviationMm: number | null } }; vendorCrossCheck?: { method: string; parts: VendorPart[] };
+};
+export type DisplayWithheld = { label: string; artifact: { path: string; sha256: string }; problems: string[] };
+export type DefinitionEntry = { name: string; kind: string; approximation: string; artifact: { path: string; sha256: string }; boundsM: { min: Vec3; max: Vec3 }; display?: DisplayDetail; displayWithheld?: DisplayWithheld };
 export type InstanceEntry = { definitionId: string; name: string; role: string; variants: StudioVariant[] };
 export type LightSpec = { id: string; azimuthDeg: number; elevationDeg: number; distanceM: number; sizeM: [number, number]; color: Vec3; runtimeIntensity: number };
 export type StudioManifest = {

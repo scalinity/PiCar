@@ -1,0 +1,10 @@
+# F1 on real data: the chain's instructional Pi 5 artifact changed under the old s1r-01 tessellation (one byte appended), then restored
+$ node digital-twin/tools/studio/studio.mjs check
+{"integrity":"PASS","freshness":{"status":"STALE","problems":["ARTIFACT_CHANGED PX-V40-DEF-PI5 chain:remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep expected=ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c actual=29e02622af8548ba35f33f26d925d87db738cfc3821f50c5622892adc7282834"]}}
+
+$ node digital-twin/tools/studio/studio.mjs pack --chain s1r-01 --tessellation s1r-01
+PACK_CHECK_FAILED tessellation-binding: ARTIFACT_CHANGED PX-V40-DEF-PI5 chain:remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep expected=ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c actual=29e02622af8548ba35f33f26d925d87db738cfc3821f50c5622892adc7282834
+exit 1
+artifact restored byte for byte
+tracked pack untouched
+{"integrity":"PASS","freshness":"FRESH"}

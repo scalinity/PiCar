@@ -1,0 +1,89 @@
+# Regeneration under new labels (s1-04 is never reused). Frozen M4 env: uv sync --frozen --group m4 --python 3.12.14 --no-install-package twin-cad (CPython 3.12.14, CadQuery 2.8.0)
+
+## chain s1r-01 (HEAD ce117fd at run time)
+$ node digital-twin/tools/studio/studio.mjs chain --python <env>/bin/python --label s1r-01
+generate exit 0
+verify exit 0
+remediate exit 0
+correspondence exit 0
+anchor_generate exit 0
+anchor_verify exit 0
+anchor_boards exit 0
+anchor_correspondence exit 0
+engagement exit 0
+engagement_verify exit 0
+usb exit 0
+usb_verify exit 0
+camera exit 0
+camera_verify exit 0
+chain exit 0
+hat_verify exit 0
+step05_verify exit 0
+step06_verify exit 0
+step07_verify exit 0
+step08_verify exit 0
+step09_verify exit 0
+closure_verify exit 0
+exit 0
+
+## s1r-01 against s1-04, byte for byte
+identical rpi-zero-2-w-S01-closure.json
+identical rpi-zero-2-w-S02-closure.json
+identical rpi-zero-2-w-S03-closure.json
+identical rpi-zero-2-w-S04-closure.json
+identical rpi-zero-2-w-S05-closure.json
+identical rpi-zero-2-w-S06-closure.json
+identical rpi-zero-2-w-S07-closure.json
+identical rpi-zero-2-w-S08-closure.json
+identical rpi-zero-2-w-S09-blocked.json
+identical rpi5-S01-closure.json
+identical rpi5-S02-closure.json
+identical rpi5-S03-closure.json
+identical rpi5-S04-closure.json
+identical rpi5-S05-closure.json
+identical rpi5-S06-closure.json
+identical rpi5-S07-closure.json
+identical rpi5-S08-closure.json
+identical rpi5-S09-blocked.json
+identical closure-observations.json
+
+{
+ "contract": "picar-studio-chain/1",
+ "label": "s1r-01",
+ "head": "ce117fde9194dabbcef26b0813d00773aedc9ed3",
+ "mode": "source-mode dev loop, not an M7 qualification",
+ "revisionRegistry": {
+  "path": "digital-twin/validation/expected/m7/instructional-revisions/revision-artifacts.json",
+  "sha256": "1282efda8dc59facc4b05d4120c8cc3f0fac8024b7afecaace28664f89566998"
+ },
+ "closureObservationsSha256": "25752ccd7f19530f0b6287caa004cac75a81290531c330a52ce969203ac5d283"
+}
+
+## display record (twin_cad.fidelity.pi5 --chain s1r-01 --vendor-crosscheck)
+{"solids": 35, "sha256": "afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a"}
+exit 0
+display BRep afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a unchanged; overlap volumes and vendor cross-check unchanged (jq diff against the Studio 1 record: no difference)
+
+## tessellation s1r-01
+{"contract":"picar-studio-tessellation/2","chain":{"closureObservationsSha256":"25752ccd7f19530f0b6287caa004cac75a81290531c330a52ce969203ac5d283","label":"s1r-01","revisionRegistrySha256":"1282efda8dc59facc4b05d4120c8cc3f0fac8024b7afecaace28664f89566998","studioChainSha256":"e222b43a7642dee6f76cc0a0787a06110fc7da288635e82c0160b15522bcc878"},"binSha256":"79fb47f982ad0c8d8bd05780904b16eb122f627a7ae972afe8fd9d9f6692ef88","definitions":21}
+binSha256 equals tessellation s1-04 (79fb47f982ad...): mesh bytes unchanged
+
+## pack (HEAD 04b7805)
+$ node digital-twin/tools/studio/studio.mjs pack --chain s1r-01 --tessellation s1r-01
+{"packId":"7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a","glbBytes":1697156,"glbSha256":"006eebfa02ec60c6abb9228e19ab84ded54c9dff9f8c019ed01209c0e7062f92","checks":200,"definitions":21,"instances":49}
+parts.glb byte-identical to the Studio 1 pack's GLB
+
+$ node digital-twin/tools/studio/studio.mjs check
+{
+ "packId": "7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a",
+ "integrity": {
+  "status": "PASS",
+  "problems": [],
+  "notes": []
+ },
+ "freshness": {
+  "status": "FRESH",
+  "problems": []
+ }
+}
+exit 0

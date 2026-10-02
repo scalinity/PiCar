@@ -1,0 +1,28 @@
+# F1 on real data: chain s1r-01, closure rpi5-S02 changed after closure_verify passed it (one placement moved 0.5 mm), then restored byte for byte
+
+$ node digital-twin/tools/studio/studio.mjs check    # tracked pack, closure changed after PASS
+{
+ "packId": "7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a",
+ "integrity": {
+  "status": "PASS",
+  "problems": [],
+  "notes": []
+ },
+ "freshness": {
+  "status": "STALE",
+  "problems": [
+   "CLOSURE_CHANGED rpi5-S02 chain/closures/rpi5-S02-closure.json expected=0f7776de0ac18486f7091dad558e018709bbdfce183f8e70789ee2af1cfbf934 actual=31cb472834453366cd9ab7cd8977fef862fd624c98bf5e0c888bbdf77ab95669",
+   "CLOSURE_VERIFY_MISMATCH variant=rpi5 step=2 expected=2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab actual=4a2f7800345fa33d7831a0c595dcb5a75ee9e9cde5d5e6a4dbb2cac595d131d1"
+  ]
+ }
+}
+exit 3
+
+$ node digital-twin/tools/studio/studio.mjs pack --chain s1r-01 --tessellation s1r-01    # old verification + new closure
+PACK_CHECK_FAILED closure-binding:rpi5-S02: CLOSURE_VERIFY_MISMATCH variant=rpi5 step=2 expected=2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab actual=4a2f7800345fa33d7831a0c595dcb5a75ee9e9cde5d5e6a4dbb2cac595d131d1
+exit 1
+closure restored byte for byte
+tracked pack untouched by the refused build
+
+$ node digital-twin/tools/studio/studio.mjs check    # restored
+{"packId":"7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a","integrity":"PASS","freshness":"FRESH"}

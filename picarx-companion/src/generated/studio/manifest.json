@@ -1,6 +1,6 @@
 {
- "packId": "2c1e54e477106b6b00dd986bd6e8ac5d056da50523ba27bf79e3cbf86be6289b",
- "contract": "picar-studio-pack/1",
+ "packId": "7dcd6252a32a89b6f87f45dd25c263d91a902111341f6c5a274f3dd8851efa0a",
+ "contract": "picar-studio-pack/2",
  "classification": {
   "capability": "provisionalReview",
   "label": "Assembly Studio preview pack, not a G-GEOMETRY runtime pack",
@@ -34,30 +34,37 @@
   "poses": "rotation C R C^T, translation 0.001 C t, quaternion [x,y,z,w]"
  },
  "readinessKinds": {
-  "PREVIEW_SOURCE_REVALIDATED": "closure produced by the source-mode chain and passed by the independent closure verifier for this pack; not an M7 qualification",
+  "PREVIEW_SOURCE_REVALIDATED": "closure produced by the source-mode chain and passed by the independent closure verifier at this exact canonical closure hash; not an M7 qualification",
   "PREVIEW_BLOCKED_RELATION": "placements verified, a required relationship unresolved; review mode",
   "REVIEW_REFUSED_CANDIDATE": "closure refused by the overlap check; the refused record's candidate placements are shown for review only",
   "UNAVAILABLE": "no source record; parts stay in the tray"
  },
  "source": {
   "repository": {
-   "head": "d8b95f2b7fbe8cc67c7b38e8272b662c6ac804ca",
-   "branch": "studio/s1-assembly-studio"
+   "head": "04b78057d8a52009e37f29df83cd44258c241e52",
+   "branch": "studio/s1-pro-full-remediation"
   },
   "chain": {
-   "label": "s1-04",
+   "label": "s1r-01",
    "mode": "source-mode dev loop, not an M7 qualification",
    "closureVerify": {
     "status": "PASS",
     "sha256": "25752ccd7f19530f0b6287caa004cac75a81290531c330a52ce969203ac5d283"
+   },
+   "studioChain": {
+    "sha256": "e222b43a7642dee6f76cc0a0787a06110fc7da288635e82c0160b15522bcc878"
    }
   },
   "tessellation": {
-   "label": "s1-04",
-   "meshesSha256": "7e15e70235cf823859745e21716f1d8975e119b6272c098aae25c486ebeb99c3",
+   "label": "s1r-01",
+   "meshesSha256": "c6361901932a36acf9cee36fc226fb1aecdde88aded96d0772274bcbc8cfc735",
    "binSha256": "79fb47f982ad0c8d8bd05780904b16eb122f627a7ae972afe8fd9d9f6692ef88",
    "linearDeflectionMm": 0.02,
    "angularDeflectionRad": 0.15
+  },
+  "revisionRegistry": {
+   "path": "digital-twin/validation/expected/m7/instructional-revisions/revision-artifacts.json",
+   "sha256": "1282efda8dc59facc4b05d4120c8cc3f0fac8024b7afecaace28664f89566998"
   },
   "inputs": {
    "digital-twin/assemblies/v40/presentation/studio/stage.json": "bf2d2278e7d75a59976cb4f72882032fdc78245d8e45689174ab9b0972ea8723",
@@ -439,6 +446,7 @@
     "sha256": "f685c1a07cf87d4fe7da7703366fd939681a69e654209aeaff7355f019485959",
     "bytes": 2565
    },
+   "meshSha256": "216b3bd9286e418401afeb3ea2252ef867c149c384f775b86292a6f0cb177e59",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -470,6 +478,7 @@
     "sha256": "679f73c27d72a64c328825620363f6cc814823eb81cb28c04b0872f05846da83",
     "bytes": 26279
    },
+   "meshSha256": "a4a90831045218259c88efe2c2e72c18189074175f310fbb96903cb1af2f5024",
    "approximation": "M7 additive instructional revision: photo-derived estimate, non-engineering",
    "boundsM": {
     "min": [
@@ -501,6 +510,7 @@
     "sha256": "abfc6198cb2f02f5c654b0ab67dbc5ebfd864c5c7fd9cbae78619e53a3bd531f",
     "bytes": 15730
    },
+   "meshSha256": "a56a2fad7d6720bfcb68b4264807f9797f70bf1abf951120d8fd79ab13e4cef1",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -532,6 +542,7 @@
     "sha256": "b6612c4e0a4f22ac5885b3fd139e5bc90a65561f06a18a0e155d1ae59502b8de",
     "bytes": 39101
    },
+   "meshSha256": "b611efcfb9156bfddae1d66902011f369f6e7caa7cf3e045f07ccd5bd0265074",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -563,6 +574,7 @@
     "sha256": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2",
     "bytes": 39098
    },
+   "meshSha256": "6dd6110269b29c725fbe7418f2148c48119b2d47dc4b01137c0f33414f91044a",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -594,6 +606,7 @@
     "sha256": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645",
     "bytes": 40896
    },
+   "meshSha256": "fa0712fcdcdbe52efa313b6b78d3188ea42333693c76581a117c337647c658b2",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -625,6 +638,7 @@
     "sha256": "d5595a11943b9f48e457035b7ec7db7c300450290570f8257797d3204e0b7bc9",
     "bytes": 39113
    },
+   "meshSha256": "2db6641fcb73805d5c8af44d6ab7e85d2dab6ca8605abd5bfedba327d2f4f9d2",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -656,6 +670,7 @@
     "sha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0",
     "bytes": 15449
    },
+   "meshSha256": "9ed557bec2750a827d3a03f81b6c2091b05acabf721696b61dc2b4a7defd1027",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -687,6 +702,7 @@
     "sha256": "44d15801ffa667dcd9d41899b3585d721e34db728c44e351d2fe781aade1051e",
     "bytes": 7091
    },
+   "meshSha256": "77254ef1576c6936401febf43f77b53a74cafbb0f163b3e6e20a2e3602d4fc4f",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -718,6 +734,7 @@
     "sha256": "81c967b6db28ff4c5b9fdacc21ab2e3ac6f8e1e20b2a7b4e0a5455577c955c95",
     "bytes": 15584
    },
+   "meshSha256": "deccb077160a532b045fe57ce0c55ab79eb47cc0a985c9a4ab5d107498072b70",
    "approximation": "Studio fidelity revision: hexagonal nylon standoff or pan-head screw on the accepted M5 dimensions (V40 illustration basis), non-engineering",
    "boundsM": {
     "min": [
@@ -749,6 +766,7 @@
     "sha256": "c8070624580bcadc7977fc7474e3cbb63050c56ede728aab4e481d590a7b2f53",
     "bytes": 4543
    },
+   "meshSha256": "5e26906533466fe94c1ec3cc0416f501f78e1c3f8e3c86e19fee61cc756f76dc",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -792,6 +810,7 @@
     "sha256": "a24177197ccbaef8b6568a50b45cf03c3342a801a574272d093460c4a147a383",
     "bytes": 4540
    },
+   "meshSha256": "773a5f290d966f055ab66409a2cd0412739380bda35e22ce9d12c9c68b34ba18",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -835,6 +854,7 @@
     "sha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
     "bytes": 28733
    },
+   "meshSha256": "8e48e494dd5009ffca95aac962c5dd29d925de3d2aa07ae020e004216eee3b43",
    "approximation": "M7 instructional board revision 2 generated by the chain: presentation estimate, non-engineering",
    "boundsM": {
     "min": [
@@ -1417,7 +1437,18 @@
      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.brep",
      "sha256": "afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a"
     },
+    "meshSha256": "b5d495409dff212d046a15268ff58ded470e21a086aefcee011ec5979b0e1a6a",
+    "record": {
+     "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json",
+     "sha256": "5d1c94e887f5663d220f13a3207d70db76e1eed18b0f75e109e7257b334f800e",
+     "schema": "picar-studio-display-check/1"
+    },
     "relation": {
+     "instructionalArtifact": {
+      "definitionId": "PX-V40-DEF-PI5",
+      "path": "chain:remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep",
+      "sha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c"
+     },
      "pcbBoxMm": [
       0,
       0,
@@ -1426,24 +1457,48 @@
       56,
       1.6
      ],
-     "mountingHolesMm": [
-      [
-       3.5,
-       3.5
+     "mountingHoles": {
+      "method": "vertical cylinder features measured on each artifact, centres in the shared board frame",
+      "displayRadiusMm": 1.35,
+      "instructionalRadiusMm": 1.4,
+      "display": [
+       [
+        3.5,
+        3.5
+       ],
+       [
+        3.5,
+        52.5
+       ],
+       [
+        61.5,
+        3.5
+       ],
+       [
+        61.5,
+        52.5
+       ]
       ],
-      [
-       61.5,
-       3.5
+      "instructional": [
+       [
+        3.5,
+        3.5
+       ],
+       [
+        3.5,
+        52.5
+       ],
+       [
+        61.5,
+        3.5
+       ],
+       [
+        61.5,
+        52.5
+       ]
       ],
-      [
-       3.5,
-       52.5
-      ],
-      [
-       61.5,
-       52.5
-      ]
-     ],
+      "maxCentreDeviationMm": 0
+     },
      "instructionalSolids": [
       {
        "instructionalSolid": 0,
@@ -1584,7 +1639,7 @@
       }
      ]
     },
-    "overlapsChain": "s1-04",
+    "overlapsChain": "s1r-01",
     "vendorCrossCheck": {
      "vendorSolids": 2689,
      "method": "footprint IoU of each detail part with the best-matching vendor solid; numbers only",
@@ -2031,6 +2086,7 @@
     "sha256": "2e0347dbef81f3d007fdf4d5278da74ac9cf1357e821ca50fab975e6fdbb40a0",
     "bytes": 152497
    },
+   "meshSha256": "04262cea7d4b819d271b04c886c7bc6d321a40f989a6c2377bc6335aab4b62a5",
    "approximation": "Studio fidelity revision: Plate A outline rebuilt from the calibrated owner photograph as mirror-symmetric lines and true arcs; holes, slots, flanges and walls unchanged, non-engineering",
    "boundsM": {
     "min": [
@@ -2062,6 +2118,7 @@
     "sha256": "fb5d891f40c150dbac584f81f77f9a3c93da73f870aa695fa40500aaaeb47c0a",
     "bytes": 17849
    },
+   "meshSha256": "b8ad3a33ee7592c9cd0634fab8576354996dc8e8a0f441b7ec5fd86ea22b8f09",
    "approximation": "M7 additive instructional revision: photo-derived estimate, non-engineering",
    "boundsM": {
     "min": [
@@ -2093,6 +2150,7 @@
     "sha256": "95ed4a3870e5b4b159eae458f38cdde30c536077474053c7ed737fc3b5f90e32",
     "bytes": 4061
    },
+   "meshSha256": "741f75755d19330d025fd2d3568f1250fd8ad41f642a527fe1d219273e227c29",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -2130,6 +2188,7 @@
     "sha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a",
     "bytes": 34813
    },
+   "meshSha256": "45c2c16c86cf7a0880f7aa0bbd0cda60d330a23aa486f9d8134f35719a43d095",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -2221,6 +2280,7 @@
     "sha256": "18e52787eca8bbab49f0a0af9ef14f648dc87086ee1db1a17b12ae20df845841",
     "bytes": 4553
    },
+   "meshSha256": "d9e694191bb730c18af78982754ae0c2cf1ab1318b6b8310b0d58190e30bfec7",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -2252,6 +2312,7 @@
     "sha256": "85b56dab1fbf2ad9b1729b6d910813f53783bcf1f26a4365bcdd71bb72b7656f",
     "bytes": 18881
    },
+   "meshSha256": "6162b006ab545c892bbcd8a2fe632b2c45c98a4dcab9160b50c509aa012da82f",
    "approximation": "M7 additive instructional revision: photo-derived estimate, non-engineering",
    "boundsM": {
     "min": [
@@ -2283,6 +2344,7 @@
     "sha256": "8fd263478941111924fa0ee96c6b0ca027c3fcc188d24f9a37c310ad45b7f51e",
     "bytes": 5404
    },
+   "meshSha256": "f81a727ed8c0ad9254e1d3a491e37aa13dc9985aaa57dbf0e05b009f665f6d34",
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
@@ -2320,6 +2382,7 @@
     "sha256": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17",
     "bytes": 23021
    },
+   "meshSha256": "619a857a9b1d24666bfc697299d92702b5be8e45f1effeaef42f6810828361a7",
    "approximation": "M7 instructional board revision 2 generated by the chain: presentation estimate, non-engineering",
    "boundsM": {
     "min": [
@@ -3922,6 +3985,7 @@
       "file": "chain/closures/rpi5-S01-closure.json",
       "sha256": "c9f0235d4cd12a237584df7337293f0eccdd2c81ebef95d4cccd9dfe48fcdab9",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "622f263d8c22f0213ac2c73f4de7860d40701399618991d80c5727c7f10d82c7",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -4168,28 +4232,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [
@@ -4418,6 +4484,7 @@
       "file": "chain/closures/rpi5-S02-closure.json",
       "sha256": "0f7776de0ac18486f7091dad558e018709bbdfce183f8e70789ee2af1cfbf934",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "2da00440ddfeb0337f9e898741330fb239155880c6e60ce70b7ccaf948f53aab",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -4659,28 +4726,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [],
@@ -4728,6 +4797,7 @@
       "file": "chain/closures/rpi5-S03-closure.json",
       "sha256": "f501baf1a98f4e45b01888ee6042b6acb792af4616eb6b1fb698d3a1c9aef7e9",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "3786dd77caf4e6cc0e20be841702944690a2f6baafa490ef3d0606c7d9586892",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -5038,28 +5108,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [
@@ -5267,6 +5339,7 @@
       "file": "chain/closures/rpi5-S04-closure.json",
       "sha256": "5cfa61d1fbca021d46616dd830f868cc51a5fae8d407cca41e7269b50d442709",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -5768,28 +5841,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [
@@ -6281,6 +6356,7 @@
       "file": "chain/closures/rpi5-S05-closure.json",
       "sha256": "2bf1655ddf2b82b72a1041fce9a292767aeab4cd724a2abfe4733f7c8d572ec1",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -6769,28 +6845,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [],
@@ -6852,6 +6930,7 @@
       "file": "chain/closures/rpi5-S06-closure.json",
       "sha256": "0c51c64a976cc34e869fda2afa4744c89cea9f5411093c46e7ced57748a8ab73",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -7351,28 +7430,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [
@@ -7480,6 +7561,7 @@
       "file": "chain/closures/rpi5-S07-closure.json",
       "sha256": "76ce90825500b888ec80b9690cbdafb1dde497f474634d3cb7e41ac5c2b3df39",
       "status": "BLOCKED",
+      "closureRfc8785Sha256": "b22ccf283515d428554bd2900f24e4d9c7f481ec7cc3b7db3bc781170d8f196c",
       "closureVerify": "BLOCKED"
      },
      "dependencyWarnings": [],
@@ -8050,28 +8132,30 @@
      "displayChecks": [
       {
        "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
-       "volumeMm3": 0.1778
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
-       "volumeMm3": 1.2932
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
-       "volumeMm3": 1.849
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
-       "volumeMm3": 2.8276
-      },
-      {
-       "definitionId": "PX-V40-DEF-PI5",
-       "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
-       "volumeMm3": 448.992
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+         "volumeMm3": 0.1778
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+         "volumeMm3": 1.2932
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+         "volumeMm3": 1.849
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+         "volumeMm3": 2.8276
+        },
+        {
+         "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+         "volumeMm3": 448.992
+        }
+       ]
       }
      ],
      "recipes": [
@@ -8302,6 +8386,7 @@
       "file": "chain/closures/rpi5-S08-closure.json",
       "sha256": "ed16c9bbd7a85f2581c3b5defc452fdda96a427fe9717b079667daa5e000f27c",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "59fb716ef052cc067a6883159dfbb5af7e4a1a8c5ee4f5c9d25e14a9ec7786aa",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [
@@ -8926,7 +9011,13 @@
       }
      },
      "candidatePlacements": true,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-PI5",
+       "status": "NOT_CHECKED",
+       "overlaps": []
+      }
+     ],
      "recipes": [
       {
        "instanceId": "PX-V40-INS-ULTRASONIC-001",
@@ -9165,6 +9256,7 @@
       "kind": "refused-closure",
       "file": "chain/closures/rpi5-S09-blocked.json",
       "sha256": "697813fcc18d08ae3408d1a86d6a50ca327641dc53b6d0fa100197d92ceb19bb",
+      "verifierListed": true,
       "stage": "closure",
       "reason": "FORBIDDEN_PRESENTATION_PENETRATION",
       "candidateRecord": "chain/steps/rpi5-S09-record.json",
@@ -10272,6 +10364,7 @@
       "file": "chain/closures/rpi-zero-2-w-S01-closure.json",
       "sha256": "a42a291f2b6b4084d4a3aba6cff573c66a20738a2572b1ada73fa70728c52f6e",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "07e86fdad9297cc41d3bbe807bbae6d3d9d665bfc5b5628a2c7833d2c1ea32f8",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -10604,6 +10697,7 @@
       "file": "chain/closures/rpi-zero-2-w-S02-closure.json",
       "sha256": "4baa3deda975bbee869bd9d674477cec7ae8d3bfa6944a8a9bf60556e5d66722",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "fb6612127eb1eaa733950a0e84535d7b242e1b2780706adb27e1a0441b289153",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -10846,6 +10940,7 @@
       "file": "chain/closures/rpi-zero-2-w-S03-closure.json",
       "sha256": "7d0deb908537a5e9e36d4361d7f4b868dc9660fc7dff5996027b37600edc5764",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "dd62c76ea1a9a34f710c650852628867d4d98fcac35e8f711a26266797098eae",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -11317,6 +11412,7 @@
       "file": "chain/closures/rpi-zero-2-w-S04-closure.json",
       "sha256": "2ae8cdd29aa59551536d886d0f72ff1a11c4a924316002c713e6a76cc51effc2",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -12263,6 +12359,7 @@
       "file": "chain/closures/rpi-zero-2-w-S05-closure.json",
       "sha256": "50be01ef43ff9aac5444f3774d1fc6bf937af3c101c44acde0e5f7418a09e5d3",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -12766,6 +12863,7 @@
       "file": "chain/closures/rpi-zero-2-w-S06-closure.json",
       "sha256": "ac11dbeb983a303cc473c20cbc209b0c4db7eee98ee8cb21c27b9b9946b9fa0b",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [],
@@ -13326,6 +13424,7 @@
       "file": "chain/closures/rpi-zero-2-w-S07-closure.json",
       "sha256": "c12bdb9229d3ef7c1669fc786e86a42740a5e4b89d272c8004d87af5b55658b8",
       "status": "BLOCKED",
+      "closureRfc8785Sha256": "747d5cae3e6dfc7a33a6ce9946217e10303aa682d3e2e96f68a1115cdc9e48be",
       "closureVerify": "BLOCKED"
      },
      "dependencyWarnings": [],
@@ -14080,6 +14179,7 @@
       "file": "chain/closures/rpi-zero-2-w-S08-closure.json",
       "sha256": "25275a62add909609d23ce491ff73c505d56e8334399a21a53147fb3f15a9888",
       "status": "COMPLETE",
+      "closureRfc8785Sha256": "b7647dff627305624f8edf09ec7cee2f18069e03ba9eefaf0dba162ec5e87fa9",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [
@@ -14901,6 +15001,7 @@
       "kind": "refused-closure",
       "file": "chain/closures/rpi-zero-2-w-S09-blocked.json",
       "sha256": "b7c34582320e2a5680a563b75f420701c8a9ef3e60d62f48a8b0dcedbb5ea3cd",
+      "verifierListed": true,
       "stage": "closure",
       "reason": "FORBIDDEN_PRESENTATION_PENETRATION",
       "candidateRecord": "chain/steps/rpi-zero-2-w-S09-record.json",
@@ -14937,17 +15038,25 @@
   }
  },
  "validation": {
-  "checks": 178,
+  "checks": 200,
   "failed": 0,
+  "withheld": [],
   "summary": [
+   "chain-record",
+   "tessellation-binding",
+   "revision-registry",
+   "closure-binding",
+   "refusal-listed",
+   "verified-closures-present",
    "regions",
    "display",
+   "display-binding",
    "bounds",
-   "glb",
    "proper-rotations",
    "recipe",
    "basis-roundtrip",
-   "mount-feature"
+   "mount-feature",
+   "contract"
   ]
  }
 }

@@ -29,15 +29,22 @@ function displaySummary(display: DisplayDetail): string {
   return `A detailed model drawn from ${display.source.split(' (')[0]}.${agreement}`;
 }
 
-// Display-detail checks: large overlaps are findings; stud contacts in mounting holes are the hole-clearance class M7 records.
+// Display-detail checks: large overlaps are findings; stud contacts in mounting holes are the hole-clearance class M7
+// records. A state the detailed model was never checked against says so, rather than reading as "no overlaps".
 function displayNotes(pack: LoadedPack, entry: StepEntry): string[] {
   const notes: string[] = [];
-  const big = entry.displayChecks.filter((c) => c.volumeMm3 > 10);
-  for (const c of big) {
-    notes.push(`Detailed view: the ${pack.manifest.instances[c.instanceId].name} overlaps the detailed ${pack.manifest.definitions[c.definitionId].name.split(';')[0]} by ${Math.round(c.volumeMm3)} mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.`);
+  for (const check of entry.displayChecks) {
+    const model = pack.manifest.definitions[check.definitionId].name.split(';')[0];
+    if (check.status === 'NOT_CHECKED') {
+      notes.push(`Detailed view: the detailed ${model} was not checked against this state, so any overlap it has here is unmeasured.`);
+      continue;
+    }
+    for (const c of check.overlaps.filter((o) => o.volumeMm3 > 10)) {
+      notes.push(`Detailed view: the ${pack.manifest.instances[c.instanceId].name} overlaps the detailed ${model} by ${Math.round(c.volumeMm3)} mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.`);
+    }
+    const small = check.overlaps.filter((o) => o.volumeMm3 <= 10);
+    if (small.length) notes.push(`Standoff studs touch the mounting-hole walls (up to ${Math.max(...small.map((c) => c.volumeMm3)).toFixed(1)} mm³), the hole-clearance case the assembly checks already record.`);
   }
-  const small = entry.displayChecks.filter((c) => c.volumeMm3 <= 10);
-  if (small.length) notes.push(`Standoff studs touch the mounting-hole walls (up to ${Math.max(...small.map((c) => c.volumeMm3)).toFixed(1)} mm³), the hole-clearance case the assembly checks already record.`);
   return notes;
 }
 
