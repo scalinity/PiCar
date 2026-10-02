@@ -5,11 +5,13 @@ import { navigate, studioHref, type StudioVariant } from '../lib/router';
 import { loadPack } from '../features/assembly-3d/assets/pack';
 import { timelineFor } from '../features/assembly-3d/motion/evaluate';
 import { StudioScene, getViewport } from '../features/assembly-3d/scene/StudioScene';
+import { owned } from '../features/assembly-3d/scene/resources';
 import {
   focusSelection, getStudioState, pause, play, resetCamera, seek, select, toggleDrawer, togglePerf,
 } from '../features/assembly-3d/state/studio-store';
 import { perf, perfSnapshot } from '../features/assembly-3d/state/perf';
 import { setFullscreen, useFullscreen } from '../features/assembly-3d/state/fullscreen';
+import { escapePresses } from '../features/assembly-3d/state/escape';
 import { isTauri } from '@tauri-apps/api/core';
 import { CameraBar, Dock, Drawer, Header, PerfHud } from '../features/assembly-3d/ui/StudioChrome';
 import '../styles/studio.css';
@@ -45,26 +47,19 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
         case 'f': case 'F': focusSelection(); break;
         case 'i': case 'I': toggleDrawer(); break;
         case 'p': case 'P': togglePerf(); break;
-        case 'Escape': if (s.selection) select(null); else void setFullscreen(false, el); break;
         default: return;
       }
     };
     window.addEventListener('keydown', onKey);
-    // In a native macOS fullscreen window AppKit consumes Escape's keydown (cancelOperation:); its keyup still
-    // arrives, so Escape also acts on keyup unless the keydown was already handled.
-    let escapeHandledAt = 0;
-    const markEscape = (e: KeyboardEvent) => { if (e.key === 'Escape') escapeHandledAt = performance.now(); };
-    const onKeyUp = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape' || performance.now() - escapeHandledAt < 500) return;
-      const s = getStudioState();
-      if (s.selection) select(null); else void setFullscreen(false, el);
-    };
-    window.addEventListener('keydown', markEscape);
-    window.addEventListener('keyup', onKeyUp);
+    // One physical Escape press, one action: clear the selection if there is one, otherwise leave fullscreen. The
+    // keyup acts only for a press whose keydown never arrived (AppKit consumes it in a native fullscreen window).
+    const escape = escapePresses(() => { if (getStudioState().selection) select(null); else void setFullscreen(false, el); });
+    window.addEventListener('keydown', escape.keydown);
+    window.addEventListener('keyup', escape.keyup);
     if (diagnostics) {
       (window as unknown as { __studio?: unknown }).__studio = {
         packId: pack.manifest.packId, variant, step, duration: timeline.duration,
-        state: getStudioState, perf: perfSnapshot, viewport: getViewport,
+        state: getStudioState, perf: perfSnapshot, viewport: getViewport, owned,
         camera: () => { const vp = getViewport(); return vp ? { position: vp.camera.position.toArray(), target: vp.controls.target.toArray(), aspect: vp.camera.aspect } : null; },
         instance: (id: string) => { const vp = getViewport(); const o = vp?.scene.getObjectByName(id); return o ? { position: o.position.toArray(), quaternion: o.quaternion.toArray() } : null; },
         // Whether the instance in the active scene renders with the selection tint.
@@ -75,7 +70,7 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
         },
       };
     }
-    return () => { window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', markEscape); window.removeEventListener('keyup', onKeyUp); };
+    return () => { window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); };
   };
 
   return (

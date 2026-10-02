@@ -1,0 +1,15 @@
+# F10 GPU resource ownership
+
+## unit: disposal spies and the ownership registry
+ ✓ tests/studio/resources.test.ts > releases every board material and the key light shadow, and never the pack-cached geometry or source material 3ms
+ ✓ tests/studio/resources.test.ts > releases an owner once and removes it from the live registry 0ms
+      Tests  2 passed (2)
+
+## RED before the fix (Chromium): renderer.info.memory.textures after six board switches
+    Error: shadow maps and environment are not left behind
+(4 -> 16: each switch left the old key light's shadow-map render target behind, two textures per switch)
+
+## GREEN (Chromium + WebKit): six board switches and three Studio leave/return cycles; textures equal the baseline, programs do not grow, the ownership registry lists the same owners (one board, one environment)
+  35 passed (1.9m)
+
+Limits: renderer.info counts what three.js has allocated in the current renderer; leaving the Studio unmounts the Canvas, whose renderer React Three Fiber disposes and whose WebGL context it loses, so the next visit starts a fresh renderer. Exact browser GPU memory is not observable from the page; the registry, the disposal spies and renderer.info are the evidence.

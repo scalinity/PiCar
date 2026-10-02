@@ -1,0 +1,21 @@
+# F7 camera target ownership
+
+## RED before the fix (Chromium): a manual pan target reset by a resize
+    Error: resize
+    Expected: true
+    Received: false
+
+## Magnitude, measured with the distance-reporting test against the pre-fix StudioScene.tsx (Chromium)
+    Error: resize: target moved (m)
+    Expected: < 0.000001
+    Received:   0.025982583456016204
+(26 mm: the target snapped back to the guided view)
+
+## Intermediate: stable controls binding only, before the damping tail (Chromium)
+    Error: resize: target moved (m)
+    Expected: < 0.000001
+    Received:   0.0014569762347462485
+(1.46 mm: pan inertia left over when the demand loop stopped, applied on the next unrelated redraw)
+
+## GREEN (Chromium + WebKit): resize, pixel ratio 2 and 1, fullscreen enter and exit keep the panned target to < 1e-6 m; Resume guided view restores the guided target
+  4 passed (30.6s)

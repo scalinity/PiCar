@@ -5,7 +5,7 @@ import { statesAt, type Phase, type Timeline } from '../motion/evaluate';
 import {
   focusSelection, pause, play, replay, resetCamera, rewind, seek, select, toggleDrawer, useStudio,
 } from '../state/studio-store';
-import { fullscreenMode, setFullscreen, useFullscreen } from '../state/fullscreen';
+import { fullscreenMode, setFullscreen, useFullscreen, useFullscreenError } from '../state/fullscreen';
 import { usePerfSnapshot } from '../state/perf';
 import { Back, Collapse, Expand, Focus, Panel, Pause, Play, Replay, ResetView, Rewind } from './icons';
 
@@ -64,6 +64,7 @@ function Button({ label, onClick, children, pressed, disabled, wide }: { label: 
 
 export function Header({ pack, variant, step, root }: { pack: LoadedPack; variant: StudioVariant; step: number; root: () => HTMLElement | null }) {
   const full = useFullscreen();
+  const fullscreenError = useFullscreenError();
   const drawerOpen = useStudio((s) => s.drawerOpen);
   const coverage = pack.manifest.source.m7Gate.coverage;
   return (
@@ -85,6 +86,7 @@ export function Header({ pack, variant, step, root }: { pack: LoadedPack; varian
         <Button label={drawerOpen ? 'Hide instructions' : 'Show instructions'} pressed={drawerOpen} onClick={toggleDrawer}><Panel /></Button>
         <Button label={full ? 'Exit fullscreen' : `Enter fullscreen (${fullscreenMode()})`} pressed={full}
           onClick={() => { const el = root(); if (el) void setFullscreen(!full, el); }}>{full ? <Collapse /> : <Expand />}</Button>
+        {fullscreenError && <span className="studio-fullscreen-error" role="status">{fullscreenError}</span>}
       </div>
     </header>
   );

@@ -1,0 +1,22 @@
+# F8 Escape and fullscreen
+
+## unit
+ ✓ tests/studio/escape.test.ts > acts once for an ordinary press 1ms
+ ✓ tests/studio/escape.test.ts > acts once for a long press with auto-repeat, and not again on release 0ms
+ ✓ tests/studio/escape.test.ts > acts once on keyup when the keydown never arrived 0ms
+ ✓ tests/studio/escape.test.ts > acts once when only repeats arrive for a held press 0ms
+ ✓ tests/studio/escape.test.ts > treats a fresh keydown as a new press even if the last keyup was lost 0ms
+ ✓ tests/studio/escape.test.ts > ignores other keys 0ms
+ ✓ tests/studio/escape.test.ts > clears a selection on the first press and leaves fullscreen on a separate second press 0ms
+ ✓ tests/studio/fullscreen.test.ts > reports a refused request and resynchronizes to the real state 9ms
+ ✓ tests/studio/fullscreen.test.ts > runs overlapping requests in order and ends on the platform state 1ms
+ ✓ tests/studio/fullscreen.test.ts > follows a fullscreen change made outside the Studio 0ms
+      Tests  10 passed (10)
+
+## RED before the fix (Chromium, physical keys): a held Escape cleared the selection and also left fullscreen
+    Error: the same press must not also leave fullscreen
+
+## GREEN (Chromium + WebKit)
+  1 skipped
+  5 passed (16.1s)
+Skipped: the physical-key variant on WebKit. WebKit exits element fullscreen on a physical Escape itself, as the Fullscreen specification requires of a user agent; the dispatched-event variant (no user-agent default action) passes there and verifies the Studio's own one-press-one-action handling. A first WebKit run with physical keys failed for that reason, before the test was split.

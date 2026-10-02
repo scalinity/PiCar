@@ -224,6 +224,138 @@ test('a GLB of the right length but the wrong bytes is refused before drawing', 
   expect(await page.locator('.studio-viewport canvas').count()).toBe(0);
 });
 
+// ---- Camera ownership (F7): only the user, an explicit focus/reset or a resumed guided view moves the target.
+test('a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes', async ({ page }) => {
+  await open(page, '#/studio/rpi5/1');
+  await seekTo(page, await diag(page, (d) => d.duration));
+  await page.waitForTimeout(1100); // guided camera settles
+  const guided = manifest.variants.rpi5.steps[0].camera.targetM;
+  const b = (await page.locator('.studio-viewport canvas').boundingBox())!;
+  const [cx, cy] = [b.x + b.width / 2, b.y + b.height / 2];
+  await page.mouse.move(cx, cy);
+  await page.mouse.down({ button: 'right' }); // OrbitControls pans on the right button
+  await page.mouse.move(cx + 140, cy + 70, { steps: 10 });
+  await page.mouse.up({ button: 'right' });
+  // The pan's inertia runs to completion: wait until the target has stopped moving.
+  let panned = (await diag(page, (d) => d.camera())).target;
+  await expect.poll(async () => {
+    await page.waitForTimeout(400);
+    const now = (await diag(page, (d) => d.camera())).target, moved = Math.hypot(...now.map((v, i) => v - panned[i]));
+    panned = now;
+    return moved;
+  }, { timeout: 10000 }).toBe(0);
+  expect(Math.hypot(...panned.map((v, i) => v - guided[i]))).toBeGreaterThan(0.005);
+  expect(await diag(page, (d) => d.state().cameraMode)).toBe('manual');
+  const still = async (why: string) => {
+    await page.waitForTimeout(300);
+    const t = (await diag(page, (d) => d.camera())).target;
+    expect(Math.hypot(...t.map((v, i) => v - panned[i])), `${why}: target moved (m)`).toBeLessThan(1e-6);
+  };
+  await page.setViewportSize({ width: 1100, height: 700 });
+  await still('resize');
+  await page.evaluate(() => (window as any).__studio.viewport().setDpr(2));
+  await still('pixel ratio 2');
+  await page.evaluate(() => (window as any).__studio.viewport().setDpr(1));
+  await still('pixel ratio 1');
+  if (await page.evaluate(() => document.fullscreenEnabled)) {
+    await page.getByRole('button', { name: /Enter fullscreen/ }).click();
+    await page.waitForFunction(() => document.fullscreenElement !== null);
+    await still('enter fullscreen');
+    await page.getByRole('button', { name: 'Exit fullscreen' }).click();
+    await page.waitForFunction(() => document.fullscreenElement === null);
+    await still('exit fullscreen');
+  }
+  await page.getByRole('button', { name: 'Resume guided view' }).click();
+  await page.waitForTimeout(1200);
+  expect(close((await diag(page, (d) => d.camera())).target, guided, 1e-6), 'guided view resumed on request').toBe(true);
+});
+
+// ---- Escape (F8): one physical press performs at most one action.
+// The Studio's own handling, with dispatched events (no user-agent default action), in both engines.
+test('a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen', async ({ page, browserName }) => {
+  const errors = errorsOf(page);
+  await open(page, '#/studio/rpi5/2');
+  test.skip(!(await page.evaluate(() => document.fullscreenEnabled)), `${browserName} headless reports fullscreen unavailable`);
+  const key = (type: 'keydown' | 'keyup', repeat = false) => page.evaluate(([t, r]) => window.dispatchEvent(new KeyboardEvent(t as string, { key: 'Escape', repeat: r as boolean })), [type, repeat]);
+  await page.getByRole('button', { name: manifest.instances['PX-V40-INS-PI5-001'].name }).click();
+  await page.getByRole('button', { name: /Enter fullscreen/ }).click();
+  await page.waitForFunction(() => document.fullscreenElement !== null);
+  await key('keydown');
+  for (let i = 0; i < 4; i++) await key('keydown', true);
+  await page.waitForTimeout(700);
+  await key('keyup');
+  await page.waitForTimeout(300);
+  expect(await diag(page, (d) => d.state().selection)).toBeNull();
+  expect(await page.evaluate(() => document.fullscreenElement !== null), 'the same press must not also leave fullscreen').toBe(true);
+  await key('keydown');
+  await key('keyup');
+  await page.waitForFunction(() => document.fullscreenElement === null);
+  expect(errors).toEqual([]);
+});
+
+// The same with physical key presses. WebKit leaves element fullscreen on a physical Escape by itself, as the Fullscreen
+// specification requires of a user agent, so there the press is the browser's before it is the Studio's.
+test('a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen', async ({ page, browserName }) => {
+  test.skip(browserName === 'webkit', 'WebKit exits element fullscreen on a physical Escape itself (user-agent behaviour, outside the page)');
+  const errors = errorsOf(page);
+  await open(page, '#/studio/rpi5/2');
+  test.skip(!(await page.evaluate(() => document.fullscreenEnabled)), `${browserName} headless reports fullscreen unavailable`);
+  const selection = () => diag(page, (d) => d.state().selection);
+  await page.getByRole('button', { name: manifest.instances['PX-V40-INS-PI5-001'].name }).click();
+  await page.getByRole('button', { name: /Enter fullscreen/ }).click();
+  await page.waitForFunction(() => document.fullscreenElement !== null);
+  await page.keyboard.down('Escape');
+  for (let i = 0; i < 4; i++) await page.keyboard.down('Escape'); // auto-repeat while held
+  await page.waitForTimeout(700); // held well past any timing threshold
+  await page.keyboard.up('Escape');
+  await page.waitForTimeout(300);
+  expect(await selection()).toBeNull();
+  expect(await page.evaluate(() => document.fullscreenElement !== null), 'the same press must not also leave fullscreen').toBe(true);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => document.fullscreenElement === null);
+  await expect(page.getByRole('button', { name: /Enter fullscreen/ })).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('an Escape keyup whose keydown never arrived (native fullscreen) acts once', async ({ page }) => {
+  await open(page, '#/studio/rpi5/2');
+  await page.getByRole('button', { name: manifest.instances['PX-V40-INS-PI5-001'].name }).click();
+  await page.evaluate(() => window.dispatchEvent(new KeyboardEvent('keyup', { key: 'Escape' })));
+  expect(await diag(page, (d) => d.state().selection)).toBeNull();
+});
+
+// ---- GPU resources (F10): board switches and Studio visits release what they own.
+const gpu = (page: Page) => page.evaluate(() => {
+  const s = (window as any).__studio, vp = s.viewport();
+  return { textures: vp.gl.info.memory.textures, geometries: vp.gl.info.memory.geometries, programs: vp.gl.info.programs.length,
+    owned: typeof s.owned === 'function' ? s.owned() : 'no ownership registry' };
+});
+test('board switches and Studio visits do not accumulate GPU resources', async ({ page }) => {
+  const errors = errorsOf(page);
+  await open(page, '#/studio/rpi5/1');
+  await seekTo(page, await diag(page, (d) => d.duration));
+  const base = await gpu(page);
+  for (let i = 0; i < 6; i++) {
+    await switchBoard(page, i % 2 ? 'Pi 5' : 'Zero 2 W', i % 2 ? 'rpi5/1' : 'rpi-zero-2-w/1');
+    await seekTo(page, await diag(page, (d) => d.duration));
+  }
+  const switched = await gpu(page);
+  expect(switched.textures, 'shadow maps and environment are not left behind').toBe(base.textures);
+  expect(switched.programs).toBeLessThanOrEqual(base.programs);
+  expect(switched.owned).toEqual(base.owned);
+  for (let i = 0; i < 3; i++) {
+    await page.evaluate(() => { location.hash = '#/reference'; });
+    await expect(page.locator('.studio')).toHaveCount(0);
+    await page.evaluate(() => { location.hash = '#/studio/rpi5/1'; });
+    await page.waitForFunction(() => (window as any).__studio?.viewport() && (window as any).__studio.state().key === 'rpi5/1');
+    await seekTo(page, await diag(page, (d) => d.duration));
+  }
+  const revisited = await gpu(page);
+  expect(revisited.owned, 'each visit releases what it owned').toEqual(base.owned);
+  expect(revisited.textures).toBe(base.textures);
+  expect(errors).toEqual([]);
+});
+
 test('the companion pages remain reachable from the Studio', async ({ page }) => {
   await open(page, '#/studio');
   await page.getByRole('link', { name: 'Reference' }).click();
