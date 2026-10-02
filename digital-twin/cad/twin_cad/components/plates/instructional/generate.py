@@ -23,6 +23,18 @@ def capsule(a, b, width, thickness):
             .translate(((a[0]+b[0])/2,(a[1]+b[1])/2,0)))
 
 
+def segmented_outline(workplane, outline):
+    """Closed outline of lines and true circular arcs (three-point), for faces revised beyond a traced polyline."""
+    start = outline['startMm']
+    segments = list(outline['segments'])
+    if segments and segments[-1]['kind'] == 'line' and math.dist(segments[-1]['toMm'], start) < 1e-9:
+        segments = segments[:-1]
+    w = workplane.moveTo(*start)
+    for s in segments:
+        w = w.lineTo(*s['toMm']) if s['kind'] == 'line' else w.threePointArc(tuple(s['throughMm']), tuple(s['toMm']))
+    return w.close()
+
+
 def make_candidate(definition):
     if definition['track'] != 'instructional-only' or definition['purpose'] != 'provisional-review':
         raise ValueError('PROVISIONAL_SCOPE_REQUIRED')
@@ -37,7 +49,10 @@ def make_candidate(definition):
         pieces=[]
         for face in faces:
             plane=cq.Plane(tuple(face['originMm']),xDir=tuple(face['u']),normal=tuple(np.cross(face['u'],face['v'])))
-            solid=cq.Workplane(plane).polyline(face['outlineMm']).close().extrude(thickness).val()
+            if 'outlineSegmentsMm' in face:
+                solid=segmented_outline(cq.Workplane(plane),face['outlineSegmentsMm']).extrude(thickness).val()
+            else:
+                solid=cq.Workplane(plane).polyline(face['outlineMm']).close().extrude(thickness).val()
             for hole in face['holes']:
                 solid=solid.cut(cq.Workplane(plane).center(*hole['centerMm']).circle(hole['diameterMm']/2).extrude(thickness).val())
             for slot in face['slots']:

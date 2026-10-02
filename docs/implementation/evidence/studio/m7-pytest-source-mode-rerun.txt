@@ -1,0 +1,25 @@
+F....................................................ss..ssssssssssssss. [ 11%]
+......................ssssssssss.s...................s.......ssssss..... [ 22%]
+....................ssss...sss.........................ssss...ss........ [ 34%]
+..............s...ssss...ss..........................ssss...ss.......... [ 45%]
+................ssss...ss....................ss..ssssssssssssss......... [ 57%]
+............ssssssssssss.s...................s.ss....ssssss............. [ 68%]
+..........ssssss.....s.......................ssssss..................... [ 80%]
+......s.ssssss.............................ssssss....................... [ 91%]
+......ssssss.........................................                    [100%]
+=================================== FAILURES ===================================
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(closure_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py' = closure_verify.__file__
+
+cad/tests/test_m7_closure.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED cad/tests/test_m7_closure.py::test_independent_oracle_is_installed_and_does_not_import_generator
+1 failed, 492 passed, 136 skipped in 498.46s (0:08:18)

@@ -1,0 +1,100 @@
+
+> picarx-companion@0.1.0 test:browser /Users/danny/Documents/Apps/PiCar/picarx-companion
+> playwright test
+
+
+Running 46 tests using 1 worker
+
+  ✓   1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.1s)
+  ✓   2 [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (418ms)
+  ✓   3 [chromium] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (549ms)
+  ✓   4 [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (577ms)
+  ✓   5 [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (350ms)
+  ✓   6 [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (21.8s)
+  ✓   7 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (272ms)
+  ✓   8 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (572ms)
+  ✓   9 [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (3.1m)
+  ✓  10 [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.7m)
+  ✓  11 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (2.6s)
+  ✓  12 [chromium] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.4s)
+  ✓  13 [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (533ms)
+  ✓  14 [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (213ms)
+  ✓  15 [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (229ms)
+  ✘  16 [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (1.4s)
+  ✓  17 [chromium] › tests/browser/studio.spec.ts:21:1 › S02 on the Pi 5 plays and ends exactly on the closure poses (2.0s)
+  ✓  18 [chromium] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (3.2s)
+  ✓  19 [chromium] › tests/browser/studio.spec.ts:58:1 › fullscreen enters and leaves through the browser Fullscreen API (1.7s)
+  ✓  20 [chromium] › tests/browser/studio.spec.ts:68:1 › readiness is labelled and later steps are not offered as instruction (1.9s)
+  ✓  21 [chromium] › tests/browser/studio.spec.ts:79:1 › selecting a part shows its source identity (2.4s)
+  ✓  22 [chromium] › tests/browser/studio.spec.ts:88:1 › playback, scrubbing, replay and selection record no progress (5.3s)
+  ✓  23 [chromium] › tests/browser/studio.spec.ts:114:1 › the companion pages remain reachable from the Studio (1.6s)
+  ✓  24 [webkit] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.0s)
+  ✓  25 [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (787ms)
+  ✓  26 [webkit] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (498ms)
+  ✓  27 [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (565ms)
+  ✓  28 [webkit] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (472ms)
+  ✓  29 [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (21.6s)
+  ✓  30 [webkit] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (418ms)
+  ✓  31 [webkit] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (593ms)
+  ✓  32 [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (2.8m)
+  ✓  33 [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.2m)
+  ✓  34 [webkit] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (1.7s)
+  ✓  35 [webkit] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.1s)
+  ✓  36 [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (492ms)
+  ✓  37 [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (521ms)
+  ✓  38 [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (481ms)
+  ✘  39 [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (869ms)
+  ✓  40 [webkit] › tests/browser/studio.spec.ts:21:1 › S02 on the Pi 5 plays and ends exactly on the closure poses (828ms)
+  ✓  41 [webkit] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (2.2s)
+  ✓  42 [webkit] › tests/browser/studio.spec.ts:58:1 › fullscreen enters and leaves through the browser Fullscreen API (737ms)
+  ✓  43 [webkit] › tests/browser/studio.spec.ts:68:1 › readiness is labelled and later steps are not offered as instruction (658ms)
+  ✓  44 [webkit] › tests/browser/studio.spec.ts:79:1 › selecting a part shows its source identity (700ms)
+  ✓  45 [webkit] › tests/browser/studio.spec.ts:88:1 › playback, scrubbing, replay and selection record no progress (1.9s)
+  ✓  46 [webkit] › tests/browser/studio.spec.ts:114:1 › the companion pages remain reachable from the Studio (734ms)
+
+
+  1) [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      40 |  const input=viewer.locator('input[type=number]');await expect(input).toHaveValue('2');await expect(viewer.getByRole('button',{name:'Next →',exact:true})).toBeDisabled();
+      41 |  await viewer.getByRole('button',{name:'← Prev',exact:true}).click();await expect(input).toHaveValue('1');
+    > 42 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+         |                                                                                              ^
+      43 |  await input.fill('3');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+      44 |  await input.fill('2');await expect(input).toHaveValue('2');await viewer.getByRole('button',{name:'+',exact:true}).click();await expect(viewer.locator('.pdf-zoom')).toContainText('140%');
+      45 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).steps.assembly)).toBe('done');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/preservation.spec.ts:42:94
+
+    Error Context: test-results/preservation-PDF-bookmark--ceb05--and-zoom-remain-functional-chromium/error-context.md
+
+  2) [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      40 |  const input=viewer.locator('input[type=number]');await expect(input).toHaveValue('2');await expect(viewer.getByRole('button',{name:'Next →',exact:true})).toBeDisabled();
+      41 |  await viewer.getByRole('button',{name:'← Prev',exact:true}).click();await expect(input).toHaveValue('1');
+    > 42 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+         |                                                                                              ^
+      43 |  await input.fill('3');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+      44 |  await input.fill('2');await expect(input).toHaveValue('2');await viewer.getByRole('button',{name:'+',exact:true}).click();await expect(viewer.locator('.pdf-zoom')).toContainText('140%');
+      45 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).steps.assembly)).toBe('done');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/preservation.spec.ts:42:94
+
+    Error Context: test-results/preservation-PDF-bookmark--ceb05--and-zoom-remain-functional-webkit/error-context.md
+
+  Slow test file: [chromium] › tests/browser/m3-ui.spec.ts (5.9m)
+  Slow test file: [webkit] › tests/browser/m3-ui.spec.ts (5.1m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  2 failed
+    [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+    [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+  44 passed (12.5m)
+ ELIFECYCLE  Command failed with exit code 1.
+browser exit 1

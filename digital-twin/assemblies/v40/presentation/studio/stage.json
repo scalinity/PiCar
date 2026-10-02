@@ -1,0 +1,32 @@
+{
+  "contract": "picar-studio-stage/1",
+  "track": "presentation-only",
+  "note": "Display policy only: timing, framing, lighting and the parts-tray layout. Never assembly truth; final poses always come from the M7 closures.",
+  "angles": "Azimuth and elevation are measured in the CAD frame around the subject: azimuth 0 looks at the robot from its front (+X), positive turns toward robot left (+Y); elevation is above the deck plane.",
+  "operableSteps": [0, 1, 2],
+  "timing": { "bringInS": 1.0, "approachS": 1.4, "staggerS": 0.2, "easing": "easeInOutCubic" },
+  "camera": {
+    "verticalFovDeg": 30,
+    "default": { "subject": "state", "azimuthDeg": -36, "elevationDeg": 30, "fit": 0.9 },
+    "steps": {
+      "0": { "subject": "everything", "azimuthDeg": -24, "elevationDeg": 46, "fit": 0.85 },
+      "1": { "subject": "state", "azimuthDeg": -34, "elevationDeg": 34, "fit": 0.92 },
+      "2": { "subject": "state", "azimuthDeg": -38, "elevationDeg": 28, "fit": 0.86 }
+    }
+  },
+  "hero": { "variant": "rpi5", "step": 2, "camera": "the manifest camera of that step, so the reference render and the app share one framing", "resolution": [2400, 1500], "samples": 512 },
+  "lighting": {
+    "background": "#141311",
+    "backgroundSceneLinear": [0.0105, 0.0098, 0.0085],
+    "runtimeEnvironmentBase": [0.05, 0.047, 0.042],
+    "pool": { "note": "soft lighter pool behind the subject so its shadow can read on a dark background; position and size are fractions of the frame, y down", "centre": [0.5, 0.56], "size": [0.95, 0.8], "blurFraction": 0.18, "sceneLinear": [0.034, 0.0315, 0.0275], "css": "radial-gradient(ellipse 62% 55% at 50% 56%, #2a2723 0%, #1d1b18 45%, #141311 100%)" },
+    "floor": { "baseColor": [0.006, 0.0058, 0.0055], "roughness": 0.85, "gapMm": 0.5 },
+    "lights": [
+      { "id": "key", "azimuthDeg": 42, "elevationDeg": 46, "distanceM": 0.9, "sizeM": [0.9, 0.6], "spreadDeg": 70, "color": [1.0, 0.965, 0.92], "blenderPowerW": 7, "runtimeIntensity": 2.0 },
+      { "id": "fill", "azimuthDeg": -62, "elevationDeg": 16, "distanceM": 0.9, "sizeM": [0.7, 0.7], "spreadDeg": 80, "color": [0.92, 0.96, 1.0], "blenderPowerW": 1.2, "runtimeIntensity": 1.6 },
+      { "id": "rim", "azimuthDeg": 150, "elevationDeg": 30, "distanceM": 0.9, "sizeM": [1.4, 0.5], "spreadDeg": 90, "color": [1.0, 1.0, 1.0], "blenderPowerW": 7, "runtimeIntensity": 2.0 },
+      { "id": "top", "azimuthDeg": 0, "elevationDeg": 86, "distanceM": 1.0, "sizeM": [0.8, 0.8], "spreadDeg": 60, "color": [1.0, 0.99, 0.97], "blenderPowerW": 1.2, "runtimeIntensity": 0.7 }
+    ]
+  },
+  "tray": { "side": "right", "offsetMm": 70, "gapMm": 18, "rowLengthMm": 300 }
+}
