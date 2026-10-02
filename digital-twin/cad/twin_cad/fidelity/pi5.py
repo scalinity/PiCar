@@ -4,8 +4,11 @@ Registered to the M5/M7 board frame: x along the 85 mm edge from the GPIO-side c
 (GPIO header at high y), z up from the PCB underside. Mounting holes and PCB match the instructional board exactly.
 
 Display only. Assembly checks keep using the M7 instructional board revision; `relation` and `overlaps` record how
-the two agree. Positions are read from the drawing (stated values where dimensioned, scaled reads otherwise);
-heights are typical part heights where the drawing gives none. Nothing here is copied from vendor CAD.
+the two agree, bound to exact inputs (schema picar-studio-display-check/1): the display artifact, the instructional
+artifact and every other placed part's artifact by SHA-256, and each checked closure by its canonical RFC 8785 hash
+(the verifier's closureRfc8785Sha256). The Studio pack refuses the record for any state it does not name.
+Positions are read from the drawing (stated values where dimensioned, scaled reads otherwise); heights are typical
+part heights where the drawing gives none. Nothing here is copied from vendor CAD.
 
   PYTHONPATH=digital-twin/cad <env>/bin/python -m twin_cad.fidelity.pi5 --root <repo> --chain <chain-run> --output <dir>
 """
@@ -17,7 +20,11 @@ from pathlib import Path
 
 import cadquery as cq
 import numpy as np
+import rfc8785
 
+SCHEMA = 'picar-studio-display-check/1'
+BOARD = 'PX-V40-INS-PI5-001'
+INSTRUCTIONAL = 'remediation/PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep'  # inside the chain run, as closure.shape_path resolves it
 PCB_T = 1.6  # the instructional board's thickness, kept so bearing heights stay identical
 HOLES = [(3.5, 3.5), (61.5, 3.5), (3.5, 52.5), (61.5, 52.5)]
 TOP = PCB_T
@@ -156,8 +163,20 @@ def compound(parts):
     return cq.Compound.makeCompound([p[2] for p in parts])
 
 
-def relation(detail_parts, board_path):
-    """Compare the detail with the instructional board: holes, PCB envelope and every instructional solid's box."""
+def sha256_file(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def hole_centres(shape, radius):
+    """XY centres of the vertical cylinder features of one radius, measured from the shape itself."""
+    from twin_cad.assemblies.instructional.verify import shape_features
+    return sorted({(round(float(f['origin'][0]), 6), round(float(f['origin'][1]), 6)) for f in shape_features(shape)
+                   if abs(f['radius'] - radius) < 1e-6 and abs(abs(f['axis'][2]) - 1) < 1e-9})
+
+
+def relation(detail_parts, chain):
+    """Compare the detail with the instructional board: measured holes, PCB envelope and every instructional solid's box."""
+    board_path = chain / INSTRUCTIONAL
     board = cq.Shape.importBrep(str(board_path))
     solids = board.Solids()
     pcb_detail = detail_parts[0][2].BoundingBox()
@@ -181,39 +200,52 @@ def relation(detail_parts, board_path):
             row.update({'nearestDetail': name, 'boxIoU': round(best_iou, 3),
                         'centreOffsetMm': [round(v, 3) for v in ((d.center.x - b.center.x), (d.center.y - b.center.y), (d.center.z - b.center.z))]})
         boxes.append(row)
-    return {'pcbBoxMm': [round(v, 3) for v in (pcb_detail.xmin, pcb_detail.ymin, pcb_detail.zmin, pcb_detail.xmax, pcb_detail.ymax, pcb_detail.zmax)],
-            'mountingHolesMm': HOLES, 'instructionalSolids': boxes}
+    display_holes, board_holes = hole_centres(detail_parts[0][2], 1.35), hole_centres(board, 1.4)
+    deviation = max(min(math.dist(h, b) for b in board_holes) for h in display_holes) if display_holes and board_holes else None
+    return {'instructionalArtifact': {'definitionId': 'PX-V40-DEF-PI5', 'path': 'chain:' + INSTRUCTIONAL, 'sha256': sha256_file(board_path)},
+            'pcbBoxMm': [round(v, 3) for v in (pcb_detail.xmin, pcb_detail.ymin, pcb_detail.zmin, pcb_detail.xmax, pcb_detail.ymax, pcb_detail.zmax)],
+            'mountingHoles': {'method': 'vertical cylinder features measured on each artifact, centres in the shared board frame',
+                              'displayRadiusMm': 1.35, 'instructionalRadiusMm': 1.4, 'display': display_holes, 'instructional': board_holes,
+                              'maxCentreDeviationMm': None if deviation is None else round(deviation, 6)},
+            'instructionalSolids': boxes}
 
 
 def overlaps(root, chain, detail):
-    """Place the detail board in every rpi5 closure that holds the board and intersect it with every other part.
-    Positive volumes are display conflicts the instructional checks could not see; they are reported, never hidden."""
+    """Place the detail board in every closure that holds the board and intersect it with every other placed part.
+    Each checked closure is named by its canonical hash and every other part by its artifact hash, so a record cannot
+    stand for a state it did not measure. Positive volumes are display conflicts the instructional checks could not
+    see; they are reported, never hidden."""
     from twin_cad.assemblies.instructional.closure import shape_path
     from twin_cad.assemblies.instructional.verify import placed, rigid
-    graph = json.loads((root / 'digital-twin/validation/m2/rpi5/compiled-graph.json').read_text())
-    definition_of = {i['id']: i['definitionId'] for i in graph['instances']}
     dirs = {'root': root, 'artifacts': chain / 'remediation', 'boards': chain / 'anchor' / 'boards'}
-    cache, rows = {}, []
-    for closure in sorted((chain / 'chain' / 'closures').glob('rpi5-S0*-closure.json')):
+    cache, parts, closures, rows = {}, {}, [], []
+    for closure in sorted((chain / 'chain' / 'closures').glob('*-closure.json')):
         record = json.loads(closure.read_text())
         poses = {p['instanceId']: p for p in record['placements']}
-        if 'PX-V40-INS-PI5-001' not in poses:
+        if BOARD not in poses:
             continue
-        board = placed(detail, *rigid(poses['PX-V40-INS-PI5-001']))
+        variant = record['variantId']
+        graph = json.loads((root / f'digital-twin/validation/m2/{variant}/compiled-graph.json').read_text())
+        definition_of = {i['id']: i['definitionId'] for i in graph['instances']}
+        identity = {'variantId': variant, 'step': record['printedNumber'], 'closureRfc8785Sha256': hashlib.sha256(rfc8785.dumps(record)).hexdigest()}
+        closures.append(identity)
+        board = placed(detail, *rigid(poses[BOARD]))
         bb = board.BoundingBox()
         for iid, pose in sorted(poses.items()):
-            if iid == 'PX-V40-INS-PI5-001':
+            if iid == BOARD:
                 continue
             d = definition_of[iid]
-            cache.setdefault(d, cq.Shape.importBrep(str(shape_path(d, dirs))))
+            if d not in cache:
+                path = shape_path(d, dirs)
+                cache[d], parts[d] = cq.Shape.importBrep(str(path)), sha256_file(path)
             other = placed(cache[d], *rigid(pose))
             ob = other.BoundingBox()
             if ob.xmin > bb.xmax or ob.xmax < bb.xmin or ob.ymin > bb.ymax or ob.ymax < bb.ymin or ob.zmin > bb.zmax or ob.zmax < bb.zmin:
                 continue
             volume = board.intersect(other).Volume()
             if volume > 1e-3:
-                rows.append({'step': record['printedNumber'], 'instanceId': iid, 'volumeMm3': round(volume, 4)})
-    return rows
+                rows.append({**identity, 'instanceId': iid, 'volumeMm3': round(volume, 4)})
+    return {'partArtifacts': dict(sorted(parts.items())), 'closures': closures, 'positive': rows}
 
 
 def vendor_crosscheck(root, parts):
@@ -261,14 +293,17 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     path = args.output / 'PX-V40-DEF-PI5.display.brep'
     shape.exportBrep(str(path))
-    record = {'definitionId': 'PX-V40-DEF-PI5', 'kind': 'display-detail', 'track': 'presentation-only',
+    display_sha = sha256_file(path)
+    rel = relation(parts, args.chain)
+    record = {'schema': SCHEMA, 'definitionId': 'PX-V40-DEF-PI5', 'kind': 'display-detail', 'track': 'presentation-only',
               'source': 'Raspberry Pi 5 mechanical drawing (Raspberry Pi Ltd), drawing SHA-256 5dd680d6c1f5e7aa9c7b020695e315d04aac862df82ff01d4e9041cd0668d7f2, read at 1:1',
               'assemblyEnvelope': 'M7 instructional board revision 2 (PX-V40-DEF-PI5-INSTRUCTIONAL-02); assembly checks use it, not this model',
-              'artifact': path.name, 'artifactSha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+              'artifact': path.name, 'artifactSha256': display_sha,
               'solids': [{'index': i, 'name': n, 'materialId': m} for i, (n, m) in enumerate((n, m) for n, m, s in parts for _ in s.Solids())],  # one row per solid, compound order
-              'relation': relation(parts, args.chain / 'remediation' / 'PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep'),
-              'overlaps': {'chain': args.chain.name, 'method': 'boolean common of the placed detail board with every other placed part in each rpi5 closure',
-                           'positive': overlaps(args.root, args.chain, shape)}}
+              'relation': rel,
+              'overlaps': {'chain': args.chain.name, 'method': 'boolean common of the placed detail board with every other placed part in each closure that places the board',
+                           'displayArtifactSha256': display_sha, 'instructionalArtifactSha256': rel['instructionalArtifact']['sha256'],
+                           **overlaps(args.root, args.chain, shape)}}
     if args.vendor_crosscheck:
         record['vendorCrossCheck'] = vendor_crosscheck(args.root, parts)
     (args.output / 'PX-V40-DEF-PI5.display.json').write_text(json.dumps(record, indent=1) + '\n')

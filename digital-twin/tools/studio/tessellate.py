@@ -6,6 +6,11 @@ part-local frame (RH, +X forward, +Y left, +Z up, millimetres); the single runti
 happens later in studio.mjs. Faces are triangulated separately, so edges between CAD faces stay sharp
 and curved faces carry their surface normals.
 
+The index binds itself to the chain run it tessellated: the run's label, its verification result, its Studio chain
+record and the revision registry that selected the artifacts, which must not have changed since the run. Every
+definition carries the SHA-256 of its artifact and of its own mesh bytes, so studio.mjs can prove each mesh belongs
+to the artifact the verifier measured.
+
 Run with the frozen M4 environment in source mode:
   PYTHONPATH=digital-twin/cad <env>/bin/python digital-twin/tools/studio/tessellate.py \
       --root <repo> --chain <chain-run-dir> --definitions <defs.json> --output <dir>
@@ -25,7 +30,7 @@ from OCP.TopAbs import TopAbs_REVERSED
 from OCP.TopLoc import TopLoc_Location
 
 from twin_cad.assemblies.instructional.closure import shape_path
-from twin_cad.assemblies.instructional.verify import shape_features
+from twin_cad.assemblies.instructional.verify import REVISION_RECORDS, shape_features
 
 LINEAR_DEFLECTION_MM = 0.02
 ANGULAR_DEFLECTION_RAD = 0.15
@@ -84,7 +89,34 @@ def mesh_entry(path, put):
     return data, records, features, {'min': allpos.min(axis=0).tolist(), 'max': allpos.max(axis=0).tolist()}
 
 
+def sha256_file(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def chain_binding(root, chain):
+    """The chain run this tessellation belongs to; refuses a run without a Studio record or a moved registry."""
+    record_path = chain / 'studio-chain.json'
+    if not record_path.is_file():
+        raise ValueError('CHAIN_WITHOUT_STUDIO_RECORD ' + str(chain))
+    record = json.loads(record_path.read_text())
+    registry = sha256_file(root / REVISION_RECORDS)
+    if registry != record['revisionRegistry']['sha256']:
+        raise ValueError('REVISION_REGISTRY_CHANGED_SINCE_CHAIN')
+    return {'label': chain.name, 'closureObservationsSha256': sha256_file(chain / 'closure-observations.json'),
+            'studioChainSha256': sha256_file(record_path), 'revisionRegistrySha256': registry}
+
+
+def mesh_sha256(blob, records):
+    """SHA-256 over one shape's mesh bytes: every solid's positions, normals and indices, in order."""
+    h = hashlib.sha256()
+    for s in records:
+        for r in (s['positions'], s['normals'], s['indices']):
+            h.update(blob[r['byteOffset']:r['byteOffset'] + r['byteLength']])
+    return h.hexdigest()
+
+
 def run(root, chain, definitions, output, display=None):
+    binding = chain_binding(root, chain)
     output.mkdir(parents=True, exist_ok=False)
     dirs = {'root': root, 'artifacts': chain / 'remediation', 'boards': chain / 'anchor' / 'boards'}
     blob = bytearray()
@@ -105,19 +137,20 @@ def run(root, chain, definitions, output, display=None):
         else:
             source = path.resolve().relative_to(root.resolve()).as_posix()
         entry = {'definitionId': definition_id, 'artifactPath': source, 'artifactSha256': hashlib.sha256(data).hexdigest(),
-                 'artifactBytes': len(data), 'boundsMm': bounds, 'solids': records, 'cylinderFeatures': features}
+                 'artifactBytes': len(data), 'boundsMm': bounds, 'solids': records, 'meshSha256': mesh_sha256(blob, records),
+                 'cylinderFeatures': features}
         if display and definition_id in display:
             # A registered display-detail model: shown in the Studio, while assembly checks keep the artifact above.
             dpath = root / display[definition_id]
             ddata, drecords, _, dbounds = mesh_entry(dpath, put)
             entry['display'] = {'artifactPath': display[definition_id], 'artifactSha256': hashlib.sha256(ddata).hexdigest(),
-                                'artifactBytes': len(ddata), 'boundsMm': dbounds, 'solids': drecords}
+                                'artifactBytes': len(ddata), 'boundsMm': dbounds, 'solids': drecords, 'meshSha256': mesh_sha256(blob, drecords)}
         entries.append(entry)
     (output / 'meshes.bin').write_bytes(bytes(blob))
-    index = {'contract': 'picar-studio-tessellation/1', 'track': 'presentation-only', 'frame': 'CAD part-local, RH-XFORWARD-YLEFT-ZUP',
+    index = {'contract': 'picar-studio-tessellation/2', 'track': 'presentation-only', 'frame': 'CAD part-local, RH-XFORWARD-YLEFT-ZUP',
              'unit': 'mm', 'componentType': {'positions': 'float64', 'normals': 'float64', 'indices': 'uint32'},
              'linearDeflectionMm': LINEAR_DEFLECTION_MM, 'angularDeflectionRad': ANGULAR_DEFLECTION_RAD,
-             'binSha256': hashlib.sha256(bytes(blob)).hexdigest(), 'definitions': entries}
+             'chain': binding, 'binSha256': hashlib.sha256(bytes(blob)).hexdigest(), 'definitions': entries}
     (output / 'meshes.json').write_text(json.dumps(index, indent=1, sort_keys=True) + '\n')
     return index
 

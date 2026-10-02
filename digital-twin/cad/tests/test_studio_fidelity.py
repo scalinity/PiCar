@@ -91,3 +91,21 @@ def test_pi5_display_detail_is_registered_deterministic_and_checked(tmp_path):
                if p.get('footprintIoU') and not re.search('tongue|pins|contacts|HDMI', p['part'])]
     assert len(offsets) >= 20 and max(offsets) < 0.3
     assert any(o['instanceId'] == 'PX-V40-INS-USB-MICROPHONE-001' for o in DISPLAY['overlaps']['positive']), 'the known microphone finding stays recorded'
+
+
+def test_pi5_display_checks_name_the_exact_inputs_they_measured():
+    """The record binds every check to the display artifact, the instructional artifact, every other placed part and
+    each closure by its canonical hash, so the Studio can refuse it for any state it did not measure."""
+    rel, o = DISPLAY['relation'], DISPLAY['overlaps']
+    hex64 = re.compile('[0-9a-f]{64}')
+    assert DISPLAY['schema'] == pi5.SCHEMA
+    assert rel['instructionalArtifact']['path'] == 'chain:' + pi5.INSTRUCTIONAL and hex64.fullmatch(rel['instructionalArtifact']['sha256'])
+    assert o['displayArtifactSha256'] == DISPLAY['artifactSha256'] and o['instructionalArtifactSha256'] == rel['instructionalArtifact']['sha256']
+    holes = rel['mountingHoles']
+    assert len(holes['display']) == len(holes['instructional']) == 4 and holes['maxCentreDeviationMm'] < 0.01, 'measured on both shapes, not authored'
+    checked = {(c['variantId'], c['step']): c['closureRfc8785Sha256'] for c in o['closures']}
+    assert sorted(checked) == [('rpi5', n) for n in range(2, 9)] and all(hex64.fullmatch(h) for h in checked.values())
+    assert all(checked.get((p['variantId'], p['step'])) == p['closureRfc8785Sha256'] for p in o['positive'])
+    assert o['partArtifacts'] and all(hex64.fullmatch(h) for h in o['partArtifacts'].values())
+    microphone = [p['volumeMm3'] for p in o['positive'] if p['instanceId'] == 'PX-V40-INS-USB-MICROPHONE-001']
+    assert microphone and 440 < max(microphone) < 460, 'the known 449 mm3 microphone overlap is still measured, not moved away'

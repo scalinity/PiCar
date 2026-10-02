@@ -14,7 +14,7 @@ type Basis = {
 };
 const load = async <T>(file: string): Promise<T> => (await import(pathToFileURL(path.join(TOOLS, file)).href)) as T;
 const basis = await load<Basis>('basis.mjs');
-const { checkPack } = await load<{ checkPack(dir: string): { packId: string; problems: string[] } }>('studio.mjs');
+const { checkPack } = await load<{ checkPack(dir: string): { packId: string; status: string; problems: string[]; notes: string[] } }>('studio.mjs');
 const { readGlb } = await load<{ readGlb(b: Uint8Array): { json: any; read(i: number): Float32Array | Uint16Array | Uint32Array } }>('glb.mjs');
 
 const manifest = JSON.parse(fs.readFileSync(path.join(PACK, 'manifest.json'), 'utf8'));
@@ -22,9 +22,17 @@ const glbBytes = new Uint8Array(fs.readFileSync(path.join(PACK, 'parts.glb')));
 const glb = readGlb(glbBytes);
 
 describe('pack identity and completeness', () => {
-  it('recomputes the pack id and the GLB hash, and holds only the two pack files', () => {
-    expect(checkPack(PACK)).toEqual({ packId: manifest.packId, problems: [] });
+  it('keeps PACK_INTEGRITY: recomputes the pack id, the GLB hash and the runtime contract, and holds only the two pack files', () => {
+    expect(checkPack(PACK)).toEqual({ packId: manifest.packId, status: 'PASS', problems: [], notes: [] });
     expect(fs.readdirSync(PACK).sort()).toEqual(['manifest.json', 'parts.glb']);
+  });
+  it('binds every step that plays as instruction to its verified canonical closure hash', () => {
+    for (const v of Object.values<any>(manifest.variants)) for (const s of v.steps.filter((x: any) => x.operable)) {
+      expect(s.source).toMatchObject({ kind: 'closure', closureVerify: 'PASS' });
+      expect(s.source.closureRfc8785Sha256).toMatch(/^[0-9a-f]{64}$/);
+    }
+    expect(manifest.source.chain.studioChain.sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(manifest.source.revisionRegistry.sha256).toMatch(/^[0-9a-f]{64}$/);
   });
   it('is labelled a preview pack, never an engineering or runtime admission', () => {
     expect(manifest.classification).toMatchObject({ capability: 'provisionalReview', engineeringAdmission: false, runtimeAdmission: false, instructionGeometry: false });
@@ -107,6 +115,16 @@ describe('readiness is labelled separately from assembly acceptance', () => {
     expect(steps(v)[8].conflicts.length).toBeGreaterThan(0);
     expect(steps(v)[7].dependencyWarnings.map((w: any) => w.printedNumber)).toContain(7);
     for (const s of steps(v)) expect(s.assembly).toMatchObject({ gate: 'G-INSTRUCTIONAL-ASSEMBLY', status: 'BLOCKED', admittedRows: 0, requiredRows: 58 });
+  });
+  it('binds the detailed Pi 5 to the closures it was checked against, and marks the refused S09 candidate NOT_CHECKED', () => {
+    const def = manifest.definitions['PX-V40-DEF-PI5'];
+    expect(def.displayWithheld).toBeUndefined();
+    expect(def.display.record.schema).toBe('picar-studio-display-check/1');
+    const s2 = steps('rpi5')[1].displayChecks.find((c: any) => c.definitionId === 'PX-V40-DEF-PI5');
+    expect(s2).toMatchObject({ status: 'CHECKED', closureRfc8785Sha256: steps('rpi5')[1].source.closureRfc8785Sha256 });
+    expect(Math.max(...s2.overlaps.map((o: any) => o.volumeMm3))).toBeGreaterThan(440); // the 449 mm³ microphone finding
+    expect(steps('rpi5')[8].displayChecks).toEqual([{ definitionId: 'PX-V40-DEF-PI5', status: 'NOT_CHECKED', overlaps: [] }]);
+    for (const s of steps('rpi-zero-2-w')) expect(s.displayChecks).toEqual([]);
   });
   it('keeps parts without a verified installed pose in the tray in their part-local orientation', () => {
     const tray = manifest.variants.rpi5.tray.instances;

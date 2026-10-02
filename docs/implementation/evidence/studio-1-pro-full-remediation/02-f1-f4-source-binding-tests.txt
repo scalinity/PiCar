@@ -1,0 +1,31 @@
+npm notice run picarx-companion@0.1.0 npx
+npm notice run 'vitest' run --config vitest.config.ts tests/studio/sources.test.ts --reporter=verbose
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ✓ tests/studio/sources.test.ts > closure binding > passes an unchanged verified closure as PREVIEW_SOURCE_REVALIDATED 1ms
+ ✓ tests/studio/sources.test.ts > closure binding > refuses a closure changed after the verifier passed it, naming variant, step and both hashes 0ms
+ ✓ tests/studio/sources.test.ts > closure binding > refuses a closure the verifier never saw, and keeps a verified relation block in review 0ms
+ ✓ tests/studio/sources.test.ts > tessellation binding > accepts a tessellation of the selected artifacts made against this chain run 2ms
+ ✓ tests/studio/sources.test.ts > tessellation binding > refuses a tessellation made against another chain run 2ms
+ ✓ tests/studio/sources.test.ts > tessellation binding > refuses a stale tessellation once its source artifact changes 1ms
+ ✓ tests/studio/sources.test.ts > tessellation binding > refuses meshes whose bytes no longer belong to the definition entry 1ms
+ ✓ tests/studio/sources.test.ts > tessellation binding > refuses a tessellation index from before source binding 2ms
+ ✓ tests/studio/sources.test.ts > SOURCE_FRESHNESS > is FRESH while every recorded source is unchanged 2ms
+ ✓ tests/studio/sources.test.ts > SOURCE_FRESHNESS > is STALE when the closure changes after the verifier passed it 2ms
+ ✓ tests/studio/sources.test.ts > SOURCE_FRESHNESS > is STALE when the selected artifact changes under an old tessellation 2ms
+ ✓ tests/studio/sources.test.ts > SOURCE_FRESHNESS > is STALE when the revision registry that selects artifacts changes 2ms
+ ✓ tests/studio/sources.test.ts > SOURCE_FRESHNESS > is STALE when a presentation input changes 2ms
+ ✓ tests/studio/sources.test.ts > SOURCE_FRESHNESS > is UNVERIFIABLE, not FRESH, when the chain run is no longer on disk 2ms
+ ✓ tests/studio/sources.test.ts > display-check binding (F4) > accepts a record whose checks name exactly the current artifacts and closures 0ms
+ ✓ tests/studio/sources.test.ts > display-check binding (F4) > refuses a record checked against a different closure state, naming variant and step 0ms
+ ✓ tests/studio/sources.test.ts > display-check binding (F4) > refuses a record checked against a different instructional artifact 0ms
+ ✓ tests/studio/sources.test.ts > display-check binding (F4) > refuses a record whose overlaps used a different shape for another part 0ms
+ ✓ tests/studio/sources.test.ts > display-check binding (F4) > refuses a record from before display-check binding 0ms
+ ✓ tests/studio/sources.test.ts > display-check binding (F4) > reports a placed state with no check as NOT_CHECKED rather than as clear 0ms
+
+ Test Files  1 passed (1)
+      Tests  20 passed (20)
+   Start at  06:28:24
+   Duration  144ms (transform 42%, tests 42%, import 14%, worker 2%)
+

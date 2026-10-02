@@ -6,16 +6,21 @@
 //   node digital-twin/tools/studio/studio.mjs tessellate --python <frozen-env-python> --chain <label> --label <label>
 //   node digital-twin/tools/studio/studio.mjs pack --chain <label> --tessellation <label>
 //   node digital-twin/tools/studio/studio.mjs blender [--blender <path>] [--render] [--reset-presentation]
-//   node digital-twin/tools/studio/studio.mjs check
+//   node digital-twin/tools/studio/studio.mjs check [--dir <pack dir>]
+//
+// `check` reports two separate things: PACK_INTEGRITY (the manifest and GLB form the frozen pack they claim to) and
+// SOURCE_FRESHNESS (the pack still matches the closures, verification, artifacts, tessellation, display checks and
+// inputs on disk now). Exit 0 when both hold, 1 when integrity fails, 3 when an intact pack is not FRESH.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import canonicalize from 'canonicalize';
-import { writeGlb, readGlb } from './glb.mjs';
+import { writeGlb } from './glb.mjs';
 import { CAD_BASIS, RUNTIME_BASIS, C, SCALE, pointToRuntime, directionToRuntime, pointToCad, rotationToRuntime, rotationToCad,
   poseToRuntime, matrixFromQuaternion, isProperRotation } from './basis.mjs';
+import { PACK_CONTRACT, PARTS_CONTRACT, packIdPreimage, manifestProblems, glbJson, glbProblems } from '../../../picarx-companion/src/features/assembly-3d/assets/pack-contract.ts';
+import { REVISION_REGISTRY, closureReadiness, verifierIndex, tessellationProblems, displayCheckProblems, displayChecksFor, checkFreshness } from './sources.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const GEN = path.join(ROOT, 'digital-twin/generated/studio');
@@ -71,6 +76,7 @@ function runChain({ python, label }) {
   fs.mkdirSync(out, { recursive: true });
   const env = { ...process.env, PYTHONPATH: path.join(ROOT, 'digital-twin/cad') };
   const record = [];
+  const registryBefore = sha(read(REVISION_REGISTRY));
   for (const [module, ...argv] of chainCommands(out)) {
     const started = Date.now();
     const r = spawnSync(python, ['-m', `${M}.${module}`, ...argv], { cwd: path.join(ROOT, 'digital-twin'), env, encoding: 'utf8', maxBuffer: 1 << 28 });
@@ -80,6 +86,12 @@ function runChain({ python, label }) {
     if (r.status !== 0) { fs.writeFileSync(path.join(out, 'commands.json'), JSON.stringify(record, null, 1)); fail('CHAIN_STEP_FAILED', module); }
   }
   fs.writeFileSync(path.join(out, 'commands.json'), JSON.stringify({ mode: 'source-mode dev loop (PYTHONPATH=digital-twin/cad), not an M7 qualification', head: git('rev-parse', 'HEAD'), commands: record }, null, 1));
+  // The registry selects every non-board artifact (verify.purchased_artifact); the run records the one it used.
+  const registry = sha(read(REVISION_REGISTRY));
+  if (registry !== registryBefore) fail('CHAIN_REGISTRY_CHANGED', 'the revision registry changed during the chain run');
+  fs.writeFileSync(path.join(out, 'studio-chain.json'), JSON.stringify({ contract: 'picar-studio-chain/1', label, head: git('rev-parse', 'HEAD'),
+    mode: 'source-mode dev loop, not an M7 qualification', revisionRegistry: { path: REVISION_REGISTRY, sha256: registry },
+    closureObservationsSha256: sha(fs.readFileSync(path.join(out, 'closure-observations.json'))) }, null, 1));
 }
 
 // ---------------------------------------------------------------- tessellate
@@ -116,9 +128,9 @@ function displayRecords() {
   if (!fs.existsSync(dir)) return {};
   const out = {};
   for (const f of fs.readdirSync(dir).filter((n) => n.endsWith('.display.json')).sort()) {
-    const record = json(`${DISPLAY_DIR}/${f}`), brep = `${DISPLAY_DIR}/${record.artifact}`;
+    const recordPath = `${DISPLAY_DIR}/${f}`, record = json(recordPath), brep = `${DISPLAY_DIR}/${record.artifact}`;
     if (sha(read(brep)) !== record.artifactSha256) fail('DISPLAY_ARTIFACT_HASH', brep);
-    out[record.definitionId] = { record, brep };
+    out[record.definitionId] = { record, brep, recordPath, recordSha256: sha(read(recordPath)) };
   }
   return out;
 }
@@ -177,26 +189,71 @@ function buildPack({ chain, tessellation }) {
   const chainDir = path.join(GEN, 'chain', chain), tessDir = path.join(GEN, 'tessellation', tessellation);
   const stage = json(STAGE), materialLib = json(MATERIALS), gate = json(GATE_REPORT), kinds = kindsByDefinition();
   const names = Object.fromEntries(json('digital-twin/components/definitions/parts.json').map((d) => [d.id, d.name]));
-  const index = JSON.parse(fs.readFileSync(path.join(tessDir, 'meshes.json')));
-  const bin = fs.readFileSync(path.join(tessDir, 'meshes.bin'));
-  if (sha(bin) !== index.binSha256) fail('TESSELLATION_BIN_HASH');
-  const verify = JSON.parse(fs.readFileSync(path.join(chainDir, 'closure-observations.json')));
-  const verdict = Object.fromEntries(verify.results.map((r) => [`${r.variantId}-S${pad(r.printedNumber)}`, r.status]));
   const checks = [];
   const check = (id, ok, detail) => { checks.push({ id, status: ok ? 'PASS' : 'FAIL', detail }); if (!ok) fail('PACK_CHECK_FAILED', `${id}: ${detail}`); };
 
+  // Source binding (pipeline doc, "Snapshot, adoption and unresolved content"): the tessellation, the artifact
+  // selection and every step closure must be the exact ones the verifier measured, before any readiness is derived.
+  const index = JSON.parse(fs.readFileSync(path.join(tessDir, 'meshes.json')));
+  const bin = fs.readFileSync(path.join(tessDir, 'meshes.bin'));
+  const verifyBytes = fs.readFileSync(path.join(chainDir, 'closure-observations.json'));
+  const verify = JSON.parse(verifyBytes), verdicts = verifierIndex(verify);
+  const studioChainFile = path.join(chainDir, 'studio-chain.json');
+  check('chain-record', fs.existsSync(studioChainFile), 'the chain run carries its Studio chain record (studio.mjs chain)');
+  const studioChain = JSON.parse(fs.readFileSync(studioChainFile));
+  const tessProblems = tessellationProblems({ index, bin, chainLabel: chain, chainDir, root: ROOT });
+  check('tessellation-binding', tessProblems.length === 0, tessProblems.join('; ') || 'made from this chain run, its verification and artifact selection; every artifact and mesh matches its entry');
+  const registrySha = sha(read(REVISION_REGISTRY));
+  check('revision-registry', registrySha === studioChain.revisionRegistry.sha256, 'the revision registry is the one the chain run selected artifacts with');
+
+  const graphs = Object.fromEntries(activeVariants().map((v) => [v, json(`digital-twin/validation/m2/${v}/compiled-graph.json`)]));
+  const definitionOf = Object.fromEntries(Object.values(graphs).flatMap((g) => g.instances.map((i) => [i.id, i.definitionId])));
+  const sources = {}, consumed = new Set();
+  for (const variant of activeVariants()) for (let n = 1; n <= STEPS; n++) {
+    const key = `${variant}-S${pad(n)}`;
+    const closureFile = path.join(chainDir, 'chain/closures', `${key}-closure.json`), blockedFile = path.join(chainDir, 'chain/closures', `${key}-blocked.json`);
+    if (fs.existsSync(closureFile)) {
+      const bytes = fs.readFileSync(closureFile), closure = JSON.parse(bytes);
+      const readiness = closureReadiness({ key, closure, verdict: verdicts.get(key) });
+      check(`closure-binding:${key}`, readiness.problems.length === 0, readiness.problems.join('; ') || `canonical closure hash ${readiness.closureRfc8785Sha256} equals the verifier's`);
+      sources[key] = { kind: 'closure', file: closureFile, bytes, closure, readiness };
+      consumed.add(key);
+    } else if (fs.existsSync(blockedFile)) {
+      check(`refusal-listed:${key}`, verify.blocked.includes(path.basename(blockedFile)), 'the verifier lists this refused record');
+      sources[key] = { kind: 'refused-closure', file: blockedFile, bytes: fs.readFileSync(blockedFile) };
+    } else sources[key] = { kind: 'none' };
+  }
+  const orphaned = [...verdicts.keys()].filter((k) => !consumed.has(k));
+  check('verified-closures-present', orphaned.length === 0, orphaned.length ? `verifier results with no closure file: ${orphaned.join(', ')}` : 'every verifier result has its closure file');
+
   // Definitions: convert vertices exactly once, assign material regions by solid index.
   const displays = displayRecords(), labels = fidelityLabels();
+  const tessellatedArtifacts = Object.fromEntries(index.definitions.map((e) => [e.definitionId, e.artifactSha256]));
+  const boundDisplays = {};
   const usedMaterials = new Set();
   const glbDefinitions = [], definitions = {}, cadBounds = {};
   for (const entry of index.definitions) {
-    const chainPrefix = `digital-twin/generated/studio/chain/${chain}/`;
-    if (entry.artifactPath.startsWith(chainPrefix)) entry.artifactPath = 'chain:' + entry.artifactPath.slice(chainPrefix.length);
     const kind = kindOf(kinds, entry.definitionId);
     const registered = displays[entry.definitionId];
-    if (entry.display) check(`display:${entry.definitionId}`, registered && registered.record.artifactSha256 === entry.display.artifactSha256, 'tessellated display model matches its registered record');
-    const shown = entry.display ?? entry; // the meshes the Studio draws
-    const regions = entry.display ? registered.record.solids.map((s) => s.materialId)
+    let withheld = null;
+    if (entry.display) {
+      check(`display:${entry.definitionId}`, registered && registered.record.artifactSha256 === entry.display.artifactSha256, 'tessellated display model matches its registered record');
+      // A display model is drawn only while its checks name exactly this pack's artifacts and closure states;
+      // otherwise the Studio draws the instructional artifact and says why (F4: fall back, never keep a stale check).
+      const placing = Object.entries(sources).filter(([, s]) => s.kind === 'closure' && s.closure.placements.some((p) => definitionOf[p.instanceId] === entry.definitionId))
+        .map(([, s]) => ({ variantId: s.closure.variantId, step: s.closure.printedNumber, closureRfc8785Sha256: s.readiness.closureRfc8785Sha256 }));
+      const problems = displayCheckProblems(registered.record, { displaySha256: entry.display.artifactSha256, instructionalSha256: entry.artifactSha256, partArtifacts: tessellatedArtifacts, closures: placing });
+      checks.push({ id: `display-binding:${entry.definitionId}`, status: problems.length ? 'WITHHELD' : 'PASS',
+        detail: problems.length ? problems.join('; ') : `checked against ${placing.length} closures, the instructional artifact and every other placed part` });
+      if (problems.length) {
+        console.error(`[studio] detailed model for ${entry.definitionId} withheld: ${problems.join('; ')}`);
+        withheld = { label: 'Detailed presentation model withheld: its checks do not describe this pack\'s artifacts and closures, so the instructional shape is drawn',
+          artifact: { path: entry.display.artifactPath, sha256: entry.display.artifactSha256 }, record: { path: registered.recordPath, sha256: registered.recordSha256 }, problems };
+      } else boundDisplays[entry.definitionId] = registered;
+    }
+    const display = boundDisplays[entry.definitionId] ? entry.display : null;
+    const shown = display ?? entry; // the meshes the Studio draws
+    const regions = display ? registered.record.solids.map((s) => s.materialId)
       : materialLib.regions.byDefinition[entry.definitionId] ?? entry.solids.map(() => materialLib.regions.byKind[kind]);
     check(`regions:${entry.definitionId}`, regions.length === shown.solids.length && regions.every((m) => materialLib.materials[m]), `${regions.length} regions for ${shown.solids.length} solids`);
     const view = (r, Type) => new Type(bin.buffer.slice(bin.byteOffset + r.byteOffset, bin.byteOffset + r.byteOffset + r.byteLength));
@@ -215,17 +272,19 @@ function buildPack({ chain, tessellation }) {
     const rtMin = pointToRuntime(shown.boundsMm.min), rtMax = pointToRuntime(shown.boundsMm.max);
     definitions[entry.definitionId] = {
       name: names[entry.definitionId] ?? entry.definitionId, kind, node: entry.definitionId,
-      artifact: { path: entry.artifactPath, sha256: entry.artifactSha256, bytes: entry.artifactBytes },
+      artifact: { path: entry.artifactPath, sha256: entry.artifactSha256, bytes: entry.artifactBytes }, meshSha256: entry.meshSha256,
       approximation: approximationOf(entry.artifactPath, labels[entry.definitionId]),
       boundsM: { min: rtMin.map((v, i) => Math.min(v, rtMax[i])), max: rtMin.map((v, i) => Math.max(v, rtMax[i])) },
       solids: shown.solids.map((s, i) => ({ index: s.index, materialId: regions[i], triangles: s.triangleCount, volumeMm3: s.volumeMm3,
-        ...(entry.display ? { name: registered.record.solids[i].name } : {}) })),
-      ...(entry.display ? { display: {
+        ...(display ? { name: registered.record.solids[i].name } : {}) })),
+      ...(display ? { display: {
         label: 'Detailed presentation model; assembly checks use the instructional artifact',
-        source: registered.record.source, artifact: { path: entry.display.artifactPath, sha256: entry.display.artifactSha256 },
+        source: registered.record.source, artifact: { path: display.artifactPath, sha256: display.artifactSha256 }, meshSha256: display.meshSha256,
+        record: { path: registered.recordPath, sha256: registered.recordSha256, schema: registered.record.schema },
         relation: registered.record.relation, overlapsChain: registered.record.overlaps.chain,
         ...(registered.record.vendorCrossCheck ? { vendorCrossCheck: registered.record.vendorCrossCheck } : {}),
       } } : {}),
+      ...(withheld ? { displayWithheld: withheld } : {}),
     };
     glbDefinitions.push({ id: entry.definitionId, solids, extras: { picarStudio: { definitionId: entry.definitionId, artifactSha256: entry.artifactSha256, kind } } });
   }
@@ -243,19 +302,16 @@ function buildPack({ chain, tessellation }) {
 
   const materialsUsed = [...usedMaterials].sort().map((id) => ({ id, ...materialLib.materials[id] }));
   const glb = writeGlb({
-    asset: { version: '2.0', generator: 'picar-studio digital-twin/tools/studio/studio.mjs', extras: { contract: 'picar-studio-parts/1', basis: RUNTIME_BASIS, unit: 'm', track: 'presentation-only' } },
+    asset: { version: '2.0', generator: 'picar-studio digital-twin/tools/studio/studio.mjs', extras: { contract: PARTS_CONTRACT, basis: RUNTIME_BASIS, unit: 'm', track: 'presentation-only' } },
     materials: materialsUsed, definitions: glbDefinitions,
   });
-  const reread = readGlb(glb);
-  check('glb:no-images', !reread.json.images && !reread.json.textures && !reread.json.samplers, 'GLB carries no image, texture or sampler');
-  check('glb:identity-roots', reread.json.nodes.every((n) => !n.matrix && !n.translation && !n.rotation && !n.scale), 'definition roots are at identity; poses live only in the manifest');
 
   // Variants, steps, tray and cameras.
   const instances = {};
   const variants = {};
   const vfov = stage.camera.verticalFovDeg;
   for (const variant of activeVariants()) {
-    const graph = json(`digital-twin/validation/m2/${variant}/compiled-graph.json`);
+    const graph = graphs[variant];
     const inst = Object.fromEntries(graph.instances.map((i) => [i.id, i]));
     const steps = [];
     let previous = null;
@@ -263,30 +319,29 @@ function buildPack({ chain, tessellation }) {
     for (let n = 1; n <= STEPS; n++) {
       const step = graph.steps[n - 1];
       const key = `${variant}-S${pad(n)}`;
-      const closureFile = path.join(chainDir, 'chain/closures', `${key}-closure.json`), blockedFile = path.join(chainDir, 'chain/closures', `${key}-blocked.json`);
+      const src = sources[key];
       const introducedSolid = step.introducedInstanceIds.filter((id) => isSolidKind(kindOf(kinds, inst[id].definitionId)));
       for (const id of step.introducedInstanceIds) firstStepOf[id] ??= n;
       let entry;
-      if (fs.existsSync(closureFile)) {
-        const bytes = fs.readFileSync(closureFile), c = JSON.parse(bytes);
-        const v = verdict[key];
-        const display = v === 'PASS' && c.status === 'COMPLETE' ? 'PREVIEW_SOURCE_REVALIDATED' : v === 'BLOCKED' && c.status === 'BLOCKED' ? 'PREVIEW_BLOCKED_RELATION' : 'UNAVAILABLE';
+      if (src.kind === 'closure') {
+        const c = src.closure, r = src.readiness;
         check(`proper-rotations:${key}`, c.placements.every((p) => isProperRotation(p.rotation)), 'every closure rotation is proper (det +1, orthonormal)');
         for (const p of c.placements) installedRotation[p.instanceId] ??= p.rotation;
         entry = {
-          source: { kind: 'closure', file: `chain/closures/${path.basename(closureFile)}`, sha256: sha(bytes), status: c.status, closureVerify: v },
-          display, placements: c.placements, recipes: c.recipes, blockers: c.blockers, conflicts: [], carriedUnframedConnectionIds: c.carriedUnframedConnectionIds,
+          source: { kind: 'closure', file: `chain/closures/${path.basename(src.file)}`, sha256: sha(src.bytes), status: c.status,
+            closureRfc8785Sha256: r.closureRfc8785Sha256, closureVerify: r.verdict },
+          display: r.display, placements: c.placements, recipes: c.recipes, blockers: c.blockers, conflicts: [], carriedUnframedConnectionIds: c.carriedUnframedConnectionIds,
           zeroSolidInstanceIds: c.zeroSolidInstanceIds, limitations: c.sourceLimitations, approximationFlags: c.approximationFlags, claims: c.claims,
         };
         previous = c;
-      } else if (fs.existsSync(blockedFile)) {
-        const bytes = fs.readFileSync(blockedFile), b = JSON.parse(bytes);
+      } else if (src.kind === 'refused-closure') {
+        const b = JSON.parse(src.bytes);
         const recordFile = path.join(chainDir, 'chain/steps', `${key}-record.json`);
         const record = fs.existsSync(recordFile) ? JSON.parse(fs.readFileSync(recordFile)) : null;
         const candidate = record && previous ? [...previous.placements.filter((p) => !record.placements.some((r) => r.instanceId === p.instanceId)),
           ...record.placements.map(({ instanceId, translationMm, rotation, featureRef, role }) => ({ instanceId, translationMm, rotation, featureRef, role }))] : [];
         entry = {
-          source: { kind: 'refused-closure', file: `chain/closures/${path.basename(blockedFile)}`, sha256: sha(bytes), stage: b.stage, reason: String(b.reason).split(' ')[0],
+          source: { kind: 'refused-closure', file: `chain/closures/${path.basename(src.file)}`, sha256: sha(src.bytes), verifierListed: true, stage: b.stage, reason: String(b.reason).split(' ')[0],
             ...(record ? { candidateRecord: `chain/steps/${path.basename(recordFile)}`, candidateSha256: sha(fs.readFileSync(recordFile)) } : {}) },
           display: candidate.length ? 'REVIEW_REFUSED_CANDIDATE' : 'UNAVAILABLE', placements: candidate, candidate: true, recipes: record?.recipes ?? [],
           blockers: [{ id: String(b.reason).split(' ')[0] }], conflicts: parseConflicts(String(b.reason)), carriedUnframedConnectionIds: previous?.carriedUnframedConnectionIds ?? [],
@@ -306,9 +361,10 @@ function buildPack({ chain, tessellation }) {
         operable: stage.operableSteps.includes(n) && entry.display === 'PREVIEW_SOURCE_REVALIDATED',
         introducedInstanceIds: introducedSolid, introducedZeroSolidInstanceIds: step.introducedInstanceIds.filter((id) => !introducedSolid.includes(id)),
         placements: placementsRt, candidatePlacements: entry.candidate === true,
-        // Detailed display models placed in this state, intersected with every other part (see the display record).
-        displayChecks: Object.values(displays).flatMap(({ record }) => (Object.keys(placementsRt).some((id) => inst[id].definitionId === record.definitionId)
-          ? record.overlaps.positive.filter((o) => o.step === n).map((o) => ({ definitionId: record.definitionId, instanceId: o.instanceId, volumeMm3: o.volumeMm3 })) : [])),
+        // Bound display models placed in this state: CHECKED against this exact closure, or NOT_CHECKED (a refused
+        // candidate state the record never measured), so an empty overlap list always means "checked, none found".
+        displayChecks: Object.values(boundDisplays).filter(({ record }) => Object.keys(placementsRt).some((id) => inst[id].definitionId === record.definitionId))
+          .map(({ record }) => displayChecksFor(record, { variantId: variant, step: n, closureRfc8785Sha256: entry.source.closureRfc8785Sha256 ?? null })),
         recipes: entry.recipes.map((r) => ({ instanceId: r.instanceId, approachAxis: directionToRuntime(r.approachAxis), approachDistanceM: r.approachDistanceMm * SCALE,
           stagedStart: poseToRuntime(r.stagedStart), segments: r.segments, anchor: r.anchor, stagingOnly: r.stagingOnly === true })),
         blockers: entry.blockers, conflicts: entry.conflicts, carriedUnframedConnectionIds: entry.carriedUnframedConnectionIds, zeroSolidInstanceIds: entry.zeroSolidInstanceIds,
@@ -383,20 +439,22 @@ function buildPack({ chain, tessellation }) {
 
   const glbSha = sha(glb);
   const manifest = {
-    contract: 'picar-studio-pack/1',
+    contract: PACK_CONTRACT,
     classification: { capability: 'provisionalReview', label: 'Assembly Studio preview pack, not a G-GEOMETRY runtime pack', engineeringAdmission: false, runtimeAdmission: false, instructionGeometry: false },
     basis: RUNTIME_BASIS, unit: 'm',
     conversion: { from: `${CAD_BASIS} millimetres`, matrix: C, scale: SCALE, appliedIn: 'digital-twin/tools/studio/basis.mjs', poses: 'rotation C R C^T, translation 0.001 C t, quaternion [x,y,z,w]' },
     readinessKinds: {
-      PREVIEW_SOURCE_REVALIDATED: 'closure produced by the source-mode chain and passed by the independent closure verifier for this pack; not an M7 qualification',
+      PREVIEW_SOURCE_REVALIDATED: 'closure produced by the source-mode chain and passed by the independent closure verifier at this exact canonical closure hash; not an M7 qualification',
       PREVIEW_BLOCKED_RELATION: 'placements verified, a required relationship unresolved; review mode',
       REVIEW_REFUSED_CANDIDATE: 'closure refused by the overlap check; the refused record\'s candidate placements are shown for review only',
       UNAVAILABLE: 'no source record; parts stay in the tray',
     },
     source: {
       repository: { head: git('rev-parse', 'HEAD'), branch: git('branch', '--show-current') },
-      chain: { label: chain, mode: 'source-mode dev loop, not an M7 qualification', closureVerify: { status: verify.status, sha256: sha(fs.readFileSync(path.join(chainDir, 'closure-observations.json'))) } },
+      chain: { label: chain, mode: 'source-mode dev loop, not an M7 qualification', closureVerify: { status: verify.status, sha256: sha(verifyBytes) },
+        studioChain: { sha256: sha(fs.readFileSync(studioChainFile)) } },
       tessellation: { label: tessellation, meshesSha256: sha(fs.readFileSync(path.join(tessDir, 'meshes.json'))), binSha256: index.binSha256, linearDeflectionMm: index.linearDeflectionMm, angularDeflectionRad: index.angularDeflectionRad },
+      revisionRegistry: { path: REVISION_REGISTRY, sha256: registrySha },
       inputs: Object.fromEntries([STAGE, MATERIALS, GATE_REPORT, `${PRESENTATION}/instructional/product-scope.json`].map((p) => [p, sha(read(p))])),
       m7Gate: { gate: gate.gate, status: gate.status, coverage: gate.currentProductDeliveryCoverage },
     },
@@ -405,9 +463,12 @@ function buildPack({ chain, tessellation }) {
     lighting: stage.lighting,
     timing: stage.timing,
     definitions, instances, variants,
-    validation: { checks: checks.length, failed: 0, summary: [...new Set(checks.map((c) => c.id.split(':')[0]))] },
   };
-  const packId = sha(Buffer.concat([Buffer.from('picar-studio:pack\n'), Buffer.from(canonicalize(manifest))]));
+  // The producer enforces the same contract the runtime loader enforces (pack-contract.ts) before writing anything.
+  const contractProblems = [...manifestProblems({ ...manifest, packId: '0'.repeat(64) }), ...glbProblems(glbJson(glb), manifest)];
+  check('contract', contractProblems.length === 0, contractProblems.join('; ') || `manifest and GLB satisfy ${PACK_CONTRACT}`);
+  manifest.validation = { checks: checks.length, failed: 0, withheld: checks.filter((c) => c.status === 'WITHHELD').map((c) => c.id), summary: [...new Set(checks.map((c) => c.id.split(':')[0]))] };
+  const packId = sha(packIdPreimage(manifest));
   fs.mkdirSync(PACK_DIR, { recursive: true });
   fs.writeFileSync(path.join(PACK_DIR, 'parts.glb'), glb);
   fs.writeFileSync(path.join(PACK_DIR, 'manifest.json'), JSON.stringify({ packId, ...manifest }, null, 1) + '\n');
@@ -415,23 +476,32 @@ function buildPack({ chain, tessellation }) {
   console.log(JSON.stringify({ packId, glbBytes: glb.byteLength, glbSha256: glbSha, checks: checks.length, definitions: Object.keys(definitions).length, instances: Object.keys(instances).length }));
 }
 
-// ---------------------------------------------------------------- check (pack integrity; also used by the companion tests)
+// ---------------------------------------------------------------- check
+// PACK_INTEGRITY: the manifest and GLB form the frozen pack they claim to (also used by the companion tests). A pack
+// from an earlier contract is checked as a frozen pair only; the runtime loads only the current contract.
 export function checkPack(dir = PACK_DIR) {
-  const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json')));
-  const { packId, ...rest } = manifest;
-  const problems = [];
-  const expect = sha(Buffer.concat([Buffer.from('picar-studio:pack\n'), Buffer.from(canonicalize(rest))]));
-  if (expect !== packId) problems.push('PACK_ID_MISMATCH');
-  const glb = fs.readFileSync(path.join(dir, manifest.assets.parts.path));
-  if (sha(glb) !== manifest.assets.parts.sha256 || glb.byteLength !== manifest.assets.parts.bytes) problems.push('GLB_HASH_MISMATCH');
-  const { json: g } = readGlb(new Uint8Array(glb));
-  const nodes = new Set(g.nodes.map((n) => n.name));
-  for (const id of Object.keys(manifest.definitions)) if (!nodes.has(id)) problems.push('MISSING_NODE ' + id);
-  for (const [id, i] of Object.entries(manifest.instances)) if (!manifest.definitions[i.definitionId]) problems.push('MISSING_DEFINITION ' + id);
-  for (const [variant, v] of Object.entries(manifest.variants)) for (const s of v.steps) for (const id of Object.keys(s.placements)) if (!manifest.instances[id]) problems.push(`UNKNOWN_INSTANCE ${variant} S${s.printedNumber} ${id}`);
+  let manifest;
+  try { manifest = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'))); } catch { return { packId: null, status: 'FAIL', problems: ['MANIFEST_JSON'], notes: [] }; }
+  const problems = [], notes = [];
+  if (sha(packIdPreimage(manifest)) !== manifest.packId) problems.push('PACK_ID_MISMATCH');
+  const glb = fs.readFileSync(path.join(dir, 'parts.glb'));
+  if (glb.byteLength !== manifest.assets?.parts?.bytes || sha(glb) !== manifest.assets?.parts?.sha256) problems.push('GLB_HASH_MISMATCH');
+  if (manifest.contract === PACK_CONTRACT) {
+    const schema = manifestProblems(manifest);
+    problems.push(...schema);
+    if (!schema.length) problems.push(...glbProblems(glbJson(new Uint8Array(glb)), manifest));
+  } else notes.push(`CONTRACT ${manifest.contract}: checked as a frozen pair only; the runtime loads ${PACK_CONTRACT}`);
   const allowed = new Set(['manifest.json', 'parts.glb']);
   for (const f of fs.readdirSync(dir)) if (!allowed.has(f)) problems.push('UNEXPECTED_FILE ' + f);
-  return { packId, problems };
+  return { packId: manifest.packId, status: problems.length ? 'FAIL' : 'PASS', problems, notes };
+}
+
+// SOURCE_FRESHNESS of the pack in `dir` against the sources on disk now (sources.mjs). A pack from before source
+// binding records nothing to compare, so its freshness cannot be established.
+export function checkPackFreshness(dir = PACK_DIR, root = ROOT) {
+  const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json')));
+  if (manifest.contract !== PACK_CONTRACT) return { status: 'UNVERIFIABLE', problems: [`SOURCE_BINDING_NOT_RECORDED ${manifest.contract}`] };
+  return checkFreshness(manifest, root);
 }
 
 // ---------------------------------------------------------------- blender
@@ -455,7 +525,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     else if (command === 'tessellate') runTessellate(opts);
     else if (command === 'pack') buildPack(opts);
     else if (command === 'blender') runBlender(opts);
-    else if (command === 'check') { const r = checkPack(); console.log(JSON.stringify(r)); if (r.problems.length) process.exitCode = 1; }
+    else if (command === 'check') {
+      const dir = opts.dir ? path.resolve(opts.dir) : PACK_DIR;
+      const { packId, status, problems, notes } = checkPack(dir);
+      const freshness = status === 'PASS' ? checkPackFreshness(dir) : { status: 'NOT_CHECKED', problems: ['PACK_INTEGRITY failed'] };
+      console.log(JSON.stringify({ packId, integrity: { status, problems, notes }, freshness }, null, 1));
+      process.exitCode = status !== 'PASS' ? 1 : freshness.status !== 'FRESH' ? 3 : 0;
+    }
     else { console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 10).join('\n')); process.exitCode = 2; }
   } catch (e) { console.error(e.message); process.exitCode = 1; }
 }
