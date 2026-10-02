@@ -4,8 +4,31 @@ mod commands;
 pub mod persistence;
 #[cfg(feature = "m3-persistence")]
 mod strict_json;
-#[cfg(feature = "m3-persistence")]
-use tauri::Manager;
+use tauri::{Manager, PhysicalPosition, PhysicalSize};
+
+/// The configured window size can exceed a display's usable area, and centring a window larger than the screen leaves it
+/// partly off-screen. Keep the configured size where it fits, otherwise fit it to the monitor's work area (outside the menu
+/// bar and Dock), and centre it there. Placement never stops the app from starting.
+fn fit_main_window(app: &tauri::App) {
+    let place = || -> tauri::Result<()> {
+        let Some(window) = app.get_webview_window("main") else { return Ok(()) };
+        let Some(monitor) = window.current_monitor()?.or(window.primary_monitor()?) else { return Ok(()) };
+        let (area, scale) = (*monitor.work_area(), monitor.scale_factor());
+        let (width, height) = app.config().app.windows.first().map_or((1440.0, 900.0), |w| (w.width, w.height));
+        let fit = |logical: f64, available: u32| ((logical * scale).round() as u32).min(available * 96 / 100);
+        // Centre from the size set here: AppKit applies a resize after this call returns, so reading the window's size
+        // back would still give the configured one. The overlay title bar keeps the outer and inner sizes equal.
+        let size = PhysicalSize::new(fit(width, area.size.width), fit(height, area.size.height));
+        window.set_size(size)?;
+        let x = area.position.x + (area.size.width.saturating_sub(size.width) / 2) as i32;
+        let y = area.position.y + (area.size.height.saturating_sub(size.height) / 2) as i32;
+        window.set_position(PhysicalPosition::new(x, y))
+    };
+    if let Err(error) = place() {
+        eprintln!("window placement skipped: {error}");
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     let builder = tauri::Builder::default().plugin(tauri_plugin_opener::init());
@@ -13,8 +36,14 @@ pub fn run() {
     let builder = builder
         .plugin(tauri_plugin_wdio::init())
         .plugin(tauri_plugin_wdio_webdriver::init());
+    #[cfg(not(feature = "m3-persistence"))]
+    let builder = builder.setup(|app| {
+        fit_main_window(app);
+        Ok(())
+    });
     #[cfg(feature = "m3-persistence")]
     let builder = builder.setup(|app| {
+        fit_main_window(app);
         #[cfg(not(feature = "m3-native-test"))]
         let dir = app.path().app_data_dir()?;
         #[cfg(feature = "m3-native-test")]
