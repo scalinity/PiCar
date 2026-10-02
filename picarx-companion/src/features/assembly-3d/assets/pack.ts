@@ -1,7 +1,8 @@
 // Studio pack access: the generated manifest (poses, readiness, materials) and the shared part geometry.
 // Built by digital-twin/tools/studio/studio.mjs; never hand-edited. A preview pack, not a G-GEOMETRY pack.
-import { Group, Mesh, Object3D } from 'three';
+import { Group, Mesh, Object3D, Quaternion, Vector3 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { validatePackBytes } from './pack-contract';
 import manifestUrl from '../../../generated/studio/manifest.json?url';
 import partsUrl from '../../../generated/studio/parts.glb?url';
 import type { StudioVariant } from '../../../lib/router';
@@ -49,31 +50,44 @@ export type StudioManifest = {
   definitions: Record<string, DefinitionEntry>; instances: Record<string, InstanceEntry>; variants: Record<StudioVariant, VariantEntry>;
 };
 
-export type LoadTimings = { manifestFetchMs: number; manifestParseMs: number; glbFetchMs: number; glbDecodeMs: number; buildMs: number; glbBytes: number };
+// Load phases as performance.now() marks: fetch both files, verify them against the pack contract, decode, build.
+export type LoadTimings = { fetchStart: number; manifestFetched: number; glbFetched: number; verified: number; decoded: number; built: number; glbBytes: number };
 export type LoadedPack = { manifest: StudioManifest; definitions: Map<string, Object3D>; timings: LoadTimings };
 
+const fetchBytes = async (url: string): Promise<Uint8Array> => {
+  const response = await fetch(url);
+  if (!response.ok) throw Error(`Studio pack file ${url} could not be read (${response.status}).`);
+  return new Uint8Array(await response.arrayBuffer());
+};
+
+const IDENTITY = new Quaternion(), UNIT = new Vector3(1, 1, 1);
+
+// Nothing is decoded or drawn until the bytes are the pack the manifest names (pack-contract.ts): manifest schema,
+// canonical pack ID, GLB SHA-256 (never only its length) and one identity root per definition.
 async function load(): Promise<LoadedPack> {
-  const t0 = performance.now();
-  const manifestText = await (await fetch(manifestUrl)).text();
-  const t1 = performance.now();
-  const manifest = JSON.parse(manifestText) as StudioManifest;
-  const t2 = performance.now();
-  const buffer = await (await fetch(partsUrl)).arrayBuffer();
-  const t3 = performance.now();
-  if (buffer.byteLength !== manifest.assets.parts.bytes) throw Error('Studio parts file does not match its manifest; rebuild the Studio pack.');
-  const gltf = await new GLTFLoader().parseAsync(buffer, '');
-  const t4 = performance.now();
+  const fetchStart = performance.now();
+  const manifestBytes = await fetchBytes(manifestUrl);
+  const manifestFetched = performance.now();
+  const glbBytes = await fetchBytes(partsUrl);
+  const glbFetched = performance.now();
+  const { manifest: checked, problems } = await validatePackBytes(manifestBytes, glbBytes);
+  if (!checked) throw Error(`The Studio pack failed its integrity check (${problems.join('; ')}). Rebuild it with studio.mjs pack.`);
+  const manifest = checked as StudioManifest;
+  const verified = performance.now();
+  const gltf = await new GLTFLoader().parseAsync(glbBytes.buffer.slice(glbBytes.byteOffset, glbBytes.byteOffset + glbBytes.byteLength) as ArrayBuffer, '');
+  const decoded = performance.now();
   const definitions = new Map<string, Object3D>();
   for (const node of [...gltf.scene.children]) { // copy: wrapping a Mesh re-parents it out of this array
     const id = node.userData?.picarStudio?.definitionId as string | undefined;
-    if (!id || !manifest.definitions[id]) throw Error(`Unidentified part node in the Studio pack: ${node.name}`);
+    if (!id || !manifest.definitions[id] || definitions.has(id)) throw Error(`Unidentified or repeated part node in the Studio pack: ${node.name}`);
+    const atIdentity = node.position.lengthSq() === 0 && node.quaternion.equals(IDENTITY) && node.scale.equals(UNIT);
+    if (!atIdentity) throw Error(`Studio pack part ${id} carries a root transform; poses come only from the manifest.`);
     const root = node instanceof Mesh ? new Group().add(node) : node;
     root.traverse((o) => { if (o instanceof Mesh) { o.castShadow = true; o.receiveShadow = true; } });
     definitions.set(id, root);
   }
   for (const id of Object.keys(manifest.definitions)) if (!definitions.has(id)) throw Error(`Studio pack is missing the geometry for ${id}`);
-  const t5 = performance.now();
-  return { manifest, definitions, timings: { manifestFetchMs: t1 - t0, manifestParseMs: t2 - t1, glbFetchMs: t3 - t2, glbDecodeMs: t4 - t3, buildMs: t5 - t4, glbBytes: buffer.byteLength } };
+  return { manifest, definitions, timings: { fetchStart, manifestFetched, glbFetched, verified, decoded, built: performance.now(), glbBytes: glbBytes.byteLength } };
 }
 
 let pending: Promise<LoadedPack> | null = null;

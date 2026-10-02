@@ -91,8 +91,10 @@ export function Header({ pack, variant, step, root }: { pack: LoadedPack; varian
 }
 
 function Inspector({ pack, variant, timeline }: { pack: LoadedPack; variant: StudioVariant; timeline: Timeline }) {
-  const selection = useStudio((s) => s.selection);
+  const selected = useStudio((s) => s.selection);
   const t = useStudio((s) => s.t);
+  // A selection from the other board is cleared by the frame loop; until then it is not this board's part.
+  const selection = selected && pack.manifest.variants[variant].tray.instances[selected] ? selected : null;
   if (!selection) return <p className="studio-hint">Select a part in the view to see where its shape and pose come from.</p>;
   const instance = pack.manifest.instances[selection], definition = pack.manifest.definitions[instance.definitionId];
   const state = statesAt(pack.manifest.variants[variant], timeline, t).get(selection);
@@ -239,7 +241,7 @@ export function PerfHud() {
     <div className="studio-perf" aria-label="Performance">
       <div><b>{p.fps.toFixed(0)}</b> fps · frame {ms(p.meanMs)} · p95 {ms(p.p95Ms)}</div>
       <div>{p.width}×{p.height} css px · dpr {p.dpr} · {p.calls} draws · {p.triangles.toLocaleString()} tris</div>
-      <div>manifest {ms(p.load?.manifestFetchMs)} + {ms(p.load?.manifestParseMs)} · glb {ms(p.load?.glbFetchMs)} · decode {ms(p.load?.glbDecodeMs)} · build {ms(p.load?.buildMs)}</div>
+      <div>{p.load ? <>manifest {ms(p.load.manifestFetched - p.load.fetchStart)} · glb {ms(p.load.glbFetched - p.load.manifestFetched)} · verify {ms(p.load.verified - p.load.glbFetched)} · decode {ms(p.load.decoded - p.load.verified)} · build {ms(p.load.built - p.load.decoded)}</> : 'load —'}</div>
       <div>load to first frame {ms(p.firstFrameMs)}</div>
     </div>
   );

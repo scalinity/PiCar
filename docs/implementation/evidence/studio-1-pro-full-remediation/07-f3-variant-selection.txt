@@ -1,0 +1,36 @@
+# F3 cross-variant selection
+
+## RED (Chromium, before the fix; pack 7dcd6252a32a)
+[1/4] [chromium] › tests/browser/studio.spec.ts:126:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe
+  1) [chromium] › tests/browser/studio.spec.ts:126:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe 
+    Error: expect(received).toBeNull()
+    Received: "PX-V40-INS-PI5-001"
+[2/4] [chromium] › tests/browser/studio.spec.ts:126:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe
+  2) [chromium] › tests/browser/studio.spec.ts:126:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe 
+    Error: expect(received).toBeNull()
+    Received: "PX-V40-INS-ZERO2W-001"
+[3/4] [chromium] › tests/browser/studio.spec.ts:141:1 › a part common to both boards keeps its selection, highlight and framing across a board switch
+  3) [chromium] › tests/browser/studio.spec.ts:141:1 › a part common to both boards keeps its selection, highlight and framing across a board switch 
+    Error: expect(received).toBe(expected) // Object.is equality
+    Expected: true
+    Received: false
+[4/4] [chromium] › tests/browser/studio.spec.ts:158:1 › rapid board switching with a selection raises no error
+  4) [chromium] › tests/browser/studio.spec.ts:158:1 › rapid board switching with a selection raises no error 
+    Error: expect(received).toEqual(expected) // deep equality
+    - Expected  - 1
+    + Received  + 5
+    +   "Cannot read properties of undefined (reading 'updateWorldMatrix')",
+    +   "Cannot read properties of undefined (reading 'updateWorldMatrix')",
+    +   "Cannot read properties of undefined (reading 'updateWorldMatrix')",
+  4 failed
+    [chromium] › tests/browser/studio.spec.ts:126:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe 
+    [chromium] › tests/browser/studio.spec.ts:126:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe 
+    [chromium] › tests/browser/studio.spec.ts:141:1 › a part common to both boards keeps its selection, highlight and framing across a board switch 
+    [chromium] › tests/browser/studio.spec.ts:158:1 › rapid board switching with a selection raises no error 
+
+## GREEN (Chromium)
+  4 passed (19.7s)
+
+## unit
+ ✓ tests/studio/selection.test.ts > clears a board-specific selection on a board switch and keeps a part both boards share 1ms
+      Tests  1 passed (1)

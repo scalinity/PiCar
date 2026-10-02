@@ -1,0 +1,27 @@
+# F5 runtime pack contract
+
+## unit: validatePackBytes against the tracked pack and isolated mutations
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > accepts the tracked pack 8ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a different GLB of exactly the same byte length 4ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a one-byte mutation of the GLB 4ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a manifest whose pack ID does not match its canonical content 3ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a duplicate definition node, even with every hash recomputed 6ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a GLB that is missing a definition 5ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a definition root that carries a transform 5ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects a definition root with child nodes that could position hidden geometry 5ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects an unsupported basis 3ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects an unsupported unit 3ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > rejects an unsupported contract version and an operable step that is not display-ready 6ms
+ ✓ tests/studio/pack-contract.test.ts > runtime pack validation > checks nothing past a manifest it cannot parse 0ms
+      Tests  12 passed (12)
+
+## RED: browser, same-length wrong GLB accepted by the Studio 1 loader (Chromium)
+npm notice run 'playwright' test tests/browser/studio.spec.ts --project=chromium -g selecting the rpi5 board|wrong bytes --reporter=line
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+[2/2] [chromium] › tests/browser/studio.spec.ts:210:1 › a GLB of the right length but the wrong bytes is refused before drawing
+  2) [chromium] › tests/browser/studio.spec.ts:210:1 › a GLB of the right length but the wrong bytes is refused before drawing 
+    Error: expect(locator).toBeVisible() failed
+    Expected: visible
+
+## GREEN: browser (Chromium): refused before drawing, no canvas
+  3 passed (12.3s)

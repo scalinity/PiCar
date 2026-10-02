@@ -1,0 +1,36 @@
+# F2 persistence boundary
+
+## unit (legacy mode, captureLegacy afterwards)
+ ✓ tests/studio/persistence.test.ts > keeps Studio routes out of the legacy record, which the M3 migration then adopts unchanged 78ms
+      Tests  1 passed (1)
+
+## RED: legacy browser test with the fix stashed (Chromium)
+    Error: expect(received).toEqual(expected) // deep equality
+    - Expected  - 1
+    + Received  + 1
+    -   "lastRoute": "#/reference",
+    +   "lastRoute": "#/studio/rpi5/1",
+    > 26 |   expect(JSON.parse(raw)).toEqual({ ...seeded, lastRoute: '#/reference' });
+  1 failed
+
+## RED: M3 browser test before the fix (Chromium)
+    Error: #/studio/rpi5/1
+    Received: "INVALID_SETUP"
+      196 |   await go('#/studio/rpi5/1');
+      215 |   await page.goto('/#/studio/rpi5/1');
+
+## GREEN: npx playwright test -c playwright.legacy.config.ts (Chromium + WebKit)
+[1/10] [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+[2/10] [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained
+[3/10] [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available
+[4/10] [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional
+[5/10] [chromium] › tests/browser/studio.legacy.spec.ts:12:1 › a legacy record stays valid for M3 migration after the Studio is used and left open
+[6/10] [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+[7/10] [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained
+[8/10] [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available
+[9/10] [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional
+[10/10] [webkit] › tests/browser/studio.legacy.spec.ts:12:1 › a legacy record stays valid for M3 migration after the Studio is used and left open
+  10 passed (11.7s)
+
+## GREEN: M3 browser test (Chromium)
+  3 passed (12.3s)

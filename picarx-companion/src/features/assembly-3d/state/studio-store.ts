@@ -36,10 +36,13 @@ export const studioKey = (variant: StudioVariant, step: number): string => `${va
 
 // Called from the frame loop: a new board or step (from a click, the URL or history) starts its timeline
 // from the beginning and asks for the guided camera. Under reduced motion the step opens at its end state.
-export function enterStep(key: string, duration: number): boolean {
+// A selection survives only when the selected part exists on the board being entered (`members`); the boards have no
+// defined part-to-part correspondence, so nothing is remapped by name or shape.
+export function enterStep(key: string, duration: number, members: ReadonlySet<string>): boolean {
   if (state.key === key) return false;
   const still = reducedMotion() || duration === 0;
-  set({ key, t: still ? duration : 0, playing: !still, direction: 1, cameraMode: 'guided', cameraRequest: state.cameraRequest + 1 });
+  const selection = state.selection !== null && members.has(state.selection) ? state.selection : null;
+  set({ key, t: still ? duration : 0, playing: !still, direction: 1, cameraMode: 'guided', cameraRequest: state.cameraRequest + 1, selection });
   return true;
 }
 

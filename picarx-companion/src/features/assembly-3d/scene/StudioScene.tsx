@@ -43,7 +43,7 @@ function environment(gl: WebGLRenderer, lights: LightSpec[], base: Vec3): Textur
   return texture;
 }
 
-type Instances = { roots: Map<string, Group>; normal: Map<Mesh, Material>; highlighted: Map<Mesh, Material> };
+type Instances = { ids: ReadonlySet<string>; roots: Map<string, Group>; normal: Map<Mesh, Material>; highlighted: Map<Mesh, Material> };
 
 function buildInstances(pack: LoadedPack, variant: StudioVariant): Instances {
   const materials = new Map<string, MeshPhysicalMaterial>(), highlight = new Map<string, MeshPhysicalMaterial>();
@@ -73,7 +73,7 @@ function buildInstances(pack: LoadedPack, variant: StudioVariant): Instances {
     });
     roots.set(id, root);
   }
-  return { roots, normal, highlighted };
+  return { ids: new Set(roots.keys()), roots, normal, highlighted };
 }
 
 type Tween = { from: [Vector3, Vector3]; to: [Vector3, Vector3]; start: number; seconds: number } | null;
@@ -85,7 +85,7 @@ export const getViewport = (): ViewportApi | null => viewport;
 
 function Driver({ pack, variant, step, instances, timeline, guided }: { pack: LoadedPack; variant: StudioVariant; step: number; instances: Instances; timeline: Timeline; guided: StudioCamera }) {
   const { camera, invalidate, gl, size, viewport: vp, setDpr, scene } = useThree();
-  const memory = useMemo(() => ({ cameraRequest: -1, focusRequest: 0, tween: null as Tween, selection: null as string | null, controls: null as OrbitControls | null }), []);
+  const memory = useMemo(() => ({ cameraRequest: -1, focusRequest: 0, tween: null as Tween, selection: null as string | null, instances: null as Instances | null, controls: null as OrbitControls | null }), []);
   const variantEntry = pack.manifest.variants[variant];
 
   useFrame((_, dt) => {
@@ -95,15 +95,18 @@ function Driver({ pack, variant, step, instances, timeline, guided }: { pack: Lo
     const dpr = governDpr(vp.dpr);
     if (dpr !== vp.dpr) setDpr(dpr);
     const key = studioKey(variant, step);
-    enterStep(key, timeline.duration);
+    enterStep(key, timeline.duration, instances.ids);
     advance(Math.min(dt, 0.1), timeline.duration);
     const s = getStudioState();
     for (const [id, st] of statesAt(variantEntry, timeline, s.t)) {
-      const root = instances.roots.get(id)!;
+      const root = instances.roots.get(id);
+      if (!root) continue;
       root.position.set(...st.pose.translationM);
       root.quaternion.set(...st.pose.rotationXYZW);
       root.userData.phase = st.phase;
     }
+    // Rebuilt roots (a board switch) start with normal materials, so a retained selection is highlighted again.
+    if (memory.instances !== instances) { memory.instances = instances; memory.selection = null; }
     if (s.selection !== memory.selection) {
       for (const id of [memory.selection, s.selection]) {
         const root = id ? instances.roots.get(id) : undefined;
@@ -117,13 +120,17 @@ function Driver({ pack, variant, step, instances, timeline, guided }: { pack: Lo
         memory.cameraRequest = s.cameraRequest;
         memory.tween = { from: [camera.position.clone(), controls.target.clone()], to: [new Vector3(...guided.positionM), new Vector3(...guided.targetM)], start: now, seconds: memory.cameraRequest === 1 ? 0 : 0.9 };
       }
-      if (s.focusRequest !== memory.focusRequest && s.selection) {
+      if (s.focusRequest !== memory.focusRequest) {
         memory.focusRequest = s.focusRequest;
-        const box = new Box3().setFromObject(instances.roots.get(s.selection)!), centre = box.getCenter(new Vector3());
-        const radius = Math.max(box.getSize(new Vector3()).length() / 2, 0.012);
-        const dir = camera.position.clone().sub(controls.target).normalize();
-        const distance = (radius * 1.6) / Math.sin(((camera as PerspectiveCamera).fov * Math.PI) / 360);
-        memory.tween = { from: [camera.position.clone(), controls.target.clone()], to: [centre.clone().addScaledVector(dir, distance), centre], start: now, seconds: 0.7 };
+        // Only a part that is in the active scene can be framed; any other request is consumed without effect.
+        const root = s.selection ? instances.roots.get(s.selection) : undefined;
+        if (root?.parent) {
+          const box = new Box3().setFromObject(root), centre = box.getCenter(new Vector3());
+          const radius = Math.max(box.getSize(new Vector3()).length() / 2, 0.012);
+          const dir = camera.position.clone().sub(controls.target).normalize();
+          const distance = (radius * 1.6) / Math.sin(((camera as PerspectiveCamera).fov * Math.PI) / 360);
+          memory.tween = { from: [camera.position.clone(), controls.target.clone()], to: [centre.clone().addScaledVector(dir, distance), centre], start: now, seconds: 0.7 };
+        }
       }
       if (memory.tween) {
         const k = memory.tween.seconds === 0 ? 1 : Math.min(1, (now - memory.tween.start) / (memory.tween.seconds * 1000));

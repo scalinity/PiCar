@@ -22,8 +22,12 @@ export function setStepDone(id:string,done:boolean):void {
  if(M3_ENABLED){void updateSetup(old=>{const steps={...old.steps};if(done)steps[id]='done';else delete steps[id];return {...old,steps};}).catch(saveError);return;}
  const steps={...legacy.steps};if(done)steps[id]='done';else delete steps[id];update({steps});
 }
+// Studio browsing is presentation state, not Setup state: a Studio URL is never the remembered route, so it can neither
+// fail M3's closed route contract nor reach a legacy record the M3 migration later validates.
+const studioRoute=(h:string):boolean=>/^#\/studio(?:[/?]|$)/.test(h);
 export function rememberRoute():void {
  const h=window.location.hash;
+ if(studioRoute(h))return;
  if((!M3_ENABLED || getStore().initialized&&!getStore().pending)&&h&&h!=='#/')update({lastRoute:h});
 }
 if(!M3_ENABLED)window.addEventListener('hashchange',rememberRoute);

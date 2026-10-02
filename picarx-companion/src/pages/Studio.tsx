@@ -67,6 +67,12 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
         state: getStudioState, perf: perfSnapshot, viewport: getViewport,
         camera: () => { const vp = getViewport(); return vp ? { position: vp.camera.position.toArray(), target: vp.controls.target.toArray(), aspect: vp.camera.aspect } : null; },
         instance: (id: string) => { const vp = getViewport(); const o = vp?.scene.getObjectByName(id); return o ? { position: o.position.toArray(), quaternion: o.quaternion.toArray() } : null; },
+        // Whether the instance in the active scene renders with the selection tint.
+        highlighted: (id: string) => {
+          let lit = false;
+          getViewport()?.scene.getObjectByName(id)?.traverse((o) => { const m = (o as { material?: { emissive?: { getHex(): number } } }).material; if (m?.emissive && m.emissive.getHex() !== 0) lit = true; });
+          return lit;
+        },
       };
     }
     return () => { window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', markEscape); window.removeEventListener('keyup', onKeyUp); };
