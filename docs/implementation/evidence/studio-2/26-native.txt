@@ -1,0 +1,43 @@
+# Native validation: debug bundle (pnpm tauri build --debug --bundles app), macOS, default legacy persistence mode
+# Final bundle: pack 466de8923467 (contract 3, chain s2-01), with the 3D-picking and camera-yield fixes. Driven through
+# computer use; captures with screencapture -x -o -l<windowId> (the app window only). Navigation used only the Studio
+# routes and Home, so the owner's setup record was not written. Screen 1168 x 755 pt, work area 1168 x 733.5 pt.
+
+ 1 launch sizing and centring             PASS  1123 x 704 at (22, 36); margins 22/23 pt, 14.5/15 pt (7991eb2 kept)
+ 2 relaunch                               PASS  1121 x 704 at (23, 36)
+ 3 enter native fullscreen (app button)   PASS  window 1168 x 729 at y 26; traffic lights hidden, panels re-laid out
+ 4 S00 tray, Pi 5                         PASS  50 pieces, 44 modelled, 6 tiles; seven labelled groups     captures/native-01
+ 5 S01                                    PASS  plays to 4.0 / 4.0 s; verified booklet panel (Pi 4 / Pi 5)   captures/native-02
+ 6 S03                                    PASS  still ("Still: nothing moves"); Pi 5 FPC panel              captures/native-03
+ 7 S06                                    PASS  battery beside the hook and loop tape tiles; panel           captures/native-04
+ 8 S07 review                             PASS  Space does not play; battery and Robot HAT tinted; blocker   captures/native-05
+ 9 S08                                    PASS  plays to 3.2 / 3.2 s; "Step 7 is still under review ..."    captures/native-06
+10 S09 review, conflict pair              PASS  horn x Plate H tinted, rest ghosted, framed, manual camera   captures/native-07
+11 Escape with a pair chosen              PASS  one press clears the pair only; fullscreen kept
+12 board switch at S09, Zero 2 W S02      PASS  step kept; Zero 2 W S02 plays to 2.8 / 2.8 s, its own panel  captures/native-08
+13 board switch back, Pi 5 S04            PASS
+14 ghost others (G)                       PASS  this step's parts solid, Plate A translucent                 captures/native-09
+15 explode (E)                            PASS  stack opens in order, in frame; off returns                  captures/native-10
+16 deck clip (C)                          PASS  everything above the deck cut, tray intact, slider           captures/native-11
+17 manual panel, Enlarge                  PASS  panel fits the window height (capture not committed: it would copy a booklet panel)
+18 Escape with the manual open            PASS  closes the manual only
+19 selection in the 3D view (final build) PASS  click on the HAT selects the HAT; camera stays guided        captures/native-13
+20 inspector                              PASS  record name and id, instance, inventory, phase, shape hash, pose source
+21 performance overlay (P)                PASS  see 27-performance.txt                                       captures/native-15
+22 drawer collapse (I)                    PASS  framing area widens                                          captures/native-14
+23 Escape with a selection, then again    PASS  first press clears the selection only, still fullscreen; second leaves fullscreen
+24 exit fullscreen                        PASS  window returns to 1121 x 704 at (23, 36)
+25 leave the Studio and re-enter          PASS  Companion link to Home; Studio tab reopens the tray, guided
+26 manual camera and Resume guided view   PASS  an orbit yields; one click returns
+27 frame a tray group                     PASS  Fasteners framed from the inventory
+
+Found and fixed during this pass (both verified in the final bundle and covered by a browser test):
+- 3D picking: a click on a part selected a tray tile instead. Tile edges are LineLoops, which three.js raycasts within one
+  world unit (a metre here); the edges are now excluded from picking (resources.ts).
+- A click that only selected a part switched the camera to manual. A press now yields the guided view once it moves the
+  camera, or when it interrupts a guided move (StudioScene.tsx).
+
+Environment finding (not an app defect): during an earlier pass the Terminal window, which screenshots hide from computer
+use, stood in front of the app and received clicks aimed at the dock, which produced selections and camera changes the
+script did not intend. The window list confirmed Terminal frontmost over the app. The final pass ran in native fullscreen
+on its own Space, and a clean replay of the same sequence behaved as designed.

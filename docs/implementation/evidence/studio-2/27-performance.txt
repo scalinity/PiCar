@@ -1,0 +1,30 @@
+# Studio 2 performance, remediation metric semantics (state/perf.ts): fps, mean and p95 over the last 120 ACTIVE frames
+# (the previous frame asked for the next, or the user is moving the view, with the page visible); marks from the Studio
+# page's first render. Native debug bundle, final pack 466de8923467, native fullscreen 1168 x 729 CSS px, display 60 Hz.
+
+Load and start (first Studio visit of the app session)
+  manifest 3.0 ms · glb 22.0 ms · verify 6.0 ms · decode 4.0 ms · build 0.0 ms
+  page start -> canvas 374.0 ms · first render 375.0 ms · first frame drawn 409.0 ms
+
+Replays (read from the overlay after the replay; DPR 2 throughout)
+  Pi 5 S02 replay                      60 fps · mean 16.7 ms · p95 17.0 ms · display 16.0 ms · 236 draws · 172,802 tris
+  Pi 5 S05 replay (14 moving parts)    60 fps · mean 16.7 ms · p95 18.0 ms · 269 draws · 214,558 tris
+  Pi 5 S04 replay, ghost + explode on  60 fps · mean 16.7 ms · p95 18.0 ms · 251 draws · 191,238 tris
+  Pi 5 S04 replay, deck clip on        60 fps · mean 16.7 ms · p95 18.0 ms · 251 draws · 191,238 tris
+  after board switches (to Zero 2 W and back, natively)  S02 replay 60 fps at DPR 2; six switches and three Studio visits
+                                       are the browser F10 test (textures, programs and owners back at baseline)
+
+Tray orbit (S00, 293 draws, 245,846 tris)
+  Orbiting the whole tray does not hold 60 fps at DPR 2 in the app's WKWebView: the pixel-ratio governor stepped down
+  (it does so only when 120 active frames average over 25 ms), to 1.5 on a plain orbit and once on to 1 after a deck-clip
+  toggle's shader recompile. At the lower ratio the overlay reads 60 fps, mean 16.7 ms, p95 17-18 ms; back on a step view
+  the governor restores DPR 2 (S02 60 fps at DPR 2).
+  Not reproduced at the same size and ratio in GPU Chromium (ANGLE Metal) or Playwright WebKit, scripted orbit, 102 frames:
+    S00 as built 16.7 / p95 17.2 (Chromium), 16.7 / 17.0 (WebKit); labels hidden, floor hidden, shadows off: no change.
+  Ruled out natively: tool toggles (a plain orbit drops too), the instruction drawer (closed, it still drops).
+  Not isolated: both browser runs are headless and skip window-server compositing, which the native window has.
+  Disposition: recorded for Studio 4 (native frame budget on the owner's Mac); the governor keeps the view at 60 fps.
+
+Comparison with the remediation baseline (same metric, same display, same S02 replay)
+  remediation: 60 fps, mean 16.7 ms, p95 18.0 ms, 236 draws, 172,122 tris; canvas 364, first render 365, first frame 388 ms
+  Studio 2:    60 fps, mean 16.7 ms, p95 17.0 ms, 236 draws, 172,802 tris (+680: Plate A's added hole); 374 / 375 / 409 ms

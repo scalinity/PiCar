@@ -1,0 +1,1022 @@
+{
+ "contract": "picar-studio-tray-audit/1",
+ "label": "after",
+ "manifest": {
+  "path": "picarx-companion/src/generated/studio/manifest.json",
+  "packId": "466de8923467aca572814e543467268e420d5a668cd035ee92a5fbe64a8a9130"
+ },
+ "scope": "Canonical counts are printed-stock claims (BOM_RECONCILIATION.md), not a count of the owner's actual loose kit.",
+ "view": {
+  "width": 1168,
+  "height": 729
+ },
+ "variants": {
+  "rpi5": {
+   "counts": {
+    "canonicalPhysicalCount": 156,
+    "s01ToS09RequiredCount": 50,
+    "packInstanceCount": 44,
+    "trayInstanceCount": 44,
+    "placedInstanceCount": 40,
+    "candidateOnlyInstanceCount": 4,
+    "rendered3DInstanceCount": 44,
+    "nonRenderableCount": 6,
+    "nonRenderableRepresentedCount": 6,
+    "missingCount": 0,
+    "duplicateUnexpectedCount": 0,
+    "coincidentTrayPairs": 0,
+    "definitionsDrawn": 18
+   },
+   "invariant": "HOLDS",
+   "canonical": {
+    "byDisposition": {
+     "available": 111,
+     "backup": 37,
+     "accessory": 5,
+     "tool": 3
+    },
+    "byComponentClass": {
+     "screw": 36,
+     "washer": 16,
+     "nut": 6,
+     "standoff": 24,
+     "rivet": 34,
+     "plate": 8,
+     "motor": 2,
+     "servo": 3,
+     "horn": 3,
+     "wheel": 4,
+     "battery": 1,
+     "robotHat": 1,
+     "camera": 1,
+     "ultrasonic": 1,
+     "grayscale": 1,
+     "cable": 4,
+     "connector": 1,
+     "tool": 3,
+     "piBoard": 1,
+     "consumable": 6
+    },
+    "notRequiredForS01ToS09": 106
+   },
+   "required": [
+    {
+     "id": "PX-V40-INS-BATTERY-001",
+     "definitionId": "PX-V40-DEF-BATTERY",
+     "componentClass": "battery",
+     "firstStep": 6,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-HORN-PAN-001",
+     "definitionId": "PX-V40-DEF-HORN-PAN",
+     "componentClass": "horn",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-003",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-004",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-001",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-002",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-003",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-004",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-005",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-006",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-007",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-008",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-001",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-002",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-003",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-004",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-001",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-002",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-003",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-004",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-LEFT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-LEFT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-RIGHT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-RIGHT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PI5-001",
+     "definitionId": "PX-V40-DEF-PI5",
+     "componentClass": "piBoard",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-A-001",
+     "definitionId": "PX-V40-DEF-PLATE-A",
+     "componentClass": "plate",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-H-001",
+     "definitionId": "PX-V40-DEF-PLATE-H",
+     "componentClass": "plate",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-001",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-002",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "componentClass": "cable",
+     "firstStep": 3,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ROBOT-HAT-001",
+     "definitionId": "PX-V40-DEF-ROBOT-HAT",
+     "componentClass": "robotHat",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ULTRASONIC-001",
+     "definitionId": "PX-V40-DEF-ULTRASONIC",
+     "componentClass": "ultrasonic",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-USB-MICROPHONE-001",
+     "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+     "componentClass": "connector",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "componentClass": "tool",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH"
+    }
+   ],
+   "crossCheck": {
+    "plannedUsesS01ToS09": 34,
+    "plannedNotRequired": [],
+    "plannedStepMismatch": []
+   },
+   "candidateOnly": [
+    "PX-V40-INS-ULTRASONIC-001",
+    "PX-V40-INS-PLATE-H-001",
+    "PX-V40-INS-R3080-RIVET-001",
+    "PX-V40-INS-R3080-RIVET-002"
+   ],
+   "notRendered": [],
+   "renderFindings": [
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    }
+   ],
+   "coincident": [],
+   "nonRenderable": [
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No defined shape: cut from tape stock, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No defined shape: cut from tape stock, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "firstStep": 3,
+     "how": "introduced",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    }
+   ],
+   "missing": [],
+   "unexpected": []
+  },
+  "rpi-zero-2-w": {
+   "counts": {
+    "canonicalPhysicalCount": 156,
+    "s01ToS09RequiredCount": 47,
+    "packInstanceCount": 41,
+    "trayInstanceCount": 41,
+    "placedInstanceCount": 37,
+    "candidateOnlyInstanceCount": 4,
+    "rendered3DInstanceCount": 41,
+    "nonRenderableCount": 6,
+    "nonRenderableRepresentedCount": 6,
+    "missingCount": 0,
+    "duplicateUnexpectedCount": 0,
+    "coincidentTrayPairs": 0,
+    "definitionsDrawn": 18
+   },
+   "invariant": "HOLDS",
+   "canonical": {
+    "byDisposition": {
+     "available": 111,
+     "backup": 37,
+     "accessory": 5,
+     "tool": 3
+    },
+    "byComponentClass": {
+     "screw": 36,
+     "washer": 16,
+     "nut": 6,
+     "standoff": 24,
+     "rivet": 34,
+     "plate": 8,
+     "motor": 2,
+     "servo": 3,
+     "horn": 3,
+     "wheel": 4,
+     "battery": 1,
+     "robotHat": 1,
+     "camera": 1,
+     "ultrasonic": 1,
+     "grayscale": 1,
+     "cable": 4,
+     "connector": 1,
+     "tool": 3,
+     "piBoard": 1,
+     "consumable": 6
+    },
+    "notRequiredForS01ToS09": 109
+   },
+   "required": [
+    {
+     "id": "PX-V40-INS-BATTERY-001",
+     "definitionId": "PX-V40-DEF-BATTERY",
+     "componentClass": "battery",
+     "firstStep": 6,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-HORN-PAN-001",
+     "definitionId": "PX-V40-DEF-HORN-PAN",
+     "componentClass": "horn",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-001",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-002",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-003",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-004",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-005",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-006",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-007",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-008",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-001",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-002",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-003",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-004",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-001",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-002",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-003",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-004",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-LEFT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-LEFT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-RIGHT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-RIGHT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-A-001",
+     "definitionId": "PX-V40-DEF-PLATE-A",
+     "componentClass": "plate",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-H-001",
+     "definitionId": "PX-V40-DEF-PLATE-H",
+     "componentClass": "plate",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-001",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-002",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "componentClass": "cable",
+     "firstStep": 3,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ROBOT-HAT-001",
+     "definitionId": "PX-V40-DEF-ROBOT-HAT",
+     "componentClass": "robotHat",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ULTRASONIC-001",
+     "definitionId": "PX-V40-DEF-ULTRASONIC",
+     "componentClass": "ultrasonic",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "componentClass": "tool",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH"
+    },
+    {
+     "id": "PX-V40-INS-ZERO2W-001",
+     "definitionId": "PX-V40-DEF-ZERO2W",
+     "componentClass": "piBoard",
+     "firstStep": 2,
+     "how": "introduced"
+    }
+   ],
+   "crossCheck": {
+    "plannedUsesS01ToS09": 32,
+    "plannedNotRequired": [],
+    "plannedStepMismatch": []
+   },
+   "candidateOnly": [
+    "PX-V40-INS-ULTRASONIC-001",
+    "PX-V40-INS-PLATE-H-001",
+    "PX-V40-INS-R3080-RIVET-001",
+    "PX-V40-INS-R3080-RIVET-002"
+   ],
+   "notRendered": [],
+   "renderFindings": [
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.4
+    }
+   ],
+   "coincident": [],
+   "nonRenderable": [
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No defined shape: cut from tape stock, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No defined shape: cut from tape stock, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "firstStep": 3,
+     "how": "introduced",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    }
+   ],
+   "missing": [],
+   "unexpected": []
+  }
+ }
+}

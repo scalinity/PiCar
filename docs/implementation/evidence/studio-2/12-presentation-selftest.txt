@@ -1,0 +1,13 @@
+$ node digital-twin/tools/studio/presentation-selftest.mjs <scratch dir> <scratch>/studio1.blend   (Blender 5.2.2; the Studio 1 .blend from d8b9bd4, which holds unowned factory objects, as the self-test documents)
+PASS a run refuses objects outside the owned collections (SCENE_OWNERSHIP UNOWNED_SCENE_OBJECT Camera; UNOWNED_SCENE_OBJECT Cube; UNOWNED_SCENE_OBJECT Light; UNOWNED_COLLECTION Collection (pass --remove-unowned to delete objects outside the owned collections))
+PASS --remove-unowned deletes them and lists each in the receipt (object Cube (MESH), object Light (LIGHT), object Camera (CAMERA), collection Collection)
+PASS a rebuild reproduces the same presentation identity (48f88ae36d12)
+PASS source collections hold the same counts after rebuilds (no duplicates) ({"STUDIO-PRESENTATION":6,"STUDIO-SOURCE-DEFINITIONS":21,"STUDIO-SOURCE-INSTANCES":15,"STUDIO-SOURCE-TRAY":44})
+PASS --check accepts the .blend its receipt describes
+PASS --check reports an edit saved after the receipt
+PASS the edit survives a normal source rebuild (key light 7 W -> 10.5 W)
+PASS and the presentation identity changes with it (366f31b83b5f)
+PASS --reset-presentation restores the configured presentation (key light 7 W)
+PASS and changes the presentation identity (48f88ae36d12)
+PASS a reset presentation equals the configured one before the edit
+11 passed, 0 failed

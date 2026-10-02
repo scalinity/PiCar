@@ -1,0 +1,147 @@
+$ pnpm test:browser   (playwright.config.ts: Chromium and WebKit, VITE_M3_ENABLED=1)
+
+> picarx-companion@0.1.0 test:browser /Users/danny/Documents/Apps/PiCar/picarx-companion
+> playwright test --reporter=line
+
+
+Running 92 tests using 1 worker
+
+[1/92] [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract
+[2/92] [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible
+[3/92] [chromium] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export
+[4/92] [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback
+[5/92] [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases
+[6/92] [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms
+[7/92] [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data
+[8/92] [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately
+[9/92] [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review
+[10/92] [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation
+[11/92] [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit
+[12/92] [chromium] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion
+[13/92] [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+[14/92] [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained
+[15/92] [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available
+[16/92] [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional
+  1) [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      40 |  const input=viewer.locator('input[type=number]');await expect(input).toHaveValue('2');await expect(viewer.getByRole('button',{name:'Next →',exact:true})).toBeDisabled();
+      41 |  await viewer.getByRole('button',{name:'← Prev',exact:true}).click();await expect(input).toHaveValue('1');
+    > 42 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+         |                                                                                              ^
+      43 |  await input.fill('3');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+      44 |  await input.fill('2');await expect(input).toHaveValue('2');await viewer.getByRole('button',{name:'+',exact:true}).click();await expect(viewer.locator('.pdf-zoom')).toContainText('140%');
+      45 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).steps.assembly)).toBe('done');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/preservation.spec.ts:42:94
+
+    Error Context: test-results/preservation-PDF-bookmark--ceb05--and-zoom-remain-functional-chromium/error-context.md
+
+
+[17/92] [chromium] › tests/browser/studio.spec.ts:21:1 › S02 on the Pi 5 plays and ends exactly on the closure poses
+[18/92] [chromium] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport
+[19/92] [chromium] › tests/browser/studio.spec.ts:62:1 › fullscreen enters and leaves through the browser Fullscreen API
+[20/92] [chromium] › tests/browser/studio.spec.ts:72:1 › readiness is labelled: every step opens, S07 and S09 in Review, and M7 acceptance is stated separately
+[21/92] [chromium] › tests/browser/studio.spec.ts:83:1 › selecting a part shows its source identity
+[22/92] [chromium] › tests/browser/studio.spec.ts:92:1 › playback, scrubbing, replay and selection record no progress
+[23/92] [chromium] › tests/browser/studio.spec.ts:130:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe
+[24/92] [chromium] › tests/browser/studio.spec.ts:130:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe
+[25/92] [chromium] › tests/browser/studio.spec.ts:145:1 › a part common to both boards keeps its selection, highlight and framing across a board switch
+[26/92] [chromium] › tests/browser/studio.spec.ts:168:1 › rapid board switching with a selection raises no error
+[27/92] [chromium] › tests/browser/studio.spec.ts:182:1 › Studio navigation, playback and selection never write or invalidate setup progress (M3 persistence)
+[28/92] [chromium] › tests/browser/studio.spec.ts:220:1 › a GLB of the right length but the wrong bytes is refused before drawing
+[29/92] [chromium] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes
+[30/92] [chromium] › tests/browser/studio.spec.ts:279:1 › a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen
+[31/92] [chromium] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen
+[32/92] [chromium] › tests/browser/studio.spec.ts:324:1 › an Escape keyup whose keydown never arrived (native fullscreen) acts once
+[33/92] [chromium] › tests/browser/studio.spec.ts:337:1 › board switches and Studio visits do not accumulate GPU resources
+[34/92] [chromium] › tests/browser/studio.spec.ts:364:1 › the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames
+[35/92] [chromium] › tests/browser/studio.spec.ts:387:1 › the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset
+[36/92] [chromium] › tests/browser/studio.spec.ts:404:1 › the companion pages remain reachable from the Studio
+[37/92] [chromium] › tests/browser/studio.spec.ts:419:3 › rpi5: the parts tray draws every required piece and each is visible from the tray camera
+[38/92] [chromium] › tests/browser/studio.spec.ts:444:3 › rpi5: every step opens; Preview ends exactly on its closure poses, Review never plays
+[39/92] [chromium] › tests/browser/studio.spec.ts:419:3 › rpi-zero-2-w: the parts tray draws every required piece and each is visible from the tray camera
+[40/92] [chromium] › tests/browser/studio.spec.ts:444:3 › rpi-zero-2-w: every step opens; Preview ends exactly on its closure poses, Review never plays
+[41/92] [chromium] › tests/browser/studio.spec.ts:466:1 › switching boards on every step keeps the step in both directions; a common tile keeps its selection
+[42/92] [chromium] › tests/browser/studio.spec.ts:484:1 › isolate, ghost, explode and the deck clip are presentation only and fully reversible
+[43/92] [chromium] › tests/browser/studio.spec.ts:520:1 › S07 Review names the unresolved connection and tints its two ends; S08 says previewing it does not certify S07
+[44/92] [chromium] › tests/browser/studio.spec.ts:530:1 › S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it
+[45/92] [chromium] › tests/browser/studio.spec.ts:547:1 › the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection
+[46/92] [chromium] › tests/browser/studio.spec.ts:568:1 › a click in the view selects the part under the cursor and keeps the guided view; a drag yields to manual
+[47/92] [webkit] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract
+[48/92] [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible
+[49/92] [webkit] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export
+[50/92] [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback
+[51/92] [webkit] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases
+[52/92] [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms
+[53/92] [webkit] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data
+[54/92] [webkit] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately
+[55/92] [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review
+[56/92] [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation
+[57/92] [webkit] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit
+[58/92] [webkit] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion
+[59/92] [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities
+[60/92] [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained
+[61/92] [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available
+[62/92] [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional
+  2) [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      40 |  const input=viewer.locator('input[type=number]');await expect(input).toHaveValue('2');await expect(viewer.getByRole('button',{name:'Next →',exact:true})).toBeDisabled();
+      41 |  await viewer.getByRole('button',{name:'← Prev',exact:true}).click();await expect(input).toHaveValue('1');
+    > 42 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+         |                                                                                              ^
+      43 |  await input.fill('3');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+      44 |  await input.fill('2');await expect(input).toHaveValue('2');await viewer.getByRole('button',{name:'+',exact:true}).click();await expect(viewer.locator('.pdf-zoom')).toContainText('140%');
+      45 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).steps.assembly)).toBe('done');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/preservation.spec.ts:42:94
+
+    Error Context: test-results/preservation-PDF-bookmark--ceb05--and-zoom-remain-functional-webkit/error-context.md
+
+
+[63/92] [webkit] › tests/browser/studio.spec.ts:21:1 › S02 on the Pi 5 plays and ends exactly on the closure poses
+[64/92] [webkit] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport
+[65/92] [webkit] › tests/browser/studio.spec.ts:62:1 › fullscreen enters and leaves through the browser Fullscreen API
+[66/92] [webkit] › tests/browser/studio.spec.ts:72:1 › readiness is labelled: every step opens, S07 and S09 in Review, and M7 acceptance is stated separately
+[67/92] [webkit] › tests/browser/studio.spec.ts:83:1 › selecting a part shows its source identity
+[68/92] [webkit] › tests/browser/studio.spec.ts:92:1 › playback, scrubbing, replay and selection record no progress
+[69/92] [webkit] › tests/browser/studio.spec.ts:130:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe
+[70/92] [webkit] › tests/browser/studio.spec.ts:130:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe
+[71/92] [webkit] › tests/browser/studio.spec.ts:145:1 › a part common to both boards keeps its selection, highlight and framing across a board switch
+[72/92] [webkit] › tests/browser/studio.spec.ts:168:1 › rapid board switching with a selection raises no error
+[73/92] [webkit] › tests/browser/studio.spec.ts:182:1 › Studio navigation, playback and selection never write or invalidate setup progress (M3 persistence)
+[74/92] [webkit] › tests/browser/studio.spec.ts:220:1 › a GLB of the right length but the wrong bytes is refused before drawing
+[75/92] [webkit] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes
+[76/92] [webkit] › tests/browser/studio.spec.ts:279:1 › a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen
+[77/92] [webkit] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen
+[78/92] [webkit] › tests/browser/studio.spec.ts:324:1 › an Escape keyup whose keydown never arrived (native fullscreen) acts once
+[79/92] [webkit] › tests/browser/studio.spec.ts:337:1 › board switches and Studio visits do not accumulate GPU resources
+[80/92] [webkit] › tests/browser/studio.spec.ts:364:1 › the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames
+[81/92] [webkit] › tests/browser/studio.spec.ts:387:1 › the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset
+[82/92] [webkit] › tests/browser/studio.spec.ts:404:1 › the companion pages remain reachable from the Studio
+[83/92] [webkit] › tests/browser/studio.spec.ts:419:3 › rpi5: the parts tray draws every required piece and each is visible from the tray camera
+[84/92] [webkit] › tests/browser/studio.spec.ts:444:3 › rpi5: every step opens; Preview ends exactly on its closure poses, Review never plays
+[85/92] [webkit] › tests/browser/studio.spec.ts:419:3 › rpi-zero-2-w: the parts tray draws every required piece and each is visible from the tray camera
+[86/92] [webkit] › tests/browser/studio.spec.ts:444:3 › rpi-zero-2-w: every step opens; Preview ends exactly on its closure poses, Review never plays
+[87/92] [webkit] › tests/browser/studio.spec.ts:466:1 › switching boards on every step keeps the step in both directions; a common tile keeps its selection
+[88/92] [webkit] › tests/browser/studio.spec.ts:484:1 › isolate, ghost, explode and the deck clip are presentation only and fully reversible
+[89/92] [webkit] › tests/browser/studio.spec.ts:520:1 › S07 Review names the unresolved connection and tints its two ends; S08 says previewing it does not certify S07
+[90/92] [webkit] › tests/browser/studio.spec.ts:530:1 › S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it
+[91/92] [webkit] › tests/browser/studio.spec.ts:547:1 › the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection
+[92/92] [webkit] › tests/browser/studio.spec.ts:568:1 › a click in the view selects the part under the cursor and keeps the guided view; a drag yields to manual
+  Slow test file: [chromium] › tests/browser/m3-ui.spec.ts (5.6m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  2 failed
+    [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+    [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+  1 skipped
+  89 passed (15.3m)
+ ELIFECYCLE  Command failed with exit code 1.
+exit 1

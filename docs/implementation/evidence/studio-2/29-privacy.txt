@@ -1,0 +1,42 @@
+# Studio 2 privacy scan over every changed or new file to be committed (77 files)
+
+## image or photo bytes outside the window captures and the Blender render
+(none listed above = none)
+
+## private folder, vendor vault or home paths in text
+(none listed above = none; plate_a.py:15 is the existing PHOTO constant, a path to the ignored folder, not its content)
+
+## photo references in the new review: name and SHA-256 only, no pixels
+{"photo":"plate-A_01_top-down-master.jpeg","photoSha256":"c5ed7e111da0","pixelKeys":[]}
+
+## the photo folder stays ignored and untracked
+ignored
+docs/PiCar Plate Pictures/.gitignore
+
+## scratch copies of the private photograph deleted after measurement
+0
+(0 = none left)
+
+## pack: manifest and GLB carry no image bytes or private paths (also checked by pack.test.ts)
+picarx-companion/src/generated/studio/manifest.json:0
+picarx-companion/src/generated/studio/parts.glb:0
+
+## native captures: app window only (screencapture -l<window id>)
+native-01-tray-rpi5-fullscreen.png
+native-02-rpi5-S01.png
+native-03-rpi5-S03.png
+native-04-rpi5-S06.png
+native-05-rpi5-S07-review.png
+native-06-rpi5-S08-dependency.png
+native-07-rpi5-S09-conflict-pair.png
+native-08-zero2w-S02.png
+native-09-rpi5-S04-ghost.png
+native-10-rpi5-S04-explode.png
+native-11-rpi5-S04-deck-clip.png
+native-13-rpi5-S04-inspector.png
+native-14-rpi5-S05-fullscreen-product-view.png
+native-15-perf-S02-replay.png
+
+## manual content
+The enlarged-manual capture is not committed: it would be a tracked copy of a SunFounder booklet panel, which the Studio
+renders at runtime from the locked PDF instead. Drawer captures show the panel only inside the app's UI.

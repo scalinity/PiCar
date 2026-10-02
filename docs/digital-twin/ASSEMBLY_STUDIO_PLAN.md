@@ -17,16 +17,18 @@ A step can be display-ready while its assembly content is unaccepted; it is then
 
 Display statuses per step and variant:
 
-- `PREVIEW_SOURCE_REVALIDATED` — the source-mode chain produced the closure and the independent `closure_verify` passed it at the closure's exact canonical hash, which the pack records. Ordinary instructional mode, labelled Preview until M7 admits the row. A pack whose recorded sources have since changed reads `STALE` in `studio.mjs check` and is not presented as revalidated.
-- `PREVIEW_BLOCKED_RELATION` — placements verified, but a relationship the step needs is unresolved (S07 battery lead). Review mode: the step opens, the blocker is named, auto-play is not offered as instruction.
-- `REVIEW_REFUSED_CANDIDATE` — the closure check refused the cumulative state (S09). Only the refused record's candidate placements exist, labelled with their source and the measured conflicts. Review mode only.
-- `UNAVAILABLE` — no source record. Parts stay in the tray.
+- `PREVIEW_SOURCE_REVALIDATED` — the source-mode chain produced the closure and the independent `closure_verify` passed it at the closure's exact canonical hash, which the pack records. **Preview** mode: the step plays as instruction, labelled Preview until M7 admits the row. A pack whose recorded sources have since changed reads `STALE` in `studio.mjs check` and is not presented as revalidated.
+- `PREVIEW_BLOCKED_RELATION` — placements verified, but a relationship the step needs is unresolved (S07 battery lead). **Review** mode: the step opens on its recorded state, the blocker and the connection's two ends are named and tinted, and nothing plays.
+- `REVIEW_REFUSED_CANDIDATE` — the closure check refused the cumulative state (S09). Only the refused record's candidate placements exist, labelled with their source and the measured conflicts. **Review** mode: the candidate's own parts are tinted, a chosen conflict pair is shown through the ghosted rest, and nothing plays.
+- `UNAVAILABLE` — no source record. Parts stay in the tray; the step does not open.
 
-The parts tray is a presentation layout, not an inferred physical state. A component without a defensible installed pose stays in the tray; it is never given an identity transform.
+A later step that depends on a step in Review carries "previewing S08 does not certify S07".
+
+The parts tray is a presentation layout, not an inferred physical state. Its scope is every instance printed steps 1–9 introduce or use, plus the kit tools their tool requirements name (`S01–S09 required = drawn solids + tiles`, with nothing missing or extra; `tools/studio/tray-audit.mjs` reconciles it against the M1 inventory). An instance with no trusted solid (the camera ribbon, the hook and loop tape, the tools) is a labelled flat tile, never invented geometry. Parts are grouped (plates, electronics, motors and servos, fasteners, supplies, cables, tools), fasteners one row per definition so identical pieces can be counted. A component without a defensible installed pose keeps its part-local orientation; it is never given an identity transform.
 
 ## Deliveries
 
-### Studio 1 — real geometry, real app, one real transition (this delivery)
+### Studio 1 — real geometry, real app, one real transition
 
 - Scoped CAD tessellation of the resolved M5/M6/M7 artifacts for every S01–S09 instance of both active boards, shared per definition.
 - One Studio pack (`parts.glb` + `manifest.json`), separately versioned, labelled `provisionalReview`, never a G-GEOMETRY pack.
@@ -37,13 +39,13 @@ The parts tray is a presentation layout, not an inferred physical state. A compo
 
 Studio 1 is done when the owner can open the app, enter fullscreen, inspect the real parts and play, scrub and replay S01→S02 with endpoints equal to the closure poses, and when both the Blender project and the reference render exist from the same pack.
 
-### Studio 2 — complete S01–S09 for both boards
+### Studio 2 — complete S01–S09 for both boards (this delivery)
 
-- All nine steps operable for `rpi5` and `rpi-zero-2-w` with the same experience; variant switch keeps the step.
-- Instruction drawer with the printed manual panel (rendered from the locked V40 PDF at runtime, not stored), part list, limitations and the M7 status.
-- Inspection: isolate, ghost others, explode around the step, clip plane for the deck.
-- Honest unresolved handling: S07 in review mode with the battery-lead blocker and an explicit dependency warning on S08 ("previewing S08 does not certify S07"); S09 in review mode on its refused candidate with the conflict pairs and volumes; no auto-play of a disputed insertion.
-- Camera suggestion per step authored in `stage.json` (`camera.steps`); automation yields to input with a visible resume.
+- Every printed step S01–S09 opens for `rpi5` and `rpi-zero-2-w` through one renderer: S01–S06 and S08 play as Preview, S07 and S09 open in Review. A board switch keeps the step; a selection survives only for a part (or tile) both boards have.
+- The complete parts tray (see above), with an inventory line ("50 pieces · 44 modelled · 6 shown as tiles" on the Pi 5), grouped lists with a numbered chip per identical piece, and framing of any group.
+- Instruction drawer: the printed manual panel for the step and board, rendered at runtime from the locked V40 booklet at the rectangle the verified documentation source lock records (never a stored image, never a guessed page); the step's parts (placed, new, worked on, tools); the step's source intent quoted from `steps/source-intents.json` with its caution text; the review explanation; the M7 status and limitations.
+- Inspection, all presentation only and reversible: isolate (hidden parts are neither drawn nor picked), ghost others, explode (offsets composed over the evaluated poses, continuous through playback), and a deck clip plane that never cuts the tray.
+- A guided camera per state authored in `stage.json` (`camera.steps`, each naming its subject) and judged by rendering it; the camera's frame is the canvas area the panels leave uncovered, so a guided view never sits under the drawer. Any input yields to manual control, and "Resume guided view" returns.
 
 ### Studio 3 — build along with the real car
 

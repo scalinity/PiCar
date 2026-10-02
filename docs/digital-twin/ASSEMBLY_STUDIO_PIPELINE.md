@@ -23,7 +23,10 @@ fidelity revisions / display models ──┘          │
 | Assembly acceptance | M7 gate (`M7_G_INSTRUCTIONAL_ASSEMBLY_REPORT.json`) | The Studio |
 | Physical progress | The M3 session ledger | Playback, scrubbing, selection |
 | Material intent | `digital-twin/presentation/materials/studio-materials.json` | Hand edits in Blender or the GLB |
-| Light rig, camera policy, timing, tray layout | `digital-twin/assemblies/v40/presentation/studio/stage.json` | — |
+| Light rig, camera policy, timing, tray layout, display names | `digital-twin/assemblies/v40/presentation/studio/stage.json` | — |
+| Tray scope (what the tray must hold) | The compiled M2 graphs (each step's introduced, used and tool-requirement records), the M1 inventory (`components/instances/planned-stock.json`, `inventory/tools.json`) and `definitions/parts.json` | The pack's own placements |
+| Step source intent and cautions | `assemblies/v40/steps/source-intents.json`, `validation/m2/runtime-registry.json` | Generated text |
+| Manual panel location | `picarx-companion/tools/content-pipeline/documentation-source-lock.json` (VERIFIED, bound to the booklet's SHA-256) | Guesses, stored page images |
 
 **One coordinate conversion.** `digital-twin/tools/studio/basis.mjs` maps CAD (RH, +X forward, +Y left, +Z up, mm) to runtime glTF (RH, +Y up, +Z forward, m): `p = 0.001 C p`, poses `(C R Cᵀ, 0.001 C t)`, quaternions `[x, y, z, w]`. Vertices and poses are each converted there, once. Blender's glTF importer and exporter map Y-up to Z-up and back exactly, so the `.blend` is a lossless view of the same pack; `build_studio_scene.py` re-checks every definition's bounds and every instance pose against the manifest after import.
 
@@ -49,21 +52,26 @@ The runtime is not a Cycles render; compare `digital-twin/presentation/blender/r
 
 | Concern | Owner and boundary |
 |---|---|
-| GPU resources | Pack-cached part geometry and source materials live for the app session. A board's materials and key light (with its shadow map) are released once a rebuilt board replaces them or the viewport closes. The PMREM environment render target is released with the viewport; its light cards as soon as it is built. `scene/resources.ts` registers each owner while it is live. |
+| GPU resources | Pack-cached part geometry and source materials live for the app session. A board's materials (normal, selected, review focus, ghost), its tray tiles and pick targets for parts under 8 mm, and its key light (with its shadow map) are released once a rebuilt board replaces them or the viewport closes. The PMREM environment render target is released with the viewport; its light cards as soon as it is built. `scene/resources.ts` registers each owner while it is live. |
 | Camera target | Set when the viewport opens; afterwards changed only by input (with its damping run to completion), framing a part, reset, or a resumed guided view. Re-renders, resizes, pixel-ratio and fullscreen changes leave it alone. |
 | Selection | Survives a board switch only for a part both boards have; framing acts only on a part in the active scene. |
 | Escape | One physical press, one action: clear the selection, else leave fullscreen. Repeats are ignored; a keyup acts only for a press whose keydown never arrived (AppKit, native fullscreen). Fullscreen requests run one at a time, never reject, re-read the platform state after each, and a refusal is shown. |
 | Route memory | Studio URLs are presentation state and are never remembered as the Setup route, so neither M3's Setup contract nor a later legacy migration sees them. |
 | Performance HUD | Active frame time only (the previous frame asked for the next, or the user is moving the view, with the page visible); marks from the Studio page's first render to the canvas, the first render and the first frame drawn. The pixel-ratio governor tracks the display period and backs off between drops. |
+| Framing area | The camera's frame is the canvas rectangle the panels leave uncovered (tool rail, header, dock, open drawer), measured each frame and eased; the canvas is a view window around it (`setViewOffset`). Guided views, focus and group framing fit what is visible; the camera and its target never move for it. |
+| Inspection | Isolate, ghost, explode and the deck clip are composed in the frame loop over the evaluated poses and never written to the manifest, a closure, M7 or the session ledger. Styles swap the board's own materials (selected, review focus, ghost); a hidden part moves to a layer the camera, the raycaster and the shadow pass all skip. The deck clip uses renderer clipping on the board's materials, intersected with a guard plane so the tray is never cut. Explosion offsets are a pure function of the step, weighted by each part's approach progress, so playback and seeking stay continuous and turning it off returns the exact poses. |
+| Review | A blocked or refused step has no timeline. A chosen conflict pair is tinted, everything else ghosted, and the camera frames the pair as a manual view; one Escape clears it. Escape's order is: close the enlarged manual, else clear the selection or pair, else leave fullscreen; one press is one action. |
 
 ## Snapshot, adoption and unresolved content
 
-- A Studio pack (contract `picar-studio-pack/2`) names its chain run, tessellation, input hashes and the M7 gate state; `packId` is the SHA-256 of a domain tag and the canonical (RFC 8785) manifest. The preimage and the manifest and GLB structure rules live in one module, `picarx-companion/src/features/assembly-3d/assets/pack-contract.ts`, which the pack build and the app's loader both use.
+- A Studio pack (contract `picar-studio-pack/3`) names its chain run, tessellation, input hashes and the M7 gate state; `packId` is the SHA-256 of a domain tag and the canonical (RFC 8785) manifest. The preimage and the manifest and GLB structure rules live in one module, `picarx-companion/src/features/assembly-3d/assets/pack-contract.ts`, which the pack build and the app's loader both use.
 - Source binding: a step is `PREVIEW_SOURCE_REVALIDATED` only when its closure's canonical hash equals the `closureRfc8785Sha256` the verifier recorded for that variant and step; any mismatch refuses the build with variant, step and both hashes. The chain run records the revision registry that selected its artifacts (`studio-chain.json`); the tessellation (contract `picar-studio-tessellation/2`) binds to that run, its verification and registry, and carries a SHA-256 per definition mesh; the manifest records all of them.
 - `studio.mjs check` reports three things separately. PACK_INTEGRITY: the manifest and GLB form the frozen pack they claim to (pack ID, GLB hash, contract). SOURCE_FRESHNESS: `FRESH` while every recorded closure, verification, artifact, tessellation, display record, registry and input is unchanged on disk, `STALE` once any changed (named with both hashes), `UNVERIFIABLE` when a recorded source is gone or the pack predates source binding. Presentation: whether the tracked `.blend` and render are `CURRENT` for this pack (below). A historical pack keeps its integrity and is never presented as revalidated once its sources move on.
 - The app's loader fetches the manifest and the GLB as bytes and refuses them before decoding unless they satisfy the contract: manifest schema, recomputed pack ID, GLB SHA-256 (never only its length), one root per definition at identity with no children, and the manifest's solids and materials. The Studio then shows why it could not open.
-- `PREVIEW_SOURCE_REVALIDATED` steps play as instruction. `PREVIEW_BLOCKED_RELATION` (S07) and `REVIEW_REFUSED_CANDIDATE` (S09) are not operable in Studio 1; a later step carries "previewing S08 does not certify S07".
-- Parts with no verified installed pose stay in the parts tray in their part-local orientation; nothing receives an identity pose.
+- Each step carries a mode. `preview` (operable) only for a `PREVIEW_SOURCE_REVALIDATED` step that also passes the pack's preview checks: every part the closure newly places has an M7 recipe except the one workpiece it attaches to, every earlier part keeps its closure pose (a re-pose the recipes cannot represent refuses the build), every part the step names is in the tray scope, and it has a guided camera. `review` for `PREVIEW_BLOCKED_RELATION` and `REVIEW_REFUSED_CANDIDATE`; `closed` for a step `stage.json` does not open or with no source. The runtime contract refuses a preview step that is not revalidated at its verified hash, a review step on any other display, and an opened step without a camera. A later step carries "previewing S08 does not certify S07".
+- Motion animates what each closure newly places (a part introduced in S06 and placed in S07 moves in S07), never a review step.
+- The tray (`variants.<v>.tray`) holds a pose for every drawn instance in its scope and a tile (`centreM`, `halfExtentsM`) for every one without a trusted solid; `manifest.schematic` names the tiled instances; `groups` partition both with a label anchor and bounds. The pack check `tray-complete:<variant>` refuses a build in which any in-scope instance lacks exactly one slot. Rows reserve their height as seen from the tray camera (`occlusion`), so a tall part never hides the one behind it.
+- Parts with no verified installed pose keep their part-local orientation in the tray; nothing receives an identity pose.
 - Diagnostic candidates (for example the prepared S09 revisions) never enter a pack silently; a review pack would carry its own source label.
 
 ## Commands
@@ -77,12 +85,15 @@ node digital-twin/tools/studio/studio.mjs tessellate --python <py> --chain <run>
 node digital-twin/tools/studio/studio.mjs pack --chain <run> --tessellation <run>
 node digital-twin/tools/studio/studio.mjs check          # integrity, source freshness and presentation; exit 0 only when all hold
 node digital-twin/tools/studio/studio.mjs check --dir <pack dir>   # a historical pack copy: frozen-pair integrity, freshness UNVERIFIABLE
+node digital-twin/tools/studio/tray-audit.mjs [--manifest <m>] [--label <l>] [--out <dir>]   # tray scope against the M1 inventory; exit 0 only when it holds
 
 # Fidelity revisions (after editing a fidelity batch or builder): rebuild the store, then rerun the chain
 PYTHONPATH=digital-twin/cad <py> -m twin_cad.assemblies.instructional.revisions --root "$PWD" --output <scratch>/revisions
 #   compare every existing .brep byte for byte, then copy the new files and revision-artifacts.json into
 #   digital-twin/validation/expected/m7/instructional-revisions/
 PYTHONPATH=digital-twin/cad <py> -m twin_cad.fidelity.plate_a --root "$PWD" --output <review.json> --revision <batch.json>
+PYTHONPATH=digital-twin/cad <py> -m twin_cad.fidelity.plate_a --root "$PWD" --output <review.json> --holes-revision <batch.json>   # pan-hub screw rows
+#   a later batch that names a definition again replaces the earlier spec for it (revisions.specs); one artifact per definition
 PYTHONPATH=digital-twin/cad <py> -m twin_cad.fidelity.pi5 --root "$PWD" --chain digital-twin/generated/studio/chain/<run> \
     --output digital-twin/validation/expected/m7/fidelity/display --vendor-crosscheck
 PYTHONPATH=digital-twin/cad <py> -m pytest digital-twin/cad/tests/test_studio_fidelity.py

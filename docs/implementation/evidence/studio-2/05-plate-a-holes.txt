@@ -1,0 +1,61 @@
+# Plate A pan-hub screw holes: measurement, correction, store, chain and display record (Studio 2)
+
+## measured in the calibrated top-down photograph (outline revision axis frame, mm); review plate-a-holes-03.review.json
+  axis [167.544,-14.217] d 1.5 edge rms 0.207
+  axis [167.532,-12.388] d 1.69 edge rms 0.044
+  axis [167.525,-10.27] d 1.5 edge rms 0.221
+  axis [167.507,-8.432] d 1.71 edge rms 0.031
+  axis [167.367,8.577] d 1.68 edge rms 0.053
+  axis [167.376,10.552] d 1.69 edge rms 0.06
+  axis [167.377,12.471] d 1.67 edge rms 0.038
+  axis [167.471,14.539] d 1.43 edge rms 0.174
+  design: rows of 4 at axis x 167.462, first 8.485 from the axis, pitch 1.964; pitch residuals [0.02,-0.038,0.017,0.001]; pair mismatch [0.145,0.283,0.082,0.322]
+  checks: {"validSingleSolid":true,"volumeMm3":{"outlineRevision":29573.40543225287,"revision":29570.32667145238},"smallHoles":{"traced":7,"revision":8,"diameterMm":1.4,"perSide":{"plusY":4,"minusY":4}},"smallHoleRowMirrorDeviationMm":2.847716647714797E-14,"everyOtherFeatureUnmoved":true}
+
+## revision store regenerated into scratch and compared byte for byte with the tracked store
+  identical  PX-V40-DEF-HORN-PAN.brep
+  identical  PX-V40-DEF-HORN-STEERING.brep
+  identical  PX-V40-DEF-HORN-TILT.brep
+  identical  PX-V40-DEF-M15X3-SCREW.brep
+  identical  PX-V40-DEF-M25X11-STANDOFF.brep
+  identical  PX-V40-DEF-M25X18-STANDOFF.brep
+  identical  PX-V40-DEF-M25X18PLUS6-STANDOFF.brep
+  identical  PX-V40-DEF-M25X30-STANDOFF.brep
+  identical  PX-V40-DEF-M25X6-SCREW.brep
+  identical  PX-V40-DEF-M3X25-SCREW.brep
+  identical  PX-V40-DEF-PLATE-A.brep
+  identical  PX-V40-DEF-PLATE-H.brep
+  identical  PX-V40-DEF-ULTRASONIC.brep
+  identical  revision-artifacts.json
+  (the tracked store now holds the correction; against HEAD only PX-V40-DEF-PLATE-A.brep and revision-artifacts.json differ: digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep digital-twin/validation/expected/m7/instructional-revisions/revision-artifacts.json )
+
+## chain s1r-01 -> s2-01: poses, S07, S09 and the verifier
+  rpi5-S01 COMPLETE no pose change
+  rpi5-S02 COMPLETE no pose change
+  rpi5-S03 COMPLETE no pose change
+  rpi5-S04 COMPLETE no pose change
+  rpi5-S05 COMPLETE no pose change
+  rpi5-S06 COMPLETE no pose change
+  rpi5-S07 BLOCKED no pose change
+  rpi5-S08 COMPLETE moved: M15X3-SCREW-001 1.517mm, M15X3-SCREW-002 0.415mm, M15X3-SCREW-003 0.646mm, M15X3-SCREW-004 0.233mm
+  rpi5-S09 refused: same reason
+  rpi-zero-2-w-S01 COMPLETE no pose change
+  rpi-zero-2-w-S02 COMPLETE no pose change
+  rpi-zero-2-w-S03 COMPLETE no pose change
+  rpi-zero-2-w-S04 COMPLETE no pose change
+  rpi-zero-2-w-S05 COMPLETE no pose change
+  rpi-zero-2-w-S06 COMPLETE no pose change
+  rpi-zero-2-w-S07 BLOCKED no pose change
+  rpi-zero-2-w-S08 COMPLETE moved: M15X3-SCREW-001 1.517mm, M15X3-SCREW-002 0.415mm, M15X3-SCREW-003 0.646mm, M15X3-SCREW-004 0.233mm
+  rpi-zero-2-w-S09 refused: same reason
+  verifier status PASS -> PASS | blocked ["rpi-zero-2-w-S09-blocked.json","rpi5-S09-blocked.json"]
+
+## Pi 5 display record: changed lines by kind (hashes redacted)
+     2 +    "closureRfc8785Sha256": "<sha>"
+    10 +    "closureRfc8785Sha256": "<sha>",
+     1 +   "PX-V40-DEF-PLATE-A": "<sha>",
+     1 +  "chain": "s2-01",
+     2 -    "closureRfc8785Sha256": "<sha>"
+    10 -    "closureRfc8785Sha256": "<sha>",
+     1 -   "PX-V40-DEF-PLATE-A": "<sha>",
+     1 -  "chain": "s1r-01",

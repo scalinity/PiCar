@@ -1,0 +1,30 @@
+$ node digital-twin/tools/studio/studio.mjs check
+{
+ "packId": "466de8923467aca572814e543467268e420d5a668cd035ee92a5fbe64a8a9130",
+ "integrity": {
+  "status": "PASS",
+  "problems": [],
+  "notes": []
+ },
+ "freshness": {
+  "status": "FRESH",
+  "problems": []
+ },
+ "presentation": {
+  "status": "CURRENT",
+  "presentationId": "48f88ae36d1248dd006a63132fe19777b704071edf14fd18681f3080210432d9",
+  "problems": []
+ }
+}
+exit 0
+
+$ node digital-twin/tools/studio/studio.mjs blender --check
+[studio] check {"presentationId": "48f88ae36d1248dd006a63132fe19777b704071edf14fd18681f3080210432d9", "problems": []}
+exit 0
+
+$ node digital-twin/tools/studio/tray-audit.mjs --label after --out docs/implementation/evidence/studio-2
+| variant | canonical | S01–S09 required | pack instances | tray | rendered 3D | non-renderable | represented | missing | duplicate / unexpected | invariant |
+|---|---|---|---|---|---|---|---|---|---|---|
+| rpi5 | 156 | 50 | 44 | 44 | 44 | 6 | 6 | 0 | 0 | HOLDS |
+| rpi-zero-2-w | 156 | 47 | 41 | 41 | 41 | 6 | 6 | 0 | 0 | HOLDS |
+exit 0
