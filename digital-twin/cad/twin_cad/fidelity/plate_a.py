@@ -385,12 +385,113 @@ def build_revision(root, review, plane, sim):
     return revised, shape, info, checks
 
 
+# The pan-hub screw holes: the M6 trace has four beside the hub on one side and three on the other. The calibrated
+# photograph shows two mirror-image rows of four. Those rows are measured here and rebuilt as one designed row and its
+# mirror about the plate's measured axis (the outline revision's axis), keeping the traced diameter that the S08
+# generator and its independent verifier select the holes by.
+SMALL_ROW = {'x': (163.0, 172.0), 'y': (-18.0, 18.0), 'hubY': -0.39, 'hubClearMm': 4.5, 'count': 4}
+HOLES_REVISION_ID = 'PX-STUDIO-FIDELITY-PLATE-A-HOLES-03'
+OUTLINE_BATCH = 'digital-twin/assemblies/v40/presentation/instructional/fidelity-revisions-01.json'
+
+
+def measure_small_holes(plane, sim, review):
+    """Every small hole beside the pan hub: local brightness minima on the calibrated plane, refined by edge fits."""
+    from scipy import ndimage
+    xs, ys = np.arange(*SMALL_ROW['x'], 0.1), np.arange(*SMALL_ROW['y'], 0.1)
+    X, Y = np.meshgrid(xs, ys)
+    bright = plane.sample(sim.forward(np.c_[X.ravel(), Y.ravel()])).reshape(X.shape)
+    threshold = (np.percentile(bright, 75) + np.percentile(bright, 2)) / 2
+    smooth = ndimage.gaussian_filter(bright, 2.0)
+    labels, n = ndimage.label((smooth == ndimage.minimum_filter(smooth, size=13)) & (smooth < threshold))
+    c, a = review['mirrorAxis']['yInterceptMm'], np.radians(review['mirrorAxis']['angleDeg'])
+    holes = []
+    for k in range(1, n + 1):
+        m = labels == k
+        seed_model = np.array([X[m].mean(), Y[m].mean()])
+        if abs(seed_model[1] - SMALL_ROW['hubY']) <= SMALL_ROW['hubClearMm']:
+            continue  # the hub hole itself
+        seed = sim.forward([seed_model])[0]
+        for _ in range(4):
+            centre, r, rms, points = measure_hole(plane, seed, 0.7)
+            seed = centre
+        model = sim.inverse([centre])[0]
+        holes.append({'centreModelMm': model.tolist(), 'centreAxisMm': to_axis_frame(np.array([model]), c, a)[0].tolist(),
+                      'diameterMm': float(2 * r / sim.s), 'edgeRmsMm': float(rms / sim.s), 'edgePoints': int(points)})
+    return sorted(holes, key=lambda h: h['centreAxisMm'][1])
+
+
+def design_small_rows(measured, review):
+    """One row of four at a uniform pitch (fitted to the mirrored mean distances from the axis) and its mirror image."""
+    c, a = review['mirrorAxis']['yInterceptMm'], np.radians(review['mirrorAxis']['angleDeg'])
+    n = SMALL_ROW['count']
+    sides = {s: sorted((h for h in measured if s * h['centreAxisMm'][1] > 0), key=lambda h: abs(h['centreAxisMm'][1])) for s in (1, -1)}
+    if any(len(v) != n for v in sides.values()):
+        raise ValueError(f'SMALL_HOLE_ROWS expected {n} per side, found {[len(v) for v in sides.values()]}')
+    means = np.array([(abs(p['centreAxisMm'][1]) + abs(q['centreAxisMm'][1])) / 2 for p, q in zip(sides[1], sides[-1])])
+    k = np.arange(n)
+    pitch, first = np.polyfit(k, means, 1)
+    x = float(np.mean([h['centreAxisMm'][0] for h in measured]))
+    row_axis = np.c_[np.full(n, x), first + k * pitch]
+    rows = {'plusY': from_axis_frame(row_axis, c, a), 'minusY': from_axis_frame(row_axis * np.array([1, -1]), c, a)}
+    return {
+        'axis': {'yInterceptMm': c, 'angleDeg': review['mirrorAxis']['angleDeg'], 'note': 'the Plate A outline revision\'s measured mirror axis'},
+        'rowAxisXMm': x, 'firstHoleFromAxisMm': float(first), 'pitchMm': float(pitch), 'count': n,
+        'pairMeanFromAxisMm': means.tolist(), 'uniformPitchResidualMm': (means - (first + k * pitch)).tolist(),
+        'pairMirrorMismatchMm': [abs(abs(p['centreAxisMm'][1]) - abs(q['centreAxisMm'][1])) for p, q in zip(sides[1], sides[-1])],
+        'rowXSpreadMm': {s: [h['centreAxisMm'][0] for h in v] for s, v in (('plusY', sides[1]), ('minusY', sides[-1]))},
+        'holesModelMm': {name: pts.tolist() for name, pts in rows.items()},
+    }
+
+
+def build_hole_revision(root, design):
+    """The outline revision's Plate A with its pan-hub screw holes replaced by the designed rows; nothing else changes."""
+    import copy
+    import cadquery as cq
+    from twin_cad.components.plates.instructional.generate import make_candidate
+    from twin_cad.assemblies.instructional.verify import shape_features
+    base = json.loads((root / OUTLINE_BATCH).read_text())['definitions'][0]['parameters']['definition']
+    revised = copy.deepcopy(base)
+    face = next(f for f in revised['profile']['faces'] if f['name'] == 'deck')
+    traced = [h for h in face['holes'] if h['diameterMm'] < 2 and h['centerMm'][0] > 150]
+    diameter = traced[0]['diameterMm']
+    if any(h['diameterMm'] != diameter for h in traced):
+        raise ValueError('TRACED_SMALL_HOLES_DIFFER')
+    face['holes'] = [h for h in face['holes'] if h not in traced]
+    # Named as before: 14-17 the +Y row outermost first, 18-21 the -Y row innermost first.
+    plus, minus = np.array(design['holesModelMm']['plusY']), np.array(design['holesModelMm']['minusY'])
+    for i, p in enumerate(plus[::-1]):
+        face['holes'].append({'centerMm': [float(p[0]), float(p[1])], 'diameterMm': diameter, 'name': f'deck.hole.{14 + i}'})
+    for i, p in enumerate(minus):
+        face['holes'].append({'centerMm': [float(p[0]), float(p[1])], 'diameterMm': diameter, 'name': f'deck.hole.{18 + i}'})
+    shape = make_candidate(revised)
+    old = cq.Shape.importBrep(str(root / 'digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep'))
+    small = lambda shape_: [f for f in shape_features(shape_) if abs(f['radius'] - diameter / 2) < 1e-6 and f['origin'][0] > 150]
+    others = lambda shape_: sorted((round(f['radius'], 4), *np.round(f['origin'][:2], 4)) for f in shape_features(shape_) if not abs(f['radius'] - diameter / 2) < 1e-6)
+    new_small = small(shape)
+    c, a = design['axis']['yInterceptMm'], np.radians(design['axis']['angleDeg'])
+    in_axis = to_axis_frame(np.array([f['origin'][:2] for f in new_small]), c, a)
+    mirrored = in_axis * np.array([1, -1])
+    mirror_dev = max(float(np.min(np.linalg.norm(in_axis - m, axis=1))) for m in mirrored)
+    checks = {
+        'validSingleSolid': bool(shape.isValid() and len(shape.Solids()) == 1 and shape.Volume() > 0),
+        'volumeMm3': {'outlineRevision': old.Volume(), 'revision': shape.Volume()},
+        'smallHoles': {'traced': len(small(old)), 'revision': len(new_small), 'diameterMm': diameter,
+                       'perSide': {'plusY': int(sum(p[1] > 0 for p in in_axis)), 'minusY': int(sum(p[1] < 0 for p in in_axis))}},
+        'smallHoleRowMirrorDeviationMm': mirror_dev,
+        'everyOtherFeatureUnmoved': others(old) == others(shape),
+    }
+    return revised, shape, checks
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True, help='review JSON (derived numbers only)')
     parser.add_argument('--revision', type=Path, help='write the revision parameters file here')
+    parser.add_argument('--holes-revision', type=Path, help='instead: measure the pan-hub screw-hole rows, write their correction batch here and the review to --output')
     args = parser.parse_args()
+    if args.holes_revision:
+        return holes_main(args)
     review, plane, sim = run(args.root)
     if args.revision:
         revised, shape, info, checks = build_revision(args.root, review, plane, sim)
@@ -407,6 +508,40 @@ def main():
     print(json.dumps(review['alignment']))
     if args.revision:
         print(json.dumps(review['revision']['checks']))
+
+
+def holes_main(args):
+    import hashlib
+    import tempfile
+    outline_review = json.loads((args.root / 'digital-twin/validation/expected/m7/fidelity/plate-a-outline-01.review.json').read_text())
+    _, plane, sim = run(args.root)
+    measured = measure_small_holes(plane, sim, outline_review)
+    design = design_small_rows(measured, outline_review)
+    revised, shape, checks = build_hole_revision(args.root, design)
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / 'plate-a.brep'
+        shape.exportBrep(str(path))
+        new_sha = hashlib.sha256(path.read_bytes()).hexdigest()
+    old_path = 'digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep'
+    photo_sha = hashlib.sha256((args.root / PHOTO).read_bytes()).hexdigest()
+    review = {
+        'id': HOLES_REVISION_ID, 'photo': PHOTO.split('/')[-1], 'photoSha256': photo_sha,
+        'finding': 'The M6 trace has four 1.4 mm holes beside the pan hub on the +Y side and three on the -Y side, not mirror images. The calibrated photograph shows a row of four on each side.',
+        'measured': measured, 'design': design, 'checks': checks,
+        'artifacts': {'old': {'path': old_path, 'sha256': hashlib.sha256((args.root / old_path).read_bytes()).hexdigest(), 'revisionId': REVISION_ID},
+                      'new': {'sha256': new_sha, 'revisionId': HOLES_REVISION_ID}},
+        'diameterNote': 'Kept at the traced 1.4 mm, the radius the S08 generator and its independent verifier select these holes by. The photograph measures '
+                        f'{np.mean([h["diameterMm"] for h in measured if h["edgeRmsMm"] < 0.1]):.2f} mm on its clean edge fits; adopting that is an M7 change.',
+    }
+    args.holes_revision.write_text(json.dumps({
+        'id': 'PX-STUDIO-FIDELITY-REVISIONS-03', 'track': 'instructional-only', 'engineeringAdmission': False, 'runtimeAdmission': False,
+        'label': 'Studio fidelity correction: Plate A pan-hub screw holes rebuilt as two mirror-image rows of four from the calibrated owner photograph (the trace had four and three); outline as revision 01, every other feature unchanged, non-engineering',
+        'purpose': 'Studio fidelity: the small screw holes beside the pan hub, which the S08 horn screws use, rebuilt as one measured row of four and its mirror image about the plate axis. Supersedes outline revision 01 for Plate A, which it contains unchanged.',
+        'evidence': {'photo': PHOTO.split('/')[-1], 'photoSha256': photo_sha, 'review': 'digital-twin/validation/expected/m7/fidelity/plate-a-holes-03.review.json'},
+        'definitions': [{'definitionId': 'PX-V40-DEF-PLATE-A', 'kind': 'm6-plate', 'revisionId': HOLES_REVISION_ID, 'revises': REVISION_ID, 'supersedes': M6_PLATE_A,
+                         'parameters': {'definition': revised}}]}, indent=1) + '\n')
+    args.output.write_text(json.dumps(review, indent=1) + '\n')
+    print(json.dumps({'checks': checks, 'pitchMm': design['pitchMm'], 'firstHoleFromAxisMm': design['firstHoleFromAxisMm'], 'newSha256': new_sha}))
 
 
 if __name__ == '__main__':

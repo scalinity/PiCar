@@ -1,0 +1,223 @@
+{
+ "id": "PX-STUDIO-FIDELITY-PLATE-A-HOLES-03",
+ "photo": "plate-A_01_top-down-master.jpeg",
+ "photoSha256": "c5ed7e111da07d10ca7c3736b8db784a88dfae08bb7882c292973c984bc69e6e",
+ "finding": "The M6 trace has four 1.4 mm holes beside the pan hub on the +Y side and three on the -Y side, not mirror images. The calibrated photograph shows a row of four on each side.",
+ "measured": [
+  {
+   "centreModelMm": [
+    167.3470970956152,
+    -14.704734271147476
+   ],
+   "centreAxisMm": [
+    167.54364203881315,
+    -14.21652896207029
+   ],
+   "diameterMm": 1.4999737127416077,
+   "edgeRmsMm": 0.20742582081032343,
+   "edgePoints": 90
+  },
+  {
+   "centreModelMm": [
+    167.3589519065612,
+    -12.876472184602118
+   ],
+   "centreAxisMm": [
+    167.5319994235366,
+    -12.388265511921139
+   ],
+   "diameterMm": 1.6875936184885467,
+   "edgeRmsMm": 0.04382781116144764,
+   "edgePoints": 79
+  },
+  {
+   "centreModelMm": [
+    167.3788042582689,
+    -10.7579278914726
+   ],
+   "centreAxisMm": [
+    167.52462304149014,
+    -10.269641046186853
+   ],
+   "diameterMm": 1.49851511377983,
+   "edgeRmsMm": 0.22060344400334977,
+   "edgePoints": 90
+  },
+  {
+   "centreModelMm": [
+    167.38519265415687,
+    -8.920160668075582
+   ],
+   "centreAxisMm": [
+    167.5073923045564,
+    -8.431943497432128
+   ],
+   "diameterMm": 1.7080143034683177,
+   "edgeRmsMm": 0.03105260072776225,
+   "edgePoints": 77
+  },
+  {
+   "centreModelMm": [
+    167.46377163147514,
+    8.089114445503462
+   ],
+   "centreAxisMm": [
+    167.36736509751663,
+    8.57693673985523
+   ],
+   "diameterMm": 1.6772250786924843,
+   "edgeRmsMm": 0.05323258958068627,
+   "edgePoints": 83
+  },
+  {
+   "centreModelMm": [
+    167.49811355428918,
+    10.064227085127204
+   ],
+   "centreAxisMm": [
+    167.37632044393652,
+    10.552327614754303
+   ],
+   "diameterMm": 1.6878423098236435,
+   "edgeRmsMm": 0.05960661826708631,
+   "edgePoints": 90
+  },
+  {
+   "centreModelMm": [
+    167.5229945254834,
+    11.98249179223082
+   ],
+   "centreAxisMm": [
+    167.37654621799578,
+    12.470753661875476
+   ],
+   "diameterMm": 1.67488212072971,
+   "edgeRmsMm": 0.03844230247381257,
+   "edgePoints": 74
+  },
+  {
+   "centreModelMm": [
+    167.64442622062654,
+    14.049102022213962
+   ],
+   "centreAxisMm": [
+    167.47140823604474,
+    14.53875383034452
+   ],
+   "diameterMm": 1.432086576498875,
+   "edgeRmsMm": 0.17439549877215677,
+   "edgePoints": 90
+  }
+ ],
+ "design": {
+  "axis": {
+   "yInterceptMm": 1.6638569031130035,
+   "angleDeg": -0.7363738099482524,
+   "note": "the Plate A outline revision's measured mirror axis"
+  },
+  "rowAxisXMm": 167.46241210048623,
+  "firstHoleFromAxisMm": 8.484924494687156,
+  "pitchMm": 1.963812908911889,
+  "count": 4,
+  "pairMeanFromAxisMm": [
+   8.504440118643679,
+   10.410984330470578,
+   12.429509586898307,
+   14.377641396207405
+  ],
+  "uniformPitchResidualMm": [
+   0.019515623956522177,
+   -0.03775307312846721,
+   0.016959274387373213,
+   0.001278174784580699
+  ],
+  "pairMirrorMismatchMm": [
+   0.14499324242310152,
+   0.2826865685674491,
+   0.08248814995433662,
+   0.3222248682742297
+  ],
+  "rowXSpreadMm": {
+   "plusY": [
+    167.36736509751663,
+    167.37632044393652,
+    167.37654621799578,
+    167.47140823604474
+   ],
+   "minusY": [
+    167.5073923045564,
+    167.52462304149014,
+    167.5319994235366,
+    167.54364203881315
+   ]
+  },
+  "holesModelMm": {
+   "plusY": [
+    [
+     167.55762826233783,
+     7.99588827494239
+    ],
+    [
+     167.58286678070323,
+     9.959538997041331
+    ],
+    [
+     167.60810529906863,
+     11.923189719140272
+    ],
+    [
+     167.63334381743405,
+     13.886840441239215
+    ]
+   ],
+   "minusY": [
+    [
+     167.33953526405222,
+     -8.97255921344815
+    ],
+    [
+     167.31429674568682,
+     -10.936209935547092
+    ],
+    [
+     167.28905822732142,
+     -12.899860657646032
+    ],
+    [
+     167.263819708956,
+     -14.863511379744978
+    ]
+   ]
+  }
+ },
+ "checks": {
+  "validSingleSolid": true,
+  "volumeMm3": {
+   "outlineRevision": 29573.40543225287,
+   "revision": 29570.32667145238
+  },
+  "smallHoles": {
+   "traced": 7,
+   "revision": 8,
+   "diameterMm": 1.4,
+   "perSide": {
+    "plusY": 4,
+    "minusY": 4
+   }
+  },
+  "smallHoleRowMirrorDeviationMm": 2.847716647714797e-14,
+  "everyOtherFeatureUnmoved": true
+ },
+ "artifacts": {
+  "old": {
+   "path": "digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep",
+   "sha256": "2e0347dbef81f3d007fdf4d5278da74ac9cf1357e821ca50fab975e6fdbb40a0",
+   "revisionId": "PX-STUDIO-FIDELITY-PLATE-A-OUTLINE-01"
+  },
+  "new": {
+   "sha256": "2348ebddc570041cbe42d3d0ea9ce4f3da279bb24fb1df3607116be1db01b495",
+   "revisionId": "PX-STUDIO-FIDELITY-PLATE-A-HOLES-03"
+  }
+ },
+ "diameterNote": "Kept at the traced 1.4 mm, the radius the S08 generator and its independent verifier select these holes by. The photograph measures 1.69 mm on its clean edge fits; adopting that is an M7 change."
+}

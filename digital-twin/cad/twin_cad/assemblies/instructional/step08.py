@@ -26,7 +26,7 @@ def deck_features(plate_world):
     cylinders = [c for c in cylinder_faces(plate_world) if abs(abs(c['axis'][2]) - 1) < 1e-6 and c['origin'][0] > 150]
     hub = [c for c in cylinders if abs(c['radius'] - HUB_RADIUS) < 1e-6]
     small = [c for c in cylinders if abs(c['radius'] - SMALL_RADIUS) < 1e-6]
-    require(len(hub) == 1 and len(small) == 7, 'FRONT_DECK_HOLES')
+    require(len(hub) == 1 and len(small) == 8, 'FRONT_DECK_HOLES')  # two rows of four beside the hub (Plate A holes correction 03)
     faces = planar_faces(plate_world, 1000)
     top = max((f for f in faces if f['normal'][2] > .999999 and abs(f['bounds'][2] - f['bounds'][5]) < 1e-9 and f['bounds'][2] > 1), key=lambda f: f['area'])
     underside = max((f for f in faces if f['normal'][2] < -.999999 and abs(f['bounds'][2] - f['bounds'][5]) < 1e-9 and abs(f['bounds'][2]) < 1e-6), key=lambda f: f['area'])

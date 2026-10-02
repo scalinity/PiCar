@@ -48,14 +48,41 @@ def test_the_chain_resolves_plate_a_to_the_fidelity_revision():
     assert plate_a_artifact(ROOT) == 'digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep'
 
 
-def test_plate_a_revision_keeps_every_hole_slot_and_cutout():
+HOLES = json.loads((ROOT / 'digital-twin/validation/expected/m7/fidelity/plate-a-holes-03.review.json').read_text())
+PAN_SCREW_RADIUS = 0.7
+pan_screw_hole = lambda f: abs(f['radius'] - PAN_SCREW_RADIUS) < 1e-6 and f['origin'][0] > 150
+
+
+def test_plate_a_revision_keeps_every_hole_slot_and_cutout_except_the_corrected_pan_screw_rows():
     old = cq.Shape.importBrep(str(ROOT / 'docs/implementation/evidence/m6/amendment-shapes-04/candidate-artifacts/PX-V40-DEF-PLATE-A.brep'))
     new = cq.Shape.importBrep(str(purchased_artifact(ROOT, 'PX-V40-DEF-PLATE-A')))
     arc_radii = [a['radiusMm'] for a in REVIEW['revision']['design']['arcs']]
     key = lambda f: (round(f['radius'], 4), *np.round(f['origin'][:2], 4))
-    old_features = sorted(key(f) for f in shape_features(old) if f['radius'] < 5)
-    new_features = sorted(key(f) for f in shape_features(new) if f['radius'] < 5 and not any(abs(f['radius'] - r) < 1e-6 for r in arc_radii))
+    old_features = sorted(key(f) for f in shape_features(old) if f['radius'] < 5 and not pan_screw_hole(f))
+    new_features = sorted(key(f) for f in shape_features(new) if f['radius'] < 5 and not pan_screw_hole(f) and not any(abs(f['radius'] - r) < 1e-6 for r in arc_radii))
     assert old_features == new_features
+    # The corrected rows are exactly the measured design (review plate-a-holes-03).
+    design = sorted(map(tuple, np.round(HOLES['design']['holesModelMm']['plusY'] + HOLES['design']['holesModelMm']['minusY'], 6)))
+    built = sorted(tuple(np.round(f['origin'][:2], 6)) for f in shape_features(new) if pan_screw_hole(f))
+    assert np.allclose(built, design, atol=1e-6)
+
+
+def test_plate_a_pan_screw_holes_are_two_mirror_rows_of_four_at_a_uniform_pitch():
+    """The trace had four holes on one side of the pan hub and three on the other; the photograph shows four and four."""
+    new = cq.Shape.importBrep(str(purchased_artifact(ROOT, 'PX-V40-DEF-PLATE-A')))
+    c, angle = HOLES['design']['axis']['yInterceptMm'], np.radians(HOLES['design']['axis']['angleDeg'])
+    assert (c, HOLES['design']['axis']['angleDeg']) == (REVIEW['mirrorAxis']['yInterceptMm'], REVIEW['mirrorAxis']['angleDeg'])  # one axis for outline and holes
+    rot = np.array([[np.cos(angle), np.sin(angle)], [-np.sin(angle), np.cos(angle)]])
+    holes = np.array([rot @ (np.array(f['origin'][:2]) - [0, c]) for f in shape_features(new) if pan_screw_hole(f)])
+    plus, minus = holes[holes[:, 1] > 0], holes[holes[:, 1] < 0]
+    assert len(plus) == len(minus) == 4
+    mirror = max(np.min(np.linalg.norm(minus - p * [1, -1], axis=1)) for p in plus)
+    assert mirror < 0.05, f'row mirror deviation {mirror} mm'
+    pitches = np.diff(np.sort(plus[:, 1]))
+    assert np.ptp(pitches) < 1e-6 and abs(pitches.mean() - HOLES['design']['pitchMm']) < 1e-6
+    # Measured evidence the design answers to: four holes each side, a uniform pitch within 0.05 mm.
+    assert HOLES['checks']['smallHoles']['perSide'] == {'plusY': 4, 'minusY': 4}
+    assert max(abs(r) for r in HOLES['design']['uniformPitchResidualMm']) < 0.05
 
 
 def test_plate_a_arms_are_mirror_images_with_true_round_ends():

@@ -54,7 +54,14 @@ def stored_plate_a():
 
 
 def beyond_deck_outline(definition):
-    faces = [{k: v for k, v in f.items() if f['name'] != 'deck' or k not in ('outlineMm', 'outlineSegmentsMm')} for f in definition['profile']['faces']]
+    """Everything except what Studio fidelity revisions redraw: the deck outline (outline revision 01) and the deck's
+    pan-hub screw holes, the 1.4 mm rows beside the hub (holes correction 03). Every wall and feature S09 judged remains."""
+    def keep(f):
+        out = {k: v for k, v in f.items() if f['name'] != 'deck' or k not in ('outlineMm', 'outlineSegmentsMm')}
+        if f['name'] == 'deck':
+            out['holes'] = [h for h in f['holes'] if not (h['diameterMm'] < 2 and h['centerMm'][0] > 150)]
+        return out
+    faces = [keep(f) for f in definition['profile']['faces']]
     return {**definition, 'profile': {**definition['profile'], 'faces': faces}}
 
 

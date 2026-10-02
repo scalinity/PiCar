@@ -96,8 +96,14 @@ BUILDERS = {'ultrasonic': ultrasonic, 'horn-double': lambda p: horn(p, True), 'h
 
 
 def specs(root):
+    """One spec per definition. A later batch that names a definition again is a correction and replaces the earlier
+    spec in its place, so the store keeps one artifact per definition and its record order is unchanged."""
     batches = sorted(p.relative_to(root).as_posix() for p in (Path(root) / PRESENTATION).glob('fidelity-revisions-*.json'))
-    return [d for name in (PARAMETERS, *batches) for d in load(Path(root) / name)['definitions']]
+    out = {}
+    for name in (PARAMETERS, *batches):
+        for d in load(Path(root) / name)['definitions']:
+            out[d['definitionId']] = d
+    return list(out.values())
 
 
 def build(root, definition_id):
