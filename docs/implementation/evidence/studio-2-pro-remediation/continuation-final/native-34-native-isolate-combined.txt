@@ -1,0 +1,231 @@
+Pi5 S04 isolate combined with ghost/explode/clip: selected HAT remains rendered and inspectable.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/4
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/4
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/4
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Enter fullscreen (native window), Value: off
+				17 container Inspect: Isolate, Ghost others, Explode, Deck clip on
+					18 toggle button Isolate, Value: on
+					19 toggle button Ghost others, Value: on
+					20 toggle button Explode, Value: on
+					21 toggle button Deck clip, Value: on
+					22 button Reset inspection
+					23 container
+						24 text Cut height
+						25 slider (settable, float) Deck clip height, Value: 0.008
+							26 value indicator 0.008
+				27 container View
+					28 toggle button Resume guided view, Help: Guided view (R), Value: off
+					29 button Frame part, Help: Frame part (F)
+				30 container Instructions
+					31 text Step 4 of 29 · Raspberry Pi 5
+					32 heading Mount the Robot HAT, Value: 2
+						33 text Mount the Robot HAT
+					34 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					35 container Printed manual
+						36 heading Printed manual, Value: 3
+							37 text Printed manual
+						38 button Enlarge
+						39 image Printed Step 4 / rpi4, rpi5, page 1 of the V40 booklet
+						40 text Printed Step 4 · rpi4, rpi5 · page 1 of the V40 booklet
+					41 container Parts in this step
+						42 heading In this step, Value: 3
+							43 text In this step
+						44 container
+							45 container Each M2.5x6 screw
+								46 toggle button M2.5x6 screw×4 moves down 30 mm into place, Value: off
+								47 container Each M2.5x6 screw
+									48 toggle button 5, Help: PX-V40-INS-M25X6-SCREW-005, Value: off
+									49 toggle button 6, Help: PX-V40-INS-M25X6-SCREW-006, Value: off
+									50 toggle button 7, Help: PX-V40-INS-M25X6-SCREW-007, Value: off
+									51 toggle button 8, Help: PX-V40-INS-M25X6-SCREW-008, Value: off
+							52 toggle button Robot HAT moves down 30 mm into place, Value: on
+						53 heading Works on, Value: 4
+							54 text Works on
+						55 container
+							56 container Each M2.5x18 standoff
+								57 toggle button M2.5x18 standoff×4 already in place, Value: off
+								58 container Each M2.5x18 standoff
+									59 toggle button 1, Help: PX-V40-INS-M25X18-STANDOFF-001, Value: off
+									60 toggle button 2, Help: PX-V40-INS-M25X18-STANDOFF-002, Value: off
+									61 toggle button 3, Help: PX-V40-INS-M25X18-STANDOFF-003, Value: off
+									62 toggle button 4, Help: PX-V40-INS-M25X18-STANDOFF-004, Value: off
+							63 toggle button Raspberry Pi 5 already in place, Value: off
+						64 heading Tools, Value: 4
+							65 text Tools
+						66 container
+							67 toggle button Screwdriver 1 kit tool, listed as a tile, Value: off
+							68 toggle button Screwdriver 2 kit tool, listed as a tile, Value: off
+					69 container From the step record
+						70 heading From the step record, Value: 3
+							71 text From the step record
+						72 description list
+							73 text Parts
+							74 text Robot HAT ×1.
+							75 text Hardware
+							76 text M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.
+							77 text Tools
+							78 text Matched screwdriver.
+							79 text Orientation
+							80 text No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.
+						81 text Caution No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.
+						82 summary Connection details, Value: off
+							83 text Connection details
+					84 container Selected part
+						85 heading Robot HAT, Value: 3
+							86 text Robot HAT
+						87 description list
+							88 text Definition
+							89 container
+								90 text Robot HAT revision unresolved PX-V40-DEF-ROBOT-HAT
+							91 text Instance
+							92 text PX-V40-INS-ROBOT-HAT-001
+							93 text Inventory
+							94 text Electronics, first introduced in step 4
+							95 text Now
+							96 text Installed in this step’s pose
+							97 text Displayed shape
+							98 container
+								99 text A detailed model drawn from Locked V40 S04 source-supported approximate PCB outline; 85 x 56 mm visual envelope, not measured stock. Top features remain schematic.. PX-V40-DEF-ROBOT-HAT.display.brep (f8fb85863e)
+								100 container f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4
+							101 text Checked shape
+							102 container
+								103 text M5 instructional proxy: simplified presentation shape, non-engineering. The assembly checks use this shape, not the one shown. PX-V40-DEF-ROBOT-HAT.brep (bbdbbeb758)
+								104 container bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a
+							105 text Matched reference features
+							106 text No maker's model was available to compare against.
+							107 text In this step
+							108 text Checked against this step’s closure; overlaps with the M2.5x6 screw 0.0 mm³, the M2.5x6 screw 1.0 mm³, the M2.5x6 screw 1.6 mm³, the M2.5x6 screw 2.6 mm³.
+							109 text Pose from
+							110 container 5cfa61d1fbca021d46616dd830f868cc51a5fae8d407cca41e7269b50d442709
+								111 text rpi5-S04-closure.json
+						112 button Frame this part
+					113 container Status
+						114 description list
+							115 text Assembly check
+							116 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							117 text Your car
+							118 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						119 text Detailed view: the USB mini microphone overlaps the detailed Raspberry Pi5 by 449 mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.
+						120 text Standoff studs touch the mounting-hole walls (up to 2.8 mm³), the hole-clearance case the assembly checks already record.
+						121 text Standoff studs touch the mounting-hole walls (up to 2.6 mm³), the hole-clearance case the assembly checks already record.
+						122 container (expanded) Secondary Actions: Collapse
+							123 summary Source limitations (22), Value: on
+								124 text Source limitations (22)
+							125 content list
+								126 container M6 plate thickness 2 mm PROBABLE
+									127 list marker •
+									128 text M6 plate thickness 2 mm PROBABLE
+								129 container Photo-supported hole positions and sharp bends are instructional approximations
+									130 list marker •
+									131 text Photo-supported hole positions and sharp bends are instructional approximations
+								132 container Presentation frames and support correspondence are replaceable
+									133 list marker •
+									134 text Presentation frames and support correspondence are replaceable
+								135 container M5 standoff blind bores and thread engagement are omitted
+									136 list marker •
+									137 text M5 standoff blind bores and thread engagement are omitted
+								138 container No engineering datum, physical fit, production tolerance or torque claim
+									139 list marker •
+									140 text No engineering datum, physical fit, production tolerance or torque claim
+								141 container Instructional presentation placement only; no engineering datum, measurement, interface or runtime admission
+									142 list marker •
+									143 text Instructional presentation placement only; no engineering datum, measurement, interface or runtime admission
+								144 container Staged approach is a nonphysical exploded presentation; no installation sweep or collision-free path is claimed
+									145 list marker •
+									146 text Staged approach is a nonphysical exploded presentation; no installation sweep or collision-free path is claimed
+								147 container Scoped overlaps are omitted thread/bore proxy detail or approximate-hole clearance, not physical fit or engagement
+									148 list marker •
+									149 text Scoped overlaps are omitted thread/bore proxy detail or approximate-hole clearance, not physical fit or engagement
+								150 container Presentation-only functional approximation; not physical fit/thread depth/engagement.
+									151 list marker •
+									152 text Presentation-only functional approximation; not physical fit/thread depth/engagement.
+								153 container M6 stock 2mm PROBABLE, approximate plate-local frames; no production datum.
+									154 list marker •
+									155 text M6 stock 2mm PROBABLE, approximate plate-local frames; no production datum.
+								156 container Body/end contacts describe authored solids and visible source order; physical uncertainties unresolved.
+									157 list marker •
+									158 text Body/end contacts describe authored solids and visible source order; physical uncertainties unresolved.
+								159 container No installation sweep or fit is claimed
+									160 list marker •
+									161 text No installation sweep or fit is claimed
+								162 container Pi5 USB opening choice is a presentation choice among equivalent openings; Q-10 stays unresolved
+									163 list marker •
+									164 text Pi5 USB opening choice is a presentation choice among equivalent openings; Q-10 stays unresolved
+								165 container USB port cavity is omitted from the Pi5 proxy; plug-in-port overlap is a declared omitted-cavity proxy overlap, not a fit or engagement result
+									166 list marker •
+									167 text USB port cavity is omitted from the Pi5 proxy; plug-in-port overlap is a declared omitted-cavity proxy overlap, not a fit or engagement result
+								168 container Plug and port dimensions are authored presentation proxies; no USB electrical, mechanical retention or allocation claim
+									169 list marker •
+									170 text Plug and port dimensions are authored presentation proxies; no USB electrical, mechanical retention or allocation claim
+								171 container Camera connector frames are presentation endpoint frames derived from observation; the adopted board proxies contain no solid connector body at these frames and the interior camera marker blocks are not connectors
+									172 list marker •
+									173 text Camera connector frames are presentation endpoint frames derived from observation; the adopted board proxies contain no solid connector body at these frames and the interior camera marker blocks are not connectors
+								174 container Slot height, seated depth and the contact normal are presentation approximations from the V40 closeups, the official text and measured source geometry; they are not a manufacturer dimension, fit or electrical claim
+									175 list marker •
+									176 text Slot height, seated depth and the contact normal are presentation approximations from the V40 closeups, the official text and measured source geometry; they are not a manufacturer dimension, fit or electrical claim
+								177 container The FPC ribbon is a zero-solid schematic: only its connected end frame is defined. No route, length, bend, pin map or camera OEM identity is inferred (Q-09, Q-10)
+									178 list marker •
+									179 text The FPC ribbon is a zero-solid schematic: only its connected end frame is defined. No route, length, bend, pin map or camera OEM identity is inferred (Q-09, Q-10)
+								180 container Pi5 reference STEP and the Zero drawing are guidance sources read in place from the ignored vault; no vendor geometry or pixels are published
+									181 list marker •
+									182 text Pi5 reference STEP and the Zero drawing are guidance sources read in place from the ignored vault; no vendor geometry or pixels are published
+								183 container The adopted HAT proxy is a 65 x 56 mm presentation envelope. V40 step 4 and 29 panels and the SunFounder Robot HAT V4.4 render indicate a Pi-sized board (about 85 x 56 mm) with the speaker and motor connectors toward the rear end; the proxy's outline and top-feature layout are not source-faithful. Placement uses only the mounting pattern and socket, which are unaffected
+									184 list marker •
+									185 text The adopted HAT proxy is a 65 x 56 mm presentation envelope. V40 step 4 and 29 panels and the SunFounder Robot HAT V4.4 render indicate a Pi-sized board (about 85 x 56 mm) with the speaker and motor connectors toward the rear end; the proxy's outline and top-feature layout are not source-faithful. Placement uses only the mounting pattern and socket, which are unaffected
+								186 container Actual HAT revision stays unresolved (Q-07); socket depth is schematic and is not a seating height. The socket and header touch at one interface plane by authored dimensions only
+									187 list marker •
+									188 text Actual HAT revision stays unresolved (Q-07); socket depth is schematic and is not a seating height. The socket and header touch at one interface plane by authored dimensions only
+								189 container A declared approximate-height gap between the HAT and a standoff reflects stock height differences in authored proxies, not a measured clearance
+									190 list marker •
+									191 text A declared approximate-height gap between the HAT and a standoff reflects stock height differences in authored proxies, not a measured clearance
+								192 container No thread engagement, torque, fit or installation sweep is claimed
+									193 list marker •
+									194 text No thread engagement, torque, fit or installation sweep is claimed
+						195 container
+							196 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							197 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				198 container Step controls
+					199 container Steps
+						200 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						201 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						202 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						203 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						204 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						205 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						206 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						207 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						208 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						209 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					210 button Rewind
+					211 button Play step, Help: Play step (Space)
+					212 button Replay from the start
+					213 slider (settable, float) Step timeline, Value: 3.2, Details: 3.2 s of 3.2 s
+						214 value indicator 3.2
+				215 text Step 4: Mount the Robot HAT. Preview
+	216 close button
+	217 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	218 minimize button
+219 menu bar
+	220 picarx-companion
+	221 File
+	222 Edit
+	223 View
+	224 Window
+	225 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/4

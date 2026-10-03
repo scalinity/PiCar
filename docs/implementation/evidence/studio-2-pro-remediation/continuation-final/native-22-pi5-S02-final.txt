@@ -1,0 +1,197 @@
+Pi5 S02 representative: detailed Pi5 board rendered after board switch, Pi5 page1, actual3.4s Preview endpoint; initial endpoint probe incorrectly expected Zero2.8s and was corrected.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/2
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/2
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/2
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Enter fullscreen (native window), Value: off
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 2 of 29 · Raspberry Pi 5
+					27 heading Mount the selected Raspberry Pi, Value: 2
+						28 text Mount the selected Raspberry Pi
+					29 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					30 container Printed manual
+						31 heading Printed manual, Value: 3
+							32 text Printed manual
+						33 button Enlarge
+						34 image Printed Step 2 / rpi4, rpi5, page 1 of the V40 booklet
+						35 text Printed Step 2 · rpi4, rpi5 · page 1 of the V40 booklet
+					36 container Parts in this step
+						37 heading In this step, Value: 3
+							38 text In this step
+						39 container
+							40 container Each M2.5x18 standoff
+								41 toggle button M2.5x18 standoff×4 moves down 30 mm into place, Value: off
+								42 container Each M2.5x18 standoff
+									43 toggle button 1, Help: PX-V40-INS-M25X18-STANDOFF-001, Value: off
+									44 toggle button 2, Help: PX-V40-INS-M25X18-STANDOFF-002, Value: off
+									45 toggle button 3, Help: PX-V40-INS-M25X18-STANDOFF-003, Value: off
+									46 toggle button 4, Help: PX-V40-INS-M25X18-STANDOFF-004, Value: off
+							47 toggle button Raspberry Pi 5 moves down 30 mm into place, Value: on
+							48 toggle button USB mini microphone moves forward 30 mm into place, Value: off
+						49 heading Works on, Value: 4
+							50 text Works on
+						51 container Each M2.5x18+6 standoff
+							52 toggle button M2.5x18+6 standoff×4 already in place, Value: off
+							53 container Each M2.5x18+6 standoff
+								54 toggle button 1, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-001, Value: off
+								55 toggle button 2, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-002, Value: off
+								56 toggle button 3, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-003, Value: off
+								57 toggle button 4, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-004, Value: off
+					58 container From the step record
+						59 heading From the step record, Value: 3
+							60 text From the step record
+						61 description list
+							62 text Parts
+							63 text Selected Raspberry Pi ×1, user-supplied. Pi4/Pi5: M2.5x18 standoff ×4; USB mini microphone ×1 shown in the shared panel. Zero2W: M2.5x18+6 standoff ×2.
+							64 text Hardware
+							65 text No additional separate screw is prescribed in this panel; upper standoffs fasten the board.
+							66 text This board
+							67 text Pi5; 4× M2.5x18; USB microphone panel
+							68 text Tools
+							69 text Hand fastening/matched tool if needed; no guessed torque.
+							70 text Orientation
+							71 text GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.
+						72 text Caution GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.
+						73 summary Connection details, Value: off
+							74 text Connection details
+					75 container Selected part
+						76 heading Raspberry Pi 5, Value: 3
+							77 text Raspberry Pi 5
+						78 description list
+							79 text Definition
+							80 container
+								81 text Raspberry Pi5; user-supplied revision/header/cooler unresolved PX-V40-DEF-PI5
+							82 text Instance
+							83 text PX-V40-INS-PI5-001
+							84 text Inventory
+							85 text Electronics, first introduced in step 2
+							86 text Now
+							87 text Installed in this step’s pose
+							88 text Displayed shape
+							89 container
+								90 text A detailed model drawn from Raspberry Pi 5 mechanical drawing. PX-V40-DEF-PI5.display.brep (afd18f9adc)
+								91 container afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a
+							92 text Checked shape
+							93 container
+								94 text M7 instructional board revision 2 generated by the chain: presentation estimate, non-engineering. The assembly checks use this shape, not the one shown. PX-V40-DEF-PI5-INSTRUCTIONAL-02.brep (ff4f5415e6)
+								95 container ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c
+							96 text Matched reference features
+							97 text 25 of 33 detail parts match a part of the maker's own model (footprint overlap at least half). Among those, centres differ by at most 0.22 mm (median 0.00 mm). Not matched closely, so not counted above: USB 2.0 ports tongue 1, USB 2.0 ports tongue 2, USB 3.0 ports tongue 1, USB 3.0 ports tongue 2, Ethernet contacts, micro HDMI 0, micro HDMI 1, PoE pins. Mounting holes, measured on both shapes, agree within 0.00 mm.
+							98 text In this step
+							99 text Checked against this step’s closure; overlaps with the M2.5x18+6 standoff 0.2 mm³, the M2.5x18+6 standoff 1.3 mm³, the M2.5x18+6 standoff 1.8 mm³, the M2.5x18+6 standoff 2.8 mm³, the USB mini microphone 449 mm³.
+							100 text Pose from
+							101 container 0f7776de0ac18486f7091dad558e018709bbdfce183f8e70789ee2af1cfbf934
+								102 text rpi5-S02-closure.json
+						103 button Frame this part
+					104 container Status
+						105 description list
+							106 text Assembly check
+							107 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							108 text Your car
+							109 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						110 text Detailed view: the USB mini microphone overlaps the detailed Raspberry Pi5 by 449 mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.
+						111 text Standoff studs touch the mounting-hole walls (up to 2.8 mm³), the hole-clearance case the assembly checks already record.
+						112 container (expanded) Secondary Actions: Collapse
+							113 summary Source limitations (14), Value: on
+								114 text Source limitations (14)
+							115 content list
+								116 container M6 plate thickness 2 mm PROBABLE
+									117 list marker •
+									118 text M6 plate thickness 2 mm PROBABLE
+								119 container Photo-supported hole positions and sharp bends are instructional approximations
+									120 list marker •
+									121 text Photo-supported hole positions and sharp bends are instructional approximations
+								122 container Presentation frames and support correspondence are replaceable
+									123 list marker •
+									124 text Presentation frames and support correspondence are replaceable
+								125 container M5 standoff blind bores and thread engagement are omitted
+									126 list marker •
+									127 text M5 standoff blind bores and thread engagement are omitted
+								128 container No engineering datum, physical fit, production tolerance or torque claim
+									129 list marker •
+									130 text No engineering datum, physical fit, production tolerance or torque claim
+								131 container Instructional presentation placement only; no engineering datum, measurement, interface or runtime admission
+									132 list marker •
+									133 text Instructional presentation placement only; no engineering datum, measurement, interface or runtime admission
+								134 container Staged approach is a nonphysical exploded presentation; no installation sweep or collision-free path is claimed
+									135 list marker •
+									136 text Staged approach is a nonphysical exploded presentation; no installation sweep or collision-free path is claimed
+								137 container Scoped overlaps are omitted thread/bore proxy detail or approximate-hole clearance, not physical fit or engagement
+									138 list marker •
+									139 text Scoped overlaps are omitted thread/bore proxy detail or approximate-hole clearance, not physical fit or engagement
+								140 container Presentation-only functional approximation; not physical fit/thread depth/engagement.
+									141 list marker •
+									142 text Presentation-only functional approximation; not physical fit/thread depth/engagement.
+								143 container M6 stock 2mm PROBABLE, approximate plate-local frames; no production datum.
+									144 list marker •
+									145 text M6 stock 2mm PROBABLE, approximate plate-local frames; no production datum.
+								146 container Body/end contacts describe authored solids and visible source order; physical uncertainties unresolved.
+									147 list marker •
+									148 text Body/end contacts describe authored solids and visible source order; physical uncertainties unresolved.
+								149 container Pi5 USB opening choice is a presentation choice among equivalent openings; Q-10 stays unresolved
+									150 list marker •
+									151 text Pi5 USB opening choice is a presentation choice among equivalent openings; Q-10 stays unresolved
+								152 container USB port cavity is omitted from the Pi5 proxy; plug-in-port overlap is a declared omitted-cavity proxy overlap, not a fit or engagement result
+									153 list marker •
+									154 text USB port cavity is omitted from the Pi5 proxy; plug-in-port overlap is a declared omitted-cavity proxy overlap, not a fit or engagement result
+								155 container Plug and port dimensions are authored presentation proxies; no USB electrical, mechanical retention or allocation claim
+									156 list marker •
+									157 text Plug and port dimensions are authored presentation proxies; no USB electrical, mechanical retention or allocation claim
+								158 container No installation sweep or fit is claimed
+									159 list marker •
+									160 text No installation sweep or fit is claimed
+						161 container
+							162 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							163 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				164 container Step controls
+					165 container Steps
+						166 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						167 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						168 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						169 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						170 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						171 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						172 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						173 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						174 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						175 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					176 button Rewind
+					177 button Play step, Help: Play step (Space)
+					178 button Replay from the start
+					179 slider (settable, float) Step timeline, Value: 3.4, Details: 3.4 s of 3.4 s
+						180 value indicator 3.4
+				181 text Step 2: Mount the selected Raspberry Pi. Preview
+	182 close button
+	183 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	184 minimize button
+185 menu bar
+	186 picarx-companion
+	187 File
+	188 Edit
+	189 View
+	190 Window
+	191 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/2

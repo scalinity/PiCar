@@ -1,0 +1,2020 @@
+[
+  {
+    "name": "00-pi5-S00",
+    "note": "Fresh final bundle: Pi5 tray,50=44+6, no manual, disabled transport, current pack and rendered full tray.",
+    "ax": "native-00-pi5-S00.txt",
+    "capture": "captures/00-pi5-S00.jpg",
+    "variant": "rpi5",
+    "step": 0,
+    "mode": "tray",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "01-zero-S00",
+    "note": "Fresh final bundle: Zero tray,47=41+6, no manual, disabled transport; board switch visibly adopts its tray.",
+    "ax": "native-01-zero-S00.txt",
+    "capture": "captures/01-zero-S00.jpg",
+    "variant": "rpi-zero-2-w",
+    "step": 0,
+    "mode": "tray",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "02-zero-S01-playing",
+    "note": "Capture is a start/background probe at 0.0 s; it is not accepted as advancing playback proof. Foreground captures 36/37 provide that proof.",
+    "ax": "native-02-zero-S01-playing.txt",
+    "capture": "captures/02-zero-S01-playing.jpg",
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "mode": "preview",
+    "phase": "playing",
+    "initialNote": "Zero S01: Preview playing, Plate A selected, Zero-specific page1; transient supports and PlateA bring-in visibly rendered.",
+    "disposition": "LIMITED_START_FRAME",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "03-zero-S01-final",
+    "note": "Zero S01 endpoint: PlateA and four supports rendered,4.0s endpoint, current Zero manual mapping; native foreground window captured by owned CGWindowID.",
+    "ax": "native-03-zero-S01-final.txt",
+    "capture": "captures/03-zero-S01-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "04-zero-S02-playing",
+    "note": "Zero S02 replay advances: Zero board selected and visibly moving, board-specific page1.",
+    "ax": "native-04-zero-S02-playing.txt",
+    "capture": "captures/04-zero-S02-playing.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 2,
+    "mode": "preview",
+    "phase": "playing",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "05-zero-S02-final",
+    "note": "Zero S02 endpoint: actual Zero board on PlateA;2.8s completion and selected-board highlight.",
+    "ax": "native-05-zero-S02-final.txt",
+    "capture": "captures/05-zero-S02-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 2,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "06-zero-S03-still",
+    "note": "Zero S03 Still Preview: FPC tile represented, Zero page1,0.0s transport disabled; cumulative Zero board scene rendered.",
+    "ax": "native-06-zero-S03-still.txt",
+    "capture": "captures/06-zero-S03-still.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 3,
+    "mode": "still-preview",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "07-zero-S04-playing",
+    "note": "Zero S04 replay: HAT visibly moves above board; corrected rounded overhang, Zero page1, advancing timeline.",
+    "ax": "native-07-zero-S04-playing.txt",
+    "capture": "captures/07-zero-S04-playing.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 4,
+    "mode": "preview",
+    "phase": "playing",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "08-zero-S04-final",
+    "note": "A coordinate scroll intended for the drawer zoomed the canvas instead. Endpoint geometry is present, but this is not the accepted clear S04/manual view; captures 07 and 49 supersede it.",
+    "ax": "native-08-zero-S04-final.txt",
+    "capture": "captures/08-zero-S04-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 4,
+    "mode": "preview",
+    "phase": "endpoint",
+    "initialNote": "Zero S04 endpoint: HAT installed with rounded overhang; actual Zero manual panel visible,3.2s completed. Scene differs from S03.",
+    "disposition": "LIMITED_UNINTENDED_ZOOM",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "09-zero-S05-playing",
+    "note": "Zero S05 replay advances: left TT motor selected and motor-related assembly visibly moves; shared page1.",
+    "ax": "native-09-zero-S05-playing.txt",
+    "capture": "captures/09-zero-S05-playing.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 5,
+    "mode": "preview",
+    "phase": "playing",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "10-zero-S05-final",
+    "note": "Zero S05 endpoint: two motors and their hardware rendered in installed state,5.0s complete; shared page1 mapping.",
+    "ax": "native-10-zero-S05-final.txt",
+    "capture": "captures/10-zero-S05-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 5,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "11-zero-S06-still",
+    "note": "Still Preview S06 shows two tape tiles and the modeled battery in the tray, with Battery selected. The battery is a modeled solid, not a tile. The guided view focuses supplies; cumulative chassis is only partly visible.",
+    "ax": "native-11-zero-S06-still.txt",
+    "capture": "captures/11-zero-S06-still.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 6,
+    "mode": "still-preview",
+    "initialNote": "Zero S06 Still Preview: tape/battery represented as tiles, battery introduced and waiting in tray, shared page2; disabled0.0s transport and correct cumulative motor scene.",
+    "disposition": "ACCEPTED_WITH_CORRECTED_DESCRIPTION",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "12-zero-S07-review",
+    "note": "Zero S07 Review: cumulative battery placement rendered, shared page2, no ordinary playback; UNFRAMED_TOUCHED_CABLE_END/PX-V40-CONN-07-COMMON-BATTERY retained.",
+    "ax": "native-12-zero-S07-review.txt",
+    "capture": "captures/12-zero-S07-review.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 7,
+    "mode": "review",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "13-zero-S07-blocker",
+    "note": "Zero S07 visible blocker and shared manual panel; no ordinary playback. The current scene renders battery at its recorded pose.",
+    "ax": "native-13-zero-S07-blocker.txt",
+    "capture": "captures/13-zero-S07-blocker.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 7,
+    "mode": "review",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "14-zero-S08-playing",
+    "note": "Zero S08 replay advances, pan horn selected and visibly moving; shared page2, S07 remains uncertified.",
+    "ax": "native-14-zero-S08-playing.txt",
+    "capture": "captures/14-zero-S08-playing.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 8,
+    "mode": "preview",
+    "phase": "playing",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "15-zero-S08-final",
+    "note": "Zero S08 endpoint: pan horn installed on front chassis,3.2s complete, shared page2 and S07 dependency warning.",
+    "ax": "native-15-zero-S08-final.txt",
+    "capture": "captures/15-zero-S08-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 8,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "16-zero-S08-current-limitations",
+    "note": "Zero S08 current source limitations: current photo-supported4/4, historical4/3, unresolved1.4mm/~1.69mm diameter; no engineering admission.",
+    "ax": "native-16-zero-S08-current-limitations.txt",
+    "capture": "captures/16-zero-S08-current-limitations.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 8,
+    "mode": "preview",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "17-zero-S09-review",
+    "note": "Zero S09 Review renders refused candidate with ultrasonic module and PlateH; shared page2, no playback, four retained conflicts101.071/51.250/12.955/2.026mm³.",
+    "ax": "native-17-zero-S09-review.txt",
+    "capture": "captures/17-zero-S09-review.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 9,
+    "mode": "review",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "18-zero-S09-conflict-focus",
+    "note": "Zero S09 PlateA/ultrasonic refused pair selected, focus/highlight rendered; source conflict51.250mm³ displayed rounded51.2.",
+    "ax": "native-18-zero-S09-conflict-focus.txt",
+    "capture": "captures/18-zero-S09-conflict-focus.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 9,
+    "mode": "review",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "19-pi5-S09-review",
+    "note": "Pi5 S09 after board switch: Review/refused candidate visibly replaced, ultrasonic module selectable, shared page2 and four unchanged conflicts.",
+    "ax": "native-19-pi5-S09-review.txt",
+    "capture": "captures/19-pi5-S09-review.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 9,
+    "mode": "review",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "20-pi5-S08-final",
+    "note": "Pi5 S08 representative: current board cumulative scene, pan horn selected, Preview3.2s completion, shared page2 and S07 dependency.",
+    "ax": "native-20-pi5-S08-final.txt",
+    "capture": "captures/20-pi5-S08-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 8,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "21-pi5-S04-final",
+    "note": "Pi5 S04 representative: approximate rounded HAT overhang rendered at unchanged placement, Pi5-specific page1, Preview3.2s completed.",
+    "ax": "native-21-pi5-S04-final.txt",
+    "capture": "captures/21-pi5-S04-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "22-pi5-S02-final",
+    "note": "Pi5 S02 representative: detailed Pi5 board rendered after board switch, Pi5 page1, actual3.4s Preview endpoint; initial endpoint probe incorrectly expected Zero2.8s and was corrected.",
+    "ax": "native-22-pi5-S02-final.txt",
+    "capture": "captures/22-pi5-S02-final.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "23-native-stationary-selection",
+    "note": "Physical stationary click on exposed PlateA during Pi5 S02 active replay selects PlateA and retains guided ownership; pointer did not move during press.",
+    "ax": "native-23-native-stationary-selection.txt",
+    "capture": "captures/23-native-stationary-selection.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "interaction": "stationary-selection",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "24-native-orbit-manual",
+    "note": "Physical native drag/orbit changes the view and yields camera ownership to manual.",
+    "ax": "native-24-native-orbit-manual.txt",
+    "capture": "captures/24-native-orbit-manual.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "interaction": "orbit",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "25-native-pan-windowed",
+    "note": "System Events Shift-down around the UI tool left drag did not produce a visually established pan. View rotated. This is manual-orbit evidence only and cannot close native pan.",
+    "ax": "native-25-native-pan-windowed.txt",
+    "capture": "captures/25-native-pan-windowed.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "interaction": "pan",
+    "initialNote": "Physical native Shift-drag pans the manual camera; selected PlateA retained,3.4s endpoint; this is the view before resize.",
+    "disposition": "FAILED_PAN_INPUT_SETUP",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "26-native-pan-resized",
+    "note": "Manual view and Plate A selection survive resize to 1100x700, but the preceding interaction did not establish pan. This record alone does not close target preservation after pan.",
+    "ax": "native-26-native-pan-resized.txt",
+    "capture": "captures/26-native-pan-resized.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "interaction": "resize-after-pan",
+    "initialNote": "Native window resized to1100x700 CSS target; manual pan framing and PlateA selection retained, no guided-camera reset.",
+    "disposition": "LIMITED_RESIZE_AFTER_ORBIT",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "27-native-pan-fullscreen",
+    "note": "Manual view and Plate A selection survive fullscreen, but the preceding interaction did not establish pan. This record alone does not close target preservation after pan.",
+    "ax": "native-27-native-pan-fullscreen.txt",
+    "capture": "captures/27-native-pan-fullscreen.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "interaction": "fullscreen-after-pan",
+    "initialNote": "Manual pan and PlateA selection survive native fullscreen transition; no guided target reset.",
+    "disposition": "LIMITED_FULLSCREEN_AFTER_ORBIT",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "28-native-guided-resumed",
+    "note": "Explicit Resume guided view returns ownership to guided and reframes intentionally.",
+    "ax": "native-28-native-guided-resumed.txt",
+    "capture": "captures/28-native-guided-resumed.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "interaction": "resume-guided",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "29-native-specific-selection-cleared",
+    "note": "Selected Pi5 board then switched to Zero: board-specific selection clears, Frame part disabled; correct Zero board rendered with no stale Pi5 scene.",
+    "ax": "native-29-native-specific-selection-cleared.txt",
+    "capture": "captures/29-native-specific-selection-cleared.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 2,
+    "interaction": "variant-specific-selection",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "30-native-common-focus-zero",
+    "note": "Common HAT selected and physically focused on Zero S04; current displayed outline and unchanged180-degree orientation.",
+    "ax": "native-30-native-common-focus-zero.txt",
+    "capture": "captures/30-native-common-focus-zero.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 4,
+    "interaction": "common-selection-focus",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "31-native-common-focus-pi5",
+    "note": "Switching to Pi5 retains the common HAT instance selection/highlight and valid physical focus, with correctly replaced board scene.",
+    "ax": "native-31-native-common-focus-pi5.txt",
+    "capture": "captures/31-native-common-focus-pi5.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "common-selection-focus",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "32-native-ghost-explode",
+    "note": "Pi5 S04 HAT selected: combined ghost+explode visibly renders on final native bundle.",
+    "ax": "native-32-native-ghost-explode.txt",
+    "capture": "captures/32-native-ghost-explode.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "ghost-explode",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "33-native-ghost-explode-clip",
+    "note": "Ghost + explode + deck clip: the exploded HAT is above the 0.008 m deck plane and is fully hidden. The selected instance remains valid; reset restores it. Rendering a fully clipped object is not expected.",
+    "ax": "native-33-native-ghost-explode-clip.txt",
+    "capture": "captures/33-native-ghost-explode-clip.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "ghost-explode-clip",
+    "initialNote": "Pi5 S04: combined ghost+explode+deck clip visibly renders, current HAT selection remains valid.",
+    "disposition": "ACCEPTED_CLIP_VISIBILITY",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "34-native-isolate-combined",
+    "note": "Isolate + ghost + explode + deck clip leaves an empty canvas because the isolated HAT is fully above the clip plane. The original note claiming a visible HAT was incorrect. Capture 52 separately proves visible isolated HAT; capture 35 proves reset.",
+    "ax": "native-34-native-isolate-combined.txt",
+    "capture": "captures/34-native-isolate-combined.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "isolate-combined",
+    "initialNote": "Pi5 S04 isolate combined with ghost/explode/clip: selected HAT remains rendered and inspectable.",
+    "disposition": "ACCEPTED_CLIP_VISIBILITY",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "35-native-inspection-reset",
+    "note": "Native Reset inspection returns ghost/explode/clip/isolate to off; explicit guided resume restores canonical presentation view.",
+    "ax": "native-35-native-inspection-reset.txt",
+    "capture": "captures/35-native-inspection-reset.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "inspection-reset",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "36-zero-S01-playing-foreground",
+    "note": "Fresh foreground Zero S01 replay visibly advances through PlateA and supports, Zero page1, guided camera,4.0s duration; supersedes initial background start capture as playback proof.",
+    "ax": "native-36-zero-S01-playing-foreground.txt",
+    "capture": "captures/36-zero-S01-playing-foreground.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "mode": "preview",
+    "phase": "playing",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "37-zero-S01-final-foreground",
+    "note": "Zero S01 replay reaches4.0s with completed supports and PlateA, correct manual visible.",
+    "ax": "native-37-zero-S01-final-foreground.txt",
+    "capture": "captures/37-zero-S01-final-foreground.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "mode": "preview",
+    "phase": "endpoint",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "38-native-Escape-modal-only",
+    "note": "First physical Escape closes visible manual only: PlateA selection retained and fullscreen remains on.",
+    "ax": "native-38-native-Escape-modal-only.txt",
+    "capture": "captures/38-native-Escape-modal-only.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "interaction": "Escape-modal",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "39-native-Escape-selection-only",
+    "note": "Second distinct physical Escape clears PlateA selection only; fullscreen remains on.",
+    "ax": "native-39-native-Escape-selection-only.txt",
+    "capture": "captures/39-native-Escape-selection-only.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "interaction": "Escape-selection",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "40-native-Escape-fullscreen-exit",
+    "note": "Third distinct physical Escape exits native fullscreen with no modal or selection; captured after AppKit transition settled.",
+    "ax": "native-40-native-Escape-fullscreen-exit.txt",
+    "capture": "captures/40-native-Escape-fullscreen-exit.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "interaction": "Escape-fullscreen",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "41-native-modal-tray-first-Escape",
+    "note": "Enlarged manual -> physical keyboard tray -> first Escape clears visible PlateA selection while fullscreen remains on; no invisible modal consumed it.",
+    "ax": "native-41-native-modal-tray-first-Escape.txt",
+    "capture": "captures/41-native-modal-tray-first-Escape.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 0,
+    "interaction": "manual-tray-Escape",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "42-native-modal-tray-return",
+    "note": "Keyboard return to S01 does not resurrect manual or selection; fullscreen retained.",
+    "ax": "native-42-native-modal-tray-return.txt",
+    "capture": "captures/42-native-modal-tray-return.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 1,
+    "interaction": "manual-tray-return",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "43-perf-pi5-S02",
+    "note": "Fresh native Pi5 S02 replay performance: full last120 active frames from this replay, no synthetic state injection; current final bundle and pack.",
+    "ax": "native-43-perf-pi5-S02.txt",
+    "capture": "captures/43-perf-pi5-S02.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 2,
+    "scenario": "performance-S02",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "44-perf-pi5-S04-inspection",
+    "note": "Fresh native Pi5 S04 ghost+explode replay: last120 active frames from the representative inspection replay, current final bundle.",
+    "ax": "native-44-perf-pi5-S04-inspection.txt",
+    "capture": "captures/44-perf-pi5-S04-inspection.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "scenario": "performance-inspection",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "45-perf-pi5-tray-before-orbit",
+    "note": "Before-orbit route snapshot includes rolling samples from the previous S04 replay. Only capture 46 is the accepted whole-tray performance sample.",
+    "ax": "native-45-perf-pi5-tray-before-orbit.txt",
+    "capture": "captures/45-perf-pi5-tray-before-orbit.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 0,
+    "scenario": "performance-tray-baseline",
+    "initialNote": "Pi5 whole tray before physical orbit: current DPR/draws/triangles; baseline only, frame intervals still from prior scenario and not used as tray sample.",
+    "disposition": "NOT_A_TRAY_PERFORMANCE_SAMPLE",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "46-perf-pi5-tray-orbit",
+    "note": "Fresh native whole-tray orbit:12 physical drags plus damping, current-ratio active frame window; governor behavior recorded from actual HUD.",
+    "ax": "native-46-perf-pi5-tray-orbit.txt",
+    "capture": "captures/46-perf-pi5-tray-orbit.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 0,
+    "scenario": "performance-tray-orbit",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "47-pi5-S00-tool-tile",
+    "note": "Pi5 tray: wrench tile selectable/inspectable,50=44+6, no manual, transport disabled.",
+    "ax": "native-47-pi5-S00-tool-tile.txt",
+    "capture": "captures/47-pi5-S00-tool-tile.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 0,
+    "mode": "tray",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "48-zero-S00-tool-tile",
+    "note": "Zero tray:47=41+6, common wrench selection retained with valid tile inspector; correct Zero board and tray rendered.",
+    "ax": "native-48-zero-S00-tool-tile.txt",
+    "capture": "captures/48-zero-S00-tool-tile.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi-zero-2-w",
+    "step": 0,
+    "mode": "tray",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "49-zero-s04-final-clear",
+    "note": "Final-source Zero S04 endpoint after explicit guided reset: current HAT with approximate Pi-sized rounded overhang, correct Zero manual panel, and 3.2 s playback endpoint. Replaces the unintended zoom setup in capture 08 as accepted S04 evidence.",
+    "ax": "native-49-zero-s04-final-clear.txt",
+    "capture": "captures/49-zero-s04-final-clear.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "50-zero-s06-final-clear",
+    "note": "S06 guided view focuses the two tape tiles and modeled battery in the tray; the cumulative chassis is partly outside the viewport. Correct shared manual and disabled transport are visible.",
+    "ax": "native-50-zero-s06-final-clear.txt",
+    "capture": "captures/50-zero-s06-final-clear.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "initialNote": "Final-source Zero S06 Still Preview: two tape tiles and modeled battery remain supplied beside the cumulative assembly; correct shared manual panel and disabled zero-duration transport. Battery is a modeled solid, not one of the six tiles.",
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "51-zero-s08-correction-visible",
+    "note": "Final-source Zero S08 current source limitation visibly shows previous four/three versus current four/four, unresolved 1.4 mm versus approximately 1.69 mm diameter, and instructional-only status beside the rendered front chassis and horn endpoint.",
+    "ax": "native-51-zero-s08-correction-visible.txt",
+    "capture": "captures/51-zero-s08-correction-visible.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "52-native-isolate-hat-visible",
+    "note": "Native Pi5 S04 isolate alone renders the selected HAT and hides unrelated parts; selection and Frame part remain valid. Combined clip captures 33/34 intentionally hide HAT above their deck plane.",
+    "ax": "native-52-native-isolate-hat-visible.txt",
+    "capture": "captures/52-native-isolate-hat-visible.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "disposition": "ACCEPTED",
+    "visualReview": "Reviewed owned-window pixels with AX route/mode/manual/selection evidence; AX alone is not rendered proof."
+  },
+  {
+    "name": "53-native-pan-before",
+    "note": "Pre-pan: settled Pi5 S04 Preview, guided camera; same verified final debug bundle, existing diagnostics flag enabled for measurement only.",
+    "ax": "native-53-native-pan-before.txt",
+    "capture": "captures/53-native-pan-before.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-before",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "54-native-pan-after",
+    "note": "Actual unmodified right-button HID drag translates the camera and target; manual ownership shown.",
+    "ax": "native-54-native-pan-after.txt",
+    "capture": "captures/54-native-pan-after.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 700,
+            "Y": 36,
+            "Width": 1100
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-after",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "55-native-pan-resize",
+    "note": "Native window resized from 1100x700 to 1121x704; panned manual target preserved.",
+    "ax": "native-55-native-pan-resize.txt",
+    "capture": "captures/55-native-pan-resize.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-resize",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "56-native-pan-fullscreen",
+    "note": "Native fullscreen enter; target measured through the owned inspector; inspector closed before owned-window screenshot. Manual panned target preserved.",
+    "ax": "native-56-native-pan-fullscreen.txt",
+    "capture": "captures/56-native-pan-fullscreen.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 0,
+            "Height": 729,
+            "Y": 26,
+            "Width": 1168
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-fullscreen",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "57-native-pan-fullscreen-exit",
+    "note": "Native fullscreen exit; manual panned target preserved.",
+    "ax": "native-57-native-pan-fullscreen-exit.txt",
+    "capture": "captures/57-native-pan-fullscreen-exit.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-fullscreen-exit",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "58-native-pan-redraw",
+    "note": "Native Hide instructions button changes insets and triggers normal render invalidation; panned target preserved.",
+    "ax": "native-58-native-pan-redraw.txt",
+    "capture": "captures/58-native-pan-redraw.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-redraw",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "59-native-pan-dpr",
+    "note": "Existing native diagnostic setDpr(1) exercises renderer pixel-ratio lifecycle without mutating any camera/store target. Manual pan target preserved.",
+    "ax": "native-59-native-pan-dpr.txt",
+    "capture": "captures/59-native-pan-dpr.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-dpr",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  },
+  {
+    "name": "60-native-pan-resume",
+    "note": "Native Resume guided view explicitly restores the S04 guided target after pan and lifecycle changes.",
+    "ax": "native-60-native-pan-resume.txt",
+    "capture": "captures/60-native-pan-resume.png",
+    "window": {
+      "frontmostPid": 65018,
+      "windows": [
+        {
+          "kCGWindowName": "PiCar-X Companion",
+          "kCGWindowLayer": 0,
+          "kCGWindowMemoryUsage": 2432,
+          "kCGWindowIsOnscreen": true,
+          "kCGWindowSharingState": 1,
+          "kCGWindowOwnerPID": 65018,
+          "kCGWindowOwnerName": "picarx-companion",
+          "kCGWindowNumber": 7129,
+          "kCGWindowStoreType": 1,
+          "kCGWindowBounds": {
+            "X": 23,
+            "Height": 704,
+            "Y": 36,
+            "Width": 1121
+          },
+          "kCGWindowAlpha": 1
+        }
+      ]
+    },
+    "variant": "rpi5",
+    "step": 4,
+    "interaction": "native-pan-resume",
+    "disposition": "ACCEPTED",
+    "visualReview": "Owned-window pixels reviewed with numeric native diagnostics."
+  }
+]

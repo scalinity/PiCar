@@ -1,0 +1,44 @@
+
+> picarx-companion@0.1.0 test:browser /Users/danny/Documents/Apps/PiCar/picarx-companion
+> playwright test tests/browser/studio.spec.ts -g 'stationary selection across active playback|first frame drawn|manual open to tray|a manually panned target|Escape|combined ghost'
+
+[WebServer] (node:49443) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49806) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 22 tests using 1 worker
+
+(node:50021) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (14.9s)
+  ✓   2 [chromium] › tests/browser/studio.spec.ts:279:1 › a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen (4.7s)
+  ✓   3 [chromium] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen (4.8s)
+  ✓   4 [chromium] › tests/browser/studio.spec.ts:324:1 › an Escape keyup whose keydown never arrived (native fullscreen) acts once (2.4s)
+  ✓   5 [chromium] › tests/browser/studio.spec.ts:364:1 › the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames (6.0s)
+  ✓   6 [chromium] › tests/browser/studio.spec.ts:531:1 › S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it (4.3s)
+  ✓   7 [chromium] › tests/browser/studio.spec.ts:548:1 › the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection (2.7s)
+  ✓   8 [chromium] › tests/browser/studio.spec.ts:594:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (5.6s)
+  ✓   9 [chromium] › tests/browser/studio.spec.ts:594:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (6.7s)
+  ✓  10 [chromium] › tests/browser/studio.spec.ts:690:1 › manual open to tray navigation closes invisible modal state before Escape and never resurrects it (2.9s)
+  ✓  11 [chromium] › tests/browser/studio.spec.ts:713:1 › combined ghost/explode/clip preserves poses, clipping excludes picking, and reset restores canonical presentation (5.2s)
+(node:87482) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [webkit] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (8.8s)
+  ✓  13 [webkit] › tests/browser/studio.spec.ts:279:1 › a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen (1.8s)
+  -  14 [webkit] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen
+  ✓  15 [webkit] › tests/browser/studio.spec.ts:324:1 › an Escape keyup whose keydown never arrived (native fullscreen) acts once (748ms)
+  ✓  16 [webkit] › tests/browser/studio.spec.ts:364:1 › the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames (3.8s)
+  ✓  17 [webkit] › tests/browser/studio.spec.ts:531:1 › S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it (1.3s)
+  ✓  18 [webkit] › tests/browser/studio.spec.ts:548:1 › the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection (1.6s)
+  ✓  19 [webkit] › tests/browser/studio.spec.ts:594:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (2.2s)
+  ✓  20 [webkit] › tests/browser/studio.spec.ts:594:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (2.7s)
+  ✓  21 [webkit] › tests/browser/studio.spec.ts:690:1 › manual open to tray navigation closes invisible modal state before Escape and never resurrects it (1.0s)
+  ✓  22 [webkit] › tests/browser/studio.spec.ts:713:1 › combined ghost/explode/clip preserves poses, clipping excludes picking, and reset restores canonical presentation (4.5s)
+
+  1 skipped
+  21 passed (1.5m)

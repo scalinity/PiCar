@@ -1,0 +1,58 @@
+Existing native diagnostic setDpr(1) exercises renderer pixel-ratio lifecycle without mutating any camera/store target. Manual pan target preserved.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/4?diagnostics
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/4
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/4
+				14 text Preview
+				15 toggle button Show instructions, Help: Show instructions (I), Value: off
+				16 toggle button Enter fullscreen (native window), Value: off
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Resume guided view, Help: Guided view (R), Value: off
+					24 button (disabled) Frame part, Help: Frame part (F)
+				25 container Step controls
+					26 container Steps
+						27 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						28 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						29 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						30 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						31 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						32 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						33 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						34 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						35 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						36 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					37 button Rewind
+					38 button Play step, Help: Play step (Space)
+					39 button Replay from the start
+					40 slider (settable, float) Step timeline, Value: 3.2, Details: 3.2 s of 3.2 s
+						41 value indicator 3.2
+				42 text Step 4: Mount the Robot HAT. Preview
+	43 close button
+	44 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	45 minimize button
+46 menu bar
+	47 picarx-companion
+	48 File
+	49 Edit
+	50 View
+	51 Window
+	52 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/4?diagnostics

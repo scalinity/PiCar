@@ -1,0 +1,140 @@
+Fresh native whole-tray orbit:12 physical drags plus damping, current-ratio active frame window; governor behavior recorded from actual HUD.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/0
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/0
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+				14 text Parts tray
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Performance
+					18 text 60 fps over 120 active frames · mean 16.7 ms · p95 18.0 ms · display ≈ 16.0 ms
+					19 text 1168×729 css px · dpr 2 · 295 draws · 249,294 tris
+					20 text manifest 4.0 ms · glb 25.0 ms · verify 13.0 ms · decode 5.0 ms · build 1.0 ms
+					21 text page start → canvas 387.0 ms · first render 388.0 ms · first frame drawn 427.0 ms
+				22 container Inspect
+					23 toggle button Isolate, Value: off
+					24 toggle button Ghost others, Value: off
+					25 toggle button (disabled) Explode, Value: off
+					26 toggle button Deck clip, Value: off
+				27 container View
+					28 toggle button Resume guided view, Help: Guided view (R), Value: off
+					29 button Frame part, Help: Frame part (F)
+				30 container Instructions
+					31 text Parts tray · Raspberry Pi 5
+					32 heading Everything for steps 1 to 9, Value: 2
+						33 text Everything for steps 1 to 9
+					34 text Laid out by kind beside the chassis: a layout for looking and counting, not a stage of the build.
+					35 container Parts inventory
+						36 text 50 pieces · 44 modelled · 6 shown as tiles
+						37 summary › Plates 2, Value: off
+							38 text ›
+							39 text Plates
+							40 text 2
+							41 button Frame
+						42 summary › Electronics 5, Value: off
+							43 text ›
+							44 text Electronics
+							45 text 5
+							46 button Frame
+						47 summary › Motors and servos 3, Value: off
+							48 text ›
+							49 text Motors and servos
+							50 text 3
+							51 button Frame
+						52 summary › Fasteners 34, Value: off
+							53 text ›
+							54 text Fasteners
+							55 text 34
+							56 button Frame
+						57 summary › Supplies 2, Value: off
+							58 text ›
+							59 text Supplies
+							60 text 2
+							61 button Frame
+						62 summary › Cables 1, Value: off
+							63 text ›
+							64 text Cables
+							65 text 1
+							66 button Frame
+						67 summary › Tools 3, Value: off
+							68 text ›
+							69 text Tools
+							70 text 3
+							71 button Frame
+						72 text The printed kit inventory lists 156 pieces for this board; the 106 not shown are used after step 9, or are spares (37) and accessories.
+					73 container Selected part
+						74 heading Robot HAT, Value: 3
+							75 text Robot HAT
+						76 description list
+							77 text Definition
+							78 container
+								79 text Robot HAT revision unresolved PX-V40-DEF-ROBOT-HAT
+							80 text Instance
+							81 text PX-V40-INS-ROBOT-HAT-001
+							82 text Inventory
+							83 text Electronics, first introduced in step 4
+							84 text Now
+							85 text In the parts tray (a layout, not an assembly state)
+							86 text Displayed shape
+							87 container
+								88 text A detailed model drawn from Locked V40 S04 source-supported approximate PCB outline; 85 x 56 mm visual envelope, not measured stock. Top features remain schematic.. PX-V40-DEF-ROBOT-HAT.display.brep (f8fb85863e)
+								89 container f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4
+							90 text Checked shape
+							91 container
+								92 text M5 instructional proxy: simplified presentation shape, non-engineering. The assembly checks use this shape, not the one shown. PX-V40-DEF-ROBOT-HAT.brep (bbdbbeb758)
+								93 container bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a
+							94 text Matched reference features
+							95 text No maker's model was available to compare against.
+							96 text In this step
+							97 text Not placed in this step.
+							98 text Pose from
+							99 text Tray layout
+						100 button Frame this part
+					101 container Status
+						102 description list
+							103 text Assembly check
+							104 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							105 text Your car
+							106 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						107 container
+							108 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							109 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				110 container Step controls
+					111 container Steps
+						112 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						113 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						114 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						115 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						116 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						117 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						118 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						119 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						120 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						121 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					122 button (disabled) Rewind
+					123 button (disabled) Play step, Help: Play step (Space)
+					124 button (disabled) Replay from the start
+					125 slider (disabled, settable, float) Step timeline, Value: 1, Details: 0.0 s of 0.0 s
+						126 value indicator 1
+				127 text Parts tray: 50 pieces, 44 modelled, 6 shown as tiles
+128 menu bar
+	129 picarx-companion
+	130 File
+	131 Edit
+	132 View
+	133 Window
+	134 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/0

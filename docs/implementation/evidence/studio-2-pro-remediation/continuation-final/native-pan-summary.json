@@ -1,0 +1,257 @@
+{
+  "status": "PASS",
+  "sourceHead": "386813212c82029b6571fdf52d7ab03e8f50a170",
+  "bundleBinarySha256": "d55094529722b7f852558cc6b952c14589d6e2add2647888191e409fb0fa3707",
+  "route": "#/studio/rpi5/4?diagnostics",
+  "variant": "rpi5",
+  "step": 4,
+  "configuredMapping": {
+    "LEFT": "ROTATE (0)",
+    "MIDDLE": "DOLLY (1)",
+    "RIGHT": "PAN (2)",
+    "overrides": "none; actual source and native runtime checked",
+    "screenSpacePanning": true
+  },
+  "input": {
+    "gesture": "Unmodified native right-button drag; CSS (400,320) to (520,380), 12 moves",
+    "mechanism": "Disposable Swift system CoreGraphics CGEvent.post(tap: .cghidEventTap), guarded to foreground PID65018 and main CGWindow7129",
+    "nativePointerEvents": "native-pan-pointer-events.json",
+    "cameraDirectMutation": false,
+    "disposableHelperRemoved": true
+  },
+  "prePan": {
+    "phase": "before",
+    "route": "#/studio/rpi5/4?diagnostics",
+    "variant": "rpi5",
+    "step": 4,
+    "cameraMode": "guided",
+    "position": [
+      -0.15275058712817913,
+      0.2252756010023314,
+      0.24168254849111498
+    ],
+    "target": [
+      -0.0011605415860734994,
+      0.0379,
+      0.03303675048355899
+    ],
+    "css": [
+      1100,
+      700
+    ],
+    "rect": [
+      0,
+      0,
+      1100,
+      700
+    ],
+    "rendererDpr": 2,
+    "deviceDpr": 2,
+    "mapping": {
+      "LEFT": 0,
+      "MIDDLE": 1,
+      "RIGHT": 2
+    },
+    "enablePan": true,
+    "screenSpacePanning": true,
+    "domFullscreen": false,
+    "nativeFullscreen": false
+  },
+  "postPan": {
+    "phase": "after",
+    "route": "#/studio/rpi5/4?diagnostics",
+    "variant": "rpi5",
+    "step": 4,
+    "cameraMode": "manual",
+    "position": [
+      -0.17138442379099023,
+      0.23712203496993023,
+      0.21750551314736802
+    ],
+    "target": [
+      -0.01979437824888457,
+      0.04974643396759883,
+      0.008859715139812062
+    ],
+    "css": [
+      1100,
+      700
+    ],
+    "rect": [
+      0,
+      0,
+      1100,
+      700
+    ],
+    "rendererDpr": 1.5,
+    "deviceDpr": 2,
+    "mapping": {
+      "LEFT": 0,
+      "MIDDLE": 1,
+      "RIGHT": 2
+    },
+    "enablePan": true,
+    "screenSpacePanning": true,
+    "domFullscreen": false,
+    "nativeFullscreen": false
+  },
+  "targetTranslationM": 0.03274273819548068,
+  "orientationOffsetDeltaM": 6.206335383118183e-17,
+  "toleranceM": 0.000001,
+  "preservation": [
+    {
+      "phase": "after-settled",
+      "target": [
+        -0.01979437824888457,
+        0.04974643396759883,
+        0.008859715139812062
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1100,
+        700
+      ],
+      "rendererDpr": 1.5,
+      "nativeFullscreen": false,
+      "deltaFromPannedTargetM": 0,
+      "status": "PASS"
+    },
+    {
+      "phase": "resize",
+      "target": [
+        -0.019794378568947474,
+        0.049746434171078345,
+        0.008859714724536765
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1121,
+        704
+      ],
+      "rendererDpr": 2,
+      "nativeFullscreen": false,
+      "deltaFromPannedTargetM": 5.624035458610689e-10,
+      "status": "PASS"
+    },
+    {
+      "phase": "fullscreen",
+      "target": [
+        -0.019794378677119383,
+        0.04974643423984847,
+        0.008859714584185847
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1168,
+        729
+      ],
+      "rendererDpr": 2,
+      "nativeFullscreen": true,
+      "deltaFromPannedTargetM": 7.52479509072176e-10,
+      "status": "PASS"
+    },
+    {
+      "phase": "fullscreen-exit",
+      "target": [
+        -0.019794378721677,
+        0.049746434268175904,
+        0.008859714526373214
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1121,
+        704
+      ],
+      "rendererDpr": 2,
+      "nativeFullscreen": false,
+      "deltaFromPannedTargetM": 8.307746276745976e-10,
+      "status": "PASS"
+    },
+    {
+      "phase": "redraw",
+      "target": [
+        -0.01979437879539313,
+        0.049746434315040826,
+        0.008859714430727991
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1121,
+        704
+      ],
+      "rendererDpr": 2,
+      "nativeFullscreen": false,
+      "deltaFromPannedTargetM": 9.603060809277882e-10,
+      "status": "PASS"
+    },
+    {
+      "phase": "dpr",
+      "target": [
+        -0.019794378825757897,
+        0.049746434334345176,
+        0.0088597143913303
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1121,
+        704
+      ],
+      "rendererDpr": 1,
+      "nativeFullscreen": false,
+      "deltaFromPannedTargetM": 1.013662009016945e-9,
+      "status": "PASS"
+    },
+    {
+      "phase": "dpr-restored",
+      "target": [
+        -0.019794378852478894,
+        0.04974643435133301,
+        0.008859714356660331
+      ],
+      "cameraMode": "manual",
+      "css": [
+        1121,
+        704
+      ],
+      "rendererDpr": 2,
+      "nativeFullscreen": false,
+      "deltaFromPannedTargetM": 1.0606152294390866e-9,
+      "status": "PASS"
+    }
+  ],
+  "resume": {
+    "target": [
+      -0.0011605415860735848,
+      0.03790000000000005,
+      0.03303675048355888
+    ],
+    "cameraMode": "guided",
+    "guidedTargetErrorM": 1.4827129684373377e-16,
+    "intentionalTranslationM": 0.032742738195480535,
+    "status": "PASS"
+  },
+  "S2_06": "CLOSED",
+  "F7": "CLOSED",
+  "F9": "CLOSED",
+  "newBlockerOrHighDefect": false,
+  "readiness": "READY FOR STUDIO 3",
+  "existingNativeMatrixPreserved": true,
+  "sourceChangesRequired": false,
+  "failedInputAttempts": "JXA bridge SIGSEGV and PID-routed Swift gesture (no pan) retained separately; neither counted as PASS.",
+  "measurementLimitations": "Detached inspector changed Spaces and main AX title; numeric fullscreen measurement retained, inspector closed, native Exit fullscreen/on and owned pixels separately verified. Tiny remaining damped motion is below the existing F7 tolerance.",
+  "incidentalConsoleDiagnostic": "Clicking the app title to focus the WebView produced a core:window:allow-start-dragging capability rejection. This was outside the viewport pan gesture; pan, ownership and all lifecycle checks continued normally. No new blocker/high camera or Studio defect established.",
+  "dprMethod": "Real native DPR changed 2→1.5→2 automatically; additional existing diagnostic setDpr(1), then setDpr(2), exercised renderer lifecycle only. No camera target/store mutation.",
+  "evidence": [
+    "native-pan-before.json",
+    "native-pan-after.json",
+    "native-pan-resize.json",
+    "native-pan-fullscreen.json",
+    "native-pan-fullscreen-exit.json",
+    "native-pan-redraw.json",
+    "native-pan-dpr.json",
+    "native-pan-dpr-restored.json",
+    "native-pan-resume.json",
+    "native-pan-gesture.json",
+    "native-pan-helper-cleanup.json"
+  ]
+}

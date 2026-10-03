@@ -1,0 +1,131 @@
+Zero tray:47=41+6, common wrench selection retained with valid tile inspector; correct Zero board and tray rendered.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/0
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/0
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+				14 text Parts tray
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Performance
+					18 text 60 fps over 120 active frames · mean 16.7 ms · p95 18.0 ms · display ≈ 16.0 ms
+					19 text 1168×729 css px · dpr 2 · 139 draws · 231,982 tris
+					20 text manifest 4.0 ms · glb 25.0 ms · verify 13.0 ms · decode 5.0 ms · build 1.0 ms
+					21 text page start → canvas 387.0 ms · first render 388.0 ms · first frame drawn 427.0 ms
+				22 container Inspect
+					23 toggle button Isolate, Value: off
+					24 toggle button Ghost others, Value: off
+					25 toggle button (disabled) Explode, Value: off
+					26 toggle button Deck clip, Value: off
+				27 container View
+					28 toggle button Guided view, Help: Guided view (R), Value: on
+					29 button Frame part, Help: Frame part (F)
+				30 container Instructions
+					31 text Parts tray · Raspberry Pi Zero 2 W
+					32 heading Everything for steps 1 to 9, Value: 2
+						33 text Everything for steps 1 to 9
+					34 text Laid out by kind beside the chassis: a layout for looking and counting, not a stage of the build.
+					35 container Parts inventory
+						36 text 47 pieces · 41 modelled · 6 shown as tiles
+						37 summary › Plates 2, Value: off
+							38 text ›
+							39 text Plates
+							40 text 2
+							41 button Frame
+						42 summary › Electronics 4, Value: off
+							43 text ›
+							44 text Electronics
+							45 text 4
+							46 button Frame
+						47 summary › Motors and servos 3, Value: off
+							48 text ›
+							49 text Motors and servos
+							50 text 3
+							51 button Frame
+						52 summary › Fasteners 32, Value: off
+							53 text ›
+							54 text Fasteners
+							55 text 32
+							56 button Frame
+						57 summary › Supplies 2, Value: off
+							58 text ›
+							59 text Supplies
+							60 text 2
+							61 button Frame
+						62 summary › Cables 1, Value: off
+							63 text ›
+							64 text Cables
+							65 text 1
+							66 button Frame
+						67 container (expanded) Secondary Actions: Collapse
+							68 summary › Tools 3, Value: on
+								69 text ›
+								70 text Tools
+								71 text 3
+								72 button Frame
+							73 container
+								74 toggle button Screwdriver 1 shown as a tile: no 3D shape, Value: off
+								75 toggle button Screwdriver 2 shown as a tile: no 3D shape, Value: off
+								76 toggle button Wrench shown as a tile: no 3D shape, Value: on
+						77 text The printed kit inventory lists 156 pieces for this board; the 109 not shown are used after step 9, or are spares (37) and accessories.
+					78 container Selected part
+						79 heading Wrench, Value: 3
+							80 text Wrench
+						81 description list
+							82 text Definition
+							83 container
+								84 text Wrench PX-V40-DEF-WRENCH
+							85 text Instance
+							86 text PX-V40-INS-WRENCH-001
+							87 text Inventory
+							88 text Tools, first needed as a tool in step 5
+							89 text Shown as
+							90 text A tray tile. No instructional geometry: the kit tool is listed as a tile.
+						91 button Frame this tile
+					92 container Status
+						93 description list
+							94 text Assembly check
+							95 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							96 text Your car
+							97 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						98 container
+							99 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							100 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				101 container Step controls
+					102 container Steps
+						103 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						104 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						105 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						106 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						107 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						108 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						109 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						110 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						111 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						112 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					113 button (disabled) Rewind
+					114 button (disabled) Play step, Help: Play step (Space)
+					115 button (disabled) Replay from the start
+					116 slider (disabled, settable, float) Step timeline, Value: 1, Details: 0.0 s of 0.0 s
+						117 value indicator 1
+				118 text Parts tray: 47 pieces, 41 modelled, 6 shown as tiles
+119 menu bar
+	120 picarx-companion
+	121 File
+	122 Edit
+	123 View
+	124 Window
+	125 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/0

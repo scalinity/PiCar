@@ -17,7 +17,7 @@ Baseline: integrity PASS, freshness FRESH, presentation CURRENT. Old pack `466de
 | S2-03 | CLOSED | `scene/StudioScene.tsx`: store notifications invalidate only. User controls changes yield ownership and cancel tween; programmatic frame updates are distinguished explicitly. | `tests/browser/studio.spec.ts`: stationary selectable holds across active S02/S04 playback frames, then real drag. Existing resize/DPR/fullscreen target guards. | Native observation supplements both browser engines. |
 | S2-04 | CLOSED | `motion/evaluate.ts`, `motion/inspect.ts`: recipe-free workpiece terminal bring-in progress weights explosion continuously. No M7 recipe is invented. | `tests/studio/inspect.test.ts`: both variants, forward/reverse/replay at boundary±1e-5s, composed tolerance1e-9m, off returns exact source. Only one recipe-free track per variant exists. | Presentation interpolation only; source endpoints unchanged. |
 | S2-05 | CLOSED | `src/lib/v40-pdf.ts` evicts failing attempt, SHA-verifies each successful fetch. `ui/ManualPanel.tsx` explicit Retry, replacement-owned local state and cancellation, genuine render errors surface. | `tests/studio/manual-recovery.test.ts`: fetch/decode retry, hash verification and wrong bytes. Browser controlled fetch failure -> wrong bytes -> real PDF; controlled render failure -> pending Retry -> replacement cancellation/success. | Native network fault injection not required if impractical; controlled browser tests carry recovery proof. |
-| S2-06 | PARTIALLY CLOSED | Bundle72 supplied a complete rendered Zero matrix on the final pack; bundle80 final-source render verification is partial after S03, recorded below. | Native AX and app-window captures; Pi5 representative Escape checks. Fresh native performance and mouse manipulation are NOT RUN. | Final S04–S09 render coverage needs a visible foreground window; human visual acceptance is separate. |
+| S2-06 | CLOSED | Final native Zero S00–S09 matrix and Pi5 representatives remain valid. Actual unmodified right-button pan yields manual ownership, preserves target through resize/fullscreen/redraw/DPR, then Resume guided view restores the guided target. | `continuation-final/final-native-matrix.json`, `native-pan-summary.json`, numeric phase files and captures53–60; existing native interactions/performance retained. | Bounded instructional app verification; human visual acceptance and physical fit remain separate. Failed Shift-drag25–27 stays rejected as pan proof. |
 | S2-07 | CLOSED | `state/studio-store.ts` and `src/pages/Studio.tsx`: tray root commit clears manualOpen before a delayed 3D frame; enterStep preserves the invariant. Native release bridge enforces physical dismissal order. | `tests/studio/selection.test.ts`, browser enlarged manual -> tray -> Escape -> return. Existing one-press/fullscreen guards. | Numbered current states all have a verified manual mapping. |
 | S2-08 | CLOSED | New `digital-twin/assemblies/v40/presentation/instructional/step08-review-05.json`; current review pointers in `cad/twin_cad/assemblies/instructional/step08{,_verify}.py`. Historical review04 retained. | Fresh chain `s2pro-01`; generated S08/S09 current limitations; fidelity/pack source guards. | Historical4/3 -> current photo-supported4/4; trace1.4mm vs photo~1.69mm unresolved; no engineering tolerance verification. |
 | S2-09 | CLOSED | `digital-twin/cad/twin_cad/fidelity/plate_a.py` rebuilds immutable outline01 batch/spec and verifies its historical SHA before comparison. | `cad/tests/test_studio_fidelity.py`: store selects holes03, correct old7/new8 and old hash/volume/candidate hash; wrong predecessor SHA fails. CLI numeric regeneration `09-regenerated-review.json`. | Rebuild identity is deliberately strict against toolchain/parameter drift. |
@@ -46,7 +46,7 @@ RUN / FAIL — EXPLAINED:983 passed,137 skipped,12 failed,593.85s. All12 failure
 
 ## Boundary and next review
 
-G-INSTRUCTIONAL-ASSEMBLY BLOCKED 0/58; rpi5 and Zero 0/29 each. S07 BLOCKED on UNFRAMED_TOUCHED_CABLE_END/PX-V40-CONN-07-COMMON-BATTERY. S09 REFUSED with unchanged101.071,51.250,12.955,2.026mm³ conflicts; prepared candidate not adopted. G-CAD BLOCKED/unchanged; M8 authorization NO. No persistence/photo/evidence-export workflow or renderer redesign was added. No push/history rewrite.
+G-INSTRUCTIONAL-ASSEMBLY BLOCKED 0/58; rpi5 and Zero 0/29 each. S07 BLOCKED on UNFRAMED_TOUCHED_CABLE_END/PX-V40-CONN-07-COMMON-BATTERY. S09 REFUSED with unchanged101.071,51.250,12.955,2.026mm³ conflicts; prepared candidate not adopted. G-CAD BLOCKED/unchanged; M8 authorization NO. No persistence/photo/evidence-export workflow or renderer redesign was added. No history rewrite. The original pre-closeout checkpoint had not been pushed.
 
 The complete bounded read-only re-review request is [STUDIO_2_PRO_RE_REVIEW_PROMPT.md](STUDIO_2_PRO_RE_REVIEW_PROMPT.md). Completion status, final F1–F11 table, exact commands/counts, native evidence and commit inventory follow below.
 
@@ -74,15 +74,15 @@ The rectangular HAT intermediate pack `932fbab931c205e448519b1d68d693655549a8ba8
 | F4 display-check binding | CLOSED | Pi5 and HAT exact artifact/closure checks; refused S09 NOT_CHECKED |
 | F5 runtime contract | CLOSED |27 consistently-rehashed semantic-negative cases, unchanged byte/GLB guards |
 | F6 presentation identity | CLOSED | producer349 checks; fresh receipt, final Blender check, viewed render |
-| F7 camera lifecycle | CLOSED | active S02/S04 stationary held selection, genuine drag, resize/DPR/fullscreen target preservation |
+| F7 camera lifecycle | CLOSED | Re-confirmed on the exact final native bundle: real right-button pan translates the target, manual ownership persists across resize/fullscreen/redraw/DPR within1e-6m, and explicit Resume guided view restores it. Active S02/S04 stationary selection and browser lifecycle guards remain valid. |
 | F8 Escape/fullscreen | CLOSED | physical-press unit/browser checks, serialized platform state, native window-scoped release and modal-navigation proof |
-| F9 performance semantics | PARTIAL | active/stall/idle/hidden tests and browser instrumentation pass; required fresh native sanity is NOT RUN pending a visible foreground window |
+| F9 performance semantics | CLOSED | active/stall/idle/hidden guards pass; continuation native S02 replay, S04 ghost+explode and whole-tray orbit each record120 active frames at60fps/DPR2. See `continuation-final/performance-samples.json`. |
 | F10 resource ownership | CLOSED | materials/pick targets/shadows disposal, repeated board-switch and Studio-visit browser checks |
 | F11 inspector truthfulness | CLOSED | displayed/checked identities, matched subset, candidate/unchecked states and corrected limitations |
 
 Final unit command with package authorization:23 files,253 passed,15.21s (`52-unit-final-attempt2.txt`). Final typecheck passes (`49-typecheck-final.txt`). Fidelity after HAT extension:25 passed,9.12s (`46-fidelity-with-hat.txt`). Native backend persistence-feature compilation passes (`58-rust-m3-compile.txt`), without launching or opening a database. The full Studio final-HAT attempt had70 passes,1 failure,1 skip:WebKit S04 picked Pi5 instead of PlateA at a point selected in the earlier final-pose view. An interior point selected after replay with eight-pixel neighbouring-body clearance preserves the original assertions; all4 focused Chromium/WebKit S02/S04 checks pass,19.3s. The final complete browser aggregate follows.
 
-## Latest exact validation
+## Historical implementation validation (before continuation)
 
 | Command (companion cwd unless specified) | Result | Evidence / count |
 |---|---|---|
@@ -100,7 +100,7 @@ Final unit command with package authorization:23 files,253 passed,15.21s (`52-un
 
 The full browser run began with the final rounded pack; the tray-commit fix landed during its M3 checks. The explicitly repeated focused command82 runs the frozen final source and the strengthened withheld-frame regression in both engines. The old62 aggregate's extra fetch-fault setup failure is repaired, with its failed log retained.
 
-## Current native dispositions
+## Historical native72 / final80 dispositions
 
 Native72 captured a complete Zero S00–S09 matrix23–36 on the final rounded pack, with working scenes, board/manual mappings, selection and transport. Final bundle80 additionally proves physical visible-modal dismissal and manual -> keyboard tray -> first Escape on both boards:captures37–39 and50/51, with AX-only modal records. No enlarged manual capture is saved. The final80 matrix40–49 has complete AX route/mapping/selection/control coverage, but rendered scenes stop advancing after S03 in44–49. Those captures are PARTIAL_RENDER_STALE, not accepted as full native proof. Combined native52–54 is likewise partial. Coordinate/scroll automation returned noWindowsAvailable; requesting a visible foreground window distinguishes a background-window limitation from a candidate defect. Bounded native performance and native mouse manipulation remain pending that prerequisite. Browser manipulation and combined inspection pass.
 
@@ -108,23 +108,125 @@ All final80 captures37–54 were visually reviewed; the stale-scene limitation w
 
 Reconnecting the computer-use session did not restore coordinate input: a fresh native screenshot still showed the S03 scene on the S04 route, and the following physical click returned noWindowsAvailable. The owner foreground request remains pending. This is a concrete verification prerequisite; its cause is not established as either an app defect or a background-window limitation.
 
-## Final candidate privacy inventory
+## Previous candidate privacy inventory (before continuation)
 
 `privacy-final.json` scans the complete candidate against the Studio2 base:349 files (271 text and78 binary/media), with302 files in the remediation delta. The scan classifies every text hit before any redaction:206 functional local paths/provenance and two functional development/test URLs are retained; credential-shaped values and credential assignments have zero hits. No redaction or history rewrite was performed. Twelve unrelated untracked M2 files are excluded. All new app media were visually reviewed, including the failed/stale records; the final Blender render was also inspected. Ordinary runtime manual pixels are permitted application evidence; no separate enlarged/source-copy manual or private photo bytes are added. Image metadata inspection found width/height, color profile and digest metadata, without identity/GPS fields; this is a scoped artifact review, not a claim that arbitrary binary credential scanning is exhaustive.
 
-## Local implementation checkpoints
+## Remediation commit inventory
 
 A. 95b0042671fabee3b58d1a9c2f781c7e0f2b5449 — M7 fidelity checkpoint: current hole review and display-only HAT outline
 B. e17cfbba334248739cfb012d0fff13dea90ac941 — Studio: enforce semantic pack contracts and canonical tray audit
 C. 90ca7ba697c44b7833ccd5e5abb1973922349896 — Studio: recover locked manual loading and surface render failures
 D. d885e5553e14e12fcb0292d7f437de080dc0c445 — Studio: repair camera, explosion, clipping and native Escape order
 
-Explicit named paths were staged; no push, rewrite or attribution trailer. The following separate documentation/evidence checkpoint is named `docs: record Studio 2 remediation and pending native verification`; resolve its exact SHA from the branch log. Its own SHA is not embedded in its content.
+E. 386813212c82029b6571fdf52d7ab03e8f50a170 — docs: record Studio 2 remediation and pending native verification
 
-## Closeout state
+F. The final documentation/evidence closeout is named `docs: close Studio 2 native verification`. Resolve its full SHA from the published branch tip; the verified remote SHA and complete immutable Pro invocation are supplied after the normal branch push. A commit cannot embed its own SHA in its tracked content. Explicit named paths only, existing Git identity, no attribution trailers, amendment or history rewrite.
+
+## Historical checkpoint closeout state
 
 S2-01,02,03,04,05,07,08,09 are CLOSED by the implementation and recorded guards. S2-06 remains PARTIALLY CLOSED: final80 rendered S04–S09, native mouse manipulation and the bounded native performance sample require a visible foreground window. The owner input request is pending; no inference of PASS from expired time or prior-pack evidence.
 
 NOT READY FOR STUDIO 3
 
 No Studio3/M8 work is started. The implementation checkpoints are complete and locally reviewable. The remaining action is to verify the final native app with its window visible and resolve any real defect discovered, then record performance, update this disposition, and run the bounded Pro re-review.
+
+## Final native continuation checkpoint
+
+The continuation starts at the verified branch studio/s2-pro-full-remediation and HEAD386813212c82029b6571fdf52d7ab03e8f50a170. No application/CAD/pack/Blender source change was required. New evidence is additive under [continuation-final](evidence/studio-2-pro-remediation/continuation-final/). The earlier owner-foreground request is superseded by successful unattended activation/relaunch recovery; historical native72/final80 captures remain unchanged and are not promoted to current proof.
+
+The exact fresh debug bundle is picarx-companion/src-tauri/target/debug/bundle/macos/picarx-companion.app, binary SHA256 d55094529722b7f852558cc6b952c14589d6e2add2647888191e409fb0fa3707. It was built with VITE_M3_ENABLED=0, PICAR_ALLOW_PACKAGE_BUILD=1, default Rust features and fresh temporary incognito config. No owner database was opened. Source HEAD, full pack/presentation/GLB identities and build result are bound in bundle-identity.json. Pack remains5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352; GLB4bb923c6cfccad5a528019eb4ac8d91112ff2b7542269e3c6cb48d039b275f42; presentation0bf8a3bdb80abec85512183cfe35648807dd3b30e82d29a81f1f89c6512b9e0b. Final check is PASS/FRESH/CURRENT.
+
+The old process had its owned CoreGraphics window onscreen but was not frontmost; System Events reported zero windows. Activation restored live S04 geometry/manual and coordinate access. Only the stale test PID was terminated. A fresh build initially failed on two dead content-reader leases; the existing recovery command identified dead owners and recovered those leases before the successful build. AppKit fullscreen Space enumeration and one transient screenshot failure were recorded separately from app behavior. The final foreground app advances every required rendered step; no stale-S03 defect reproduced. Recovery details and setup errors remain in preflight.json and verification-notes.md.
+
+### Accepted final native matrix
+
+Each row is a separate owned-window visual observation with actual route, board, mode, manual, selected/inspectable object and transport in final-native-matrix.json. AX-only routes are insufficient and were not counted. All Zero routes are /studio/rpi-zero-2-w/N.
+
+| Zero step | Mode | Manual | Selected/inspectable | Playback / rendered proof | Result |
+|---|---|---|---|---|---|
+| S00 | Parts tray | None | Wrench tile | Disabled;47=41 modeled+6 tiles;01/48 | PASS |
+| S01 | Preview | Zero, page1 | Plate A | Moving36 -> seated37,4.0s | PASS |
+| S02 | Preview | Zero, page1 | Zero board | Moving04 -> seated05,2.8s | PASS |
+| S03 | Still Preview | Zero, page1 | FPC tile | Disabled0.0s; correct cumulative board,06 | PASS |
+| S04 | Preview | Zero, page1 | Robot HAT | Moving07 -> clear final49,3.2s | PASS |
+| S05 | Preview | Shared, page1 | Left TT motor | Moving09 -> cumulative motors10,5.0s | PASS |
+| S06 | Still Preview | Shared, page2 | Modeled battery | Disabled0.0s; two tape tiles and battery in tray,11/50 | PASS |
+| S07 | Review | Shared, page2 | Battery | No ordinary playback; current review pose/blocker,12/13 | PASS |
+| S08 | Preview | Shared, page2 | Pan horn | Moving14 -> seated15,3.2s; visible correction51 | PASS |
+| S09 | Review | Shared, page2 | Ultrasonic module / conflict pair | No ordinary playback; refused candidate17, focused pair18 | PASS |
+
+S07 names PX-V40-CONN-07-COMMON-BATTERY and explains the missing cable-end frame; the current pack retains exact UNFRAMED_TOUCHED_CABLE_END. S08 visibly warns that preview does not certify S07. Capture51 shows historical four/three versus current four/four and unresolved1.4/~1.69mm diameter. S09's four refused source values remain101.071/51.250/12.955/2.026mm3 to three decimals; the visible UI rounds to101.1/51.2/13.0/2.0. This verifies the same four pairs, without claiming three-decimal display precision.
+
+Representative Pi5 routes /studio/rpi5/N: S00 50=44+6, inspectable wrench47; S02 board/manual/3.4s endpoint22 and stationary click23; S04 current HAT/manual/selection21/31 and visible isolation52; S08 horn/manual/dependency20; S09 board switch/refused candidate/manual19. All five PASS; no redundant full Pi5 matrix rerun.
+
+### Native interactions and final pan verification
+
+Physical stationary click23 during active S02 Replay selects Plate A and keeps guided ownership; actual left drag24 yields manual. Board-specific selection clears on switch29. Common HAT selection/highlight/focus stays valid30/31, and common wrench works in both trays47/48. Ghost+explode32 visibly separates the stack. Deck clip33 fully hides HAT above the deck plane; isolate+clip34 correctly leaves an empty canvas. Isolation alone52 shows the selected HAT; reset35 restores canonical presentation. Raw mistaken setup notes are preserved with corrected dispositions in native-records.json; captures08,25-27 are not accepted as pan/clear-S04 proof.
+
+The earlier Shift-drag25 rotated, so25–27 retain their rejected pan dispositions. The owner subsequently explicitly authorized bounded native right-button input. Source and live runtime use the default OrbitControls mapping: LEFT=ROTATE0, MIDDLE=DOLLY1, RIGHT=PAN2, with no override; screenSpacePanning=true. Shift/Control/Meta on right-button input changes the action, so the accepted gesture has all modifier flags clear.
+
+On Pi5 S04 Preview, after the guided view settled, a disposable Swift helper used system CoreGraphics CGEvent.post(tap: .cghidEventTap) for right down,12 right-drag moves and right up, CSS(400,320) -> (520,380), logical screen(423,356) -> (543,416). It was guarded to foreground PiCar PID65018 and owned main window7129, with right-up cleanup. Native WebKit recorded14 matching pointer events, button2/buttons2 then release, and no modifiers. The helper and its module cache were outside the repository and deleted; the observation-only pointer listener was removed. No camera target was assigned or mutated for the gesture.
+
+Numeric read-only measurements from existing window.__studio diagnostics are saved under native-pan-{before,after,resize,fullscreen,fullscreen-exit,redraw,dpr,dpr-restored,resume}.json, with raw console/AX logs and owned screenshots53–60. Pre-pan target(m):[-0.0011605415860734994,0.0379,0.03303675048355899], guided. Post-pan target:[-0.01979437824888457,0.04974643396759883,0.008859715139812062], manual. Target translation0.03274273819548068m; camera-position-minus-target changes only6.206335383118183e-17m, confirming pan rather than orbit. Pixels visibly translate the stack.
+
+| Lifecycle after actual pan | CSS viewport | Renderer DPR | Target delta from post-pan(m) | Camera | Result |
+|---|---|---|---|---|---|
+| Settled repeat |1100x700|1.5|0|manual|PASS|
+| Native resize |1121x704|2|5.624035458610689e-10|manual|PASS|
+| Native fullscreen enter |1168x729|2|7.52479509072176e-10|manual|PASS|
+| Native fullscreen exit |1121x704|2|8.307746276745976e-10|manual|PASS|
+| Hide instructions / normal redraw |1121x704|2|9.603060809277882e-10|manual|PASS|
+| Existing renderer setDpr(1) |1121x704|1|1.013662009016945e-9|manual|PASS|
+| Existing renderer setDpr(2) |1121x704|2|1.0606152294390866e-9|manual|PASS|
+
+Every delta is below the existing F7 tolerance1e-6m. DPR setters exercise renderer lifecycle only; native pointer input establishes pan. The governor also changed DPR2 ->1.5 ->2 during the sequence without taking camera ownership. Tiny residual damping does not establish a target reset. The detached inspector changed Spaces; fullscreen coordinates were read first, then the inspector was closed and native Exit fullscreen/on and pixels were separately confirmed. DOM fullscreen remains false because Tauri uses native window fullscreen.
+
+Clicking Resume guided view intentionally changed ownership to guided and restored target[-0.0011605415860735848,0.03790000000000005,0.03303675048355888], error1.4827129684373377e-16m from the original guided target, and moved0.032742738195480535m from the panned target. No implementation repair or rebuild was needed. JXA event-lifecycle SIGSEGV and the PID-routed Swift attempt that delivered no pan are retained as failed automation attempts. The accepted HID-routed gesture is distinct. Full evidence and guards: native-pan-summary.json. S2-06 CLOSED; F7 re-confirmed CLOSED.
+
+The final camera invariant is unchanged: only actual camera manipulation or explicit camera commands change ownership/target. Store invalidation, playback, selection, resize, DPR, fullscreen and render lifecycle alone do not.
+
+Physical Escape38/39/40 separately closes the enlarged manual, then selection, then fullscreen. Modal-open state was captured AX-only, without enlarged manual pixels. Manual -> keyboard tray41 -> first Escape preserves fullscreen while clearing selection; return42 never resurrects the modal.
+
+### Fresh native performance sanity
+
+| Scenario | CSS viewport | DPR | Active frames | fps | Mean/p95 ms | Draws | Triangles |
+|---|---|---|---|---|---|---|---|
+| Pi5 S02 replay43 |1168x729|2|120|60|16.7/20.0|237|174526|
+| Pi5 S04 ghost+explode replay44 |1168x729|2|120|60|16.7/20.0|253|194686|
+| Whole tray,12 physical orbit drags46 |1168x729|2|120|60|16.7/18.0|295|249294|
+
+No DPR reduction observed in these bounded samples; historical reductions remain valid historical evidence. Page-relative first-visit load timings: manifest4ms, GLB25, verify13, decode5, build1; canvas387, first render388, first drawn427ms. Before-orbit snapshot45 contains previous S04 rolling metrics and is excluded as a tray sample. These three samples satisfy F9's remaining sanity requirement without Studio4 optimization or owner acceptance claims. F9 CLOSED.
+
+### Continuation validation
+
+| Command | Result | Evidence |
+|---|---|---|
+| node digital-twin/tools/studio/studio.mjs check | RUN / PASS | final-studio-check.json; PASS/FRESH/CURRENT |
+| pnpm typecheck (companion cwd) | RUN / PASS | typecheck.txt; both projects exit0 |
+| PICAR_ALLOW_PACKAGE_BUILD=1 pnpm test:unit tests/studio/perf.test.ts tests/studio/fullscreen.test.ts tests/studio/escape.test.ts tests/studio/isolation.test.ts | RUN / PASS | native-focused-unit.txt;4 files,21 passed,317ms |
+| pnpm test:browser tests/browser/studio.spec.ts -g 'stationary selection across active playback\|first frame drawn\|manual open to tray\|a manually panned target\|Escape\|combined ghost' | RUN / PASS | native-focused-browser.txt;21 passed,1 skipped,1.5m. WebKit physically held-key test skipped; native physical Escape independently verified. |
+| VITE_M3_ENABLED=0 PICAR_ALLOW_PACKAGE_BUILD=1 pnpm tauri build --debug --bundles app --config <fresh incognito config> | RUN / PASS | native-build-final.txt; failed lease attempt retained in native-build.txt |
+| Full unit/browser/fidelity/M7 aggregate repeat | NOT RUN | No source changes; previous exact aggregates retained above, including101/2/1 browser RUN / FAIL — EXPLAINED. |
+| Post-pan node digital-twin/tools/studio/studio.mjs check | RUN / PASS | pan-studio-check.txt; PASS/FRESH/CURRENT |
+| Post-pan pnpm typecheck | RUN / PASS | pan-typecheck.txt; both projects exit0 |
+| Post-pan focused unit: selection/fullscreen/perf/Escape/isolation | RUN / PASS | pan-focused-unit.txt;5 files,23 tests,332ms |
+| Post-pan focused browser: pan/stationary playback/resize | RUN / PASS | pan-focused-browser.txt;8 passed,0 failed/skip,48.3s; both Chromium/WebKit |
+| Initial post-pan browser dev-server launch | RUN / FAIL — EXPLAINED | pan-focused-browser-lease-failure.txt; two verified-dead reader leases; dry-run/apply logs retained; retry above passes |
+| Post-pan native rebuild | NOT RUN | No implementation/source/binary/pack change; same verified final native bundle |
+
+M7 remains BLOCKED0/58; both variants0/29; S07 BLOCKED; S09 REFUSED; G-CAD BLOCKED/unchanged; M8 NO. closure.py/closure_verify.py remain unchanged. No Studio3/3.5/4 work began.
+
+Final S2-01 through S2-09 are individually CLOSED. F1 through F11 are individually CLOSED, including F7 native camera lifecycle and F9 fresh native performance. No new blocker/high application defect was established.
+
+READY FOR STUDIO 3
+
+The owner authorizes a normal push of studio/s2-pro-full-remediation to its existing origin after this reviewed closeout commit; only that branch, existing history and final closeout are covered. No PR, merge, force push, tags or history rewrite. Studio3 is not begun.
+
+Studio3.5 is reserved for a dedicated high-fidelity Robot HAT pass after Studio3 and before Studio4. The owner plans to supply new scan/caliper evidence tomorrow. No new HAT electronics are modeled in this continuation.
+
+### Continuation privacy inventory
+
+The final prepublication inventory scans 527 complete-candidate files against the Studio2 base and 480 remediation-delta files: 388 text and 139 binary/media. All 235 text hits are classified:233 real functional local paths/provenance and2 functional development/test URLs. Credential-shaped and credential-assignment hits remain zero; all unique matching values were inspected. No redaction/history rewrite. All61 new owned-window captures were visually reviewed, including failed setup probes; metadata contains dimensions/resolution, Screenshot comment, color profile and digest fields, with no GPS/identity fields found. media-review.json records every capture and corrected disposition. Twelve unrelated M2 files remain untracked/unstaged and excluded. No disposable automation helper, agent state, private source pixels, database or cache is staged. The existing repository is already public; this is a complete candidate/delta scan before the authorized normal branch publication, rather than a first-publication history rewrite.
+
+The original129 named staged paths were reviewed before adding final pan evidence. The final182 paths are explicit, reviewed Studio2 docs/evidence only, including this review report. git diff --cached --check retains25 raw text-log files with known trailing-space/blank-EOF findings (exit2, RUN / FAIL — EXPLAINED); every staged authored non-.txt path passes (exit0). Raw failed attempts remain untouched as evidence. staging-review.json contains the exact path inventory, exclusions and diagnostics. Final commit and normal branch publication follow this review; the verified remote SHA is issued in the post-push Pro invocation.

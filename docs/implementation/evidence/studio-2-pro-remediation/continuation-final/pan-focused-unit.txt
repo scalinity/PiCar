@@ -1,0 +1,16 @@
+$ PICAR_ALLOW_PACKAGE_BUILD=1 pnpm test:unit tests/studio/selection.test.ts tests/studio/fullscreen.test.ts tests/studio/perf.test.ts tests/studio/escape.test.ts tests/studio/isolation.test.ts
+
+> picarx-companion@0.1.0 test:unit /Users/danny/Documents/Apps/PiCar/picarx-companion
+> vitest run --config vitest.config.ts tests/studio/selection.test.ts tests/studio/fullscreen.test.ts tests/studio/perf.test.ts tests/studio/escape.test.ts tests/studio/isolation.test.ts
+
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+
+ Test Files  5 passed (5)
+      Tests  23 passed (23)
+   Start at  05:02:18
+   Duration  332ms (tests 46%, transform 42%, import 9%, worker 2%)
+
+
+exit=0 signal=null

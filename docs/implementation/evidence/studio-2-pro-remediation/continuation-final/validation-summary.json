@@ -1,0 +1,121 @@
+{
+  "appSourceChanged": false,
+  "cadOrPackChanged": false,
+  "studioCheck": "RUN / PASS: PASS/FRESH/CURRENT",
+  "typecheck": "RUN / PASS",
+  "focusedUnit": {
+    "status": "RUN / PASS",
+    "files": 4,
+    "passed": 21,
+    "durationMs": 317
+  },
+  "focusedBrowser": {
+    "status": "RUN / PASS",
+    "passed": 21,
+    "failed": 0,
+    "skipped": 1,
+    "duration": "1.5m",
+    "skip": "WebKit physically held Escape; native physical order independently verified."
+  },
+  "nativeBuild": {
+    "status": "RUN / PASS",
+    "failedAttempt": "Content BUSY dead leases; dry-run and recovery retained before successful build."
+  },
+  "broadReruns": "NOT RUN: source unchanged; bounded focused tests sufficient per continuation request.",
+  "historicalBrowser": {
+    "status": "RUN / FAIL — EXPLAINED",
+    "passed": 101,
+    "failed": 2,
+    "skipped": 1,
+    "explanation": "Existing M3 preservation PDF bookmark expected1/received2 in both engines; legacy10 passed. Do not rename aggregate PASS."
+  },
+  "historicalUnit": {
+    "status": "RUN / PASS",
+    "files": 23,
+    "passed": 253
+  },
+  "historicalFidelity": {
+    "status": "RUN / PASS",
+    "passed": 25
+  },
+  "historicalM7": {
+    "status": "RUN / FAIL — EXPLAINED",
+    "passed": 983,
+    "skipped": 137,
+    "failed": 12,
+    "explanation": "Source-mode oracle installation guards require site-packages; source mode was deliberately used. M7 remains BLOCKED0/58."
+  },
+  "nativeRenderedMatrix": "Zero10 PASS, Pi5 representative5 PASS",
+  "F9": "CLOSED: guards plus fresh three-scenario native sanity",
+  "S2_06": "CLOSED: real native right-button pan, manual ownership, resize/fullscreen/redraw/DPR preservation and intentional guided restore PASS",
+  "studio3": "READY FOR STUDIO 3",
+  "whitespace": {
+    "completeStagedCheck": "RUN / FAIL — EXPLAINED: exit2",
+    "reason": "Retained raw AX/terminal text has whitespace; source bytes retained, authored paths pass.",
+    "authoredPathsCheck": "RUN / PASS: exit0",
+    "rawLogFiles": [
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-00-pi5-S00.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-01-zero-S00.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-02-zero-S01-playing.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-16-zero-S08-current-limitations.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-17-zero-S09-review.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-18-zero-S09-conflict-focus.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-19-pi5-S09-review.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-20-pi5-S08-final.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-51-zero-s08-correction-visible.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-build-final.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-focused-unit.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-after-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-after-settled-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-before-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-dpr-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-dpr-restored-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-fullscreen-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-fullscreen-exit-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-pointer-events-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-probe-cleanup-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-redraw-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-resize-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/native-pan-resume-console.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/pan-focused-browser-lease-failure.txt",
+      "docs/implementation/evidence/studio-2-pro-remediation/continuation-final/typecheck.txt"
+    ]
+  },
+  "afterNativePan": {
+    "appSourceChanged": false,
+    "studioCheck": {
+      "status": "RUN / PASS",
+      "integrity": "PASS",
+      "freshness": "FRESH",
+      "presentation": "CURRENT",
+      "evidence": "pan-studio-check.txt"
+    },
+    "typecheck": {
+      "status": "RUN / PASS",
+      "evidence": "pan-typecheck.txt"
+    },
+    "focusedUnit": {
+      "status": "RUN / PASS",
+      "files": 5,
+      "passed": 23,
+      "durationMs": 332,
+      "evidence": "pan-focused-unit.txt"
+    },
+    "focusedBrowser": {
+      "status": "RUN / PASS",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "duration": "48.3s",
+      "evidence": "pan-focused-browser.txt",
+      "failedLaunch": {
+        "status": "RUN / FAIL — EXPLAINED",
+        "reason": "Two dead reader leases blocked dev-server launch; verified dead and recovered with existing command before retry",
+        "evidence": "pan-focused-browser-lease-failure.txt"
+      }
+    },
+    "nativeBuild": "NOT RERUN: source/binary/pack unchanged; same final debug bundle verified",
+    "expensiveAggregate": "NOT RERUN: prior evidence preserved, no application implementation change"
+  },
+  "F7": "CLOSED: numeric native lifecycle invariant plus focused browser and control guards"
+}

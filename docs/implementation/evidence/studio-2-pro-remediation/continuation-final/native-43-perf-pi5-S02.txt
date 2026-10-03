@@ -1,0 +1,124 @@
+Fresh native Pi5 S02 replay performance: full last120 active frames from this replay, no synthetic state injection; current final bundle and pack.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/2
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/2
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/2
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Performance
+					18 text 60 fps over 120 active frames · mean 16.7 ms · p95 20.0 ms · display ≈ 15.0 ms
+					19 text 1168×729 css px · dpr 2 · 237 draws · 174,526 tris
+					20 text manifest 4.0 ms · glb 25.0 ms · verify 13.0 ms · decode 5.0 ms · build 1.0 ms
+					21 text page start → canvas 387.0 ms · first render 388.0 ms · first frame drawn 427.0 ms
+				22 container Inspect
+					23 toggle button Isolate, Value: off
+					24 toggle button Ghost others, Value: off
+					25 toggle button Explode, Value: off
+					26 toggle button Deck clip, Value: off
+				27 container View
+					28 toggle button Guided view, Help: Guided view (R), Value: on
+					29 button (disabled) Frame part, Help: Frame part (F)
+				30 container Instructions
+					31 text Step 2 of 29 · Raspberry Pi 5
+					32 heading Mount the selected Raspberry Pi, Value: 2
+						33 text Mount the selected Raspberry Pi
+					34 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					35 container Printed manual
+						36 heading Printed manual, Value: 3
+							37 text Printed manual
+						38 button Enlarge
+						39 image Printed Step 2 / rpi4, rpi5, page 1 of the V40 booklet
+						40 text Printed Step 2 · rpi4, rpi5 · page 1 of the V40 booklet
+					41 container Parts in this step
+						42 heading In this step, Value: 3
+							43 text In this step
+						44 container
+							45 container Each M2.5x18 standoff
+								46 toggle button M2.5x18 standoff×4 moves down 30 mm into place, Value: off
+								47 container Each M2.5x18 standoff
+									48 toggle button 1, Help: PX-V40-INS-M25X18-STANDOFF-001, Value: off
+									49 toggle button 2, Help: PX-V40-INS-M25X18-STANDOFF-002, Value: off
+									50 toggle button 3, Help: PX-V40-INS-M25X18-STANDOFF-003, Value: off
+									51 toggle button 4, Help: PX-V40-INS-M25X18-STANDOFF-004, Value: off
+							52 toggle button Raspberry Pi 5 moves down 30 mm into place, Value: off
+							53 toggle button USB mini microphone moves forward 30 mm into place, Value: off
+						54 heading Works on, Value: 4
+							55 text Works on
+						56 container Each M2.5x18+6 standoff
+							57 toggle button M2.5x18+6 standoff×4 already in place, Value: off
+							58 container Each M2.5x18+6 standoff
+								59 toggle button 1, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-001, Value: off
+								60 toggle button 2, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-002, Value: off
+								61 toggle button 3, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-003, Value: off
+								62 toggle button 4, Help: PX-V40-INS-M25X18PLUS6-STANDOFF-004, Value: off
+					63 container From the step record
+						64 heading From the step record, Value: 3
+							65 text From the step record
+						66 description list
+							67 text Parts
+							68 text Selected Raspberry Pi ×1, user-supplied. Pi4/Pi5: M2.5x18 standoff ×4; USB mini microphone ×1 shown in the shared panel. Zero2W: M2.5x18+6 standoff ×2.
+							69 text Hardware
+							70 text No additional separate screw is prescribed in this panel; upper standoffs fasten the board.
+							71 text This board
+							72 text Pi5; 4× M2.5x18; USB microphone panel
+							73 text Tools
+							74 text Hand fastening/matched tool if needed; no guessed torque.
+							75 text Orientation
+							76 text GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.
+						77 text Caution GPIO header and camera connector must match the selected board orientation. Microphone insertion follows the matching board USB port; Zero2W USB adaptation is not prescribed here.
+						78 summary Connection details, Value: off
+							79 text Connection details
+					80 text Select a part in the view or a list to see what it is and where its shape and pose come from.
+					81 container Status
+						82 description list
+							83 text Assembly check
+							84 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							85 text Your car
+							86 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						87 text Detailed view: the USB mini microphone overlaps the detailed Raspberry Pi5 by 449 mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.
+						88 text Standoff studs touch the mounting-hole walls (up to 2.8 mm³), the hole-clearance case the assembly checks already record.
+						89 summary Source limitations (14), Value: off
+							90 text Source limitations (14)
+						91 container
+							92 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							93 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				94 container Step controls
+					95 container Steps
+						96 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						97 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						98 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						99 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						100 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						101 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						102 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						103 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						104 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						105 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					106 button Rewind
+					107 button Play step, Help: Play step (Space)
+					108 button Replay from the start
+					109 slider (settable, float) Step timeline, Value: 3.4, Details: 3.4 s of 3.4 s
+						110 value indicator 3.4
+				111 text Step 2: Mount the selected Raspberry Pi. Preview
+112 menu bar
+	113 picarx-companion
+	114 File
+	115 Edit
+	116 View
+	117 Window
+	118 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/2

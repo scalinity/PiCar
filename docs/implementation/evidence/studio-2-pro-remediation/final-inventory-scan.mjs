@@ -28,6 +28,6 @@ for (const file of files) {
 }
 fs.writeFileSync(output, JSON.stringify({ base, reviewed, fullCandidateFilesScanned: files.length, remediationFilesScanned: delta.length,
  excludedUnrelatedM2: [...unrelated].sort(), files, remediationFiles: delta, textFiles: files.length - binary.length, binaryFiles: binary, hits,
- scope: 'Working candidate inventory against Studio 2 base, including all remediation untracked artifacts. The generated report is itself included; its final classifications are manually reviewed. No history rewrite or publication.',
- mediaReview: 'All application captures are reviewed as app-window evidence. They may include the ordinary runtime manual panel; no separate enlarged or source-copy manual capture is added. GLB forbids images; CAD artifacts are numerical geometry; Blender render and scene are reviewed separately.' }, null, 1) + '\n');
+ scope: 'Prepublication working candidate inventory against Studio 2 base, including all remediation untracked artifacts. The generated report is itself included; its final classifications are manually reviewed. Existing public repository history is retained without a rewrite.',
+ mediaReview: 'All application captures are reviewed as app-window evidence, including continuation-final media-review.json and corrected native-records.json dispositions. They may include the ordinary runtime manual panel; no separate enlarged or source-copy manual capture is added. GLB forbids images; CAD artifacts are numerical geometry; Blender render and scene are reviewed separately.' }, null, 1) + '\n');
 console.log(JSON.stringify({ scanned: files.length, remediation: delta.length, text: files.length-binary.length, binary: binary.length, hits: hits.length }));

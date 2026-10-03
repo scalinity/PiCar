@@ -1,0 +1,85 @@
+{
+  "sourceHead": "386813212c82029b6571fdf52d7ab03e8f50a170",
+  "packId": "5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352",
+  "bundleBinarySha256": "d55094529722b7f852558cc6b952c14589d6e2add2647888191e409fb0fa3707",
+  "method": "Real native app HUD after foreground Replay S02/S04 and 12 physical whole-tray orbit drags. Each accepted HUD includes 120 active frames from the scenario; no synthetic app state injection. Three bounded sanity samples, not a sustained benchmark or Studio 4 optimization.",
+  "samples": [
+    {
+      "scenario": "performance-S02",
+      "record": "43-perf-pi5-S02",
+      "ax": "native-43-perf-pi5-S02.txt",
+      "capture": "captures/43-perf-pi5-S02.png",
+      "cssViewport": [
+        1168,
+        729
+      ],
+      "dpr": 2,
+      "activeFrameCount": 120,
+      "fps": 60,
+      "meanActiveFrameIntervalMs": 16.7,
+      "p95Ms": 20,
+      "displayEstimateMs": 15,
+      "drawCalls": 237,
+      "triangles": 174526,
+      "foregroundPid": 65018
+    },
+    {
+      "scenario": "performance-inspection",
+      "record": "44-perf-pi5-S04-inspection",
+      "ax": "native-44-perf-pi5-S04-inspection.txt",
+      "capture": "captures/44-perf-pi5-S04-inspection.png",
+      "cssViewport": [
+        1168,
+        729
+      ],
+      "dpr": 2,
+      "activeFrameCount": 120,
+      "fps": 60,
+      "meanActiveFrameIntervalMs": 16.7,
+      "p95Ms": 20,
+      "displayEstimateMs": 16,
+      "drawCalls": 253,
+      "triangles": 194686,
+      "foregroundPid": 65018
+    },
+    {
+      "scenario": "performance-tray-orbit",
+      "record": "46-perf-pi5-tray-orbit",
+      "ax": "native-46-perf-pi5-tray-orbit.txt",
+      "capture": "captures/46-perf-pi5-tray-orbit.png",
+      "cssViewport": [
+        1168,
+        729
+      ],
+      "dpr": 2,
+      "activeFrameCount": 120,
+      "fps": 60,
+      "meanActiveFrameIntervalMs": 16.7,
+      "p95Ms": 18,
+      "displayEstimateMs": 16,
+      "drawCalls": 295,
+      "triangles": 249294,
+      "foregroundPid": 65018
+    }
+  ],
+  "dprGovernor": {
+    "observed": [
+      2
+    ],
+    "reductionObserved": false,
+    "conclusion": "No DPR reduction in these bounded fresh samples. Historical reductions are not negated; no governor thresholds were changed."
+  },
+  "loadTimingsMs": {
+    "manifest": 4,
+    "glb": 25,
+    "verify": 13,
+    "decode": 5,
+    "build": 1,
+    "canvasFromPageStart": 387,
+    "firstRenderFromPageStart": 388,
+    "firstFrameDrawnFromPageStart": 427
+  },
+  "loadScope": "First visit in this incognito native process; these are page-relative load timings, not per-replay timings.",
+  "conclusion": "60 fps with 16.7 ms mean and p95 18-20 ms in these accepted samples. No concrete correctness/resource defect found in this sanity run. Other route snapshots are not substituted for these samples.",
+  "previousEvidence": "Historical native-performance-disposition.json remains NOT RUN for the old checkpoint, unchanged."
+}

@@ -1,0 +1,32 @@
+$ pnpm test:browser tests/browser/studio.spec.ts -g a manually panned target|stationary selection across active playback|collapsing instructions and resizing
+
+> picarx-companion@0.1.0 test:browser /Users/danny/Documents/Apps/PiCar/picarx-companion
+> playwright test tests/browser/studio.spec.ts -g 'a manually panned target|stationary selection across active playback|collapsing instructions and resizing'
+
+[WebServer] (node:1546) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1655) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1723) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:2099) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (3.6s)
+  ✓  2 [chromium] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (14.6s)
+  ✓  3 [chromium] › tests/browser/studio.spec.ts:594:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (5.6s)
+  ✓  4 [chromium] › tests/browser/studio.spec.ts:594:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (6.7s)
+(node:17973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (2.5s)
+  ✓  6 [webkit] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (8.5s)
+  ✓  7 [webkit] › tests/browser/studio.spec.ts:594:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (2.1s)
+  ✓  8 [webkit] › tests/browser/studio.spec.ts:594:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (2.8s)
+
+  8 passed (48.3s)
+
+exit=0 signal=null

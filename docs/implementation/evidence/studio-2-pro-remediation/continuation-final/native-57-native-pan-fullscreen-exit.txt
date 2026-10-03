@@ -1,0 +1,127 @@
+Native fullscreen exit; manual panned target preserved.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/4?diagnostics
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/4
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/4
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Enter fullscreen (native window), Value: off
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Resume guided view, Help: Guided view (R), Value: off
+					24 button (disabled) Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 4 of 29 · Raspberry Pi 5
+					27 heading Mount the Robot HAT, Value: 2
+						28 text Mount the Robot HAT
+					29 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					30 container Printed manual
+						31 heading Printed manual, Value: 3
+							32 text Printed manual
+						33 button Enlarge
+						34 image Printed Step 4 / rpi4, rpi5, page 1 of the V40 booklet
+						35 text Printed Step 4 · rpi4, rpi5 · page 1 of the V40 booklet
+					36 container Parts in this step
+						37 heading In this step, Value: 3
+							38 text In this step
+						39 container
+							40 container Each M2.5x6 screw
+								41 toggle button M2.5x6 screw×4 moves down 30 mm into place, Value: off
+								42 container Each M2.5x6 screw
+									43 toggle button 5, Help: PX-V40-INS-M25X6-SCREW-005, Value: off
+									44 toggle button 6, Help: PX-V40-INS-M25X6-SCREW-006, Value: off
+									45 toggle button 7, Help: PX-V40-INS-M25X6-SCREW-007, Value: off
+									46 toggle button 8, Help: PX-V40-INS-M25X6-SCREW-008, Value: off
+							47 toggle button Robot HAT moves down 30 mm into place, Value: off
+						48 heading Works on, Value: 4
+							49 text Works on
+						50 container
+							51 container Each M2.5x18 standoff
+								52 toggle button M2.5x18 standoff×4 already in place, Value: off
+								53 container Each M2.5x18 standoff
+									54 toggle button 1, Help: PX-V40-INS-M25X18-STANDOFF-001, Value: off
+									55 toggle button 2, Help: PX-V40-INS-M25X18-STANDOFF-002, Value: off
+									56 toggle button 3, Help: PX-V40-INS-M25X18-STANDOFF-003, Value: off
+									57 toggle button 4, Help: PX-V40-INS-M25X18-STANDOFF-004, Value: off
+							58 toggle button Raspberry Pi 5 already in place, Value: off
+						59 heading Tools, Value: 4
+							60 text Tools
+						61 container
+							62 toggle button Screwdriver 1 kit tool, listed as a tile, Value: off
+							63 toggle button Screwdriver 2 kit tool, listed as a tile, Value: off
+					64 container From the step record
+						65 heading From the step record, Value: 3
+							66 text From the step record
+						67 description list
+							68 text Parts
+							69 text Robot HAT ×1.
+							70 text Hardware
+							71 text M2.5x6 screw ×4 in all three branches; fourth screw confirmed by legibility crops.
+							72 text Tools
+							73 text Matched screwdriver.
+							74 text Orientation
+							75 text No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.
+						76 text Caution No shifted GPIO engagement; preserve the camera-ribbon route under/around the board as illustrated. A ZERO-button-capable depiction does not identify actual HAT revision.
+						77 summary Connection details, Value: off
+							78 text Connection details
+					79 text Select a part in the view or a list to see what it is and where its shape and pose come from.
+					80 container Status
+						81 description list
+							82 text Assembly check
+							83 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							84 text Your car
+							85 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						86 text Detailed view: the USB mini microphone overlaps the detailed Raspberry Pi5 by 449 mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.
+						87 text Standoff studs touch the mounting-hole walls (up to 2.8 mm³), the hole-clearance case the assembly checks already record.
+						88 text Standoff studs touch the mounting-hole walls (up to 2.6 mm³), the hole-clearance case the assembly checks already record.
+						89 summary Source limitations (22), Value: off
+							90 text Source limitations (22)
+						91 container
+							92 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							93 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				94 container Step controls
+					95 container Steps
+						96 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						97 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						98 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						99 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						100 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						101 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						102 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						103 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						104 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						105 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					106 button Rewind
+					107 button Play step, Help: Play step (Space)
+					108 button Replay from the start
+					109 slider (settable, float) Step timeline, Value: 3.2, Details: 3.2 s of 3.2 s
+						110 value indicator 3.2
+				111 text Step 4: Mount the Robot HAT. Preview
+	112 close button
+	113 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	114 minimize button
+115 menu bar
+	116 picarx-companion
+	117 File
+	118 Edit
+	119 View
+	120 Window
+	121 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/4?diagnostics

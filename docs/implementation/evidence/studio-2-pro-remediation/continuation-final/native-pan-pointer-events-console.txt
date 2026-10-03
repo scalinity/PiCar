@@ -1,0 +1,93 @@
+Window: "Web Inspector — localhost", App: picarx-companion.
+0 standard window Web Inspector — localhost, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content inspector-resource:///Main.html
+			3 button Dock to left of window
+			4 button Dock to bottom of window
+			5 button Dock to right of window
+			6 button Start element selection (⇧⌘C)
+			7 button Device Settings
+			8 button Click to show 1 warning in the Console
+			9 tab group (selectable)
+				10 tab (selectable) Elements
+				11 tab (selected) Console
+				12 tab (selectable) Sources
+				13 tab (selectable) Network
+				14 tab (selectable) Timelines
+				15 tab (selectable) Storage
+				16 tab (selectable) Graphics
+				17 tab (selectable) Layers
+				18 tab (selectable) Audit
+				19 tab (selectable) Search (⇧⌘F)
+				20 tab (selectable) Settings (⌘,)
+			21 container Console
+				22 search text field (settable)  
+				23 button (disabled) Find Previous (⇧⌘G)
+				24 button (disabled) Find Next (⌘G)
+				25 text All
+				26 text Evaluations
+				27 text Errors
+				28 text Warnings
+				29 text Logs
+				30 button Other filter options…
+				31 checkbox (settable, integer) Emulate User Gesture, Help: Run console commands as if inside a user gesture, Value: 0
+				32 button Run Console Snippet…
+				33 button Collect garbage
+				34 button Clear log (⌘K or ⌃L)
+				35 container
+					36 text Console cleared at 4:37:18 AM
+					37 image
+					38 container
+						39 image
+						40 text ue  — 
+						41 link pack-CSqp3SaQ.js:1:2949, Help: tauri://localhost/assets/pack-CSqp3SaQ.js:1:2949, Value: tauri://localhost/assets/pack-CSqp3SaQ.js
+					42 text THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+					43 image
+					44 text JSON.stringify({available:!!window.__studio,camera:window.__studio?.camera(),mapping:window.__studio?.viewport()?.controls.mouseButtons})
+					45 image
+					46 text "{\"available\":true,\"camera\":{\"position\":[-0.15275058712817913,0.2252756010023314,0.24168254849111498],\"target\":[-0.0011605415860734994,0.0379,0.03303675048355899],\"aspect\":5.5,\"view\":{\"enabled\":true,\"fullWidth\":644,\"fullHeight\":80,\"offsetX\":-72,\"offsetY\":-36.27906976744186,\"width\":1100,\"height\":200}},\"mapping\":{\"LEFT\":0,\"MIDDLE\":1,\"RIGHT\":2}}" = $1
+					47 image
+					48 text (()=>{const s=window.__studio,v=s.viewport(),r=v.gl.domElement.getBoundingClientRect();return JSON.stringify({phase:"before",route:location.hash,packId:s.packId,variant:s.variant,step:s.step,cameraMode:s.state().cameraMode,camera:s.camera(),viewport:{css:[r.width,r.height],canvasRect:{x:r.x,y:r.y,width:r.width,height:r.height},rendererDpr:v.gl.getPixelRatio(),deviceDpr:devicePixelRatio},controls:{mouseButtons:v.controls.mouseButtons,enablePan:v.controls.enablePan,screenSpacePanning:v.controls.screenSpacePan
+					49 image
+					50 text "{\"phase\":\"before\",\"route\":\"#/studio/rpi5/4?diagnostics\",\"packId\":\"5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352\",\"variant\":\"rpi5\",\"step\":4,\"cameraMode\":\"guided\",\"camera\":{\"position\":[-0.15275058712817913,0.2252756010023314,0.24168254849111498],\"target\":[-0.0011605415860734994,0.0379,0.03303675048355899],\"aspect\":1.2196969696969697,\"view\":{\"enabled\":true,\"fullWidth\":644,\"fullHeight\":528,\"offsetX\":-72,\"offsetY\":-52,\"width\":1100,\"height\":700}},\
+					51 image
+					52 text (()=>{const s=window.__studio,c=s.camera();return JSON.stringify({phase:"before",kind:'camera',route:location.hash,variant:s.variant,step:s.step,cameraMode:s.state().cameraMode,position:c.position,target:c.target})})()
+					53 image
+					54 text "{\"phase\":\"before\",\"kind\":\"camera\",\"route\":\"#/studio/rpi5/4?diagnostics\",\"variant\":\"rpi5\",\"step\":4,\"cameraMode\":\"guided\",\"position\":[-0.15275058712817913,0.2252756010023314,0.24168254849111498],\"target\":[-0.0011605415860734994,0.0379,0.03303675048355899]}" = $3
+					55 image
+					56 text (()=>{const v=window.__studio.viewport(),r=v.gl.domElement.getBoundingClientRect();return JSON.stringify({phase:"before",kind:'viewport',css:[r.width,r.height],rect:[r.x,r.y,r.width,r.height],rendererDpr:v.gl.getPixelRatio(),deviceDpr:devicePixelRatio,mapping:v.controls.mouseButtons,enablePan:v.controls.enablePan,screenSpacePanning:v.controls.screenSpacePanning,domFullscreen:!!document.fullscreenElement})})()
+					57 image
+					58 text "{\"phase\":\"before\",\"kind\":\"viewport\",\"css\":[1100,700],\"rect\":[0,0,1100,700],\"rendererDpr\":2,\"deviceDpr\":2,\"mapping\":{\"LEFT\":0,\"MIDDLE\":1,\"RIGHT\":2},\"enablePan\":true,\"screenSpacePanning\":true,\"domFullscreen\":false}" = $4
+					59 image
+					60 text (()=>{const c=window.__studio.viewport().gl.domElement;window.__nativePanEvents=[];window.__nativePanObserver=e=>{if((e.button===2||(e.buttons&2))&&window.__nativePanEvents.length<32)window.__nativePanEvents.push({type:e.type,button:e.button,buttons:e.buttons,x:e.clientX,y:e.clientY,ctrl:e.ctrlKey,meta:e.metaKey,shift:e.shiftKey});};for(const t of ['pointerdown','pointermove','pointerup'])c.addEventListener(t,window.__nativePanObserver,true);return 'bounded right-pointer observer installed; no camera mutati
+					61 image
+					62 text "bounded right-pointer observer installed; no camera mutation" = $5
+					63 image
+					64 text (()=>{const s=window.__studio,c=s.camera();return JSON.stringify({phase:"after",kind:'camera',route:location.hash,variant:s.variant,step:s.step,cameraMode:s.state().cameraMode,position:c.position,target:c.target})})()
+					65 image
+					66 text "{\"phase\":\"after\",\"kind\":\"camera\",\"route\":\"#/studio/rpi5/4?diagnostics\",\"variant\":\"rpi5\",\"step\":4,\"cameraMode\":\"manual\",\"position\":[-0.17138442379099023,0.23712203496993023,0.21750551314736802],\"target\":[-0.01979437824888457,0.04974643396759883,0.008859715139812062]}" = $6
+					67 image
+					68 text (()=>{const v=window.__studio.viewport(),r=v.gl.domElement.getBoundingClientRect();return JSON.stringify({phase:"after",kind:'viewport',css:[r.width,r.height],rect:[r.x,r.y,r.width,r.height],rendererDpr:v.gl.getPixelRatio(),deviceDpr:devicePixelRatio,mapping:v.controls.mouseButtons,enablePan:v.controls.enablePan,screenSpacePanning:v.controls.screenSpacePanning,domFullscreen:!!document.fullscreenElement})})()
+					69 image
+					70 text "{\"phase\":\"after\",\"kind\":\"viewport\",\"css\":[1100,700],\"rect\":[0,0,1100,700],\"rendererDpr\":1.5,\"deviceDpr\":2,\"mapping\":{\"LEFT\":0,\"MIDDLE\":1,\"RIGHT\":2},\"enablePan\":true,\"screenSpacePanning\":true,\"domFullscreen\":false}" = $7
+					71 image
+					72 text JSON.stringify({phase:'pointer-events',events:window.__nativePanEvents.map(e=>[e.type,e.button,e.buttons,e.x,e.y,+e.ctrl,+e.meta,+e.shift])})
+					73 image
+					74 text "{\"phase\":\"pointer-events\",\"events\":[[\"pointerdown\",2,2,400,320,0,0,0],[\"pointermove\",-1,2,410,325,0,0,0],[\"pointermove\",-1,2,420,330,0,0,0],[\"pointermove\",-1,2,430,335,0,0,0],[\"pointermove\",-1,2,440,340,0,0,0],[\"pointermove\",-1,2,450,345,0,0,0],[\"pointermove\",-1,2,460,350,0,0,0],[\"pointermove\",-1,2,470,355,0,0,0],[\"pointermove\",-1,2,480,360,0,0,0],[\"pointermove\",-1,2,490,365,0,0,0],[\"pointermove\",-1,2,500,370,0,0,0],[\"pointermove\",-1,2,510,375,0,0,0],[\"pointermove\",-1,2,520,
+			75 text entry area (settable) Console prompt, Value: [text entry area: Console prompt], Secondary Actions: Show Writing Tools
+			76 container
+			77 container Execution context for $0
+				78 text Auto — localhost
+	79 close button
+	80 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	81 minimize button
+	82 text Web Inspector — localhost
+83 menu bar
+	84 picarx-companion
+	85 File
+	86 Edit
+	87 View
+	88 Window
+	89 Help
+
+The focused UI element is 75 text entry area (settable) Console prompt, Value: [text entry area: Console prompt], Secondary Actions: Show Writing Tools

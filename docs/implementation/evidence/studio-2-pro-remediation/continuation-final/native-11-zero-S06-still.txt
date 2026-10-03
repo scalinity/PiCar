@@ -1,0 +1,126 @@
+Zero S06 Still Preview: tape/battery represented as tiles, battery introduced and waiting in tray, shared page2; disabled0.0s transport and correct cumulative motor scene.
+
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/6
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/6
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/6
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Enter fullscreen (native window), Value: off
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 6 of 29 · Raspberry Pi Zero 2 W
+					27 heading Prepare battery hook-and-loop mounting, Value: 2
+						28 text Prepare battery hook-and-loop mounting
+					29 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					30 container Printed manual
+						31 heading Printed manual, Value: 3
+							32 text Printed manual
+						33 button Enlarge
+						34 image Printed Step 6, page 2 of the V40 booklet
+						35 text Printed Step 6 · page 2 of the V40 booklet
+					36 container Parts in this step
+						37 heading In this step, Value: 3
+							38 text In this step
+						39 container
+							40 toggle button Battery stays in the tray until step 7, Value: on
+							41 toggle button Hook tape shown as a tile: no 3D shape, Value: off
+							42 toggle button Loop tape shown as a tile: no 3D shape, Value: off
+						43 heading Works on, Value: 4
+							44 text Works on
+						45 toggle button Plate A already in place, Value: off
+					46 container From the step record
+						47 heading From the step record, Value: 3
+							48 text From the step record
+						49 description list
+							50 text Parts
+							51 text Battery ×1 staged; hook tape piece ×1 and loop tape piece ×1 allocated from supplied material.
+							52 text Hardware
+							53 text No mechanical fastener.
+							54 text Tools
+							55 text Hands; cutting tool only if material actually requires cutting, not an invented mandatory tool.
+							56 text Orientation
+							57 text Hook on battery, loop on chassis underside as printed.
+						58 text Caution Hook on battery, loop on chassis underside as printed.
+						59 summary Connection details, Value: off
+							60 text Connection details
+					61 container Selected part
+						62 heading Battery, Value: 3
+							63 text Battery
+						64 description list
+							65 text Definition
+							66 container
+								67 text Battery PX-V40-DEF-BATTERY
+							68 text Instance
+							69 text PX-V40-INS-BATTERY-001
+							70 text Inventory
+							71 text Electronics, first introduced in step 6
+							72 text Now
+							73 text In the parts tray (a layout, not an assembly state)
+							74 text Shape
+							75 container
+								76 text M5 instructional proxy: simplified presentation shape, non-engineering. Shown and checked as this shape. PX-V40-DEF-BATTERY.brep (f685c1a07c)
+								77 container f685c1a07cf87d4fe7da7703366fd939681a69e654209aeaff7355f019485959
+							78 text Pose from
+							79 text Tray layout
+						80 button Frame this part
+					81 container Status
+						82 description list
+							83 text Assembly check
+							84 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							85 text Your car
+							86 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						87 text Standoff studs touch the mounting-hole walls (up to 2.6 mm³), the hole-clearance case the assembly checks already record.
+						88 summary Source limitations (27), Value: off
+							89 text Source limitations (27)
+						90 container
+							91 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							92 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				93 container Step controls
+					94 container Steps
+						95 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						96 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						97 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						98 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						99 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						100 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						101 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						102 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						103 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						104 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					105 button (disabled) Rewind
+					106 button (disabled) Play step, Help: Play step (Space)
+					107 button (disabled) Replay from the start
+					108 slider (disabled, settable, float) Step timeline, Value: 1, Details: 0.0 s of 0.0 s
+						109 value indicator 1
+				110 text Step 6: Prepare battery hook-and-loop mounting. Preview
+	111 close button
+	112 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	113 minimize button
+114 menu bar
+	115 picarx-companion
+	116 File
+	117 Edit
+	118 View
+	119 Window
+	120 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/6
