@@ -13,7 +13,9 @@ it('has no path to the session ledger, Setup persistence or repository; only the
     const text = fs.readFileSync(file, 'utf8');
     const imports = [...text.matchAll(/from\s+['"]([^'"]+)['"]|import\(\s*['"]([^'"]+)['"]\s*\)/g)].map((m) => m[1] ?? m[2]);
     for (const spec of imports) expect(spec, file).not.toMatch(/assembly-session|progress-store|\/platform\/|repository|plugin-/);
-    const checked = file.endsWith('/state/fullscreen.ts') ? text.replace("invoke('studio_escape_capture', { enabled })", '') : text;
+    const checked = file.endsWith('/state/fullscreen.ts') ? text
+      .replaceAll("invoke('studio_escape_capture', { enabled: true })", '')
+      .replaceAll("invoke('studio_escape_capture', { enabled: false })", '') : text;
     expect(checked, file).not.toMatch(/\binvoke\(|localStorage|indexedDB/);
   }
   const nativeCapture = fs.readFileSync('src-tauri/src/studio_escape.rs', 'utf8');
