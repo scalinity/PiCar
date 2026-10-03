@@ -1,3 +1,7 @@
+# Historical Pro re-review prompt — superseded
+
+This prompt belongs to the earlier published checkpoint b6dd6a7e04dff6a41e5766b0a6b95e577eb07de9. Its blanket ZeroS00 closure claim was incorrect: continuation-final capture01 is REJECTED_WRONG_VARIANT_RENDER;48 is LIMITED_CORROBORATION. Fresh final-source pro-followup-final01/02 now establish S00. Do not invoke this historical scope again. The new focused prompt delivered after the follow-up push reviews only b6dd6a7..the new immutable remote HEAD and the immediately preceding review findings, preserving prior supported credit.
+
 Perform a read-only GPT-6 Pro re-review of ONLY the published Studio 2 remediation delta in repository scalinity/PiCar, branch studio/s2-pro-full-remediation. Remediation base:891dba9dba06592296fa06a74e400451743db13e. Final remote HEAD:resolve the full SHA at origin/studio/s2-pro-full-remediation, whose final commit is docs: close Studio 2 native verification; the owner's concrete post-push invocation supplies the verified immutable full SHA and all six remediation commits in order. Verify that SHA against the remote before reviewing ONLY base..final remote HEAD. This versioned instruction cannot embed the SHA of the commit containing itself. It describes committed published evidence and has no local/uncommitted checkpoint scope. Do not repeat the entire original Studio 2 audit.
 
 Remediation commits in order:

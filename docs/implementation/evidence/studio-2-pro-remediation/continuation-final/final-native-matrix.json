@@ -13,26 +13,35 @@
       "manualMapping": "none",
       "selectedInspectableObject": "Wrench",
       "selectedEvidence": {
-        "name": "48-zero-S00-tool-tile",
-        "ax": "native-48-zero-S00-tool-tile.txt",
-        "capture": "captures/48-zero-S00-tool-tile.png"
+        "name": "02-zero-S00-wrench",
+        "ax": "../pro-followup-final/native-02-zero-S00-wrench.txt",
+        "capture": "../pro-followup-final/captures/02-zero-S00-wrench.jpg"
       },
       "playbackAvailability": "disabled; 0.0 s",
       "renderedSceneChangedAppropriately": true,
-      "renderObservation": "47 = 41 modeled + 6 tiles; Zero board and common wrench tile rendered; no manual or playback.",
+      "renderObservation": "Fresh final native bundle shows the narrow Zero board, no USB microphone, six standoffs, Zero selected,47=41+6,disabled transport and no manual. Paired wrench selection establishes an inspectable valid common item. capture01 is REJECTED_WRONG_VARIANT_RENDER; capture48 is LIMITED_CORROBORATION only.",
       "renderProof": [
         {
-          "name": "01-zero-S00",
-          "ax": "native-01-zero-S00.txt",
-          "capture": "captures/01-zero-S00.jpg"
+          "name": "01-zero-S00-fresh",
+          "ax": "../pro-followup-final/native-01-zero-S00-fresh.txt",
+          "capture": "../pro-followup-final/captures/01-zero-S00-fresh.jpg"
         },
         {
-          "name": "48-zero-S00-tool-tile",
-          "ax": "native-48-zero-S00-tool-tile.txt",
-          "capture": "captures/48-zero-S00-tool-tile.png"
+          "name": "02-zero-S00-wrench",
+          "ax": "../pro-followup-final/native-02-zero-S00-wrench.txt",
+          "capture": "../pro-followup-final/captures/02-zero-S00-wrench.jpg"
         }
       ],
-      "status": "PASS"
+      "status": "PASS",
+      "sourceHead": "b31bcfc7e89bbfb55a46bea6dc579267bf63ca57",
+      "bundleBinarySha256": "af2f282f3b22741ae27e5abed1b447d3e2404bd5a02287fbf7aaad4c14e3dab7",
+      "corroboration": [
+        {
+          "capture": "captures/48-zero-S00-tool-tile.png",
+          "disposition": "LIMITED_CORROBORATION",
+          "reason": "Overlay obscures board; not sole authoritative evidence."
+        }
+      ]
     },
     {
       "step": 1,
@@ -536,5 +545,10 @@
     "resumeGuided": "PASS",
     "S2_06": "CLOSED",
     "historicalShiftDrag": "Captures25–27 remain rejected as pan proof; no historical evidence promoted."
+  },
+  "finalFollowup": {
+    "sourceHead": "b31bcfc7e89bbfb55a46bea6dc579267bf63ca57",
+    "bundleIdentity": "../pro-followup-final/bundle-identity.json",
+    "scope": "Fresh S00 and affected lifecycle sanity supersede S00 only. Valid unaffected S01–S09 original-bundle evidence is preserved, not relabeled as rebuilt-bundle capture."
   }
 }

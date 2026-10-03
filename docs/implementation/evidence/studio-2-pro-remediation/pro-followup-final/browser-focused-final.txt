@@ -1,0 +1,32 @@
+[WebServer] (node:56997) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:57101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:57168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:57326) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 1 worker
+
+(node:57527) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (3.6s)
+  ✓   2 [chromium] › tests/browser/studio.spec.ts:62:1 › fullscreen enters and leaves through the browser Fullscreen API (2.1s)
+  ✓   3 [chromium] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (14.6s)
+  ✓   4 [chromium] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen (4.8s)
+  ✓   5 [chromium] › tests/browser/studio.spec.ts:387:1 › the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset (3.5s)
+  ✓   6 [chromium] › tests/browser/studio.spec.ts:594:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (5.5s)
+  ✓   7 [chromium] › tests/browser/studio.spec.ts:594:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (6.7s)
+(node:83933) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [webkit] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (2.5s)
+  ✓   9 [webkit] › tests/browser/studio.spec.ts:62:1 › fullscreen enters and leaves through the browser Fullscreen API (792ms)
+  ✓  10 [webkit] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (8.5s)
+  -  11 [webkit] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen
+  ✓  12 [webkit] › tests/browser/studio.spec.ts:387:1 › the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset (835ms)
+  ✓  13 [webkit] › tests/browser/studio.spec.ts:594:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (2.1s)
+  ✓  14 [webkit] › tests/browser/studio.spec.ts:594:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (2.7s)
+
+  1 skipped
+  13 passed (1.0m)

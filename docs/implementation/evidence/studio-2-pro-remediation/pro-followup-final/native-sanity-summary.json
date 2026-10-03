@@ -1,0 +1,45 @@
+{
+  "sourceHead": "b31bcfc7e89bbfb55a46bea6dc579267bf63ca57",
+  "boardSwitch": "PASS both directions; captures00–03 with narrowZero/noUSBmic/sixstandoffs and fullPi5 geometry.",
+  "hatWording": "PASS: capture05, actual screw contacts up to2.6mm3; genuine standoff2.8 unchanged.",
+  "escapeOrder": {
+    "status": "PASS",
+    "modalOpenEvidence": "native-escape-modal-open.txt (AX-only; no enlarged manual pixels)",
+    "first": "native-13-escape-modal-dismissed-selection-kept.txt",
+    "second": "native-14-escape-selection-cleared-fullscreen-kept.txt",
+    "third": "native-15-escape-fullscreen-exited.txt",
+    "method": "Owned PiCar-only Quartz HID physical Escape keydown/up, separate presses."
+  },
+  "leaveStudio": {
+    "status": "PASS",
+    "before": "native-16-left-studio-fullscreen.txt",
+    "after": "native-17-left-studio-escape-result.txt",
+    "observation": "After leaving Studio forHome while nativefullscreen remainedon, physicalEscape reached nativewindow and fullscreen exited. Deterministic deferred tests separately assert capturedisabled/listenerszero.",
+    "limits": "Captureenabled boolean is not exposed as a native query; release is observed through OS Escape behavior. Diagnosticglobal persists afterroutechange and is not used as unmount proof."
+  },
+  "staleRaceNative": "NOT_TIMING_FORCED: deferred platform unit regressions provide exact deterministic A/B/unsubscribe/remount race coverage; no camera/capture state was mutated to fake native PASS.",
+  "pan": {
+    "translationM": 0.032556699719785046,
+    "positionMinusTargetDriftM": 6.206335383118183e-17,
+    "fullscreenDriftM": 3.581287853768894e-10,
+    "exitDriftM": 1.5874500941021685e-9,
+    "guidedResumeErrorM": 4.336808689942018e-19,
+    "toleranceM": 0.000001,
+    "beforeMode": "guided",
+    "afterMode": "manual",
+    "fullscreenMode": "manual",
+    "exitMode": "manual",
+    "resumeMode": "guided",
+    "gesture": "native Quartz HID right-down, 12 right-drag moves, right-up; no modifiers",
+    "fullscreenEntry": "native UI button",
+    "fullscreenExit": "physical Escape down/up",
+    "historicalPan": "Earlier numerical records remain unchanged; this is affected-source sanity only"
+  },
+  "automationNotes": [
+    "Owned inspector screenshot08 rejected as scene proof; correct main-window capture09 used.",
+    "Early scroll used physical/retina coordinates incorrectly and dolly changed setup camera; reset via guided view before recorded pan.",
+    "Late left-Studio console query included literal M3/databasefalse values, which are not runtime measurements. Actual M3/incognito/privacy identity comes from build config and source gating, not those literals.",
+    "A diagnostic __studio global persists afternavigation; no claim it was removed. Inspector closed after completion."
+  ],
+  "disposition": "PASS_AFFECTED_NATIVE_SANITY"
+}

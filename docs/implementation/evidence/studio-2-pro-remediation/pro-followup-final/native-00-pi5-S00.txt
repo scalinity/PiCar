@@ -1,0 +1,109 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/0
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+				14 text Parts tray
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Enter fullscreen (native window), Value: off
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button (disabled) Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button (disabled) Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Parts tray · Raspberry Pi 5
+					27 heading Everything for steps 1 to 9, Value: 2
+						28 text Everything for steps 1 to 9
+					29 text Laid out by kind beside the chassis: a layout for looking and counting, not a stage of the build.
+					30 container Parts inventory
+						31 text 50 pieces · 44 modelled · 6 shown as tiles
+						32 summary › Plates 2, Value: off
+							33 text ›
+							34 text Plates
+							35 text 2
+							36 button Frame
+						37 summary › Electronics 5, Value: off
+							38 text ›
+							39 text Electronics
+							40 text 5
+							41 button Frame
+						42 summary › Motors and servos 3, Value: off
+							43 text ›
+							44 text Motors and servos
+							45 text 3
+							46 button Frame
+						47 summary › Fasteners 34, Value: off
+							48 text ›
+							49 text Fasteners
+							50 text 34
+							51 button Frame
+						52 summary › Supplies 2, Value: off
+							53 text ›
+							54 text Supplies
+							55 text 2
+							56 button Frame
+						57 summary › Cables 1, Value: off
+							58 text ›
+							59 text Cables
+							60 text 1
+							61 button Frame
+						62 summary › Tools 3, Value: off
+							63 text ›
+							64 text Tools
+							65 text 3
+							66 button Frame
+						67 text The printed kit inventory lists 156 pieces for this board; the 106 not shown are used after step 9, or are spares (37) and accessories.
+					68 text Select a part in the view or a list to see what it is and where its shape and pose come from.
+					69 container Status
+						70 description list
+							71 text Assembly check
+							72 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							73 text Your car
+							74 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						75 container
+							76 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							77 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				78 container Step controls
+					79 container Steps
+						80 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						81 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						82 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						83 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						84 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						85 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						86 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						87 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						88 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						89 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					90 button (disabled) Rewind
+					91 button (disabled) Play step, Help: Play step (Space)
+					92 button (disabled) Replay from the start
+					93 slider (disabled, settable, float) Step timeline, Value: 1, Details: 0.0 s of 0.0 s
+						94 value indicator 1
+				95 text Parts tray: 50 pieces, 44 modelled, 6 shown as tiles
+	96 close button
+	97 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	98 minimize button
+99 menu bar
+	100 picarx-companion
+	101 File
+	102 Edit
+	103 View
+	104 Window
+	105 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio

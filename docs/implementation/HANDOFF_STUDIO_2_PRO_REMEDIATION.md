@@ -1,3 +1,49 @@
+# Final Pro findings follow-up — current closeout
+
+The immediately preceding review at b6dd6a7e04dff6a41e5766b0a6b95e577eb07de9 found remaining nested-contract, canonical-audit, fullscreen-lifetime, wording and evidence defects. The focused source fixes and rebuilt native proof supersede those claims. The earlier sections below remain historical except their erroneous capture01 acceptance, which is explicitly corrected everywhere.
+
+Current evidence: [follow-up verification notes](evidence/studio-2-pro-remediation/pro-followup-final/verification-notes.md), [native sanity](evidence/studio-2-pro-remediation/pro-followup-final/native-sanity-summary.json), [connector review](evidence/studio-2-pro-remediation/connector-review/README.md), [image mappings](evidence/studio-2-pro-remediation/connector-review/connector-review-manifest.json), [binary/media audit](evidence/studio-2-pro-remediation/connector-review/binary-media-review-manifest.json), [Blender audit](evidence/studio-2-pro-remediation/connector-review/blender-audit.json), [GLB audit](evidence/studio-2-pro-remediation/connector-review/glb-audit.json).
+
+Current final native source HEAD b31bcfc7e89bbfb55a46bea6dc579267bf63ca57; binary af2f282f3b22741ae27e5abed1b447d3e2404bd5a02287fbf7aaad4c14e3dab7. Pack/presentation/GLB unchanged and PASS/FRESH/CURRENT. No CAD/presentation-bound source change.
+
+| Finding | Final status | New closure evidence |
+|---|---|---|
+| S2-01 | CLOSED | Central nested semantic validation; consistently rehashed negatives |
+| S2-02 | CLOSED | Canonical identity/variant/tool/all inventory-field reconciliation; real50=44+6 and47=41+6 |
+| S2-03 | CLOSED | Supported camera ownership separation preserved; affected native sanity passes |
+| S2-04 | CLOSED | Supported continuous explosion preserved |
+| S2-05 | CLOSED | Supported manual recovery preserved |
+| S2-06 | CLOSED | New authoritative ZeroS00; old01 rejected unchanged; unaffected S01–S09 retained; fresh pan/fullscreen/resume |
+| S2-07 | CLOSED | Lifetime-bound queued fullscreen/capture; exact deferredA/B/unsubscribe/remount/late settlement tests; physicalEscape and Studioexit |
+| S2-08 | CLOSED | Supported additive4/4 correction preserved |
+| S2-09 | CLOSED | Supported immutable predecessor regeneration preserved |
+
+| Finding | Final status | Evidence/disposition |
+|---|---|---|
+| F1 | CLOSED |27 exact generated snapshots; tracked-only isolatedPASS/FRESH/CURRENT |
+| F2 | CLOSED | Persistence isolation retained; source boundary check remains narrow |
+| F3 | CLOSED | Variant selection preserved, browser and native both-direction switch |
+| F4 | CLOSED | Exact display/closure binding preserved; nested fields additionally checked |
+| F5 | CLOSED | Nested exploit rejected centrally before consumer; fullunit286passes |
+| F6 | CLOSED | Receipt unchanged, Blenderopen/check, structuredaudit and boundJPEG53 |
+| F7 | CLOSED | Original nativepan preserved byte-for-byte; rebuilt32.5567mm pan, targetdrift1.58745e-9m<1e-6m, guided resume |
+| F8 | CLOSED | Exact pendingA/queuedB/last unsubscribe race closes with capturefalse/listenerszero; remount independent |
+| F9 | CLOSED | Prior bounded native120frame performance evidence preserved; no timing rewrite or benchmark claim |
+| F10 | CLOSED | Supported resourceownership retained; fullbrowser Studioresource tests pass |
+| F11 | CLOSED | Actual screw/standoff/generic identity nouns; volumes and roundings unchanged |
+
+Validation: typecheckPASS; focused4files/66passes; fullunit24files/286passes; focusedbrowser13passes/1skip; fullbrowser101passes/2failures/1skip, FAIL—EXPLAINED (sameM3PDFbookmark expected1received2 at preservation.spec.ts42); packPASS/FRESH/CURRENT; Blender--checkPASS; trayHOLDS; freshM3disabled/incognito nativebuildPASS. Native capture-release is observed via OS Escape after Studioexit, with deterministic captureboolean/listener assertions; the native boolean is not directly queried. Exact race timing is not artificially forced natively.
+
+All53 full-viewport JPEGproxies are ≤211702bytes and bind exact original/proxy SHAs, dimensions, scaling and allowed claims. Actual connector base64 retrieval of a larger historical JPEG succeeded; exact final-ref retrieval is checked after the authorized publication and reported in the final closeout. No claim that transport-limited .blend/GLB was independently downloaded by Pro. Structured221-path local audit is published; all191images reviewed with method/limits disclosed.
+
+READY FOR STUDIO 3
+
+This readiness applies to the bounded Studio2 application remediation. M7 remains BLOCKED0/58, S07BLOCKED, S09REFUSED, G-CADBLOCKED, M8NO. Physical fit and owner visual acceptance remain separate. Studio3/3.5/4 andM8 are unstarted. FutureStudio3.5 is High-Fidelity Robot HAT afterStudio3/beforeStudio4 using owner scan/caliper evidence.
+
+The new immutable-SHA Pro prompt is delivered after the normal branch push; its scope is ONLY b6dd6a7e04dff6a41e5766b0a6b95e577eb07de9..new final remote HEAD. The original re-review prompt below is historical and superseded.
+
+---
+
 # Studio 2 Pro remediation
 
 This is the bounded closeout of the independent Studio 2 Pro review. Studio 3 and M8 are not implemented. All old Studio 2 commits and evidence remain; the new evidence directory is `docs/implementation/evidence/studio-2-pro-remediation/`.
@@ -17,7 +63,7 @@ Baseline: integrity PASS, freshness FRESH, presentation CURRENT. Old pack `466de
 | S2-03 | CLOSED | `scene/StudioScene.tsx`: store notifications invalidate only. User controls changes yield ownership and cancel tween; programmatic frame updates are distinguished explicitly. | `tests/browser/studio.spec.ts`: stationary selectable holds across active S02/S04 playback frames, then real drag. Existing resize/DPR/fullscreen target guards. | Native observation supplements both browser engines. |
 | S2-04 | CLOSED | `motion/evaluate.ts`, `motion/inspect.ts`: recipe-free workpiece terminal bring-in progress weights explosion continuously. No M7 recipe is invented. | `tests/studio/inspect.test.ts`: both variants, forward/reverse/replay at boundary±1e-5s, composed tolerance1e-9m, off returns exact source. Only one recipe-free track per variant exists. | Presentation interpolation only; source endpoints unchanged. |
 | S2-05 | CLOSED | `src/lib/v40-pdf.ts` evicts failing attempt, SHA-verifies each successful fetch. `ui/ManualPanel.tsx` explicit Retry, replacement-owned local state and cancellation, genuine render errors surface. | `tests/studio/manual-recovery.test.ts`: fetch/decode retry, hash verification and wrong bytes. Browser controlled fetch failure -> wrong bytes -> real PDF; controlled render failure -> pending Retry -> replacement cancellation/success. | Native network fault injection not required if impractical; controlled browser tests carry recovery proof. |
-| S2-06 | CLOSED | Final native Zero S00–S09 matrix and Pi5 representatives remain valid. Actual unmodified right-button pan yields manual ownership, preserves target through resize/fullscreen/redraw/DPR, then Resume guided view restores the guided target. | `continuation-final/final-native-matrix.json`, `native-pan-summary.json`, numeric phase files and captures53–60; existing native interactions/performance retained. | Bounded instructional app verification; human visual acceptance and physical fit remain separate. Failed Shift-drag25–27 stays rejected as pan proof. |
+| S2-06 | CLOSED | Corrected final native Zero S00 uses fresh final-source01/02; valid priorS01–S09 and Pi5 representatives retain their original bundle identity. Actual unmodified right-button pan yields manual ownership, preserves target through resize/fullscreen/redraw/DPR, then Resume guided view restores the guided target. | `continuation-final/final-native-matrix.json`, `native-pan-summary.json`, numeric phase files and captures53–60; existing native interactions/performance retained. | Bounded instructional app verification; human visual acceptance and physical fit remain separate. Failed Shift-drag25–27 stays rejected as pan proof. |
 | S2-07 | CLOSED | `state/studio-store.ts` and `src/pages/Studio.tsx`: tray root commit clears manualOpen before a delayed 3D frame; enterStep preserves the invariant. Native release bridge enforces physical dismissal order. | `tests/studio/selection.test.ts`, browser enlarged manual -> tray -> Escape -> return. Existing one-press/fullscreen guards. | Numbered current states all have a verified manual mapping. |
 | S2-08 | CLOSED | New `digital-twin/assemblies/v40/presentation/instructional/step08-review-05.json`; current review pointers in `cad/twin_cad/assemblies/instructional/step08{,_verify}.py`. Historical review04 retained. | Fresh chain `s2pro-01`; generated S08/S09 current limitations; fidelity/pack source guards. | Historical4/3 -> current photo-supported4/4; trace1.4mm vs photo~1.69mm unresolved; no engineering tolerance verification. |
 | S2-09 | CLOSED | `digital-twin/cad/twin_cad/fidelity/plate_a.py` rebuilds immutable outline01 batch/spec and verifies its historical SHA before comparison. | `cad/tests/test_studio_fidelity.py`: store selects holes03, correct old7/new8 and old hash/volume/candidate hash; wrong predecessor SHA fails. CLI numeric regeneration `09-regenerated-review.json`. | Rebuild identity is deliberately strict against toolchain/parameter drift. |
@@ -145,7 +191,7 @@ Each row is a separate owned-window visual observation with actual route, board,
 
 | Zero step | Mode | Manual | Selected/inspectable | Playback / rendered proof | Result |
 |---|---|---|---|---|---|
-| S00 | Parts tray | None | Wrench tile | Disabled;47=41 modeled+6 tiles;01/48 | PASS |
+| S00 | Parts tray | None | Wrench tile | Disabled;47=41 modeled+6 tiles;fresh pro-followup-final01/02; old01 rejected,48 limited corroboration | PASS |
 | S01 | Preview | Zero, page1 | Plate A | Moving36 -> seated37,4.0s | PASS |
 | S02 | Preview | Zero, page1 | Zero board | Moving04 -> seated05,2.8s | PASS |
 | S03 | Still Preview | Zero, page1 | FPC tile | Disabled0.0s; correct cumulative board,06 | PASS |

@@ -1,0 +1,101 @@
+{
+  "contract": "studio2-blender-audit/1",
+  "path": "digital-twin/presentation/blender/picar-studio.blend",
+  "sha256": "1889e7e638e3782713b23254cdf9143c55360f37fae7c7a2fdb82a82b10a4440",
+  "bytes": 1304613,
+  "openedSuccessfully": true,
+  "blenderCheck": {
+    "command": "node digital-twin/tools/studio/studio.mjs blender --check",
+    "status": "PASS",
+    "problems": [],
+    "version": {
+      "buildHash": "d13f752e3b9c",
+      "version": "5.2.2 LTS"
+    }
+  },
+  "inspectionMethods": [
+    "Blender itself opened current project and verified presentation state, scene identity and ownership with the existing repository --check command. No new embedded Python script was used.",
+    "Additional independent Node SDNA/block parsing of the exact Zstandard-compressed bytes: all blocks bounded; relevant layouts matched declared structure lengths; image paths, links and custom string values decoded."
+  ],
+  "header": "BLENDER17-01v0502",
+  "blocks": 5012,
+  "scenes": [
+    {
+      "name": "Scene"
+    }
+  ],
+  "ownedCollections": {
+    "counts": {
+      "STUDIO-PRESENTATION": 6,
+      "STUDIO-SOURCE-DEFINITIONS": 21,
+      "STUDIO-SOURCE-INSTANCES": 15,
+      "STUDIO-SOURCE-TRAY": 44
+    },
+    "unowned": []
+  },
+  "libraries": [],
+  "images": [
+    {
+      "name": "Render Result",
+      "filepath": "",
+      "source": 5,
+      "type": 4,
+      "packed": false,
+      "packedFiles": [],
+      "renderResultPointer": "0"
+    },
+    {
+      "name": "Viewer Node",
+      "filepath": "",
+      "source": 5,
+      "type": 5,
+      "packed": false,
+      "packedFiles": [],
+      "renderResultPointer": "0"
+    }
+  ],
+  "movies": [],
+  "sounds": [],
+  "fonts": [],
+  "cacheFiles": [],
+  "textsAndScripts": [],
+  "packedFileBlocks": 0,
+  "customStringPropertyCount": 300,
+  "customPropertyFileOrUrlStrings": [],
+  "localPathReferences": [
+    {
+      "structure": "FileSelectParams",
+      "field": "dir[1282]",
+      "value": "/Users/danny",
+      "classification": "Functional Blender file-browser directory; reveals only username; no personal content path."
+    },
+    {
+      "structure": "printable byte string scan",
+      "field": "not independently field-decoded",
+      "value": "/tmp/",
+      "classification": "Functional default output directory; no private file path or external source dependency."
+    }
+  ],
+  "missingExternalDependencies": [],
+  "externalDependencyReason": "No library/font/sound/movie/cache/text blocks; both images are generated internal render/viewer datablocks with empty file paths and zero packed-file references.",
+  "sourceMedia": "No image files, packed images, external image references or private photo/vendor source media. Internal project preview pixels inspected separately.",
+  "credentialScan": {
+    "method": "Decoded custom strings and printable byte strings scanned for credential assignments, token formats, signed/private URLs and owner paths; DNA field names distinguished from real values.",
+    "realCredentials": [],
+    "signedOrPrivateUrls": [],
+    "privateContentPaths": []
+  },
+  "presentationId": "0bf8a3bdb80abec85512183cfe35648807dd3b30e82d29a81f1f89c6512b9e0b",
+  "packId": "5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352",
+  "presentationReceiptPath": "digital-twin/presentation/blender/presentation-receipt.json",
+  "finalRender": {
+    "path": "digital-twin/presentation/blender/renders/5968a9827b1b-0bf8a3bdb80a-rpi5-S02.png",
+    "preview": false,
+    "resolutionPercentage": 100,
+    "samples": 512,
+    "sha256": "ee82f5b8a20e9044fddd5cfe292a5ed36f778f60a77c77c3cd516d630eb2bc42"
+  },
+  "disposition": "ACCEPTED_LOCAL_STRUCTURED_AUDIT",
+  "limits": "This is local byte/content verification. It does not assert a GitHub reviewer downloaded the large .blend, inspected physical fit, or supplied human visual acceptance.",
+  "internalThumbnailInspection": "128x128 TEST thumbnail decoded and visually inspected: generic gray cube on black, no source photo/vendor/private pixels. No packed image datablocks or render-result pixel pointer persisted."
+}

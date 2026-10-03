@@ -1,0 +1,47 @@
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ❯ tests/studio/display-checks.test.ts (3 tests | 2 failed) 7ms
+   × describes the four HAT screw contacts truthfully and keeps the same numeric maximum 4ms
+   × uses generic wording for valid hardware without a known screw or standoff category 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/studio/display-checks.test.ts > describes the four HAT screw contacts truthfully and keeps the same numeric maximum
+AssertionError: expected 'Standoff studs touch the mounting-hol…' to contain 'Screw contacts'
+
+Expected: "Screw contacts"
+Received: "Standoff studs touch the mounting-hole walls (up to 2.6 mm³), the hole-clearance case the assembly checks already record."
+
+ ❯ tests/studio/display-checks.test.ts:12:17
+     10|   const before = JSON.stringify(hat.displayChecks);
+     11|   const notes = displayNotes(pack(m), hat).join(' ');
+     12|   expect(notes).toContain('Screw contacts');
+       |                 ^
+     13|   expect(notes).not.toContain('Standoff');
+     14|   expect(notes).toContain('2.6 mm³');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/studio/display-checks.test.ts > uses generic wording for valid hardware without a known screw or standoff category
+AssertionError: expected 'Standoff studs touch the mounting-hol…' to contain 'Component contacts'
+
+Expected: "Component contacts"
+Received: "Standoff studs touch the mounting-hole walls (up to 1.0 mm³), the hole-clearance case the assembly checks already record."
+
+ ❯ tests/studio/display-checks.test.ts:29:17
+     27|   step.displayChecks[0].overlaps = [{ instanceId: id, volumeMm3: 1.044…
+     28|   const notes = displayNotes(pack(m), step).join(' ');
+     29|   expect(notes).toContain('Component contacts');
+       |                 ^
+     30|   expect(notes).not.toMatch(/Standoff|Screw contacts/);
+     31|   expect(notes).toContain('1.0 mm³');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  07:06:18
+   Duration  160ms (transform 52%, import 35%, tests 11%, worker 2%)
+

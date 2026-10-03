@@ -1,0 +1,35 @@
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ❯ tests/studio/fullscreen.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/studio/fullscreen.test.ts [ tests/studio/fullscreen.test.ts ]
+Error: Transform failed with 1 error:
+/Users/danny/Documents/Apps/PiCar/picarx-companion/tests/studio/fullscreen.test.ts:61:8: ERROR: The symbol "stop" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/studio/fullscreen.test.ts:61:8
+  
+  The symbol "stop" has already been declared
+  59 |    native.invoke.mockRejectedValueOnce(new Error('capture unavailable'));
+  60 |    const seen: boolean[] = [];
+  61 |    const stop = fs.subscribeFullscreen(() => seen.push(fs.fullscreenState().on));
+     |          ^
+  62 |    fullscreenElement = {};
+  63 |    listeners.get('fullscreenchange')!();
+  
+ ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.28.1/node_modules/esbuild/lib/main.js:1748:15
+ ❯ node_modules/.pnpm/esbuild@0.28.1/node_modules/esbuild/lib/main.js:1017:50
+ ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.28.1/node_modules/esbuild/lib/main.js:884:9
+ ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.28.1/node_modules/esbuild/lib/main.js:939:12
+ ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.28.1/node_modules/esbuild/lib/main.js:862:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  07:02:52
+   Duration  105ms (worker 96%, environment 4%)
+

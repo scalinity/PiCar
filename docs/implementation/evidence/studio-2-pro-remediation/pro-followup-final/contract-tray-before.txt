@@ -1,0 +1,117 @@
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ❯ tests/studio/pack-contract.test.ts (42 tests | 15 failed) 274ms
+   ❯ runtime pack validation (42)
+     × rejects a rehashed null nested overlap with unchanged inventory 8ms
+     × rejects a rehashed primitive nested overlap with unchanged inventory 8ms
+     × rejects a rehashed missing identity nested overlap with unchanged inventory 7ms
+     × rejects a rehashed unknown identity nested overlap with unchanged inventory 7ms
+     × rejects a rehashed wrong variant nested overlap with unchanged inventory 7ms
+     × rejects a rehashed unplaced identity nested overlap with unchanged inventory 7ms
+     × rejects a rehashed missing volume nested overlap with unchanged inventory 7ms
+     × rejects a rehashed nested identity nested overlap with unchanged inventory 6ms
+     × rejects a rehashed nested volume nested overlap with unchanged inventory 7ms
+     × rejects a rehashed zero volume nested overlap with unchanged inventory 6ms
+     × rejects a rehashed negative volume nested overlap with unchanged inventory 6ms
+     × rejects non-finite in-memory overlap volume NaN 1ms
+     × rejects non-finite in-memory overlap volume Infinity 1ms
+     × rejects non-finite in-memory overlap volume -Infinity 1ms
+     × binds checked display overlaps to the placed definition and exact closure 8ms
+ ❯ tests/studio/tray-audit.test.ts (12 tests | 10 failed) 1084ms
+   × rejects rehashed Pi5 definition remapped to Zero against independent source data 95ms
+   × rejects rehashed hardware remapped to another valid definition against independent source data 91ms
+   × rejects rehashed tool remapped to another valid tool against independent source data 86ms
+   × rejects rehashed compensated canonical total against independent source data 88ms
+   × rejects rehashed compensated required/model total against independent source data 88ms
+   × rejects rehashed compensated modeled/tile total against independent source data 93ms
+   × rejects rehashed spare total against independent source data 89ms
+   × rejects rehashed solid variant membership against independent source data 102ms
+   × rejects rehashed tool variant membership against independent source data 88ms
+   × rejects rehashed required-use metadata against independent source data 88ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 25 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed null nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed primitive nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed missing identity nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed unknown identity nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed wrong variant nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed unplaced identity nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed missing volume nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed nested identity nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed nested volume nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed zero volume nested overlap with unchanged inventory
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects a rehashed negative volume nested overlap with unchanged inventory
+AssertionError: expected [] to include 'MANIFEST_DISPLAY_CHECKS rpi5 S02'
+ ❯ rejects tests/studio/pack-contract.test.ts:117:69
+    115|     const m = parsed();
+    116|     change(m);
+    117|     expect(await problems(await consistent(m, glbBytes), glbBytes)).to…
+       |                                                                     ^
+    118|   };
+    119|   it.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/25]⎯
+
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects non-finite in-memory overlap volume NaN
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects non-finite in-memory overlap volume Infinity
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects non-finite in-memory overlap volume -Infinity
+AssertionError: expected [] to include 'MANIFEST_DISPLAY_CHECKS rpi5 S02'
+ ❯ tests/studio/pack-contract.test.ts:135:33
+    133|     const m = parsed();
+    134|     m.variants.rpi5.steps[1].displayChecks[0].overlaps[0].volumeMm3 = …
+    135|     expect(manifestProblems(m)).toContain('MANIFEST_DISPLAY_CHECKS rpi…
+       |                                 ^
+    136|   });
+    137|   it('binds checked display overlaps to the placed definition and exac…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/25]⎯
+
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > binds checked display overlaps to the placed definition and exact closure
+AssertionError: expected [] to include 'MANIFEST_DISPLAY_CHECKS rpi5 S02'
+ ❯ rejects tests/studio/pack-contract.test.ts:117:69
+    115|     const m = parsed();
+    116|     change(m);
+    117|     expect(await problems(await consistent(m, glbBytes), glbBytes)).to…
+       |                                                                     ^
+    118|   };
+    119|   it.each([
+ ❯ tests/studio/pack-contract.test.ts:138:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/25]⎯
+
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed Pi5 definition remapped to Zero against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed hardware remapped to another valid definition against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed tool remapped to another valid tool against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed compensated canonical total against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed compensated required/model total against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed compensated modeled/tile total against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed spare total against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed solid variant membership against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed tool variant membership against independent source data
+ FAIL  tests/studio/tray-audit.test.ts > rejects rehashed required-use metadata against independent source data
+AssertionError: expected +0 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 0
+
+ ❯ tests/studio/tray-audit.test.ts:44:18
+     42| ])('rejects rehashed %s against independent source data', (_label, cha…
+     43|   const { status, report } = audit(change as (m: any) => void);
+     44|   expect(status).toBe(3);
+       |                  ^
+     45|   expect(report.variants.rpi5.invariant).toBe('FAILS');
+     46|   expect(report.variants.rpi5.disagreements.some((d: any) => d.class =…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/25]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  25 failed | 29 passed (54)
+   Start at  07:01:38
+   Duration  1.23s (tests 95%, transform 4%, import 1%)
+

@@ -1,3 +1,5 @@
+> Follow-up correction: the prior ZeroS00 acceptance was wrong and is superseded by final-source pro-followup-final01/02. The historical pan/performance records below remain supported and unchanged. See ../pro-followup-final/verification-notes.md for the current source/native/evidence closeout.
+
 # Final native continuation evidence
 
 This continuation uses native source HEAD 386813212c82029b6571fdf52d7ab03e8f50a170 and the unchanged final rounded HAT pack. No application, CAD, generated pack or Blender source was changed. The new debug bundle has M3 disabled, default Rust features and a fresh temporary incognito WebView. The owner database was not opened. Earlier native72/final80 records remain byte-for-byte historical evidence and retain their old dispositions.
@@ -12,7 +14,7 @@ Fullscreen transitions can temporarily place the window in an AppKit Space that 
 
 ## Evidence interpretation
 
-The accepted matrix is final-native-matrix.json. Every row combines owned-window pixels with route, actual board, manual, selection and transport evidence. S03 and S06 are Still Preview: no motion is expected and transport is disabled. S07 and S09 are Review, with no ordinary playback. S00 has no manual. Zero S01 playback was explicitly repeated in foreground (36/37); its initial 0.0 s capture02 is not advancing playback proof.
+The corrected matrix is final-native-matrix.json. Historical capture01 is REJECTED_WRONG_VARIANT_RENDER, unchanged; capture48 is LIMITED_CORROBORATION. Fresh pro-followup-final01/02 exclusively establish authoritative ZeroS00. The unaffected rows retain their old source/bundle identity. Every row combines owned-window pixels with route, actual board, manual, selection and transport evidence. S03 and S06 are Still Preview: no motion is expected and transport is disabled. S07 and S09 are Review, with no ordinary playback. S00 has no manual. Zero S01 playback was explicitly repeated in foreground (36/37); its initial 0.0 s capture02 is not advancing playback proof.
 
 Capture08 zoomed the scene because a drawer-scroll coordinate hit the canvas. It is retained as a limited setup probe; accepted Zero S04 uses moving capture07 and clear final capture49. Actual drawer scrolling was subsequently targeted by its AX container. Captures11/50 show the modeled battery and two tape tiles in the tray; the battery is not a tile. The guided S06 view focuses supplies, with the cumulative chassis only partly visible. The original prose in raw AX log11 is retained; the corrected interpretation is recorded in native-records.json.
 
