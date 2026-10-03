@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { studioHref, type StudioVariant } from '../../../lib/router';
 import { entryOf, type DisplayCheck, type DisplayDetail, type LoadedPack, type StepEntry, type Vec3, type VariantEntry } from '../assets/pack';
 import { vendorAgreement } from './fidelity';
+import { displayNotes } from './display-checks';
 import { ManualPanel } from './ManualPanel';
 import { manualPanel } from './manual-map';
 import { statesAt, type Phase, type Timeline } from '../motion/evaluate';
@@ -52,24 +53,6 @@ const ArtifactFile = ({ artifact }: { artifact: { path: string; sha256: string }
   <code title={artifact.sha256}>{artifact.path.split('/').pop()} ({artifact.sha256.slice(0, 10)})</code>
 );
 
-// Display-detail checks: large overlaps are findings; stud contacts in mounting holes are the hole-clearance class M7
-// records. A state the detailed model was never checked against says so, rather than reading as "no overlaps".
-function displayNotes(pack: LoadedPack, entry: StepEntry): string[] {
-  const notes: string[] = [];
-  for (const check of entry.displayChecks) {
-    const model = pack.manifest.definitions[check.definitionId].name.split(';')[0];
-    if (check.status === 'NOT_CHECKED') {
-      notes.push(`Detailed view: the detailed ${model} was not checked against this state, so any overlap it has here is unmeasured.`);
-      continue;
-    }
-    for (const c of check.overlaps.filter((o) => o.volumeMm3 > 10)) {
-      notes.push(`Detailed view: the ${name(pack, c.instanceId)} overlaps the detailed ${model} by ${Math.round(c.volumeMm3)} mm³. Its step pose was checked against a simpler shape, so this is recorded for the assembly work rather than hidden.`);
-    }
-    const small = check.overlaps.filter((o) => o.volumeMm3 <= 10);
-    if (small.length) notes.push(`Standoff studs touch the mounting-hole walls (up to ${Math.max(...small.map((c) => c.volumeMm3)).toFixed(1)} mm³), the hole-clearance case the assembly checks already record.`);
-  }
-  return notes;
-}
 
 function approachWords(axis: Vec3, metres: number): string {
   const mm = Math.round(metres * 1000);
