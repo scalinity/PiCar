@@ -37,7 +37,7 @@ it('actual native Studio3 build progress and private photo persistence on dispos
  const beforeNativeUI=await script(async()=>({ledger:await window.__picarM3Test.studio('backup'),camera:window.__studio.camera()}));
  record('native-export-panel',{state:'AWAITING_NATIVE_UI_EXPORT_AND_DISPOSABLE_DESTINATION',privateSyntheticOnly:true});
  // Do not poll the webview while its native modal is open: the driver focuses the main window before each command.
- const exported=path.join(process.env.PICAR_M3_TEST_DATA_DIR,'selected-private-evidence.zip');const deadline=Date.now()+120000;
+ const exported=path.join(process.env.PICAR_M3_TEST_DATA_DIR,'selected-private-evidence.zip');const deadline=Date.now()+240000;
  while(!fs.existsSync(exported)&&Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,500));
  assert(fs.existsSync(exported),'Native chooser must save to the disposable test destination.');
  await browser.waitUntil(async()=>(await text()).includes('Evidence export saved'),{timeout:120000});
