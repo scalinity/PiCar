@@ -24,6 +24,9 @@ export const loadV40Pdf = (url: string = V40_PDF_URL): Promise<PDFDocumentProxy>
       return pdfjs.getDocument({ data }).promise;
     })();
     docCache.set(url, p);
+    const attempt = p;
+    // A failed attempt never poisons the shared cache; the next explicit use retries and verifies bytes again.
+    void attempt.catch(() => { if (docCache.get(url) === attempt) docCache.delete(url); });
   }
   return p;
 };
