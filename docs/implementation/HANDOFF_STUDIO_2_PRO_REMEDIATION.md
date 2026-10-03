@@ -20,7 +20,7 @@ Current final native source HEAD b31bcfc7e89bbfb55a46bea6dc579267bf63ca57; binar
 
 | Finding | Final status | Evidence/disposition |
 |---|---|---|
-| F1 | CLOSED |27 exact generated snapshots; tracked-only isolatedPASS/FRESH/CURRENT |
+| F1 | CLOSED |27 exact generated snapshots; tracked-only isolatedPASS/FRESH/CURRENT;24 exact-byte buffer transport parts |
 | F2 | CLOSED | Persistence isolation retained; source boundary check remains narrow |
 | F3 | CLOSED | Variant selection preserved, browser and native both-direction switch |
 | F4 | CLOSED | Exact display/closure binding preserved; nested fields additionally checked |
@@ -34,7 +34,7 @@ Current final native source HEAD b31bcfc7e89bbfb55a46bea6dc579267bf63ca57; binar
 
 Validation: typecheckPASS; focused4files/66passes; fullunit24files/286passes; focusedbrowser13passes/1skip; fullbrowser101passes/2failures/1skip, FAIL—EXPLAINED (sameM3PDFbookmark expected1received2 at preservation.spec.ts42); packPASS/FRESH/CURRENT; Blender--checkPASS; trayHOLDS; freshM3disabled/incognito nativebuildPASS. Native capture-release is observed via OS Escape after Studioexit, with deterministic captureboolean/listener assertions; the native boolean is not directly queried. Exact race timing is not artificially forced natively.
 
-All53 full-viewport JPEGproxies are ≤211702bytes and bind exact original/proxy SHAs, dimensions, scaling and allowed claims. Actual connector base64 retrieval of a larger historical JPEG succeeded; exact final-ref retrieval is checked after the authorized publication and reported in the final closeout. No claim that transport-limited .blend/GLB was independently downloaded by Pro. Structured221-path local audit is published; all191images reviewed with method/limits disclosed.
+All53 full-viewport JPEGproxies are ≤211702bytes and bind exact original/proxy SHAs, dimensions, scaling and allowed claims. All53 were actually retrieved, decoded and hash-verified through the connector at073523; the final transport follow-up ref is rechecked after push.26of27 generated snapshots were retrieved; the remaining exact tessellation buffer now has24 base64 JSON parts≤197008bytes with local exact-byte roundtripPASS. Connector receipt and restoration instructions disclose the original empty-content/UTF-8 transport errors. No claim that transport-limited .blend/GLB was independently downloaded by Pro. Structured245-path local audit is published; all191images reviewed with method/limits disclosed. This final transport-only addition changes no source, native bundle, CAD, pack or presentation identity.
 
 READY FOR STUDIO 3
 
