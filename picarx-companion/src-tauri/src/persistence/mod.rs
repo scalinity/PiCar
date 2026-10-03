@@ -96,6 +96,29 @@ fn schema_session(v: &Value) -> Result<()> {
     require(validator.is_valid(v), "INVALID_SESSION_SCHEMA")
 }
 
+fn observation(r: &Value, g: &Value, session_id: &Value) -> Result<()> {
+    static VALIDATOR: std::sync::OnceLock<jsonschema::Validator> = std::sync::OnceLock::new();
+    let validator = VALIDATOR.get_or_init(|| {
+        let schema: Value = serde_json::from_str(include_str!("../../../../digital-twin/schemas/studio-observation.schema.json")).expect("observation schema");
+        jsonschema::options().should_validate_formats(true).build(&schema).expect("observation schema")
+    });
+    require(validator.is_valid(r), "INVALID_OBSERVATION")?;
+    require(r["sessionId"] == *session_id && r["variantId"] == g["variantId"]
+        && g["steps"].as_array().unwrap().iter().any(|s|s["id"]==r["stepId"])
+        && r["file"]["storageKey"] == format!("evidence/{}/{}",text(r,"sessionId")?,text(r,"id")?), "OBSERVATION_BINDING")?;
+    let instances=g["instances"].as_array().unwrap();
+    for instance in r["contextInstances"].as_array().unwrap(){
+        require(instances.iter().any(|i|i["id"]==*instance && i["variantIds"].as_array().unwrap().contains(&r["variantId"])),"OBSERVATION_BINDING")?;
+    }
+    let geometry=r["geometry"].as_array().unwrap();
+    for (n,entry) in geometry.iter().enumerate(){
+        require(r["contextInstances"].as_array().unwrap().contains(&entry["instanceId"])
+            && instances.iter().any(|i|i["id"]==entry["instanceId"]&&i["definitionId"]==entry["definitionId"])
+            && geometry[..n].iter().all(|i|i["instanceId"]!=entry["instanceId"]),"OBSERVATION_BINDING")?;
+    }
+    Ok(())
+}
+
 fn setup(v: &Value) -> Result<()> {
     keys(
         v,
@@ -458,6 +481,11 @@ fn event_authorization(c: &Value, old: Option<&Value>) -> Result<()> {
             keys(p, &["kind", "stepId"])?;
             require(steps.iter().any(|s| s["id"] == p["stepId"]), "STEP_ID")?;
         }
+        "observation" => {
+            keys(p, &["kind", "record"])?;
+            observation(&p["record"], g, &c["aggregateId"])?;
+            require(!s["observationIds"].as_array().unwrap().contains(&p["record"]["id"]),"OBSERVATION_BINDING")?;
+        }
         _ => return Err("EVENT_AUTHORIZATION".into()),
     }
     validate_write_surface(c, Some(old))?;
@@ -685,6 +713,9 @@ fn validate_write_surface(c: &Value, old: Option<&Value>) -> Result<()> {
         }
         "bookmark" => {
             expected["reviewStepId"] = p["stepId"].clone();
+        }
+        "observation" => {
+            expected["observationIds"].as_array_mut().unwrap().push(p["record"]["id"].clone());
         }
         _ => return Err("EVENT_AUTHORIZATION".into()),
     }
@@ -1069,6 +1100,9 @@ impl Repository {
                 o["graphHash"] == c["graphHash"] && o["modelHash"] == c["modelHash"],
                 "UNKNOWN_MODEL",
             )?;
+        }
+        if c["payload"]["kind"] == "observation" {
+            crate::evidence::verify(self.path.parent().ok_or("EVIDENCE_PATH")?, &c["payload"]["record"])?;
         }
         if c["payload"]["kind"] == "create" && !c["payload"]["forkOf"].is_null() {
             let source: Option<String> = tx

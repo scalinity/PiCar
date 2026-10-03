@@ -1,4 +1,4 @@
-// The Studio cannot record physical progress, follows the no-effect rule, and adds a route without moving others.
+// Only the narrow build-along adapter can record owner actions; ordinary viewer modules remain isolated.
 import { expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,11 +8,17 @@ const files = (dir: string): string[] => fs.readdirSync(dir, { withFileTypes: tr
 // The Studio's own modules, and the shared booklet loader its manual panel uses.
 const studioSources = [...files('src/features/assembly-3d'), 'src/pages/Studio.tsx', 'src/lib/v40-pdf.ts', 'src/lib/v40-pdf-identity.ts'];
 
-it('has no path to the session ledger, Setup persistence or repository; only the scoped native Escape command is allowed', () => {
+it('restricts persistence imports to the sole build-along adapter and keeps native Escape isolated', () => {
   for (const file of studioSources) {
     const text = fs.readFileSync(file, 'utf8');
     const imports = [...text.matchAll(/from\s+['"]([^'"]+)['"]|import\(\s*['"]([^'"]+)['"]\s*\)/g)].map((m) => m[1] ?? m[2]);
+    if(file.endsWith('/build-along.tsx')) {
+      expect(imports.filter(s=>/assembly-session|\/platform\//.test(s))).toEqual(expect.arrayContaining(['../assembly-session/store','../../platform/evidence']));
+      expect(text).not.toMatch(/\binvoke\(|localStorage|indexedDB|progress-store/);
+      continue;
+    }
     for (const spec of imports) expect(spec, file).not.toMatch(/assembly-session|progress-store|\/platform\/|repository|plugin-/);
+    if(!file.endsWith('/pages/Studio.tsx'))for(const spec of imports)expect(spec,file).not.toMatch(/build-along/);
     const checked = file.endsWith('/state/fullscreen.ts') ? text
       .replaceAll("invoke('studio_escape_capture', { enabled: true })", '')
       .replaceAll("invoke('studio_escape_capture', { enabled: false })", '') : text;

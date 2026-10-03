@@ -5,6 +5,7 @@ import type { Context } from '../../features/assembly-session/commands';
 import { canonical, hash } from '../../features/assembly-session/hash';
 import { validateBackup, validateStored, validateImportRecord } from '../validation';
 import { validateSetup } from '../../features/assembly-session/legacy';
+import { readPhoto } from '../evidence';
 const stores = ['aggregates', 'events', 'snapshots', 'results', 'imports'];
 const request = <T>(r: IDBRequest<T>): Promise<T> => new Promise((resolve, reject) => { r.onsuccess = () => resolve(r.result); r.onerror = () => reject(r.error); });
 const done = (t: IDBTransaction): Promise<void> => new Promise((resolve, reject) => { t.oncomplete = () => resolve(); t.onabort = () => reject(t.error ?? Error('IO_FAILURE')); t.onerror = () => {}; });
@@ -37,6 +38,13 @@ export async function openBrowserRepository(name = 'picarx.sessions', contexts: 
   async commit(input) {
    if(db.version>DATABASE_VERSION)throw Error('UNSUPPORTED_VERSION');
    const c: Command = structuredClone(input); validateCommand(c);
+   if(c.payload.kind==='observation'){
+    // Idempotent retries return the committed acknowledgment before consulting external evidence bytes.
+    const lookup=db.transaction('results'), finished=done(lookup);
+    const prior=await request(lookup.objectStore('results').get(c.commandId));await finished;
+    if(prior){if(prior.requestHash!==c.requestHash||prior.acknowledgment.aggregateId!==c.aggregateId)throw Error('COMMAND_ID_REUSE');return prior.acknowledgment;}
+    await readPhoto(c.payload.record);
+   }
    const context = c.graphHash ? contexts.get(c.graphHash) : undefined;
    if (c.graphHash && !context) throw Error('UNKNOWN_MODEL');
    if (!c.graphHash) validateSetup(c.proposal as import('../repository').Setup);

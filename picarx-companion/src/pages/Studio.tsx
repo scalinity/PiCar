@@ -1,9 +1,9 @@
-// Assembly Studio route: the full-viewport 3D view of the Studio pack. Presentation only: this module does not
-// import the assembly session store, so nothing here can record physical progress.
+// Studio routes intentional navigation through the narrow adapter; scene interactions remain presentation only.
 import { use, useMemo } from 'react';
 import { Box3, Mesh } from 'three';
 import { navigate, studioHref, type StudioVariant } from '../lib/router';
 import { loadPack } from '../features/assembly-3d/assets/pack';
+import { BuildAlong, bookmarkStudioStep, studioBoardHref, useBuildBoard } from '../features/assembly-3d/build-along';
 import { timelineFor } from '../features/assembly-3d/motion/evaluate';
 import { StudioScene, getViewport } from '../features/assembly-3d/scene/StudioScene';
 import { owned } from '../features/assembly-3d/scene/resources';
@@ -20,15 +20,18 @@ import '../styles/studio.css';
 
 const diagnostics = import.meta.env.DEV || /[?&]diagnostics\b/.test(location.hash);
 
-export default function Studio({ variant = 'rpi5', step: requested = 0 }: { variant?: StudioVariant; step?: number }) {
+export default function Studio({ variant = 'rpi5', step: requested }: { variant?: StudioVariant; step?: number }) {
   perf.openedAt ??= performance.now(); // the page's first render this session: its code is loaded, its pack not yet
   const pack = use(loadPack());
+  const board = useBuildBoard(variant);
+  const saved = Number(board.session?.reviewStepId.slice(-2));
+  const desired = requested ?? (saved >= 1 && saved <= 29 ? Math.min(saved,9) : 0);
   const fullscreen = useFullscreen();
   perf.load ??= pack.timings;
   const v = pack.manifest.variants[variant];
   // Every state the pack opens: the tray, Preview steps and Review steps. A closed step falls back to the one before it.
   const opened = [0, ...v.steps.filter((s) => s.mode !== 'closed').map((s) => s.printedNumber)];
-  const step = opened.includes(requested) ? requested : Math.max(...opened.filter((n) => n <= requested));
+  const step = opened.includes(desired) ? desired : Math.max(...opened.filter((n) => n <= desired));
   const timeline = useMemo(() => timelineFor(v, step, pack.manifest.timing), [v, step, pack]);
   let rootElement: HTMLElement | null = null;
 
@@ -39,10 +42,10 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
     // the route commit (which removes the manual) and enterStep in the frame loop.
     if (step === 0 && getStudioState().manualOpen) setManualOpen(false);
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement && e.target.type !== 'range') return;
+      if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement && e.target.type !== 'range') return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const s = getStudioState(), d = timeline.duration;
-      const go = (n: number) => { if (opened.includes(n)) navigate(studioHref(variant, n)); };
+      const go = (n: number) => { if (opened.includes(n)) { bookmarkStudioStep(variant,n); navigate(studioHref(variant, n)); } };
       switch (e.key) {
         case ' ': e.preventDefault(); if (d > 0) (s.playing ? pause() : play(d)); break;
         case 'ArrowRight': if (e.target instanceof HTMLInputElement) return; if (d > 0) seek(Math.min(d, s.t + 0.25)); break;
@@ -120,11 +123,11 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
       <div className="studio-viewport">
         <StudioScene pack={pack} variant={variant} step={step} />
       </div>
-      <Header pack={pack} variant={variant} step={step} root={() => rootElement} />
+      <Header pack={pack} variant={variant} step={step} root={() => rootElement} boardHref={(v)=>studioBoardHref(v,step)} />
       <PerfHud />
       <ViewTools pack={pack} variant={variant} step={step} />
-      <Drawer pack={pack} variant={variant} step={step} requestedStep={requested} timeline={timeline} />
-      <Dock pack={pack} variant={variant} step={step} timeline={timeline} />
+      <Drawer pack={pack} variant={variant} step={step} requestedStep={desired} timeline={timeline} buildAlong={<BuildAlong key={`${variant}/${step}`} pack={pack} variant={variant} step={step} />} />
+      <Dock pack={pack} variant={variant} step={step} timeline={timeline} onStep={(n)=>bookmarkStudioStep(variant,n)} />
       <ManualOverlay variant={variant} step={step} />
       <p className="studio-sr" aria-live="polite">{studioSummary(pack, variant, step)}</p>
     </div>

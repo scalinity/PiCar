@@ -10,6 +10,6 @@ test('real browser IndexedDB executes common native/browser fault contract',asyn
   const {browserControls}=await import(String('/tests/session/browser-controls.ts')) as typeof import('../session/browser-controls');const control=browserControls();try{return await runAdapterContract(control);}finally{control.cleanup();}
  });
  for(const[name,status]of Object.entries(results))expect(status,name).toBe('PASS');
- fs.writeFileSync('../docs/implementation/evidence/m3/browser-parity-'+browserName+'.json',JSON.stringify({adapter:'IndexedDB',browserName,version:browser.version(),results},null,2)+'\n');
+ fs.writeFileSync((process.env.PICAR_BROWSER_EVIDENCE_DIR??'../docs/implementation/evidence/m3')+'/browser-parity-'+browserName+'.json',JSON.stringify({adapter:'IndexedDB',browserName,version:browser.version(),results},null,2)+'\n');
  await test.info().attach('adapter-contract',{body:JSON.stringify({adapter:'IndexedDB',browserName,version:browser.version(),results},null,2),contentType:'application/json'});
 });

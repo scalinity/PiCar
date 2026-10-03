@@ -69,8 +69,8 @@ export async function updateSetup(change:(old:Setup)=>Setup):Promise<void>{
  if(retryCommand)throw Error('RETRY_PENDING');const setup=change(state.setup);validateSetup(setup);
  await commit(prepareCommand(setupAggregate,{kind:'setup',setup},newId('SETUP')));
 }
-export async function createSession(variant:string,forkOf:string|null=null):Promise<AssemblySession>{
- if(!state.storageReady)throw Error('READ_ONLY_RECOVERY');const ctx=await acceptedContext(variant);const session=newSession(newId('SESSION'),ctx);
+export async function createSession(variant:string,forkOf:string|null=null,sessionId=newId('SESSION')):Promise<AssemblySession>{
+ if(!state.storageReady)throw Error('READ_ONLY_RECOVERY');const ctx=await acceptedContext(variant);const session=newSession(sessionId,ctx);
  if(forkOf && !state.sessions.some(s=>s.id===forkOf))throw Error('UNKNOWN_FORK_SOURCE');
  await commit(prepareCommand(null,{kind:'create',session,forkOf},newId('CREATE'),ctx));return state.selected!.snapshot as AssemblySession;
 }
@@ -93,6 +93,7 @@ export async function reconcileAssembly():Promise<void>{
  await commit(prepareCommand(setupAggregate,{kind:'reconcile',sessionId:state.selected.id,sessionRevision:state.selected.revision,graphHash:state.selected.graphHash!},newId('RECONCILE')));
 }
 export async function exportData():Promise<Backup>{if(!repository)throw Error('STORAGE_UNAVAILABLE');return repository.backup();}
+export async function sessionHistory(id:string):Promise<import('../../platform/repository').Stored|null>{if(!repository)throw Error('STORAGE_UNAVAILABLE');return repository.load(id);}
 export async function importData(raw:string):Promise<void>{
  if(state.pending||retryCommand)throw Error('RETRY_PENDING');
  const b=parse(raw) as Backup;

@@ -8,6 +8,7 @@ fn main() {
     }
     #[cfg(feature = "m3-native-test")]
     const COMMANDS: &[&str] = &[
+        "studio_escape_capture",
         "load_companion_state",
         "list_companion_aggregates",
         "list_progress_imports",
@@ -16,11 +17,13 @@ fn main() {
         "import_session",
         "recover_session",
         "quarantine_legacy_raw",
+        "studio_copy_photo", "studio_read_photo", "studio_export_evidence",
         "m3_test_fresh",
         "m3_test_fault",
     ];
     #[cfg(all(feature = "m3-persistence", not(feature = "m3-native-test")))]
     const COMMANDS: &[&str] = &[
+        "studio_escape_capture",
         "load_companion_state",
         "list_companion_aggregates",
         "list_progress_imports",
@@ -29,6 +32,7 @@ fn main() {
         "import_session",
         "recover_session",
         "quarantine_legacy_raw",
+        "studio_copy_photo", "studio_read_photo", "studio_export_evidence",
     ];
     #[cfg(feature = "m3-persistence")]
     let attributes = tauri_build::Attributes::new().app_manifest(

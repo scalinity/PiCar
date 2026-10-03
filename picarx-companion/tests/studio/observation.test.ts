@@ -1,0 +1,16 @@
+import { expect, it } from 'vitest';
+import fs from 'node:fs';
+import { photoType, validateObservation, verifyPhoto, observationRevision, poseHash, type StudioObservation } from '../../src/features/assembly-session/observation';
+import { evidenceZip } from '../../src/features/assembly-session/evidence-zip';
+import { photoHash } from '../../src/platform/evidence';
+const bytes=new Uint8Array([137,80,78,71,13,10,26,10,1,2,3]);
+const pack=JSON.parse(fs.readFileSync('src/generated/studio/manifest.json','utf8'));
+const step=pack.variants.rpi5.steps[0], instance=step.stepParts[0].instanceId, definition=pack.instances[instance].definitionId;
+const record=(id='TEST-PHOTO'):StudioObservation=>({contract:'picar-studio-observation/1',id,sessionId:'TEST-SESSION',variantId:'rpi5',stepId:step.stepId,createdAt:'2026-10-03T12:00:00.000Z',file:{sha256:photoHash(bytes),byteLength:bytes.length,mediaType:'image/png',storageKey:`evidence/TEST-SESSION/${id}`},packId:pack.packId,contextInstances:[instance],geometry:[{instanceId:instance,definitionId:definition,instructionalSha256:pack.definitions[definition].artifact.sha256,displayedSha256:pack.definitions[definition].display?.artifact.sha256??null}],poseSha256:poseHash(step.placements),sourceSha256:step.source.sha256,closureSha256:step.source.closureRfc8785Sha256??null});
+it('hashes bytes and retains old revision as historical provenance',()=>{const r=record();validateObservation(r);verifyPhoto(r,bytes);expect(observationRevision(r,pack.packId)).toBe('Current digital revision');expect(observationRevision(r,'a'.repeat(64))).toBe('Taken against an earlier digital revision');expect(()=>verifyPhoto(r,new Uint8Array([...bytes,4]))).toThrow('EVIDENCE_CORRUPT');expect(()=>photoType(new Uint8Array([1,2,3]))).toThrow('PHOTO_TYPE');});
+it('rejects paths, unknown fields, wrong media and ambiguous context',()=>{for(const mutate of [(r:any)=>r.file.storageKey='/owner/photo.png',(r:any)=>r.privatePath='/owner/photo.png',(r:any)=>r.contextInstances.push(instance),(r:any)=>r.geometry[0].instanceId='TEST-OTHER',(r:any)=>r.file.mediaType='image/heic']){const r=record();mutate(r);expect(()=>validateObservation(r)).toThrow();}});
+it('exports deterministic selected bytes with a coherent manifest and omits unselected evidence',()=>{
+ const selected=record(),unselected=record('TEST-UNSELECTED');const out=evidenceZip([{record:selected,bytes}]);expect(out).toEqual(evidenceZip([{record:selected,bytes}]));
+ const v=new DataView(out.buffer);let p=0;const entries:Record<string,Uint8Array>={};while(v.getUint32(p,true)===0x04034b50){const size=v.getUint32(p+18,true),nameSize=v.getUint16(p+26,true),extra=v.getUint16(p+28,true);const name=new TextDecoder().decode(out.subarray(p+30,p+30+nameSize));const start=p+30+nameSize+extra;entries[name]=out.slice(start,start+size);p=start+size;}
+ expect(Object.keys(entries)).toEqual(['photos/TEST-PHOTO.png','manifest.json']);expect(entries['photos/TEST-PHOTO.png']).toEqual(bytes);const manifest=JSON.parse(new TextDecoder().decode(entries['manifest.json']));expect(manifest.observations).toEqual([selected]);expect(new TextDecoder().decode(out)).not.toContain(unselected.id);expect(()=>evidenceZip([])).toThrow('EXPORT_SELECTION');
+});

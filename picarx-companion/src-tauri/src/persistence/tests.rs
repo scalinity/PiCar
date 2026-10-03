@@ -243,3 +243,20 @@ fn independent_connections_exactly_one_writer_wins() {
         2
     );
 }
+
+#[test]
+fn studio_observation_file_binding_atomicity_retry_and_historical_revision() {
+    let f=fixture();let tmp=Temp::new();let mut r=tmp.repo("studio.sqlite3");let create=&f["journeys"][1][0];commit(&mut r,create);
+    let bytes=[137,80,78,71,13,10,26,10,1,2,3];
+    let sha="a".repeat(64);let file=json!({"sha256":format!("{:x}",Sha256::digest(bytes)),"byteLength":bytes.len(),"mediaType":"image/png","storageKey":"evidence/TEST-SESSION-RPI5/TEST-OBSERVATION"});
+    let record=json!({"contract":"picar-studio-observation/1","id":"TEST-OBSERVATION","sessionId":"TEST-SESSION-RPI5","variantId":"rpi5","stepId":"PX-V40-STEP-01","createdAt":"2026-10-03T12:00:00Z","file":file,"packId":sha,"contextInstances":["PX-V40-INS-PLATE-A-001"],"geometry":[{"instanceId":"PX-V40-INS-PLATE-A-001","definitionId":"PX-V40-DEF-PLATE-A","instructionalSha256":sha,"displayedSha256":null}],"poseSha256":sha,"sourceSha256":sha,"closureSha256":null});
+    let mut c=create.clone();c["commandId"]=json!("TEST-STUDIO-OBSERVATION");c["expectedRevision"]=json!(1);c["previousHash"]=create["nextHash"].clone();c["payload"]=json!({"kind":"observation","record":record});c["proposal"]["revision"]=json!(2);c["proposal"]["observationIds"]=json!(["TEST-OBSERVATION"]);
+    let rehash=|c:&mut Value|{c["nextHash"]=json!(hash("aggregate",&c["proposal"]).unwrap());c.as_object_mut().unwrap().remove("requestHash");c["requestHash"]=json!(hash("command",c).unwrap());};rehash(&mut c);
+    reject(&mut r,&c,"EVIDENCE_MISSING");assert_eq!(r.load("TEST-SESSION-RPI5").unwrap()["aggregate"]["revision"],1);
+    crate::evidence::copy(&tmp.0,"TEST-SESSION-RPI5","TEST-OBSERVATION",&bytes).unwrap();
+    let mut bad=c.clone();bad["payload"]["record"]["file"]["sha256"]=json!("b".repeat(64));rehash(&mut bad);reject(&mut r,&bad,"EVIDENCE_CORRUPT");
+    let ack=commit(&mut r,&c);assert_eq!(commit(&mut r,&c),ack);
+    let stored=r.load("TEST-SESSION-RPI5").unwrap();assert_eq!(stored["aggregate"]["snapshot"]["confirmationRecords"],json!([]));assert_eq!(stored["events"][1]["action"]["record"]["packId"],"a".repeat(64));
+    let evidence=crate::evidence::path(&tmp.0,"TEST-SESSION-RPI5","TEST-OBSERVATION").unwrap();std::fs::remove_file(evidence).unwrap();assert_eq!(commit(&mut r,&c),ack);crate::evidence::copy(&tmp.0,"TEST-SESSION-RPI5","TEST-OBSERVATION",&bytes).unwrap();
+    drop(r);let reopened=tmp.repo("studio.sqlite3");assert_eq!(reopened.load("TEST-SESSION-RPI5").unwrap(),stored);assert_eq!(crate::evidence::verify(&tmp.0,&record).unwrap(),bytes);
+}

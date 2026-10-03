@@ -213,3 +213,15 @@
 @media (prefers-reduced-motion: reduce) {
   .studio-drawer, .studio-group summary::before { transition: none; }
 }
+
+.studio-build { border-block: 1px solid #383b40; padding-block: 12px; margin-block: 12px; }
+.studio-build p { margin-block: 8px; }
+.studio-build-check { display: block; margin-block: 10px; font-size: 12px; line-height: 1.5; }
+.studio-build-check input[type=checkbox] { margin-right: 8px; accent-color: #a8bfbd; }
+.studio-build textarea { display: block; box-sizing: border-box; width: 100%; min-height: 76px; margin-top: 6px; padding: 10px 12px; border: 1px solid var(--s-line); border-radius: 10px; background: var(--s-raised); color: var(--s-text); font: inherit; line-height: 1.5; resize: none; }
+.studio-build textarea:focus-visible { outline: 2px solid var(--s-teal); outline-offset: 2px; }
+.studio-build input[type=file] { display: block; box-sizing: border-box; width: 100%; margin-top: 6px; padding: 6px; border: 1px solid var(--s-line); border-radius: 10px; background: var(--s-raised); color: var(--s-text-2); font: inherit; color-scheme: dark; }
+.studio-build input[type=file]::file-selector-button { margin-right: 10px; padding: 6px 10px; border: 1px solid var(--s-line); border-radius: 7px; background: var(--s-panel); color: var(--s-teal); font: inherit; cursor: pointer; }
+.studio-build input[type=file]::-webkit-file-upload-button { margin-right: 10px; padding: 6px 10px; border: 1px solid var(--s-line); border-radius: 7px; background: var(--s-panel); color: var(--s-teal); font: inherit; cursor: pointer; }
+.studio-build button:disabled { opacity: .5; cursor: wait; }
+.studio-build code { display: block; color: #a8bfbd; }

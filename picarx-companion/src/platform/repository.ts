@@ -1,4 +1,5 @@
 import type { AssemblySession } from '../generated/twin/contracts';
+import type { StudioObservation } from '../features/assembly-session/observation';
 export const DATABASE_VERSION = 1;
 export const LIMIT = 8 * 1024 * 1024;
 export type Setup = { steps: Record<string, 'done'>; checks: Record<string, boolean>; lastRoute: string; pdfLastPage: number; legacyAssemblyReportedDone: boolean };
@@ -9,6 +10,7 @@ export type Action =
  | { kind: 'complete'; stepId: string; statement: string; checkedRuleIds: string[]; createdAt: string }
  | { kind: 'invalidate'; stepId: string; servoInstanceId: string | null; reason: 'undo' | 'movement' | 'replacement' | 'reindex' | 'disassembly' | 'dependency' | 'procedure'; createdAt: string }
  | { kind: 'bookmark'; stepId: string }
+ | { kind: 'observation'; record: StudioObservation }
  | { kind:'reconcile'; sessionId:string; sessionRevision:number; graphHash:string }
  | { kind: 'setup'; setup: Setup }
  | { kind: 'legacy'; record: ImportRecord; setup: Setup | null; choice: 'initial' | 'keepNew' | 'recovery' };

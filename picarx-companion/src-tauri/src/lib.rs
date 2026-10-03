@@ -4,6 +4,8 @@ mod commands;
 pub mod persistence;
 #[cfg(feature = "m3-persistence")]
 mod strict_json;
+#[cfg(feature = "m3-persistence")]
+mod evidence;
 #[cfg(target_os = "macos")]
 mod studio_escape;
 use tauri::{Manager, PhysicalPosition, PhysicalSize};
@@ -116,6 +118,7 @@ pub fn run() {
         commands::import_session,
         commands::recover_session,
         commands::quarantine_legacy_raw
+        ,commands::studio_copy_photo,commands::studio_read_photo,commands::studio_export_evidence
     ]);
     #[cfg(feature = "m3-native-test")]
     let builder = builder.invoke_handler(tauri::generate_handler![
@@ -128,6 +131,7 @@ pub fn run() {
         commands::import_session,
         commands::recover_session,
         commands::quarantine_legacy_raw,
+        commands::studio_copy_photo,commands::studio_read_photo,commands::studio_export_evidence,
         commands::m3_test_fresh,
         commands::m3_test_fault
     ]);

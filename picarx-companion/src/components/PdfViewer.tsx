@@ -2,12 +2,16 @@ import { useState } from 'react';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { update, useProgress } from '../lib/progress-store';
 import { forgetV40Pdf, loadV40Pdf } from '../lib/v40-pdf';
+import { M3_ENABLED } from '../lib/m3-enabled';
+import { useCompanion } from '../features/assembly-session/store';
 
 // Loading starts on first mount (ref callback), not at module import.
 const loadDoc = loadV40Pdf;
 
 export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?: number }) {
   const { pdfLastPage } = useProgress();
+  const storage = useCompanion();
+  const saving = requestedPage === undefined && M3_ENABLED && (storage.pending || !storage.storageReady || storage.retryAvailable);
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [failed, setFailed] = useState(false);
   const [zoom, setZoom] = useState(1.2);
@@ -32,7 +36,7 @@ export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?:
     >
       <p>Z0104V40 · exact locked booklet bytes · owner photos withheld</p>
       <div className="pdf-toolbar">
-        <button className="button" disabled={!doc || page <= 1} onClick={() => setPage(page - 1)}>
+        <button className="button" disabled={!doc || saving || page <= 1} onClick={() => setPage(page - 1)}>
           ← Prev
         </button>
         <span className="pdf-pageinfo">
@@ -42,6 +46,7 @@ export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?:
             min={1}
             max={doc?.numPages ?? 1}
             value={page}
+            disabled={saving}
             onChange={(e) => {
               const n = parseInt(e.target.value, 10);
               if (doc && n >= 1 && n <= doc.numPages) setPage(n);
@@ -49,7 +54,7 @@ export function PdfViewer({ src, requestedPage }: { src: string; requestedPage?:
           />{' '}
           of {doc?.numPages ?? '…'}
         </span>
-        <button className="button" disabled={!doc || !!(doc && page >= doc.numPages)} onClick={() => setPage(page + 1)}>
+        <button className="button" disabled={!doc || saving || !!(doc && page >= doc.numPages)} onClick={() => setPage(page + 1)}>
           Next →
         </button>
         <span className="pdf-zoom">

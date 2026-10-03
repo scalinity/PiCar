@@ -7,6 +7,7 @@ import { validateSetup } from './legacy';
 import { LIMIT } from '../../platform/repository';
 import { projectPrefix } from '../../domain/assembly/reducer';
 import { validateGraphReferences } from '../../domain/assembly/references';
+import { validateObservation } from './observation';
 export type Context = { graph: CompiledGraph; registry: RuntimeRegistry; evidenceHash: string; procedureText: Record<string, string> };
 const fail = (ok: unknown, code: string): void => { if (!ok) throw Error(code); };
 function payloadId(op:AssemblyOperation,key:string):string{const v=op.payload[key];if(typeof v!=='string')throw Error('CONDITION_PAYLOAD');return v;}
@@ -80,6 +81,10 @@ export function applyEvent(s0: AssemblySession | null, action: Action, commandId
   for (const r of [...s.procedureAcknowledgments, ...s.zeroingAttestations]) if (affected.has(ctx.graph.operations.find(o => o.id === r.operationId)!.stepId) && active(r)) r.invalidationEventRef = ref;
   for (const e of s.servoEpochs) if (servos.includes(e.servoInstanceId)) e.epoch++;
   s.invalidationEventIds.push(commandId); s.reviewStepId = action.stepId;
+ } else if (action.kind === 'observation') {
+  validateObservation(action.record,ctx);
+  fail(action.record.sessionId === s.id && !s.observationIds.includes(action.record.id), 'OBSERVATION_BINDING');
+  s.observationIds.push(action.record.id);
  } else if (action.kind === 'bookmark') { fail(ctx.graph.steps.some(t => t.id === action.stepId), 'STEP_ID'); s.reviewStepId = action.stepId; }
  else throw Error('SESSION_ACTION');
  s.revision = revision; binding(s, ctx); return s;

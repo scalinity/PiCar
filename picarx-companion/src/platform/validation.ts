@@ -4,6 +4,7 @@ import { replay, validateCommand } from '../features/assembly-session/commands';
 import { canonical, hash, rawHash, bytes } from '../features/assembly-session/hash';
 import { validateSetup,captureLegacy } from '../features/assembly-session/legacy';
 import { LIMIT, DATABASE_VERSION } from './repository';
+import { validateObservation } from '../features/assembly-session/observation';
 export function exact(v:unknown,fields:string[]):void {
  if(!v || typeof v!=='object' || Array.isArray(v) || Object.keys(v).sort().join(',')!==fields.sort().join(','))throw Error('INVALID_SCHEMA');
 }
@@ -12,9 +13,10 @@ export function validateImportRecord(r:ImportRecord):void {
  if(typeof r.raw!=='string'||typeof r.sourceOrigin!=='string'||r.sourceOrigin.length>4096||r.sourceKey!=='picarx.v1'||r.migrationVersion!==1||!['adopted','quarantined','divergent','recovery'].includes(r.status)||typeof r.reason!=='string'||r.reason.length>4096||rawHash(r.raw)!==r.rawHash||r.id!==rawHash(`${r.sourceOrigin}\n${r.sourceKey}\n${r.rawHash}\n1`))throw Error('LEGACY_HASH');
 }
 export function validateAction(a:Action):void {
- const fields={create:['session','forkOf'],condition:['record'],complete:['stepId','statement','checkedRuleIds','createdAt'],invalidate:['stepId','servoInstanceId','reason','createdAt'],bookmark:['stepId'],reconcile:['sessionId','sessionRevision','graphHash'],setup:['setup'],legacy:['record','setup','choice']} as const;
+ const fields={create:['session','forkOf'],condition:['record'],complete:['stepId','statement','checkedRuleIds','createdAt'],invalidate:['stepId','servoInstanceId','reason','createdAt'],bookmark:['stepId'],observation:['record'],reconcile:['sessionId','sessionRevision','graphHash'],setup:['setup'],legacy:['record','setup','choice']} as const;
  if(!a || !(a.kind in fields))throw Error('EVENT_AUTHORIZATION');
  exact(a,['kind',...fields[a.kind]]);
+ if(a.kind==='observation')validateObservation(a.record);
  if(a.kind==='reconcile'&&(!/^(PX|TEST)-[A-Z0-9-]+$/.test(a.sessionId)||!Number.isSafeInteger(a.sessionRevision)||a.sessionRevision<1||!/^[0-9a-f]{64}$/.test(a.graphHash)))throw Error('INVALID_RECONCILIATION');
  if(a.kind==='setup')validateSetup(a.setup);
  if(a.kind==='legacy'){validateImportRecord(a.record);const captured=captureLegacy(a.record.raw,a.record.sourceOrigin,a.record.sourceKey);if(canonical(captured.setup)!==canonical(a.setup))throw Error('LEGACY_SETUP_MISMATCH');if(a.setup!==null)validateSetup(a.setup);if(!['initial','keepNew','recovery'].includes(a.choice))throw Error('MIGRATION_CHOICE');}
