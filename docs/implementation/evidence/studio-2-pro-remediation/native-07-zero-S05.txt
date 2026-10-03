@@ -1,0 +1,156 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/5
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/5
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/5
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 5 of 29 · Raspberry Pi Zero 2 W
+					27 heading Install the two drive motors, Value: 2
+						28 text Install the two drive motors
+					29 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					30 container Printed manual
+						31 heading Printed manual, Value: 3
+							32 text Printed manual
+						33 button Enlarge
+						34 image Printed Step 5 / rpi4, rpi5, rpi-zero-2-w, page 1 of the V40 booklet
+						35 text Printed Step 5 · rpi4, rpi5, rpi-zero-2-w · page 1 of the V40 booklet
+					36 container Parts in this step
+						37 heading In this step, Value: 3
+							38 text In this step
+						39 container
+							40 container Each M3 nut
+								41 toggle button M3 nut×2 moves toward the robot’s left 12 mm into place, Value: off
+								42 container Each M3 nut
+									43 toggle button 1, Help: PX-V40-INS-M3-NUT-001, Value: off
+									44 toggle button 2, Help: PX-V40-INS-M3-NUT-002, Value: off
+							45 container Each M3 nut
+								46 toggle button M3 nut×2 moves toward the robot’s right 12 mm into place, Value: off
+								47 container Each M3 nut
+									48 toggle button 3, Help: PX-V40-INS-M3-NUT-003, Value: off
+									49 toggle button 4, Help: PX-V40-INS-M3-NUT-004, Value: off
+							50 container Each M3x25 screw
+								51 toggle button M3x25 screw×2 moves toward the robot’s right 30 mm into place, Value: off
+								52 container Each M3x25 screw
+									53 toggle button 1, Help: PX-V40-INS-M3X25-SCREW-001, Value: off
+									54 toggle button 2, Help: PX-V40-INS-M3X25-SCREW-002, Value: off
+							55 container Each M3x25 screw
+								56 toggle button M3x25 screw×2 moves toward the robot’s left 30 mm into place, Value: off
+								57 container Each M3x25 screw
+									58 toggle button 3, Help: PX-V40-INS-M3X25-SCREW-003, Value: off
+									59 toggle button 4, Help: PX-V40-INS-M3X25-SCREW-004, Value: off
+							60 toggle button Left TT motor moves up 30 mm into place, Value: on
+							61 toggle button Right TT motor moves up 30 mm into place, Value: off
+							62 container Each Spring washer
+								63 toggle button Spring washer×2 moves toward the robot’s left 12 mm into place, Value: off
+								64 container Each Spring washer
+									65 toggle button 1, Help: PX-V40-INS-SPRING-WASHER-001, Value: off
+									66 toggle button 2, Help: PX-V40-INS-SPRING-WASHER-002, Value: off
+							67 container Each Spring washer
+								68 toggle button Spring washer×2 moves toward the robot’s right 12 mm into place, Value: off
+								69 container Each Spring washer
+									70 toggle button 3, Help: PX-V40-INS-SPRING-WASHER-003, Value: off
+									71 toggle button 4, Help: PX-V40-INS-SPRING-WASHER-004, Value: off
+						72 heading Works on, Value: 4
+							73 text Works on
+						74 toggle button Plate A already in place, Value: off
+						75 heading Tools, Value: 4
+							76 text Tools
+						77 container
+							78 toggle button Screwdriver 1 kit tool, listed as a tile, Value: off
+							79 toggle button Screwdriver 2 kit tool, listed as a tile, Value: off
+							80 toggle button Wrench kit tool, listed as a tile, Value: off
+					81 container From the step record
+						82 heading From the step record, Value: 3
+							83 text From the step record
+						84 description list
+							85 text Parts
+							86 text TT motor ×2; separate left/right role instances.
+							87 text Hardware
+							88 text M3x25 screw ×4; spring washer ×4; M3 nut ×4.
+							89 text Tools
+							90 text Matched screwdriver and kit wrench; no assumed wrench size or torque.
+							91 text Orientation
+							92 text Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role.
+						93 text Caution Motor wires face inward, as explicitly printed. Robot left/right, not viewer left/right, names the role.
+						94 summary Connection details, Value: off
+							95 text Connection details
+					96 container Selected part
+						97 heading Left TT motor, Value: 3
+							98 text Left TT motor
+						99 description list
+							100 text Definition
+							101 container
+								102 text TT Motor left role PX-V40-DEF-MOTOR-LEFT
+							103 text Instance
+							104 text PX-V40-INS-MOTOR-LEFT-001
+							105 text Inventory
+							106 text Motors and servos, first introduced in step 5
+							107 text Now
+							108 text Installed in this step’s pose
+							109 text Shape
+							110 container
+								111 text M5 instructional proxy: simplified presentation shape, non-engineering. Shown and checked as this shape. PX-V40-DEF-MOTOR-LEFT.brep (c807062458)
+								112 container c8070624580bcadc7977fc7474e3cbb63050c56ede728aab4e481d590a7b2f53
+							113 text Pose from
+							114 container 50be01ef43ff9aac5444f3774d1fc6bf937af3c101c44acde0e5f7418a09e5d3
+								115 text rpi-zero-2-w-S05-closure.json
+						116 button Frame this part
+					117 container Status
+						118 description list
+							119 text Assembly check
+							120 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							121 text Your car
+							122 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						123 summary Source limitations (24), Value: off
+							124 text Source limitations (24)
+						125 container
+							126 text Pack abefb75fea06 from chain run s2pro-01 (source mode)
+							127 container abefb75fea062a259fada4fe902200ab7183fa3c61be068a08b32e18d3f3f374
+				128 container Step controls
+					129 container Steps
+						130 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						131 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						132 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						133 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						134 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						135 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						136 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						137 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						138 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						139 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					140 button Rewind
+					141 button Play step, Help: Play step (Space)
+					142 button Replay from the start
+					143 slider (settable, float) Step timeline, Value: 5, Details: 5.0 s of 5.0 s
+						144 value indicator 5
+				145 text Step 5: Install the two drive motors. Preview
+146 menu bar
+	147 picarx-companion
+	148 File
+	149 Edit
+	150 View
+	151 Window
+	152 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/5

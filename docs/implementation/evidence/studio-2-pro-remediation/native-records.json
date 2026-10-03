@@ -1,0 +1,412 @@
+[
+ {
+  "name": "00-windowed-pi5-tray",
+  "note": "Initial launch fitted and centred; native incognito, no M3 feature, pack abefb75fea06.",
+  "ax": "native-00-windowed-pi5-tray.txt",
+  "capture": "captures/00-windowed-pi5-tray.png"
+ },
+ {
+  "name": "01-zero-S00",
+  "note": "Zero tray 47=41+6, transport disabled, no manual panel, Wrench tile selected.",
+  "ax": "native-01-zero-S00.txt",
+  "capture": "captures/01-zero-S00.png"
+ },
+ {
+  "name": "02-zero-S01",
+  "note": "S01 Preview; correct Zero page1 panel, playback reaches4.0s, Plate A selected.",
+  "ax": "native-02-zero-S01.txt",
+  "capture": "captures/02-zero-S01.png"
+ },
+ {
+  "name": "03-zero-S01-exploded",
+  "note": "Exploded S01 replay ran through the existing workpiece bring-in without an invented approach; numerical boundary proof is in the both-variant unit test.",
+  "ax": "native-03-zero-S01-exploded.txt",
+  "capture": "captures/03-zero-S01-exploded.png"
+ },
+ {
+  "name": "04-zero-S02",
+  "note": "S02 Preview, Zero board-specific page1 panel, playback/selection available, selected board identifies Zero.",
+  "ax": "native-04-zero-S02.txt",
+  "capture": "captures/04-zero-S02.png"
+ },
+ {
+  "name": "05-zero-S03-still",
+  "note": "S03 Still Preview, correct Zero page1 panel,0s disabled transport, ribbon tile selected.",
+  "ax": "native-05-zero-S03-still.txt",
+  "capture": "captures/05-zero-S03-still.png"
+ },
+ {
+  "name": "06-zero-S04",
+  "note": "S04 Preview with Zero-specific page1 panel, HAT selected and transport available.",
+  "ax": "native-06-zero-S04.txt",
+  "capture": "captures/06-zero-S04.png"
+ },
+ {
+  "name": "07-zero-S05",
+  "note": "S05 Preview, shared page1 panel, motor selected;5.0s transport available.",
+  "ax": "native-07-zero-S05.txt",
+  "capture": "captures/07-zero-S05.png"
+ },
+ {
+  "name": "08-zero-S06-still",
+  "note": "S06 Still Preview, shared page2 panel,0s disabled transport, battery selected in tray.",
+  "ax": "native-08-zero-S06-still.txt",
+  "capture": "captures/08-zero-S06-still.png"
+ },
+ {
+  "name": "09-zero-S07-review",
+  "note": "S07 Review, page2 manual, battery selected;Space does not play. Battery lead/HAT connection remains blocked, no timeline.",
+  "ax": "native-09-zero-S07-review.txt",
+  "capture": "captures/09-zero-S07-review.png"
+ },
+ {
+  "name": "10-zero-S08-dependency",
+  "note": "S08 Preview, page2 panel, pan horn selected,3.2s playback and explicit S07 dependency warning.",
+  "ax": "native-10-zero-S08-dependency.txt",
+  "capture": "captures/10-zero-S08-dependency.png"
+ },
+ {
+  "name": "11-zero-S09-review",
+  "note": "S09 Review, page2 panel, Ultrasonic candidate selected, four refused conflicts,Space never plays.",
+  "ax": "native-11-zero-S09-review.txt",
+  "capture": "captures/11-zero-S09-review.png"
+ },
+ {
+  "name": "12-zero-S09-conflict",
+  "note": "Chosen refused conflict pair is focused, remaining parts ghosted, camera manual.",
+  "ax": "native-12-zero-S09-conflict.txt",
+  "capture": "captures/12-zero-S09-conflict.png"
+ },
+ {
+  "name": "13-zero-S04-ghost-explode",
+  "note": "Representative Zero inspection: ghost plus explode, HAT selected.",
+  "ax": "native-13-zero-S04-ghost-explode.txt",
+  "capture": "captures/13-zero-S04-ghost-explode.png"
+ },
+ {
+  "name": "14-zero-S04-ghost-clip",
+  "note": "Ghost plus deck clip, selection remains valid.",
+  "ax": "native-14-zero-S04-ghost-clip.txt",
+  "capture": "captures/14-zero-S04-ghost-clip.png"
+ },
+ {
+  "name": "15-zero-S04-explode-clip",
+  "note": "Explode plus clip; canonical reset is checked by both browser engines.",
+  "ax": "native-15-zero-S04-explode-clip.txt",
+  "capture": "captures/15-zero-S04-explode-clip.png"
+ },
+ {
+  "name": "16-final-F8-before-Escape",
+  "note": "Rebuilt AppKit guard: Pi5 S04 fullscreen, visible HAT selection.",
+  "ax": "native-16-final-F8-before-Escape.txt",
+  "capture": "captures/16-final-F8-before-Escape.png",
+  "disposition": "RETAINED_FAILED_NATIVE_ESCAPE"
+ },
+ {
+  "name": "17-final-F8-delayed-selection-cleared",
+  "note": "Later observation after physical Escape: selection cleared, true native fullscreen remains ON.",
+  "ax": "native-17-final-F8-delayed-selection-cleared.txt",
+  "capture": "captures/17-final-F8-delayed-selection-cleared.png",
+  "disposition": "RETAINED_FAILED_NATIVE_ESCAPE"
+ },
+ {
+  "name": "18-final-modal-tray-Escape",
+  "note": "FAILED intermediate keydown-only monitor: native keyup was lost after the focused manual node disappeared; selection remained. Retained as failed evidence.",
+  "ax": "native-18-final-modal-tray-Escape.txt",
+  "capture": "captures/18-final-modal-tray-Escape.png",
+  "disposition": "RETAINED_FAILED_NATIVE_ESCAPE"
+ },
+ {
+  "name": "19-final-modal-return",
+  "note": "Keyboard ] returns S01 without resurrecting enlarged manual; fullscreen remains ON.",
+  "ax": "native-19-final-modal-return.txt",
+  "capture": "captures/19-final-modal-return.png",
+  "disposition": "RETAINED_FAILED_NATIVE_ESCAPE"
+ },
+ {
+  "name": "20-final-modal-tray-Escape-repeat",
+  "note": "Repeat after stable tray observation: check selection and fullscreen from raw AX.",
+  "ax": "native-20-final-modal-tray-Escape-repeat.txt",
+  "capture": "captures/20-final-modal-tray-Escape-repeat.png",
+  "disposition": "RETAINED_FAILED_NATIVE_ESCAPE"
+ },
+ {
+  "name": "21-release-modal-tray-Escape",
+  "note": "Final release bridge: enlarged manual -> keyboard tray; physical Escape clears visible Plate A selection and keeps true native fullscreen.",
+  "ax": "native-21-release-modal-tray-Escape.txt",
+  "capture": "captures/21-release-modal-tray-Escape.png"
+ },
+ {
+  "name": "22-release-modal-return",
+  "note": "Final release bridge: return S01 has no enlarged manual and no selected part; true fullscreen remains ON.",
+  "ax": "native-22-release-modal-return.txt",
+  "capture": "captures/22-release-modal-return.png"
+ },
+ {
+  "name": "23-final-windowed-pi5-tray",
+  "note": "Final rounded-HAT/corner-flag native bundle; incognito legacy home was 0/8. Windowed Pi5 tray before fullscreen.",
+  "ax": "native-23-final-windowed-pi5-tray.txt",
+  "capture": "captures/23-final-windowed-pi5-tray.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "24-final-zero-S00",
+  "note": "Final Zero S00 whole-kit tray, physical slots 41 + six tools, wrench present, no manual mapping, disabled transport.",
+  "ax": "native-24-final-zero-S00.txt",
+  "capture": "captures/24-final-zero-S00.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "25-final-zero-S01",
+  "note": "Zero S01 Preview, 4.0 s enabled transport; Zero-specific page1 and Plate A selected.",
+  "ax": "native-25-final-zero-S01.txt",
+  "capture": "captures/25-final-zero-S01.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "26-final-zero-S01-explode",
+  "note": "Final recipe-free Plate A boundary inspection; exploded selected workpiece and standoff arrangement.",
+  "ax": "native-26-final-zero-S01-explode.txt",
+  "capture": "captures/26-final-zero-S01-explode.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "27-final-zero-S02",
+  "note": "Zero S02 Preview, 2.8 s enabled transport; Zero board selected, Zero-specific page1.",
+  "ax": "native-27-final-zero-S02.txt",
+  "capture": "captures/27-final-zero-S02.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "28-final-zero-S03-still",
+  "note": "Zero S03 Still Preview, zero duration disabled transport; ribbon tile selected, Zero-specific page1.",
+  "ax": "native-28-final-zero-S03-still.txt",
+  "capture": "captures/28-final-zero-S03-still.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "29-final-zero-S04-hat",
+  "note": "Zero S04 Preview, 3.2 s enabled transport; final approximate HAT outline with rounded corners selected; preserved 180-degree Zero orientation, Zero-specific page1.",
+  "ax": "native-29-final-zero-S04-hat.txt",
+  "capture": "captures/29-final-zero-S04-hat.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "30-final-zero-S04-manual-outline",
+  "note": "Final Zero S04 at endpoint; manual mapping visible alongside HAT overhang, final centered corner flags.",
+  "ax": "native-30-final-zero-S04-manual-outline.txt",
+  "capture": "captures/30-final-zero-S04-manual-outline.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "31-final-zero-S05",
+  "note": "Zero S05 Preview, 5.0 s enabled transport; left TT motor selected, shared page1.",
+  "ax": "native-31-final-zero-S05.txt",
+  "capture": "captures/31-final-zero-S05.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "32-final-zero-S06-still",
+  "note": "Zero S06 Still Preview, zero duration disabled transport; battery tile selected, shared page2. Battery introduced in step parts, no invented placement/animation.",
+  "ax": "native-32-final-zero-S06-still.txt",
+  "capture": "captures/32-final-zero-S06-still.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "33-final-zero-S07-review",
+  "note": "Zero S07 Review, no playback; selected battery at recorded pose, CONN07 unframed battery lead blocker visible; shared page2.",
+  "ax": "native-33-final-zero-S07-review.txt",
+  "capture": "captures/33-final-zero-S07-review.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "34-final-zero-S08-dependency",
+  "note": "Zero S08 Preview, 3.2 s enabled transport; pan horn selected, shared page2; visible S07 dependency warning.",
+  "ax": "native-34-final-zero-S08-dependency.txt",
+  "capture": "captures/34-final-zero-S08-dependency.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "35-final-zero-S09-review",
+  "note": "Zero S09 Review with four refused conflicts, no playback; Ultrasonic candidate selected, shared page2.",
+  "ax": "native-35-final-zero-S09-review.txt",
+  "capture": "captures/35-final-zero-S09-review.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "36-final-zero-S09-conflict",
+  "note": "Zero S09 refused Plate A/ultrasonic pair focused, true checked record still refused.",
+  "ax": "native-36-final-zero-S09-conflict.txt",
+  "capture": "captures/36-final-zero-S09-conflict.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "72-tauri-final-rounded-build.txt"
+ },
+ {
+  "name": "37-final-tray-commit-Escape",
+  "note": "Final bundle80: first physical Escape after manual -> keyboard tray clears retained Plate A selection before any delayed 3D frame; fullscreen remains ON.",
+  "ax": "native-37-final-tray-commit-Escape.txt",
+  "capture": "captures/37-final-tray-commit-Escape.png",
+  "disposition": "VERIFIED_NATIVE_ESCAPE",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "38-final-tray-commit-return",
+  "note": "Final keyboard return to S01 has no selection or enlarged manual; native fullscreen remains ON.",
+  "ax": "native-38-final-tray-commit-return.txt",
+  "capture": "captures/38-final-tray-commit-return.png",
+  "disposition": "VERIFIED_NATIVE_ESCAPE",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "39-final-distinct-Escape-exit",
+  "note": "Final distinct physical Escape with no modal or selection exits native fullscreen.",
+  "ax": "native-39-final-distinct-Escape-exit.txt",
+  "capture": "captures/39-final-distinct-Escape-exit.png",
+  "disposition": "VERIFIED_NATIVE_ESCAPE",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "40-final80-zero-S00",
+  "note": "Final bundle80, Zero S00:47 physical slots,41 models+6 tiles, wrench present, tray transport disabled, no manual.",
+  "ax": "native-40-final80-zero-S00.txt",
+  "capture": "captures/40-final80-zero-S00.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "41-final80-zero-S01",
+  "note": "Final bundle80, Zero S01: Preview4.0s, PlateA selection and board-specific page1.",
+  "ax": "native-41-final80-zero-S01.txt",
+  "capture": "captures/41-final80-zero-S01.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "42-final80-zero-S02",
+  "note": "Final bundle80, Zero S02: Preview2.8s, Zero board selection and board-specific page1.",
+  "ax": "native-42-final80-zero-S02.txt",
+  "capture": "captures/42-final80-zero-S02.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "43-final80-zero-S03-still",
+  "note": "Final bundle80, Zero S03: Still Preview0.0s disabled transport, FPC tile selection and board-specific page1.",
+  "ax": "native-43-final80-zero-S03-still.txt",
+  "capture": "captures/43-final80-zero-S03-still.png",
+  "disposition": "VERIFIED_NATIVE_RENDER",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "44-final80-zero-S04",
+  "note": "Final bundle80, Zero S04: Preview3.2s, HAT selection, board-specific page1; final approximate rounded display overhang.",
+  "ax": "native-44-final80-zero-S04.txt",
+  "capture": "captures/44-final80-zero-S04.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "45-final80-zero-S05",
+  "note": "Final bundle80, Zero S05: Preview5.0s, left TT motor selected, shared page1.",
+  "ax": "native-45-final80-zero-S05.txt",
+  "capture": "captures/45-final80-zero-S05.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "46-final80-zero-S06-still",
+  "note": "Final bundle80, Zero S06: Still Preview0.0s disabled transport, battery tile selected, shared page2.",
+  "ax": "native-46-final80-zero-S06-still.txt",
+  "capture": "captures/46-final80-zero-S06-still.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "47-final80-zero-S07-review",
+  "note": "Final bundle80, Zero S07: Review with no playback, battery recorded pose selected, CONN07 blocker visible and shared page2.",
+  "ax": "native-47-final80-zero-S07-review.txt",
+  "capture": "captures/47-final80-zero-S07-review.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "48-final80-zero-S08-dependency",
+  "note": "Final bundle80, Zero S08: Preview3.2s, pan horn selected, S07 dependency warning, shared page2.",
+  "ax": "native-48-final80-zero-S08-dependency.txt",
+  "capture": "captures/48-final80-zero-S08-dependency.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "49-final80-zero-S09-review",
+  "note": "Final bundle80, Zero S09: Review with no playback, ultrasonic refused candidate selected, four conflicts, shared page2.",
+  "ax": "native-49-final80-zero-S09-review.txt",
+  "capture": "captures/49-final80-zero-S09-review.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "50-final80-zero-modal-tray-Escape",
+  "note": "Final bundle80 Zero: visible-modal Escape closes only modal; then reopening -> keyboard tray -> first Escape clears selection and retains fullscreen.",
+  "ax": "native-50-final80-zero-modal-tray-Escape.txt",
+  "capture": "captures/50-final80-zero-modal-tray-Escape.png",
+  "disposition": "VERIFIED_NATIVE_ESCAPE_AX",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt",
+  "limit": "Dismissal state verified independently; rendered-scene coverage remains pending."
+ },
+ {
+  "name": "51-final80-zero-modal-return",
+  "note": "Final bundle80 Zero: return to S01 does not resurrect selected part or modal.",
+  "ax": "native-51-final80-zero-modal-return.txt",
+  "capture": "captures/51-final80-zero-modal-return.png",
+  "disposition": "VERIFIED_NATIVE_ESCAPE_AX",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt",
+  "limit": "Dismissal state verified independently; rendered-scene coverage remains pending."
+ },
+ {
+  "name": "52-final80-zero-ghost-explode",
+  "note": "Final bundle80 Zero S04 HAT selected, ghost+explode.",
+  "ax": "native-52-final80-zero-ghost-explode.txt",
+  "capture": "captures/52-final80-zero-ghost-explode.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "53-final80-zero-ghost-explode-clip",
+  "note": "Final bundle80 Zero S04 HAT selected, ghost+explode+clip.",
+  "ax": "native-53-final80-zero-ghost-explode-clip.txt",
+  "capture": "captures/53-final80-zero-ghost-explode-clip.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ },
+ {
+  "name": "54-final80-zero-inspection-reset",
+  "note": "Final bundle80 combined inspection reset restores canonical presentation.",
+  "ax": "native-54-final80-zero-inspection-reset.txt",
+  "capture": "captures/54-final80-zero-inspection-reset.png",
+  "disposition": "PARTIAL_RENDER_STALE",
+  "limit": "AX route, mapping, selection and controls changed; scene retained S03, so this is not complete native rendered coverage.",
+  "bundleLog": "80-tauri-final-tray-commit-build.txt"
+ }
+]

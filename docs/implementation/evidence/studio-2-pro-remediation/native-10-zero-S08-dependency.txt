@@ -1,0 +1,132 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/8
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/8
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/8
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 8 of 29 · Raspberry Pi Zero 2 W
+					27 heading Attach the pan horn to the front chassis, Value: 2
+						28 text Attach the pan horn to the front chassis
+					29 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					30 text Step 7 is still under review. Previewing step 8 does not certify step 7.
+					31 container Printed manual
+						32 heading Printed manual, Value: 3
+							33 text Printed manual
+						34 button Enlarge
+						35 image Printed Step 8, page 2 of the V40 booklet
+						36 text Printed Step 8 · page 2 of the V40 booklet
+					37 container Parts in this step
+						38 heading In this step, Value: 3
+							39 text In this step
+						40 container
+							41 toggle button Pan servo horn moves up 30 mm into place, Value: on
+							42 container Each M1.5x3 screw
+								43 toggle button M1.5x3 screw×4 moves down 30 mm into place, Value: off
+								44 container Each M1.5x3 screw
+									45 toggle button 1, Help: PX-V40-INS-M15X3-SCREW-001, Value: off
+									46 toggle button 2, Help: PX-V40-INS-M15X3-SCREW-002, Value: off
+									47 toggle button 3, Help: PX-V40-INS-M15X3-SCREW-003, Value: off
+									48 toggle button 4, Help: PX-V40-INS-M15X3-SCREW-004, Value: off
+						49 heading Works on, Value: 4
+							50 text Works on
+						51 toggle button Plate A already in place, Value: off
+						52 heading Tools, Value: 4
+							53 text Tools
+						54 container
+							55 toggle button Screwdriver 1 kit tool, listed as a tile, Value: off
+							56 toggle button Screwdriver 2 kit tool, listed as a tile, Value: off
+					57 container From the step record
+						58 heading From the step record, Value: 3
+							59 text From the step record
+						60 description list
+							61 text Parts
+							62 text Pan-role servo arm/horn ×1.
+							63 text Hardware
+							64 text M1.5x3 screw ×4.
+							65 text Tools
+							66 text Matched screwdriver.
+							67 text Orientation
+							68 text Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body.
+						69 text Caution Horn sits at the front position shown to support the pan-tilt assembly; distinguish horn from the later servo body.
+						70 summary Connection details, Value: off
+							71 text Connection details
+					72 container Selected part
+						73 heading Pan servo horn, Value: 3
+							74 text Pan servo horn
+						75 description list
+							76 text Definition
+							77 container
+								78 text Horn pan role PX-V40-DEF-HORN-PAN
+							79 text Instance
+							80 text PX-V40-INS-HORN-PAN-001
+							81 text Inventory
+							82 text Motors and servos, first introduced in step 8
+							83 text Now
+							84 text Installed in this step’s pose
+							85 text Shape
+							86 container
+								87 text M7 additive instructional revision: photo-derived estimate, non-engineering. Shown and checked as this shape. PX-V40-DEF-HORN-PAN.brep (679f73c27d)
+								88 container 679f73c27d72a64c328825620363f6cc814823eb81cb28c04b0872f05846da83
+							89 text Pose from
+							90 container d2bf3bcbb05652621772bdfabcf70983d59093c6d56ea2d1af15fd0edc62d3e9
+								91 text rpi-zero-2-w-S08-closure.json
+						92 button Frame this part
+					93 container Status
+						94 description list
+							95 text Assembly check
+							96 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							97 text Your car
+							98 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						99 summary Source limitations (38), Value: off
+							100 text Source limitations (38)
+						101 container
+							102 text Pack abefb75fea06 from chain run s2pro-01 (source mode)
+							103 container abefb75fea062a259fada4fe902200ab7183fa3c61be068a08b32e18d3f3f374
+				104 container Step controls
+					105 container Steps
+						106 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						107 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						108 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						109 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						110 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						111 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						112 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						113 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						114 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						115 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					116 button Rewind
+					117 button Play step, Help: Play step (Space)
+					118 button Replay from the start
+					119 slider (settable, float) Step timeline, Value: 3.2, Details: 3.2 s of 3.2 s
+						120 value indicator 3.2
+				121 text Step 8: Attach the pan horn to the front chassis. Preview
+122 menu bar
+	123 picarx-companion
+	124 File
+	125 Edit
+	126 View
+	127 Window
+	128 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/8

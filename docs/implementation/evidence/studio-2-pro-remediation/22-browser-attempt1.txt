@@ -1,0 +1,353 @@
+
+> picarx-companion@0.1.0 test:browser /Users/danny/Documents/Apps/PiCar/picarx-companion
+> playwright test
+
+[WebServer] (node:71461) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71477) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71505) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 104 tests using 1 worker
+
+(node:71547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (7.2s)
+  ✓    2 [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (588ms)
+  ✓    3 [chromium] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (685ms)
+  ✓    4 [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (1.2s)
+  ✓    5 [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (480ms)
+  ✓    6 [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (24.8s)
+  ✓    7 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (297ms)
+  ✓    8 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (574ms)
+  ✓    9 [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (3.2m)
+  ✓   10 [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.7m)
+  ✓   11 [chromium] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (2.8s)
+  ✓   12 [chromium] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.6s)
+  ✓   13 [chromium] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (563ms)
+  ✓   14 [chromium] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (237ms)
+  ✓   15 [chromium] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (234ms)
+  ✘   16 [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (1.5s)
+(node:24514) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   17 [chromium] › tests/browser/studio.spec.ts:21:1 › S02 on the Pi 5 plays and ends exactly on the closure poses (2.5s)
+  ✓   18 [chromium] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (3.4s)
+  ✓   19 [chromium] › tests/browser/studio.spec.ts:62:1 › fullscreen enters and leaves through the browser Fullscreen API (2.2s)
+  ✓   20 [chromium] › tests/browser/studio.spec.ts:72:1 › readiness is labelled: every step opens, S07 and S09 in Review, and M7 acceptance is stated separately (1.8s)
+  ✓   21 [chromium] › tests/browser/studio.spec.ts:83:1 › selecting a part shows its source identity (2.8s)
+  ✓   22 [chromium] › tests/browser/studio.spec.ts:92:1 › playback, scrubbing, replay and selection record no progress (5.7s)
+  ✓   23 [chromium] › tests/browser/studio.spec.ts:130:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe (4.5s)
+  ✓   24 [chromium] › tests/browser/studio.spec.ts:130:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe (4.3s)
+  ✓   25 [chromium] › tests/browser/studio.spec.ts:145:1 › a part common to both boards keeps its selection, highlight and framing across a board switch (5.0s)
+  ✓   26 [chromium] › tests/browser/studio.spec.ts:168:1 › rapid board switching with a selection raises no error (11.1s)
+  ✓   27 [chromium] › tests/browser/studio.spec.ts:182:1 › Studio navigation, playback and selection never write or invalidate setup progress (M3 persistence) (7.9s)
+  ✓   28 [chromium] › tests/browser/studio.spec.ts:220:1 › a GLB of the right length but the wrong bytes is refused before drawing (497ms)
+  ✓   29 [chromium] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (15.1s)
+  ✓   30 [chromium] › tests/browser/studio.spec.ts:279:1 › a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen (5.1s)
+  ✓   31 [chromium] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen (5.2s)
+  ✓   32 [chromium] › tests/browser/studio.spec.ts:324:1 › an Escape keyup whose keydown never arrived (native fullscreen) acts once (2.8s)
+  ✓   33 [chromium] › tests/browser/studio.spec.ts:337:1 › board switches and Studio visits do not accumulate GPU resources (12.9s)
+  ✓   34 [chromium] › tests/browser/studio.spec.ts:364:1 › the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames (6.4s)
+  ✓   35 [chromium] › tests/browser/studio.spec.ts:387:1 › the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset (4.0s)
+  ✓   36 [chromium] › tests/browser/studio.spec.ts:404:1 › the companion pages remain reachable from the Studio (2.3s)
+  ✓   37 [chromium] › tests/browser/studio.spec.ts:419:3 › rpi5: the parts tray draws every required piece and each is visible from the tray camera (3.4s)
+  ✓   38 [chromium] › tests/browser/studio.spec.ts:444:3 › rpi5: every step opens; Preview ends exactly on its closure poses, Review never plays (10.4s)
+  ✓   39 [chromium] › tests/browser/studio.spec.ts:419:3 › rpi-zero-2-w: the parts tray draws every required piece and each is visible from the tray camera (3.1s)
+  ✓   40 [chromium] › tests/browser/studio.spec.ts:444:3 › rpi-zero-2-w: every step opens; Preview ends exactly on its closure poses, Review never plays (9.8s)
+  ✘   41 [chromium] › tests/browser/studio.spec.ts:466:1 › switching boards on every step keeps the step in both directions; a common tile keeps its selection (30.1s)
+(node:99007) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   42 [chromium] › tests/browser/studio.spec.ts:484:1 › isolate, ghost, explode and the deck clip are presentation only and fully reversible (5.4s)
+  ✓   43 [chromium] › tests/browser/studio.spec.ts:520:1 › S07 Review names the unresolved connection and tints its two ends; S08 says previewing it does not certify S07 (1.9s)
+  ✓   44 [chromium] › tests/browser/studio.spec.ts:530:1 › S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it (3.7s)
+  ✓   45 [chromium] › tests/browser/studio.spec.ts:547:1 › the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection (2.8s)
+  ✓   46 [chromium] › tests/browser/studio.spec.ts:568:1 › a click in the view selects the part under the cursor and keeps the guided view; a drag yields to manual (5.7s)
+  ✘   47 [chromium] › tests/browser/studio.spec.ts:593:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (8.0s)
+(node:14317) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   48 [chromium] › tests/browser/studio.spec.ts:593:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (8.2s)
+(node:18551) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   49 [chromium] › tests/browser/studio.spec.ts:615:1 › manual fetch failure offers explicit retry, rejects wrong retry bytes, and then renders the locked PDF (5.5s)
+  ✘   50 [chromium] › tests/browser/studio.spec.ts:633:1 › manual render errors surface; retry and replacement cancel safely and reset the prior error (6.4s)
+(node:24612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   51 [chromium] › tests/browser/studio.spec.ts:655:1 › manual open to tray navigation closes invisible modal state before Escape and never resurrects it (3.7s)
+  ✓   52 [chromium] › tests/browser/studio.spec.ts:669:1 › combined ghost/explode/clip preserves poses, clipping excludes picking, and reset restores canonical presentation (5.4s)
+(node:29216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   53 [webkit] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.0s)
+  ✓   54 [webkit] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (782ms)
+  ✓   55 [webkit] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (516ms)
+  ✓   56 [webkit] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (610ms)
+  ✓   57 [webkit] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (448ms)
+  ✓   58 [webkit] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (21.5s)
+  ✓   59 [webkit] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (425ms)
+  ✓   60 [webkit] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (612ms)
+  ✓   61 [webkit] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (2.8m)
+  ✓   62 [webkit] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (2.4m)
+  ✓   63 [webkit] › tests/browser/m3-ui.spec.ts:19:1 › quota failure keeps acknowledgment and same retry; stale CAS reload requires new submit (1.8s)
+  ✓   64 [webkit] › tests/browser/m3-ui.spec.ts:27:1 › opt-in setup keeps original raw, source PDF, keyboard lightbox and reduced motion (1.2s)
+  ✓   65 [webkit] › tests/browser/preservation.spec.ts:14:1 › Home and all eight setup routes retain stage identities (511ms)
+  ✓   66 [webkit] › tests/browser/preservation.spec.ts:18:1 › Reference pager and real heading-first search ordering are retained (530ms)
+  ✓   67 [webkit] › tests/browser/preservation.spec.ts:31:1 › Video ordering, slug navigation and text lessons remain available (489ms)
+  ✘   68 [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional (873ms)
+(node:14911) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   69 [webkit] › tests/browser/studio.spec.ts:21:1 › S02 on the Pi 5 plays and ends exactly on the closure poses (860ms)
+  ✓   70 [webkit] › tests/browser/studio.spec.ts:37:1 › collapsing instructions and resizing keep the camera; the canvas fills the viewport (2.2s)
+  ✓   71 [webkit] › tests/browser/studio.spec.ts:62:1 › fullscreen enters and leaves through the browser Fullscreen API (787ms)
+  ✓   72 [webkit] › tests/browser/studio.spec.ts:72:1 › readiness is labelled: every step opens, S07 and S09 in Review, and M7 acceptance is stated separately (688ms)
+  ✓   73 [webkit] › tests/browser/studio.spec.ts:83:1 › selecting a part shows its source identity (827ms)
+  ✓   74 [webkit] › tests/browser/studio.spec.ts:92:1 › playback, scrubbing, replay and selection record no progress (2.0s)
+  ✓   75 [webkit] › tests/browser/studio.spec.ts:130:3 › selecting the rpi5 board and switching to rpi-zero-2-w clears the selection; framing stays safe (892ms)
+  ✓   76 [webkit] › tests/browser/studio.spec.ts:130:3 › selecting the rpi-zero-2-w board and switching to rpi5 clears the selection; framing stays safe (833ms)
+  ✓   77 [webkit] › tests/browser/studio.spec.ts:145:1 › a part common to both boards keeps its selection, highlight and framing across a board switch (1.9s)
+  ✓   78 [webkit] › tests/browser/studio.spec.ts:168:1 › rapid board switching with a selection raises no error (2.0s)
+  ✓   79 [webkit] › tests/browser/studio.spec.ts:182:1 › Studio navigation, playback and selection never write or invalidate setup progress (M3 persistence) (1.8s)
+  ✓   80 [webkit] › tests/browser/studio.spec.ts:220:1 › a GLB of the right length but the wrong bytes is refused before drawing (624ms)
+  ✓   81 [webkit] › tests/browser/studio.spec.ts:232:1 › a manually panned target survives resize, pixel-ratio changes and fullscreen until guided view resumes (8.5s)
+  ✓   82 [webkit] › tests/browser/studio.spec.ts:279:1 › a held Escape press (repeats, long hold) with a selection clears only the selection; a separate press leaves fullscreen (1.9s)
+  -   83 [webkit] › tests/browser/studio.spec.ts:302:1 › a physically held Escape with a selection clears only the selection; a separate press leaves fullscreen
+  ✓   84 [webkit] › tests/browser/studio.spec.ts:324:1 › an Escape keyup whose keydown never arrived (native fullscreen) acts once (736ms)
+  ✓   85 [webkit] › tests/browser/studio.spec.ts:337:1 › board switches and Studio visits do not accumulate GPU resources (2.5s)
+  ✓   86 [webkit] › tests/browser/studio.spec.ts:364:1 › the first frame drawn follows the first render, which follows canvas creation; idle time adds no frames (3.8s)
+  ✓   87 [webkit] › tests/browser/studio.spec.ts:387:1 › the inspector identifies the displayed and the checked Pi 5 shapes and reports fidelity as a classified subset (796ms)
+  ✓   88 [webkit] › tests/browser/studio.spec.ts:404:1 › the companion pages remain reachable from the Studio (750ms)
+  ✓   89 [webkit] › tests/browser/studio.spec.ts:419:3 › rpi5: the parts tray draws every required piece and each is visible from the tray camera (1.9s)
+  ✓   90 [webkit] › tests/browser/studio.spec.ts:444:3 › rpi5: every step opens; Preview ends exactly on its closure poses, Review never plays (1.6s)
+  ✓   91 [webkit] › tests/browser/studio.spec.ts:419:3 › rpi-zero-2-w: the parts tray draws every required piece and each is visible from the tray camera (1.9s)
+  ✓   92 [webkit] › tests/browser/studio.spec.ts:444:3 › rpi-zero-2-w: every step opens; Preview ends exactly on its closure poses, Review never plays (1.8s)
+  ✓   93 [webkit] › tests/browser/studio.spec.ts:466:1 › switching boards on every step keeps the step in both directions; a common tile keeps its selection (6.0s)
+  ✓   94 [webkit] › tests/browser/studio.spec.ts:484:1 › isolate, ghost, explode and the deck clip are presentation only and fully reversible (3.0s)
+  ✓   95 [webkit] › tests/browser/studio.spec.ts:520:1 › S07 Review names the unresolved connection and tints its two ends; S08 says previewing it does not certify S07 (708ms)
+  ✓   96 [webkit] › tests/browser/studio.spec.ts:530:1 › S09 Review shows the refused candidate; a chosen conflict pair is tinted, the rest ghosted, and one Escape clears it (1.2s)
+  ✓   97 [webkit] › tests/browser/studio.spec.ts:547:1 › the drawer renders the verified manual panel; the enlarged panel closes on one Escape without clearing the selection (1.6s)
+  ✓   98 [webkit] › tests/browser/studio.spec.ts:568:1 › a click in the view selects the part under the cursor and keeps the guided view; a drag yields to manual (1.9s)
+  ✘   99 [webkit] › tests/browser/studio.spec.ts:593:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields (7.0s)
+(node:46636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  100 [webkit] › tests/browser/studio.spec.ts:593:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields (7.1s)
+(node:50566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  101 [webkit] › tests/browser/studio.spec.ts:615:1 › manual fetch failure offers explicit retry, rejects wrong retry bytes, and then renders the locked PDF (1.6s)
+  ✘  102 [webkit] › tests/browser/studio.spec.ts:633:1 › manual render errors surface; retry and replacement cancel safely and reset the prior error (5.7s)
+(node:54386) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  103 [webkit] › tests/browser/studio.spec.ts:655:1 › manual open to tray navigation closes invisible modal state before Escape and never resurrects it (963ms)
+  ✓  104 [webkit] › tests/browser/studio.spec.ts:669:1 › combined ghost/explode/clip preserves poses, clipping excludes picking, and reset restores canonical presentation (4.7s)
+
+
+  1) [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      40 |  const input=viewer.locator('input[type=number]');await expect(input).toHaveValue('2');await expect(viewer.getByRole('button',{name:'Next →',exact:true})).toBeDisabled();
+      41 |  await viewer.getByRole('button',{name:'← Prev',exact:true}).click();await expect(input).toHaveValue('1');
+    > 42 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+         |                                                                                              ^
+      43 |  await input.fill('3');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+      44 |  await input.fill('2');await expect(input).toHaveValue('2');await viewer.getByRole('button',{name:'+',exact:true}).click();await expect(viewer.locator('.pdf-zoom')).toContainText('140%');
+      45 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).steps.assembly)).toBe('done');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/preservation.spec.ts:42:94
+
+    Error Context: test-results/preservation-PDF-bookmark--ceb05--and-zoom-remain-functional-chromium/error-context.md
+
+  2) [chromium] › tests/browser/studio.spec.ts:466:1 › switching boards on every step keeps the step in both directions; a common tile keeps its selection 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.studio-boards a').filter({ hasText: 'Zero 2 W' })
+        - locator resolved to <a title="Raspberry Pi Zero 2 W" href="#/studio/rpi-zero-2-w/9">Zero 2 W</a>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+
+
+      119 | const errorsOf = (page: Page): string[] => { const errors: string[] = []; page.on('pageerror', (e) => errors.push(e.message)); return errors; };
+      120 | async function switchBoard(page: Page, short: string, key: string) {
+    > 121 |   await page.locator('.studio-boards a', { hasText: short }).click();
+          |                                                              ^
+      122 |   await page.waitForFunction((k) => (window as any).__studio.state().key === k, key);
+      123 |   await page.evaluate(() => new Promise(requestAnimationFrame));
+      124 | }
+        at switchBoard (/Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:121:62)
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:479:11
+
+    Error Context: test-results/studio-switching-boards-on-00027-on-tile-keeps-its-selection-chromium/error-context.md
+
+  3) [chromium] › tests/browser/studio.spec.ts:593:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PX-V40-INS-PLATE-A-001"
+    Received: null
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      607 |   expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+      608 |   await page.mouse.up();
+    > 609 |   await expect.poll(() => diag(page, (d) => d.state().selection)).toBe('PX-V40-INS-PLATE-A-001');
+          |                                                                   ^
+      610 |   expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+      611 |   await page.mouse.down(); await page.mouse.move(at[0] + 80, at[1] + 25, { steps: 8 }); await page.mouse.up();
+      612 |   await expect.poll(() => diag(page, (d) => d.state().cameraMode)).toBe('manual');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:609:67
+
+    Error Context: test-results/studio-S2-a-stationary-sel-75ef5--camera-manipulation-yields-chromium/error-context.md
+
+  4) [chromium] › tests/browser/studio.spec.ts:593:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PX-V40-INS-PLATE-A-001"
+    Received: null
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      607 |   expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+      608 |   await page.mouse.up();
+    > 609 |   await expect.poll(() => diag(page, (d) => d.state().selection)).toBe('PX-V40-INS-PLATE-A-001');
+          |                                                                   ^
+      610 |   expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+      611 |   await page.mouse.down(); await page.mouse.move(at[0] + 80, at[1] + 25, { steps: 8 }); await page.mouse.up();
+      612 |   await expect.poll(() => diag(page, (d) => d.state().cameraMode)).toBe('manual');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:609:67
+
+    Error Context: test-results/studio-S4-a-stationary-sel-e58aa--camera-manipulation-yields-chromium/error-context.md
+
+  5) [chromium] › tests/browser/studio.spec.ts:633:1 › manual render errors surface; retry and replacement cancel safely and reset the prior error 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.studio-manual [role="alert"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.studio-manual [role="alert"]') with timeout 5000ms
+      - waiting for locator('.studio-manual [role="alert"]')
+
+
+      645 |   ` }));
+      646 |   await open(page, '#/studio/rpi5/1');
+    > 647 |   await expect(page.locator('.studio-manual [role="alert"]')).toBeVisible();
+          |                                                               ^
+      648 |   await page.getByRole('button', { name: 'Retry' }).click();
+      649 |   await expect(page.locator('.studio-manual [role="alert"]')).toHaveCount(0);
+      650 |   await page.locator('.studio-rail a', { hasText: '2' }).click();
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:647:63
+
+    Error Context: test-results/studio-manual-render-error-f55f2-y-and-reset-the-prior-error-chromium/error-context.md
+
+  6) [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      40 |  const input=viewer.locator('input[type=number]');await expect(input).toHaveValue('2');await expect(viewer.getByRole('button',{name:'Next →',exact:true})).toBeDisabled();
+      41 |  await viewer.getByRole('button',{name:'← Prev',exact:true}).click();await expect(input).toHaveValue('1');
+    > 42 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+         |                                                                                              ^
+      43 |  await input.fill('3');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).pdfLastPage)).toBe(1);
+      44 |  await input.fill('2');await expect(input).toHaveValue('2');await viewer.getByRole('button',{name:'+',exact:true}).click();await expect(viewer.locator('.pdf-zoom')).toContainText('140%');
+      45 |  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('picarx.v1')!).steps.assembly)).toBe('done');
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/preservation.spec.ts:42:94
+
+    Error Context: test-results/preservation-PDF-bookmark--ceb05--and-zoom-remain-functional-webkit/error-context.md
+
+  7) [webkit] › tests/browser/studio.spec.ts:593:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PX-V40-INS-PLATE-A-001"
+    Received: null
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      607 |         point.set(0, 0, 0);
+      608 |         for (let k = 0; k < 3; k++) point.add(vertex.fromBufferAttribute(pos, indices ? indices.getX(i + k) : i + k));
+    > 609 |         point.multiplyScalar(1 / 3).applyMatrix4(mesh.matrixWorld).project(vp.camera);
+          |                                                                   ^
+      610 |         const x = rect.left + (point.x + 1) * rect.width / 2, y = rect.top + (1 - point.y) * rect.height / 2;
+      611 |         if (x < rect.left + 120 || x > rect.right - 380 || y < rect.top + 100 || y > rect.bottom - 100) continue;
+      612 |         ray.setFromCamera(new Vector2(point.x, point.y), vp.camera);
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:609:67
+
+    Error Context: test-results/studio-S2-a-stationary-sel-75ef5--camera-manipulation-yields-webkit/error-context.md
+
+  8) [webkit] › tests/browser/studio.spec.ts:593:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "PX-V40-INS-PLATE-A-001"
+    Received: null
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      607 |         point.set(0, 0, 0);
+      608 |         for (let k = 0; k < 3; k++) point.add(vertex.fromBufferAttribute(pos, indices ? indices.getX(i + k) : i + k));
+    > 609 |         point.multiplyScalar(1 / 3).applyMatrix4(mesh.matrixWorld).project(vp.camera);
+          |                                                                   ^
+      610 |         const x = rect.left + (point.x + 1) * rect.width / 2, y = rect.top + (1 - point.y) * rect.height / 2;
+      611 |         if (x < rect.left + 120 || x > rect.right - 380 || y < rect.top + 100 || y > rect.bottom - 100) continue;
+      612 |         ray.setFromCamera(new Vector2(point.x, point.y), vp.camera);
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:609:67
+
+    Error Context: test-results/studio-S4-a-stationary-sel-e58aa--camera-manipulation-yields-webkit/error-context.md
+
+  9) [webkit] › tests/browser/studio.spec.ts:633:1 › manual render errors surface; retry and replacement cancel safely and reset the prior error 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.studio-manual [role="alert"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.studio-manual [role="alert"]') with timeout 5000ms
+      - waiting for locator('.studio-manual [role="alert"]')
+
+
+      645 |   await expect(alert).toBeVisible(); await expect.poll(() => attempts).toBe(2);
+      646 |   await alert.getByRole('button', { name: 'Retry' }).click();
+    > 647 |   await expect(page.locator('.studio-drawer .studio-manual-canvas')).toHaveAttribute('data-ready', 'true', { timeout: 15000 });
+          |                                                               ^
+      648 |   expect(attempts).toBe(3); await expect(alert).toHaveCount(0);
+      649 | });
+      650 |
+        at /Users/danny/Documents/Apps/PiCar/picarx-companion/tests/browser/studio.spec.ts:647:63
+
+    Error Context: test-results/studio-manual-render-error-f55f2-y-and-reset-the-prior-error-webkit/error-context.md
+
+  Slow test file: [chromium] › tests/browser/m3-ui.spec.ts (5.9m)
+  Slow test file: [webkit] › tests/browser/m3-ui.spec.ts (5.2m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  9 failed
+    [chromium] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+    [chromium] › tests/browser/studio.spec.ts:466:1 › switching boards on every step keeps the step in both directions; a common tile keeps its selection 
+    [chromium] › tests/browser/studio.spec.ts:593:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields 
+    [chromium] › tests/browser/studio.spec.ts:593:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields 
+    [chromium] › tests/browser/studio.spec.ts:633:1 › manual render errors surface; retry and replacement cancel safely and reset the prior error 
+    [webkit] › tests/browser/preservation.spec.ts:38:1 › PDF bookmark, bounds, page navigation and zoom remain functional 
+    [webkit] › tests/browser/studio.spec.ts:593:28 › S2: a stationary selection across active playback frames retains guided camera; manipulation yields 
+    [webkit] › tests/browser/studio.spec.ts:593:28 › S4: a stationary selection across active playback frames retains guided camera; manipulation yields 
+    [webkit] › tests/browser/studio.spec.ts:633:1 › manual render errors surface; retry and replacement cancel safely and reset the prior error 
+  1 skipped
+  94 passed (17.5m)
+ ELIFECYCLE  Command failed with exit code 1.

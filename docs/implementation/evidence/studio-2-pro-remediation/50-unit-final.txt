@@ -1,0 +1,162 @@
+
+> picarx-companion@0.1.0 test:unit /Users/danny/Documents/Apps/PiCar/picarx-companion
+> vitest run --config vitest.config.ts
+
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ❯ tests/publication/packaging.test.ts (1 test | 1 failed) 3ms
+   × a fresh source-free checkout builds through the safe mirror and excludes synthetic secrets from dist 2ms
+ ❯ tests/studio/isolation.test.ts (3 tests | 1 failed) 7ms
+   × has no path to the session ledger, Setup persistence, repository or native commands 5ms
+ ❯ tests/studio/pack.test.ts (24 tests | 1 failed) 174ms
+   ❯ readiness is labelled separately from assembly acceptance (8)
+     × binds the detailed Pi 5 to the closures it was checked against, and marks the refused S09 candidate NOT_CHECKED 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/publication/packaging.test.ts > a fresh source-free checkout builds through the safe mirror and excludes synthetic secrets from dist
+Error: PACKAGE_BUILD_REQUIRES_SEPARATE_OWNER_AUTHORIZATION
+ ❯ tests/publication/packaging.test.ts:8:55
+      6| import { inventory, denied, readJson, sha } from '../../tools/content-…
+      7| it('a fresh source-free checkout builds through the safe mirror and ex…
+      8|  if(process.env.PICAR_ALLOW_PACKAGE_BUILD!=='1')throw Error('PACKAGE_B…
+       |                                                       ^
+      9|  const root=fs.mkdtempSync(join(tmpdir(),'picar-m0-TEST-package-')),ap…
+     10|  try{
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/studio/isolation.test.ts > has no path to the session ledger, Setup persistence, repository or native commands
+AssertionError: src/features/assembly-3d/state/fullscreen.ts: expected '// Real fullscreen: the native macOS …' not to match /\binvoke\(|localStorage|indexedDB/
+
+- Expected:
+/\binvoke\(|localStorage|indexedDB/
+
++ Received:
+"// Real fullscreen: the native macOS window in Tauri (studio-window capability), the Fullscreen API in a browser.
+// Requests run one at a time and never reject; after each, succeeded or refused, the state is read back from the
+// platform, so an overlapping, refused or externally made change cannot leave the Studio showing the wrong state.
+// A refusal is kept as a message for the header.
+import { useSyncExternalStore } from 'react';
+import { invoke, isTauri } from '@tauri-apps/api/core';
+import { getCurrentWindow } from '@tauri-apps/api/window';
+import { dispatchNativeEscape } from './escape';
+
+export type FullscreenState = { on: boolean; error: string };
+let state: FullscreenState = { on: false, error: '' };
+const listeners = new Set<() => void>();
+const set = (patch: Partial<FullscreenState>): void => {
+  const next = { ...state, ...patch };
+  if (next.on === state.on && next.error === state.error) return;
+  state = next;
+  for (const l of listeners) l();
+};
+export const fullscreenState = (): FullscreenState => state;
+
+let captureQueue: Promise<void> = Promise.resolve();
+let unlistenNative: (() => void) | undefined;
+function captureNativeEscape(enabled: boolean): Promise<void> {
+  const request = captureQueue.then(async () => {
+    if (enabled && !unlistenNative) unlistenNative = await getCurrentWindow().listen('studio-escape', dispatchNativeEscape);
+    await invoke('studio_escape_capture', { enabled });
+    if (!enabled) { unlistenNative?.(); unlistenNative = undefined; }
+  });
+  captureQueue = request.catch(() => {}); // a failed request must not block a later retry or cleanup
+  return request;
+}
+
+async function resync(): Promise<void> {
+  try { set({ on: isTauri() ? await getCurrentWindow().isFullscreen() : document.fullscreenElement !== null }); } catch { /* unreadable: keep the last known state */ }
+}
+
+export function subscribeFullscreen(listener: () => void): () => void {
+  const first = listeners.size === 0;
+  listeners.add(listener);
+  const onDocument = (): void => set({ on: document.fullscreenElement !== null });
+  document.addEventListener('fullscreenchange', onDocument);
+  let unlisten: (() => void) | undefined;
+  let closed = false;
+  if (isTauri()) {
+    if (first) void captureNativeEscape(true).catch(() => set({ error: 'Studio Escape capture is not available.' }));
+    void resync();
+    void getCurrentWindow().onResized(() => { void resync(); }).then((u) => { if (closed) u(); else unlisten = u; });
+  }
+  return () => {
+    closed = true; listeners.delete(listener); document.removeEventListener('fullscreenchange', onDocument); unlisten?.();
+    if (isTauri() && listeners.size === 0) void captureNativeEscape(false).catch(() => set({ error: 'Studio Escape capture could not be released.' }));
+  };
+}
+
+export const useFullscreen = (): boolean => useSyncExternalStore(subscribeFullscreen, () => state.on, () => false);
+export const useFullscreenError = (): string => useSyncExternalStore(subscribeFullscreen, () => state.error, () => '');
+export const fullscreenMode = (): 'native window' | 'browser' => (isTauri() ? 'native window' : 'browser');
+
+async function apply(on: boolean, element: HTMLElement): Promise<void> {
+  try {
+    if (isTauri()) {
+      if (on) await captureNativeEscape(true);
+      await getCurrentWindow().setFullscreen(on);
+    }
+    else if (on && !document.fullscreenElement) await element.requestFullscreen();
+    else if (!on && document.fullscreenElement) await document.exitFullscreen();
+    set({ error: '' });
+  } catch {
+    set({ error: on ? 'Fullscreen is not available here.' : 'The Studio could not leave fullscreen.' });
+  }
+  await resync();
+}
+
+let queue: Promise<void> = Promise.resolve();
+export function setFullscreen(on: boolean, element: HTMLElement): Promise<void> {
+  queue = queue.then(() => apply(on, element));
+  return queue;
+}
+"
+
+ ❯ tests/studio/isolation.test.ts:16:28
+     14|     const imports = [...text.matchAll(/from\s+['"]([^'"]+)['"]|import\…
+     15|     for (const spec of imports) expect(spec, file).not.toMatch(/assemb…
+     16|     expect(text, file).not.toMatch(/\binvoke\(|localStorage|indexedDB/…
+       |                            ^
+     17|   }
+     18| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/studio/pack.test.ts > readiness is labelled separately from assembly acceptance > binds the detailed Pi 5 to the closures it was checked against, and marks the refused S09 candidate NOT_CHECKED
+AssertionError: expected [ { …(3) }, { …(3) } ] to deeply equal [ { …(3) } ]
+
+- Expected
++ Received
+
+@@ -2,6 +2,11 @@
+    {
+      "definitionId": "PX-V40-DEF-PI5",
+      "overlaps": [],
+      "status": "NOT_CHECKED",
+    },
++   {
++     "definitionId": "PX-V40-DEF-ROBOT-HAT",
++     "overlaps": [],
++     "status": "NOT_CHECKED",
++   },
+  ]
+
+ ❯ tests/studio/pack.test.ts:160:44
+    158|     expect(s2).toMatchObject({ status: 'CHECKED', closureRfc8785Sha256…
+    159|     expect(Math.max(...s2.overlaps.map((o: any) => o.volumeMm3))).toBe…
+    160|     expect(steps('rpi5')[8].displayChecks).toEqual([{ definitionId: 'P…
+       |                                            ^
+    161|     for (const s of steps('rpi-zero-2-w')) expect(s.displayChecks).toE…
+    162|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed | 20 passed (23)
+      Tests  3 failed | 250 passed (253)
+   Start at  23:14:56
+   Duration  14.42s (tests 92%, transform 6%, import 2%)
+
+ ELIFECYCLE  Command failed with exit code 1.

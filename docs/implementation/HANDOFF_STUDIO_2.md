@@ -1,3 +1,5 @@
+> Historical Studio 2 checkpoint at `891dba9`. Independent Pro review subsequently found S2-01–S2-09. The corrections below clarify original observations; implementation closure and new evidence are recorded in [HANDOFF_STUDIO_2_PRO_REMEDIATION.md](HANDOFF_STUDIO_2_PRO_REMEDIATION.md). The original evidence files and identities are retained.
+
 # Assembly Studio 2 handoff: complete S01–S09 for both boards, starting with a parts-tray completeness audit
 
 Studio 2 on `studio/s2-all-steps`, cut from `studio/s1-pro-full-remediation` at `a26592259dcd6ef09fa791086148092653b1750e` (verified locally: branch, HEAD, pack `7dcd6252…` integrity PASS, freshness FRESH, presentation CURRENT). It is presentation work, not M7 acceptance: `G-INSTRUCTIONAL-ASSEMBLY` stays BLOCKED at 0/58, S07 stays blocked, S09 stays refused, and M8 is not authorized. Evidence is in `docs/implementation/evidence/studio-2/`.
@@ -21,7 +23,7 @@ Internal pack consistency could not catch this: the pack agreed with its own nar
 
 - Canonical counts are the M1 printed-stock claims (`planned-stock.json`, `BOM_RECONCILIATION.md`), not a count of the owner's loose kit. Per board: available 111, backup 37, accessory 5, tool 3. The 106 (Pi 5) and 109 (Zero 2 W) not in the tray are used after S09, or are spares and accessories; the tray says so beside its inventory line.
 - Cross-check: every printed-stock use M1 plans for S01–S09 (34 on the Pi 5, 32 on the Zero 2 W) is in the required set, at the same first step.
-- Rendered: every drawn slot has a definition with triangles, a finite pose above the floor and lies inside the tray camera; no two slots' boxes overlap. Runtime census at 1440 × 900: all 50 and 47 slots visible inside the uncovered framing area, smallest 17 and 15 px (the M1.5 screws).
+- Rendered: every drawn slot has a definition with triangles, a finite pose above the floor and lies inside the tray camera; no two slots' boxes overlap. Runtime census at 1440 × 900: all 50 and 47 slots visible inside the uncovered framing area, smallest occupied areas of 17 and 15 pixels (the M1.5 screws), not pixel widths; static shortest dimensions remained about 4.4–5.3 px.
 - Disposition: the six are tray **tiles** (flat labelled cards with a dashed edge), each naming why it has no solid. No geometry was invented.
 - Visual findings fixed: the Studio 1 tray was one ungrouped row-flow framed together with the empty space where the chassis will be, so the washers and M1.5 screws came out at 4–5 px. On the first grouped layout, the 18 mm standoffs then hid the four upward-pointing M2.5 × 6 screws behind them. All 34 fasteners were present, but not countable. Rows now reserve their height as seen from the tray camera.
 - Studio 1 did not render anything it then lost: every manifest tray instance became a drawn root (44 and 41).
@@ -61,10 +63,10 @@ Identical for `rpi5` and `rpi-zero-2-w` (`rpi4` PRESERVED_NON_TARGET).
 | S00 tray | — | Tray | — | 50 / 47 pieces, 44 / 41 modelled, 6 tiles |
 | S01 Prepare Plate A mounting supports | PREVIEW_SOURCE_REVALIDATED | Preview | YES (9 parts, Plate A placed directly) | — |
 | S02 Mount the selected Raspberry Pi | PREVIEW_SOURCE_REVALIDATED | Preview | YES (6 Pi 5 / 3 Zero 2 W) | Pi 5 detailed-model overlap with the microphone, 449 mm³ (recorded finding) |
-| S03 Connect the Pi end of the camera ribbon | PREVIEW_SOURCE_REVALIDATED | Preview | YES, nothing moves (ribbon is a tile) | — |
+| S03 Connect the Pi end of the camera ribbon | PREVIEW_SOURCE_REVALIDATED | Preview | Still Preview, duration 0, transport disabled (ribbon is a tile) | — |
 | S04 Mount the Robot HAT | PREVIEW_SOURCE_REVALIDATED | Preview | YES (5) | — |
 | S05 Install the two drive motors | PREVIEW_SOURCE_REVALIDATED | Preview | YES (14) | — |
-| S06 Prepare battery hook-and-loop mounting | PREVIEW_SOURCE_REVALIDATED | Preview | YES, nothing moves (battery stays in the tray until S07; tape is tiles) | — |
+| S06 Prepare battery hook-and-loop mounting | PREVIEW_SOURCE_REVALIDATED | Preview | Still Preview, duration 0, transport disabled (battery introduced here stays in the tray; S07 has no timeline; S08 cumulative state contains its pose; tape is tiles) | — |
 | S07 Secure and connect the battery | PREVIEW_BLOCKED_RELATION | Review | NO | `UNFRAMED_TOUCHED_CABLE_END`, `PX-V40-CONN-07-COMMON-BATTERY` (battery lead → Robot HAT) |
 | S08 Attach the pan horn to the front chassis | PREVIEW_SOURCE_REVALIDATED | Preview | YES (5) | "Step 7 is still under review. Previewing step 8 does not certify step 7." |
 | S09 Install the ultrasonic module and Plate H | REVIEW_REFUSED_CANDIDATE | Review | NO | `FORBIDDEN_PRESENTATION_PENETRATION`: horn × Plate H 101.071, Plate A × ultrasonic 51.250, Plate A × Plate H 12.955, horn × ultrasonic 2.026 mm³; dependency on S07 |
@@ -91,7 +93,7 @@ Pure functions in `motion/inspect.ts`, composed by the frame driver, never writt
 
 ## Animation
 
-Tracks follow what each closure newly places (the S07 battery, introduced in S06, moves in S07); a review step has no timeline. Unit tests on both boards for S01–S06 and S08: the end state is the closure pose object itself; the start is the previous closure with only the newly placed parts in the tray; any order of seeking gives identical poses; S07 and S09 open on their recorded state (S09 parts in the `candidate` phase).
+Tracks follow newly placed sets in cumulative records. The battery is introduced in S06; S07 Review has no timeline and does not animate it; S08 cumulative state contains its recorded placement. A review step has no timeline. Unit tests on both boards for S01–S06 and S08: the end state is the closure pose object itself; the start is the previous closure with only the newly placed parts in the tray; any order of seeking gives identical poses; S07 and S09 open on their recorded state (S09 parts in the `candidate` phase).
 
 ## Blender presentation
 
@@ -123,7 +125,7 @@ Rebuilt with `studio.mjs blender --render` from pack `466de892…`: `.blend` and
 | `presentation-selftest.mjs` with the Studio 1 `.blend` | RUN / PASS, 11 of 11 (12) |
 | `pnpm typecheck` | RUN / PASS (20) |
 | `PICAR_ALLOW_PACKAGE_BUILD=1 pnpm test:unit` | RUN / PASS, 233 of 233 in 21 files (21; 143 at the remediation) |
-| `pnpm test:browser` (Chromium and WebKit, M3) | RUN / FAIL — EXPLAINED: 89 passed, 2 failed, 1 skipped. Both failures are `preservation.spec.ts:38` (expected 1, received 2: the legacy-mode PDF bookmark assertion this M3 configuration fails by construction, as at Studio 1 and the remediation); the skip is the WebKit physical-Escape case. Every Studio test passed in both engines, including the runtime tray census (every slot visible, smallest 15–18 px) (22) |
+| `pnpm test:browser` (Chromium and WebKit, M3) | RUN / FAIL — EXPLAINED: 89 passed, 2 failed, 1 skipped. Both failures are `preservation.spec.ts:38` (expected 1, received 2: the legacy-mode PDF bookmark assertion this M3 configuration fails by construction, as at Studio 1 and the remediation); the skip is the WebKit physical-Escape case. Every Studio test passed in both engines, including the runtime tray census (every slot visible, smallest occupied areas 15–18 pixels, not widths) (22) |
 | `npx playwright test -c playwright.legacy.config.ts` | RUN / PASS, 10 of 10 (23) |
 | M7 source mode, chain `s2-01`, frozen M4 environment | RUN / FAIL — EXPLAINED: 981 passed, 137 skipped, 12 failed; the 12 are the installed-wheel `site-packages` guards (24) |
 | `test_studio_fidelity.py` (in the M7 run) | RUN / PASS, including the new Plate A rows test |
@@ -173,7 +175,7 @@ No private photograph, its folder or the vendor STEP entered a tracked file, the
 
 ## Studio 2 status
 
-STUDIO 2 COMPLETE. The tray audit is reconciled (no silent omissions on either board); every printed step S01–S09 opens on both boards, S01–S06 and S08 as Preview and S07 and S09 as Review; the manual panel, inspection tools and authored cameras work; animation endpoints are exact; F1 to F11 stay closed; the native pass passed. The owner's own visual judgement is still to come (above), and the tray-orbit pixel ratio is recorded for Studio 4.
+STUDIO 2 COMPLETE. The tray audit is reconciled (no silent omissions on either board); every printed step S01–S09 opens on both boards, S01–S06 and S08 as Preview and S07 and S09 as Review; the manual panel, inspection tools and authored cameras work; animation endpoints are exact; the original checks reported F1 to F11 closed; Pro later identified partial F5/F8 regressions and an incomplete native Zero matrix (see the remediation handoff). The owner's own visual judgement is still to come (above), and the tray-orbit pixel ratio is recorded for Studio 4.
 
 ## Commits
 

@@ -1,0 +1,2008 @@
+{
+ "base": "a26592259dcd6ef09fa791086148092653b1750e",
+ "reviewed": "891dba9dba06592296fa06a74e400451743db13e",
+ "fullCandidateFilesScanned": 349,
+ "remediationFilesScanned": 302,
+ "excludedUnrelatedM2": [
+  "docs/implementation/evidence/m2/commands.json",
+  "docs/implementation/evidence/m2/companion-content.txt",
+  "docs/implementation/evidence/m2/companion-package.txt",
+  "docs/implementation/evidence/m2/companion-typecheck.txt",
+  "docs/implementation/evidence/m2/companion-unit.txt",
+  "docs/implementation/evidence/m2/g-data-check.txt",
+  "docs/implementation/evidence/m2/m1-tests.tap",
+  "docs/implementation/evidence/m2/preflight-command-initial.txt",
+  "docs/implementation/evidence/m2/preflight-command.txt",
+  "docs/implementation/evidence/m2/preflight.json",
+  "docs/implementation/evidence/m2/types-check.txt",
+  "docs/implementation/evidence/m2/verify-preflight.mjs"
+ ],
+ "files": [
+  ".gitattributes",
+  "digital-twin/assemblies/v40/presentation/instructional/fidelity-revisions-03.json",
+  "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json",
+  "digital-twin/assemblies/v40/presentation/instructional/step08-review-05.json",
+  "digital-twin/assemblies/v40/presentation/studio/stage.json",
+  "digital-twin/cad/tests/test_m7_plate_a_s09.py",
+  "digital-twin/cad/tests/test_m7_s09_consolidated.py",
+  "digital-twin/cad/tests/test_studio_fidelity.py",
+  "digital-twin/cad/twin_cad/assemblies/instructional/revisions.py",
+  "digital-twin/cad/twin_cad/assemblies/instructional/step08.py",
+  "digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py",
+  "digital-twin/cad/twin_cad/fidelity/hat.py",
+  "digital-twin/cad/twin_cad/fidelity/pi5.py",
+  "digital-twin/cad/twin_cad/fidelity/plate_a.py",
+  "digital-twin/presentation/blender/picar-studio.blend",
+  "digital-twin/presentation/blender/presentation-receipt.json",
+  "digital-twin/presentation/blender/renders/466de8923467-48f88ae36d12-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/5968a9827b1b-0bf8a3bdb80a-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/932fbab931c2-7454be8fe8c4-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/abefb75fea06-08a6a506612f-rpi5-S02.png",
+  "digital-twin/tools/studio/studio.mjs",
+  "digital-twin/tools/studio/tray-audit.mjs",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json",
+  "digital-twin/validation/expected/m7/fidelity/plate-a-holes-03.review.json",
+  "digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep",
+  "digital-twin/validation/expected/m7/instructional-revisions/revision-artifacts.json",
+  "docs/digital-twin/ASSEMBLY_STUDIO_PIPELINE.md",
+  "docs/digital-twin/ASSEMBLY_STUDIO_PLAN.md",
+  "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+  "docs/implementation/HANDOFF_STUDIO_2.md",
+  "docs/implementation/HANDOFF_STUDIO_2_PRO_REMEDIATION.md",
+  "docs/implementation/STUDIO_2_PRO_RE_REVIEW_PROMPT.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/00-baseline-check.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/00-baseline-log.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/00-baseline-status.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/02-audit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/02-audit-negative.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/02-audit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/03-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/08-chain.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/08-display.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/08-tessellate.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/09-fidelity.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/09-hole-regeneration.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/09-regenerated-review.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/10-pack.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/11-blender.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/12-blender-check.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/12-final-check.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/13-preserved-boundaries.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/20-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/20-typecheck.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/21-unit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/22-content-recover-after-attempt1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/22-content-recover-before.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/25-m7-negative-controls.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/26-contract-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/26-contract-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/27-browser-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/27-content-recover.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/31-browser-studio-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/33-typecheck-escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/34-content-recover.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/36-escape-unit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/37-content-recover-applied.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/39-browser-legacy.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/40-escape-unit-release.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/41-content-recover-after-legacy.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/43-hat-display-generation.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/44-hat-display-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/45-hat-tessellate.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/46-fidelity-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/47-pack-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/48-blender-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/49-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/50-unit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/51-audit-hat-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/52-unit-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/53-content-recover-pre-final-browser.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/54-browser-final-hat-escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/55-final-check-with-hat.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/56-blender-check-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/57-tray-audit-hat-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/58-rust-m3-compile.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/59-content-recover-after-final-studio.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/60-camera-interior-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/61-content-recover-pre-full.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/62-browser-full-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/63-hat-rounded-source.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/64-hat-source-stale-negative.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/65-rounded-hat-tessellate.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/66-fidelity-rounded-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/67-pack-rounded-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/68-content-recover-pre-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/69-blender-rounded-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/70-unit-rounded-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/71-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/73-tray-audit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/74-browser-final-rounded.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/75-final-check.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/76-final-blender-check.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/77-typecheck-tray-commit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/78-unit-tray-commit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/79-content-recover-final-native.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/81-check-pre-commits.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/82-final-delayed-frame-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/83-content-recover-pre-legacy.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/84-legacy-final-exact.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/85-check-after-code-commits.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/86-native-reconnect.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/00-windowed-pi5-tray.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/01-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/02-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/03-zero-S01-exploded.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/04-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/05-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/06-zero-S04.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/07-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/08-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/09-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/10-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/11-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/12-zero-S09-conflict.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/13-zero-S04-ghost-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/14-zero-S04-ghost-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/15-zero-S04-explode-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/16-final-F8-before-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/17-final-F8-delayed-selection-cleared.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/18-final-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/19-final-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/20-final-modal-tray-Escape-repeat.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/21-release-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/22-release-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/23-final-windowed-pi5-tray.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/24-final-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/25-final-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/26-final-zero-S01-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/27-final-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/28-final-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/29-final-zero-S04-hat.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/30-final-zero-S04-manual-outline.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/31-final-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/32-final-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/33-final-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/34-final-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/35-final-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/36-final-zero-S09-conflict.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/37-final-tray-commit-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/38-final-tray-commit-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/39-final-distinct-Escape-exit.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/40-final80-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/41-final80-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/42-final80-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/43-final80-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/44-final80-zero-S04.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/45-final80-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/46-final80-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/47-final80-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/48-final80-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/49-final80-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/50-final80-zero-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/51-final80-zero-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/52-final80-zero-ghost-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/53-final80-zero-ghost-explode-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/54-final80-zero-inspection-reset.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/final-step-markers.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/final-inventory-scan.mjs",
+  "docs/implementation/evidence/studio-2-pro-remediation/hat-preserved-transforms.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/implementation-notes.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/intermediate-manifest-932fbab931c2.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/intermediate-manifest-abefb75fea06.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/local-checkpoint-commits.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-00-windowed-pi5-tray.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-01-zero-S00.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-02-zero-S01.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-03-zero-S01-exploded.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-04-zero-S02.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-05-zero-S03-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-06-zero-S04.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-07-zero-S05.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-08-zero-S06-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-09-zero-S07-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-10-zero-S08-dependency.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-11-zero-S09-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-12-zero-S09-conflict.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-13-zero-S04-ghost-explode.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-14-zero-S04-ghost-clip.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-15-zero-S04-explode-clip.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-16-final-F8-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-17-final-F8-delayed-selection-cleared.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-18-final-modal-tray-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-19-final-modal-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-20-final-modal-tray-Escape-repeat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-21-release-modal-tray-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-22-release-modal-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-23-final-windowed-pi5-tray.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-24-final-zero-S00.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-25-final-zero-S01.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-26-final-zero-S01-explode.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-27-final-zero-S02.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-28-final-zero-S03-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-29-final-zero-S04-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-30-final-zero-S04-manual-outline.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-31-final-zero-S05.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-32-final-zero-S06-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-33-final-zero-S07-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-34-final-zero-S08-dependency.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-35-final-zero-S09-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-36-final-zero-S09-conflict.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-37-final-tray-commit-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-38-final-tray-commit-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-39-final-distinct-Escape-exit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-40-final80-zero-S00.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-41-final80-zero-S01.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-42-final80-zero-S02.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-43-final80-zero-S03-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-44-final80-zero-S04.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-45-final80-zero-S05.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-46-final80-zero-S06-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-47-final80-zero-S07-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-48-final80-zero-S08-dependency.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-49-final80-zero-S09-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-50-final80-zero-modal-tray-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-51-final80-zero-modal-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-52-final80-zero-ghost-explode.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-53-final80-zero-ghost-explode-clip.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-54-final80-zero-inspection-reset.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-Escape-probe-1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-Escape-probe-2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-S08-current-limitations.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-S08-current-limitations.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-open-repeat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-open.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-tray-Escape-probe.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-tray-Escape-repeat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-tray-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-tray-commit-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-tray-commit-first-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-visible-modal-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-incognito-build-config.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-performance-disposition.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-records.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-release-modal-open.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native80-visible-modal-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native80-visible-modal-open.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/privacy-final.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-current.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-current.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-final-rounded.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-final-rounded.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-hat-final.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-hat-final.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-planned-drift-negative.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-planned-drift-negative.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-remediation-final.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-remediation-final.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi-zero-2-w-chromium.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi-zero-2-w-webkit.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi5-chromium.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi5-webkit.json",
+  "docs/implementation/evidence/studio-2/05-plate-a-holes.txt",
+  "docs/implementation/evidence/studio-2/10-studio-check.txt",
+  "docs/implementation/evidence/studio-2/12-presentation-selftest.txt",
+  "docs/implementation/evidence/studio-2/20-typecheck.txt",
+  "docs/implementation/evidence/studio-2/21-unit.txt",
+  "docs/implementation/evidence/studio-2/22-browser.txt",
+  "docs/implementation/evidence/studio-2/23-browser-legacy.txt",
+  "docs/implementation/evidence/studio-2/24-m7-source-mode.txt",
+  "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+  "docs/implementation/evidence/studio-2/26-native.txt",
+  "docs/implementation/evidence/studio-2/27-performance.txt",
+  "docs/implementation/evidence/studio-2/29-privacy.txt",
+  "docs/implementation/evidence/studio-2/captures/native-01-tray-rpi5-fullscreen.png",
+  "docs/implementation/evidence/studio-2/captures/native-02-rpi5-S01.png",
+  "docs/implementation/evidence/studio-2/captures/native-03-rpi5-S03.png",
+  "docs/implementation/evidence/studio-2/captures/native-04-rpi5-S06.png",
+  "docs/implementation/evidence/studio-2/captures/native-05-rpi5-S07-review.png",
+  "docs/implementation/evidence/studio-2/captures/native-06-rpi5-S08-dependency.png",
+  "docs/implementation/evidence/studio-2/captures/native-07-rpi5-S09-conflict-pair.png",
+  "docs/implementation/evidence/studio-2/captures/native-08-zero2w-S02.png",
+  "docs/implementation/evidence/studio-2/captures/native-09-rpi5-S04-ghost.png",
+  "docs/implementation/evidence/studio-2/captures/native-10-rpi5-S04-explode.png",
+  "docs/implementation/evidence/studio-2/captures/native-11-rpi5-S04-deck-clip.png",
+  "docs/implementation/evidence/studio-2/captures/native-13-rpi5-S04-inspector.png",
+  "docs/implementation/evidence/studio-2/captures/native-14-rpi5-S05-fullscreen-product-view.png",
+  "docs/implementation/evidence/studio-2/captures/native-15-perf-S02-replay.png",
+  "docs/implementation/evidence/studio-2/tray-audit-after.json",
+  "docs/implementation/evidence/studio-2/tray-audit-after.md",
+  "docs/implementation/evidence/studio-2/tray-audit-before.json",
+  "docs/implementation/evidence/studio-2/tray-audit-before.md",
+  "docs/implementation/evidence/studio-2/tray-runtime-census-rpi-zero-2-w-chromium.json",
+  "docs/implementation/evidence/studio-2/tray-runtime-census-rpi-zero-2-w-webkit.json",
+  "docs/implementation/evidence/studio-2/tray-runtime-census-rpi5-chromium.json",
+  "docs/implementation/evidence/studio-2/tray-runtime-census-rpi5-webkit.json",
+  "picarx-companion/src-tauri/Cargo.lock",
+  "picarx-companion/src-tauri/Cargo.toml",
+  "picarx-companion/src-tauri/src/lib.rs",
+  "picarx-companion/src-tauri/src/studio_escape.rs",
+  "picarx-companion/src/components/PdfViewer.tsx",
+  "picarx-companion/src/features/assembly-3d/assets/pack-contract.ts",
+  "picarx-companion/src/features/assembly-3d/assets/pack.ts",
+  "picarx-companion/src/features/assembly-3d/motion/evaluate.ts",
+  "picarx-companion/src/features/assembly-3d/motion/inspect.ts",
+  "picarx-companion/src/features/assembly-3d/scene/StudioScene.tsx",
+  "picarx-companion/src/features/assembly-3d/scene/census.ts",
+  "picarx-companion/src/features/assembly-3d/scene/resources.ts",
+  "picarx-companion/src/features/assembly-3d/state/escape.ts",
+  "picarx-companion/src/features/assembly-3d/state/fullscreen.ts",
+  "picarx-companion/src/features/assembly-3d/state/studio-store.ts",
+  "picarx-companion/src/features/assembly-3d/ui/ManualPanel.tsx",
+  "picarx-companion/src/features/assembly-3d/ui/StudioChrome.tsx",
+  "picarx-companion/src/features/assembly-3d/ui/icons.tsx",
+  "picarx-companion/src/features/assembly-3d/ui/manual-map.ts",
+  "picarx-companion/src/generated/studio/manifest.json",
+  "picarx-companion/src/generated/studio/parts.glb",
+  "picarx-companion/src/lib/v40-pdf-identity.ts",
+  "picarx-companion/src/lib/v40-pdf.ts",
+  "picarx-companion/src/pages/Studio.tsx",
+  "picarx-companion/src/styles/studio.css",
+  "picarx-companion/tests/browser/studio.spec.ts",
+  "picarx-companion/tests/studio/escape.test.ts",
+  "picarx-companion/tests/studio/fullscreen.test.ts",
+  "picarx-companion/tests/studio/inspect.test.ts",
+  "picarx-companion/tests/studio/isolation.test.ts",
+  "picarx-companion/tests/studio/manual-recovery.test.ts",
+  "picarx-companion/tests/studio/manual.test.ts",
+  "picarx-companion/tests/studio/motion.test.ts",
+  "picarx-companion/tests/studio/pack-contract.test.ts",
+  "picarx-companion/tests/studio/pack.test.ts",
+  "picarx-companion/tests/studio/resources.test.ts",
+  "picarx-companion/tests/studio/selection.test.ts",
+  "picarx-companion/tests/studio/tray-audit.test.ts"
+ ],
+ "remediationFiles": [
+  ".gitattributes",
+  "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json",
+  "digital-twin/assemblies/v40/presentation/instructional/step08-review-05.json",
+  "digital-twin/cad/tests/test_m7_plate_a_s09.py",
+  "digital-twin/cad/tests/test_m7_s09_consolidated.py",
+  "digital-twin/cad/tests/test_studio_fidelity.py",
+  "digital-twin/cad/twin_cad/assemblies/instructional/step08.py",
+  "digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py",
+  "digital-twin/cad/twin_cad/fidelity/hat.py",
+  "digital-twin/cad/twin_cad/fidelity/pi5.py",
+  "digital-twin/cad/twin_cad/fidelity/plate_a.py",
+  "digital-twin/presentation/blender/picar-studio.blend",
+  "digital-twin/presentation/blender/presentation-receipt.json",
+  "digital-twin/presentation/blender/renders/5968a9827b1b-0bf8a3bdb80a-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/932fbab931c2-7454be8fe8c4-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/abefb75fea06-08a6a506612f-rpi5-S02.png",
+  "digital-twin/tools/studio/studio.mjs",
+  "digital-twin/tools/studio/tray-audit.mjs",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json",
+  "docs/digital-twin/ASSEMBLY_STUDIO_PIPELINE.md",
+  "docs/digital-twin/ASSEMBLY_STUDIO_PLAN.md",
+  "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+  "docs/implementation/HANDOFF_STUDIO_2.md",
+  "docs/implementation/HANDOFF_STUDIO_2_PRO_REMEDIATION.md",
+  "docs/implementation/STUDIO_2_PRO_RE_REVIEW_PROMPT.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/00-baseline-check.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/00-baseline-log.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/00-baseline-status.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/02-audit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/02-audit-negative.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/02-audit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/03-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/08-chain.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/08-display.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/08-tessellate.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/09-fidelity.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/09-hole-regeneration.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/09-regenerated-review.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/10-pack.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/11-blender.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/12-blender-check.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/12-final-check.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/13-preserved-boundaries.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/20-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/20-typecheck.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/21-unit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/22-content-recover-after-attempt1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/22-content-recover-before.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/25-m7-negative-controls.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/26-contract-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/26-contract-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/27-browser-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/27-content-recover.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/31-browser-studio-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/33-typecheck-escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/34-content-recover.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/36-escape-unit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/37-content-recover-applied.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/39-browser-legacy.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/40-escape-unit-release.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/41-content-recover-after-legacy.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/43-hat-display-generation.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/44-hat-display-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/45-hat-tessellate.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/46-fidelity-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/47-pack-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/48-blender-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/49-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/50-unit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/51-audit-hat-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/52-unit-final-attempt2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/53-content-recover-pre-final-browser.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/54-browser-final-hat-escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/55-final-check-with-hat.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/56-blender-check-with-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/57-tray-audit-hat-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/58-rust-m3-compile.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/59-content-recover-after-final-studio.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/60-camera-interior-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/61-content-recover-pre-full.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/62-browser-full-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/63-hat-rounded-source.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/64-hat-source-stale-negative.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/65-rounded-hat-tessellate.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/66-fidelity-rounded-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/67-pack-rounded-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/68-content-recover-pre-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/69-blender-rounded-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/70-unit-rounded-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/71-typecheck-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/73-tray-audit-final.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/74-browser-final-rounded.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/75-final-check.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/76-final-blender-check.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/77-typecheck-tray-commit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/78-unit-tray-commit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/79-content-recover-final-native.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/81-check-pre-commits.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/82-final-delayed-frame-focused.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/83-content-recover-pre-legacy.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/84-legacy-final-exact.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/85-check-after-code-commits.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/86-native-reconnect.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/00-windowed-pi5-tray.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/01-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/02-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/03-zero-S01-exploded.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/04-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/05-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/06-zero-S04.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/07-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/08-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/09-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/10-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/11-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/12-zero-S09-conflict.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/13-zero-S04-ghost-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/14-zero-S04-ghost-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/15-zero-S04-explode-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/16-final-F8-before-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/17-final-F8-delayed-selection-cleared.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/18-final-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/19-final-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/20-final-modal-tray-Escape-repeat.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/21-release-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/22-release-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/23-final-windowed-pi5-tray.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/24-final-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/25-final-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/26-final-zero-S01-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/27-final-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/28-final-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/29-final-zero-S04-hat.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/30-final-zero-S04-manual-outline.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/31-final-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/32-final-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/33-final-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/34-final-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/35-final-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/36-final-zero-S09-conflict.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/37-final-tray-commit-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/38-final-tray-commit-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/39-final-distinct-Escape-exit.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/40-final80-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/41-final80-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/42-final80-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/43-final80-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/44-final80-zero-S04.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/45-final80-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/46-final80-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/47-final80-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/48-final80-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/49-final80-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/50-final80-zero-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/51-final80-zero-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/52-final80-zero-ghost-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/53-final80-zero-ghost-explode-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/54-final80-zero-inspection-reset.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/final-step-markers.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/final-inventory-scan.mjs",
+  "docs/implementation/evidence/studio-2-pro-remediation/hat-preserved-transforms.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/implementation-notes.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/intermediate-manifest-932fbab931c2.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/intermediate-manifest-abefb75fea06.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/local-checkpoint-commits.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-00-windowed-pi5-tray.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-01-zero-S00.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-02-zero-S01.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-03-zero-S01-exploded.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-04-zero-S02.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-05-zero-S03-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-06-zero-S04.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-07-zero-S05.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-08-zero-S06-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-09-zero-S07-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-10-zero-S08-dependency.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-11-zero-S09-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-12-zero-S09-conflict.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-13-zero-S04-ghost-explode.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-14-zero-S04-ghost-clip.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-15-zero-S04-explode-clip.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-16-final-F8-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-17-final-F8-delayed-selection-cleared.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-18-final-modal-tray-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-19-final-modal-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-20-final-modal-tray-Escape-repeat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-21-release-modal-tray-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-22-release-modal-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-23-final-windowed-pi5-tray.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-24-final-zero-S00.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-25-final-zero-S01.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-26-final-zero-S01-explode.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-27-final-zero-S02.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-28-final-zero-S03-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-29-final-zero-S04-hat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-30-final-zero-S04-manual-outline.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-31-final-zero-S05.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-32-final-zero-S06-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-33-final-zero-S07-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-34-final-zero-S08-dependency.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-35-final-zero-S09-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-36-final-zero-S09-conflict.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-37-final-tray-commit-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-38-final-tray-commit-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-39-final-distinct-Escape-exit.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-40-final80-zero-S00.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-41-final80-zero-S01.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-42-final80-zero-S02.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-43-final80-zero-S03-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-44-final80-zero-S04.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-45-final80-zero-S05.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-46-final80-zero-S06-still.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-47-final80-zero-S07-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-48-final80-zero-S08-dependency.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-49-final80-zero-S09-review.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-50-final80-zero-modal-tray-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-51-final80-zero-modal-return.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-52-final80-zero-ghost-explode.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-53-final80-zero-ghost-explode-clip.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-54-final80-zero-inspection-reset.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-Escape-probe-1.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-Escape-probe-2.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-S08-current-limitations.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-S08-current-limitations.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-open-repeat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-open.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-tray-Escape-probe.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-tray-Escape-repeat.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-modal-tray-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-tray-commit-before-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-tray-commit-first-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-final-visible-modal-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-incognito-build-config.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-performance-disposition.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-records.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/native-release-modal-open.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native80-visible-modal-Escape.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/native80-visible-modal-open.txt",
+  "docs/implementation/evidence/studio-2-pro-remediation/privacy-final.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-current.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-current.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-final-rounded.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-final-rounded.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-hat-final.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-hat-final.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-planned-drift-negative.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-planned-drift-negative.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-remediation-final.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-audit-remediation-final.md",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi-zero-2-w-chromium.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi-zero-2-w-webkit.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi5-chromium.json",
+  "docs/implementation/evidence/studio-2-pro-remediation/tray-runtime-census-rpi5-webkit.json",
+  "picarx-companion/src-tauri/Cargo.lock",
+  "picarx-companion/src-tauri/Cargo.toml",
+  "picarx-companion/src-tauri/src/lib.rs",
+  "picarx-companion/src-tauri/src/studio_escape.rs",
+  "picarx-companion/src/features/assembly-3d/assets/pack-contract.ts",
+  "picarx-companion/src/features/assembly-3d/assets/pack.ts",
+  "picarx-companion/src/features/assembly-3d/motion/evaluate.ts",
+  "picarx-companion/src/features/assembly-3d/motion/inspect.ts",
+  "picarx-companion/src/features/assembly-3d/scene/StudioScene.tsx",
+  "picarx-companion/src/features/assembly-3d/scene/resources.ts",
+  "picarx-companion/src/features/assembly-3d/state/escape.ts",
+  "picarx-companion/src/features/assembly-3d/state/fullscreen.ts",
+  "picarx-companion/src/features/assembly-3d/state/studio-store.ts",
+  "picarx-companion/src/features/assembly-3d/ui/ManualPanel.tsx",
+  "picarx-companion/src/features/assembly-3d/ui/StudioChrome.tsx",
+  "picarx-companion/src/generated/studio/manifest.json",
+  "picarx-companion/src/generated/studio/parts.glb",
+  "picarx-companion/src/lib/v40-pdf.ts",
+  "picarx-companion/src/pages/Studio.tsx",
+  "picarx-companion/src/styles/studio.css",
+  "picarx-companion/tests/browser/studio.spec.ts",
+  "picarx-companion/tests/studio/escape.test.ts",
+  "picarx-companion/tests/studio/fullscreen.test.ts",
+  "picarx-companion/tests/studio/inspect.test.ts",
+  "picarx-companion/tests/studio/isolation.test.ts",
+  "picarx-companion/tests/studio/manual-recovery.test.ts",
+  "picarx-companion/tests/studio/motion.test.ts",
+  "picarx-companion/tests/studio/pack-contract.test.ts",
+  "picarx-companion/tests/studio/pack.test.ts",
+  "picarx-companion/tests/studio/resources.test.ts",
+  "picarx-companion/tests/studio/selection.test.ts",
+  "picarx-companion/tests/studio/tray-audit.test.ts"
+ ],
+ "textFiles": 271,
+ "binaryFiles": [
+  "digital-twin/presentation/blender/picar-studio.blend",
+  "digital-twin/presentation/blender/renders/466de8923467-48f88ae36d12-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/5968a9827b1b-0bf8a3bdb80a-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/932fbab931c2-7454be8fe8c4-rpi5-S02.png",
+  "digital-twin/presentation/blender/renders/abefb75fea06-08a6a506612f-rpi5-S02.png",
+  "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+  "digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/00-windowed-pi5-tray.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/01-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/02-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/03-zero-S01-exploded.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/04-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/05-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/06-zero-S04.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/07-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/08-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/09-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/10-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/11-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/12-zero-S09-conflict.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/13-zero-S04-ghost-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/14-zero-S04-ghost-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/15-zero-S04-explode-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/16-final-F8-before-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/17-final-F8-delayed-selection-cleared.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/18-final-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/19-final-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/20-final-modal-tray-Escape-repeat.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/21-release-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/22-release-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/23-final-windowed-pi5-tray.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/24-final-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/25-final-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/26-final-zero-S01-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/27-final-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/28-final-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/29-final-zero-S04-hat.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/30-final-zero-S04-manual-outline.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/31-final-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/32-final-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/33-final-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/34-final-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/35-final-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/36-final-zero-S09-conflict.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/37-final-tray-commit-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/38-final-tray-commit-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/39-final-distinct-Escape-exit.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/40-final80-zero-S00.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/41-final80-zero-S01.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/42-final80-zero-S02.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/43-final80-zero-S03-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/44-final80-zero-S04.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/45-final80-zero-S05.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/46-final80-zero-S06-still.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/47-final80-zero-S07-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/48-final80-zero-S08-dependency.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/49-final80-zero-S09-review.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/50-final80-zero-modal-tray-Escape.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/51-final80-zero-modal-return.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/52-final80-zero-ghost-explode.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/53-final80-zero-ghost-explode-clip.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/54-final80-zero-inspection-reset.png",
+  "docs/implementation/evidence/studio-2-pro-remediation/captures/final-step-markers.png",
+  "docs/implementation/evidence/studio-2/captures/native-01-tray-rpi5-fullscreen.png",
+  "docs/implementation/evidence/studio-2/captures/native-02-rpi5-S01.png",
+  "docs/implementation/evidence/studio-2/captures/native-03-rpi5-S03.png",
+  "docs/implementation/evidence/studio-2/captures/native-04-rpi5-S06.png",
+  "docs/implementation/evidence/studio-2/captures/native-05-rpi5-S07-review.png",
+  "docs/implementation/evidence/studio-2/captures/native-06-rpi5-S08-dependency.png",
+  "docs/implementation/evidence/studio-2/captures/native-07-rpi5-S09-conflict-pair.png",
+  "docs/implementation/evidence/studio-2/captures/native-08-zero2w-S02.png",
+  "docs/implementation/evidence/studio-2/captures/native-09-rpi5-S04-ghost.png",
+  "docs/implementation/evidence/studio-2/captures/native-10-rpi5-S04-explode.png",
+  "docs/implementation/evidence/studio-2/captures/native-11-rpi5-S04-deck-clip.png",
+  "docs/implementation/evidence/studio-2/captures/native-13-rpi5-S04-inspector.png",
+  "docs/implementation/evidence/studio-2/captures/native-14-rpi5-S05-fullscreen-product-view.png",
+  "docs/implementation/evidence/studio-2/captures/native-15-perf-S02-replay.png",
+  "picarx-companion/src/generated/studio/parts.glb"
+ ],
+ "hits": [
+  {
+   "file": "docs/digital-twin/ASSEMBLY_STUDIO_PIPELINE.md",
+   "line": 112,
+   "category": "private-link",
+   "classification": "code constructs functional localhost development URL"
+  },
+  {
+   "file": "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+   "line": 10,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+   "line": 194,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+   "line": 289,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/HANDOFF_M7_REMEDIATION.md",
+   "line": 415,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/HANDOFF_STUDIO_2.md",
+   "line": 200,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/STUDIO_2_PRO_RE_REVIEW_PROMPT.md",
+   "line": 1,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/03-focused.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/11-blender.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/11-blender.txt",
+   "line": 4,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/11-blender.txt",
+   "line": 5,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/20-typecheck-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/20-typecheck.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/21-unit.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/21-unit.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 158,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 181,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 182,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 203,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 224,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 249,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 267,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 288,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 309,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-browser-attempt1.txt",
+   "line": 334,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-content-recover-after-attempt1.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/22-content-recover-before.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 22,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 23,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 24,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 25,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 26,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 27,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 34,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 35,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 36,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 37,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 38,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 39,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 46,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 47,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 48,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 49,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 50,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 51,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 58,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 59,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 60,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 61,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 62,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 63,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 70,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 71,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 72,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 73,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 74,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 75,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 82,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 83,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 84,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 85,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 86,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 87,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 94,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 95,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 96,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 97,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 98,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 99,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 106,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 107,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 108,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 109,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 110,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 111,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 119,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 120,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 121,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 122,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 123,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 124,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 131,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 132,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 133,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 134,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 135,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 136,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 143,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 144,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 145,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 146,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 147,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 148,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 155,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 156,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 157,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 158,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 159,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/24-m7.txt",
+   "line": 160,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/26-contract-final-attempt2.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/26-contract-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/27-content-recover.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck-final-attempt2.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/28-typecheck.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final-attempt2.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final-attempt2.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/29-unit-final.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+   "line": 46,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+   "line": 48,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+   "line": 49,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/30-tauri-build.txt",
+   "line": 51,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/31-browser-studio-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+   "line": 11,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+   "line": 16,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/32-tauri-escape-build-attempt1.txt",
+   "line": 17,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/33-typecheck-escape.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/34-content-recover.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+   "line": 11,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+   "line": 16,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/35-tauri-escape-build-attempt2.txt",
+   "line": 17,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/36-escape-unit.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/36-escape-unit.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/37-content-recover-applied.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+   "line": 46,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+   "line": 48,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+   "line": 49,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/38-tauri-escape-build-attempt3.txt",
+   "line": 51,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/39-browser-legacy.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/40-escape-unit-release.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/40-escape-unit-release.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/41-content-recover-after-legacy.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+   "line": 46,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+   "line": 48,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+   "line": 49,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/42-tauri-escape-release-build.txt",
+   "line": 51,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/48-blender-with-hat.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/48-blender-with-hat.txt",
+   "line": 4,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/48-blender-with-hat.txt",
+   "line": 5,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/49-typecheck-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/50-unit-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/50-unit-final.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/52-unit-final-attempt2.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/52-unit-final-attempt2.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/53-content-recover-pre-final-browser.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/54-browser-final-hat-escape.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/54-browser-final-hat-escape.txt",
+   "line": 113,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/58-rust-m3-compile.txt",
+   "line": 19,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/59-content-recover-after-final-studio.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/60-camera-interior-focused.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/61-content-recover-pre-full.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/62-browser-full-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/62-browser-full-final.txt",
+   "line": 146,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/62-browser-full-final.txt",
+   "line": 164,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/62-browser-full-final.txt",
+   "line": 182,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/68-content-recover-pre-build.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/69-blender-rounded-hat.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/69-blender-rounded-hat.txt",
+   "line": 4,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/69-blender-rounded-hat.txt",
+   "line": 5,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/70-unit-rounded-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/70-unit-rounded-final.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/71-typecheck-final.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+   "line": 64,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+   "line": 66,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+   "line": 67,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/72-tauri-final-rounded-build.txt",
+   "line": 69,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/74-browser-final-rounded.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/74-browser-final-rounded.txt",
+   "line": 144,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/74-browser-final-rounded.txt",
+   "line": 162,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/77-typecheck-tray-commit.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/78-unit-tray-commit.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/78-unit-tray-commit.txt",
+   "line": 6,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/79-content-recover-final-native.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+   "line": 8,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+   "line": 46,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+   "line": 48,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+   "line": 49,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/80-tauri-final-tray-commit-build.txt",
+   "line": 51,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/82-final-delayed-frame-focused.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2-pro-remediation/83-content-recover-pre-legacy.txt",
+   "line": 2,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/20-typecheck.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/21-unit.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/21-unit.txt",
+   "line": 7,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/22-browser.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/22-browser.txt",
+   "line": 39,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/22-browser.txt",
+   "line": 104,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+   "line": 3,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+   "line": 9,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+   "line": 47,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+   "line": 49,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+   "line": 50,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "docs/implementation/evidence/studio-2/25-tauri-debug-build.txt",
+   "line": 52,
+   "category": "personal-path",
+   "classification": "real functional local path or retained local provenance"
+  },
+  {
+   "file": "picarx-companion/tests/browser/studio.spec.ts",
+   "line": 5,
+   "category": "private-link",
+   "classification": "code constructs functional local test URL or synthetic fixture"
+  }
+ ],
+ "scope": "Working candidate inventory against Studio 2 base, including all remediation untracked artifacts. The generated report is itself included; its final classifications are manually reviewed. No history rewrite or publication.",
+ "mediaReview": "All application captures are reviewed as app-window evidence. They may include the ordinary runtime manual panel; no separate enlarged or source-copy manual capture is added. GLB forbids images; CAD artifacts are numerical geometry; Blender render and scene are reviewed separately."
+}

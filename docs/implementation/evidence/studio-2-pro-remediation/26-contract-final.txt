@@ -1,0 +1,33 @@
+
+ RUN  v5.0.2 /Users/danny/Documents/Apps/PiCar/picarx-companion
+
+ ❯ tests/studio/pack-contract.test.ts (27 tests | 1 failed) 235ms
+   ❯ runtime pack validation (27)
+     × rejects refused Preview and malformed consumer records without throwing 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/studio/pack-contract.test.ts > runtime pack validation > rejects refused Preview and malformed consumer records without throwing
+TypeError: Cannot use 'in' operator to search for 'PX-V40-INS-M25X18PLUS6-STANDOFF-001' in 1
+ ❯ src/features/assembly-3d/assets/pack-contract.ts:144:86
+    142|         && ids(s.focusInstanceIds, known), `MANIFEST_STEP_PARTS ${at}`…
+    143|       need(s.mode === 'closed' || camera(s.camera), `MANIFEST_OPENED_C…
+    144|       need(Array.isArray(s.recipes) && s.recipes.every((r: Json) => is…
+       |                                                                                      ^
+    145|         && finite(r.approachDistanceM) && pose(r.stagedStart)), `MANIF…
+    146|       const workpiece = s.workpieceInstanceId;
+ ❯ src/features/assembly-3d/assets/pack-contract.ts:144:50
+ ❯ manifestProblems src/features/assembly-3d/assets/pack-contract.ts:113:17
+ ❯ validatePackBytes src/features/assembly-3d/assets/pack-contract.ts:239:20
+ ❯ problems tests/studio/pack-contract.test.ts:36:65
+ ❯ rejects tests/studio/pack-contract.test.ts:117:18
+ ❯ tests/studio/pack-contract.test.ts:170:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 110 passed (111)
+   Start at  22:24:18
+   Duration  452ms (tests 62%, transform 29%, import 7%, worker 1%)
+

@@ -1,0 +1,25 @@
+
+> picarx-companion@0.1.0 test:browser /Users/danny/Documents/Apps/PiCar/picarx-companion
+> playwright test tests/browser/studio.spec.ts -g 'manual open to tray|manual fetch failure'
+
+[WebServer] (node:35141) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:35173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/studio.spec.ts:638:1 › manual fetch failure offers explicit retry, rejects wrong retry bytes, and then renders the locked PDF (5.5s)
+  ✓  2 [chromium] › tests/browser/studio.spec.ts:690:1 › manual open to tray navigation closes invisible modal state before Escape and never resurrects it (2.8s)
+(node:35256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [webkit] › tests/browser/studio.spec.ts:638:1 › manual fetch failure offers explicit retry, rejects wrong retry bytes, and then renders the locked PDF (1.6s)
+  ✓  4 [webkit] › tests/browser/studio.spec.ts:690:1 › manual open to tray navigation closes invisible modal state before Escape and never resurrects it (868ms)
+
+  4 passed (12.6s)

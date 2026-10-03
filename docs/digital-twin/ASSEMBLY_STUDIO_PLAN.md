@@ -90,3 +90,5 @@ A later step is content, not new UI:
 5. Display readiness changes with the pack; M7 assembly status changes only through M7. The step rail shows both.
 
 M7 geometry work resumes after Studio 1 on its own branch line; the owner can inspect each revision in the Studio as it lands.
+
+Studio 2 correctness closeout is documented in `../implementation/HANDOFF_STUDIO_2_PRO_REMEDIATION.md`: exact shared contract validation, fatal canonical tray disagreement, movement-based camera ownership, continuous recipe-free explosion, recoverable locked manual and complete native Zero S00–S09 verification. This checkpoint does not authorize or implement Studio 3 or M8.

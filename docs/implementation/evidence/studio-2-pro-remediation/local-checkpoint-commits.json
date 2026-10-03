@@ -1,0 +1,80 @@
+[
+ {
+  "sha": "95b0042671fabee3b58d1a9c2f781c7e0f2b5449",
+  "message": "M7 fidelity checkpoint: current hole review and display-only HAT outline",
+  "paths": [
+   ".gitattributes",
+   "digital-twin/assemblies/v40/presentation/instructional/step08-review-05.json",
+   "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json",
+   "digital-twin/cad/twin_cad/assemblies/instructional/step08.py",
+   "digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py",
+   "digital-twin/cad/twin_cad/fidelity/plate_a.py",
+   "digital-twin/cad/twin_cad/fidelity/pi5.py",
+   "digital-twin/cad/twin_cad/fidelity/hat.py",
+   "digital-twin/cad/tests/test_studio_fidelity.py",
+   "digital-twin/cad/tests/test_m7_plate_a_s09.py",
+   "digital-twin/cad/tests/test_m7_s09_consolidated.py",
+   "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json",
+   "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json",
+   "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+   "docs/implementation/HANDOFF_M7_REMEDIATION.md"
+  ]
+ },
+ {
+  "sha": "e17cfbba334248739cfb012d0fff13dea90ac941",
+  "message": "Studio: enforce semantic pack contracts and canonical tray audit",
+  "paths": [
+   "digital-twin/tools/studio/studio.mjs",
+   "digital-twin/tools/studio/tray-audit.mjs",
+   "picarx-companion/src/features/assembly-3d/assets/pack-contract.ts",
+   "picarx-companion/src/features/assembly-3d/assets/pack.ts",
+   "picarx-companion/tests/studio/pack-contract.test.ts",
+   "picarx-companion/tests/studio/tray-audit.test.ts",
+   "picarx-companion/tests/studio/pack.test.ts",
+   "picarx-companion/src/generated/studio/manifest.json",
+   "picarx-companion/src/generated/studio/parts.glb",
+   "digital-twin/presentation/blender/picar-studio.blend",
+   "digital-twin/presentation/blender/presentation-receipt.json",
+   "digital-twin/presentation/blender/renders/abefb75fea06-08a6a506612f-rpi5-S02.png",
+   "digital-twin/presentation/blender/renders/932fbab931c2-7454be8fe8c4-rpi5-S02.png",
+   "digital-twin/presentation/blender/renders/5968a9827b1b-0bf8a3bdb80a-rpi5-S02.png"
+  ]
+ },
+ {
+  "sha": "90ca7ba697c44b7833ccd5e5abb1973922349896",
+  "message": "Studio: recover locked manual loading and surface render failures",
+  "paths": [
+   "picarx-companion/src/lib/v40-pdf.ts",
+   "picarx-companion/src/features/assembly-3d/ui/ManualPanel.tsx",
+   "picarx-companion/tests/studio/manual-recovery.test.ts"
+  ]
+ },
+ {
+  "sha": "d885e5553e14e12fcb0292d7f437de080dc0c445",
+  "message": "Studio: repair camera, explosion, clipping and native Escape order",
+  "paths": [
+   "picarx-companion/src/features/assembly-3d/motion/evaluate.ts",
+   "picarx-companion/src/features/assembly-3d/motion/inspect.ts",
+   "picarx-companion/src/features/assembly-3d/scene/StudioScene.tsx",
+   "picarx-companion/src/features/assembly-3d/scene/resources.ts",
+   "picarx-companion/src/features/assembly-3d/state/escape.ts",
+   "picarx-companion/src/features/assembly-3d/state/fullscreen.ts",
+   "picarx-companion/src/features/assembly-3d/state/studio-store.ts",
+   "picarx-companion/src/features/assembly-3d/ui/StudioChrome.tsx",
+   "picarx-companion/src/pages/Studio.tsx",
+   "picarx-companion/src/styles/studio.css",
+   "picarx-companion/src-tauri/Cargo.lock",
+   "picarx-companion/src-tauri/Cargo.toml",
+   "picarx-companion/src-tauri/src/lib.rs",
+   "picarx-companion/src-tauri/src/studio_escape.rs",
+   "picarx-companion/tests/browser/studio.spec.ts",
+   "picarx-companion/tests/studio/escape.test.ts",
+   "picarx-companion/tests/studio/fullscreen.test.ts",
+   "picarx-companion/tests/studio/inspect.test.ts",
+   "picarx-companion/tests/studio/isolation.test.ts",
+   "picarx-companion/tests/studio/motion.test.ts",
+   "picarx-companion/tests/studio/resources.test.ts",
+   "picarx-companion/tests/studio/selection.test.ts"
+  ]
+ }
+]

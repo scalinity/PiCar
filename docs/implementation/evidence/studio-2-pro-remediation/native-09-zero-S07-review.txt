@@ -1,0 +1,120 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/7
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/7
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/7
+				14 text Review
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 7 of 29 · Raspberry Pi Zero 2 W
+					27 heading Secure and connect the battery, Value: 2
+						28 text Secure and connect the battery
+					29 text Review only. The parts sit at their recorded, checked poses, but a connection this step needs is unresolved, so the step is not played as an installation.
+					30 container Why this step is in review
+						31 heading A connection is unresolved, Value: 3
+							32 text A connection is unresolved
+						33 text PX-V40-CONN-07-COMMON-BATTERY: the Battery lead to the Robot HAT. Its cable end has no recorded frame, so where it plugs in cannot be placed or checked. The highlighted parts sit at their recorded, checked poses.
+					34 container Printed manual
+						35 heading Printed manual, Value: 3
+							36 text Printed manual
+						37 button Enlarge
+						38 image Printed Step 7, page 2 of the V40 booklet
+						39 text Printed Step 7 · page 2 of the V40 booklet
+					40 container Parts in this step
+						41 heading In this step, Value: 3
+							42 text In this step
+						43 toggle button Battery at its recorded pose; not played, Value: on
+						44 heading Works on, Value: 4
+							45 text Works on
+						46 container
+							47 toggle button Plate A already in place, Value: off
+							48 toggle button Robot HAT already in place, Value: off
+					49 container From the step record
+						50 heading From the step record, Value: 3
+							51 text From the step record
+						52 description list
+							53 text Parts
+							54 text No new battery: use the same instance prepared in S06.
+							55 text Hardware
+							56 text No new fastener.
+							57 text Tools
+							58 text Hands.
+							59 text Orientation
+							60 text Connector orientation must match its keyed interface; connected does not mean switch ON.
+						61 text Caution Connector orientation must match its keyed interface; connected does not mean switch ON.
+						62 summary Connection details, Value: off
+							63 text Connection details
+					64 container Selected part
+						65 heading Battery, Value: 3
+							66 text Battery
+						67 description list
+							68 text Definition
+							69 container
+								70 text Battery PX-V40-DEF-BATTERY
+							71 text Instance
+							72 text PX-V40-INS-BATTERY-001
+							73 text Inventory
+							74 text Electronics, first introduced in step 6
+							75 text Now
+							76 text Installed in this step’s pose
+							77 text Shape
+							78 container
+								79 text M5 instructional proxy: simplified presentation shape, non-engineering. Shown and checked as this shape. PX-V40-DEF-BATTERY.brep (f685c1a07c)
+								80 container f685c1a07cf87d4fe7da7703366fd939681a69e654209aeaff7355f019485959
+							81 text Pose from
+							82 container 9aea62ce3156265dcdd062211f0f4f4c06ccfa2709dad3cd8e18f414493318b6
+								83 text rpi-zero-2-w-S07-closure.json
+						84 button Frame this part
+					85 container Status
+						86 description list
+							87 text Assembly check
+							88 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							89 text Your car
+							90 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						91 summary Source limitations (32), Value: off
+							92 text Source limitations (32)
+						93 container
+							94 text Pack abefb75fea06 from chain run s2pro-01 (source mode)
+							95 container abefb75fea062a259fada4fe902200ab7183fa3c61be068a08b32e18d3f3f374
+				96 container Step controls
+					97 container Steps
+						98 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						99 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						100 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						101 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						102 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						103 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						104 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						105 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						106 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						107 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					108 text Review: shown as recorded, not played as an installation.
+				109 text Step 7: Secure and connect the battery. Review only
+110 menu bar
+	111 picarx-companion
+	112 File
+	113 Edit
+	114 View
+	115 Window
+	116 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/7

@@ -1,0 +1,141 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/1
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/1
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/1
+				14 text Preview
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Inspect: Explode on
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: on
+					21 toggle button Deck clip, Value: off
+					22 button Reset inspection
+				23 container View
+					24 toggle button Guided view, Help: Guided view (R), Value: on
+					25 button Frame part, Help: Frame part (F)
+				26 container Instructions
+					27 text Step 1 of 29 · Raspberry Pi Zero 2 W
+					28 heading Prepare Plate A mounting supports, Value: 2
+						29 text Prepare Plate A mounting supports
+					30 text Preview. Poses come from the M7 instructional chain and passed its independent check when this pack was built.
+					31 container Printed manual
+						32 heading Printed manual, Value: 3
+							33 text Printed manual
+						34 button Enlarge
+						35 image Printed Step 1 / rpi-zero-2-w, page 1 of the V40 booklet
+						36 text Printed Step 1 · rpi-zero-2-w · page 1 of the V40 booklet
+					37 container Parts in this step
+						38 heading In this step, Value: 3
+							39 text In this step
+						40 container
+							41 container Each M2.5x11 standoff
+								42 toggle button M2.5x11 standoff×2 moves down 30 mm into place, Value: off
+								43 container Each M2.5x11 standoff
+									44 toggle button 1, Help: PX-V40-INS-M25X11-STANDOFF-001, Value: off
+									45 toggle button 2, Help: PX-V40-INS-M25X11-STANDOFF-002, Value: off
+							46 container Each M2.5x30 standoff
+								47 toggle button M2.5x30 standoff×2 moves down 30 mm into place, Value: off
+								48 container Each M2.5x30 standoff
+									49 toggle button 1, Help: PX-V40-INS-M25X30-STANDOFF-001, Value: off
+									50 toggle button 2, Help: PX-V40-INS-M25X30-STANDOFF-002, Value: off
+							51 container Each M2.5x6 screw
+								52 toggle button M2.5x6 screw×4 moves up 30 mm into place, Value: off
+								53 container Each M2.5x6 screw
+									54 toggle button 1, Help: PX-V40-INS-M25X6-SCREW-001, Value: off
+									55 toggle button 2, Help: PX-V40-INS-M25X6-SCREW-002, Value: off
+									56 toggle button 3, Help: PX-V40-INS-M25X6-SCREW-003, Value: off
+									57 toggle button 4, Help: PX-V40-INS-M25X6-SCREW-004, Value: off
+							58 toggle button Plate A the workpiece; placed directly, Value: on
+						59 heading Tools, Value: 4
+							60 text Tools
+						61 container
+							62 toggle button Screwdriver 1 kit tool, listed as a tile, Value: off
+							63 toggle button Screwdriver 2 kit tool, listed as a tile, Value: off
+					64 container From the step record
+						65 heading From the step record, Value: 3
+							66 text From the step record
+						67 description list
+							68 text Parts
+							69 text Plate A ×1. Pi4/Pi5: M2.5x18+6 nylon standoff ×4. Zero2W: M2.5x30 ×2 and M2.5x11 ×2.
+							70 text Hardware
+							71 text M2.5x6 screw ×4 for every branch.
+							72 text This board
+							73 text 2× M2.5x30 + 2× M2.5x11
+							74 text Tools
+							75 text Matched screwdriver; hand placement of nylon standoffs. Driver size/torque unresolved.
+							76 text Orientation
+							77 text Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram.
+						78 text Caution Keep the male ends of the Pi4/Pi5 M2.5x18+6 supports toward the Pi. For Zero2W distinguish the two tall HAT supports from the two short Pi supports; do not mirror the diagram.
+						79 summary Connection details, Value: off
+							80 text Connection details
+					81 container Selected part
+						82 heading Plate A, Value: 3
+							83 text Plate A
+						84 description list
+							85 text Definition
+							86 container
+								87 text Plate A PX-V40-DEF-PLATE-A
+							88 text Instance
+							89 text PX-V40-INS-PLATE-A-001
+							90 text Inventory
+							91 text Plates, first introduced in step 1
+							92 text Now
+							93 text Installed in this step’s pose
+							94 text Shape
+							95 container
+								96 text Studio fidelity correction: Plate A pan-hub screw holes rebuilt as two mirror-image rows of four from the calibrated owner photograph (the trace had four and three); outline as revision 01, every other feature unchanged, non-engineering. Shown and checked as this shape. PX-V40-DEF-PLATE-A.brep (2348ebddc5)
+								97 container 2348ebddc570041cbe42d3d0ea9ce4f3da279bb24fb1df3607116be1db01b495
+							98 text Pose from
+							99 container a42a291f2b6b4084d4a3aba6cff573c66a20738a2572b1ada73fa70728c52f6e
+								100 text rpi-zero-2-w-S01-closure.json
+						101 button Frame this part
+					102 container Status
+						103 description list
+							104 text Assembly check
+							105 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							106 text Your car
+							107 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						108 summary Source limitations (8), Value: off
+							109 text Source limitations (8)
+						110 container
+							111 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							112 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				113 container Step controls
+					114 container Steps
+						115 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						116 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						117 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						118 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						119 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						120 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						121 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						122 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						123 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						124 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					125 button Rewind
+					126 button Play step, Help: Play step (Space)
+					127 button Replay from the start
+					128 slider (settable, float) Step timeline, Value: 4, Details: 4.0 s of 4.0 s
+						129 value indicator 4
+				130 text Step 1: Prepare Plate A mounting supports. Preview
+131 menu bar
+	132 picarx-companion
+	133 File
+	134 Edit
+	135 View
+	136 Window
+	137 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/1

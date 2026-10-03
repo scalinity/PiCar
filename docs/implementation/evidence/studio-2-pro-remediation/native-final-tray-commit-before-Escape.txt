@@ -1,0 +1,125 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/0
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/0
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+				14 text Parts tray
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button (disabled) Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Guided view, Help: Guided view (R), Value: on
+					24 button Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Parts tray · Raspberry Pi 5
+					27 heading Everything for steps 1 to 9, Value: 2
+						28 text Everything for steps 1 to 9
+					29 text Laid out by kind beside the chassis: a layout for looking and counting, not a stage of the build.
+					30 container Parts inventory
+						31 text 50 pieces · 44 modelled · 6 shown as tiles
+						32 summary › Plates 2, Value: off
+							33 text ›
+							34 text Plates
+							35 text 2
+							36 button Frame
+						37 summary › Electronics 5, Value: off
+							38 text ›
+							39 text Electronics
+							40 text 5
+							41 button Frame
+						42 summary › Motors and servos 3, Value: off
+							43 text ›
+							44 text Motors and servos
+							45 text 3
+							46 button Frame
+						47 summary › Fasteners 34, Value: off
+							48 text ›
+							49 text Fasteners
+							50 text 34
+							51 button Frame
+						52 summary › Supplies 2, Value: off
+							53 text ›
+							54 text Supplies
+							55 text 2
+							56 button Frame
+						57 summary › Cables 1, Value: off
+							58 text ›
+							59 text Cables
+							60 text 1
+							61 button Frame
+						62 summary › Tools 3, Value: off
+							63 text ›
+							64 text Tools
+							65 text 3
+							66 button Frame
+						67 text The printed kit inventory lists 156 pieces for this board; the 106 not shown are used after step 9, or are spares (37) and accessories.
+					68 container Selected part
+						69 heading Plate A, Value: 3
+							70 text Plate A
+						71 description list
+							72 text Definition
+							73 container
+								74 text Plate A PX-V40-DEF-PLATE-A
+							75 text Instance
+							76 text PX-V40-INS-PLATE-A-001
+							77 text Inventory
+							78 text Plates, first introduced in step 1
+							79 text Now
+							80 text In the parts tray (a layout, not an assembly state)
+							81 text Shape
+							82 container
+								83 text Studio fidelity correction: Plate A pan-hub screw holes rebuilt as two mirror-image rows of four from the calibrated owner photograph (the trace had four and three); outline as revision 01, every other feature unchanged, non-engineering. Shown and checked as this shape. PX-V40-DEF-PLATE-A.brep (2348ebddc5)
+								84 container 2348ebddc570041cbe42d3d0ea9ce4f3da279bb24fb1df3607116be1db01b495
+							85 text Pose from
+							86 text Tray layout
+						87 button Frame this part
+					88 container Status
+						89 description list
+							90 text Assembly check
+							91 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							92 text Your car
+							93 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						94 container
+							95 text Pack 5968a9827b1b from chain run s2pro-01 (source mode)
+							96 container 5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352
+				97 container Step controls
+					98 container Steps
+						99 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi5/0
+						100 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi5/1
+						101 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi5/2
+						102 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi5/3
+						103 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi5/4
+						104 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi5/5
+						105 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi5/6
+						106 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi5/7
+						107 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi5/8
+						108 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi5/9
+					109 button (disabled) Rewind
+					110 button (disabled) Play step, Help: Play step (Space)
+					111 button (disabled) Replay from the start
+					112 slider (disabled, settable, float) Step timeline, Value: 1, Details: 0.0 s of 0.0 s
+						113 value indicator 1
+				114 text Parts tray: 50 pieces, 44 modelled, 6 shown as tiles
+115 menu bar
+	116 picarx-companion
+	117 File
+	118 Edit
+	119 View
+	120 Window
+	121 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi5/0

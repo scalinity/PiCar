@@ -1,0 +1,176 @@
+F........................F...............................F.............. [  6%]
+......................................ss..ssssssssssssss................ [ 12%]
+.......ssssssssss.s...................s.......ssssss.................... [ 19%]
+.....ssss...sss.........................ssss...ss......................s [ 25%]
+...ssss...ss..........................ssss...ss......................... [ 31%]
+.ssss...ss....................ss..ssssssssssssss.....................sss [ 38%]
+sssssssss.s...................s.ss....ssssss.......................sssss [ 44%]
+s.....s.......................ssssss...........................s.ssssss. [ 50%]
+............................ssssss.............................ssssss... [ 57%]
+.....F.........................................................F........ [ 63%]
+...................................................................F.... [ 69%]
+......s.............................F................................... [ 76%]
+.............................F.....................................F.... [ 82%]
+.......................................F................................ [ 89%]
+.F.....................................F................................ [ 95%]
+....................................................                     [100%]
+=================================== FAILURES ===================================
+_________________________ test_installed_source_oracle _________________________
+
+    def test_installed_source_oracle():
+>       assert 'site-packages' in str(Path(anchor_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/anchor_verify.py' = anchor_verify.__file__
+
+digital-twin/cad/tests/test_m7_anchor.py:22: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(camera_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/camera_verify.py' = camera_verify.__file__
+
+digital-twin/cad/tests/test_m7_camera.py:28: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(closure_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/closure_verify.py' = closure_verify.__file__
+
+digital-twin/cad/tests/test_m7_closure.py:37: AssertionError
+______________________ test_installed_independent_module _______________________
+
+    def test_installed_independent_module():
+>       assert 'site-packages' in str(Path(correspondence.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/correspondence.py' = correspondence.__file__
+
+digital-twin/cad/tests/test_m7_correspondence.py:20: AssertionError
+______________________ test_installed_independent_oracle _______________________
+
+    def test_installed_independent_oracle():
+>       assert 'site-packages' in str(Path(engagement_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/engagement_verify.py' = engagement_verify.__file__
+
+digital-twin/cad/tests/test_m7_engagement.py:24: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(hat_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/hat_verify.py' = hat_verify.__file__
+
+digital-twin/cad/tests/test_m7_hat.py:35: AssertionError
+___________________ test_authored_module_is_installed_wheel ____________________
+
+    def test_authored_module_is_installed_wheel():
+>       assert 'site-packages' in str(Path(generator.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/generate.py' = generator.__file__
+
+digital-twin/cad/tests/test_m7_instructional.py:42: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(step05_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step05_verify.py' = step05_verify.__file__
+
+digital-twin/cad/tests/test_m7_step05.py:31: AssertionError
+__ test_independent_oracles_are_installed_and_do_not_import_their_generators ___
+
+    def test_independent_oracles_are_installed_and_do_not_import_their_generators():
+        for module, generator, name in [(step06_verify, step06, 'step06'), (step07_verify, step07, 'step07')]:
+>           assert 'site-packages' in str(Path(module.__file__).resolve()) and 'site-packages' in str(Path(generator.__file__).resolve())
+E           AssertionError: assert ('site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py')
+E            +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py'))
+E            +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py') = resolve()
+E            +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py').resolve
+E            +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py')
+E            +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py' = <module 'twin_cad.assemblies.instructional.step06_verify' from '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step06_verify.py'>.__file__
+
+digital-twin/cad/tests/test_m7_step06_07.py:32: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(step08_verify.__file__).resolve()) and 'site-packages' in str(Path(step08.__file__).resolve())
+E       AssertionError: assert ('site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py')
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step08_verify.py' = step08_verify.__file__
+
+digital-twin/cad/tests/test_m7_step08.py:31: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(step09_verify.__file__).resolve()) and 'site-packages' in str(Path(step09.__file__).resolve())
+E       AssertionError: assert ('site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py')
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/step09_verify.py' = step09_verify.__file__
+
+digital-twin/cad/tests/test_m7_step09.py:32: AssertionError
+______ test_independent_oracle_is_installed_and_does_not_import_generator ______
+
+    def test_independent_oracle_is_installed_and_does_not_import_generator():
+>       assert 'site-packages' in str(Path(usb_verify.__file__).resolve())
+E       AssertionError: assert 'site-packages' in '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py'
+E        +  where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py' = str(PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py'))
+E        +    where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py') = resolve()
+E        +      where resolve = PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py').resolve
+E        +        where PosixPath('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py') = Path('/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py')
+E        +          where '/Users/danny/Documents/Apps/PiCar/digital-twin/cad/twin_cad/assemblies/instructional/usb_verify.py' = usb_verify.__file__
+
+digital-twin/cad/tests/test_m7_usb.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED digital-twin/cad/tests/test_m7_anchor.py::test_installed_source_oracle
+FAILED digital-twin/cad/tests/test_m7_camera.py::test_independent_oracle_is_installed_and_does_not_import_generator
+FAILED digital-twin/cad/tests/test_m7_closure.py::test_independent_oracle_is_installed_and_does_not_import_generator
+FAILED digital-twin/cad/tests/test_m7_correspondence.py::test_installed_independent_module
+FAILED digital-twin/cad/tests/test_m7_engagement.py::test_installed_independent_oracle
+FAILED digital-twin/cad/tests/test_m7_hat.py::test_independent_oracle_is_installed_and_does_not_import_generator
+FAILED digital-twin/cad/tests/test_m7_instructional.py::test_authored_module_is_installed_wheel
+FAILED digital-twin/cad/tests/test_m7_step05.py::test_independent_oracle_is_installed_and_does_not_import_generator
+FAILED digital-twin/cad/tests/test_m7_step06_07.py::test_independent_oracles_are_installed_and_do_not_import_their_generators
+FAILED digital-twin/cad/tests/test_m7_step08.py::test_independent_oracle_is_installed_and_does_not_import_generator
+FAILED digital-twin/cad/tests/test_m7_step09.py::test_independent_oracle_is_installed_and_does_not_import_generator
+FAILED digital-twin/cad/tests/test_m7_usb.py::test_independent_oracle_is_installed_and_does_not_import_generator
+12 failed, 983 passed, 137 skipped in 593.85s (0:09:53)

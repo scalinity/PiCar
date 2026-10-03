@@ -1,0 +1,113 @@
+Window: "PiCar-X Companion", App: picarx-companion.
+0 standard window PiCar-X Companion, Secondary Actions: Raise
+	1 scroll area
+		2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/9
+			3 container
+				4 container Leave the Studio
+					5 link Companion, Value: tauri://localhost#/
+					6 link Setup, Value: tauri://localhost#/wizard/parts
+					7 link Reference, Value: tauri://localhost#/reference
+					8 link Videos, Value: tauri://localhost#/videos
+				9 heading Assembly Studio, Value: 1
+					10 text Assembly Studio
+				11 container Board
+					12 link Pi 5, Help: Raspberry Pi 5, Value: tauri://localhost#/studio/rpi5/9
+					13 link Zero 2 W, Help: Raspberry Pi Zero 2 W, Value: tauri://localhost#/studio/rpi-zero-2-w/9
+				14 text Review
+				15 toggle button Hide instructions, Help: Hide instructions (I), Value: on
+				16 toggle button Exit fullscreen, Value: on
+				17 container Inspect
+					18 toggle button Isolate, Value: off
+					19 toggle button Ghost others, Value: off
+					20 toggle button Explode, Value: off
+					21 toggle button Deck clip, Value: off
+				22 container View
+					23 toggle button Resume guided view, Help: Guided view (R), Value: off
+					24 button (disabled) Frame part, Help: Frame part (F)
+				25 container Instructions
+					26 text Step 9 of 29 · Raspberry Pi Zero 2 W
+					27 heading Install the ultrasonic module and Plate H, Value: 2
+						28 text Install the ultrasonic module and Plate H
+					29 text Review only. The overlap check refused this step, so what you see is the unaccepted candidate from the refused record. It is never played as an installation.
+					30 container Why this step is in review
+						31 heading Refused by the overlap check, Value: 3
+							32 text Refused by the overlap check
+						33 text The candidate puts these parts through each other by more than the check allows, so the step was refused and nothing here is adopted. Pick a pair to see it.
+						34 container
+							35 toggle button Pan servo horn × Plate H 101.1 mm³, Value: on
+							36 toggle button Pan servo horn × Ultrasonic module 2.0 mm³, Value: off
+							37 toggle button Plate A × Plate H 13.0 mm³ · over the allowed contact budget, Value: off
+							38 toggle button Plate A × Ultrasonic module 51.2 mm³ · over the allowed contact budget, Value: off
+						39 container
+							40 text Candidate placements from rpi-zero-2-w-S09-record.json; refusal rpi-zero-2-w-S09-blocked.json.
+					41 text Step 7 is still under review. Previewing step 9 does not certify step 7.
+					42 container Printed manual
+						43 heading Printed manual, Value: 3
+							44 text Printed manual
+						45 button Enlarge
+						46 image Printed Step 9, page 2 of the V40 booklet
+						47 text Printed Step 9 · page 2 of the V40 booklet
+					48 container Parts in this step
+						49 heading In this step, Value: 3
+							50 text In this step
+						51 container
+							52 toggle button Ultrasonic module candidate pose from the refused record, Value: off
+							53 toggle button Plate H candidate pose from the refused record, Value: off
+							54 container Each R3080 rivet
+								55 toggle button R3080 rivet×2 candidate pose from the refused record, Value: off
+								56 container Each R3080 rivet
+									57 toggle button 1, Help: PX-V40-INS-R3080-RIVET-001, Value: off
+									58 toggle button 2, Help: PX-V40-INS-R3080-RIVET-002, Value: off
+						59 heading Works on, Value: 4
+							60 text Works on
+						61 toggle button Plate A already in place, Value: off
+					62 container From the step record
+						63 heading From the step record, Value: 3
+							64 text From the step record
+						65 description list
+							66 text Parts
+							67 text Ultrasonic module ×1; Plate H ×1.
+							68 text Hardware
+							69 text R3080 rivet ×2.
+							70 text Tools
+							71 text Hands / printed rivet insert-push-lock procedure.
+							72 text Orientation
+							73 text Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket.
+						74 text Caution Transducers face robot-forward. Retain H backing-plate position; do not swap a generic ultrasonic bracket.
+						75 summary Connection details, Value: off
+							76 text Connection details
+					77 text Select a part in the view or a list to see what it is and where its shape and pose come from.
+					78 container Status
+						79 description list
+							80 text Assembly check
+							81 text Not accepted yet. M7 has accepted 0 of 58 steps.
+							82 text Your car
+							83 text Not recorded here. Watching, replaying or scrubbing never marks a step done.
+						84 summary Source limitations (47), Value: off
+							85 text Source limitations (47)
+						86 container
+							87 text Pack abefb75fea06 from chain run s2pro-01 (source mode)
+							88 container abefb75fea062a259fada4fe902200ab7183fa3c61be068a08b32e18d3f3f374
+				89 container Step controls
+					90 container Steps
+						91 link Parts, Help: Parts tray, Value: tauri://localhost#/studio/rpi-zero-2-w/0
+						92 link 1, Help: Prepare Plate A mounting supports. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/1
+						93 link 2, Help: Mount the selected Raspberry Pi. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/2
+						94 link 3, Help: Connect the Pi end of the camera ribbon. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/3
+						95 link 4, Help: Mount the Robot HAT. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/4
+						96 link 5, Help: Install the two drive motors. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/5
+						97 link 6, Help: Prepare battery hook-and-loop mounting. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/6
+						98 link 7, Help: Secure and connect the battery. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/7
+						99 link 8, Help: Attach the pan horn to the front chassis. Preview., Value: tauri://localhost#/studio/rpi-zero-2-w/8
+						100 link 9, Help: Install the ultrasonic module and Plate H. Review only., Value: tauri://localhost#/studio/rpi-zero-2-w/9
+					101 text Review: shown as recorded, not played as an installation.
+				102 text Step 9: Install the ultrasonic module and Plate H. Review only
+103 menu bar
+	104 picarx-companion
+	105 File
+	106 Edit
+	107 View
+	108 Window
+	109 Help
+
+The focused UI element is 2 HTML content Description: PiCar-X Companion, URL: tauri://localhost#/studio/rpi-zero-2-w/9
