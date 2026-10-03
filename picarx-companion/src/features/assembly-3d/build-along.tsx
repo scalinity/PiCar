@@ -5,8 +5,8 @@ import { M3_ENABLED } from '../../lib/m3-enabled';
 import { studioHref, type StudioVariant } from '../../lib/router';
 import { acceptedContext, contexts } from '../assembly-session/accepted';
 import { completed, condition, active } from '../assembly-session/commands';
-import { createSession, initializePersistence, sessionHistory, loadSession, sessionAction, newId, getStore, useCompanion, retrySave } from '../assembly-session/store';
-import { observationRevision, poseHash, type StudioObservation } from '../assembly-session/observation';
+import { createSession, initializePersistence, sessionHistory, loadSession, sessionAction, sessionActionBound, newId, getStore, useCompanion, retrySave } from '../assembly-session/store';
+import { evidenceKey, observationRevision, photoType, poseHash, validateObservation, type StudioObservation } from '../assembly-session/observation';
 import { evidenceZip } from '../assembly-session/evidence-zip';
 import { copyPhoto, readPhoto, saveEvidenceZip } from '../../platform/evidence';
 import type { LoadedPack } from './assets/pack';
@@ -27,7 +27,7 @@ export async function openBuildBoard(v: StudioVariant): Promise<void> {
   const session=stored?.aggregate.snapshot as AssemblySession|null;
   if(session && session.variantId!==v)throw Error('STUDIO_SESSION_VARIANT');
   const observations=stored?.events.flatMap(e=>e.action.kind==='observation'?[e.action.record]:[])??[];
-  publish(v,{ready:true,session,observations,error:''});
+  publish(v,{ready:true,session,observations});
  }catch(e){publish(v,{ready:true,error:String(e)});}finally{opening.delete(v);}})();
  opening.set(v,promise);return promise;
 }
@@ -53,17 +53,25 @@ export function bookmarkStudioStep(v:StudioVariant,n:number):void {
 export async function attachStudioPhoto(pack:LoadedPack,v:StudioVariant,n:number,file:File):Promise<void>{
  if(n<1||n>9)throw Error('PHOTO_STEP_REQUIRED');
  await write(v,async()=>{
-  const {session,ctx}=await target(v),step=pack.manifest.variants[v].steps[n-1];
+  if(getStore().retryAvailable||getStore().pending)throw Error('RETRY_PENDING');
+  const stored=await sessionHistory(boardSessionId(v));
+  if(!stored)throw Error('UNKNOWN_BOARD_SESSION');
+  const aggregate=structuredClone(stored.aggregate),session=aggregate.snapshot as AssemblySession;
+  const ctx=await acceptedContext(v),step=structuredClone(pack.manifest.variants[v].steps[n-1]);
+  if(session.id!==boardSessionId(v)||session.variantId!==v||aggregate.graphHash!==ctx.graph.graphHash)throw Error('STUDIO_SESSION_VARIANT');
   const id=newId('OBSERVATION');
   if(file.size>20*1024*1024)throw Error('PHOTO_SIZE');
-  const copied=await copyPhoto(session.id,id,new Uint8Array(await file.arrayBuffer()));
   const contextInstances=[...new Set([...Object.keys(step.placements),...step.stepParts.map(p=>p.instanceId)])].sort();
-  const record:StudioObservation={contract:'picar-studio-observation/1',id,sessionId:session.id,variantId:v,stepId:step.stepId,createdAt:new Date().toISOString(),file:copied,packId:pack.manifest.packId,contextInstances,
+  const record:StudioObservation={contract:'picar-studio-observation/1',id,sessionId:session.id,variantId:v,stepId:step.stepId,createdAt:new Date().toISOString(),file:{sha256:'0'.repeat(64),byteLength:file.size,mediaType:'image/png',storageKey:evidenceKey(session.id,id)},packId:pack.manifest.packId,contextInstances,
    geometry:contextInstances.flatMap(instanceId=>{const entry=pack.manifest.instances[instanceId],d=entry?pack.manifest.definitions[entry.definitionId]:null;return d?[{instanceId,definitionId:entry.definitionId,instructionalSha256:d.artifact.sha256,displayedSha256:d.display?.artifact.sha256??null}]:[];}),
    poseSha256:poseHash(step.placements),sourceSha256:step.source.sha256!,closureSha256:step.source.closureRfc8785Sha256??null};
+  validateObservation(record,ctx);
+  const bytes=new Uint8Array(await file.arrayBuffer());photoType(bytes);
+  record.file=await copyPhoto(session.id,id,bytes);
   // Copy failures cannot create a record. After a persistence error retain the uniquely named copy: the acknowledgment
   // may have been lost. Retry uses M3's identical command ID, and this file is a recoverable orphan if no event committed.
-  await sessionAction({kind:'observation',record},ctx);
+  try{await sessionActionBound(aggregate,{kind:'observation',record},ctx);}
+  catch(e){throw Error(`${e instanceof Error?e.message:String(e)}. The private photo copy is retained. Retry the pending save, or review changed progress before attaching again.`);}
  });
 }
 export function BuildAlong({pack,variant,step}:{pack:LoadedPack;variant:StudioVariant;step:number}){
@@ -81,7 +89,7 @@ export function BuildAlong({pack,variant,step}:{pack:LoadedPack;variant:StudioVa
  const availableSavedNumber=Math.min(savedNumber,9),savedAvailable=savedNumber>=1&&savedNumber<=29;
  return <section className="studio-build" aria-label="Build along" data-session={session.id} data-revision={session.revision}>
   <h3>Your real car</h3><p>{done.length}/29 physically completed by owner · {photos.length} photos</p>
-  {step===0&&savedAvailable&&<a href={studioHref(variant,availableSavedNumber)} onClick={()=>bookmarkStudioStep(variant,availableSavedNumber)}>Return to {savedNumber>9?'last available':'saved'} Step {availableSavedNumber}</a>}
+  {step===0&&savedAvailable&&<a href={studioHref(variant,availableSavedNumber)}>Return to {savedNumber>9?'last available':'saved'} Step {availableSavedNumber}</a>}
   {entry&&<>
    <p role="status">{done.includes(entry.stepId)?'Physically completed by owner':'Not recorded as physically completed'}</p>
    <p className="studio-source-line">Your record does not clear M7, CAD or this step’s digital review.</p>

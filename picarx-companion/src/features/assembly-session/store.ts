@@ -16,26 +16,27 @@ export const getStore = (): StoreState => state;
 export const useCompanion = (): StoreState => useSyncExternalStore(cb=>(subs.add(cb),()=>subs.delete(cb)),getStore);
 export const newId = (kind: string): string => `PX-${kind}-${crypto.randomUUID().toUpperCase()}`;
 let retryCommand: Command | null = null;
-async function commit(c: Command): Promise<void> {
+let retryPreservesSelection = false;
+async function commit(c: Command, preserveSelection = false): Promise<void> {
  if(!repository)throw Error('STORAGE_UNAVAILABLE');
  if(state.pending)throw Error('SAVE_PENDING');
- retryCommand=c;publish({pending:true,retryAvailable:true,error:''});
+ retryCommand=c;retryPreservesSelection=preserveSelection;publish({pending:true,retryAvailable:true,error:''});
  try {
   const acknowledgment=await repository.commit(c);
   if(acknowledgment.aggregateId!==c.aggregateId || (c.payload.kind!=='legacy'&&(acknowledgment.commandId!==c.commandId || acknowledgment.snapshotHash!==c.nextHash || acknowledgment.acknowledgedRevision!==c.expectedRevision+1)))throw Error('INVALID_ACKNOWLEDGMENT');
   const stored=await repository.load(c.aggregateId);if(!stored)throw Error('COMMITTED_LOAD_MISSING');
   if(c.aggregateId==='PX-SETUP'){setupAggregate=stored.aggregate;publish({setup:stored.aggregate.snapshot as Setup});}
-  else { const sessions=await repository.list();publish({sessions:sessions.filter(s=>s.graphHash!==null),selected:stored.aggregate}); }
+  else { const sessions=await repository.list();publish({sessions:sessions.filter(s=>s.graphHash!==null),...(!preserveSelection||state.selected?.id===c.aggregateId?{selected:stored.aggregate}:{})}); }
   retryCommand=null;publish({retryAvailable:false});
  } catch(e) {const message=e instanceof Error?e.message:String(e);if(message.includes('CONFLICT')){
   retryCommand=null;publish({retryAvailable:false});
-  try{const current=await repository.load(c.aggregateId);if(current){if(c.aggregateId==='PX-SETUP'){setupAggregate=current.aggregate;publish({setup:current.aggregate.snapshot as Setup});}else publish({selected:current.aggregate,sessions:(await repository.list()).filter(s=>s.graphHash!==null)});}if(c.payload.kind==='reconcile'){const source=await repository.load(c.payload.sessionId);if(source)publish({selected:source.aggregate});}publish({error:'CONFLICT: current saved progress was reloaded. Review it and submit a new action.'});}
+  try{const current=await repository.load(c.aggregateId);if(current){if(c.aggregateId==='PX-SETUP'){setupAggregate=current.aggregate;publish({setup:current.aggregate.snapshot as Setup});}else publish({...(!preserveSelection||state.selected?.id===c.aggregateId?{selected:current.aggregate}:{}),sessions:(await repository.list()).filter(s=>s.graphHash!==null)});}if(c.payload.kind==='reconcile'){const source=await repository.load(c.payload.sessionId);if(source)publish({selected:source.aggregate});}publish({error:'CONFLICT: current saved progress was reloaded. Review it and submit a new action.'});}
   catch(reload){publish({storageReady:false,error:'CONFLICT: authoritative progress could not be validated: '+String(reload),recovery:'Read-only recovery. Export retained data before further work.'});}
  }else publish({error:message});throw e; }
 
  finally {publish({pending:false});}
 }
-export async function retrySave(): Promise<void> { if(retryCommand) await commit(retryCommand); }
+export async function retrySave(): Promise<void> { if(retryCommand) await commit(retryCommand,retryPreservesSelection); }
 export async function initializePersistence(): Promise<void> {
  if(initialization)return initialization;
  initialization=(async()=>{
@@ -87,6 +88,12 @@ export function loadSession(id:string):Promise<void>{
 export async function sessionAction(action:Action,ctx:Context):Promise<void>{
  if(!state.selected || state.selected.graphHash!==ctx.graph.graphHash)throw Error('UNKNOWN_SESSION');
  if(retryCommand)throw Error('RETRY_PENDING');await commit(prepareCommand(state.selected,action,newId('COMMAND'),ctx));
+}
+// An asynchronous owner action keeps its originating revision even if navigation selects another session.
+export async function sessionActionBound(aggregate:Aggregate,action:Action,ctx:Context):Promise<void>{
+ if(aggregate.graphHash!==ctx.graph.graphHash)throw Error('UNKNOWN_SESSION');
+ if(retryCommand)throw Error('RETRY_PENDING');
+ await commit(prepareCommand(aggregate,action,newId('COMMAND'),ctx),true);
 }
 export async function reconcileAssembly():Promise<void>{
  if(!state.selected || completed(state.selected.snapshot as AssemblySession).length!==29)throw Error('ALL_CONFIRMATIONS_REQUIRED');
