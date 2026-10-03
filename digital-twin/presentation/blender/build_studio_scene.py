@@ -516,6 +516,12 @@ def main():
     scene['picar_pack_id'] = manifest['packId']
     scene['picar_presentation_id'] = pid
     scene['picar_state'] = f"{hero['variant']} S{hero['step']:02d} after (M7 closure, display {step['display']})"
+    # File-browser UI state is not a dependency; keep the shared project free of the producer's home directory.
+    for screen in bpy.data.screens:
+        for area in screen.areas:
+            for space in area.spaces:
+                if space.type == 'FILE_BROWSER' and space.params:
+                    space.params.directory = b'//'
     BLEND.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(BLEND), compress=True)
     log('saved', BLEND, 'presentation', pid)

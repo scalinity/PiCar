@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 const out=process.env.PICAR_NATIVE_EVIDENCE_DIR??'../docs/implementation/evidence/studio-3';
 const record=(name,value)=>fs.writeFileSync(path.join(out,name+'.json'),JSON.stringify(value,null,2)+'\n');
 const text=()=>$('.studio-build').getText();
@@ -35,13 +36,16 @@ it('actual native Studio3 build progress and private photo persistence on dispos
  record('native-progress',{variantSessions:before.aggregates.map(a=>a.aggregate.id),bookmark:'PASS',physicalCompleteUndo:'PASS',readOnlyViewer:'PASS',photoReload:'PASS'});
  await script(()=>{const details=document.querySelector('.studio-build details');details.open=true;});await $('.studio-build details input').click();
  const beforeNativeUI=await script(async()=>({ledger:await window.__picarM3Test.studio('backup'),camera:window.__studio.camera()}));
+ await script(()=>{const states=[];window.__studio3PhysicalStates=states;const capture=()=>{const s=window.__studio.state(),full=document.querySelector('.studio').dataset.fullscreen==='true';const index=states.length;const matches=[s.manualOpen&&!!s.selection&&full,!s.manualOpen&&!!s.selection&&full,!s.manualOpen&&!s.selection&&full,!s.manualOpen&&!s.selection&&!full];if(matches[index])states.push({label:'ABCD'[index],manualOpen:s.manualOpen,selection:s.selection,fullscreen:full,atPerformanceMs:performance.now()});if(states.length<4)requestAnimationFrame(capture);};requestAnimationFrame(capture);});
  record('native-export-panel',{state:'AWAITING_NATIVE_UI_EXPORT_AND_DISPOSABLE_DESTINATION',privateSyntheticOnly:true});
  // Do not poll the webview while its native modal is open: the driver focuses the main window before each command.
  const exported=path.join(process.env.PICAR_M3_TEST_DATA_DIR,'selected-private-evidence.zip');const deadline=Date.now()+240000;
  while(!fs.existsSync(exported)&&Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,500));
  assert(fs.existsSync(exported),'Native chooser must save to the disposable test destination.');
  await browser.waitUntil(async()=>(await text()).includes('Evidence export saved'),{timeout:120000});
- assert.deepEqual(fs.readFileSync(exported),Buffer.from(photo.zip));record('native-export',{ownerChooser:'PASS',selectedBytesAndManifest:'PASS',destination:'disposable native app-data test directory'});
+ assert.deepEqual(fs.readFileSync(exported),Buffer.from(photo.zip));const bytes=fs.readFileSync(exported),entries=[];let offset=0;while(bytes.readUInt32LE(offset)===0x04034b50){const size=bytes.readUInt32LE(offset+18),length=bytes.readUInt16LE(offset+26),extra=bytes.readUInt16LE(offset+28),name=bytes.subarray(offset+30,offset+30+length).toString(),start=offset+30+length+extra,content=bytes.subarray(start,start+size);entries.push({name,byteLength:size,sha256:crypto.createHash('sha256').update(content).digest('hex'),...(name==='manifest.json'?{manifest:JSON.parse(content)}:{})});offset=start+size;}
+ record('native-export',{ownerChooser:'PASS',selectedBytesAndManifest:'PASS',destination:'disposable native app-data test directory',zipSha256:crypto.createHash('sha256').update(bytes).digest('hex'),byteLength:bytes.length,independentlyReopenedEntries:entries,syntheticPhotoSha256:photo.record.file.sha256});
+ const physical=await script(()=>window.__studio3PhysicalStates);assert.deepEqual(physical.map(s=>s.label),['A','B','C','D']);record('native-physical-states',{physicalNativeKeyInjection:'CUA Escape, three separate calls',states:physical});
  const afterNativeUI=await script(async()=>({ledger:await window.__picarM3Test.studio('backup'),camera:window.__studio.camera(),state:window.__studio.state(),fullscreen:document.querySelector('.studio').dataset.fullscreen}));
  assert.deepEqual(afterNativeUI.ledger,beforeNativeUI.ledger);assert.equal(afterNativeUI.state.selection,null);assert.equal(afterNativeUI.state.manualOpen,false);assert.equal(afterNativeUI.fullscreen,'false');
  assert(Math.hypot(...afterNativeUI.camera.target.map((v,i)=>v-beforeNativeUI.camera.target[i]))<1e-6);

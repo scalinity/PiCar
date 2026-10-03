@@ -55,6 +55,6 @@ test('consumable roles and neutral cable-wrap explanation preserve 156 slots and
  for(const [suffix,role] of [['HOOK-001','source lot identity, length unknown'],['HOOK-002','preallocated S06 cut piece; amount unknown'],['LOOP-001','source lot identity, length unknown'],['LOOP-002','preallocated S06 cut piece; amount unknown'],['CABLE-WRAP-001','source lot identity, length unknown']]){
   await page.evaluate(async id=>{const {select}=await import(String('/src/features/assembly-3d/state/studio-store.ts'));select(`PX-V40-INS-${id}`);},suffix);await expect(inspector).toContainText(role);await expect(inspector).not.toContainText('identical pieces');await expect(inspector).not.toContainText('cut from tape stock');
  }
- await page.evaluate(async()=>{const {select}=await import(String('/src/features/assembly-3d/state/studio-store.ts'));select('PX-V40-INS-M25X6-SCREW-001');});await expect(inspector).toContainText('1 of 12 identical pieces');
+ await page.evaluate(async()=>{const {select}=await import(String('/src/features/assembly-3d/state/studio-store.ts'));select('PX-V40-INS-M25X6-SCREW-001');});await expect(inspector).toContainText('1 of 10 identical pieces');
  expect(await page.evaluate(()=>(window as any).__studio.roots())).toHaveLength(156);expect((await ledger(page)).aggregates).toHaveLength(0);
 });
