@@ -62,14 +62,16 @@ function approachWords(axis: Vec3, metres: number): string {
   return `moves ${way} ${mm} mm into place`;
 }
 
-// Where a part sits in the inventory: its group, its number among the identical pieces steps 1-9 need, its first step.
+// Canonical stock roles distinguish lots and allocations from counted discrete hardware.
 function inventoryOf(v: VariantEntry, pack: LoadedPack, id: string) {
   const slot = v.tray.instances[id] ?? v.tray.tiles[id];
   if (!slot) return null;
   const definitionId = entryOf(pack.manifest, id)!.definitionId;
   const group = v.tray.groups.find((g) => g.id === slot.group)!;
   const same = group.instanceIds.filter((x) => entryOf(pack.manifest, x)!.definitionId === definitionId);
-  return { group, ordinal: same.indexOf(id) + 1, quantity: same.length, firstStep: slot.firstStep, required: slot.required, state: slot.state };
+  const entry=entryOf(pack.manifest,id)!;
+  const discreteHardware=['standoff','screw','nut','washer','rivet'].includes(entry.componentClass)&&entry.supplyOrigin==='kit';
+  return { group, ordinal: same.indexOf(id) + 1, quantity: discreteHardware?same.length:1, firstStep: slot.firstStep, required: slot.required, state: slot.state };
 }
 
 function Button({ label, onClick, children, pressed, disabled, wide, shortcut }: { label: string; onClick: () => void; children: ReactNode; pressed?: boolean; disabled?: boolean; wide?: boolean; shortcut?: string }) {
@@ -136,6 +138,7 @@ function Inspector({ pack, variant, timeline }: { pack: LoadedPack; variant: Stu
         <dl>
           <dt>Definition</dt><dd>{schematic.recordName} <code>{schematic.definitionId}</code></dd>
           {ident}
+          <dt>Role</dt><dd>{schematic.role}</dd>
           <dt>Shown as</dt><dd>A tray tile. {schematic.representation}</dd>
         </dl>
         <button type="button" className="studio-link-button" onClick={focusSelection}>Frame this tile</button>
