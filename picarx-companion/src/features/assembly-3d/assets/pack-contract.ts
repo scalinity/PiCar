@@ -168,8 +168,14 @@ export function manifestProblems(m: unknown): string[] {
           && dependencies.some((p: Json) => p.printedNumber === w.printedNumber && p.display === w.display)), `MANIFEST_DEPENDENCY_WARNINGS ${at}`);
       need(isObject(s.instruction) && ['record', 'id', 'parts', 'hardware', 'tools', 'orientation', 'connection'].every((k) => typeof s.instruction[k] === 'string')
         && (s.instruction.variant === null || typeof s.instruction.variant === 'string'), `MANIFEST_INSTRUCTION ${at}`);
-      need(Array.isArray(s.displayChecks) && s.displayChecks.every((d: Json) => isObject(d) && d.definitionId in m.definitions
-        && (d.status === 'CHECKED' || d.status === 'NOT_CHECKED') && Array.isArray(d.overlaps)), `MANIFEST_DISPLAY_CHECKS ${at}`);
+      need(Array.isArray(s.displayChecks) && s.displayChecks.every((d: Json) => isObject(d) && typeof d.definitionId === 'string'
+        && Object.prototype.hasOwnProperty.call(m.definitions, d.definitionId)
+        && Object.keys(s.placements ?? {}).some((id) => m.instances[id]?.definitionId === d.definitionId)
+        && Array.isArray(d.overlaps)
+        && ((d.status === 'NOT_CHECKED' && d.overlaps.length === 0)
+          || (d.status === 'CHECKED' && hex64(d.closureRfc8785Sha256) && d.closureRfc8785Sha256 === s.source?.closureRfc8785Sha256
+            && d.overlaps.every((o: Json) => isObject(o) && typeof o.instanceId === 'string' && known(o.instanceId)
+              && Object.prototype.hasOwnProperty.call(s.placements ?? {}, o.instanceId) && finite(o.volumeMm3) && o.volumeMm3 > 0)))), `MANIFEST_DISPLAY_CHECKS ${at}`);
       need(Array.isArray(s.warnings) && s.warnings.every((w: Json) => isObject(w) && ['id', 'severity', 'text'].every((k) => typeof w[k] === 'string'))
         && ['limitations', 'approximationFlags', 'carriedUnframedConnectionIds'].every((k) => Array.isArray(s[k]) && s[k].every((x: unknown) => typeof x === 'string'))
         && isObject(s.claims) && Object.values(s.claims).every((x) => typeof x === 'string'), `MANIFEST_STEP_METADATA ${at}`);

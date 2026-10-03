@@ -3,7 +3,7 @@
 // one thing and re-hashes everything else, so only the check under test can reject it.
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
-import { packIdPreimage, validatePackBytes } from '../../src/features/assembly-3d/assets/pack-contract';
+import { manifestProblems, packIdPreimage, validatePackBytes } from '../../src/features/assembly-3d/assets/pack-contract';
 
 const manifestBytes = new Uint8Array(fs.readFileSync('src/generated/studio/manifest.json'));
 const glbBytes = new Uint8Array(fs.readFileSync('src/generated/studio/parts.glb'));
@@ -116,6 +116,28 @@ describe('runtime pack validation', () => {
     change(m);
     expect(await problems(await consistent(m, glbBytes), glbBytes)).toContain(code);
   };
+  it.each([
+    ['null', null], ['primitive', 1], ['missing identity', { volumeMm3: 1 }],
+    ['unknown identity', { instanceId: 'PX-V40-INS-UNKNOWN-001', volumeMm3: 1 }],
+    ['wrong variant', { instanceId: 'PX-V40-INS-ZERO2W-001', volumeMm3: 1 }],
+    ['unplaced identity', { instanceId: 'PX-V40-INS-ROBOT-HAT-001', volumeMm3: 1 }],
+    ['missing volume', { instanceId: 'PX-V40-INS-M25X18PLUS6-STANDOFF-001' }],
+    ['nested identity', { instanceId: { id: 'PX-V40-INS-M25X18PLUS6-STANDOFF-001' }, volumeMm3: 1 }],
+    ['nested volume', { instanceId: 'PX-V40-INS-M25X18PLUS6-STANDOFF-001', volumeMm3: { value: 1 } }],
+    ['zero volume', { instanceId: 'PX-V40-INS-M25X18PLUS6-STANDOFF-001', volumeMm3: 0 }],
+    ['negative volume', { instanceId: 'PX-V40-INS-M25X18PLUS6-STANDOFF-001', volumeMm3: -1 }],
+  ])('rejects a rehashed %s nested overlap with unchanged inventory', (_label, overlap) => rejects((m) => {
+    m.variants.rpi5.steps[1].displayChecks[0].overlaps = [overlap];
+  }, 'MANIFEST_DISPLAY_CHECKS rpi5 S02'));
+  it.each([NaN, Infinity, -Infinity])('rejects non-finite in-memory overlap volume %s', (volume) => {
+    const m = parsed();
+    m.variants.rpi5.steps[1].displayChecks[0].overlaps[0].volumeMm3 = volume;
+    expect(manifestProblems(m)).toContain('MANIFEST_DISPLAY_CHECKS rpi5 S02');
+  });
+  it('binds checked display overlaps to the placed definition and exact closure', async () => {
+    await rejects((m) => { m.variants.rpi5.steps[1].displayChecks[0].closureRfc8785Sha256 = '0'.repeat(64); }, 'MANIFEST_DISPLAY_CHECKS rpi5 S02');
+    await rejects((m) => { m.variants.rpi5.steps[1].displayChecks[0].definitionId = 'PX-V40-DEF-ROBOT-HAT'; }, 'MANIFEST_DISPLAY_CHECKS rpi5 S02');
+  });
   it('refuses a step whose mode and operability disagree', () => rejects((m) => { m.variants.rpi5.steps[2].operable = false; }, 'MANIFEST_STEP rpi5 S03'));
   it('refuses review mode on a step that is not blocked or refused', () => rejects((m) => { Object.assign(m.variants.rpi5.steps[2], { mode: 'review', operable: false }); }, 'MANIFEST_REVIEW_DISPLAY rpi5 S03'));
   it('refuses an opened step without a guided camera', () => rejects((m) => { m.variants['rpi-zero-2-w'].steps[6].camera = null; }, 'MANIFEST_OPENED_CAMERA rpi-zero-2-w S07'));

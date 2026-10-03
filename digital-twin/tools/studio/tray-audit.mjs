@@ -48,6 +48,15 @@ const toolCategory = Object.fromEntries(tools.map((t) => [t.id, t.category]));
 const toolInstancesFor = (requirementId, variant) => stock.filter((s) => s.variantIds.includes(variant) && classOf(s.definitionId) === 'tool'
   && defs[s.definitionId].name.toLowerCase().includes(toolCategory[requirementId])).map((s) => s.id);
 
+// Required membership comes from the graph/tool inventory, independently of packed identities and totals.
+const sourceScope = Object.fromEntries(variants.map((variant) => {
+  const graph = json(`digital-twin/validation/m2/${variant}/compiled-graph.json`);
+  return [variant, new Set(graph.steps.slice(0, STEPS).flatMap((s) => [...s.introducedInstanceIds, ...s.usedInstanceIds,
+    ...s.toolRequirementIds.flatMap((req) => toolInstancesFor(req, variant))]))];
+}));
+const stockById = Object.fromEntries(stock.map((s) => [s.id, s]));
+const sameSet = (a, b) => Array.isArray(a) && a.length === b.length && new Set(a).size === a.length && b.every((id) => a.includes(id));
+
 function frustum(camera, aspect) {
   const P = camera.positionM, T = camera.targetM, f = norm(sub(T, P)), r = norm(cross(f, [0, 1, 0])), u = cross(r, f);
   const k = Math.tan((camera.verticalFovDeg * Math.PI) / 360);
@@ -130,6 +139,33 @@ for (const variant of variants) {
   }
   // C pack
   const V = manifest.variants[variant];
+  // Bind all packed solids and tiles (including tools) to exact canonical definition, role/class and required variants.
+  for (const [id, packed] of [...Object.entries(manifest.instances), ...Object.entries(manifest.schematic)]) {
+    const expectedVariants = variants.filter((v) => sourceScope[v].has(id));
+    if (expectedVariants.length && !expectedVariants.includes(variant) && !packed.variants.includes(variant)) continue;
+    if (!expectedVariants.length) disagreements.push({ class: 'PACK_EXTRA_INSTANCE', id });
+    const source = stockById[id];
+    if (!source || packed.definitionId !== source.definitionId || packed.role !== source.role
+      || packed.componentClass !== classOf(source.definitionId) || packed.recordName !== defs[source.definitionId]?.name)
+      disagreements.push({ class: 'PACK_IDENTITY_MISMATCH', id });
+    if (!sameSet(packed.variants, expectedVariants)) disagreements.push({ class: 'PACK_VARIANT_MISMATCH', id });
+    const shouldBeTile = source && noSolidReason(source.definitionId) !== null;
+    if (source && Boolean(manifest.schematic[id]) !== shouldBeTile) disagreements.push({ class: 'PACK_REPRESENTATION_MISMATCH', id });
+  }
+  const expectedModeled = required.filter((id) => noSolidReason(canonicalById[id]?.definitionId ?? 'UNKNOWN') === null);
+  const expectedTiles = required.filter((id) => !expectedModeled.includes(id));
+  for (const [actual, expected, representation] of [[V.tray.instances, expectedModeled, 'solid'], [V.tray.tiles, expectedTiles, 'tile']]) {
+    if (!sameSet(Object.keys(actual), expected)) disagreements.push({ class: 'PACK_REPRESENTATION_MISMATCH', representation });
+    for (const [id, slot] of Object.entries(actual)) {
+      if (slot.firstStep !== firstStep[id] || slot.required !== (how[id]?.startsWith('tool for ') ? 'tool' : how[id] === 'used-not-introduced' ? 'used' : how[id]))
+        disagreements.push({ class: 'PACK_SLOT_USE_MISMATCH', id });
+    }
+  }
+  const expectedInventory = { canonical: canonical.length, required: required.length, modeled: expectedModeled.length,
+    tiles: expectedTiles.length, notRequired: canonical.length - required.length, spares: canonical.filter((s) => s.disposition === 'backup').length };
+  for (const [field, expected] of Object.entries(expectedInventory)) {
+    if (V.tray.inventory?.[field] !== expected) disagreements.push({ class: 'PACK_INVENTORY_MISMATCH', field, expected, actual: V.tray.inventory?.[field] ?? null });
+  }
   for (let n = 1; n <= STEPS; n++) {
     const source = graph.steps[n - 1], packed = V.steps[n - 1];
     const expected = [...source.introducedInstanceIds, ...source.usedInstanceIds, ...source.toolRequirementIds.flatMap((req) => toolInstancesFor(req, variant))];
