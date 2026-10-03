@@ -1,0 +1,58 @@
+# Parts-tray completeness audit (current)
+
+Manifest `picarx-companion/src/generated/studio/manifest.json`, pack `ad00bd0f4ad2904c3c1ca12d05b2990da5cb8e0e0076eb4e928372e08d202f41`. Canonical counts are printed-stock claims (BOM_RECONCILIATION.md), not a count of the owner's actual loose kit.
+
+| variant | canonical | S01–S09 required | pack instances | tray | rendered 3D | non-renderable | represented | missing | duplicate / unexpected | invariant |
+|---|---|---|---|---|---|---|---|---|---|---|
+| rpi5 | 156 | 50 | 143 | 143 | 143 | 13 | 13 | 0 | 0 | HOLDS |
+| rpi-zero-2-w | 156 | 47 | 143 | 143 | 143 | 13 | 13 | 0 | 0 | HOLDS |
+
+## rpi5
+
+Canonical by disposition: available 111, backup 37, accessory 5, tool 3; 106 are not needed by S01–S09 (later steps, spares, accessories).
+Cross-check: 34 printed-stock uses planned for S01–S09; not in the required set: none; first-step mismatches: none.
+
+| instance | first step | how required | no-solid reason | represented as |
+|---|---|---|---|---|
+| CABLE-4PIN-001 | S28 | introduced | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| CABLE-5PIN-001 | S28 | introduced | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| CABLE-WRAP-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| ELECTRICAL-TAPE-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| HOOK-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| HOOK-002 | S06 | used-not-introduced | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| LOOP-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| LOOP-002 | S06 | used-not-introduced | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| RIBBON-FPC-001 | S03 | introduced | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| SCREWDRIVER-01-001 | S01 | tool for PX-V40-TOOL-SCREWDRIVER | tool: no instructional geometry authored | tray tile: No instructional geometry: the kit tool is listed as a tile. |
+| SCREWDRIVER-02-001 | S01 | tool for PX-V40-TOOL-SCREWDRIVER | tool: no instructional geometry authored | tray tile: No instructional geometry: the kit tool is listed as a tile. |
+| USB-CABLE-001 | none | stock | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| WRENCH-001 | S05 | tool for PX-V40-TOOL-WRENCH | tool: no instructional geometry authored | tray tile: No instructional geometry: the kit tool is listed as a tile. |
+
+Smaller than 6 px in the S00 view at 1168×729: HORN-PAN-001 4.2 px, HORN-STEERING-001 4.8 px, HORN-TILT-001 4.7 px, M15X3-SCREW-001 2 px, M15X3-SCREW-002 2 px, M15X3-SCREW-003 1.9 px, M15X3-SCREW-004 1.9 px, M15X3-SCREW-005 1.9 px, M15X3-SCREW-006 1.9 px, M15X3-SCREW-007 1.8 px, M15X3-SCREW-008 1.8 px, M15X3-SCREW-009 1.8 px, M15X3-SCREW-010 1.8 px, M15X3-SCREW-011 2 px, M25X11-STANDOFF-001 4.3 px, M25X11-STANDOFF-002 4.3 px, M25X11-STANDOFF-003 4.2 px, M25X11-STANDOFF-004 4.2 px, M25X18-STANDOFF-001 4.9 px, M25X18-STANDOFF-002 4.8 px, M25X18-STANDOFF-003 4.8 px, M25X18-STANDOFF-004 4.7 px, M25X18-STANDOFF-005 4.6 px, M25X18-STANDOFF-006 4.5 px, M25X18PLUS6-STANDOFF-001 5.4 px, M25X18PLUS6-STANDOFF-002 5.3 px, M25X18PLUS6-STANDOFF-003 5.2 px, M25X18PLUS6-STANDOFF-004 5.1 px, M25X18PLUS6-STANDOFF-005 5 px, M25X18PLUS6-STANDOFF-006 4.9 px, M25X30-STANDOFF-002 5.9 px, M25X30-STANDOFF-003 5.7 px, M25X30-STANDOFF-004 5.6 px, M25X6-SCREW-001 3.5 px, M25X6-SCREW-002 3.5 px, M25X6-SCREW-003 3.4 px, M25X6-SCREW-004 3.4 px, M25X6-SCREW-005 3.3 px, M25X6-SCREW-006 3.3 px, M25X6-SCREW-007 3.3 px, M25X6-SCREW-008 3.2 px, M25X6-SCREW-009 3.2 px, M25X6-SCREW-010 3.1 px, M3-NUT-001 2.9 px, M3-NUT-002 2.9 px, M3-NUT-003 2.9 px, M3-NUT-004 2.9 px, M3-NUT-005 3.6 px, M3-NUT-006 3.6 px, M3X25-SCREW-001 5.1 px, M3X25-SCREW-002 5 px, M3X25-SCREW-003 4.9 px, M3X25-SCREW-004 4.8 px, M3X25-SCREW-005 5.3 px, M3X25-SCREW-006 5.1 px, M3X26-STANDOFF-003 5.8 px, M3X26-STANDOFF-004 5.7 px, M3X6-SCREW-001 4.3 px, M3X6-SCREW-002 4.2 px, M3X6-SCREW-003 4.2 px, M3X6-SCREW-004 4.1 px, M3X6-SCREW-005 4.1 px, M3X6-SCREW-006 4 px, R2048-RIVET-001 4.7 px, R2048-RIVET-002 4.6 px, R2048-RIVET-003 4.5 px, R2048-RIVET-004 4.4 px, R2048-RIVET-005 4.3 px, R2048-RIVET-006 4.2 px, R2056-RIVET-001 5 px, R2056-RIVET-002 4.9 px, R2056-RIVET-003 4.8 px, R2056-RIVET-004 4.7 px, R2056-RIVET-005 4.6 px, R2056-RIVET-006 4.5 px, R2056-RIVET-007 4.4 px, R2056-RIVET-008 4.3 px, R3055-RIVET-001 5.3 px, R3055-RIVET-002 5.2 px, R3055-RIVET-003 5 px, R3055-RIVET-004 4.9 px, R3065-RIVET-001 5.6 px, R3065-RIVET-002 5.5 px, R3065-RIVET-003 5.4 px, R3065-RIVET-004 5.2 px, R3065-RIVET-005 5.1 px, R3065-RIVET-006 5 px, R3065-RIVET-007 4.9 px, R3065-RIVET-008 4.7 px, R3080-RIVET-001 5.1 px, R3080-RIVET-002 5 px, R3080-RIVET-003 4.9 px, R3080-RIVET-004 4.8 px, SERVO-RETAINER-PAN-001 2.5 px, SERVO-RETAINER-STEERING-001 2.5 px, SERVO-RETAINER-TILT-001 2.5 px, SPRING-WASHER-001 1.9 px, SPRING-WASHER-002 1.9 px, SPRING-WASHER-003 1.9 px, SPRING-WASHER-004 1.9 px, SPRING-WASHER-005 3.8 px, SPRING-WASHER-006 3.8 px, WASHER-A-001 4.8 px, WASHER-A-002 4.8 px, WASHER-B-001 5.2 px, WASHER-B-002 5.2 px, WASHER-B-003 5.2 px, WASHER-B-004 5.2 px, WASHER-B-005 5.2 px, WASHER-B-006 5.2 px, WASHER-B-007 5.2 px, WASHER-B-008 5.2 px.
+
+Placed only in the refused S09 candidate: ULTRASONIC-001, PLATE-H-001, R3080-RIVET-001, R3080-RIVET-002.
+
+## rpi-zero-2-w
+
+Canonical by disposition: available 111, backup 37, accessory 5, tool 3; 109 are not needed by S01–S09 (later steps, spares, accessories).
+Cross-check: 32 printed-stock uses planned for S01–S09; not in the required set: none; first-step mismatches: none.
+
+| instance | first step | how required | no-solid reason | represented as |
+|---|---|---|---|---|
+| CABLE-4PIN-001 | S28 | introduced | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| CABLE-5PIN-001 | S28 | introduced | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| CABLE-WRAP-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| ELECTRICAL-TAPE-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| HOOK-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| HOOK-002 | S06 | used-not-introduced | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| LOOP-001 | none | stock | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| LOOP-002 | S06 | used-not-introduced | abstract: consumable stock with no defined shape | tray tile: No defined shape: cut from tape stock, so it is shown as a tile. |
+| RIBBON-FPC-001 | S03 | introduced | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| SCREWDRIVER-01-001 | S01 | tool for PX-V40-TOOL-SCREWDRIVER | tool: no instructional geometry authored | tray tile: No instructional geometry: the kit tool is listed as a tile. |
+| SCREWDRIVER-02-001 | S01 | tool for PX-V40-TOOL-SCREWDRIVER | tool: no instructional geometry authored | tray tile: No instructional geometry: the kit tool is listed as a tile. |
+| USB-CABLE-001 | none | stock | schematic: no trusted solid (cable or ribbon) | tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile. |
+| WRENCH-001 | S05 | tool for PX-V40-TOOL-WRENCH | tool: no instructional geometry authored | tray tile: No instructional geometry: the kit tool is listed as a tile. |
+
+Smaller than 6 px in the S00 view at 1168×729: HORN-PAN-001 4.1 px, HORN-STEERING-001 4.8 px, HORN-TILT-001 4.7 px, M15X3-SCREW-001 2 px, M15X3-SCREW-002 2 px, M15X3-SCREW-003 1.9 px, M15X3-SCREW-004 1.9 px, M15X3-SCREW-005 1.9 px, M15X3-SCREW-006 1.9 px, M15X3-SCREW-007 1.8 px, M15X3-SCREW-008 1.8 px, M15X3-SCREW-009 1.8 px, M15X3-SCREW-010 1.8 px, M15X3-SCREW-011 2 px, M25X11-STANDOFF-001 4.3 px, M25X11-STANDOFF-002 4.3 px, M25X11-STANDOFF-003 4.2 px, M25X11-STANDOFF-004 4.2 px, M25X18-STANDOFF-001 4.9 px, M25X18-STANDOFF-002 4.8 px, M25X18-STANDOFF-003 4.8 px, M25X18-STANDOFF-004 4.7 px, M25X18-STANDOFF-005 4.6 px, M25X18-STANDOFF-006 4.5 px, M25X18PLUS6-STANDOFF-001 5.4 px, M25X18PLUS6-STANDOFF-002 5.3 px, M25X18PLUS6-STANDOFF-003 5.2 px, M25X18PLUS6-STANDOFF-004 5.1 px, M25X18PLUS6-STANDOFF-005 5 px, M25X18PLUS6-STANDOFF-006 4.9 px, M25X30-STANDOFF-002 5.9 px, M25X30-STANDOFF-003 5.7 px, M25X30-STANDOFF-004 5.6 px, M25X6-SCREW-001 3.5 px, M25X6-SCREW-002 3.5 px, M25X6-SCREW-003 3.4 px, M25X6-SCREW-004 3.4 px, M25X6-SCREW-005 3.3 px, M25X6-SCREW-006 3.3 px, M25X6-SCREW-007 3.3 px, M25X6-SCREW-008 3.2 px, M25X6-SCREW-009 3.2 px, M25X6-SCREW-010 3.1 px, M3-NUT-001 2.9 px, M3-NUT-002 2.9 px, M3-NUT-003 2.9 px, M3-NUT-004 2.9 px, M3-NUT-005 3.6 px, M3-NUT-006 3.6 px, M3X25-SCREW-001 5.1 px, M3X25-SCREW-002 5 px, M3X25-SCREW-003 4.9 px, M3X25-SCREW-004 4.8 px, M3X25-SCREW-005 5.3 px, M3X25-SCREW-006 5.1 px, M3X26-STANDOFF-003 5.8 px, M3X26-STANDOFF-004 5.7 px, M3X6-SCREW-001 4.3 px, M3X6-SCREW-002 4.2 px, M3X6-SCREW-003 4.2 px, M3X6-SCREW-004 4.1 px, M3X6-SCREW-005 4.1 px, M3X6-SCREW-006 4 px, R2048-RIVET-001 4.7 px, R2048-RIVET-002 4.6 px, R2048-RIVET-003 4.5 px, R2048-RIVET-004 4.4 px, R2048-RIVET-005 4.3 px, R2048-RIVET-006 4.2 px, R2056-RIVET-001 5 px, R2056-RIVET-002 4.9 px, R2056-RIVET-003 4.8 px, R2056-RIVET-004 4.7 px, R2056-RIVET-005 4.6 px, R2056-RIVET-006 4.5 px, R2056-RIVET-007 4.4 px, R2056-RIVET-008 4.3 px, R3055-RIVET-001 5.3 px, R3055-RIVET-002 5.2 px, R3055-RIVET-003 5 px, R3055-RIVET-004 4.9 px, R3065-RIVET-001 5.6 px, R3065-RIVET-002 5.5 px, R3065-RIVET-003 5.4 px, R3065-RIVET-004 5.2 px, R3065-RIVET-005 5.1 px, R3065-RIVET-006 5 px, R3065-RIVET-007 4.9 px, R3065-RIVET-008 4.7 px, R3080-RIVET-001 5.1 px, R3080-RIVET-002 5 px, R3080-RIVET-003 4.9 px, R3080-RIVET-004 4.8 px, SERVO-RETAINER-PAN-001 2.5 px, SERVO-RETAINER-STEERING-001 2.5 px, SERVO-RETAINER-TILT-001 2.5 px, SPRING-WASHER-001 1.9 px, SPRING-WASHER-002 1.9 px, SPRING-WASHER-003 1.9 px, SPRING-WASHER-004 1.9 px, SPRING-WASHER-005 3.8 px, SPRING-WASHER-006 3.8 px, WASHER-A-001 4.8 px, WASHER-A-002 4.8 px, WASHER-B-001 5.2 px, WASHER-B-002 5.2 px, WASHER-B-003 5.2 px, WASHER-B-004 5.2 px, WASHER-B-005 5.2 px, WASHER-B-006 5.2 px, WASHER-B-007 5.2 px, WASHER-B-008 5.2 px.
+
+Placed only in the refused S09 candidate: ULTRASONIC-001, PLATE-H-001, R3080-RIVET-001, R3080-RIVET-002.

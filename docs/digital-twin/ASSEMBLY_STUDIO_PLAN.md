@@ -24,7 +24,7 @@ Display statuses per step and variant:
 
 A later step that depends on a step in Review carries "previewing S08 does not certify S07".
 
-The parts tray is a presentation layout, not an inferred physical state. Its scope is every instance printed steps 1–9 introduce or use, plus the kit tools their tool requirements name (`S01–S09 required = drawn solids + tiles`, with nothing missing or extra; `tools/studio/tray-audit.mjs` reconciles it against the M1 inventory). An instance with no trusted solid (the camera ribbon, the hook and loop tape, the tools) is a labelled flat tile, never invented geometry. Parts are grouped (plates, electronics, motors and servos, fasteners, supplies, cables, tools), fasteners one row per definition so identical pieces can be counted. A component without a defensible installed pose keeps its part-local orientation; it is never given an identity transform.
+The parts tray is a presentation layout, not an inferred physical state. Studio 3 extends its scope to every canonical planned-stock instance for the selected active board (`canonical stock = drawn solids + tiles`, with nothing missing or extra; `tools/studio/tray-audit.mjs` independently reconciles stock, all 29 planned uses, graphs, tools and slots). Current-frontier counts remain separately identified. Later parts have muted finishes and no implemented placement; backups are marked spare. The selected user-supplied board and three kit tools are included in the canonical total, never added as duplicate tutorial stock. An instance with no trusted solid (the camera ribbon, the hook and loop tape, the tools) is a labelled flat tile, never invented geometry. Parts are grouped (plates, electronics, motors and servos, fasteners, supplies, cables, tools), fasteners one row per definition so identical pieces can be counted. A component without a defensible installed pose keeps its part-local orientation; it is never given an identity transform.
 
 ## Deliveries
 
@@ -39,24 +39,24 @@ The parts tray is a presentation layout, not an inferred physical state. Its sco
 
 Studio 1 is done when the owner can open the app, enter fullscreen, inspect the real parts and play, scrub and replay S01→S02 with endpoints equal to the closure poses, and when both the Blender project and the reference render exist from the same pack.
 
-### Studio 2 — complete S01–S09 for both boards (this delivery)
+### Studio 2 — complete S01–S09 for both boards (accepted predecessor)
 
 - Every printed step S01–S09 opens for `rpi5` and `rpi-zero-2-w` through one renderer: S01–S06 and S08 play as Preview, S07 and S09 open in Review. A board switch keeps the step; a selection survives only for a part (or tile) both boards have.
-- The complete parts tray (see above), with an inventory line ("50 pieces · 44 modelled · 6 shown as tiles" on the Pi 5), grouped lists with a numbered chip per identical piece, and framing of any group.
+- The accepted S01–S09 frontier tray, with an inventory line ("50 pieces · 44 modelled · 6 shown as tiles" on the Pi 5), grouped lists with a numbered chip per identical piece, and framing of any group. Studio 3 separately extends the current Parts view to the full kit.
 - Instruction drawer: the printed manual panel for the step and board, rendered at runtime from the locked V40 booklet at the rectangle the verified documentation source lock records (never a stored image, never a guessed page); the step's parts (placed, new, worked on, tools); the step's source intent quoted from `steps/source-intents.json` with its caution text; the review explanation; the M7 status and limitations.
 - Inspection, all presentation only and reversible: isolate (hidden parts are neither drawn nor picked), ghost others, explode (offsets composed over the evaluated poses, continuous through playback), and a deck clip plane that never cuts the tray.
 - A guided camera per state authored in `stage.json` (`camera.steps`, each naming its subject) and judged by rendering it; the camera's frame is the canvas area the panels leave uncovered, so a guided view never sits under the drawer. Any input yields to manual control, and "Resume guided view" returns.
 
-### Studio 3 — build along with the real car
+### Studio 3 — full-kit tray and build along with the real car (current delivery)
 
 Uses the accepted M3 session layer (`features/assembly-session/store.ts`, `commands.ts`, `platform/*/repository.ts`); no second persistence.
 
 | Need | Existing mechanism |
 |---|---|
-| Selected variant | `AssemblySession.variantId`, one session per variant (`createSession(variant)`) |
+| Selected variant | `AssemblySession.variantId`, one stable Studio session per active variant (`PX-STUDIO-RPI5`, `PX-STUDIO-ZERO2W`), explicitly created through M3 |
 | Current viewed step / return-to-step | `reviewStepId` through the existing `bookmark` action, written on step change only, never per frame |
 | Owner-recorded physical completion | The existing `complete` command (`actor: 'self_confirmed'`), triggered only by an explicit button whose success follows the committed acknowledgment |
-| Private photo on a step | New: an observation record referenced from `observationIds`, carrying the photo's SHA-256, step ID, variant, Studio `packId`, and the geometry/pose source hashes of the instances shown. Bytes live in the app data directory (`evidence/<sessionId>/`), never in the repository, pack or bundle |
+| Private photo on a step | New: an observation record referenced from `observationIds`, carrying the photo's SHA-256, step ID, variant, Studio `packId`, and the geometry/pose source hashes of deterministic observation context instances; no recognition of the photograph. Bytes live in the app data directory (`evidence/<sessionId>/`), never in the repository, pack or bundle |
 | Evidence export to the implementation agent | A local export (zip) of the chosen observations with their sidecar JSON; the owner chooses the destination |
 
 Tests use disposable sessions and temporary storage; the owner's database is not read or changed without a separate request. No automatic camera verification.
@@ -89,6 +89,6 @@ A later step is content, not new UI:
 4. Physical progress is untouched: the session ledger references graph and step IDs, not pack bytes. A photo keeps the `packId` and hashes it was taken against, so a later revision shows it as "taken against an earlier revision", not as wrong.
 5. Display readiness changes with the pack; M7 assembly status changes only through M7. The step rail shows both.
 
-M7 geometry work resumes after Studio 1 on its own branch line; the owner can inspect each revision in the Studio as it lands.
+Future M7 geometry work requires its own authorization and branch line. Studio 3.5 owns the future owner-measured Robot HAT refinement before Studio 4; neither is started by this delivery.
 
-Studio 2 correctness closeout is documented in `../implementation/HANDOFF_STUDIO_2_PRO_REMEDIATION.md`: exact shared contract validation, fatal canonical tray disagreement, movement-based camera ownership, continuous recipe-free explosion, recoverable locked manual and complete native Zero S00–S09 verification. This checkpoint does not authorize or implement Studio 3 or M8.
+Studio 2 correctness closeout is documented in `../implementation/HANDOFF_STUDIO_2_PRO_REMEDIATION.md`: exact shared contract validation, fatal canonical tray disagreement, movement-based camera ownership, continuous recipe-free explosion, recoverable locked manual and complete native Zero S00–S09 verification. That historical checkpoint does not itself authorize Studio 3 or M8. The separate Studio 3 execution authorization is implemented and evaluated in `../implementation/HANDOFF_STUDIO_3.md`; M8 remains unauthorized.

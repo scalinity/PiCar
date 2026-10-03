@@ -1,0 +1,15 @@
+HookError [SevereServiceError]:
+A service failed in the 'onPrepare' hook
+SevereServiceError: Failed to start embedded WebDriver for instance 0: Embedded WebDriver server did not become ready on port 4445 within 60000ms. If you have installed tauri-plugin-wdio-webdriver, ensure it is registered in your Tauri app: app.plugin(tauri_plugin_wdio_webdriver::init()) in lib.rs. If you are not using the embedded plugin, set driverProvider: 'external' in your service options. To use a different port, set embeddedPort in your service options or the TAURI_WEBDRIVER_PORT env var.
+    at TauriLaunchService.onPrepare (file://<repo>/picarx-companion/node_modules/.pnpm/@wdio+tauri-service@1.4.0_expect-webdriverio@6.1.0_tsx@4.23.0_webdriverio@9.32.0/node_modules/@wdio/tauri-service/dist/esm/index.js:2365:27)
+    at async file://<repo>/picarx-companion/node_modules/.pnpm/@wdio+cli@9.32.0_@types+node@26.6.3_expect-webdriverio@6.1.0/node_modules/@wdio/cli/build/index.js:331:9
+    at async Promise.all (index 0)
+    at async Launcher.run (file://<repo>/picarx-companion/node_modules/.pnpm/@wdio+cli@9.32.0_@types+node@26.6.3_expect-webdriverio@6.1.0/node_modules/@wdio/cli/build/index.js:875:7)
+
+
+
+Stopping runner...
+    at file://<repo>/picarx-companion/node_modules/.pnpm/@wdio+cli@9.32.0_@types+node@26.6.3_expect-webdriverio@6.1.0/node_modules/@wdio/cli/build/index.js:349:29
+    at async Launcher.run (file://<repo>/picarx-companion/node_modules/.pnpm/@wdio+cli@9.32.0_@types+node@26.6.3_expect-webdriverio@6.1.0/node_modules/@wdio/cli/build/index.js:875:7) {
+  origin: 'onPrepare'
+}

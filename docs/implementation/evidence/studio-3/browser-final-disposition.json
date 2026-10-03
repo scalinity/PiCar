@@ -1,0 +1,18 @@
+{
+  "command": "PICAR_BROWSER_EVIDENCE_DIR=../docs/implementation/evidence/studio-3 pnpm test:browser --trace on",
+  "result": "RUN / FAIL — EXPLAINED",
+  "exitCode": 1,
+  "passed": 107,
+  "failed": 2,
+  "skipped": 1,
+  "minutes": 18.2,
+  "failures": [
+    "Chromium preservation.spec.ts:42 legacy picarx.v1 pdfLastPage expected1/received2 under M3",
+    "WebKit same preserved legacy assertion"
+  ],
+  "M3PdfOwnContract": "PASS; original raw retained and durable PDF page1",
+  "fullKitAndStudio3": "PASS on both engines",
+  "S2AndF1ToF11": "Browser regressions pass; one physical WebKit Escape skipped, covered by actual native CUA presses",
+  "priorIntermittentNavigationTimeouts": "Did not recur in final traced run; cause remains unconfirmed, not described as fixed",
+  "traceStorage": "Ignored disposable test-results only; no trace ZIP published"
+}

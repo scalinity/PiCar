@@ -1,0 +1,26 @@
+{
+  "initialAggregate": {
+    "result": "RUN / FAIL",
+    "passed": 106,
+    "failed": 3,
+    "skipped": 1,
+    "minutes": 15.3,
+    "failures": [
+      "two legacy PDF assertions",
+      "WebKit fault-injection test timing"
+    ]
+  },
+  "cause": "The test saw M3 retryAvailable during an in-flight save, then restored the injected add method before the event write failed. The save could succeed and remove the retry button.",
+  "correction": "Await enabled retry and TEST_QUOTA alert before restoring the method; no application code changed.",
+  "repeatedRun": {
+    "command": "pnpm exec playwright test tests/browser/studio-build-along.spec.ts --grep 'private synthetic photo' --repeat-each=5",
+    "result": "PASS",
+    "passed": 10,
+    "seconds": 30.8
+  },
+  "fullRerun": "pending",
+  "evidence": [
+    "browser-photo-retry-timing-failure.txt",
+    "browser-photo-retry-repeated.txt"
+  ]
+}

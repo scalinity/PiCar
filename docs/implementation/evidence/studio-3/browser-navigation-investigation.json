@@ -1,0 +1,42 @@
+{
+  "fullAggregate": {
+    "result": "RUN / FAIL",
+    "passed": 105,
+    "failed": 4,
+    "skipped": 1,
+    "minutes": 16.8,
+    "failures": [
+      "two preserved-legacy PDF assertions",
+      "two WebKit initial navigation timeouts"
+    ]
+  },
+  "unchangedRepeatedCases": {
+    "passed": 9,
+    "failed": 1,
+    "inspectorPassed": 5,
+    "diagnosticPassed": 4
+  },
+  "domReadyExperiment": {
+    "passed": 9,
+    "failed": 1,
+    "reverted": true,
+    "applicationChanged": false
+  },
+  "tracedInspector": {
+    "passed": 10,
+    "seconds": 24.4
+  },
+  "htmlOnlyNavigations": {
+    "passed": 20
+  },
+  "actualStudioNavigations": {
+    "passed": 20,
+    "cases": 20
+  },
+  "dualWebKitProcesses": {
+    "passed": 20,
+    "cases": 20
+  },
+  "cause": "Unconfirmed intermittent test-runner navigation timing. Neither DOM-readiness waiting nor dual-driver isolation established a cause. No application exception or failed source assertion was observed.",
+  "next": "Final full traced run completed107 passed/2 explained PDF failures/1 skipped; neither prior navigation timeout recurred. Cause remains unconfirmed."
+}

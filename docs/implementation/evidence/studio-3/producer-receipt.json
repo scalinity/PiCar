@@ -1,0 +1,30 @@
+{
+  "packId": "ad00bd0f4ad2904c3c1ca12d05b2990da5cb8e0e0076eb4e928372e08d202f41",
+  "glb": {
+    "path": "parts.glb",
+    "sha256": "2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8",
+    "bytes": 3261348
+  },
+  "definitions": 48,
+  "chain": {
+    "label": "s2pro-01",
+    "mode": "source-mode dev loop, not an M7 qualification",
+    "closureVerify": {
+      "status": "PASS",
+      "sha256": "849cd5c49a4ed6c8e73759d4c627091386efa3a222e3ce997c090d0cadb978a9"
+    },
+    "studioChain": {
+      "sha256": "92952c5e09753f7c549f3538f2fce4cb5c8fb66675a58d709ae6a1a030a04322"
+    }
+  },
+  "tessellation": {
+    "label": "s3-fullkit-01",
+    "meshesSha256": "ef4ef8fb6a2e24d00a2d4747eaf87be3ee9bbd547d224812eea27f7d2b5e0299",
+    "binSha256": "180ee89e4da0acb3b3f7189c01492e03860387759fbd60e611ae471f9732f928",
+    "linearDeflectionMm": 0.02,
+    "angularDeflectionRad": 0.15
+  },
+  "provenance": "Normal producer ran before the host restart; this receipt retains its manifest-bound identities. Temporary producer stdout was not retained across restart. Final pack freshness and Blender checks were rerun after restart.",
+  "cadOrM7SourceChanged": false,
+  "m7AggregateRerun": false
+}
