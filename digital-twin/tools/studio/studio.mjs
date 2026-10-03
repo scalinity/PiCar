@@ -140,6 +140,7 @@ function displayRecords() {
   for (const f of fs.readdirSync(dir).filter((n) => n.endsWith('.display.json')).sort()) {
     const recordPath = `${DISPLAY_DIR}/${f}`, record = json(recordPath), brep = `${DISPLAY_DIR}/${record.artifact}`;
     if (sha(read(brep)) !== record.artifactSha256) fail('DISPLAY_ARTIFACT_HASH', brep);
+    for (const binding of record.sourceBindings ?? []) if (sha(read(binding.path)) !== binding.sha256) fail('DISPLAY_SOURCE_HASH', binding.path);
     out[record.definitionId] = { record, brep, recordPath, recordSha256: sha(read(recordPath)) };
   }
   return out;
@@ -416,6 +417,8 @@ function buildPack({ chain, tessellation }) {
         display: entry.display, assembly: { gate: gate.gate, status: gate.status, admittedRows: gate.currentProductDeliveryCoverage.complete, requiredRows: gate.currentProductDeliveryCoverage.required },
         mode, operable: mode === 'preview',
         introducedInstanceIds: introducedSolid, introducedZeroSolidInstanceIds: step.introducedInstanceIds.filter((id) => !introducedSolid.includes(id)),
+        usedInstanceIds: step.usedInstanceIds, toolInstanceIds: [...new Set(step.toolRequirementIds.flatMap((req) => toolInstances(req, variant)))],
+        workpieceInstanceId: entry.placements.find((p) => newlyPlaced.includes(p.instanceId) && p.role === 'workpiece')?.instanceId ?? null,
         newlyPlacedInstanceIds: newlyPlaced, stepParts, focusInstanceIds,
         instruction: { record: INTENTS, id: intent.id, parts: intent.introducedParts, hardware: intent.introducedHardware, tools: intent.tools,
           orientation: intent.orientation, connection: intent.connectionIntent, variant: intent.variantDetails?.[variant] ?? null },
@@ -587,6 +590,7 @@ function buildPack({ chain, tessellation }) {
       tessellation: { label: tessellation, meshesSha256: sha(fs.readFileSync(path.join(tessDir, 'meshes.json'))), binSha256: index.binSha256, linearDeflectionMm: index.linearDeflectionMm, angularDeflectionRad: index.angularDeflectionRad },
       revisionRegistry: { path: REVISION_REGISTRY, sha256: registrySha },
       inputs: Object.fromEntries([STAGE, MATERIALS, GATE_REPORT, `${PRESENTATION}/instructional/product-scope.json`, KINDS, PARTS, STOCK, TOOLS, INTENTS, CABLES, REGISTRY,
+        ...Object.values(displays).flatMap(({ record }) => (record.sourceBindings ?? []).map((b) => b.path)),
         ...activeVariants().map(graphPath)].map((p) => [p, sha(read(p))])),
       m7Gate: { gate: gate.gate, status: gate.status, coverage: gate.currentProductDeliveryCoverage },
     },

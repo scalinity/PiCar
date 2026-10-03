@@ -36,7 +36,10 @@ const vec = (v: unknown, n: number): boolean => Array.isArray(v) && v.length ===
 const hex64 = (v: unknown): boolean => typeof v === 'string' && /^[0-9a-f]{64}$/.test(v);
 const unitQuaternion = (q: unknown): boolean => vec(q, 4) && Math.abs(Math.hypot(...(q as number[])) - 1) < 1e-6;
 const pose = (p: unknown): boolean => isObject(p) && vec(p.translationM, 3) && unitQuaternion(p.rotationXYZW);
-const camera = (c: unknown): boolean => isObject(c) && vec(c.positionM, 3) && vec(c.targetM, 3) && finite(c.verticalFovDeg);
+const ids = (a: unknown, known: (id: unknown) => boolean): a is string[] => Array.isArray(a) && a.every(known) && new Set(a).size === a.length;
+const sameSet = (a: string[], b: string[]): boolean => a.length === b.length && new Set(a).size === a.length && a.every((id) => b.includes(id));
+const samePose = (a: Json, b: Json): boolean => pose(a) && pose(b) && a.translationM.every((x: number, i: number) => Math.abs(x - b.translationM[i]) < 1e-12) && a.rotationXYZW.every((x: number, i: number) => Math.abs(x - b.rotationXYZW[i]) < 1e-12);
+const camera = (c: unknown): boolean => isObject(c) && vec(c.positionM, 3) && vec(c.targetM, 3) && finite(c.verticalFovDeg) && c.verticalFovDeg > 0 && c.verticalFovDeg < 180;
 
 // Everything the runtime relies on, checked before any geometry is built. Problems name the field that failed.
 export function manifestProblems(m: unknown): string[] {
@@ -57,8 +60,8 @@ export function manifestProblems(m: unknown): string[] {
   need(isObject(m.timing) && ['bringInS', 'approachS', 'staggerS'].every((k) => finite(m.timing[k]) && m.timing[k] >= 0), 'MANIFEST_TIMING');
   const light = m.lighting;
   need(isObject(light) && vec(light.runtimeEnvironmentBase, 3) && typeof light.pool?.css === 'string' && Array.isArray(light.lights)
-    && light.lights.some((l: Json) => l.id === 'key')
-    && light.lights.every((l: Json) => typeof l.id === 'string' && finite(l.azimuthDeg) && finite(l.elevationDeg) && finite(l.distanceM)
+    && light.lights.some((l: Json) => isObject(l) && l.id === 'key')
+    && light.lights.every((l: Json) => isObject(l) && typeof l.id === 'string' && finite(l.azimuthDeg) && finite(l.elevationDeg) && finite(l.distanceM)
       && vec(l.sizeM, 2) && vec(l.color, 3) && finite(l.runtimeIntensity)), 'MANIFEST_LIGHTING');
   if (!need(isObject(m.materials), 'MANIFEST_MATERIALS')) return out;
   for (const [id, mat] of Object.entries<Json>(m.materials)) {
@@ -68,12 +71,12 @@ export function manifestProblems(m: unknown): string[] {
   for (const [id, d] of Object.entries<Json>(m.definitions)) {
     need(isObject(d) && typeof d.name === 'string' && d.node === id && isObject(d.artifact) && hex64(d.artifact.sha256)
       && isObject(d.boundsM) && vec(d.boundsM.min, 3) && vec(d.boundsM.max, 3)
-      && Array.isArray(d.solids) && d.solids.length > 0 && d.solids.every((s: Json) => typeof s.materialId === 'string' && s.materialId in m.materials),
+      && Array.isArray(d.solids) && d.solids.length > 0 && d.solids.every((s: Json) => isObject(s) && typeof s.materialId === 'string' && s.materialId in m.materials),
     `MANIFEST_DEFINITION ${id}`);
   }
   if (!need(isObject(m.instances), 'MANIFEST_INSTANCES')) return out;
   for (const [id, i] of Object.entries<Json>(m.instances)) {
-    need(isObject(i) && typeof i.definitionId === 'string' && i.definitionId in m.definitions && Array.isArray(i.variants)
+    need(isObject(i) && typeof i.name === 'string' && typeof i.componentClass === 'string' && typeof i.role === 'string' && typeof i.definitionId === 'string' && i.definitionId in m.definitions && Array.isArray(i.variants)
       && i.variants.every((v: string) => (VARIANTS as readonly string[]).includes(v)), `MANIFEST_INSTANCE ${id}`);
   }
   // Instances with no trusted solid: listed and shown as tray tiles, never drawn as geometry.
@@ -82,24 +85,35 @@ export function manifestProblems(m: unknown): string[] {
     need(isObject(i) && typeof i.definitionId === 'string' && !(i.definitionId in m.definitions) && typeof i.name === 'string' && typeof i.representation === 'string'
       && !(id in m.instances) && Array.isArray(i.variants) && i.variants.every((v: string) => (VARIANTS as readonly string[]).includes(v)), `MANIFEST_SCHEMATIC_INSTANCE ${id}`);
   }
+  if (out.length) return out; // Never dereference a malformed definition or instance.
   if (!need(isObject(m.variants) && VARIANTS.every((v) => isObject(m.variants[v])), 'MANIFEST_VARIANTS')) return out;
   for (const v of VARIANTS) {
     const entry = m.variants[v];
     const tray: Json = entry.tray?.instances, tiles: Json = entry.tray?.tiles;
     if (!need(finite(entry.floorYM) && vec(entry.centreM, 3) && isObject(tray) && isObject(tiles) && Array.isArray(entry.tray?.groups) && camera(entry.tray?.camera), `MANIFEST_TRAY ${v}`)) continue;
-    for (const [id, p] of Object.entries<Json>(tray)) need(id in m.instances && pose(p), `MANIFEST_TRAY_POSE ${v} ${id}`);
-    for (const [id, t] of Object.entries<Json>(tiles)) need(id in m.schematic && isObject(t) && vec(t.centreM, 3) && vec(t.halfExtentsM, 2), `MANIFEST_TRAY_TILE ${v} ${id}`);
+    for (const [id, p] of Object.entries<Json>(tray)) need(id in m.instances && m.instances[id].variants.includes(v) && pose(p), `MANIFEST_TRAY_POSE ${v} ${id}`);
+    for (const [id, t] of Object.entries<Json>(tiles)) need(id in m.schematic && m.schematic[id].variants.includes(v) && isObject(t) && vec(t.centreM, 3) && vec(t.halfExtentsM, 2), `MANIFEST_TRAY_TILE ${v} ${id}`);
     // Every tray slot belongs to exactly one labelled group, and every group lists only slots.
     const grouped = entry.tray.groups.flatMap((g: Json) => (Array.isArray(g?.instanceIds) ? g.instanceIds : [null]));
     const slots = [...Object.keys(tray), ...Object.keys(tiles)];
-    need(entry.tray.groups.every((g: Json) => isObject(g) && typeof g.label === 'string' && vec(g.labelM, 3) && vec(g.boundsM?.min, 3) && vec(g.boundsM?.max, 3))
+    need(entry.tray.groups.every((g: Json) => isObject(g) && typeof g.label === 'string' && vec(g.labelM, 3) && vec(g.boundsM?.min, 3) && vec(g.boundsM?.max, 3) && Array.isArray(g.instanceIds))
+      && new Set(entry.tray.groups.map((g: Json) => g.id)).size === entry.tray.groups.length
+      && entry.tray.groups.every((g: Json) => typeof g.id === 'string' && g.instanceIds.length > 0 && g.instanceIds.every((id: string) => (tray[id] ?? tiles[id])?.group === g.id))
       && grouped.length === slots.length && new Set(grouped).size === grouped.length && grouped.every((id: string) => slots.includes(id)), `MANIFEST_TRAY_GROUPS ${v}`);
-    const known = (id: unknown): boolean => typeof id === 'string' && (id in tray || id in tiles);
+    const expectedSolids = Object.keys(m.instances).filter((id) => m.instances[id].variants.includes(v));
+    const expectedTiles = Object.keys(m.schematic).filter((id) => m.schematic[id].variants.includes(v));
+    need(sameSet(Object.keys(tray), expectedSolids) && sameSet(Object.keys(tiles), expectedTiles) && new Set(slots).size === slots.length, `MANIFEST_TRAY_COVERAGE ${v}`);
+    const inventory = entry.tray.inventory;
+    need(isObject(inventory) && ['required', 'modeled', 'tiles', 'canonical', 'notRequired', 'spares'].every((k) => Number.isSafeInteger(inventory[k]) && inventory[k] >= 0)
+      && inventory.required === slots.length && inventory.modeled === Object.keys(tray).length && inventory.tiles === Object.keys(tiles).length
+      && inventory.required === inventory.modeled + inventory.tiles && inventory.canonical === inventory.required + inventory.notRequired
+      && inventory.spares <= inventory.notRequired && typeof inventory.scope === 'string' && typeof inventory.canonicalSource === 'string', `MANIFEST_TRAY_INVENTORY ${v}`);
+    const known = (id: unknown): boolean => typeof id === 'string' && (Object.prototype.hasOwnProperty.call(tray, id) || Object.prototype.hasOwnProperty.call(tiles, id));
     if (!need(Array.isArray(entry.steps) && entry.steps.length === STEPS, `MANIFEST_STEPS ${v}`)) continue;
     entry.steps.forEach((s: Json, i: number) => {
       const at = `${v} S${String(i + 1).padStart(2, '0')}`;
       if (!need(isObject(s) && s.printedNumber === i + 1 && (DISPLAYS as readonly string[]).includes(s.display) && (MODES as readonly string[]).includes(s.mode)
-        && s.operable === (s.mode === 'preview'), `MANIFEST_STEP ${at}`)) return;
+        && s.operable === (s.mode === 'preview') && typeof s.title === 'string' && typeof s.stepId === 'string' && typeof s.sourcePanel === 'string', `MANIFEST_STEP ${at}`)) return;
       // Readiness the runtime relies on: only a closure the verifier passed, at its verified hash, is instruction.
       need(!s.operable || (s.display === 'PREVIEW_SOURCE_REVALIDATED' && s.source?.kind === 'closure' && s.source?.closureVerify === 'PASS'
         && hex64(s.source?.closureRfc8785Sha256) && s.candidatePlacements === false), `MANIFEST_OPERABLE_NOT_READY ${at}`);
@@ -107,17 +121,70 @@ export function manifestProblems(m: unknown): string[] {
       need(s.mode !== 'review' || s.display === 'PREVIEW_BLOCKED_RELATION' || s.display === 'REVIEW_REFUSED_CANDIDATE', `MANIFEST_REVIEW_DISPLAY ${at}`);
       need(s.candidatePlacements !== true || s.display === 'REVIEW_REFUSED_CANDIDATE', `MANIFEST_CANDIDATE_DISPLAY ${at}`);
       need(isObject(s.placements) && Object.entries<Json>(s.placements).every(([id, p]) => id in tray && pose(p)), `MANIFEST_PLACEMENTS ${at}`);
-      need(Array.isArray(s.newlyPlacedInstanceIds) && s.newlyPlacedInstanceIds.every((id: string) => id in (s.placements ?? {})), `MANIFEST_NEWLY_PLACED ${at}`);
+      const previous = entry.steps[i - 1]?.placements;
+      const before = isObject(previous) ? previous : {};
+      const newly = Object.keys(s.placements ?? {}).filter((id) => !(id in before));
+      need(ids(s.newlyPlacedInstanceIds, known) && sameSet(s.newlyPlacedInstanceIds, newly), `MANIFEST_NEWLY_PLACED ${at}`);
+      need(s.mode !== 'preview' || Object.keys(before).every((id) => samePose(before[id], s.placements?.[id])), `MANIFEST_PREVIOUS_POSE ${at}`);
+      const inputLists = ['introducedInstanceIds', 'introducedZeroSolidInstanceIds', 'usedInstanceIds', 'toolInstanceIds'];
+      const sourceListsValid = inputLists.every((k) => ids(s[k], known));
+      need(sourceListsValid && s.introducedInstanceIds.every((id: string) => id in tray) && s.introducedZeroSolidInstanceIds.every((id: string) => id in tiles)
+        && s.toolInstanceIds.every((id: string) => m.schematic[id]?.componentClass === 'tool'), `MANIFEST_STEP_SCOPE ${at}`);
+      if (sourceListsValid) {
+        const parts = new Map<string, string>();
+        for (const [list, use] of [[newly, 'placed'], [s.introducedInstanceIds, 'new'], [s.introducedZeroSolidInstanceIds, 'new'], [s.usedInstanceIds, 'uses'], [s.toolInstanceIds, 'tool']] as [string[], string][]) {
+          for (const id of list) if (!parts.has(id)) parts.set(id, use);
+        }
+        need(Array.isArray(s.stepParts) && s.stepParts.length === parts.size && new Set(s.stepParts.map((p: Json) => p?.instanceId)).size === parts.size
+          && s.stepParts.every((p: Json) => parts.get(p?.instanceId) === p?.use), `MANIFEST_STEP_PARTS_SOURCE ${at}`);
+      }
       need(Array.isArray(s.stepParts) && s.stepParts.every((p: Json) => known(p?.instanceId) && (PART_USES as readonly string[]).includes(p.use))
-        && Array.isArray(s.focusInstanceIds) && s.focusInstanceIds.every(known), `MANIFEST_STEP_PARTS ${at}`);
+        && ids(s.focusInstanceIds, known), `MANIFEST_STEP_PARTS ${at}`);
       need(s.mode === 'closed' || camera(s.camera), `MANIFEST_OPENED_CAMERA ${at}`);
-      need(Array.isArray(s.recipes) && s.recipes.every((r: Json) => r.instanceId in (s.placements ?? {}) && vec(r.approachAxis, 3)
+      need(Array.isArray(s.recipes) && s.recipes.every((r: Json) => isObject(r) && r.instanceId in (isObject(s.placements) ? s.placements : {}) && vec(r.approachAxis, 3)
         && finite(r.approachDistanceM) && pose(r.stagedStart)), `MANIFEST_RECIPES ${at}`);
-      need(Array.isArray(s.displayChecks) && s.displayChecks.every((d: Json) => d.definitionId in m.definitions
+      const workpiece = s.workpieceInstanceId;
+      need(workpiece === null || (i === 0 && workpiece === 'PX-V40-INS-PLATE-A-001' && newly.includes(workpiece)), `MANIFEST_WORKPIECE ${at}`);
+      if (s.mode === 'preview') {
+        const moving = newly.filter((id) => id !== workpiece);
+        need(Array.isArray(s.recipes) && sameSet(s.recipes.map((r: Json) => r?.instanceId), moving), `MANIFEST_RECIPE_COVERAGE ${at}`);
+      }
+      for (const r of Array.isArray(s.recipes) ? s.recipes : []) {
+        const final = s.placements?.[r?.instanceId];
+        need(isObject(r) && pose(final) && pose(r.stagedStart) && vec(r.approachAxis, 3) && Math.abs(Math.hypot(...r.approachAxis) - 1) < 1e-6
+          && finite(r.approachDistanceM) && r.approachDistanceM > 0 && r.stagingOnly === true
+          && r.stagedStart.translationM.every((x: number, k: number) => Math.abs(x + r.approachAxis[k] * r.approachDistanceM - final.translationM[k]) < 1e-9)
+          && r.stagedStart.rotationXYZW.every((x: number, k: number) => Math.abs(x - final.rotationXYZW[k]) < 1e-12)
+          && Array.isArray(r.segments) && r.segments.length > 0 && r.segments.every((x: unknown) => typeof x === 'string'), `MANIFEST_RECIPE_STAGING ${at}`);
+      }
+      need(Array.isArray(s.blockers) && s.blockers.every((b: Json) => isObject(b) && typeof b.id === 'string' && (b.connectionIds === undefined || ids(b.connectionIds, (id) => typeof id === 'string')))
+        && Array.isArray(s.conflicts) && s.conflicts.every((c: Json) => isObject(c) && ids(c.instances, known) && c.instances.length === 2 && finite(c.volumeMm3) && c.volumeMm3 > 0), `MANIFEST_REVIEW_METADATA ${at}`);
+      need(s.mode !== 'review' || (s.blockers?.length > 0 && (s.display !== 'REVIEW_REFUSED_CANDIDATE'
+        || (s.candidatePlacements === true && s.source?.kind === 'refused-closure' && s.conflicts?.length > 0))), `MANIFEST_REVIEW_REASON ${at}`);
+      const dependencies = entry.steps.slice(0, i).filter((p: Json) => isObject(p) && p.display !== 'PREVIEW_SOURCE_REVALIDATED');
+      need(Array.isArray(s.dependencyWarnings) && s.dependencyWarnings.length === dependencies.length
+        && new Set(s.dependencyWarnings.map((w: Json) => w?.printedNumber)).size === dependencies.length
+        && s.dependencyWarnings.every((w: Json) => isObject(w) && typeof w.text === 'string' && w.text.length > 0
+          && dependencies.some((p: Json) => p.printedNumber === w.printedNumber && p.display === w.display)), `MANIFEST_DEPENDENCY_WARNINGS ${at}`);
+      need(isObject(s.instruction) && ['record', 'id', 'parts', 'hardware', 'tools', 'orientation', 'connection'].every((k) => typeof s.instruction[k] === 'string')
+        && (s.instruction.variant === null || typeof s.instruction.variant === 'string'), `MANIFEST_INSTRUCTION ${at}`);
+      need(Array.isArray(s.displayChecks) && s.displayChecks.every((d: Json) => isObject(d) && d.definitionId in m.definitions
         && (d.status === 'CHECKED' || d.status === 'NOT_CHECKED') && Array.isArray(d.overlaps)), `MANIFEST_DISPLAY_CHECKS ${at}`);
+      need(Array.isArray(s.warnings) && s.warnings.every((w: Json) => isObject(w) && ['id', 'severity', 'text'].every((k) => typeof w[k] === 'string'))
+        && ['limitations', 'approximationFlags', 'carriedUnframedConnectionIds'].every((k) => Array.isArray(s[k]) && s[k].every((x: unknown) => typeof x === 'string'))
+        && isObject(s.claims) && Object.values(s.claims).every((x) => typeof x === 'string'), `MANIFEST_STEP_METADATA ${at}`);
       need(s.camera === null || camera(s.camera), `MANIFEST_CAMERA ${at}`);
       need(isObject(s.assembly) && typeof s.assembly.status === 'string', `MANIFEST_ASSEMBLY ${at}`);
     });
+    const scope: string[] = entry.steps.flatMap((s: Json) => ['introducedInstanceIds', 'introducedZeroSolidInstanceIds', 'usedInstanceIds', 'toolInstanceIds'].flatMap((k) => Array.isArray(s?.[k]) ? s[k] : []));
+    need(sameSet(slots, [...new Set(scope)]), `MANIFEST_TRAY_SOURCE_SCOPE ${v}`);
+    const firstUse = new Map<string, { firstStep: number; required: string }>();
+    for (const s of entry.steps) if (isObject(s)) {
+      for (const [key, required] of [['introducedInstanceIds', 'introduced'], ['introducedZeroSolidInstanceIds', 'introduced'], ['usedInstanceIds', 'used'], ['toolInstanceIds', 'tool']]) {
+        for (const id of Array.isArray(s[key]) ? s[key] : []) if (!firstUse.has(id)) firstUse.set(id, { firstStep: s.printedNumber, required });
+      }
+    }
+    need(slots.every((id) => { const slot = tray[id] ?? tiles[id], use = firstUse.get(id); return isObject(slot) && use?.firstStep === slot.firstStep && use?.required === slot.required; }), `MANIFEST_TRAY_FIRST_USE ${v}`);
   }
   return out;
 }

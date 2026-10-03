@@ -132,6 +132,50 @@ describe('runtime pack validation', () => {
     await rejects((m) => { m.variants.rpi5.steps[5].newlyPlacedInstanceIds.push('PX-V40-INS-BATTERY-001'); }, 'MANIFEST_NEWLY_PLACED rpi5 S06');
   });
 
+
+  it('rejects unknown or duplicate group identities', async () => {
+    await rejects((m) => { m.variants.rpi5.tray.instances['PX-V40-INS-PLATE-A-001'].group = 'unknown'; }, 'MANIFEST_TRAY_GROUPS rpi5');
+    await rejects((m) => { m.variants.rpi5.tray.groups[1].id = m.variants.rpi5.tray.groups[0].id; }, 'MANIFEST_TRAY_GROUPS rpi5');
+  });
+  it('requires inventory and reconciles every count', async () => {
+    await rejects((m) => { delete m.variants.rpi5.tray.inventory; }, 'MANIFEST_TRAY_INVENTORY rpi5');
+    await rejects((m) => { m.variants.rpi5.tray.inventory.required++; }, 'MANIFEST_TRAY_INVENTORY rpi5');
+  });
+  it('rejects a removed wrench even after all displayed totals, groups and step lists are adjusted', () => rejects((m) => {
+    const v = m.variants.rpi5, id = 'PX-V40-INS-WRENCH-001';
+    delete v.tray.tiles[id];
+    v.tray.groups.forEach((g: any) => { g.instanceIds = g.instanceIds.filter((x: string) => x !== id); });
+    v.steps.forEach((s: any) => { s.stepParts = s.stepParts.filter((p: any) => p.instanceId !== id); s.toolInstanceIds = s.toolInstanceIds.filter((x: string) => x !== id); });
+    v.tray.inventory.required--; v.tray.inventory.tiles--; v.tray.inventory.notRequired++;
+  }, 'MANIFEST_TRAY_COVERAGE rpi5'));
+  it('rejects solid plus tile duplicates of one physical instance', () => rejects((m) => {
+    m.variants.rpi5.tray.tiles['PX-V40-INS-PLATE-A-001'] = { ...m.variants.rpi5.tray.tiles['PX-V40-INS-WRENCH-001'] };
+  }, 'MANIFEST_TRAY_COVERAGE rpi5'));
+  it('requires the exact newly placed set', async () => {
+    await rejects((m) => { m.variants.rpi5.steps[3].newlyPlacedInstanceIds = []; }, 'MANIFEST_NEWLY_PLACED rpi5 S04');
+    await rejects((m) => { m.variants.rpi5.steps[3].newlyPlacedInstanceIds.push('PX-V40-INS-PLATE-A-001'); }, 'MANIFEST_NEWLY_PLACED rpi5 S04');
+  });
+  it('requires one recipe for each moving solid and no unrelated recipe', async () => {
+    await rejects((m) => { m.variants.rpi5.steps[3].recipes.pop(); }, 'MANIFEST_RECIPE_COVERAGE rpi5 S04');
+    await rejects((m) => { m.variants.rpi5.steps[3].recipes.push(m.variants.rpi5.steps[3].recipes[0]); }, 'MANIFEST_RECIPE_COVERAGE rpi5 S04');
+    await rejects((m) => { m.variants.rpi5.steps[3].recipes[0].stagedStart.translationM[0] += 0.01; }, 'MANIFEST_RECIPE_STAGING rpi5 S04');
+    await rejects((m) => { m.variants.rpi5.steps[3].placements['PX-V40-INS-PLATE-A-001'].translationM[0] += 0.01; }, 'MANIFEST_PREVIOUS_POSE rpi5 S04');
+  });
+  it('rejects impossible dependency records and absent review reasons', async () => {
+    await rejects((m) => { m.variants.rpi5.steps[7].dependencyWarnings[0].printedNumber = 99; }, 'MANIFEST_DEPENDENCY_WARNINGS rpi5 S08');
+    await rejects((m) => { m.variants.rpi5.steps[6].blockers = []; }, 'MANIFEST_REVIEW_REASON rpi5 S07');
+  });
+  it('rejects refused Preview and malformed consumer records without throwing', async () => {
+    await rejects((m) => { Object.assign(m.variants.rpi5.steps[8], { mode: 'preview', operable: true }); }, 'MANIFEST_OPERABLE_NOT_READY rpi5 S09');
+    await rejects((m) => { m.variants.rpi5.steps[0].placements = 1; }, 'MANIFEST_PLACEMENTS rpi5 S01');
+    await rejects((m) => { m.variants.rpi5.steps[0].displayChecks = [null]; }, 'MANIFEST_DISPLAY_CHECKS rpi5 S01');
+    await rejects((m) => { m.variants.rpi5.steps[0].warnings = [null]; }, 'MANIFEST_STEP_METADATA rpi5 S01');
+    await rejects((m) => { m.variants.rpi5.steps[0].focusInstanceIds = ['toString']; }, 'MANIFEST_STEP_PARTS rpi5 S01');
+  });
+  it('rejects a slot from the wrong board', () => rejects((m) => {
+    m.instances['PX-V40-INS-PI5-001'].variants = ['rpi-zero-2-w'];
+  }, 'MANIFEST_TRAY_POSE rpi5 PX-V40-INS-PI5-001'));
+
   it('checks nothing past a manifest it cannot parse', async () => {
     const result = await problems(new TextEncoder().encode('{"packId":'), glbBytes);
     expect(result).toEqual(['MANIFEST_JSON']);

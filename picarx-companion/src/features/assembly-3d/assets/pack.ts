@@ -26,6 +26,7 @@ export type StepEntry = {
   printedNumber: number; stepId: string; title: string; sourcePanel: string; display: Display; mode: Mode; operable: boolean;
   assembly: { gate: string; status: string; admittedRows: number; requiredRows: number };
   introducedInstanceIds: string[]; introducedZeroSolidInstanceIds: string[]; newlyPlacedInstanceIds: string[];
+  usedInstanceIds: string[]; toolInstanceIds: string[]; workpieceInstanceId: string | null;
   stepParts: { instanceId: string; use: PartUse }[]; focusInstanceIds: string[];
   instruction: Instruction; warnings: { id: string; severity: string; text: string }[];
   placements: Record<string, Pose>; candidatePlacements: boolean;

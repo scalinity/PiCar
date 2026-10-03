@@ -123,7 +123,7 @@ describe('readiness is labelled separately from assembly acceptance', () => {
     expect(steps(v)[7].dependencyWarnings.map((w: any) => w.printedNumber)).toEqual([7]);
     for (const s of steps(v)) expect(s.assembly).toMatchObject({ gate: 'G-INSTRUCTIONAL-ASSEMBLY', status: 'BLOCKED', admittedRows: 0, requiredRows: 58 });
   });
-  it.each(['rpi5', 'rpi-zero-2-w'])('%s: animates what each closure newly places, so the battery moves in S07 (placed there, introduced in S06)', (v) => {
+  it.each(['rpi5', 'rpi-zero-2-w'])('%s: newly placed sets follow cumulative records; S07 battery has no Review timeline and is present in S08', (v) => {
     expect(steps(v)[5].introducedInstanceIds).toContain('PX-V40-INS-BATTERY-001');
     expect(steps(v)[5].newlyPlacedInstanceIds).toEqual([]);
     expect(steps(v)[6].newlyPlacedInstanceIds).toEqual(['PX-V40-INS-BATTERY-001']);
@@ -157,8 +157,14 @@ describe('readiness is labelled separately from assembly acceptance', () => {
     const s2 = steps('rpi5')[1].displayChecks.find((c: any) => c.definitionId === 'PX-V40-DEF-PI5');
     expect(s2).toMatchObject({ status: 'CHECKED', closureRfc8785Sha256: steps('rpi5')[1].source.closureRfc8785Sha256 });
     expect(Math.max(...s2.overlaps.map((o: any) => o.volumeMm3))).toBeGreaterThan(440); // the 449 mm³ microphone finding
-    expect(steps('rpi5')[8].displayChecks).toEqual([{ definitionId: 'PX-V40-DEF-PI5', status: 'NOT_CHECKED', overlaps: [] }]);
-    for (const s of steps('rpi-zero-2-w')) expect(s.displayChecks).toEqual([]);
+    expect(steps('rpi5')[8].displayChecks.find((c: any) => c.definitionId === 'PX-V40-DEF-PI5')).toEqual({ definitionId: 'PX-V40-DEF-PI5', status: 'NOT_CHECKED', overlaps: [] });
+    for (const s of steps('rpi-zero-2-w')) expect(s.displayChecks.filter((c: any) => c.definitionId === 'PX-V40-DEF-PI5')).toEqual([]);
+    for (const v of ['rpi5', 'rpi-zero-2-w']) for (const s of steps(v)) {
+      const hat = s.displayChecks.find((c: any) => c.definitionId === 'PX-V40-DEF-ROBOT-HAT');
+      if (s.printedNumber < 4) expect(hat).toBeUndefined();
+      else if (s.printedNumber === 9) expect(hat).toEqual({ definitionId: 'PX-V40-DEF-ROBOT-HAT', status: 'NOT_CHECKED', overlaps: [] });
+      else expect(hat).toMatchObject({ status: 'CHECKED', closureRfc8785Sha256: s.source.closureRfc8785Sha256 });
+    }
   });
   it('keeps parts without a verified installed pose in the tray in their part-local orientation', () => {
     const tray = manifest.variants.rpi5.tray.instances;

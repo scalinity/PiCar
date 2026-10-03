@@ -31,7 +31,7 @@ const short = (id) => id.replace(/^PX-V40-(INS|DEF)-/, '');
 const stock = json('digital-twin/components/instances/planned-stock.json');
 const defs = Object.fromEntries(json('digital-twin/components/definitions/parts.json').map((d) => [d.id, d]));
 const tools = json('digital-twin/components/inventory/tools.json');
-const uses = json('digital-twin/components/inventory/planned-uses.json');
+const uses = json(opt('planned-uses', 'digital-twin/components/inventory/planned-uses.json'));
 const kinds = Object.fromEntries(json('digital-twin/validation/expected/m5/instructional-parameters.json').definitions.map((d) => [d.definitionId, d.recipe]));
 const variants = json('digital-twin/assemblies/v40/presentation/instructional/product-scope.json').activeProductVariants;
 const manifest = json(manifestPath);
@@ -98,10 +98,45 @@ for (const variant of variants) {
   // Cross-check: every printed-stock use M1 planned for S01-S09 on this variant is in the required set.
   const plannedUses = uses.filter((u) => u.variantId === variant && Number(u.stepId.slice(-2)) <= STEPS);
   const plannedNotRequired = plannedUses.filter((u) => !firstStep[u.instanceId]).map((u) => u.instanceId);
-  const plannedStepMismatch = plannedUses.filter((u) => firstStep[u.instanceId] && firstStep[u.instanceId] !== Number(u.stepId.slice(-2)) && how[u.instanceId] === 'introduced')
+  const plannedStepMismatch = plannedUses.filter((u) => {
+    const step = graph.steps[Number(u.stepId.slice(-2)) - 1];
+    return firstStep[u.instanceId] && (!step || ![...step.introducedInstanceIds, ...step.usedInstanceIds].includes(u.instanceId));
+  })
     .map((u) => `${short(u.instanceId)} planned S${u.stepId.slice(-2)}, graph S${pad(firstStep[u.instanceId])}`);
+  const disagreements = [
+    ...plannedNotRequired.map((id) => ({ class: 'PLANNED_REQUIRED_INSTANCE_MISSING', id })),
+    ...plannedStepMismatch.map((detail) => ({ class: 'PLANNED_USE_STEP_MISMATCH', detail })),
+  ];
+  const canonicalById = Object.fromEntries(canonical.map((s) => [s.id, s]));
+  for (const id of required) {
+    const source = canonicalById[id], compiled = inst[id];
+    if (!source || !compiled || !defs[source.definitionId] || source.definitionId !== compiled.definitionId || !compiled.variantIds.includes(variant))
+      disagreements.push({ class: 'STOCK_MEMBERSHIP_MISMATCH', id });
+  }
+  for (const use of plannedUses) {
+    if (!canonicalById[use.instanceId] || use.definitionId !== canonicalById[use.instanceId]?.definitionId)
+      disagreements.push({ class: 'STOCK_MEMBERSHIP_MISMATCH', id: use.instanceId });
+  }
+  for (let n = 1; n <= STEPS; n++) {
+    const step = graph.steps[n - 1];
+    for (const id of step.introducedInstanceIds) {
+      if (canonicalById[id]?.role.startsWith('printed-stock') && !plannedUses.some((u) => u.instanceId === id && u.stepId === step.id))
+        disagreements.push({ class: 'GRAPH_REQUIRED_INSTANCE_MISSING', id, step: n });
+    }
+    for (const req of step.toolRequirementIds) {
+      if (!toolCategory[req] || toolInstancesFor(req, variant).length === 0)
+        disagreements.push({ class: 'TOOL_REQUIREMENT_MISMATCH', requirementId: req, step: n });
+    }
+  }
   // C pack
   const V = manifest.variants[variant];
+  for (let n = 1; n <= STEPS; n++) {
+    const source = graph.steps[n - 1], packed = V.steps[n - 1];
+    const expected = [...source.introducedInstanceIds, ...source.usedInstanceIds, ...source.toolRequirementIds.flatMap((req) => toolInstancesFor(req, variant))];
+    const actual = [...(packed?.introducedInstanceIds ?? []), ...(packed?.introducedZeroSolidInstanceIds ?? []), ...(packed?.usedInstanceIds ?? []), ...(packed?.toolInstanceIds ?? [])];
+    if ([...new Set(expected)].some((id) => !actual.includes(id)) || [...new Set(actual)].some((id) => !expected.includes(id)))
+      disagreements.push({ class: 'PACK_STEP_SCOPE_MISMATCH', step: n });
+  }
   const packInstances = Object.entries(manifest.instances).filter(([, e]) => e.variants.includes(variant)).map(([id]) => id);
   const trayIds = Object.keys(V.tray.instances);
   const placedIds = new Set(V.steps.filter((s) => !s.candidatePlacements).flatMap((s) => Object.keys(s.placements)));
@@ -141,7 +176,7 @@ for (const variant of variants) {
   }
   // E non-renderable
   const nonRenderable = required.filter((id) => !trayIds.includes(id)).map((id) => ({
-    id, definitionId: inst[id].definitionId, firstStep: firstStep[id], how: how[id], reason: noSolidReason(inst[id].definitionId) ?? 'has a solid kind but is not in the tray',
+    id, definitionId: inst[id]?.definitionId, firstStep: firstStep[id], how: how[id], reason: noSolidReason(inst[id]?.definitionId ?? 'UNKNOWN') ?? 'has a solid kind but is not in the tray',
     represented: Boolean(schematic[id]), representation: schematic[id] ? `tray tile: ${manifest.schematic[id].representation}` : null,
   }));
   const representedNonRenderable = nonRenderable.filter((e) => e.represented);
@@ -156,7 +191,8 @@ for (const variant of variants) {
       missingCount: missing.length, duplicateUnexpectedCount: unexpected.length + coincident.length, coincidentTrayPairs: coincident.length,
       definitionsDrawn: new Set(rendered.map((r) => r.definitionId)).size,
     },
-    invariant: missing.length === 0 && unexpected.length === 0 && coincident.length === 0 ? 'HOLDS' : 'FAILS',
+    disagreements: [...disagreements, ...missing.map((id) => ({ class: 'PACK_SLOT_MISSING', id })), ...unexpected.map((id) => ({ class: 'PACK_SLOT_EXTRA', id }))],
+    invariant: disagreements.length === 0 && missing.length === 0 && unexpected.length === 0 && coincident.length === 0 ? 'HOLDS' : 'FAILS',
     canonical: { byDisposition, byComponentClass: byClass, notRequiredForS01ToS09: canonical.length - required.length },
     required: required.map((id) => ({ id, definitionId: inst[id].definitionId, componentClass: classOf(inst[id].definitionId), firstStep: firstStep[id], how: how[id] })),
     crossCheck: { plannedUsesS01ToS09: plannedUses.length, plannedNotRequired, plannedStepMismatch },
@@ -173,6 +209,7 @@ for (const [v, r] of Object.entries(report.variants)) {
 for (const [v, r] of Object.entries(report.variants)) {
   lines.push('', `## ${v}`, '', `Canonical by disposition: ${Object.entries(r.canonical.byDisposition).map(([k, n]) => `${k} ${n}`).join(', ')}; ${r.canonical.notRequiredForS01ToS09} are not needed by S01–S09 (later steps, spares, accessories).`);
   lines.push(`Cross-check: ${r.crossCheck.plannedUsesS01ToS09} printed-stock uses planned for S01–S09; not in the required set: ${r.crossCheck.plannedNotRequired.map(short).join(', ') || 'none'}; first-step mismatches: ${r.crossCheck.plannedStepMismatch.join(', ') || 'none'}.`);
+  if (r.disagreements.length) lines.push('', `Source disagreements: ${r.disagreements.map((d) => `${d.class}: ${d.id ?? d.detail ?? d.requirementId}`).join('; ')}.`);
   lines.push('', '| instance | first step | how required | no-solid reason | represented as |', '|---|---|---|---|---|');
   for (const e of r.nonRenderable) lines.push(`| ${short(e.id)} | S${pad(e.firstStep)} | ${e.how} | ${e.reason} | ${e.representation ?? '**nothing (silent omission)**'} |`);
   if (r.missing.length) lines.push('', `Missing (neither drawn nor represented): ${r.missing.map(short).join(', ')}.`);

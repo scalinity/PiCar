@@ -1,5 +1,5 @@
 {
- "packId": "466de8923467aca572814e543467268e420d5a668cd035ee92a5fbe64a8a9130",
+ "packId": "5968a9827b1b02f3707c56f0032b933071491ee0249466d9708aac7b812cc352",
  "contract": "picar-studio-pack/3",
  "classification": {
   "capability": "provisionalReview",
@@ -41,24 +41,24 @@
  },
  "source": {
   "repository": {
-   "head": "a26592259dcd6ef09fa791086148092653b1750e",
-   "branch": "studio/s2-all-steps"
+   "head": "891dba9dba06592296fa06a74e400451743db13e",
+   "branch": "studio/s2-pro-full-remediation"
   },
   "chain": {
-   "label": "s2-01",
+   "label": "s2pro-01",
    "mode": "source-mode dev loop, not an M7 qualification",
    "closureVerify": {
     "status": "PASS",
-    "sha256": "641d4f2f3472694a98b986ccb8a34e60f096a7ba48e8d5e675912808b22a19cf"
+    "sha256": "849cd5c49a4ed6c8e73759d4c627091386efa3a222e3ce997c090d0cadb978a9"
    },
    "studioChain": {
-    "sha256": "5ea0bca29c31cf5f0367dbbe87e789725127d787d1fe387685f48e750bf01c85"
+    "sha256": "92952c5e09753f7c549f3538f2fce4cb5c8fb66675a58d709ae6a1a030a04322"
    }
   },
   "tessellation": {
-   "label": "s2-01",
-   "meshesSha256": "3c38fa21dbacd32ae679dd59e32993c4543ec41555bbe1e139acd820ff77ec15",
-   "binSha256": "b4e19ab1891fba207150aa1ed1a26a68997f8a87e0be4645bdd1a47add662376",
+   "label": "s2pro-hat-03",
+   "meshesSha256": "ed76caf992d0f8ae534d25f9208476f2a566de7928df9ed052bb4e2e21126da8",
+   "binSha256": "0d5dcd318650efc9f4a822f4308f3bdc639fe9f5b3bf5a9959e17c4f163b6854",
    "linearDeflectionMm": 0.02,
    "angularDeflectionRad": 0.15
   },
@@ -78,6 +78,11 @@
    "digital-twin/assemblies/v40/steps/source-intents.json": "4a499e80ee93c616637785ded22d4b28fc811a657ca6350b23f9deed64a6de7f",
    "digital-twin/assemblies/v40/connections/cables.json": "df846346c918cd2ad5fbeafa30b4743ff9e3e549e402640c6cb45f47cf24100f",
    "digital-twin/validation/m2/runtime-registry.json": "231b5df34360f923428db992afa2595185c610f0862353c715955e8fbdd05214",
+   "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json": "0e963834f6f6f7f8845ee88676f25236989cda4cdc3f721e34245adb80aec96e",
+   "digital-twin/assemblies/v40/presentation/instructional/step04-hat-review-04.json": "eda1f9ea9df6a166995da8f9aa761bd4b8891c6841d6bc3a1dc6696a55753db0",
+   "digital-twin/cad/twin_cad/fidelity/hat.py": "d96e1daf54db46df4c9cd42ae8250d1bbc8a730934bb81dad1a4e6ceb44b6bbd",
+   "digital-twin/cad/twin_cad/fidelity/pi5.py": "f8661d2616c5d806694d373c53d58fe5a6881ee93742c45c33a73a0ebf019c62",
+   "digital-twin/generated/studio/chain/s2pro-01/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
    "digital-twin/validation/m2/rpi5/compiled-graph.json": "832c7b4cda68a069574f5555a6ad5969224ab35565dab79c91125bf8fd5eb82b",
    "digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json": "257e045b191fdff4ec7b04565c17d73231af3efc1f1cf47e837b9b928584f91e"
   },
@@ -107,8 +112,8 @@
  "assets": {
   "parts": {
    "path": "parts.glb",
-   "sha256": "ca680e34b2ef3cd63472848c66e8523fd2c6dbe3dae2be23944bc6ea0b197757",
-   "bytes": 1707308
+   "sha256": "4bb923c6cfccad5a528019eb4ac8d91112ff2b7542269e3c6cb48d039b275f42",
+   "bytes": 1760172
   }
  },
  "materials": {
@@ -1449,7 +1454,7 @@
     "meshSha256": "b5d495409dff212d046a15268ff58ded470e21a086aefcee011ec5979b0e1a6a",
     "record": {
      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json",
-     "sha256": "793150829f8f3b9954a0daa31af9c961b2b9388e9f1684007f7d2ebccb8429ac",
+     "sha256": "450a728a7e03f1ff09bea4f4c6287cb1d8cb5b801fb0844af744332deb3abcca",
      "schema": "picar-studio-display-check/1"
     },
     "relation": {
@@ -1648,7 +1653,7 @@
       }
      ]
     },
-    "overlapsChain": "s2-01",
+    "overlapsChain": "s2pro-01",
     "vendorCrossCheck": {
      "vendorSolids": 2689,
      "method": "footprint IoU of each detail part with the best-matching vendor solid; numbers only",
@@ -2202,83 +2207,176 @@
    "boundsM": {
     "min": [
      0,
-     0,
+     -0.01,
      0
     ],
     "max": [
      0.056,
      0.0066,
-     0.065
+     0.085
     ]
    },
    "solids": [
     {
      "index": 0,
      "materialId": "pcb-blue",
-     "triangles": 12,
-     "volumeMm3": 5824
+     "triangles": 1708,
+     "volumeMm3": 7564.230795965062,
+     "name": "PCB outline (approximate)"
     },
     {
      "index": 1,
      "materialId": "speaker-dark",
      "triangles": 332,
-     "volumeMm3": 1256.637061435918
+     "volumeMm3": 1256.637061435918,
+     "name": "Schematic speaker"
     },
     {
      "index": 2,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.79999999999995
+     "volumeMm3": 163.79999999999995,
+     "name": "Schematic connector 1"
     },
     {
      "index": 3,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 2"
     },
     {
      "index": 4,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 3"
     },
     {
      "index": 5,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 4"
     },
     {
      "index": 6,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 5"
     },
     {
      "index": 7,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 6"
     },
     {
      "index": 8,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.8
+     "volumeMm3": 163.8,
+     "name": "Schematic connector 7"
     },
     {
      "index": 9,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 8"
     },
     {
      "index": 10,
      "materialId": "connector-cream",
      "triangles": 12,
-     "volumeMm3": 163.80000000000004
+     "volumeMm3": 163.80000000000004,
+     "name": "Schematic connector 9"
+    },
+    {
+     "index": 11,
+     "materialId": "header-black",
+     "triangles": 28,
+     "volumeMm3": 1373.9999999999998,
+     "name": "Underside socket (schematic)"
     }
-   ]
+   ],
+   "display": {
+    "label": "Detailed presentation model; assembly checks use the instructional artifact",
+    "source": "Locked V40 S04 source-supported approximate PCB outline; 85 x 56 mm visual envelope, not measured stock. Top features remain schematic.",
+    "artifact": {
+     "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+     "sha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4"
+    },
+    "meshSha256": "4b0acd002ce68c745747609560e8669d4cd977eed4a330f9dc2a0f20febb73eb",
+    "record": {
+     "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json",
+     "sha256": "04fcd076e84f5d2eafd448c3e3962a7403ca9c687f8d32fd47532194e64893ce",
+     "schema": "picar-studio-display-check/1"
+    },
+    "relation": {
+     "instructionalArtifact": {
+      "definitionId": "PX-V40-DEF-ROBOT-HAT",
+      "path": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-ROBOT-HAT.brep",
+      "sha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a"
+     },
+     "pcbBoxMm": [
+      0,
+      0,
+      0,
+      85,
+      56,
+      1.6
+     ],
+     "mountingHoles": {
+      "display": [
+       [
+        3.5,
+        3.5
+       ],
+       [
+        3.5,
+        52.5
+       ],
+       [
+        61.5,
+        3.5
+       ],
+       [
+        61.5,
+        52.5
+       ]
+      ],
+      "instructional": [],
+      "maxCentreDeviationMm": null,
+      "adoptedReference": [
+       [
+        3.5,
+        3.5
+       ],
+       [
+        3.5,
+        52.5
+       ],
+       [
+        61.5,
+        3.5
+       ],
+       [
+        61.5,
+        52.5
+       ]
+      ],
+      "method": "Preserve adopted HAT bores; original checked M5 proxy has no bores"
+     },
+     "adoptedPredecessor": {
+      "path": "chain:engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+      "sha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de"
+     }
+    },
+    "overlapsChain": "s2pro-01"
+   }
   },
   "PX-V40-DEF-SPRING-WASHER": {
    "name": "Spring washer",
@@ -3108,7 +3206,7 @@
    "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
    "floorYM": -0.027549999999999998,
    "centreM": [
-    -0.2632554659025689,
+    -0.2710723631756166,
     0.009575000000000004,
     0.195386750483559
    ],
@@ -3185,9 +3283,9 @@
      },
      "PX-V40-INS-ROBOT-HAT-001": {
       "translationM": [
-       -0.1212342239942673,
-       -0.027049999999999998,
-       0.367536750483559
+       -0.2007342239942673,
+       -0.01705,
+       0.257536750483559
       ],
       "rotationXYZW": [
        0,
@@ -3202,9 +3300,9 @@
      },
      "PX-V40-INS-BATTERY-001": {
       "translationM": [
-       -0.23971422399426728,
+       -0.2477342239942673,
        -0.027049999999999998,
-       0.172536750483559
+       0.266536750483559
       ],
       "rotationXYZW": [
        0,
@@ -3219,9 +3317,9 @@
      },
      "PX-V40-INS-ULTRASONIC-001": {
       "translationM": [
-       -0.2335642239942673,
+       -0.3064142239942673,
        -0.02005,
-       0.251536750483559
+       0.172536750483559
       ],
       "rotationXYZW": [
        0,
@@ -3236,7 +3334,7 @@
      },
      "PX-V40-INS-MOTOR-LEFT-001": {
       "translationM": [
-       -0.37358042944817177,
+       -0.3892142239942673,
        -0.008049999999999998,
        0.03253675048355899
       ],
@@ -3253,7 +3351,7 @@
      },
      "PX-V40-INS-MOTOR-RIGHT-001": {
       "translationM": [
-       -0.36458042944817176,
+       -0.3802142239942673,
        -0.008049999999999998,
        0.09753675048355899
       ],
@@ -3270,7 +3368,7 @@
      },
      "PX-V40-INS-HORN-PAN-001": {
       "translationM": [
-       -0.35908042944817176,
+       -0.3747142239942673,
        -0.027049999999999998,
        0.11038675048355899
       ],
@@ -3287,7 +3385,7 @@
      },
      "PX-V40-INS-M25X18PLUS6-STANDOFF-001": {
       "translationM": [
-       -0.34808042944817175,
+       -0.3637142239942673,
        -0.027049999999999998,
        0.141236750483559
       ],
@@ -3304,7 +3402,7 @@
      },
      "PX-V40-INS-M25X18PLUS6-STANDOFF-002": {
       "translationM": [
-       -0.34808042944817175,
+       -0.3637142239942673,
        -0.027049999999999998,
        0.16023675048355898
       ],
@@ -3321,7 +3419,7 @@
      },
      "PX-V40-INS-M25X18PLUS6-STANDOFF-003": {
       "translationM": [
-       -0.34808042944817175,
+       -0.3637142239942673,
        -0.027049999999999998,
        0.17923675048355897
       ],
@@ -3338,7 +3436,7 @@
      },
      "PX-V40-INS-M25X18PLUS6-STANDOFF-004": {
       "translationM": [
-       -0.34808042944817175,
+       -0.3637142239942673,
        -0.027049999999999998,
        0.198236750483559
       ],
@@ -3355,7 +3453,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-001": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.025674999999999996,
        0.141236750483559
       ],
@@ -3372,7 +3470,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-002": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.025674999999999996,
        0.16023675048355898
       ],
@@ -3389,7 +3487,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-003": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.025674999999999996,
        0.17923675048355897
       ],
@@ -3406,7 +3504,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-004": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.025674999999999996,
        0.198236750483559
       ],
@@ -3423,7 +3521,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-005": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.02105,
        0.21723675048355898
       ],
@@ -3440,7 +3538,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-006": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.02105,
        0.236236750483559
       ],
@@ -3457,7 +3555,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-007": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.02105,
        0.255236750483559
       ],
@@ -3474,7 +3572,7 @@
      },
      "PX-V40-INS-M25X6-SCREW-008": {
       "translationM": [
-       -0.36705542944817177,
+       -0.3826892239942673,
        -0.02105,
        0.274236750483559
       ],
@@ -3491,7 +3589,7 @@
      },
      "PX-V40-INS-M25X18-STANDOFF-001": {
       "translationM": [
-       -0.39346792944817177,
+       -0.40910172399426736,
        -0.027049999999999998,
        0.141236750483559
       ],
@@ -3508,7 +3606,7 @@
      },
      "PX-V40-INS-M25X18-STANDOFF-002": {
       "translationM": [
-       -0.39346792944817177,
+       -0.40910172399426736,
        -0.027049999999999998,
        0.16023675048355898
       ],
@@ -3525,7 +3623,7 @@
      },
      "PX-V40-INS-M25X18-STANDOFF-003": {
       "translationM": [
-       -0.39346792944817177,
+       -0.40910172399426736,
        -0.027049999999999998,
        0.17923675048355897
       ],
@@ -3542,7 +3640,7 @@
      },
      "PX-V40-INS-M25X18-STANDOFF-004": {
       "translationM": [
-       -0.39346792944817177,
+       -0.40910172399426736,
        -0.027049999999999998,
        0.198236750483559
       ],
@@ -3559,7 +3657,7 @@
      },
      "PX-V40-INS-M3-NUT-001": {
       "translationM": [
-       -0.4090279294481718,
+       -0.4246617239942673,
        -0.024149999999999998,
        0.141236750483559
       ],
@@ -3576,7 +3674,7 @@
      },
      "PX-V40-INS-M3-NUT-002": {
       "translationM": [
-       -0.4090279294481718,
+       -0.4246617239942673,
        -0.024149999999999998,
        0.16023675048355898
       ],
@@ -3593,7 +3691,7 @@
      },
      "PX-V40-INS-M3-NUT-003": {
       "translationM": [
-       -0.4114279294481718,
+       -0.42706172399426734,
        -0.024149999999999998,
        0.17923675048355897
       ],
@@ -3610,7 +3708,7 @@
      },
      "PX-V40-INS-M3-NUT-004": {
       "translationM": [
-       -0.4114279294481718,
+       -0.42706172399426734,
        -0.024149999999999998,
        0.198236750483559
       ],
@@ -3627,7 +3725,7 @@
      },
      "PX-V40-INS-M3X25-SCREW-001": {
       "translationM": [
-       -0.42596292944817177,
+       -0.4415967239942673,
        -0.024274999999999998,
        0.141236750483559
       ],
@@ -3644,7 +3742,7 @@
      },
      "PX-V40-INS-M3X25-SCREW-002": {
       "translationM": [
-       -0.42596292944817177,
+       -0.4415967239942673,
        -0.024274999999999998,
        0.16023675048355898
       ],
@@ -3661,7 +3759,7 @@
      },
      "PX-V40-INS-M3X25-SCREW-003": {
       "translationM": [
-       -0.44931292944817175,
+       -0.4649467239942673,
        -0.024274999999999998,
        0.17923675048355897
       ],
@@ -3678,7 +3776,7 @@
      },
      "PX-V40-INS-M3X25-SCREW-004": {
       "translationM": [
-       -0.44931292944817175,
+       -0.4649467239942673,
        -0.024274999999999998,
        0.198236750483559
       ],
@@ -3695,7 +3793,7 @@
      },
      "PX-V40-INS-SPRING-WASHER-001": {
       "translationM": [
-       -0.4641615132647747,
+       -0.47979530781087026,
        -0.02405101155956928,
        0.14124910952233916
       ],
@@ -3712,7 +3810,7 @@
      },
      "PX-V40-INS-SPRING-WASHER-002": {
       "translationM": [
-       -0.4641615132647747,
+       -0.47979530781087026,
        -0.02405101155956928,
        0.16024910952233914
       ],
@@ -3729,7 +3827,7 @@
      },
      "PX-V40-INS-SPRING-WASHER-003": {
       "translationM": [
-       -0.4649615132647747,
+       -0.48059530781087023,
        -0.02405101155956928,
        0.17924910952233916
       ],
@@ -3746,7 +3844,7 @@
      },
      "PX-V40-INS-SPRING-WASHER-004": {
       "translationM": [
-       -0.4649615132647747,
+       -0.48059530781087023,
        -0.02405101155956928,
        0.19824910952233915
       ],
@@ -3763,7 +3861,7 @@
      },
      "PX-V40-INS-M15X3-SCREW-001": {
       "translationM": [
-       -0.47802651326477474,
+       -0.4936603078108703,
        -0.02405,
        0.141236750483559
       ],
@@ -3780,7 +3878,7 @@
      },
      "PX-V40-INS-M15X3-SCREW-002": {
       "translationM": [
-       -0.47802651326477474,
+       -0.4936603078108703,
        -0.02405,
        0.16023675048355898
       ],
@@ -3797,7 +3895,7 @@
      },
      "PX-V40-INS-M15X3-SCREW-003": {
       "translationM": [
-       -0.47802651326477474,
+       -0.4936603078108703,
        -0.02405,
        0.17923675048355897
       ],
@@ -3814,7 +3912,7 @@
      },
      "PX-V40-INS-M15X3-SCREW-004": {
       "translationM": [
-       -0.47802651326477474,
+       -0.4936603078108703,
        -0.02405,
        0.198236750483559
       ],
@@ -3831,7 +3929,7 @@
      },
      "PX-V40-INS-R3080-RIVET-001": {
       "translationM": [
-       -0.5035140132647747,
+       -0.5191478078108703,
        -0.026049999999999997,
        0.141236750483559
       ],
@@ -3848,7 +3946,7 @@
      },
      "PX-V40-INS-R3080-RIVET-002": {
       "translationM": [
-       -0.5035140132647747,
+       -0.5191478078108703,
        -0.026049999999999997,
        0.16023675048355898
       ],
@@ -3867,7 +3965,7 @@
     "tiles": {
      "PX-V40-INS-HOOK-002": {
       "centreM": [
-       -0.3437804294481717,
+       -0.35941422399426726,
        -0.027049999999999998,
        0.327236750483559
       ],
@@ -3881,7 +3979,7 @@
      },
      "PX-V40-INS-LOOP-002": {
       "centreM": [
-       -0.3437804294481717,
+       -0.35941422399426726,
        -0.027049999999999998,
        0.388236750483559
       ],
@@ -3895,7 +3993,7 @@
      },
      "PX-V40-INS-RIBBON-FPC-001": {
       "centreM": [
-       -0.5590140132647748,
+       -0.5746478078108703,
        -0.027049999999999998,
        0.0025367504835589897
       ],
@@ -3909,7 +4007,7 @@
      },
      "PX-V40-INS-SCREWDRIVER-01-001": {
       "centreM": [
-       -0.5590140132647748,
+       -0.5746478078108703,
        -0.027049999999999998,
        0.07653675048355899
       ],
@@ -3923,7 +4021,7 @@
      },
      "PX-V40-INS-SCREWDRIVER-02-001": {
       "centreM": [
-       -0.5590140132647748,
+       -0.5746478078108703,
        -0.027049999999999998,
        0.13753675048355898
       ],
@@ -3937,7 +4035,7 @@
      },
      "PX-V40-INS-WRENCH-001": {
       "centreM": [
-       -0.5590140132647748,
+       -0.5746478078108703,
        -0.027049999999999998,
        0.19853675048355898
       ],
@@ -3988,18 +4086,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.23971422399426728,
+        -0.3064142239942673,
         -0.027049999999999998,
         0.172536750483559
        ],
        "max": [
         -0.1207342239942673,
         -0.005649999999999997,
-        0.367536750483559
+        0.336536750483559
        ]
       },
       "labelM": [
-       -0.2477142239942673,
+       -0.3144142239942673,
        -0.027049999999999998,
        0.172536750483559
       ]
@@ -4014,18 +4112,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.37608042944817177,
+        -0.3917142239942673,
         -0.027049999999999998,
         -0.02346324951644101
        ],
        "max": [
-        -0.34208042944817174,
+        -0.3577142239942673,
         -0.008049999999999998,
         0.11423675048355898
        ]
       },
       "labelM": [
-       -0.3840804294481717,
+       -0.3997142239942673,
        -0.027049999999999998,
        -0.02346324951644101
       ]
@@ -4071,18 +4169,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.5060140132647748,
+        -0.5216478078108703,
         -0.027049999999999998,
         0.13788811892225913
        ],
        "max": [
-        -0.34558042944817174,
+        -0.3612142239942673,
         -0.003049999999999997,
         0.276549250483559
        ]
       },
       "labelM": [
-       -0.5140140132647748,
+       -0.5296478078108703,
        -0.027049999999999998,
        0.136236750483559
       ]
@@ -4096,18 +4194,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.35878042944817173,
+        -0.37441422399426727,
         -0.027049999999999998,
         0.30123675048355897
        ],
        "max": [
-        -0.32878042944817176,
+        -0.3444142239942673,
         -0.027049999999999998,
         0.414236750483559
        ]
       },
       "labelM": [
-       -0.36678042944817174,
+       -0.3824142239942673,
        -0.027049999999999998,
        0.30123675048355897
       ]
@@ -4120,18 +4218,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.5740140132647749,
+        -0.5896478078108703,
         -0.027049999999999998,
         -0.02346324951644101
        ],
        "max": [
-        -0.5440140132647748,
+        -0.5596478078108703,
         -0.027049999999999998,
         0.02853675048355899
        ]
       },
       "labelM": [
-       -0.5820140132647749,
+       -0.5976478078108703,
        -0.027049999999999998,
        -0.02346324951644101
       ]
@@ -4146,18 +4244,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.5740140132647749,
+        -0.5896478078108703,
         -0.027049999999999998,
         0.05053675048355899
        ],
        "max": [
-        -0.5440140132647748,
+        -0.5596478078108703,
         -0.027049999999999998,
         0.224536750483559
        ]
       },
       "labelM": [
-       -0.5820140132647749,
+       -0.5976478078108703,
        -0.027049999999999998,
        0.05053675048355899
       ]
@@ -4175,13 +4273,13 @@
     },
     "camera": {
      "targetM": [
-      -0.34737411862952106,
+      -0.3551910159025688,
       -0.013549999999999998,
       0.195386750483559
      ],
      "positionM": [
-      -0.8251594077344253,
-      0.7510662956224393,
+      -0.8415579626974846,
+      0.7647998187401756,
       0.19538675048355902
      ],
      "verticalFovDeg": 30,
@@ -4220,6 +4318,22 @@
       "PX-V40-INS-PLATE-A-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+      "PX-V40-INS-M25X6-SCREW-001",
+      "PX-V40-INS-M25X6-SCREW-002",
+      "PX-V40-INS-M25X6-SCREW-003",
+      "PX-V40-INS-M25X6-SCREW-004",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001"
+     ],
+     "workpieceInstanceId": "PX-V40-INS-PLATE-A-001",
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
       "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
@@ -4746,6 +4860,20 @@
       "PX-V40-INS-USB-MICROPHONE-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M25X18-STANDOFF-001",
+      "PX-V40-INS-M25X18-STANDOFF-002",
+      "PX-V40-INS-M25X18-STANDOFF-003",
+      "PX-V40-INS-M25X18-STANDOFF-004",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+      "PX-V40-INS-PI5-001",
+      "PX-V40-INS-USB-MICROPHONE-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M25X18-STANDOFF-001",
       "PX-V40-INS-M25X18-STANDOFF-002",
@@ -5309,6 +5437,12 @@
      "introducedZeroSolidInstanceIds": [
       "PX-V40-INS-RIBBON-FPC-001"
      ],
+     "usedInstanceIds": [
+      "PX-V40-INS-PI5-001",
+      "PX-V40-INS-RIBBON-FPC-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [],
      "stepParts": [
       {
@@ -5656,6 +5790,23 @@
       "PX-V40-INS-ROBOT-HAT-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M25X18-STANDOFF-001",
+      "PX-V40-INS-M25X18-STANDOFF-002",
+      "PX-V40-INS-M25X18-STANDOFF-003",
+      "PX-V40-INS-M25X18-STANDOFF-004",
+      "PX-V40-INS-M25X6-SCREW-005",
+      "PX-V40-INS-M25X6-SCREW-006",
+      "PX-V40-INS-M25X6-SCREW-007",
+      "PX-V40-INS-M25X6-SCREW-008",
+      "PX-V40-INS-PI5-001",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001"
+     ],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M25X6-SCREW-005",
       "PX-V40-INS-M25X6-SCREW-006",
@@ -6021,6 +6172,29 @@
          "volumeMm3": 448.992
         }
        ]
+      },
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 2.5844
+        }
+       ]
       }
      ],
      "recipes": [
@@ -6235,13 +6409,13 @@
      "camera": {
       "targetM": [
        -0.0011605415860734994,
-       0.04070000000000001,
-       0.04303675048355899
+       0.0379,
+       0.03303675048355899
       ],
       "positionM": [
-       -0.12829958462880922,
-       0.19785249979509303,
-       0.21802863071358675
+       -0.15275058712817907,
+       0.22527560100233143,
+       0.24168254849111492
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -6283,6 +6457,29 @@
       "PX-V40-INS-SPRING-WASHER-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M3-NUT-001",
+      "PX-V40-INS-M3-NUT-002",
+      "PX-V40-INS-M3-NUT-003",
+      "PX-V40-INS-M3-NUT-004",
+      "PX-V40-INS-M3X25-SCREW-001",
+      "PX-V40-INS-M3X25-SCREW-002",
+      "PX-V40-INS-M3X25-SCREW-003",
+      "PX-V40-INS-M3X25-SCREW-004",
+      "PX-V40-INS-MOTOR-LEFT-001",
+      "PX-V40-INS-MOTOR-RIGHT-001",
+      "PX-V40-INS-PLATE-A-001",
+      "PX-V40-INS-SPRING-WASHER-001",
+      "PX-V40-INS-SPRING-WASHER-002",
+      "PX-V40-INS-SPRING-WASHER-003",
+      "PX-V40-INS-SPRING-WASHER-004"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001",
+      "PX-V40-INS-WRENCH-001"
+     ],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M3-NUT-001",
       "PX-V40-INS-M3-NUT-002",
@@ -6863,6 +7060,29 @@
          "volumeMm3": 448.992
         }
        ]
+      },
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 2.5844
+        }
+       ]
       }
      ],
      "recipes": [
@@ -7396,6 +7616,14 @@
       "PX-V40-INS-BATTERY-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-BATTERY-001",
+      "PX-V40-INS-HOOK-002",
+      "PX-V40-INS-LOOP-002",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [],
      "stepParts": [
       {
@@ -7905,6 +8133,29 @@
          "volumeMm3": 448.992
         }
        ]
+      },
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 2.5844
+        }
+       ]
       }
      ],
      "recipes": [],
@@ -7972,14 +8223,14 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       -0.2802473267212195,
+       -0.2920742239942673,
        -0.01705,
-       0.293386750483559
+       0.34038675048355904
       ],
       "positionM": [
-       -0.6522336271107001,
-       0.45999448247386626,
-       0.5081531411482787
+       -0.5780240216123504,
+       0.34965913169490176,
+       0.5054799431130784
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -8006,6 +8257,13 @@
      "operable": false,
      "introducedInstanceIds": [],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-BATTERY-001",
+      "PX-V40-INS-PLATE-A-001",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-BATTERY-001"
      ],
@@ -8529,6 +8787,29 @@
          "volumeMm3": 448.992
         }
        ]
+      },
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 2.5844
+        }
+       ]
       }
      ],
      "recipes": [
@@ -8644,12 +8925,12 @@
       "targetM": [
        -0.0011605415860734994,
        0.013100000000000002,
-       0.0657683752417795
+       0.055768375241779494
       ],
       "positionM": [
-       -0.19460182428774916,
-       0.04854688519025503,
-       0.3420311575538156
+       -0.21694429727803255,
+       0.052641001316306175,
+       0.3639395158205782
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -8682,6 +8963,19 @@
       "PX-V40-INS-M15X3-SCREW-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-HORN-PAN-001",
+      "PX-V40-INS-M15X3-SCREW-001",
+      "PX-V40-INS-M15X3-SCREW-002",
+      "PX-V40-INS-M15X3-SCREW-003",
+      "PX-V40-INS-M15X3-SCREW-004",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001"
+     ],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-HORN-PAN-001",
       "PX-V40-INS-M15X3-SCREW-001",
@@ -9268,7 +9562,7 @@
       {
        "definitionId": "PX-V40-DEF-PI5",
        "status": "CHECKED",
-       "closureRfc8785Sha256": "e05c3a809491cbe45f20174fb1b7676769527ff754db0cfe3cd1282148c4ff56",
+       "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
        "overlaps": [
         {
          "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
@@ -9289,6 +9583,29 @@
         {
          "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
          "volumeMm3": 448.992
+        }
+       ]
+      },
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 2.5844
         }
        ]
       }
@@ -9498,7 +9815,7 @@
       "No installation sweep or fit is claimed",
       "The pan horn is the additive instructional revision of the supplied long double-arm horn (34 mm tip to tip, tapered arms, 7.7 mm hub, 12 attachment holes at a derived 2.1 mm pitch); V40 S08 and S13 draw a two-sided horn with screws on both sides of the hub, and the printed package shows two long double-arm horns and one single-arm horn, so pan and tilt take the double-arm and steering the single-arm. The large and small cross horns are unused spare stock. Dimensions are DERIVED to about 2 to 6 percent from penny-scaled photographs; spline form, hub recess and thread geometry are not modelled",
       "The four deck screws sit in the traced deck holes, which agree with the derived horn hole row only to within about 0.9 mm; each screw therefore has a scoped overlap with solid horn plate beside the hole, and no screw-to-horn-hole alignment is claimed",
-      "Deck small-hole rows are photo-traced (four on one side, three on the other) and are not manufacturer positions; the 1.4 mm holes are smaller than the 1.5 mm screws, so each screw has a declared small clearance overlap with the deck",
+      "The previous trace/source interpretation carried four holes on one side and three on the other. Current photo-supported fidelity revision 03 establishes a four/four positional pattern, constructed as mirror-image rows. Diameter remains unresolved: trace 1.4 mm; clean photo fits approximately 1.69 mm. These are instructional approximations, not engineering tolerance verification; the retained 1.4 mm bores have a declared small clearance overlap with the 1.5 mm screws.",
       "The accepted ordered stack for this step lists the horn before the plate, which is not the physical order shown in V40; it is used for membership only",
       "Pan zero angle and horn clocking about the hub are not established; the arm is placed symmetrically across the car as a presentation gauge",
       "No installation sweep, thread engagement or fit is claimed"
@@ -9519,9 +9836,9 @@
      "source": {
       "kind": "closure",
       "file": "chain/closures/rpi5-S08-closure.json",
-      "sha256": "a9b7fb66feeaaf43cb071404dabc346bbaaeb2e7effe9ddb293dbf532b626b89",
+      "sha256": "eb2f367f13050b5e50794375ec0024c4809e042adce89890f877e1a4ece947de",
       "status": "COMPLETE",
-      "closureRfc8785Sha256": "e05c3a809491cbe45f20174fb1b7676769527ff754db0cfe3cd1282148c4ff56",
+      "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [
@@ -9572,6 +9889,15 @@
       "PX-V40-INS-ULTRASONIC-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-PLATE-A-001",
+      "PX-V40-INS-PLATE-H-001",
+      "PX-V40-INS-R3080-RIVET-001",
+      "PX-V40-INS-R3080-RIVET-002",
+      "PX-V40-INS-ULTRASONIC-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-ULTRASONIC-001",
       "PX-V40-INS-PLATE-H-001",
@@ -10203,6 +10529,11 @@
        "definitionId": "PX-V40-DEF-PI5",
        "status": "NOT_CHECKED",
        "overlaps": []
+      },
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "NOT_CHECKED",
+       "overlaps": []
       }
      ],
      "recipes": [
@@ -10414,7 +10745,7 @@
       "No installation sweep or fit is claimed",
       "The pan horn is the additive instructional revision of the supplied long double-arm horn (34 mm tip to tip, tapered arms, 7.7 mm hub, 12 attachment holes at a derived 2.1 mm pitch); V40 S08 and S13 draw a two-sided horn with screws on both sides of the hub, and the printed package shows two long double-arm horns and one single-arm horn, so pan and tilt take the double-arm and steering the single-arm. The large and small cross horns are unused spare stock. Dimensions are DERIVED to about 2 to 6 percent from penny-scaled photographs; spline form, hub recess and thread geometry are not modelled",
       "The four deck screws sit in the traced deck holes, which agree with the derived horn hole row only to within about 0.9 mm; each screw therefore has a scoped overlap with solid horn plate beside the hole, and no screw-to-horn-hole alignment is claimed",
-      "Deck small-hole rows are photo-traced (four on one side, three on the other) and are not manufacturer positions; the 1.4 mm holes are smaller than the 1.5 mm screws, so each screw has a declared small clearance overlap with the deck",
+      "The previous trace/source interpretation carried four holes on one side and three on the other. Current photo-supported fidelity revision 03 establishes a four/four positional pattern, constructed as mirror-image rows. Diameter remains unresolved: trace 1.4 mm; clean photo fits approximately 1.69 mm. These are instructional approximations, not engineering tolerance verification; the retained 1.4 mm bores have a declared small clearance overlap with the 1.5 mm screws.",
       "The accepted ordered stack for this step lists the horn before the plate, which is not the physical order shown in V40; it is used for membership only",
       "Pan zero angle and horn clocking about the hub are not established; the arm is placed symmetrically across the car as a presentation gauge",
       "No installation sweep, thread engagement or fit is claimed",
@@ -10526,7 +10857,7 @@
      },
      "PX-V40-INS-ZERO2W-001": {
       "translationM": [
-       -0.1570842239942673,
+       -0.1619842239942673,
        -0.027049999999999998,
        0.191
       ],
@@ -10543,8 +10874,8 @@
      },
      "PX-V40-INS-ROBOT-HAT-001": {
       "translationM": [
-       -0.1700842239942673,
-       -0.027049999999999998,
+       -0.1749842239942673,
+       -0.01705,
        0.265
       ],
       "rotationXYZW": [
@@ -10560,7 +10891,7 @@
      },
      "PX-V40-INS-BATTERY-001": {
       "translationM": [
-       -0.2320642239942673,
+       -0.23696422399426728,
        -0.027049999999999998,
        0.191
       ],
@@ -10577,7 +10908,7 @@
      },
      "PX-V40-INS-ULTRASONIC-001": {
       "translationM": [
-       -0.22591422399426728,
+       -0.2308142239942673,
        -0.02005,
        0.27
       ],
@@ -11311,18 +11642,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.2320642239942673,
+        -0.23696422399426728,
         -0.027049999999999998,
         0.191
        ],
        "max": [
-        -0.11408422399426729,
+        -0.1189842239942673,
         -0.005649999999999997,
-        0.33
+        0.35000000000000003
        ]
       },
       "labelM": [
-       -0.24006422399426727,
+       -0.2449642239942673,
        -0.027049999999999998,
        0.191
       ]
@@ -11496,13 +11827,13 @@
     },
     "camera": {
      "targetM": [
-      -0.359099118629521,
+      -0.361549118629521,
       -0.012049999999999998,
       0.21385
      ],
      "positionM": [
-      -0.8573679502814818,
-      0.7853468160375754,
+      -0.8570585628948957,
+      0.7809308731238214,
       0.21385000000000004
      ],
      "verticalFovDeg": 30,
@@ -11541,6 +11872,22 @@
       "PX-V40-INS-PLATE-A-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M25X11-STANDOFF-001",
+      "PX-V40-INS-M25X11-STANDOFF-002",
+      "PX-V40-INS-M25X30-STANDOFF-001",
+      "PX-V40-INS-M25X30-STANDOFF-002",
+      "PX-V40-INS-M25X6-SCREW-001",
+      "PX-V40-INS-M25X6-SCREW-002",
+      "PX-V40-INS-M25X6-SCREW-003",
+      "PX-V40-INS-M25X6-SCREW-004",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001"
+     ],
+     "workpieceInstanceId": "PX-V40-INS-PLATE-A-001",
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M25X11-STANDOFF-001",
       "PX-V40-INS-M25X11-STANDOFF-002",
@@ -12064,6 +12411,15 @@
       "PX-V40-INS-ZERO2W-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M25X11-STANDOFF-001",
+      "PX-V40-INS-M25X11-STANDOFF-002",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-INS-ZERO2W-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
       "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
@@ -12441,6 +12797,12 @@
      "introducedZeroSolidInstanceIds": [
       "PX-V40-INS-RIBBON-FPC-001"
      ],
+     "usedInstanceIds": [
+      "PX-V40-INS-RIBBON-FPC-001",
+      "PX-V40-INS-ZERO2W-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [],
      "stepParts": [
       {
@@ -12718,6 +13080,23 @@
       "PX-V40-INS-ROBOT-HAT-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+      "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+      "PX-V40-INS-M25X30-STANDOFF-001",
+      "PX-V40-INS-M25X30-STANDOFF-002",
+      "PX-V40-INS-M25X6-SCREW-005",
+      "PX-V40-INS-M25X6-SCREW-006",
+      "PX-V40-INS-M25X6-SCREW-007",
+      "PX-V40-INS-M25X6-SCREW-008",
+      "PX-V40-INS-ROBOT-HAT-001",
+      "PX-V40-INS-ZERO2W-001"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001"
+     ],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M25X6-SCREW-005",
       "PX-V40-INS-M25X6-SCREW-006",
@@ -13022,7 +13401,31 @@
       }
      },
      "candidatePlacements": false,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 1.0447
+        }
+       ]
+      }
+     ],
      "recipes": [
       {
        "instanceId": "PX-V40-INS-ROBOT-HAT-001",
@@ -13232,13 +13635,13 @@
      "camera": {
       "targetM": [
        -0.0011605415860734994,
-       0.0337,
-       0.04303675048355899
+       0.030900000000000004,
+       0.05303675048355899
       ],
       "positionM": [
-       -0.12829958462880922,
-       0.19085249979509303,
-       0.21802863071358675
+       -0.15275058712817907,
+       0.21827560100233143,
+       0.26168254849111494
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -13280,6 +13683,29 @@
       "PX-V40-INS-SPRING-WASHER-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-M3-NUT-001",
+      "PX-V40-INS-M3-NUT-002",
+      "PX-V40-INS-M3-NUT-003",
+      "PX-V40-INS-M3-NUT-004",
+      "PX-V40-INS-M3X25-SCREW-001",
+      "PX-V40-INS-M3X25-SCREW-002",
+      "PX-V40-INS-M3X25-SCREW-003",
+      "PX-V40-INS-M3X25-SCREW-004",
+      "PX-V40-INS-MOTOR-LEFT-001",
+      "PX-V40-INS-MOTOR-RIGHT-001",
+      "PX-V40-INS-PLATE-A-001",
+      "PX-V40-INS-SPRING-WASHER-001",
+      "PX-V40-INS-SPRING-WASHER-002",
+      "PX-V40-INS-SPRING-WASHER-003",
+      "PX-V40-INS-SPRING-WASHER-004"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001",
+      "PX-V40-INS-WRENCH-001"
+     ],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-M3-NUT-001",
       "PX-V40-INS-M3-NUT-002",
@@ -13794,7 +14220,31 @@
       }
      },
      "candidatePlacements": false,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 1.0447
+        }
+       ]
+      }
+     ],
      "recipes": [
       {
        "instanceId": "PX-V40-INS-MOTOR-LEFT-001",
@@ -14323,6 +14773,14 @@
       "PX-V40-INS-BATTERY-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-BATTERY-001",
+      "PX-V40-INS-HOOK-002",
+      "PX-V40-INS-LOOP-002",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [],
      "stepParts": [
       {
@@ -14766,7 +15224,31 @@
       }
      },
      "candidatePlacements": false,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 1.0447
+        }
+       ]
+      }
+     ],
      "recipes": [],
      "blockers": [],
      "conflicts": [],
@@ -14829,14 +15311,14 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       -0.2764223267212195,
+       -0.27887232672121953,
        -0.01705,
        0.31185
       ],
       "positionM": [
-       -0.6538527340463627,
-       0.46697614059658843,
-       0.5297595472695216
+       -0.6527949212159878,
+       0.46247763418780585,
+       0.5277343105876378
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -14863,6 +15345,13 @@
      "operable": false,
      "introducedInstanceIds": [],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-BATTERY-001",
+      "PX-V40-INS-PLATE-A-001",
+      "PX-V40-INS-ROBOT-HAT-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-BATTERY-001"
      ],
@@ -15320,7 +15809,31 @@
       }
      },
      "candidatePlacements": false,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 1.0447
+        }
+       ]
+      }
+     ],
      "recipes": [
       {
        "instanceId": "PX-V40-INS-BATTERY-001",
@@ -15469,6 +15982,19 @@
       "PX-V40-INS-M15X3-SCREW-004"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-HORN-PAN-001",
+      "PX-V40-INS-M15X3-SCREW-001",
+      "PX-V40-INS-M15X3-SCREW-002",
+      "PX-V40-INS-M15X3-SCREW-003",
+      "PX-V40-INS-M15X3-SCREW-004",
+      "PX-V40-INS-PLATE-A-001"
+     ],
+     "toolInstanceIds": [
+      "PX-V40-INS-SCREWDRIVER-01-001",
+      "PX-V40-INS-SCREWDRIVER-02-001"
+     ],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-HORN-PAN-001",
       "PX-V40-INS-M15X3-SCREW-001",
@@ -16012,7 +16538,31 @@
       }
      },
      "candidatePlacements": false,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "CHECKED",
+       "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
+       "overlaps": [
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+         "volumeMm3": 1.5981
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+         "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+         "volumeMm3": 0.0264
+        },
+        {
+         "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+         "volumeMm3": 1.0447
+        }
+       ]
+      }
+     ],
      "recipes": [
       {
        "instanceId": "PX-V40-INS-HORN-PAN-001",
@@ -16215,7 +16765,7 @@
       "No installation sweep or fit is claimed",
       "The pan horn is the additive instructional revision of the supplied long double-arm horn (34 mm tip to tip, tapered arms, 7.7 mm hub, 12 attachment holes at a derived 2.1 mm pitch); V40 S08 and S13 draw a two-sided horn with screws on both sides of the hub, and the printed package shows two long double-arm horns and one single-arm horn, so pan and tilt take the double-arm and steering the single-arm. The large and small cross horns are unused spare stock. Dimensions are DERIVED to about 2 to 6 percent from penny-scaled photographs; spline form, hub recess and thread geometry are not modelled",
       "The four deck screws sit in the traced deck holes, which agree with the derived horn hole row only to within about 0.9 mm; each screw therefore has a scoped overlap with solid horn plate beside the hole, and no screw-to-horn-hole alignment is claimed",
-      "Deck small-hole rows are photo-traced (four on one side, three on the other) and are not manufacturer positions; the 1.4 mm holes are smaller than the 1.5 mm screws, so each screw has a declared small clearance overlap with the deck",
+      "The previous trace/source interpretation carried four holes on one side and three on the other. Current photo-supported fidelity revision 03 establishes a four/four positional pattern, constructed as mirror-image rows. Diameter remains unresolved: trace 1.4 mm; clean photo fits approximately 1.69 mm. These are instructional approximations, not engineering tolerance verification; the retained 1.4 mm bores have a declared small clearance overlap with the 1.5 mm screws.",
       "The accepted ordered stack for this step lists the horn before the plate, which is not the physical order shown in V40; it is used for membership only",
       "Pan zero angle and horn clocking about the hub are not established; the arm is placed symmetrically across the car as a presentation gauge",
       "No installation sweep, thread engagement or fit is claimed"
@@ -16236,9 +16786,9 @@
      "source": {
       "kind": "closure",
       "file": "chain/closures/rpi-zero-2-w-S08-closure.json",
-      "sha256": "6f00758685cdcb14e76f3c5d329c5bc0a3c7dc29e6c4a2a177de44a8d2d52eb0",
+      "sha256": "d2bf3bcbb05652621772bdfabcf70983d59093c6d56ea2d1af15fd0edc62d3e9",
       "status": "COMPLETE",
-      "closureRfc8785Sha256": "7cac0258785a7f16aa7eca07d2db11381026cee38fe70813df6958ebdf0a2ee2",
+      "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
       "closureVerify": "PASS"
      },
      "dependencyWarnings": [
@@ -16289,6 +16839,15 @@
       "PX-V40-INS-ULTRASONIC-001"
      ],
      "introducedZeroSolidInstanceIds": [],
+     "usedInstanceIds": [
+      "PX-V40-INS-PLATE-A-001",
+      "PX-V40-INS-PLATE-H-001",
+      "PX-V40-INS-R3080-RIVET-001",
+      "PX-V40-INS-R3080-RIVET-002",
+      "PX-V40-INS-ULTRASONIC-001"
+     ],
+     "toolInstanceIds": [],
+     "workpieceInstanceId": null,
      "newlyPlacedInstanceIds": [
       "PX-V40-INS-ULTRASONIC-001",
       "PX-V40-INS-PLATE-H-001",
@@ -16876,7 +17435,13 @@
       }
      },
      "candidatePlacements": true,
-     "displayChecks": [],
+     "displayChecks": [
+      {
+       "definitionId": "PX-V40-DEF-ROBOT-HAT",
+       "status": "NOT_CHECKED",
+       "overlaps": []
+      }
+     ],
      "recipes": [
       {
        "instanceId": "PX-V40-INS-ULTRASONIC-001",
@@ -17083,7 +17648,7 @@
       "No installation sweep or fit is claimed",
       "The pan horn is the additive instructional revision of the supplied long double-arm horn (34 mm tip to tip, tapered arms, 7.7 mm hub, 12 attachment holes at a derived 2.1 mm pitch); V40 S08 and S13 draw a two-sided horn with screws on both sides of the hub, and the printed package shows two long double-arm horns and one single-arm horn, so pan and tilt take the double-arm and steering the single-arm. The large and small cross horns are unused spare stock. Dimensions are DERIVED to about 2 to 6 percent from penny-scaled photographs; spline form, hub recess and thread geometry are not modelled",
       "The four deck screws sit in the traced deck holes, which agree with the derived horn hole row only to within about 0.9 mm; each screw therefore has a scoped overlap with solid horn plate beside the hole, and no screw-to-horn-hole alignment is claimed",
-      "Deck small-hole rows are photo-traced (four on one side, three on the other) and are not manufacturer positions; the 1.4 mm holes are smaller than the 1.5 mm screws, so each screw has a declared small clearance overlap with the deck",
+      "The previous trace/source interpretation carried four holes on one side and three on the other. Current photo-supported fidelity revision 03 establishes a four/four positional pattern, constructed as mirror-image rows. Diameter remains unresolved: trace 1.4 mm; clean photo fits approximately 1.69 mm. These are instructional approximations, not engineering tolerance verification; the retained 1.4 mm bores have a declared small clearance overlap with the 1.5 mm screws.",
       "The accepted ordered stack for this step lists the horn before the plate, which is not the physical order shown in V40; it is used for membership only",
       "Pan zero angle and horn clocking about the hub are not established; the arm is placed symmetrically across the car as a presentation gauge",
       "No installation sweep, thread engagement or fit is claimed",
@@ -17149,7 +17714,7 @@
   }
  },
  "validation": {
-  "checks": 347,
+  "checks": 349,
   "failed": 0,
   "withheld": [],
   "summary": [
