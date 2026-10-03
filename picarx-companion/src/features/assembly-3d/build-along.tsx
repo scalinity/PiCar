@@ -11,7 +11,7 @@ import { evidenceZip } from '../assembly-session/evidence-zip';
 import { copyPhoto, readPhoto, saveEvidenceZip } from '../../platform/evidence';
 import type { LoadedPack } from './assets/pack';
 export const boardSessionId = (v: StudioVariant): string => v === 'rpi5' ? 'PX-STUDIO-RPI5' : 'PX-STUDIO-ZERO2W';
-export const studioBoardHref = (v:StudioVariant,fallbackStep:number):string => getStore().sessions.some(s=>s.id===boardSessionId(v)) ? `#/studio/${v}` : studioHref(v,fallbackStep);
+export const studioBoardHref = (v:StudioVariant,step:number):string => studioHref(v,step);
 type BoardState = { ready: boolean; session: AssemblySession | null; observations: StudioObservation[]; error: string; busy: boolean };
 const empty = (): BoardState => ({ready:false,session:null,observations:[],error:'',busy:false});
 const boards: Record<StudioVariant,BoardState> = {rpi5:empty(),'rpi-zero-2-w':empty()};

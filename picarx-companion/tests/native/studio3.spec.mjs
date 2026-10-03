@@ -21,6 +21,9 @@ it('actual native Studio3 build progress and private photo persistence on dispos
   assert((await text()).includes('does not clear M7'));
   await $('.studio-build input[type=checkbox]').click();await $('button=Undo / reopen physical step').click();await browser.waitUntil(async()=>(await text()).includes('0/29'),{timeout:30000});
  }
+ await open('rpi-zero-2-w',0);await $('.studio-rail a[href="#/studio/rpi-zero-2-w/3"]').click();await browser.waitUntil(async()=>{const b=await script(()=>window.__picarM3Test.studio('backup'));return b.aggregates.find(a=>a.aggregate.id==='PX-STUDIO-ZERO2W').aggregate.snapshot.reviewStepId==='PX-V40-STEP-03';});
+ const beforeSwitch=await script(()=>window.__picarM3Test.studio('backup'));await $('.studio-boards a[href="#/studio/rpi5/3"]').click();await $('.studio[data-variant="rpi5"][data-step="3"]').waitForDisplayed();assert.deepEqual(await script(()=>window.__picarM3Test.studio('backup')),beforeSwitch);
+ await $('.studio-rail a[href="#/studio/rpi5/0"]').click();await $('.studio-boards a[href="#/studio/rpi-zero-2-w/0"]').click();await $('.studio[data-variant="rpi-zero-2-w"][data-step="0"]').waitForDisplayed();assert.deepEqual(await script(()=>window.__picarM3Test.studio('backup')),beforeSwitch);
  await open('rpi5',1);const before=await script(()=>window.__picarM3Test.studio('backup'));
  await $('.studio-transport button:nth-child(2)').click();await $('[aria-label="Isolate"]').click();await $('[aria-label="Ghost others"]').click();await $('[aria-label="Deck clip"]').click();await $('[aria-label="Reset inspection"]').click();await browser.keys('r');assert.deepEqual(await script(()=>window.__picarM3Test.studio('backup')),before);
  await script(()=>window.__picarM3Test.studio('photo'));await browser.waitUntil(async()=>(await text()).includes('1 photos'));
@@ -28,6 +31,7 @@ it('actual native Studio3 build progress and private photo persistence on dispos
  fs.writeFileSync(path.join(process.env.PICAR_M3_TEST_DATA_DIR,'expected-evidence.zip'),Buffer.from(photo.zip));
  await script(()=>window.__picarM3Test.studio('restart'));await browser.refresh();await browser.waitUntil(async()=>(await text()).includes('1 photos'),{timeout:30000});assert.deepEqual((await script(()=>window.__picarM3Test.studio('photoCheck'))).record,photo.record);
  await browser.saveScreenshot(path.join(out,'native-build-along.png'));
+ await script(()=>document.querySelector('.studio-build input[type=file]').scrollIntoView({block:'center'}));await browser.saveScreenshot(path.join(out,'native-controls.png'));await script(()=>document.querySelector('.studio-drawer').scrollTop=0);
  record('native-progress',{variantSessions:before.aggregates.map(a=>a.aggregate.id),bookmark:'PASS',physicalCompleteUndo:'PASS',readOnlyViewer:'PASS',photoReload:'PASS'});
  await script(()=>{const details=document.querySelector('.studio-build details');details.open=true;});await $('.studio-build details input').click();
  const beforeNativeUI=await script(async()=>({ledger:await window.__picarM3Test.studio('backup'),camera:window.__studio.camera()}));
