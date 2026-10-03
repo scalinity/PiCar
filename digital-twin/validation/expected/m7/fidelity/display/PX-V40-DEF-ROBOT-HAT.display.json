@@ -1,0 +1,519 @@
+{
+ "schema": "picar-studio-display-check/1",
+ "definitionId": "PX-V40-DEF-ROBOT-HAT",
+ "kind": "display-detail",
+ "track": "presentation-only",
+ "source": "Locked V40 S04 source-supported approximate PCB outline; 85 x 56 mm visual envelope, not measured stock. Top features remain schematic.",
+ "assemblyEnvelope": "Original M5/M7 instructional artifacts and all poses unchanged; assembly checks do not use this display outline",
+ "artifact": "PX-V40-DEF-ROBOT-HAT.display.brep",
+ "artifactSha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4",
+ "sourceBindings": [
+  {
+   "path": "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json",
+   "sha256": "0e963834f6f6f7f8845ee88676f25236989cda4cdc3f721e34245adb80aec96e"
+  },
+  {
+   "path": "digital-twin/assemblies/v40/presentation/instructional/step04-hat-review-04.json",
+   "sha256": "eda1f9ea9df6a166995da8f9aa761bd4b8891c6841d6bc3a1dc6696a55753db0"
+  },
+  {
+   "path": "digital-twin/cad/twin_cad/fidelity/hat.py",
+   "sha256": "d96e1daf54db46df4c9cd42ae8250d1bbc8a730934bb81dad1a4e6ceb44b6bbd"
+  },
+  {
+   "path": "digital-twin/cad/twin_cad/fidelity/pi5.py",
+   "sha256": "f8661d2616c5d806694d373c53d58fe5a6881ee93742c45c33a73a0ebf019c62"
+  },
+  {
+   "path": "digital-twin/generated/studio/chain/s2pro-01/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+   "sha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de"
+  }
+ ],
+ "solids": [
+  {
+   "index": 0,
+   "name": "PCB outline (approximate)",
+   "materialId": "pcb-blue"
+  },
+  {
+   "index": 1,
+   "name": "Schematic speaker",
+   "materialId": "speaker-dark"
+  },
+  {
+   "index": 2,
+   "name": "Schematic connector 1",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 3,
+   "name": "Schematic connector 2",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 4,
+   "name": "Schematic connector 3",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 5,
+   "name": "Schematic connector 4",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 6,
+   "name": "Schematic connector 5",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 7,
+   "name": "Schematic connector 6",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 8,
+   "name": "Schematic connector 7",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 9,
+   "name": "Schematic connector 8",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 10,
+   "name": "Schematic connector 9",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 11,
+   "name": "Underside socket (schematic)",
+   "materialId": "header-black"
+  }
+ ],
+ "relation": {
+  "instructionalArtifact": {
+   "definitionId": "PX-V40-DEF-ROBOT-HAT",
+   "path": "digital-twin/validation/expected/m5/instructional-artifacts/PX-V40-DEF-ROBOT-HAT.brep",
+   "sha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a"
+  },
+  "pcbBoxMm": [
+   0,
+   0,
+   0,
+   85,
+   56,
+   1.6
+  ],
+  "mountingHoles": {
+   "display": [
+    [
+     3.5,
+     3.5
+    ],
+    [
+     3.5,
+     52.5
+    ],
+    [
+     61.5,
+     3.5
+    ],
+    [
+     61.5,
+     52.5
+    ]
+   ],
+   "instructional": [],
+   "maxCentreDeviationMm": null,
+   "adoptedReference": [
+    [
+     3.5,
+     3.5
+    ],
+    [
+     3.5,
+     52.5
+    ],
+    [
+     61.5,
+     3.5
+    ],
+    [
+     61.5,
+     52.5
+    ]
+   ],
+   "method": "Preserve adopted HAT bores; original checked M5 proxy has no bores"
+  },
+  "adoptedPredecessor": {
+   "path": "chain:engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+   "sha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de"
+  }
+ },
+ "limitations": [
+  "Actual HAT revision and dimensional tolerances remain unknown",
+  "Top components retain the schematic proxy layout; this corrects only the PCB outline",
+  "Overlap checks compare the displayed HAT with other instructional artifacts, not pairs of detailed display models",
+  "No physical fit, electrical, installation sweep, engineering or M7 acceptance claim"
+ ],
+ "overlaps": {
+  "chain": "s2pro-01",
+  "method": "Boolean common of displayed HAT with other instructional artifacts in exact closure states; detailed-display pairs are not measured",
+  "displayArtifactSha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4",
+  "instructionalArtifactSha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a",
+  "partArtifacts": {
+   "PX-V40-DEF-BATTERY": "f685c1a07cf87d4fe7da7703366fd939681a69e654209aeaff7355f019485959",
+   "PX-V40-DEF-HORN-PAN": "679f73c27d72a64c328825620363f6cc814823eb81cb28c04b0872f05846da83",
+   "PX-V40-DEF-M15X3-SCREW": "abfc6198cb2f02f5c654b0ab67dbc5ebfd864c5c7fd9cbae78619e53a3bd531f",
+   "PX-V40-DEF-M25X11-STANDOFF": "b6612c4e0a4f22ac5885b3fd139e5bc90a65561f06a18a0e155d1ae59502b8de",
+   "PX-V40-DEF-M25X18-STANDOFF": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2",
+   "PX-V40-DEF-M25X18PLUS6-STANDOFF": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645",
+   "PX-V40-DEF-M25X30-STANDOFF": "d5595a11943b9f48e457035b7ec7db7c300450290570f8257797d3204e0b7bc9",
+   "PX-V40-DEF-M25X6-SCREW": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0",
+   "PX-V40-DEF-M3-NUT": "44d15801ffa667dcd9d41899b3585d721e34db728c44e351d2fe781aade1051e",
+   "PX-V40-DEF-M3X25-SCREW": "81c967b6db28ff4c5b9fdacc21ab2e3ac6f8e1e20b2a7b4e0a5455577c955c95",
+   "PX-V40-DEF-MOTOR-LEFT": "c8070624580bcadc7977fc7474e3cbb63050c56ede728aab4e481d590a7b2f53",
+   "PX-V40-DEF-MOTOR-RIGHT": "a24177197ccbaef8b6568a50b45cf03c3342a801a574272d093460c4a147a383",
+   "PX-V40-DEF-PI5": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c",
+   "PX-V40-DEF-PLATE-A": "2348ebddc570041cbe42d3d0ea9ce4f3da279bb24fb1df3607116be1db01b495",
+   "PX-V40-DEF-SPRING-WASHER": "18e52787eca8bbab49f0a0af9ef14f648dc87086ee1db1a17b12ae20df845841",
+   "PX-V40-DEF-USB-MICROPHONE": "8fd263478941111924fa0ee96c6b0ca027c3fcc188d24f9a37c310ad45b7f51e",
+   "PX-V40-DEF-ZERO2W": "a03a5706e9108000d101a47fb75fa3caa64ef1e5d4e092d1e6ab316e8eb48a17"
+  },
+  "closures": [
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 4,
+    "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42"
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 5,
+    "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab"
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 6,
+    "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d"
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 7,
+    "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536"
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 8,
+    "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f"
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67"
+   }
+  ],
+  "positive": [
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 4,
+    "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 4,
+    "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 4,
+    "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 4,
+    "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 5,
+    "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 5,
+    "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 5,
+    "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 5,
+    "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 6,
+    "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 6,
+    "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 6,
+    "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 6,
+    "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 7,
+    "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 7,
+    "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 7,
+    "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 7,
+    "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 8,
+    "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 8,
+    "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 8,
+    "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 8,
+    "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 2.5844
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+    "volumeMm3": 0.0264
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+    "volumeMm3": 1.0447
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+    "volumeMm3": 1.5981
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
+    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+    "volumeMm3": 2.5844
+   }
+  ]
+ }
+}

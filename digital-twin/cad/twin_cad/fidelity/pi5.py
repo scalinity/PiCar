@@ -210,7 +210,7 @@ def relation(detail_parts, chain):
             'instructionalSolids': boxes}
 
 
-def overlaps(root, chain, detail):
+def overlaps(root, chain, detail, instance_id=BOARD):
     """Place the detail board in every closure that holds the board and intersect it with every other placed part.
     Each checked closure is named by its canonical hash and every other part by its artifact hash, so a record cannot
     stand for a state it did not measure. Positive volumes are display conflicts the instructional checks could not
@@ -222,17 +222,17 @@ def overlaps(root, chain, detail):
     for closure in sorted((chain / 'chain' / 'closures').glob('*-closure.json')):
         record = json.loads(closure.read_text())
         poses = {p['instanceId']: p for p in record['placements']}
-        if BOARD not in poses:
+        if instance_id not in poses:
             continue
         variant = record['variantId']
         graph = json.loads((root / f'digital-twin/validation/m2/{variant}/compiled-graph.json').read_text())
         definition_of = {i['id']: i['definitionId'] for i in graph['instances']}
         identity = {'variantId': variant, 'step': record['printedNumber'], 'closureRfc8785Sha256': hashlib.sha256(rfc8785.dumps(record)).hexdigest()}
         closures.append(identity)
-        board = placed(detail, *rigid(poses[BOARD]))
+        board = placed(detail, *rigid(poses[instance_id]))
         bb = board.BoundingBox()
         for iid, pose in sorted(poses.items()):
-            if iid == BOARD:
+            if iid == instance_id:
                 continue
             d = definition_of[iid]
             if d not in cache:

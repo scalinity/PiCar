@@ -26,7 +26,7 @@ def verify(root, record, previous, context=None):
     variant = record['variantId']
     require(variant in scope['activeProductVariants'], 'PRESERVED_NON_TARGET_OR_UNSUPPORTED_VARIANT')
     require(record['id'] == f'PX-M7-S08-PAN-HORN-{variant}-04' and record['revision'] == 4 and record['track'] == 'instructional-only', 'STEP08_IDENTITY')
-    review = load(root / (PRESENTATION + '/step08-review-04.json'))
+    review = load(root / (PRESENTATION + '/step08-review-05.json'))
     require(record['limitations'] == review['limitations'], 'LIMITATION_REMOVAL')
     for binding in record['inputBindings']:
         require(binding == digest(root, binding['path']), 'INPUT_BYTES_CHANGED')

@@ -139,3 +139,13 @@ def test_opening_spacing_contradicts_the_module_can_spacing_and_is_recorded(meas
     off_centre, slack = abs(module['canSpacingMm'] - spacing) / 2, (diameter - 2 * module['canRadiusMm']) / 2
     assert off_centre > 1.0 and slack < 0.5 and off_centre > slack
     assert any('NEW CONTRADICTION' in i['estimate'] for i in review['consequencesForS09']['items'])
+
+
+@pytest.mark.parametrize('face_name', ['front.dual-opening', 'deck'])
+def test_unadopted_wall_and_other_deck_hole_changes_are_caught(face_name):
+    original = stored_plate_a()
+    changed = json.loads(json.dumps(original))
+    face = next(f for f in changed['profile']['faces'] if f['name'] == face_name)
+    hole = next(h for h in face['holes'] if face_name != 'deck' or not (h['diameterMm'] < 2 and h['centerMm'][0] > 150))
+    hole['centerMm'][0] += 1.0
+    assert beyond_deck_outline(changed) != beyond_deck_outline(original)

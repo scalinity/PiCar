@@ -1,0 +1,15 @@
+{
+  "id": "PX-STUDIO-HAT-OUTLINE-DISPLAY-01",
+  "scope": "Owner-requested display outline correction only; checked geometry and all variant placements unchanged",
+  "definitionId": "PX-V40-DEF-ROBOT-HAT",
+  "track": "presentation-only",
+  "sourceReview": "digital-twin/assemblies/v40/presentation/instructional/step04-hat-review-04.json",
+  "sourceLocator": "Locked V40 page 1 S04 green Pi4/Pi5 and blue Zero2W panels; existing review records a Pi-sized approximately 85 x 56 mm board rather than the 65 x 56 mm proxy",
+  "parameters": { "lengthMm": 85, "widthMm": 56, "thicknessMm": 1.6, "cornerRadiusMm": 3 },
+  "basis": "Approximate source-supported visual envelope; corners are true circular arcs with an authored approximate 3 mm radius, not measured owner stock or an engineering dimension",
+  "preserve": ["Four adopted mounting bores", "Underside socket", "All ten existing schematic top components", "Checked M5/M7 artifacts", "All closure poses and approach recipes", "Zero HAT's existing 180 degree rotation relative to Pi5"],
+  "limitations": ["Actual HAT revision and dimensional tolerances remain unknown", "Top components retain the schematic proxy layout; this corrects only the PCB outline", "Overlap checks compare the displayed HAT with other instructional artifacts, not pairs of detailed display models", "No physical fit, electrical, installation sweep, engineering or M7 acceptance claim"],
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "privateSourcePixelsCopied": false
+}

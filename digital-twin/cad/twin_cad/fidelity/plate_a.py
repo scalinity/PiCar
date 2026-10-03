@@ -443,6 +443,26 @@ def design_small_rows(measured, review):
     }
 
 
+OUTLINE_ARTIFACT_SHA256 = '2e0347dbef81f3d007fdf4d5278da74ac9cf1357e821ca50fab975e6fdbb40a0'
+
+
+def outline_predecessor(root):
+    """Rebuild immutable outline-01 parameters and reject any historical identity drift."""
+    import hashlib
+    import tempfile
+    from twin_cad.components.plates.instructional.generate import make_candidate
+    batch = json.loads((root / OUTLINE_BATCH).read_text())
+    spec = next(d for d in batch['definitions'] if d['revisionId'] == REVISION_ID)
+    shape = make_candidate(spec['parameters']['definition'])
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / 'outline-01.brep'
+        shape.exportBrep(str(path))
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+    if actual != OUTLINE_ARTIFACT_SHA256:
+        raise ValueError(f'OUTLINE_PREDECESSOR_SHA expected {OUTLINE_ARTIFACT_SHA256}, got {actual}')
+    return shape
+
+
 def build_hole_revision(root, design):
     """The outline revision's Plate A with its pan-hub screw holes replaced by the designed rows; nothing else changes."""
     import copy
@@ -464,7 +484,7 @@ def build_hole_revision(root, design):
     for i, p in enumerate(minus):
         face['holes'].append({'centerMm': [float(p[0]), float(p[1])], 'diameterMm': diameter, 'name': f'deck.hole.{18 + i}'})
     shape = make_candidate(revised)
-    old = cq.Shape.importBrep(str(root / 'digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep'))
+    old = outline_predecessor(root)
     small = lambda shape_: [f for f in shape_features(shape_) if abs(f['radius'] - diameter / 2) < 1e-6 and f['origin'][0] > 150]
     others = lambda shape_: sorted((round(f['radius'], 4), *np.round(f['origin'][:2], 4)) for f in shape_features(shape_) if not abs(f['radius'] - diameter / 2) < 1e-6)
     new_small = small(shape)
@@ -522,13 +542,13 @@ def holes_main(args):
         path = Path(tmp) / 'plate-a.brep'
         shape.exportBrep(str(path))
         new_sha = hashlib.sha256(path.read_bytes()).hexdigest()
-    old_path = 'digital-twin/validation/expected/m7/instructional-revisions/PX-V40-DEF-PLATE-A.brep'
+    old_path = OUTLINE_BATCH + '#definitions/' + REVISION_ID
     photo_sha = hashlib.sha256((args.root / PHOTO).read_bytes()).hexdigest()
     review = {
         'id': HOLES_REVISION_ID, 'photo': PHOTO.split('/')[-1], 'photoSha256': photo_sha,
         'finding': 'The M6 trace has four 1.4 mm holes beside the pan hub on the +Y side and three on the -Y side, not mirror images. The calibrated photograph shows a row of four on each side.',
         'measured': measured, 'design': design, 'checks': checks,
-        'artifacts': {'old': {'path': old_path, 'sha256': hashlib.sha256((args.root / old_path).read_bytes()).hexdigest(), 'revisionId': REVISION_ID},
+        'artifacts': {'old': {'path': old_path, 'sha256': OUTLINE_ARTIFACT_SHA256, 'revisionId': REVISION_ID, 'sourceKind': 'rebuilt-immutable-batch'},
                       'new': {'sha256': new_sha, 'revisionId': HOLES_REVISION_ID}},
         'diameterNote': 'Kept at the traced 1.4 mm, the radius the S08 generator and its independent verifier select these holes by. The photograph measures '
                         f'{np.mean([h["diameterMm"] for h in measured if h["edgeRmsMm"] < 0.1]):.2f} mm on its clean edge fits; adopting that is an M7 change.',

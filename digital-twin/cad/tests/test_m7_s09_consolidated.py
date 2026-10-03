@@ -158,3 +158,13 @@ def test_nothing_was_adopted_and_s09_stays_blocked(review):
     assert review['plateAStatus']['adopted'] is False and review['s09Status'] == 'BLOCKED' and review['engineeringStatus'] == 'BLOCKED'
     d3 = next(c for c in review['diagnostic']['cases'] if c['name'] == 'D3')['volumesMm3']
     assert d3['plateAPlateH'] == 0 and d3['hornModule'] == 0 and d3['hornPlateH'] > 0
+
+
+@pytest.mark.parametrize('face_name', ['front.dual-opening', 'deck'])
+def test_unadopted_wall_and_other_deck_hole_changes_are_caught(face_name):
+    original = stored_plate_a()
+    changed = json.loads(json.dumps(original))
+    face = next(f for f in changed['profile']['faces'] if f['name'] == face_name)
+    hole = next(h for h in face['holes'] if face_name != 'deck' or not (h['diameterMm'] < 2 and h['centerMm'][0] > 150))
+    hole['centerMm'][0] += 1.0
+    assert beyond_deck_outline(changed) != beyond_deck_outline(original)

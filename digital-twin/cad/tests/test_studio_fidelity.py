@@ -4,6 +4,7 @@ Source mode: PYTHONPATH=digital-twin/cad <frozen-env>/bin/python -m pytest digit
 """
 import hashlib
 import json
+import math
 import re
 from pathlib import Path
 
@@ -14,19 +15,50 @@ import pytest
 from twin_cad.assemblies.instructional import revisions
 from twin_cad.assemblies.instructional.verify import plate_a_artifact, purchased_artifact, shape_features
 from twin_cad.components.plates.instructional.generate import make_candidate
-from twin_cad.fidelity import pi5
+from twin_cad.fidelity import hat, pi5
 
 ROOT = Path(__file__).resolve().parents[3]
 STORE = ROOT / 'digital-twin/validation/expected/m7/instructional-revisions'
 M6_PLATE_A_SHA = 'dfd87e50cc1ac5c87358a7c2495be00860c36e30d9534e54da2508804ca14137'
 REVIEW = json.loads((ROOT / 'digital-twin/validation/expected/m7/fidelity/plate-a-outline-01.review.json').read_text())
 DISPLAY = json.loads((ROOT / 'digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-PI5.display.json').read_text())
+HAT_DISPLAY = json.loads((ROOT / 'digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json').read_text())
 
 
 def brep_bytes(shape, tmp_path, name):
     path = tmp_path / name
     shape.exportBrep(str(path))
     return path.read_bytes()
+
+
+def test_hat_display_outline_is_reproducible_and_keeps_the_adopted_features(tmp_path):
+    chain = ROOT / 'digital-twin/generated/studio/chain' / HAT_DISPLAY['overlaps']['chain']
+    parts = hat.build(ROOT, chain)
+    shape = pi5.compound(parts)
+    data = brep_bytes(shape, tmp_path, 'hat.brep')
+    assert data == brep_bytes(pi5.compound(hat.build(ROOT, chain)), tmp_path, 'hat-repeat.brep')
+    assert hashlib.sha256(data).hexdigest() == HAT_DISPLAY['artifactSha256']
+    pcb = parts[0][2]
+    assert (pcb.BoundingBox().xlen, pcb.BoundingBox().ylen, pcb.BoundingBox().zlen) == pytest.approx((85, 56, 1.6))
+    old = cq.Shape.importBrep(str(chain / hat.ADOPTED)).Solids()
+    assert pi5.hole_centres(pcb, 1.4) == pi5.hole_centres(old[0], 1.4)
+    assert len(pi5.hole_centres(pcb, 1.4)) == 4
+    assert pcb.Volume() - old[0].Volume() == pytest.approx((20 * 56 - (4 - math.pi) * 3 ** 2) * 1.6)
+    assert len([f for f in shape_features(pcb) if abs(f['radius'] - 3) < 1e-6]) == 4
+    assert len(old) == len(parts) == len(HAT_DISPLAY['solids'])
+    for before, (_, _, after) in zip(old[1:], parts[1:]):
+        assert before.Volume() == pytest.approx(after.Volume(), abs=1e-9)
+        assert before.cut(after).Volume() < 1e-9
+
+
+def test_hat_display_retains_original_checked_bytes_and_source_bound_overlap_checks():
+    assert pi5.sha256_file(ROOT / hat.INSTRUCTIONAL) == 'bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a'
+    assert HAT_DISPLAY['relation']['instructionalArtifact']['sha256'] == pi5.sha256_file(ROOT / hat.INSTRUCTIONAL)
+    for binding in HAT_DISPLAY['sourceBindings']:
+        assert pi5.sha256_file(ROOT / binding['path']) == binding['sha256']
+    checked = {(c['variantId'], c['step']) for c in HAT_DISPLAY['overlaps']['closures']}
+    assert checked == {(v, n) for v in ('rpi5', 'rpi-zero-2-w') for n in range(4, 9)}
+    assert HAT_DISPLAY['track'] == 'presentation-only'
 
 
 def test_generator_still_reproduces_the_accepted_m6_plate_a(tmp_path):
@@ -136,3 +168,24 @@ def test_pi5_display_checks_name_the_exact_inputs_they_measured():
     assert o['partArtifacts'] and all(hex64.fullmatch(h) for h in o['partArtifacts'].values())
     microphone = [p['volumeMm3'] for p in o['positive'] if p['instanceId'] == 'PX-V40-INS-USB-MICROPHONE-001']
     assert microphone and 440 < max(microphone) < 460, 'the known 449 mm3 microphone overlap is still measured, not moved away'
+
+
+def test_hole_review_uses_outline_01_even_while_store_selects_holes_03(tmp_path):
+    from twin_cad.fidelity import plate_a
+    selected = json.loads((STORE / 'revision-artifacts.json').read_text())['records']
+    assert next(r for r in selected if r['definitionId'] == 'PX-V40-DEF-PLATE-A')['newArtifactSha256'] == HOLES['artifacts']['new']['sha256']
+    predecessor = plate_a.outline_predecessor(ROOT)
+    assert hashlib.sha256(brep_bytes(predecessor, tmp_path, 'outline.brep')).hexdigest() == HOLES['artifacts']['old']['sha256']
+    _, shape, checks = plate_a.build_hole_revision(ROOT, HOLES['design'])
+    assert {k: v for k, v in checks.items() if k != 'volumeMm3'} == {k: v for k, v in HOLES['checks'].items() if k != 'volumeMm3'}
+    assert checks['volumeMm3'] == pytest.approx(HOLES['checks']['volumeMm3'], abs=1e-9)
+    assert checks['smallHoles']['traced'] == 7 and checks['smallHoles']['revision'] == 8
+    assert checks['volumeMm3']['outlineRevision'] == pytest.approx(29573.40543225287)
+    assert hashlib.sha256(brep_bytes(shape, tmp_path, 'holes.brep')).hexdigest() == HOLES['artifacts']['new']['sha256']
+
+
+def test_outline_predecessor_hash_mismatch_is_fatal(monkeypatch):
+    from twin_cad.fidelity import plate_a
+    monkeypatch.setattr(plate_a, 'OUTLINE_ARTIFACT_SHA256', '0' * 64)
+    with pytest.raises(ValueError, match='OUTLINE_PREDECESSOR_SHA'):
+        plate_a.build_hole_revision(ROOT, HOLES['design'])

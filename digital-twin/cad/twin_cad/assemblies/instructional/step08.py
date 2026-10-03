@@ -46,7 +46,7 @@ def build(root, variant, previous):
     scope = load(root / PRESENTATION / 'product-scope.json')
     require(variant in scope['activeProductVariants'], 'PRESERVED_NON_TARGET_OR_UNSUPPORTED_VARIANT')
     require(previous['variantId'] == variant and previous['printedNumber'] == 7, 'PREVIOUS_IS_S07_OF_SAME_VARIANT')
-    review_path = PRESENTATION + '/step08-review-04.json'
+    review_path = PRESENTATION + '/step08-review-05.json'
     review = load(root / review_path)
     graph_path = f'digital-twin/validation/m2/{variant}/compiled-graph.json'
     graph = load(root / graph_path)
