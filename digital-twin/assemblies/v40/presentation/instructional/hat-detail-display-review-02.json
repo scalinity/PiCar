@@ -1,0 +1,222 @@
+{
+  "id": "PX-STUDIO-HAT-DETAIL-DISPLAY-02",
+  "scope": "Display-detail Robot HAT V4 for the Studio: the owner's physical board reconstructed from the owner's photographs and scans; checked geometry, poses and recipes unchanged",
+  "definitionId": "PX-V40-DEF-ROBOT-HAT",
+  "track": "presentation-only",
+  "supersedes": "PX-STUDIO-HAT-OUTLINE-DISPLAY-01",
+  "sourceReview": "digital-twin/assemblies/v40/presentation/instructional/step04-hat-review-04.json",
+  "evidenceManifest": "docs/implementation/evidence/studio-3-5-hat/hat-evidence-manifest.json",
+  "boardIdentity": {
+    "revisionMarking": "Robot Hat V4",
+    "markedOn": ["top silkscreen", "underside silkscreen"],
+    "boardCode": "01902V44",
+    "boardCodeLocation": "top silkscreen beside the GPIO pad field",
+    "subRevision": "unresolved: no further revision or date marking is legible in the photographs",
+    "confidence": "Revision V4 is legible on both faces in several frames; no other revision marking was found"
+  },
+  "frame": "The adopted instructional HAT frame: x along the 85 mm edge, y along the 56 mm edge with the GPIO header at high y, z up from the PCB underside, PCB top face z = 1.6. Positions in mm.",
+  "basisClasses": {
+    "datum": "taken from the adopted instructional HAT (mounting bores, board plane, thickness); never changed by display work",
+    "scan": "measured on the owner's two Object Capture scans after registration to the four datum bores (top 0.21 mm RMS, underside 0.14 mm RMS)",
+    "photo": "measured on owner photographs rectified onto the board plane through the four datum bores (residual 0.17 mm RMS on the 40 GPIO pads)",
+    "standard": "published connector or package standard, consistent with the photographs",
+    "approximate": "visually estimated from the photographs; not a measurement"
+  },
+  "measuredByCaliper": [],
+  "pcb": {
+    "basis": {"outline": "scan + photo (scan 84.8 x 56.0, underside photo 55.75 wide); modelled on the 85 x 56 datum envelope", "thickness": "datum", "corners": "photo", "cableSlot": "photo", "speakerNotch": "photo"},
+    "lengthMm": 85.0, "widthMm": 56.0, "thicknessMm": 1.6, "maskMm": 0.04,
+    "leftCornerRadiusMm": 3.5, "rightCornerRadiusMm": 3.0,
+    "cableSlot": {"x0": 66.9, "x1": 74.2, "depth": 5.35, "cornerRadius": 1.0},
+    "speakerNotch": {"chamferX0": 69.5, "floorX0": 71.5, "floorY": 54.0, "x1": 77.4, "outerFillet": 0.6, "innerFillet": 0.5}
+  },
+  "mountingHoles": {"basis": "datum", "radiusMm": 1.4, "centres": [[3.5, 3.5], [61.5, 3.5], [3.5, 52.5], [61.5, 52.5]], "silkRingRadiusMm": 3.0, "silkRingWidthMm": 0.16,
+                    "silkRings": "photo (both faces); set flush into the mask, because screw heads and standoff tops bear on the board around the bores and must meet its face, as they do on the instructional HAT"},
+  "gpio": {
+    "basis": {"pads": "photo (40 of 40 pads matched, 0.17 mm RMS)", "socketDepth": "scan (15.44 mm raw, 15.75 mm at the bore-fitted scale), set to 15.5 mm: the 18 mm standoffs less the Pi's 2.5 mm header base, so the socket rests on the base", "socketBody": "standard"},
+    "x0": 8.37, "pitch": 2.54, "rows": [51.23, 53.77], "count": 20,
+    "jointRadius": 0.72, "jointHeight": 0.35,
+    "socket": {"x0": 7.1, "x1": 57.9, "y0": 49.96, "y1": 55.04, "depth": 15.5, "entry": 1.0, "entryDepth": 6.0}
+  },
+  "pins": {
+    "basis": {"pitch": "standard 2.54, confirmed by the underside joint lattices (0.07 to 0.14 mm mean residual)", "heights": "standard (2.5 mm plastic, 6.0 mm mating), consistent with the low-angle photographs", "tail": "scan (joints protrude 0.3 to 0.7 mm)"},
+    "size": 0.64, "plasticHeight": 2.5, "aboveMm": 6.0, "tailZ": -1.0, "tipChamfer": 0.18,
+    "jointRadius": 0.85, "jointHeight": 0.55
+  },
+  "servo": {
+    "basis": "photo + scan lattice fit; colours from the photographs",
+    "columnsX": {"left": [38.93, 41.47, 44.01], "right": [49.13, 51.67, 54.21]},
+    "y0": 3.89,
+    "columnColours": ["yellow", "red", "black"],
+    "columnSignals": ["SIG", "5V", "GND"],
+    "banks": [
+      {"name": "ADC", "side": "left", "rows": [0, 1, 2, 3]},
+      {"name": "DIGITAL", "side": "left", "rows": [5, 6, 7, 8]},
+      {"name": "PWM 0-3", "side": "right", "rows": [0, 1, 2, 3]},
+      {"name": "PWM 4-7", "side": "right", "rows": [5, 6, 7, 8]},
+      {"name": "PWM 8-11", "side": "right", "rows": [10, 11, 12, 13]}
+    ],
+    "notchDepth": 0.22
+  },
+  "headers": {
+    "basis": "photo (joint positions on the rectified underside photo) + silkscreen labels",
+    "spi": {"y": 47.17, "x0": 40.64, "labels": ["GND", "3V3", "MO", "MI", "SCK", "CS", "BSY"]},
+    "i2c": {"y": 44.63, "x0": 48.26, "labels": ["GND", "3V3", "SDA", "SCL"]},
+    "uart": {"y": 47.1, "x0": 20.0, "labels": ["GND", "3V3", "TXD", "RXD"]}
+  },
+  "connectors": {
+    "motor": {
+      "basis": {"pins": "photo (underside joints)", "housing": "standard JST XH 2-pin vertical, height consistent with the scan (6.5 to 6.9 mm)"},
+      "units": [{"name": "MOTOR1", "pinX": 81.1, "pinsY": [5.85, 8.35], "cx": 81.0}, {"name": "MOTOR2", "pinX": 80.9, "pinsY": [47.85, 50.35], "cx": 81.0}],
+      "width": 7.4, "depth": 5.75, "height": 7.0, "wall": 0.8, "floor": 1.4, "pinTop": 7.9
+    },
+    "battery": {
+      "basis": {"pins": "photo (underside joints)", "housing": "scan (x -1.0 to 6.1, top 7.2 to 7.5) + standard JST XH 3-pin side entry"},
+      "name": "J21", "pinsY": [10.4, 12.9, 15.4], "legX": 6.26, "x0": -1.0, "x1": 5.85, "width": 9.9, "height": 5.75, "pinZ": 4.4,
+      "cavity": {"width": 8.3, "z0": 2.3, "z1": 6.5, "depth": 5.6}, "latchWindows": [[-0.7, 1.3, 9.9, 10.9], [-0.7, 1.3, 14.9, 15.9]]
+    },
+    "i2c": {
+      "basis": {"position": "scan (x 0.0 to 4.3, y 42.4 to 49.1, top 4.65)", "body": "standard JST SH 4-pin side entry", "pins": "photo (four leads)"},
+      "x0": 0.0, "x1": 4.25, "y0": 42.25, "y1": 49.25, "height": 2.95, "pinsY": [44.25, 45.25, 46.25, 47.25],
+      "cavity": {"y0": 43.55, "y1": 47.95, "z0": 2.25, "z1": 4.05, "depth": 3.0}
+    },
+    "speaker": {
+      "basis": {"position": "scan (x 71.7 to 77.9, y 47.1 to 54.6, top 4.6)", "construction": "photo (cream side-entry receptacle with a white two-wire plug)"},
+      "name": "J20", "receptacle": [72.0, 77.6, 48.0, 51.6, 3.0], "plug": [72.4, 77.2, 51.6, 55.3, 2.6], "wireExits": [[73.9, "black"], [75.5, "red"]]
+    },
+    "usbc": {
+      "basis": {"position": "scan (x 19.5 to 27.8, y -2.1 to 5.3, top 4.7) + photo (shell tabs)", "body": "standard USB Type-C receptacle shell 8.94 x 3.26"},
+      "cx": 23.8, "y0": -2.1, "y1": 5.35, "width": 8.94, "height": 3.26, "tabsX": [19.465, 28.135], "tabsY": [1.38, 4.86], "tails": 12
+    },
+    "switch": {
+      "basis": {"position": "scan (x -0.6 to 4.9, y 18.1 to 28.6, top 5.0, slider 6.2)", "legs": "photo (underside joints)", "slider": "photo (ON position)"},
+      "x0": -0.4, "x1": 4.3, "y0": 18.2, "y1": 28.6, "height": 3.4, "slider": [1.0, 2.9, 21.6, 23.8, 1.3], "legsX": [0.85, 4.3], "legsY": [21.4, 23.9, 26.4], "legBelow": 2.5
+    },
+    "buttons": {
+      "basis": {"position": "scan (tops 3.5 to 4.0) + photo", "body": "approximate tactile switch 3.9 x 3.3 with a beige stadium actuator"},
+      "units": [{"name": "SW1 USR", "cx": 2.8, "cy": 38.85}, {"name": "SW2 RST", "cx": 2.75, "cy": 32.75}, {"name": "SW3 ZERO", "cx": 27.85, "cy": 39.9}],
+      "base": [3.9, 3.3, 1.4], "actuator": [3.0, 1.9, 0.9]
+    },
+    "swdPads": {"basis": "photo (underside)", "x": 63.4, "ys": [15.5, 18.06, 20.6, 23.16], "radius": 0.6, "labels": ["3V3", "GND", "SWDIO", "SWCLK"]}
+  },
+  "ics": {
+    "basis": "photo (bodies and lead rows on the rectified top photo and close-ups) + standard package outlines; markings read from close-ups are recorded, not modelled",
+    "units": [
+      {"ref": "U8", "package": "LQFP48", "cx": 42.0, "cy": 32.5, "marking": "ARTERY AT32F413CBT7 (MCU)"},
+      {"ref": "U5", "package": "SOP14", "cx": 61.2, "cy": 32.8, "axis": "y", "marking": "HC00"},
+      {"ref": "U7", "package": "SOP16", "cx": 61.2, "cy": 22.75, "axis": "y", "marking": "TC1508A (dual motor driver)"},
+      {"ref": "U3", "package": "SOP8", "cx": 67.95, "cy": 46.45, "axis": "y", "marking": "NS4168 (I2S amplifier)"},
+      {"ref": "U4", "package": "SOP8", "cx": 23.95, "cy": 35.15, "axis": "y"},
+      {"ref": "U10", "package": "SOP8", "cx": 18.45, "cy": 27.55, "axis": "x"},
+      {"ref": "U1", "package": "SOT23-6", "cx": 8.0, "cy": 45.2, "axis": "y"},
+      {"ref": "Q1", "package": "SOT23", "cx": 11.5, "cy": 46.3},
+      {"ref": "Q2", "package": "TSSOP8", "cx": 12.45, "cy": 4.3, "axis": "x"},
+      {"ref": "U6", "package": "QFN24", "cx": 18.1, "cy": 15.1},
+      {"ref": "U9", "package": "SOT223", "cx": 32.25, "cy": 12.0},
+      {"ref": "D7", "package": "SMA", "cx": 26.6, "cy": 18.45},
+      {"ref": "Y1", "package": "crystal3225", "cx": 42.6, "cy": 39.85, "marking": "8.000"}
+    ]
+  },
+  "inductors": {
+    "basis": {"position": "photo + scan", "height": "scan (L2 top 5.2 to 5.3, L1 top 4.2 to 4.3)"},
+    "units": [{"ref": "L2", "cx": 29.0, "cy": 25.8, "size": 9.6, "height": 3.6, "radius": 1.0, "marking": "150", "rot": 180, "capHeight": 2.2},
+              {"ref": "L1", "cx": 25.6, "cy": 13.3, "size": 5.4, "height": 2.6, "radius": 0.6, "marking": "2R2", "rot": -90, "capHeight": 1.3}]
+  },
+  "speakerBody": {
+    "basis": {"footprint": "scan (top at z 8.4 to 8.9 over x 65.3 to 85.9, y 12.9 to 43.0; corner radius from the profile)", "face": "photo (frame, surround and felt diaphragm)"},
+    "cx": 75.6, "cy": 27.95, "width": 20.6, "length": 30.1, "radius": 5.5, "height": 7.0,
+    "rimInset": 1.6, "rimDrop": 0.5, "feltInset": 3.4, "feltDrop": 1.0, "feltThickness": 0.1
+  },
+  "leads": {
+    "basis": "approximate: the speaker lead routing as photographed (J20 plug to the speaker on top; a twisted pair through the cable slot and along the underside to the notch)",
+    "strandRadius": 0.38, "twistRadius": 0.42, "twistPitch": 6.0,
+    "underside": [{"from": [69.8, 3.0], "to": [73.7, 54.6]}, {"from": [73.0, 3.0], "to": [76.5, 54.6]}],
+    "slot": [70.6, 2.6], "topRun": {"from": [70.55, 0.6], "to": [70.55, 4.6]},
+    "plugToSpeaker": [[74.4, 55.8, 2.9], [73.2, 56.7, 3.6], [70.9, 55.0, 5.0], [73.5, 50.0, 5.7], [78.6, 44.2, 5.6]]
+  },
+  "leds": {
+    "basis": "photo",
+    "size": [2.0, 1.25, 0.7],
+    "units": [{"ref": "D1", "cx": 12.35, "cy": 39.1, "rot": 0}, {"ref": "PWR", "cx": 9.1, "cy": 29.45, "rot": 0}, {"ref": "BAT1", "cx": 8.85, "cy": 24.15, "rot": 0},
+              {"ref": "BAT2", "cx": 8.85, "cy": 22.1, "rot": 0}, {"ref": "CHG", "cx": 32.9, "cy": 3.0, "rot": 90}, {"ref": "D6", "cx": 45.25, "cy": 43.3, "rot": 90}]
+  },
+  "passives": {
+    "basis": "photo (every body located on the rectified top photo at 0.5 mm grid; chip sizes snapped to 0603, 0805 and 1206; larger parts confirmed by scan height)",
+    "sizes": {"0603": [1.6, 0.8, 0.45, 0.3], "0805": [2.0, 1.25, 0.6, 0.4], "1206": [3.2, 1.6, 0.85, 0.5]},
+    "capHeights": {"0603": 0.8, "0805": 1.1, "1206": 1.2},
+    "units": [
+      ["R", "0603", 12.4, 37.3, 0], ["R", "0603", 12.4, 35.95, 0], ["R", "0603", 12.4, 34.45, 0],
+      ["R", "0603", 18.55, 37.0, 0], ["R", "0603", 18.55, 35.95, 0], ["R", "0603", 18.55, 34.9, 0], ["R", "0603", 18.55, 33.85, 0],
+      ["R", "0603", 14.45, 31.6, 0], ["C", "0805", 17.75, 31.6, 0], ["C", "0805", 14.0, 30.1, 0], ["C", "0805", 14.0, 28.5, 0],
+      ["R", "0603", 22.1, 31.1, 90], ["R", "0603", 22.1, 27.9, 90],
+      ["R", "0603", 29.3, 36.75, 0], ["R", "0603", 29.3, 35.6, 0], ["R", "0603", 29.3, 34.45, 0], ["R", "0603", 29.3, 33.3, 0],
+      ["C", "0603", 22.9, 39.8, 90], ["R", "0603", 24.1, 39.8, 90],
+      ["R", "0603", 30.81, 47.11, 90], ["R", "0603", 32.17, 47.1, 90], ["R", "0603", 33.66, 47.09, 90], ["R", "0603", 35.14, 47.08, 90],
+      ["C", "0603", 8.3, 49.05, 0], ["R", "0603", 8.3, 47.45, 0], ["R", "0603", 13.9, 48.6, 90], ["C", "0805", 13.95, 45.2, 90],
+      ["C", "1206", 12.0, 24.1, 90], ["C", "1206", 13.85, 24.1, 90],
+      ["C", "0805", 17.3, 20.8, 0], ["C", "1206", 20.95, 21.15, 0], ["C", "1206", 17.25, 19.0, 0], ["C", "1206", 20.95, 19.0, 0],
+      ["R", "0603", 13.25, 19.15, 0], ["C", "0603", 13.25, 18.05, 0], ["R", "0603", 13.25, 16.95, 0], ["R", "0603", 13.25, 15.85, 0], ["R", "0603", 13.25, 14.75, 0], ["R", "0603", 13.25, 13.65, 0],
+      ["C", "0805", 21.9, 14.8, 90],
+      ["R", "0603", 15.6, 10.3, 90], ["R", "0603", 16.85, 10.3, 90], ["R", "0603", 18.1, 10.3, 90], ["R", "0603", 19.35, 10.3, 90], ["C", "0603", 20.6, 10.3, 90], ["R", "0603", 21.85, 10.3, 90],
+      ["R", "0805", 12.0, 1.95, 0], ["C", "0805", 26.2, 9.1, 0], ["C", "0805", 30.4, 7.35, 0], ["C", "0805", 33.55, 7.35, 0],
+      ["R", "0603", 29.85, 1.6, 90], ["R", "0603", 31.4, 1.6, 90],
+      ["C", "1206", 32.45, 19.45, 0], ["C", "1206", 32.45, 17.35, 0],
+      ["C", "0603", 37.1, 27.55, 90], ["C", "0603", 46.3, 27.7, 90],
+      ["R", "0603", 38.6, 41.5, 0], ["R", "0603", 38.6, 40.05, 0], ["C", "0603", 38.6, 38.65, 0],
+      ["C", "0603", 41.75, 43.3, 90], ["C", "0603", 43.05, 43.3, 90],
+      ["R", "0603", 45.4, 39.9, 90], ["C", "0603", 48.75, 41.1, 0], ["R", "0603", 48.75, 39.6, 0],
+      ["R", "0603", 59.45, 39.8, 90], ["R", "0603", 61.0, 39.8, 90], ["C", "0603", 62.55, 39.8, 90],
+      ["R", "0603", 62.15, 48.3, 0], ["R", "0603", 62.15, 46.85, 0], ["R", "0603", 62.15, 45.4, 0], ["R", "0603", 62.15, 43.95, 0],
+      ["C", "0805", 67.75, 51.85, 0], ["C", "0603", 67.85, 50.1, 0],
+      ["C", "1206", 61.5, 16.6, 0], ["C", "0805", 61.0, 18.1, 0]
+    ]
+  },
+  "silkscreen": {
+    "basis": "photo (lettering read from the owner photographs; only legible markings are reproduced, micro-print reference designators of passives are omitted). A label with a sixth field is scaled to that photographed glyph box [x0, x1, y0, y1], because the board's typeface is narrower and taller than DejaVu",
+    "font": "DejaVu Sans Bold from the frozen M4 environment (matplotlib data), regular for the underside slogan lines",
+    "thicknessMm": 0.02, "strokeMm": 0.16,
+    "top": [
+      ["Robot Hat V4", 22.7, 44.5, 1.5, 180, [14.8, 31.2, 43.55, 45.6]],
+      ["01902V44", 10.3, 55.3, 0.75, 180],
+      ["LED", 12.4, 40.65, 0.8, 180], ["USR", 6.8, 39.05, 0.8, -90], ["RST", 6.8, 32.8, 0.8, -90], ["PWR", 9.0, 27.5, 0.8, 180],
+      ["OFF", 5.75, 26.6, 0.8, -90], ["ON", 5.7, 21.2, 0.8, -90], ["+ BATTERY -", 8.2, 13.5, 0.8, -90, [7.72, 8.7, 7.8, 19.0]],
+      ["CHARGE", 25.1, 7.1, 0.85, 180], ["CHG", 34.6, 2.75, 0.8, -90], ["ZERO", 27.8, 42.3, 0.8, 180],
+      ["SPEAKER", 69.4, 11.6, 0.8, 180, [65.85, 73.5, 11.2, 12.05]], ["MOTOR1", 77.3, 6.4, 0.85, 90, [76.85, 77.75, 2.85, 10.55]],
+      ["DIGITAL", 42.3, 26.6, 0.95, 180], ["ADC", 41.5, 0.95, 0.95, 180], ["PWM", 51.6, 0.95, 0.95, 180],
+      ["J20", 71.0, 52.75, 0.7, -90], ["J21", 4.2, 6.6, 0.7, 180]
+    ],
+    "boxes": [
+      [12.4, 40.65, 3.6, 1.3], [6.8, 39.05, 1.5, 3.1], [6.8, 32.8, 1.5, 3.4], [9.0, 27.5, 3.9, 1.5], [5.75, 26.6, 1.4, 3.4], [5.7, 21.2, 1.4, 2.7],
+      [8.2, 13.5, 1.6, 11.8], [25.1, 7.1, 7.2, 1.4], [34.6, 2.75, 1.4, 3.4], [27.8, 42.3, 4.9, 1.2], [69.4, 11.6, 9.0, 1.3],
+      [77.3, 6.4, 1.4, 9.2], [42.1, 26.6, 7.0, 1.5], [41.5, 0.95, 5.4, 1.5], [51.6, 0.95, 5.4, 1.5]
+    ],
+    "channelCells": {"x": 56.65, "width": 1.5, "leftX": 37.2, "capHeight": 0.85, "rot": -90},
+    "signalLabelRows": [14.05, 26.75],
+    "hatches": [[56.65, 14.05], [56.65, 26.75]],
+    "bottom": [
+      ["Robot Hat V4", 0.6, 38.4, 2.9, "bold", [0.68, 23.32, 35.82, 38.4]], ["SunFounder", 0.6, 41.5, 2.0, "regular", [0.6, 13.75, 39.12, 41.9]],
+      ["MAKE IT EASY", 0.6, 42.65, 0.65, "regular", [0.68, 8.3, 42.0, 42.75]], ["MAKE IT FUN", 0.6, 43.65, 0.65, "regular", [0.7, 8.62, 42.98, 43.65]],
+      ["www.sunfounder.com", 0.6, 45.25, 0.75, "regular", [0.8, 15.0, 44.52, 45.3]]
+    ],
+    "logos": {"fcc": [0.6, 49.2, 3.1], "ce": [6.3, 49.1, 2.9], "rcm": [14.15, 47.45, 4.6]}
+  },
+  "photoComparison": {
+    "basis": "registered orthographic renders of the Studio-tolerance meshes (hat_review_render.py --registered: 40 px/mm over x -8..96, y -14..70) against owner photographs rectified onto the board plane through the four datum bores; features are the dark or saturated pixels inside the board; edge distances in mm. Overlays and rectified photographs stay local and are deleted after use",
+    "top": {"frame": "PIC_0001", "silhouetteIoU": 0.623, "modelToPhotoEdgeMm": {"median": 0.0, "p90": 0.44}, "photoToModelEdgeMm": {"median": 0.165, "p90": 1.463}},
+    "underside": {"frame": "IMG_0097", "silhouetteIoU": 0.55, "modelToPhotoEdgeMm": {"median": 0.025, "p90": 0.489}, "photoToModelEdgeMm": {"median": 1.039, "p90": 18.527}},
+    "reading": "Every modelled edge lies on a photographed feature (p90 under 0.5 mm on both faces). The photo-only edges on top are the unmodelled micro-print reference designators and via fields. On the underside 38 % of photo edges sit more than 3 mm from any model feature: they are the dark cores of the through-hole joints, the bore rims and the USB-C tab holes, which the model has at those positions (joint lattices 0.07 to 0.14 mm) but renders as bright tin, so the feature mask finds nothing there"
+  },
+  "preserve": ["Four adopted mounting bores", "Board plane, thickness and local frame", "Checked M5/M7 artifacts", "All closure poses and approach recipes", "Zero HAT's existing 180 degree relation to the Pi 5 HAT pose"],
+  "limitations": [
+    "No caliper measurements yet: every dimension is datum, scan, photo, standard or approximate as labelled; measuredByCaliper is empty",
+    "The display GPIO socket and pad field follow the photographs (pads centred at y 52.5); the instructional HAT's schematic socket (y 47.6 to 52.6, 10 mm deep) is unchanged and remains what assembly checks use",
+    "The display overlap rows with the Pi 5 and Zero 2 W are the photographed socket engaging those boards' solid 8 mm GPIO header proxies (the real pins enter the socket about 6 mm); the M2.5 x 6 screw contacts with the board around the bores are the same 40 rows (0.03 to 2.6 mm3) the outline display recorded",
+    "IC markings, passive reference designators, via fields and the copper traces seen through the mask are not modelled; package outlines are standard sizes placed on the photographed bodies",
+    "The speaker lead routing is approximate and shows one photographed state of a flexible cable",
+    "Overlap checks compare the displayed HAT with other instructional artifacts, not pairs of detailed display models",
+    "No physical fit, electrical, installation sweep, engineering or M7 acceptance claim"
+  ],
+  "engineeringAdmission": false,
+  "runtimeAdmission": false,
+  "privateSourcePixelsCopied": false
+}

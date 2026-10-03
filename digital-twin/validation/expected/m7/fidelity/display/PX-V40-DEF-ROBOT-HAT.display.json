@@ -3,14 +3,14 @@
  "definitionId": "PX-V40-DEF-ROBOT-HAT",
  "kind": "display-detail",
  "track": "presentation-only",
- "source": "Locked V40 S04 source-supported approximate PCB outline; 85 x 56 mm visual envelope, not measured stock. Top features remain schematic.",
- "assemblyEnvelope": "Original M5/M7 instructional artifacts and all poses unchanged; assembly checks do not use this display outline",
+ "source": "Robot HAT V4 reconstructed from the owner's 609 photographs and two Object Capture scans, registered on the adopted bores; every dimension labelled datum, scan, photo, standard or approximate in the display review. Not measured stock.",
+ "assemblyEnvelope": "Original M5/M7 instructional artifacts and all poses unchanged; assembly checks do not use this display model",
  "artifact": "PX-V40-DEF-ROBOT-HAT.display.brep",
- "artifactSha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4",
+ "artifactSha256": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda",
  "sourceBindings": [
   {
-   "path": "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json",
-   "sha256": "0e963834f6f6f7f8845ee88676f25236989cda4cdc3f721e34245adb80aec96e"
+   "path": "digital-twin/assemblies/v40/presentation/instructional/hat-detail-display-review-02.json",
+   "sha256": "06b2c9a62516575bb5b63c05e3b5018f6efee15a8b123c4f416d6239cd633898"
   },
   {
    "path": "digital-twin/assemblies/v40/presentation/instructional/step04-hat-review-04.json",
@@ -18,77 +18,188 @@
   },
   {
    "path": "digital-twin/cad/twin_cad/fidelity/hat.py",
-   "sha256": "d96e1daf54db46df4c9cd42ae8250d1bbc8a730934bb81dad1a4e6ceb44b6bbd"
+   "sha256": "89faee6de152772e3b8a462f51a1af4ab210491d665ac00d939fbebfb15e7469"
+  },
+  {
+   "path": "digital-twin/cad/twin_cad/fidelity/hat_board.py",
+   "sha256": "d2c7df4c406ef9b47846af8b168747beb28f0903976345ef7177684e2fbb6f2c"
   },
   {
    "path": "digital-twin/cad/twin_cad/fidelity/pi5.py",
    "sha256": "f8661d2616c5d806694d373c53d58fe5a6881ee93742c45c33a73a0ebf019c62"
   },
   {
-   "path": "digital-twin/generated/studio/chain/s2pro-01/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
+   "path": "digital-twin/generated/studio/chain/hat35-01/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
    "sha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de"
   }
  ],
+ "fonts": {
+  "source": "matplotlib DejaVu Sans in the frozen M4 environment",
+  "sha256": {
+   "bold": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+   "regular": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22"
+  }
+ },
  "solids": [
   {
    "index": 0,
-   "name": "PCB outline (approximate)",
-   "materialId": "pcb-blue"
+   "name": "PCB core (FR4)",
+   "materialId": "fr4-edge"
   },
   {
    "index": 1,
-   "name": "Schematic speaker",
-   "materialId": "speaker-dark"
+   "name": "Top solder mask",
+   "materialId": "pcb-white"
   },
   {
    "index": 2,
-   "name": "Schematic connector 1",
-   "materialId": "connector-cream"
+   "name": "Underside solder mask",
+   "materialId": "pcb-white"
   },
   {
    "index": 3,
-   "name": "Schematic connector 2",
-   "materialId": "connector-cream"
+   "name": "Silkscreen and part markings",
+   "materialId": "silkscreen-black"
   },
   {
    "index": 4,
-   "name": "Schematic connector 3",
-   "materialId": "connector-cream"
+   "name": "Solder joints, pads, SMD terminals and leads",
+   "materialId": "solder-tin"
   },
   {
    "index": 5,
-   "name": "Schematic connector 4",
-   "materialId": "connector-cream"
+   "name": "Header pins (individual, gold finish)",
+   "materialId": "contact-gold"
   },
   {
    "index": 6,
-   "name": "Schematic connector 5",
-   "materialId": "connector-cream"
+   "name": "5V header housings",
+   "materialId": "header-red"
   },
   {
    "index": 7,
-   "name": "Schematic connector 6",
-   "materialId": "connector-cream"
+   "name": "Signal header housings",
+   "materialId": "header-yellow"
   },
   {
    "index": 8,
-   "name": "Schematic connector 7",
-   "materialId": "connector-cream"
+   "name": "White connector housings, switch bases and LED bodies",
+   "materialId": "connector-white"
   },
   {
    "index": 9,
-   "name": "Schematic connector 8",
-   "materialId": "connector-cream"
+   "name": "Ceramic capacitor bodies",
+   "materialId": "mlcc-tan"
   },
   {
    "index": 10,
-   "name": "Schematic connector 9",
-   "materialId": "connector-cream"
+   "name": "IC packages, resistor bodies and black housings",
+   "materialId": "header-black"
   },
   {
    "index": 11,
-   "name": "Underside socket (schematic)",
+   "name": "GPIO socket, 2 x 20 female (underside)",
    "materialId": "header-black"
+  },
+  {
+   "index": 12,
+   "name": "I2C connector, JST SH 4-pin",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 13,
+   "name": "Speaker connector J20",
+   "materialId": "connector-cream"
+  },
+  {
+   "index": 14,
+   "name": "USB-C charging receptacle",
+   "materialId": "shell-dark"
+  },
+  {
+   "index": 15,
+   "name": "Power switch (slide, ON shown)",
+   "materialId": "port-nickel"
+  },
+  {
+   "index": 16,
+   "name": "SW1 USR button actuator",
+   "materialId": "tact-tan"
+  },
+  {
+   "index": 17,
+   "name": "SW2 RST button actuator",
+   "materialId": "tact-tan"
+  },
+  {
+   "index": 18,
+   "name": "SW3 ZERO button actuator",
+   "materialId": "tact-tan"
+  },
+  {
+   "index": 19,
+   "name": "Crystal Y1, 8 MHz",
+   "materialId": "port-nickel"
+  },
+  {
+   "index": 20,
+   "name": "Inductor L2 (150)",
+   "materialId": "ferrite-grey"
+  },
+  {
+   "index": 21,
+   "name": "Inductor L1 (2R2)",
+   "materialId": "ferrite-grey"
+  },
+  {
+   "index": 22,
+   "name": "Speaker body",
+   "materialId": "speaker-dark"
+  },
+  {
+   "index": 23,
+   "name": "Speaker diaphragm (felt)",
+   "materialId": "speaker-felt"
+  },
+  {
+   "index": 24,
+   "name": "Speaker lead, underside run 1 (red)",
+   "materialId": "wire-red"
+  },
+  {
+   "index": 25,
+   "name": "Speaker lead, underside run 1 (black)",
+   "materialId": "wire-black"
+  },
+  {
+   "index": 26,
+   "name": "Speaker lead, underside run 2 (red)",
+   "materialId": "wire-red"
+  },
+  {
+   "index": 27,
+   "name": "Speaker lead, underside run 2 (black)",
+   "materialId": "wire-black"
+  },
+  {
+   "index": 28,
+   "name": "Speaker lead at the cable slot (red)",
+   "materialId": "wire-red"
+  },
+  {
+   "index": 29,
+   "name": "Speaker lead at the cable slot (black)",
+   "materialId": "wire-black"
+  },
+  {
+   "index": 30,
+   "name": "Speaker lead, plug to speaker (black)",
+   "materialId": "wire-black"
+  },
+  {
+   "index": 31,
+   "name": "Speaker lead, plug to speaker (red)",
+   "materialId": "wire-red"
   }
  ],
  "relation": {
@@ -98,11 +209,11 @@
    "sha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a"
   },
   "pcbBoxMm": [
-   0,
-   0,
-   0,
-   85,
-   56,
+   -0.0,
+   0.0,
+   0.0,
+   85.0,
+   56.0,
    1.6
   ],
   "mountingHoles": {
@@ -125,7 +236,6 @@
     ]
    ],
    "instructional": [],
-   "maxCentreDeviationMm": null,
    "adoptedReference": [
     [
      3.5,
@@ -144,7 +254,23 @@
      52.5
     ]
    ],
-   "method": "Preserve adopted HAT bores; original checked M5 proxy has no bores"
+   "maxCentreDeviationMm": 0.0,
+   "method": "vertical cylinder features measured on the display PCB core and on the adopted HAT; the original checked M5 proxy has no bores"
+  },
+  "gpio": {
+   "padCentreMm": [
+    32.5,
+    52.5
+   ],
+   "socketBoxMm": [
+    7.1,
+    49.96,
+    -15.5,
+    57.9,
+    55.04,
+    0
+   ],
+   "note": "display pads and socket follow the photographs; the instructional schematic socket is unchanged"
   },
   "adoptedPredecessor": {
    "path": "chain:engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
@@ -152,15 +278,18 @@
   }
  },
  "limitations": [
-  "Actual HAT revision and dimensional tolerances remain unknown",
-  "Top components retain the schematic proxy layout; this corrects only the PCB outline",
+  "No caliper measurements yet: every dimension is datum, scan, photo, standard or approximate as labelled; measuredByCaliper is empty",
+  "The display GPIO socket and pad field follow the photographs (pads centred at y 52.5); the instructional HAT's schematic socket (y 47.6 to 52.6, 10 mm deep) is unchanged and remains what assembly checks use",
+  "The display overlap rows with the Pi 5 and Zero 2 W are the photographed socket engaging those boards' solid 8 mm GPIO header proxies (the real pins enter the socket about 6 mm); the M2.5 x 6 screw contacts with the board around the bores are the same 40 rows (0.03 to 2.6 mm3) the outline display recorded",
+  "IC markings, passive reference designators, via fields and the copper traces seen through the mask are not modelled; package outlines are standard sizes placed on the photographed bodies",
+  "The speaker lead routing is approximate and shows one photographed state of a flexible cable",
   "Overlap checks compare the displayed HAT with other instructional artifacts, not pairs of detailed display models",
   "No physical fit, electrical, installation sweep, engineering or M7 acceptance claim"
  ],
  "overlaps": {
-  "chain": "s2pro-01",
-  "method": "Boolean common of displayed HAT with other instructional artifacts in exact closure states; detailed-display pairs are not measured",
-  "displayArtifactSha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4",
+  "chain": "hat35-01",
+  "method": "Boolean common of each displayed HAT solid with other instructional artifacts in exact closure states, summed per part; detailed-display pairs are not measured",
+  "displayArtifactSha256": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda",
   "instructionalArtifactSha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a",
   "partArtifacts": {
    "PX-V40-DEF-BATTERY": "f685c1a07cf87d4fe7da7703366fd939681a69e654209aeaff7355f019485959",
@@ -239,280 +368,580 @@
     "step": 4,
     "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 4,
     "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 4,
     "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 4,
     "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 4,
+    "closureRfc8785Sha256": "b9b0eaaf2e6dafce3f06bdcf607cddc6b0b7198968e0ab2ad257fb7e400c2c42",
+    "instanceId": "PX-V40-INS-ZERO2W-001",
+    "volumeMm3": 524.023,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 5,
     "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 5,
     "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 5,
     "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 5,
     "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 5,
+    "closureRfc8785Sha256": "6983c414e1c6d03614dfa0a7d32d34d9c2e5b0ae9bb9e785a723b8341e5e6fab",
+    "instanceId": "PX-V40-INS-ZERO2W-001",
+    "volumeMm3": 524.023,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 6,
     "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 6,
     "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 6,
     "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 6,
     "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 6,
+    "closureRfc8785Sha256": "1d8d9dcec5f0cf6fa6f45261e73bbe79e188154c1ab211f0fd2adc581e846d0d",
+    "instanceId": "PX-V40-INS-ZERO2W-001",
+    "volumeMm3": 524.023,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 7,
     "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 7,
     "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 7,
     "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 7,
     "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 7,
+    "closureRfc8785Sha256": "c5cdc979c8b0aa6fa68317a5c32b2340d1546480dddcf0f4556a9fac3eac9536",
+    "instanceId": "PX-V40-INS-ZERO2W-001",
+    "volumeMm3": 524.023,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 8,
     "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 8,
     "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 8,
     "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi-zero-2-w",
     "step": 8,
     "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi-zero-2-w",
+    "step": 8,
+    "closureRfc8785Sha256": "4054d261fc42fbbe50b8248cb29aafd4855415eb20dadf33b18754b08c277900",
+    "instanceId": "PX-V40-INS-ZERO2W-001",
+    "volumeMm3": 524.023,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 4,
     "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 4,
     "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 4,
     "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 4,
     "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi5",
+    "step": 4,
+    "closureRfc8785Sha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+    "instanceId": "PX-V40-INS-PI5-001",
+    "volumeMm3": 348.106,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 5,
     "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 5,
     "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 5,
     "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 5,
     "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi5",
+    "step": 5,
+    "closureRfc8785Sha256": "e15023552021bc854778777672e07ac7814ef4f2636a7023b1d8f986c9f5ee86",
+    "instanceId": "PX-V40-INS-PI5-001",
+    "volumeMm3": 348.106,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 6,
     "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 6,
     "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 6,
     "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 6,
     "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi5",
+    "step": 6,
+    "closureRfc8785Sha256": "47d267b20ba5199a5f2606bd368451afb87d1e74d0f02a988935b4c1bd3523f1",
+    "instanceId": "PX-V40-INS-PI5-001",
+    "volumeMm3": 348.106,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 7,
     "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 7,
     "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 7,
     "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 7,
     "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi5",
+    "step": 7,
+    "closureRfc8785Sha256": "13fe24c86798d88f57e54e231a613e1817e0309f066c3c20839db64447ea194f",
+    "instanceId": "PX-V40-INS-PI5-001",
+    "volumeMm3": 348.106,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 8,
     "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
     "instanceId": "PX-V40-INS-M25X6-SCREW-005",
-    "volumeMm3": 0.0264
+    "volumeMm3": 0.0264,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 8,
     "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
     "instanceId": "PX-V40-INS-M25X6-SCREW-006",
-    "volumeMm3": 1.0447
+    "volumeMm3": 1.0447,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 8,
     "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
     "instanceId": "PX-V40-INS-M25X6-SCREW-007",
-    "volumeMm3": 1.5981
+    "volumeMm3": 1.5981,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
    },
    {
     "variantId": "rpi5",
     "step": 8,
     "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
     "instanceId": "PX-V40-INS-M25X6-SCREW-008",
-    "volumeMm3": 2.5844
+    "volumeMm3": 2.5844,
+    "displaySolids": [
+     "PCB core (FR4)",
+     "Top solder mask",
+     "Underside solder mask"
+    ]
+   },
+   {
+    "variantId": "rpi5",
+    "step": 8,
+    "closureRfc8785Sha256": "12da0eb1595a683f23f1a038812bb6f06f00452879e6df04740bdbe114d75e67",
+    "instanceId": "PX-V40-INS-PI5-001",
+    "volumeMm3": 348.106,
+    "displaySolids": [
+     "GPIO socket, 2 x 20 female (underside)"
+    ]
    }
   ]
  }
