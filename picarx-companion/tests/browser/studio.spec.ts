@@ -411,7 +411,7 @@ test('the companion pages remain reachable from the Studio', async ({ page }) =>
 });
 
 // ==== Studio 2: the complete tray, every step on both boards, review states, inspection and the manual panel.
-const EVIDENCE = '../docs/implementation/evidence/studio-2';
+const EVIDENCE = '../docs/implementation/evidence/studio-2-pro-remediation';
 const placedPositions = (page: Page, ids: string[]) => page.evaluate((list) => Object.fromEntries(list.map((id) => [id, (window as any).__studio.instance(id).position])), ids);
 const styleOf = (page: Page, id: string) => page.evaluate((x) => (window as any).__studio.style(x), id);
 
@@ -464,6 +464,7 @@ for (const variant of ['rpi5', 'rpi-zero-2-w'] as const) {
 }
 
 test('switching boards on every step keeps the step in both directions; a common tile keeps its selection', async ({ page }) => {
+  test.setTimeout(60000); // twenty board/step transitions retain all original assertions
   const errors = errorsOf(page);
   await open(page, '#/studio/rpi5/0');
   const tools = page.locator('.studio-group', { hasText: 'Tools' });
@@ -588,4 +589,149 @@ test('a click in the view selects the part under the cursor and keeps the guided
   await page.mouse.move(700, 420, { steps: 8 });
   await page.mouse.up();
   await expect.poll(() => diag(page, (d) => d.state().cameraMode)).toBe('manual');
+});
+
+for (const step of [2, 4]) test(`S${step}: a stationary selection across active playback frames retains guided camera; manipulation yields`, async ({ page }) => {
+  await open(page, `#/studio/rpi5/${step}`);
+  await seekTo(page, await diag(page, (d) => d.duration));
+  await page.waitForTimeout(1100);
+  await page.getByRole('button', { name: 'Replay from the start' }).click();
+  const at = await page.evaluate(async () => {
+    const { Raycaster, Vector2, Vector3 } = await import('/node_modules/.vite/deps/three.js' as string);
+    const vp = (window as any).__studio.viewport(), id = 'PX-V40-INS-PLATE-A-001', root = vp.board().roots.get(id);
+    vp.scene.updateMatrixWorld(true); vp.camera.updateMatrixWorld();
+    const rect = vp.gl.domElement.getBoundingClientRect(), ray = new Raycaster(), point = new Vector3(), vertex = new Vector3();
+    const exposed = (x: number, y: number) => {
+      ray.setFromCamera(new Vector2((x - rect.left) / rect.width * 2 - 1, 1 - (y - rect.top) / rect.height * 2), vp.camera);
+      const hit = ray.intersectObjects([...vp.board().roots.values()], true)[0];
+      let o = hit?.object; while (o && o !== root) o = o.parent;
+      return o === root;
+    };
+    const meshes: any[] = []; root.traverse((o: any) => { if (o.isMesh && !o.userData.pickTarget) meshes.push(o); });
+    for (const mesh of meshes) {
+      const pos = mesh.geometry.attributes.position, indices = mesh.geometry.index;
+      for (let i = 0; i < (indices?.count ?? pos.count); i += 3) {
+        point.set(0, 0, 0);
+        for (let k = 0; k < 3; k++) point.add(vertex.fromBufferAttribute(pos, indices ? indices.getX(i + k) : i + k));
+        point.multiplyScalar(1 / 3).applyMatrix4(mesh.matrixWorld).project(vp.camera);
+        const x = rect.left + (point.x + 1) * rect.width / 2, y = rect.top + (1 - point.y) * rect.height / 2;
+        if (x < rect.left + 120 || x > rect.right - 380 || y < rect.top + 100 || y > rect.bottom - 100) continue;
+        // An interior point in the active view, clear of neighbouring bodies; a final-pose edge point can cross
+        // the board's silhouette when replay changes the guided frame before the stationary release.
+        if ([-8, 0, 8].every((dx) => [-8, 0, 8].every((dy) => exposed(x + dx, y + dy)))) return [x, y];
+      }
+    }
+    throw Error('No exposed Plate A triangle found for stationary selection');
+  });
+  await page.mouse.move(at[0], at[1]); await page.mouse.down();
+  const before = await diag(page, (d) => d.state().t);
+  await page.waitForTimeout(250);
+  expect(await diag(page, (d) => d.state().t)).toBeGreaterThan(before);
+  expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+  await page.mouse.up();
+  await expect.poll(() => diag(page, (d) => d.state().selection)).toBe('PX-V40-INS-PLATE-A-001');
+  expect(await diag(page, (d) => d.state().cameraMode)).toBe('guided');
+  await page.mouse.down(); await page.mouse.move(at[0] + 80, at[1] + 25, { steps: 8 }); await page.mouse.up();
+  await expect.poll(() => diag(page, (d) => d.state().cameraMode)).toBe('manual');
+});
+
+test('manual fetch failure offers explicit retry, rejects wrong retry bytes, and then renders the locked PDF', async ({ page }) => {
+  // React's development remount can make more than one initial request, especially in WebKit.
+  // Hold each fault until its explicit retry so a remount cannot consume the next scenario.
+  let phase: 'unavailable' | 'wrong-bytes' | 'success' = 'unavailable';
+  const attempts = { unavailable: 0, 'wrong-bytes': 0, success: 0 };
+  await page.route('**/content/pdf/picar-x-assembly.pdf', (route) => {
+    attempts[phase]++;
+    if (phase === 'unavailable') return route.fulfill({ status: 503, body: 'controlled failure' });
+    if (phase === 'wrong-bytes') return route.fulfill({ status: 200, body: 'wrong locked bytes' });
+    return route.continue();
+  });
+  await open(page, '#/studio/rpi5/1');
+  const alert = page.locator('.studio-manual [role="alert"]');
+  await expect(alert).toBeVisible(); expect(attempts.unavailable).toBeGreaterThan(0);
+  expect(attempts['wrong-bytes']).toBe(0); expect(attempts.success).toBe(0);
+  phase = 'wrong-bytes';
+  await alert.getByRole('button', { name: 'Retry' }).click();
+  await expect.poll(() => attempts['wrong-bytes']).toBeGreaterThan(0);
+  await expect(alert).toBeVisible(); expect(attempts.success).toBe(0);
+  await expect(page.locator('.studio-drawer .studio-manual-canvas')).not.toHaveAttribute('data-ready', 'true');
+  phase = 'success';
+  await alert.getByRole('button', { name: 'Retry' }).click();
+  await expect(page.locator('.studio-drawer .studio-manual-canvas')).toHaveAttribute('data-ready', 'true', { timeout: 15000 });
+  expect(attempts.success).toBeGreaterThan(0); await expect(alert).toHaveCount(0);
+});
+
+test('manual render errors surface; retry and replacement cancel safely and reset the prior error', async ({ page }) => {
+  await page.route('**/src/lib/v40-pdf.ts', (route) => route.fulfill({ contentType: 'application/javascript', body: `
+    window.__manualFault = 'failure'; window.__manualPending = 0; window.__manualCancelled = 0;
+    export const loadV40Pdf = async () => ({ getPage: async () => ({
+      getViewport: ({scale}) => ({ width: 600 * scale, height: 800 * scale }),
+      render: () => { let reject;
+        const promise = window.__manualFault === 'failure' ? Promise.reject(Error('controlled genuine render failure')) : window.__manualFault === 'pending' ? new Promise((_, r) => { reject = r; window.__manualPending++; }) : Promise.resolve();
+        return { promise, cancel: () => { if (reject) { window.__manualCancelled++; const e = Error('cancel'); e.name = 'RenderingCancelledException'; reject(e); } } };
+      }
+    }) });
+    export { V40_PDF_URL, V40_PDF_SHA256 } from '/src/lib/v40-pdf-identity.ts';
+    export const forgetV40Pdf = () => {};
+  ` }));
+  await open(page, '#/studio/rpi5/1');
+  await expect(page.locator('.studio-manual [role="alert"]')).toBeVisible();
+  await page.evaluate(() => { (window as any).__manualFault = 'pending'; });
+  await page.getByRole('button', { name: 'Retry' }).click();
+  await expect(page.locator('.studio-manual [role="alert"]')).toHaveCount(0);
+  await page.waitForFunction(() => (window as any).__manualPending > 0);
+  await page.evaluate(() => { (window as any).__manualFault = 'success'; });
+  await page.locator('.studio-rail a', { hasText: '2' }).click();
+  await expect(page.locator('.studio-drawer .studio-manual-canvas')).toHaveAttribute('data-ready', 'true');
+  expect(await page.evaluate(() => (window as any).__manualCancelled)).toBeGreaterThan(0);
+  await expect(page.locator('.studio-manual [role="alert"]')).toHaveCount(0);
+});
+
+test('manual open to tray navigation closes invisible modal state before Escape and never resurrects it', async ({ page }) => {
+  await open(page, '#/studio/rpi5/1');
+  await page.getByRole('button', { name: /Plate A/ }).first().click();
+  await page.getByRole('button', { name: 'Enlarge' }).click();
+  await expect(page.locator('.studio-manual-overlay')).toBeVisible();
+  await page.evaluate(async () => {
+    const raf = window.requestAnimationFrame.bind(window), pending: FrameRequestCallback[] = [];
+    window.requestAnimationFrame = (callback) => { pending.push(callback); return -pending.length; };
+    (window as any).__resumeStudioFrames = () => { window.requestAnimationFrame = raf; pending.forEach((callback) => raf(callback)); };
+    // Drain the frame already queued before the override; the next 3D frame is now withheld.
+    await new Promise<void>((done) => raf(() => raf(() => done())));
+  });
+  await page.keyboard.press('[');
+  await expect(page.locator('.studio')).toHaveAttribute('data-step', '0');
+  expect(await diag(page, (d) => d.state().key)).toBe('rpi5/1'); // no frame-loop enterStep has run
+  expect(await diag(page, (d) => d.state().manualOpen)).toBe(false);
+  await page.keyboard.press('Escape');
+  expect(await diag(page, (d) => d.state().selection)).toBeNull();
+  await page.keyboard.press(']');
+  await expect(page.locator('.studio-manual-overlay')).toHaveCount(0);
+  await page.evaluate(() => (window as any).__resumeStudioFrames());
+});
+
+test('combined ghost/explode/clip preserves poses, clipping excludes picking, and reset restores canonical presentation', async ({ page }) => {
+  await open(page, '#/studio/rpi5/4'); await seekTo(page, await diag(page, (d) => d.duration));
+  const ids = Object.keys(manifest.variants.rpi5.steps[3].placements), before = await placedPositions(page, ids);
+  for (const pair of [['g', 'e'], ['g', 'c'], ['e', 'c']]) {
+    for (const key of pair) await page.keyboard.press(key);
+    if (pair.includes('e')) await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().explode)).toBe(1);
+    if (pair.includes('c')) {
+      await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().clip !== null)).toBe(true);
+      const hits = await page.evaluate(async () => {
+        const { Raycaster, Vector3 } = await import('/node_modules/.vite/deps/three.js' as string);
+        const vp = (window as any).__studio.viewport(), root = vp.board().roots.get('PX-V40-INS-ROBOT-HAT-001');
+        root.updateWorldMatrix(true, true);
+        const p = root.position.clone(); const ray = new Raycaster(new Vector3(p.x + .02, p.y + .2, p.z - .02), new Vector3(0, -1, 0));
+        return ray.intersectObject(root, true).length;
+      });
+      expect(hits).toBe(0);
+      await page.getByRole('button', { name: /Robot HAT/ }).first().click();
+      expect(await diag(page, (d) => d.state().selection)).toBe('PX-V40-INS-ROBOT-HAT-001');
+    }
+    await page.getByRole('button', { name: 'Reset inspection' }).click();
+    await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().explode)).toBe(0);
+    await expect.poll(() => page.evaluate(() => (window as any).__studio.inspection().clip)).toBeNull();
+    expect(await placedPositions(page, ids)).toEqual(before);
+  }
 });

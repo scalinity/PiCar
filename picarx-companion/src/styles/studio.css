@@ -119,8 +119,8 @@
 .studio-rule input[type="range"]:disabled { cursor: default; opacity: 0.5; }
 .studio-time { min-width: 86px; text-align: right; color: var(--s-text-3); font-variant-numeric: tabular-nums; }
 
-/* Rail: review steps carry a lavender mark, never the look of an unavailable step. */
-.studio-rail a[data-mode="review"]::after { content: ""; position: absolute; bottom: 4px; width: 4px; height: 4px; border-radius: 50%; background: var(--s-lavender); }
+/* Review steps carry a corner flag, leaving the number centred and the button's padding unchanged. */
+.studio-rail a[data-mode="review"]::after { content: ""; position: absolute; top: 4px; right: 4px; width: 6px; height: 6px; clip-path: polygon(0 0, 100% 0, 100% 100%); background: var(--s-lavender); }
 .studio-rail a[data-mode="review"][aria-current="step"] { color: var(--s-text); background: var(--s-lavender-wash); border-color: var(--s-lavender); }
 .studio-transport-note { margin: 0; height: 34px; display: flex; align-items: center; gap: 8px; color: var(--s-lavender); }
 .studio-transport-note::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--s-lavender); }

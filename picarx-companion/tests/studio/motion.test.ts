@@ -81,7 +81,7 @@ describe.each(['rpi5', 'rpi-zero-2-w'] as const)('%s, all steps', (variant) => {
     expect(forward[0]).toBe(forward[6]);
     expect(forward[2]).toBe(forward[7]);
   });
-  it('S03 and S06 move nothing: the ribbon and the tape have no solid, and the battery stays in the tray until S07', () => {
+  it('S03 and S06 are Still Preview: ribbon and tape are tiles; S07 has no battery timeline and S08 contains its pose', () => {
     expect(timelineFor(v, 3, timing).duration).toBe(0);
     expect(timelineFor(v, 6, timing).duration).toBe(0);
     expect(statesAt(v, timelineFor(v, 6, timing), 0).get('PX-V40-INS-BATTERY-001')!.phase).toBe('tray');

@@ -67,9 +67,9 @@ export function explodeOffsets(manifest: StudioManifest, entry: StepEntry | unde
   return out;
 }
 
-// How much of its explosion offset a part carries right now: all of it once placed, none while it is still on its way
-// from the tray, and in step with its approach in between, so an exploded view stays continuous through playback.
-export const explodeWeight = (s: InstanceState): number => (s.phase === 'installed' || s.phase === 'candidate' ? 1 : s.phase === 'approach' ? s.progress ?? 0 : 0);
+// Installed parts carry the full offset. A recipe's approach, or a recipe-free workpiece's terminal bring-in,
+// supplies continuous presentation progress; ordinary bring-in carries zero.
+export const explodeWeight = (s: InstanceState): number => (s.phase === 'installed' || s.phase === 'candidate' ? 1 : s.phase === 'approach' || s.phase === 'bring-in' ? s.progress ?? 0 : 0);
 
 const PLATE_A = 'PX-V40-DEF-PLATE-A';
 

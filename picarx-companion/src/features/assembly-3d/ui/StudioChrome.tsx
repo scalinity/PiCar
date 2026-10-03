@@ -213,7 +213,7 @@ function PartRows({ pack, list }: { pack: LoadedPack; list: Row[] }) {
           </button>
           {r.ids.length > 1 && (
             <span className="studio-chips" role="group" aria-label={`Each ${name(pack, r.ids[0])}`}>
-              {r.ids.map((id, i) => <button key={id} type="button" aria-pressed={selection === id} title={id} onClick={() => select(id)}>{i + 1}</button>)}
+              {r.ids.map((id) => <button key={id} type="button" aria-pressed={selection === id} title={id} onClick={() => select(id)}>{Number(id.slice(id.lastIndexOf('-') + 1))}</button>)}
             </span>
           )}
         </li>

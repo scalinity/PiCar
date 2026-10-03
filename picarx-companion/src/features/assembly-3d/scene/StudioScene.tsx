@@ -58,7 +58,7 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
   const invalidate = useThree((s) => s.invalidate), setDpr = useThree((s) => s.setDpr);
   const memory = useMemo(() => ({
     cameraRequest: -1, focusRequest: 0, frameRequest: 0, conflict: null as number | null, tween: null as Tween, controls: null as OrbitControls | null, settleFrames: 0,
-    requestedNext: false, interacting: false, diagnosing: false, // what makes a frame interval active (perf.ts)
+    programmaticCamera: false, requestedNext: false, interacting: false, diagnosing: false, // what makes a frame interval active (perf.ts)
     adopted: null as Board | null, boardOwner: null as Owner | null, closing: undefined as ReturnType<typeof setTimeout> | undefined,
     openingTarget: guided.targetM, // the view the viewport opens on; afterwards only explicit requests move the target
     styleKey: '', explode: 0, clip: null as { heightM: number; trayGuardX: number } | null, viewKey: '', insets: [0, 0, 0, 0] as Insets,
@@ -152,7 +152,8 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
       // lands as part of the gesture and not on some later, unrelated redraw (a resize, a pixel-ratio change).
       const settling = memory.settleFrames > 0;
       if (settling) memory.settleFrames--;
-      if (controls.update() || memory.tween || settling) again = true;
+      memory.programmaticCamera = true;
+      try { if (controls.update() || memory.tween || settling) again = true; } finally { memory.programmaticCamera = false; }
     }
 
     // Framing area: the panels (header, tools, dock, open instructions) cover the canvas edges, so the camera's frame is
@@ -206,17 +207,20 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
     controls.minDistance = 0.05;
     controls.maxDistance = 3;
     controls.target.set(...memory.openingTarget);
-    // A press yields the guided view once it moves the camera, or at once if it stops a guided move; a click that only
+    // A controls change caused by manipulation yields and interrupts a guided move; a click that only
     // selects a part leaves the guided view in place.
-    const onStart = () => { if (memory.tween) { memory.tween = null; yieldCamera(); } memory.interacting = true; };
-    const onChange = () => { if (memory.interacting) yieldCamera(); invalidate(); };
+    const onStart = () => { memory.interacting = true; };
+    const onChange = () => {
+      if (memory.interacting && !memory.programmaticCamera) { memory.tween = null; yieldCamera(); }
+      invalidate();
+    };
     // Damping decays by (1 - dampingFactor) per update: 120 updates leave 0.88^120 (about 2e-7) of the release motion.
     const onEnd = () => { memory.interacting = false; memory.settleFrames = 120; invalidate(); };
     controls.addEventListener('start', onStart);
     controls.addEventListener('change', onChange);
     controls.addEventListener('end', onEnd);
     // The demand frame loop draws only when asked: any presentation change (scrub, step, selection) asks once.
-    const unsubscribe = subscribeStudio(onChange);
+    const unsubscribe = subscribeStudio(invalidate);
     viewport = {
       controls, camera, scene, gl, invalidate, setDpr,
       board: () => memory.adopted,

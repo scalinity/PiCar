@@ -57,7 +57,7 @@ export function enterStep(key: string, duration: number, members: ReadonlySet<st
   const still = reducedMotion() || duration === 0;
   const selection = state.selection !== null && members.has(state.selection) ? state.selection : null;
   set({ key, t: still ? duration : 0, playing: !still, direction: 1, cameraMode: 'guided', cameraRequest: state.cameraRequest + 1, selection,
-    conflict: null, clipHeightM: null });
+    conflict: null, clipHeightM: null, manualOpen: key.endsWith('/0') ? false : state.manualOpen });
   return true;
 }
 

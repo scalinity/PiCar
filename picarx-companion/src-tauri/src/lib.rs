@@ -4,7 +4,27 @@ mod commands;
 pub mod persistence;
 #[cfg(feature = "m3-persistence")]
 mod strict_json;
+#[cfg(target_os = "macos")]
+mod studio_escape;
 use tauri::{Manager, PhysicalPosition, PhysicalSize};
+
+#[tauri::command]
+fn studio_escape_capture(enabled: bool) {
+    #[cfg(target_os = "macos")]
+    studio_escape::set_active(enabled);
+    #[cfg(not(target_os = "macos"))]
+    let _ = enabled;
+}
+
+fn setup_studio_escape(app: &tauri::App) -> Result<(), Box<dyn std::error::Error>> {
+    #[cfg(target_os = "macos")]
+    if let Some(window) = app.get_webview_window("main") {
+        studio_escape::install(&window).map_err(std::io::Error::other)?;
+    }
+    #[cfg(not(target_os = "macos"))]
+    let _ = app;
+    Ok(())
+}
 
 /// The configured window size can exceed a display's usable area, and centring a window larger than the screen leaves it
 /// partly off-screen. Keep the configured size where it fits, otherwise fit it to the monitor's work area (outside the menu
@@ -39,11 +59,13 @@ pub fn run() {
     #[cfg(not(feature = "m3-persistence"))]
     let builder = builder.setup(|app| {
         fit_main_window(app);
+        setup_studio_escape(app)?;
         Ok(())
     });
     #[cfg(feature = "m3-persistence")]
     let builder = builder.setup(|app| {
         fit_main_window(app);
+        setup_studio_escape(app)?;
         #[cfg(not(feature = "m3-native-test"))]
         let dir = app.path().app_data_dir()?;
         #[cfg(feature = "m3-native-test")]
@@ -85,6 +107,7 @@ pub fn run() {
     });
     #[cfg(all(feature = "m3-persistence", not(feature = "m3-native-test")))]
     let builder = builder.invoke_handler(tauri::generate_handler![
+        studio_escape_capture,
         commands::load_companion_state,
         commands::list_companion_aggregates,
         commands::list_progress_imports,
@@ -96,6 +119,7 @@ pub fn run() {
     ]);
     #[cfg(feature = "m3-native-test")]
     let builder = builder.invoke_handler(tauri::generate_handler![
+        studio_escape_capture,
         commands::load_companion_state,
         commands::list_companion_aggregates,
         commands::list_progress_imports,
@@ -107,9 +131,16 @@ pub fn run() {
         commands::m3_test_fresh,
         commands::m3_test_fault
     ]);
-    builder
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+    #[cfg(not(feature = "m3-persistence"))]
+    let builder = builder.invoke_handler(tauri::generate_handler![studio_escape_capture]);
+    builder.build(tauri::generate_context!())
+        .expect("error while building tauri application")
+        .run(|_app, event| {
+            #[cfg(target_os = "macos")]
+            if matches!(event, tauri::RunEvent::Exit) { studio_escape::remove(); }
+            #[cfg(not(target_os = "macos"))]
+            let _ = event;
+        });
 }
 #[cfg(all(feature = "m3-native-test", not(debug_assertions)))]
 compile_error!("m3-native-test is restricted to disposable debug test targets");

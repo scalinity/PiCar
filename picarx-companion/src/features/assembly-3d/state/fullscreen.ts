@@ -3,8 +3,9 @@
 // platform, so an overlapping, refused or externally made change cannot leave the Studio showing the wrong state.
 // A refusal is kept as a message for the header.
 import { useSyncExternalStore } from 'react';
-import { isTauri } from '@tauri-apps/api/core';
+import { invoke, isTauri } from '@tauri-apps/api/core';
 import { getCurrentWindow } from '@tauri-apps/api/window';
+import { dispatchNativeEscape } from './escape';
 
 export type FullscreenState = { on: boolean; error: string };
 let state: FullscreenState = { on: false, error: '' };
@@ -17,21 +18,38 @@ const set = (patch: Partial<FullscreenState>): void => {
 };
 export const fullscreenState = (): FullscreenState => state;
 
+let captureQueue: Promise<void> = Promise.resolve();
+let unlistenNative: (() => void) | undefined;
+function captureNativeEscape(enabled: boolean): Promise<void> {
+  const request = captureQueue.then(async () => {
+    if (enabled && !unlistenNative) unlistenNative = await getCurrentWindow().listen('studio-escape', dispatchNativeEscape);
+    await invoke('studio_escape_capture', { enabled });
+    if (!enabled) { unlistenNative?.(); unlistenNative = undefined; }
+  });
+  captureQueue = request.catch(() => {}); // a failed request must not block a later retry or cleanup
+  return request;
+}
+
 async function resync(): Promise<void> {
   try { set({ on: isTauri() ? await getCurrentWindow().isFullscreen() : document.fullscreenElement !== null }); } catch { /* unreadable: keep the last known state */ }
 }
 
 export function subscribeFullscreen(listener: () => void): () => void {
+  const first = listeners.size === 0;
   listeners.add(listener);
   const onDocument = (): void => set({ on: document.fullscreenElement !== null });
   document.addEventListener('fullscreenchange', onDocument);
   let unlisten: (() => void) | undefined;
   let closed = false;
   if (isTauri()) {
+    if (first) void captureNativeEscape(true).catch(() => set({ error: 'Studio Escape capture is not available.' }));
     void resync();
     void getCurrentWindow().onResized(() => { void resync(); }).then((u) => { if (closed) u(); else unlisten = u; });
   }
-  return () => { closed = true; listeners.delete(listener); document.removeEventListener('fullscreenchange', onDocument); unlisten?.(); };
+  return () => {
+    closed = true; listeners.delete(listener); document.removeEventListener('fullscreenchange', onDocument); unlisten?.();
+    if (isTauri() && listeners.size === 0) void captureNativeEscape(false).catch(() => set({ error: 'Studio Escape capture could not be released.' }));
+  };
 }
 
 export const useFullscreen = (): boolean => useSyncExternalStore(subscribeFullscreen, () => state.on, () => false);
@@ -40,7 +58,10 @@ export const fullscreenMode = (): 'native window' | 'browser' => (isTauri() ? 'n
 
 async function apply(on: boolean, element: HTMLElement): Promise<void> {
   try {
-    if (isTauri()) await getCurrentWindow().setFullscreen(on);
+    if (isTauri()) {
+      if (on) await captureNativeEscape(true);
+      await getCurrentWindow().setFullscreen(on);
+    }
     else if (on && !document.fullscreenElement) await element.requestFullscreen();
     else if (!on && document.fullscreenElement) await document.exitFullscreen();
     set({ error: '' });

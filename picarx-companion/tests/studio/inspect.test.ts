@@ -71,3 +71,29 @@ it('never writes to the manifest', () => {
   for (const v of Object.values(manifest.variants)) for (const entry of v.steps) { explodeOffsets(manifest, entry); clipRange(manifest, v, entry); keptIds(entry, null, null); focusIds(entry, null); }
   expect(JSON.stringify(manifest)).toBe(snapshot);
 });
+
+it.each(['rpi5', 'rpi-zero-2-w'] as const)('%s: every recipe-free terminal bring-in composes continuously with explosion in both seek directions', (variant) => {
+  const v = manifest.variants[variant];
+  let found = 0;
+  for (let n = 1; n <= 9; n++) {
+    const timeline = timelineFor(v, n, manifest.timing), offsets = explodeOffsets(manifest, v.steps[n - 1]);
+    for (const track of timeline.tracks.filter((k) => k.approach === 0)) {
+      found++;
+      const boundary = track.start + track.bringIn, eps = 1e-5;
+      const composed = (t: number, explode: number) => {
+        const st = statesAt(v, timeline, t).get(track.instanceId)!;
+        return st.pose.translationM.map((x, i) => x + offsets.get(track.instanceId)![i] * explodeWeight(st) * explode);
+      };
+      const endpoint = composed(boundary, 1);
+      // Cubic easing makes 10 microseconds either side differ by much less than 1 nanometre.
+      for (const t of [boundary - eps, boundary, boundary + eps, boundary, boundary - eps, 0, boundary + eps]) {
+        if (t !== 0) expect(Math.hypot(...composed(t, 1).map((x, i) => x - endpoint[i]))).toBeLessThan(1e-9);
+      }
+      expect(explodeWeight(statesAt(v, timeline, 0).get(track.instanceId)!)).toBe(0);
+      expect(explodeWeight(statesAt(v, timeline, boundary).get(track.instanceId)!)).toBe(1);
+      expect(composed(timeline.duration, 0)).toEqual(track.final.translationM);
+      expect(statesAt(v, timeline, timeline.duration).get(track.instanceId)!.pose).toBe(track.final);
+    }
+  }
+  expect(found).toBe(1); // Plate A S01 is the only recipe-free track in the current presentation.
+});

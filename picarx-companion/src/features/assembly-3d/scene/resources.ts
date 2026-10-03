@@ -67,6 +67,8 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
   const meshSets = new Map<Mesh, Record<Exclude<Style, 'hidden'>, Material>>();
   const pickMaterial = new MeshBasicMaterial({ visible: false });
   const pickGeometries = new Map<string, BoxGeometry>();
+  let clipping = false;
+  const clipPlanes = [new Plane(new Vector3(0, -1, 0), 0), new Plane(new Vector3(-1, 0, 0), 0)];
   const roots = new Map<string, Group>();
   for (const id of Object.keys(v.tray.instances)) {
     const definitionId = pack.manifest.instances[id].definitionId;
@@ -89,6 +91,16 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
       pick.userData.pickTarget = true;
       root.add(pick);
     }
+    // Raycasting follows the same intersection of world-space clip half-planes as the shader, including pick boxes.
+    root.traverse((o) => {
+      if (!(o instanceof Mesh)) return;
+      const raycast = o.raycast;
+      o.raycast = function (raycaster, intersections) {
+        const hits: typeof intersections = [];
+        raycast.call(this, raycaster, hits);
+        intersections.push(...hits.filter((h) => !clipping || !clipPlanes.every((p) => p.distanceToPoint(h.point) < 0)));
+      };
+    });
     roots.set(id, root);
   }
   // Tray tiles: a flat matte card with a dashed edge on the floor for each instance with no trusted solid.
@@ -142,9 +154,7 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
   };
   // Deck clip: renderer clipping on this board's materials only. With clipIntersection a fragment is cut only when it is
   // above the deck height and on the assembly's side of the tray guard, so the tray is never cut.
-  const clipPlanes = [new Plane(new Vector3(0, -1, 0), 0), new Plane(new Vector3(-1, 0, 0), 0)];
   const partMaterials = (): MeshPhysicalMaterial[] => [...sets.values()].flatMap((s) => [s.normal, s.selected, s.focus, s.ghost]);
-  let clipping = false;
   const setClip = (clip: { heightM: number; trayGuardX: number } | null): void => {
     if (clip) { clipPlanes[0].constant = clip.heightM; clipPlanes[1].constant = clip.trayGuardX; }
     if (Boolean(clip) === clipping) return;

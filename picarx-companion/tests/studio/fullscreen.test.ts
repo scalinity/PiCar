@@ -2,10 +2,20 @@
 // every request, including failed and overlapping ones, and a failure is reported for the header to show.
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
+const native = vi.hoisted(() => ({ enabled: false, invoke: vi.fn(), setFullscreen: vi.fn(), isFullscreen: vi.fn(), onResized: vi.fn(), listen: vi.fn() }));
+vi.mock('@tauri-apps/api/core', () => ({ isTauri: () => native.enabled, invoke: native.invoke }));
+vi.mock('@tauri-apps/api/window', () => ({ getCurrentWindow: () => native }));
+
 let fullscreenElement: object | null = null;
 const listeners = new Map<string, () => void>();
 beforeEach(() => {
   vi.resetModules();
+  native.enabled = false;
+  vi.clearAllMocks();
+  native.invoke.mockResolvedValue(undefined);
+  native.isFullscreen.mockResolvedValue(false);
+  native.onResized.mockResolvedValue(() => {});
+  native.listen.mockResolvedValue(() => {});
   fullscreenElement = null;
   vi.stubGlobal('document', {
     get fullscreenElement() { return fullscreenElement; },
@@ -47,4 +57,35 @@ it('follows a fullscreen change made outside the Studio', async () => {
   listeners.get('fullscreenchange')!();
   stop();
   expect(seen).toEqual([true, false]);
+});
+
+it('enables native Escape capture for Studio subscribers and releases it when the last subscriber leaves', async () => {
+  native.enabled = true;
+  const fs = await import('../../src/features/assembly-3d/state/fullscreen');
+  const first = fs.subscribeFullscreen(() => {}), second = fs.subscribeFullscreen(() => {});
+  await vi.waitFor(() => expect(native.invoke).toHaveBeenCalledExactlyOnceWith('studio_escape_capture', { enabled: true }));
+  first();
+  expect(native.invoke).toHaveBeenCalledTimes(1);
+  second();
+  await vi.waitFor(() => expect(native.invoke).toHaveBeenLastCalledWith('studio_escape_capture', { enabled: false }));
+});
+
+it('waits for native Escape capture before fullscreen and refuses entry if capture fails', async () => {
+  native.enabled = true;
+  native.invoke.mockRejectedValueOnce(new Error('capture unavailable'));
+  const fs = await import('../../src/features/assembly-3d/state/fullscreen');
+  await expect(fs.setFullscreen(true, {} as HTMLElement)).resolves.toBeUndefined();
+  expect(native.setFullscreen).not.toHaveBeenCalled();
+  expect(fs.fullscreenState()).toEqual({ on: false, error: 'Fullscreen is not available here.' });
+  let ready: () => void = () => {};
+  let requested = false;
+  native.invoke.mockImplementationOnce(() => new Promise<void>((resolve) => { requested = true; ready = resolve; }));
+  const pending = fs.setFullscreen(true, {} as HTMLElement);
+  await vi.waitFor(() => expect(requested).toBe(true));
+  expect(native.setFullscreen).not.toHaveBeenCalled();
+  native.isFullscreen.mockResolvedValue(true);
+  ready();
+  await pending;
+  expect(native.setFullscreen).toHaveBeenCalledExactlyOnceWith(true);
+  expect(fs.fullscreenState()).toEqual({ on: true, error: '' });
 });

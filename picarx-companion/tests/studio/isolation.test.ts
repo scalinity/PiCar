@@ -8,13 +8,16 @@ const files = (dir: string): string[] => fs.readdirSync(dir, { withFileTypes: tr
 // The Studio's own modules, and the shared booklet loader its manual panel uses.
 const studioSources = [...files('src/features/assembly-3d'), 'src/pages/Studio.tsx', 'src/lib/v40-pdf.ts', 'src/lib/v40-pdf-identity.ts'];
 
-it('has no path to the session ledger, Setup persistence, repository or native commands', () => {
+it('has no path to the session ledger, Setup persistence or repository; only the scoped native Escape command is allowed', () => {
   for (const file of studioSources) {
     const text = fs.readFileSync(file, 'utf8');
     const imports = [...text.matchAll(/from\s+['"]([^'"]+)['"]|import\(\s*['"]([^'"]+)['"]\s*\)/g)].map((m) => m[1] ?? m[2]);
     for (const spec of imports) expect(spec, file).not.toMatch(/assembly-session|progress-store|\/platform\/|repository|plugin-/);
-    expect(text, file).not.toMatch(/\binvoke\(|localStorage|indexedDB/);
+    const checked = file.endsWith('/state/fullscreen.ts') ? text.replace("invoke('studio_escape_capture', { enabled })", '') : text;
+    expect(checked, file).not.toMatch(/\binvoke\(|localStorage|indexedDB/);
   }
+  const nativeCapture = fs.readFileSync('src-tauri/src/studio_escape.rs', 'utf8');
+  expect(nativeCapture).not.toMatch(/commands::|persistence|Repository|Database|sqlite|app_data_dir|std::fs/);
 });
 
 it('uses no useEffect in Studio components', () => {

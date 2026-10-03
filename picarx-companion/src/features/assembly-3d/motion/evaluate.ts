@@ -63,7 +63,7 @@ function trackState(track: Track, t: number): InstanceState {
   if (local <= 0) return { pose: track.from, phase: 'waiting', placed: false };
   if (local < track.bringIn) {
     const u = easeInOutCubic(clamp01(local / track.bringIn));
-    return { pose: { translationM: arc(track.from.translationM, track.staged.translationM, u), rotationXYZW: slerp(track.from.rotationXYZW, track.staged.rotationXYZW, u) }, phase: 'bring-in', placed: false };
+    return { pose: { translationM: arc(track.from.translationM, track.staged.translationM, u), rotationXYZW: slerp(track.from.rotationXYZW, track.staged.rotationXYZW, u) }, phase: 'bring-in', placed: false, progress: track.approach === 0 ? u : 0 };
   }
   if (track.approach > 0 && local < track.bringIn + track.approach) {
     const v = easeInOutCubic(clamp01((local - track.bringIn) / track.approach));

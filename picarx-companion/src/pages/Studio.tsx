@@ -13,7 +13,7 @@ import {
 } from '../features/assembly-3d/state/studio-store';
 import { markHidden, perf, perfSnapshot } from '../features/assembly-3d/state/perf';
 import { setFullscreen, useFullscreen } from '../features/assembly-3d/state/fullscreen';
-import { escapePresses } from '../features/assembly-3d/state/escape';
+import { escapePresses, subscribeNativeEscape } from '../features/assembly-3d/state/escape';
 import { isTauri } from '@tauri-apps/api/core';
 import { Dock, Drawer, Header, ManualOverlay, PerfHud, ViewTools, studioSummary } from '../features/assembly-3d/ui/StudioChrome';
 import '../styles/studio.css';
@@ -35,6 +35,9 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
   const bindRoot = (el: HTMLDivElement | null) => {
     rootElement = el;
     if (!el) return;
+    // Commit the visible tray's dismissal state before its first 3D frame. Under load, Escape can arrive between
+    // the route commit (which removes the manual) and enterStep in the frame loop.
+    if (step === 0 && getStudioState().manualOpen) setManualOpen(false);
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement && e.target.type !== 'range') return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -59,13 +62,15 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
     };
     window.addEventListener('keydown', onKey);
     // One physical Escape press, one action: close the enlarged manual, else clear what is singled out, else leave
-    // fullscreen. The keyup acts only for a press whose keydown never arrived (AppKit consumes it in native fullscreen).
-    const escape = escapePresses(() => {
+    // fullscreen. Native fullscreen delivers one AppKit release independently of the DOM focus target.
+    const dismiss = () => {
       const s = getStudioState();
       if (s.manualOpen) setManualOpen(false);
       else if (hasSelection()) clearSelection();
       else void setFullscreen(false, el);
-    });
+    };
+    const escape = escapePresses(dismiss);
+    const stopNativeEscape = subscribeNativeEscape(dismiss);
     window.addEventListener('keydown', escape.keydown);
     window.addEventListener('keyup', escape.keyup);
     document.addEventListener('visibilitychange', markHidden); // hidden time is never frame time
@@ -106,7 +111,7 @@ export default function Studio({ variant = 'rpi5', step: requested = 0 }: { vari
         },
       };
     }
-    return () => { window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); document.removeEventListener('visibilitychange', markHidden); };
+    return () => { stopNativeEscape(); window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); document.removeEventListener('visibilitychange', markHidden); };
   };
 
   return (

@@ -77,3 +77,21 @@ it('releases an owner once and removes it from the live registry', () => {
   expect(release).toHaveBeenCalledTimes(1);
   expect(owned()).not.toContain('board test');
 });
+
+it('clips actual ray intersections and invisible pick boxes, keeps tray picking and restores picking on reset', async () => {
+  const { Raycaster, Vector3 } = await import('three');
+  const { pack } = tinyPack();
+  const board = createBoard(pack, 'rpi5'), root = board.roots.get('PX-A-001')!;
+  root.position.set(0, 0.02, 0); root.updateMatrixWorld(true);
+  const ray = new Raycaster(new Vector3(0, 0.1, 0), new Vector3(0, -1, 0));
+  expect(ray.intersectObject(root, true).length).toBeGreaterThan(0);
+  board.style('PX-A-001', 'ghost');
+  board.setClip({ heightM: 0.01, trayGuardX: -0.1 });
+  expect(ray.intersectObject(root, true)).toEqual([]); // every surface and pick box is above the cut
+  root.position.x = -0.2; root.updateMatrixWorld(true); ray.ray.origin.x = -0.2;
+  expect(ray.intersectObject(root, true).length).toBeGreaterThan(0); // tray side of guard
+  root.position.x = 0; root.updateMatrixWorld(true); ray.ray.origin.x = 0;
+  board.setClip(null); board.style('PX-A-001', 'normal');
+  expect(ray.intersectObject(root, true).length).toBeGreaterThan(0);
+  board.release();
+});

@@ -1,7 +1,7 @@
 // Escape (F8): one physical press performs at most one action, however long it is held; a keyup acts only for a press
 // whose keydown never arrived (AppKit consumes Escape's keydown in a native fullscreen window).
 import { expect, it, vi } from 'vitest';
-import { escapePresses } from '../../src/features/assembly-3d/state/escape';
+import { dispatchNativeEscape, escapePresses, subscribeNativeEscape } from '../../src/features/assembly-3d/state/escape';
 
 const down = (repeat = false) => ({ key: 'Escape', repeat }) as KeyboardEvent;
 const up = () => ({ key: 'Escape' }) as KeyboardEvent;
@@ -52,4 +52,19 @@ it('clears a selection on the first press and leaves fullscreen on a separate se
   expect([selection, fullscreen]).toEqual([null, true]);
   esc.keydown(down()); esc.keyup(up());
   expect(fullscreen).toBe(false);
+});
+
+it('delivers native presses without a DOM focus target and removes the old route handler', () => {
+  const previous = vi.fn(), current = vi.fn();
+  const leave = subscribeNativeEscape(previous);
+  dispatchNativeEscape();
+  expect(previous).toHaveBeenCalledTimes(1);
+  leave();
+  const stop = subscribeNativeEscape(current);
+  dispatchNativeEscape();
+  expect(previous).toHaveBeenCalledTimes(1);
+  expect(current).toHaveBeenCalledTimes(1);
+  stop();
+  dispatchNativeEscape();
+  expect(current).toHaveBeenCalledTimes(1);
 });
