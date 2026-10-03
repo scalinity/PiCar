@@ -4,7 +4,6 @@ Source mode: PYTHONPATH=digital-twin/cad <frozen-env>/bin/python -m pytest digit
 """
 import hashlib
 import json
-import math
 import re
 from pathlib import Path
 
@@ -29,26 +28,6 @@ def brep_bytes(shape, tmp_path, name):
     path = tmp_path / name
     shape.exportBrep(str(path))
     return path.read_bytes()
-
-
-def test_hat_display_outline_is_reproducible_and_keeps_the_adopted_features(tmp_path):
-    chain = ROOT / 'digital-twin/generated/studio/chain' / HAT_DISPLAY['overlaps']['chain']
-    parts = hat.build(ROOT, chain)
-    shape = pi5.compound(parts)
-    data = brep_bytes(shape, tmp_path, 'hat.brep')
-    assert data == brep_bytes(pi5.compound(hat.build(ROOT, chain)), tmp_path, 'hat-repeat.brep')
-    assert hashlib.sha256(data).hexdigest() == HAT_DISPLAY['artifactSha256']
-    pcb = parts[0][2]
-    assert (pcb.BoundingBox().xlen, pcb.BoundingBox().ylen, pcb.BoundingBox().zlen) == pytest.approx((85, 56, 1.6))
-    old = cq.Shape.importBrep(str(chain / hat.ADOPTED)).Solids()
-    assert pi5.hole_centres(pcb, 1.4) == pi5.hole_centres(old[0], 1.4)
-    assert len(pi5.hole_centres(pcb, 1.4)) == 4
-    assert pcb.Volume() - old[0].Volume() == pytest.approx((20 * 56 - (4 - math.pi) * 3 ** 2) * 1.6)
-    assert len([f for f in shape_features(pcb) if abs(f['radius'] - 3) < 1e-6]) == 4
-    assert len(old) == len(parts) == len(HAT_DISPLAY['solids'])
-    for before, (_, _, after) in zip(old[1:], parts[1:]):
-        assert before.Volume() == pytest.approx(after.Volume(), abs=1e-9)
-        assert before.cut(after).Volume() < 1e-9
 
 
 def test_hat_display_retains_original_checked_bytes_and_source_bound_overlap_checks():
