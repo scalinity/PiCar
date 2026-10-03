@@ -3,6 +3,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {test,expect, type Page} from '@playwright/test';
 test.use({actionTimeout:10000});
+const evidence=process.env.PICAR_BROWSER_EVIDENCE_DIR??'../docs/implementation/evidence/studio-3';
 const synthetic=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aJU0AAAAASUVORK5CYII=','base64');
 const build=(p:Page)=>p.locator('.studio-build');
 async function open(p:Page,n=0,v='rpi5'){await p.goto(`/#/studio/${v}/${n}?diagnostics`);await expect(p.locator('.studio')).toBeVisible();await expect(build(p)).not.toContainText('Opening saved');}
@@ -20,7 +21,7 @@ test('owner session writes, separate variants, all nine physical steps, conserva
  await page.locator('.studio-boards a').filter({hasText:'Pi 5'}).click();await expect(page.locator('.studio')).toHaveAttribute('data-step','3');await expect(build(page)).toContainText('9/29');expect(await ledger(page)).toEqual(beforeSwitch);
  await page.locator('.studio-rail a').filter({hasText:/^Parts$/}).click();await page.locator('.studio-boards a').filter({hasText:'Zero 2 W'}).click();await expect(page.locator('.studio')).toHaveAttribute('data-step','0');await expect(build(page).getByRole('link',{name:'Return to saved Step 3'})).toBeVisible();expect(await ledger(page)).toEqual(beforeSwitch);
  await open(page,7);await build(page).getByRole('checkbox',{name:'Reopen this step and undo downstream physical confirmations.'}).check();await build(page).getByRole('button',{name:'Undo / reopen physical step'}).click();await expect(build(page)).toContainText('6/29');await page.reload();await expect(build(page)).toContainText('6/29');
- const saved=await ledger(page);expect(saved.aggregates.filter(a=>a.aggregate.graphHash)).toHaveLength(2);fs.writeFileSync(`../docs/implementation/evidence/studio-3/build-along-${browserName}.json`,JSON.stringify({browserName,sessionIds:saved.aggregates.map(a=>a.aggregate.id),events:saved.aggregates.map(a=>a.events.map(e=>e.action.kind)),readOnlyViewer:'PASS',physicalAndUndo:'PASS'},null,2)+'\n');
+ const saved=await ledger(page);expect(saved.aggregates.filter(a=>a.aggregate.graphHash)).toHaveLength(2);fs.writeFileSync(`${evidence}/build-along-${browserName}.json`,JSON.stringify({browserName,sessionIds:saved.aggregates.map(a=>a.aggregate.id),events:saved.aggregates.map(a=>a.events.map(e=>e.action.kind)),readOnlyViewer:'PASS',physicalAndUndo:'PASS'},null,2)+'\n');
 });
 test('private synthetic photo copy/hash, failed copy, failed save and exact retry, selected ZIP and revision history',async({page:original,playwright,browserName})=>{
  const folder=browserName==='webkit'?fs.mkdtempSync(path.join(os.tmpdir(),'picar-studio-browser-')):null;
@@ -39,6 +40,6 @@ test('private synthetic photo copy/hash, failed copy, failed save and exact retr
  if(browserName==='chromium'){await page.evaluate(async()=>{const root=await navigator.storage.getDirectory();const handle=await root.getFileHandle('TEST-EXPORT-DESTINATION',{create:true});(window as any).showSaveFilePicker=async()=>handle;});await build(page).getByRole('button',{name:'Export selected private evidence ZIP'}).click();await expect(build(page)).toContainText('Evidence export saved');const chosen=await page.evaluate(async()=>{const root=await navigator.storage.getDirectory();const file=await (await root.getFileHandle('TEST-EXPORT-DESTINATION')).getFile();const bytes=Array.from(new Uint8Array(await file.arrayBuffer()));await root.removeEntry('TEST-EXPORT-DESTINATION');return bytes;});expect(Buffer.from(chosen)).toEqual(Buffer.from(results.zip));}
  // Explicitly exercise the browser download/Save As fallback as well as Chromium's destination-handle branch.
  await page.evaluate(()=>(window as any).showSaveFilePicker=undefined);const download=page.waitForEvent('download');await build(page).getByRole('button',{name:'Export selected private evidence ZIP'}).click();const d=await download;const destination=test.info().outputPath('selected-private-evidence.zip');await d.saveAs(destination);expect(fs.readFileSync(destination)).toEqual(Buffer.from(results.zip));
- fs.writeFileSync(`../docs/implementation/evidence/studio-3/observation-${browserName}.json`,JSON.stringify({browserName,syntheticOnly:true,copyAndHash:'PASS',failedCopy:'PASS',failedPersistenceThenSameRetry:'PASS',historicalRevision:'PASS',selectedZip:'PASS',exportDestination:'disposable Playwright output path',provenance:results.record},null,2)+'\n');
+ fs.writeFileSync(`${evidence}/observation-${browserName}.json`,JSON.stringify({browserName,syntheticOnly:true,copyAndHash:'PASS',failedCopy:'PASS',failedPersistenceThenSameRetry:'PASS',historicalRevision:'PASS',selectedZip:'PASS',exportDestination:'disposable Playwright output path',provenance:results.record},null,2)+'\n');
  }finally{await context?.close();if(folder)fs.rmSync(folder,{recursive:true,force:true});}
 });

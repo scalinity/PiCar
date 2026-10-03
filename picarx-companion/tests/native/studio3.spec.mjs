@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-const out='../docs/implementation/evidence/studio-3';
+const out=process.env.PICAR_NATIVE_EVIDENCE_DIR??'../docs/implementation/evidence/studio-3';
 const record=(name,value)=>fs.writeFileSync(path.join(out,name+'.json'),JSON.stringify(value,null,2)+'\n');
 const text=()=>$('.studio-build').getText();
 const script=action=>browser.tauri.execute(action);
