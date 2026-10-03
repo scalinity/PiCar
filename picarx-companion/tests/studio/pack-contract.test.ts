@@ -150,7 +150,7 @@ describe('runtime pack validation', () => {
     await rejects((m) => { m.schematic['PX-V40-INS-PLATE-A-001'] = { ...m.schematic['PX-V40-INS-WRENCH-001'] }; }, 'MANIFEST_SCHEMATIC_INSTANCE PX-V40-INS-PLATE-A-001');
   });
   it('refuses a step part that is neither drawn nor a tile, and a newly placed part with no placement', async () => {
-    await rejects((m) => { m.variants.rpi5.steps[0].stepParts.push({ instanceId: 'PX-V40-INS-WHEEL-FRONT-001', use: 'new' }); }, 'MANIFEST_STEP_PARTS rpi5 S01');
+    await rejects((m) => { m.variants.rpi5.steps[0].stepParts.push({ instanceId: 'PX-V40-INS-NONEXISTENT-001', use: 'new' }); }, 'MANIFEST_STEP_PARTS rpi5 S01');
     await rejects((m) => { m.variants.rpi5.steps[5].newlyPlacedInstanceIds.push('PX-V40-INS-BATTERY-001'); }, 'MANIFEST_NEWLY_PLACED rpi5 S06');
   });
 

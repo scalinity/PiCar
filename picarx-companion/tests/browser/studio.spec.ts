@@ -411,7 +411,7 @@ test('the companion pages remain reachable from the Studio', async ({ page }) =>
 });
 
 // ==== Studio 2: the complete tray, every step on both boards, review states, inspection and the manual panel.
-const EVIDENCE = '../docs/implementation/evidence/studio-2-pro-remediation';
+const EVIDENCE = "../docs/implementation/evidence/studio-3";
 const placedPositions = (page: Page, ids: string[]) => page.evaluate((list) => Object.fromEntries(list.map((id) => [id, (window as any).__studio.instance(id).position])), ids);
 const styleOf = (page: Page, id: string) => page.evaluate((x) => (window as any).__studio.style(x), id);
 
@@ -420,6 +420,10 @@ for (const variant of ['rpi5', 'rpi-zero-2-w'] as const) {
     const errors = errorsOf(page);
     await open(page, `#/studio/${variant}/0`);
     await page.waitForTimeout(1200); // the framing area settles beside the panels
+    const labels = await page.locator('.studio-label-group').evaluateAll(elements => elements.map(el => { const r=el.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height,visible:getComputedStyle(el).visibility!=='hidden'}; }));
+    expect(labels).toHaveLength(8);
+    expect(labels.every(r=>r.visible)).toBe(true);
+    for(let i=0;i<labels.length;i++)for(let j=i+1;j<labels.length;j++){const a=labels[i],b=labels[j];expect(a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y,'full-kit group labels must not overlap').toBe(false);}
     const tray = manifest.variants[variant].tray;
     const roots: any[] = await page.evaluate(() => (window as any).__studio.roots());
     const solids = roots.filter((r) => !r.tile), tiles = roots.filter((r) => r.tile);
@@ -432,12 +436,18 @@ for (const variant of ['rpi5', 'rpi-zero-2-w'] as const) {
       expect(r.min[1], `${r.id} above the floor`).toBeGreaterThanOrEqual(manifest.variants[variant].floorYM - 1e-4);
     }
     const census: Record<string, number> = await page.evaluate(() => (window as any).__studio.census());
-    for (const id of [...Object.keys(tray.instances), ...Object.keys(tray.tiles)]) expect(census[id], `${id} visible pixels`).toBeGreaterThan(3);
-    await expect(page.getByTestId('tray-inventory')).toHaveText(`${tray.inventory.required} pieces · ${tray.inventory.modeled} modelled · ${tray.inventory.tiles} shown as tiles`);
+    // Every full-kit slot must draw. At this wider overview the smallest screws are only a few pixels;
+    // the existing group Frame action must make every fastener inspectable at the previous >3 pixel threshold.
+    for (const id of [...Object.keys(tray.instances), ...Object.keys(tray.tiles)]) expect(census[id], `${id} overview pixels`).toBeGreaterThan(0);
+    await page.locator('.studio-group').filter({hasText:'Fasteners'}).getByRole('button',{name:'Frame',exact:true}).click();
+    await page.waitForTimeout(600);
+    const fastenerCensus: Record<string,number> = await page.evaluate(()=>(window as any).__studio.census());
+    for(const id of tray.groups.find((g: {id:string})=>g.id==='fasteners')!.instanceIds)expect(fastenerCensus[id],`${id} framed pixels`).toBeGreaterThan(3);
+    await expect(page.getByTestId('tray-inventory')).toHaveText(`${tray.inventory.canonical} canonical stock · ${tray.inventory.modeled} modelled · ${tray.inventory.tiles} tiles`);
     fs.mkdirSync(EVIDENCE, { recursive: true });
     fs.writeFileSync(`${EVIDENCE}/tray-runtime-census-${variant}-${browserName}.json`, JSON.stringify({ variant, browserName, packId: manifest.packId, viewport: page.viewportSize(),
       drawn: solids.length, tiles: tiles.length, notVisible: Object.entries(census).filter(([, n]) => n === 0).map(([id]) => id),
-      minVisiblePixels: Math.min(...Object.values(census)), visiblePixels: census }, null, 1) + '\n');
+      minVisiblePixels: Math.min(...Object.values(census)), visiblePixels: census, fastenerCensus }, null, 1) + '\n');
     expect(errors).toEqual([]);
   });
 

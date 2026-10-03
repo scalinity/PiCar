@@ -174,7 +174,7 @@ describe('readiness is labelled separately from assembly acceptance', () => {
   });
 });
 
-describe('parts tray completeness (Studio 2)', () => {
+describe('full-kit parts tray completeness (Studio 3)', () => {
   const read = (p: string) => JSON.parse(fs.readFileSync(path.resolve('..', p), 'utf8'));
   const stock = read('digital-twin/components/instances/planned-stock.json'), parts = read('digital-twin/components/definitions/parts.json');
   const tools = read('digital-twin/components/inventory/tools.json');
@@ -196,13 +196,14 @@ describe('parts tray completeness (Studio 2)', () => {
   const defOf = Object.fromEntries(stock.map((s: any) => [s.id, s.definitionId]));
   const solid = (id: string) => classOf[defOf[id]] !== 'tool' && kinds[defOf[id]] !== 'schematic' && kinds[defOf[id]] !== 'abstract';
   it.each([['rpi5', 50, 44], ['rpi-zero-2-w', 47, 41]] as const)('%s: every required instance is drawn or a tile, none missing or extra (%i = %i + tiles)', (v, total, drawn) => {
-    const tray = manifest.variants[v].tray, need = required(v);
-    expect(need.size).toBe(total);
+    const tray = manifest.variants[v].tray, current = required(v), need = new Set<string>(stock.filter((s: any) => s.variantIds.includes(v)).map((s: any) => s.id));
+    expect(current.size).toBe(total);
+    expect(need.size).toBe(156);
     expect(Object.keys(tray.instances).sort()).toEqual([...need].filter(solid).sort());
     expect(Object.keys(tray.tiles).sort()).toEqual([...need].filter((id) => !solid(id)).sort());
-    expect(Object.keys(tray.instances).length).toBe(drawn);
-    expect(Object.keys(tray.tiles).sort()).toEqual(['PX-V40-INS-HOOK-002', 'PX-V40-INS-LOOP-002', 'PX-V40-INS-RIBBON-FPC-001', 'PX-V40-INS-SCREWDRIVER-01-001', 'PX-V40-INS-SCREWDRIVER-02-001', 'PX-V40-INS-WRENCH-001']);
-    expect(tray.inventory).toMatchObject({ required: total, modeled: drawn, tiles: total - drawn, canonical: 156, notRequired: 156 - total });
+    expect([...current].filter(solid).length).toBe(drawn);
+    expect(Object.keys(tray.instances).length).toBe(143);
+    expect(tray.inventory).toMatchObject({ required: total, visible: 156, modeled: 143, tiles: 13, canonical: 156, notRequired: 156 - total });
     // Groups partition the slots; identities stay per instance.
     expect(tray.groups.flatMap((g: any) => g.instanceIds).sort()).toEqual([...need].sort());
   });

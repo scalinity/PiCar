@@ -178,16 +178,24 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
       camera.updateProjectionMatrix();
     }
 
-    // Labels for tray groups and tiles, projected from their anchors; hidden behind the camera or with their part.
+    // Keep full-kit group names readable. Tile names yield to occupied labels in the wide overview;
+    // framing their group provides more space, and every tile remains identified in the inventory and inspector.
     if (labels.el) {
       camera.updateMatrixWorld();
       const v = new Vector3();
+      const occupied: { x: number; y: number; w: number; h: number }[] = [];
       for (const el of labels.el.children as HTMLCollectionOf<HTMLElement>) {
         const [x, y, z] = (el.dataset.anchor ?? '').split(',').map(Number);
         v.set(x, y, z).project(camera);
-        const hidden = v.z > 1 || (el.dataset.instance !== undefined && board.styleOf(el.dataset.instance) === 'hidden');
+        const tile = el.dataset.instance !== undefined;
+        const px = ((v.x + 1) / 2) * W, py = ((1 - v.y) / 2) * Hh;
+        const box = { x: px - (tile ? el.offsetWidth / 2 : 0), y: py - (tile ? el.offsetHeight / 2 : 9), w: el.offsetWidth, h: el.offsetHeight };
+        const overlaps = () => occupied.some(r => box.x < r.x + r.w + 4 && box.x + box.w + 4 > r.x && box.y < r.y + r.h + 4 && box.y + box.h + 4 > r.y);
+        if (!tile) while (overlaps()) box.y += box.h + 5;
+        const hidden = v.z > 1 || (tile && (board.styleOf(el.dataset.instance!) === 'hidden' || overlaps()));
+        if (!hidden) occupied.push(box);
         el.style.visibility = hidden ? 'hidden' : '';
-        el.style.transform = `translate(${((v.x + 1) / 2) * W}px, ${((1 - v.y) / 2) * Hh}px)`;
+        el.style.transform = `translate(${px}px, ${box.y + (tile ? el.offsetHeight / 2 : 9)}px)`;
       }
     }
     if (s.playing) again = true;

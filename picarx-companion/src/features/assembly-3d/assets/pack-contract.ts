@@ -3,7 +3,7 @@
 // two sides cannot drift. SHA-256 comes from Web Crypto, which Node and the app's secure context both provide.
 import canonicalize from 'canonicalize';
 
-export const PACK_CONTRACT = 'picar-studio-pack/3';
+export const PACK_CONTRACT = 'picar-studio-pack/4';
 export const PARTS_CONTRACT = 'picar-studio-parts/1';
 export const PACK_ID_DOMAIN = 'picar-studio:pack\n';
 export const RUNTIME_BASIS = 'RH-YUP-ZFORWARD';
@@ -104,10 +104,11 @@ export function manifestProblems(m: unknown): string[] {
     const expectedTiles = Object.keys(m.schematic).filter((id) => m.schematic[id].variants.includes(v));
     need(sameSet(Object.keys(tray), expectedSolids) && sameSet(Object.keys(tiles), expectedTiles) && new Set(slots).size === slots.length, `MANIFEST_TRAY_COVERAGE ${v}`);
     const inventory = entry.tray.inventory;
-    need(isObject(inventory) && ['required', 'modeled', 'tiles', 'canonical', 'notRequired', 'spares'].every((k) => Number.isSafeInteger(inventory[k]) && inventory[k] >= 0)
-      && inventory.required === slots.length && inventory.modeled === Object.keys(tray).length && inventory.tiles === Object.keys(tiles).length
-      && inventory.required === inventory.modeled + inventory.tiles && inventory.canonical === inventory.required + inventory.notRequired
-      && inventory.spares <= inventory.notRequired && typeof inventory.scope === 'string' && typeof inventory.canonicalSource === 'string', `MANIFEST_TRAY_INVENTORY ${v}`);
+    need(isObject(inventory) && ['required', 'visible', 'modeled', 'tiles', 'canonical', 'notRequired', 'spares', 'later', 'tools'].every((k) => Number.isSafeInteger(inventory[k]) && inventory[k] >= 0)
+      && inventory.visible === slots.length && inventory.modeled === Object.keys(tray).length && inventory.tiles === Object.keys(tiles).length
+      && inventory.visible === inventory.modeled + inventory.tiles && inventory.canonical === inventory.visible
+      && inventory.canonical === inventory.required + inventory.notRequired && inventory.notRequired === inventory.later + inventory.spares
+      && typeof inventory.scope === 'string' && typeof inventory.canonicalSource === 'string', `MANIFEST_TRAY_INVENTORY ${v}`);
     const known = (id: unknown): boolean => typeof id === 'string' && (Object.prototype.hasOwnProperty.call(tray, id) || Object.prototype.hasOwnProperty.call(tiles, id));
     if (!need(Array.isArray(entry.steps) && entry.steps.length === STEPS, `MANIFEST_STEPS ${v}`)) continue;
     entry.steps.forEach((s: Json, i: number) => {
@@ -183,14 +184,24 @@ export function manifestProblems(m: unknown): string[] {
       need(isObject(s.assembly) && typeof s.assembly.status === 'string', `MANIFEST_ASSEMBLY ${at}`);
     });
     const scope: string[] = entry.steps.flatMap((s: Json) => ['introducedInstanceIds', 'introducedZeroSolidInstanceIds', 'usedInstanceIds', 'toolInstanceIds'].flatMap((k) => Array.isArray(s?.[k]) ? s[k] : []));
-    need(sameSet(slots, [...new Set(scope)]), `MANIFEST_TRAY_SOURCE_SCOPE ${v}`);
+    need([...new Set(scope)].every((id) => slots.includes(id)) && inventory?.required === new Set(scope).size, `MANIFEST_TRAY_SOURCE_SCOPE ${v}`);
     const firstUse = new Map<string, { firstStep: number; required: string }>();
     for (const s of entry.steps) if (isObject(s)) {
       for (const [key, required] of [['introducedInstanceIds', 'introduced'], ['introducedZeroSolidInstanceIds', 'introduced'], ['usedInstanceIds', 'used'], ['toolInstanceIds', 'tool']]) {
         for (const id of Array.isArray(s[key]) ? s[key] : []) if (!firstUse.has(id)) firstUse.set(id, { firstStep: s.printedNumber, required });
       }
     }
-    need(slots.every((id) => { const slot = tray[id] ?? tiles[id], use = firstUse.get(id); return isObject(slot) && use?.firstStep === slot.firstStep && use?.required === slot.required; }), `MANIFEST_TRAY_FIRST_USE ${v}`);
+    need(slots.every((id) => {
+      const slot = tray[id] ?? tiles[id], use = firstUse.get(id), item = m.instances[id] ?? m.schematic[id];
+      if (!isObject(slot) || !['available', 'backup', 'accessory', 'tool'].includes(item?.disposition)
+        || !['kit', 'user', 'tool', 'consumable'].includes(item?.supplyOrigin) || !['current', 'later', 'spare', 'tool'].includes(slot.state)) return false;
+      const expectedState = item.disposition === 'tool' ? 'tool' : item.disposition === 'backup' ? 'spare' : use ? 'current' : 'later';
+      return slot.state === expectedState && (use ? use.firstStep === slot.firstStep && use.required === slot.required
+        : (slot.firstStep === null && slot.required === 'stock' || Number.isInteger(slot.firstStep) && slot.firstStep > STEPS && slot.firstStep <= 29 && ['introduced', 'used', 'tool'].includes(slot.required)));
+    }), `MANIFEST_TRAY_FIRST_USE ${v}`);
+    need(inventory?.spares === slots.filter((id) => (tray[id] ?? tiles[id]).state === 'spare').length
+      && inventory?.later === slots.filter((id) => (tray[id] ?? tiles[id]).state === 'later').length
+      && inventory?.tools === slots.filter((id) => (tray[id] ?? tiles[id]).state === 'tool').length, `MANIFEST_TRAY_STATE_COUNTS ${v}`);
   }
   return out;
 }

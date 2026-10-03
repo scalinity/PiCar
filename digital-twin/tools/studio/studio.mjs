@@ -37,6 +37,7 @@ const M = 'twin_cad.assemblies.instructional';
 // Records the tray and the instruction drawer are built from; each is a pack input, so editing one makes the pack STALE.
 const PARTS = 'digital-twin/components/definitions/parts.json';
 const STOCK = 'digital-twin/components/instances/planned-stock.json';
+const USES = 'digital-twin/components/inventory/planned-uses.json';
 const TOOLS = 'digital-twin/components/inventory/tools.json';
 const INTENTS = 'digital-twin/assemblies/v40/steps/source-intents.json';
 const CABLES = 'digital-twin/assemblies/v40/connections/cables.json';
@@ -109,9 +110,10 @@ function studioDefinitions() {
   const kind = kindsByDefinition();
   const defs = new Set();
   for (const variant of activeVariants()) {
-    const graph = json(graphPath(variant));
-    const defOf = Object.fromEntries(graph.instances.map((i) => [i.id, i.definitionId]));
-    for (let n = 1; n <= STEPS; n++) for (const id of graph.steps[n - 1].introducedInstanceIds) if (isSolidKind(kind[defOf[id]])) defs.add(defOf[id]);
+    const classes = Object.fromEntries(json(PARTS).map((d) => [d.id, d.componentClass]));
+    for (const s of json(STOCK).filter((s) => s.variantIds.includes(variant))) {
+      if (classes[s.definitionId] !== 'tool' && isSolidKind(kindOf(kind, s.definitionId))) defs.add(s.definitionId);
+    }
   }
   return [...defs].sort();
 }
@@ -343,12 +345,19 @@ function buildPack({ chain, tessellation }) {
     const installedRotation = {};
     // Every instance S01-S09 introduce or use, and the kit tools their tool requirements name: the tray's scope.
     const required = new Map();
-    for (let n = 1; n <= STEPS; n++) {
+    for (let n = 1; n <= graph.steps.length; n++) {
       const step = graph.steps[n - 1];
       for (const id of step.introducedInstanceIds) if (!required.has(id)) required.set(id, { firstStep: n, how: 'introduced' });
       for (const id of step.usedInstanceIds) if (!required.has(id)) required.set(id, { firstStep: n, how: 'used' });
       for (const req of step.toolRequirementIds) for (const id of toolInstances(req, variant)) if (!required.has(id)) required.set(id, { firstStep: n, how: 'tool' });
     }
+    const canonical = stock.filter((s) => s.variantIds.includes(variant));
+    const stockOf = Object.fromEntries(canonical.map((s) => [s.id, s]));
+    const frontierCount = [...required].filter(([, use]) => use.firstStep <= STEPS).length;
+    for (const s of canonical) if (!required.has(s.id)) required.set(s.id, { firstStep: null, how: 'stock' });
+    check(`canonical-scope:${variant}`, [...required.keys()].every((id) => stockOf[id] && inst[id]?.definitionId === stockOf[id].definitionId), 'all graph/tool and full-stock identities reconcile');
+    const stateOf = (id) => stockOf[id].disposition === 'tool' ? 'tool' : stockOf[id].disposition === 'backup' ? 'spare'
+      : required.get(id).firstStep !== null && required.get(id).firstStep <= STEPS ? 'current' : 'later';
     for (const id of required.keys()) if (isSolid(inst[id].definitionId)) check(`tray-geometry:${variant}:${id}`, Boolean(cadBounds[inst[id].definitionId]), 'a required solid has tessellated geometry');
     for (let n = 1; n <= STEPS; n++) {
       const step = graph.steps[n - 1];
@@ -443,7 +452,7 @@ function buildPack({ chain, tessellation }) {
     // tape stock, a tool) gets a flat tile, never invented geometry.
     const assembled = unionBounds(steps.map((s) => s._boundsCad).filter(finite));
     const floorZ = assembled.min[2];
-    const order = (a, b) => required.get(a).firstStep - required.get(b).firstStep || inst[a].definitionId.localeCompare(inst[b].definitionId) || a.localeCompare(b);
+    const order = (a, b) => inst[a].definitionId.localeCompare(inst[b].definitionId) || a.localeCompare(b);
     const footprint = (id) => {
       const definitionId = inst[id].definitionId;
       if (!isSolid(definitionId)) return { dx: T.tileMm[0], dy: T.tileMm[1], tile: true };
@@ -461,7 +470,12 @@ function buildPack({ chain, tessellation }) {
         if (!ids.length) continue;
         // Rows: one per definition where identical pieces must be countable, otherwise a flow wrapped at the group width.
         const rows = [];
-        if (group.rowPerDefinition) for (const id of ids) { const row = rows.find((r) => inst[r[0]].definitionId === inst[id].definitionId); if (row) row.push(id); else rows.push([id]); }
+        if (group.rowPerDefinition) for (const id of ids) {
+          const f = footprint(id), pitch = Math.max(T.minPitchMm, f.dx) + T.gapMm;
+          const row = rows.at(-1);
+          if (row && inst[row[0]].definitionId === inst[id].definitionId && (row.length + 1) * pitch <= T.groupWidthMm) row.push(id);
+          else rows.push([id]);
+        }
         else {
           let row = [], width = 0;
           for (const id of ids) { const f = footprint(id); if (row.length && width + f.dx > T.groupWidthMm) { rows.push(row); row = []; width = 0; } row.push(id); width += f.dx + T.gapMm; }
@@ -477,7 +491,7 @@ function buildPack({ chain, tessellation }) {
           let x = cursorX;
           row.forEach((id, k) => {
             const f = feet[k], left = pitch ? x + (pitch - T.gapMm - f.dx) / 2 : x;
-            const common = { firstStep: required.get(id).firstStep, required: required.get(id).how, group: gid };
+            const common = { firstStep: required.get(id).firstStep, required: required.get(id).how, group: gid, state: stateOf(id) };
             if (f.tile) {
               boxOf[id] = { min: [left, centreY - f.dy / 2, floorZ], max: [left + f.dx, centreY + f.dy / 2, floorZ] };
               // Runtime half extents [x, z]: runtime x is CAD y, runtime z is CAD x.
@@ -528,11 +542,11 @@ function buildPack({ chain, tessellation }) {
     for (const id of required.keys()) {
       const definitionId = inst[id].definitionId;
       const base = { definitionId, name: stage.displayNames[definitionId] ?? names[definitionId] ?? definitionId, recordName: names[definitionId] ?? definitionId,
-        role: inst[id].role, componentClass: classOf[definitionId], group: groupOf(definitionId) };
+        role: inst[id].role, disposition: stockOf[id].disposition, supplyOrigin: stockOf[id].supplyOrigin,
+        componentClass: classOf[definitionId], group: groupOf(definitionId) };
       if (tray[id]) (instances[id] ??= { ...base, variants: [] }).variants.push(variant);
       else (schematic[id] ??= { ...base, representation: T.representations[classOf[definitionId]] ?? fail('TRAY_REPRESENTATION', classOf[definitionId]), variants: [] }).variants.push(variant);
     }
-    const canonical = stock.filter((s) => s.variantIds.includes(variant));
     const trayCamera = { tray: trayBounds, everything }[cameraSpec(0).subject] ?? fail('CAMERA_SUBJECT', `${variant} S00 ${cameraSpec(0).subject}`);
     variants[variant] = {
       graphHash: graph.graphHash, modelHash: graph.modelHash,
@@ -540,9 +554,10 @@ function buildPack({ chain, tessellation }) {
       centreM: pointToRuntime(everything.min.map((v, i) => (v + everything.max[i]) / 2)),
       tray: {
         label: 'Parts tray: presentation layout only, not a physical assembly state', instances: tray, tiles, groups,
-        inventory: { required: required.size, modeled: Object.keys(tray).length, tiles: Object.keys(tiles).length, canonical: canonical.length,
-          notRequired: canonical.length - required.size, spares: canonical.filter((s) => s.disposition === 'backup').length,
-          scope: 'Every instance printed steps 1 to 9 introduce or use, and the kit tools they require', canonicalSource: `${STOCK}: printed-stock claims, not a count of the owner's loose kit` },
+        inventory: { required: frontierCount, visible: required.size, modeled: Object.keys(tray).length, tiles: Object.keys(tiles).length, canonical: canonical.length,
+          notRequired: canonical.length - frontierCount, spares: canonical.filter((s) => s.disposition === 'backup').length,
+          later: [...required.keys()].filter((id) => stateOf(id) === 'later').length, tools: canonical.filter((s) => s.disposition === 'tool').length,
+          scope: 'Full canonical stock for this board, including later-use inventory, backups, accessories and tools', canonicalSource: `${STOCK}: printed-stock claims, including the user board; not a count of the owner's loose kit` },
         camera: cameraFor(cameraSpec(0), trayCamera, vfov),
       },
       steps,
@@ -589,7 +604,7 @@ function buildPack({ chain, tessellation }) {
         studioChain: { sha256: sha(fs.readFileSync(studioChainFile)) } },
       tessellation: { label: tessellation, meshesSha256: sha(fs.readFileSync(path.join(tessDir, 'meshes.json'))), binSha256: index.binSha256, linearDeflectionMm: index.linearDeflectionMm, angularDeflectionRad: index.angularDeflectionRad },
       revisionRegistry: { path: REVISION_REGISTRY, sha256: registrySha },
-      inputs: Object.fromEntries([STAGE, MATERIALS, GATE_REPORT, `${PRESENTATION}/instructional/product-scope.json`, KINDS, PARTS, STOCK, TOOLS, INTENTS, CABLES, REGISTRY,
+      inputs: Object.fromEntries([STAGE, MATERIALS, GATE_REPORT, `${PRESENTATION}/instructional/product-scope.json`, KINDS, PARTS, STOCK, USES, TOOLS, INTENTS, CABLES, REGISTRY,
         ...Object.values(displays).flatMap(({ record }) => (record.sourceBindings ?? []).map((b) => b.path)),
         ...activeVariants().map(graphPath)].map((p) => [p, sha(read(p))])),
       m7Gate: { gate: gate.gate, status: gate.status, coverage: gate.currentProductDeliveryCoverage },

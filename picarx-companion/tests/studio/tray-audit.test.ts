@@ -19,12 +19,12 @@ function audit(change?: (m: any) => void) {
   } finally { fs.rmSync(tmp, { recursive: true }); }
 }
 
-it('independently accepts real stock identities and Pi5 50=44+6 / Zero 47=41+6', () => {
+it('independently accepts full canonical stock and both current frontiers', () => {
   const { status, report } = audit();
   expect(status).toBe(0);
-  for (const [variant, required, modeled] of [['rpi5', 50, 44], ['rpi-zero-2-w', 47, 41]] as const) {
+  for (const [variant, required] of [['rpi5', 50, 44], ['rpi-zero-2-w', 47, 41]] as const) {
     expect(report.variants[variant].invariant).toBe('HOLDS');
-    expect(report.variants[variant].counts).toMatchObject({ s01ToS09RequiredCount: required, rendered3DInstanceCount: modeled, nonRenderableRepresentedCount: 6 });
+    expect(report.variants[variant].counts).toMatchObject({ s01ToS09RequiredCount: required, canonicalPhysicalCount: 156, rendered3DInstanceCount: 143, nonRenderableRepresentedCount: 13 });
   }
 });
 
@@ -39,6 +39,12 @@ it.each([
   ['solid variant membership', (m: any) => { m.instances['PX-V40-INS-PI5-001'].variants.push('rpi-zero-2-w'); }, 'PACK_VARIANT_MISMATCH'],
   ['tool variant membership', (m: any) => { m.schematic['PX-V40-INS-WRENCH-001'].variants = ['rpi5']; }, 'PACK_VARIANT_MISMATCH'],
   ['required-use metadata', (m: any) => { m.variants.rpi5.tray.tiles['PX-V40-INS-WRENCH-001'].firstStep = 9; }, 'PACK_SLOT_USE_MISMATCH'],
+  ['later plate omitted', (m: any) => { delete m.variants.rpi5.tray.instances['PX-V40-INS-PLATE-B-001']; }, 'PACK_SLOT_MISSING'],
+  ['invented stock', (m: any) => { m.variants.rpi5.tray.instances['PX-V40-INS-INVENTED-001'] = { ...m.variants.rpi5.tray.instances['PX-V40-INS-PLATE-B-001'] }; }, 'PACK_SLOT_EXTRA'],
+  ['backup disposition', (m: any) => { const id = Object.keys(m.instances).find(id => m.instances[id].disposition === 'backup')!; m.instances[id].disposition = 'available'; }, 'PACK_IDENTITY_MISMATCH'],
+  ['later plate made current', (m: any) => { m.variants.rpi5.tray.instances['PX-V40-INS-PLATE-B-001'].state = 'current'; }, 'PACK_SLOT_STATE_MISMATCH'],
+  ['plate put in electronics', (m: any) => { m.instances['PX-V40-INS-PLATE-B-001'].group = 'electronics'; }, 'PACK_GROUP_MISMATCH'],
+  ['role', (m: any) => { m.instances['PX-V40-INS-PLATE-B-001'].role = 'invented role'; }, 'PACK_IDENTITY_MISMATCH'],
 ])('rejects rehashed %s against independent source data', (_label, change, code) => {
   const { status, report } = audit(change as (m: any) => void);
   expect(status).toBe(3);

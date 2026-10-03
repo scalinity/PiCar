@@ -9,12 +9,12 @@
 //                   the viewport. The light-card scene it is rendered from is released as soon as the environment exists.
 // Owners register when the frame loop adopts them, never during render, so `owned()` lists exactly what is live.
 import {
-  BoxGeometry, BufferGeometry, Color, DirectionalLight, DoubleSide, Float32BufferAttribute, Group, LineDashedMaterial, LineLoop, Mesh, MeshBasicMaterial,
+  Box3, BoxGeometry, BufferGeometry, Color, DirectionalLight, DoubleSide, Float32BufferAttribute, Group, LineDashedMaterial, LineLoop, Mesh, MeshBasicMaterial,
   MeshPhysicalMaterial, MeshStandardMaterial, Plane, PlaneGeometry, PMREMGenerator, Scene, Vector3,
   type Material, type Texture, type WebGLRenderer,
 } from 'three';
 import type { LightSpec, LoadedPack, Vec3 } from '../assets/pack';
-import type { Style } from '../motion/inspect';
+import { worldBox, type Style } from '../motion/inspect';
 import type { StudioVariant } from '../../../lib/router';
 
 export type Owner = { label: string; dispose(): void };
@@ -50,9 +50,10 @@ export type Board = {
 export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
   const v = pack.manifest.variants[variant];
   const sets = new Map<string, Record<Exclude<Style, 'hidden'>, MeshPhysicalMaterial>>();
-  for (const [id, m] of Object.entries(pack.manifest.materials)) {
+  for (const [id, m] of Object.entries(pack.manifest.materials)) for (const state of ['current', 'later', 'spare'] as const) {
     const normal = new MeshPhysicalMaterial({ color: new Color(...m.baseColor), metalness: m.metallic, roughness: m.roughness,
       clearcoat: m.clearcoat ?? 0, clearcoatRoughness: m.clearcoatRoughness ?? 0 });
+    if (state !== 'current') normal.color.multiplyScalar(state === 'later' ? 0.55 : 0.75);
     normal.name = id;
     const selected = normal.clone();
     selected.emissive = SELECT_COLOR;
@@ -62,7 +63,7 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
     focus.emissiveIntensity = 0.26;
     const ghost = normal.clone();
     Object.assign(ghost, { transparent: true, opacity: 0.12, depthWrite: false });
-    sets.set(id, { normal, selected, focus, ghost });
+    sets.set(`${id}:${state}`, { normal, selected, focus, ghost });
   }
   const meshSets = new Map<Mesh, Record<Exclude<Style, 'hidden'>, Material>>();
   const pickMaterial = new MeshBasicMaterial({ visible: false });
@@ -74,11 +75,12 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
     const definitionId = pack.manifest.instances[id].definitionId;
     const root = new Group();
     root.name = id;
-    root.userData = { instanceId: id, definitionId };
+    root.userData = { instanceId: id, definitionId, inventoryState: v.tray.instances[id].state };
     root.add(pack.definitions.get(definitionId)!.clone());
     root.traverse((o) => {
       if (!(o instanceof Mesh)) return;
-      const set = sets.get((o.material as Material).userData.materialId as string)!;
+      const state = v.tray.instances[id].state;
+      const set = sets.get(`${(o.material as Material).userData.materialId}:${state === 'tool' ? 'current' : state}`)!;
       o.material = set.normal;
       meshSets.set(o, set);
     });
@@ -117,7 +119,7 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
     const [hx, hz] = t.halfExtentsM;
     const group = new Group();
     group.name = id;
-    group.userData = { instanceId: id, tile: true };
+    group.userData = { instanceId: id, tile: true, inventoryState: t.state };
     group.position.set(t.centreM[0], v.floorYM + 0.0006, t.centreM[2]);
     const faceGeometry = new PlaneGeometry(hx * 2, hz * 2);
     faceGeometry.rotateX(-Math.PI / 2);
@@ -175,7 +177,25 @@ export function createBoard(pack: LoadedPack, variant: StudioVariant): Board {
   keyLight.shadow.radius = 5;
   keyLight.shadow.bias = -0.0002;
   keyLight.shadow.normalBias = 0.0004;
-  Object.assign(keyLight.shadow.camera, { left: -0.5, right: 0.5, top: 0.5, bottom: -0.5, near: 0.5, far: 2.6 });
+  // Full-kit framing moves the light's centre away from the chassis. Fit its shadow camera to both the tray and every
+  // assembly state instead of clipping the chassis shadow at the old fixed half-metre boundary. The margin covers
+  // the short approach motions and inspection spread; include the receiving floor in the depth range.
+  const bounds = new Box3();
+  for (const group of v.tray.groups) bounds.union(new Box3(new Vector3(...group.boundsM.min), new Vector3(...group.boundsM.max)));
+  for (const step of v.steps) for (const [id, pose] of Object.entries(step.placements)) {
+    const b = worldBox(pack.manifest.definitions[pack.manifest.instances[id].definitionId], pose);
+    bounds.union(new Box3(new Vector3(...b.min), new Vector3(...b.max)));
+  }
+  bounds.min.y = Math.min(bounds.min.y, v.floorYM);
+  bounds.expandByScalar(0.2);
+  const shadowCamera = keyLight.shadow.camera;
+  shadowCamera.position.copy(keyLight.position);
+  shadowCamera.lookAt(keyLight.target.position);
+  shadowCamera.updateMatrixWorld();
+  bounds.applyMatrix4(shadowCamera.matrixWorldInverse);
+  Object.assign(shadowCamera, { left: bounds.min.x, right: bounds.max.x, bottom: bounds.min.y, top: bounds.max.y,
+    near: Math.max(0.01, -bounds.max.z), far: Math.max(0.02, -bounds.min.z) });
+  shadowCamera.updateProjectionMatrix();
   const owned = (): Material[] => [...partMaterials(), pickMaterial, tileFace.normal, tileFace.ghost, ...Object.values(tileEdge)];
   return {
     variant, ids: new Set([...roots.keys(), ...tiles.keys()]), roots, tiles, keyLight, style, styleOf: (id) => styles.get(id) ?? 'normal', setClip,

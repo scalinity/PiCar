@@ -36,12 +36,13 @@ export type StepEntry = {
   claims: Record<string, string>; source: { kind: string; file?: string; sha256?: string; closureVerify?: string; closureRfc8785Sha256?: string; candidateRecord?: string };
   camera: StudioCamera | null;
 };
-export type Required = 'introduced' | 'used' | 'tool';
-export type TrayPose = Pose & { orientation: 'installed' | 'part-local'; firstStep: number; required: Required; group: string };
+export type Required = 'introduced' | 'used' | 'tool' | 'stock';
+export type TrayState = 'current' | 'later' | 'spare' | 'tool';
+export type TrayPose = Pose & { orientation: 'installed' | 'part-local'; firstStep: number | null; required: Required; group: string; state: TrayState };
 // A flat floor tile for an instance with no trusted solid; half extents along runtime x and z.
-export type TrayTile = { centreM: Vec3; halfExtentsM: [number, number]; firstStep: number; required: Required; group: string };
+export type TrayTile = { centreM: Vec3; halfExtentsM: [number, number]; firstStep: number | null; required: Required; group: string; state: TrayState };
 export type TrayGroup = { id: string; label: string; instanceIds: string[]; boundsM: { min: Vec3; max: Vec3 }; labelM: Vec3 };
-export type Inventory = { required: number; modeled: number; tiles: number; canonical: number; notRequired: number; spares: number; scope: string; canonicalSource: string };
+export type Inventory = { required: number; visible: number; modeled: number; tiles: number; canonical: number; notRequired: number; spares: number; later: number; tools: number; scope: string; canonicalSource: string };
 export type VariantEntry = {
   graphHash: string; floorYM: number; centreM: Vec3;
   tray: { label: string; instances: Record<string, TrayPose>; tiles: Record<string, TrayTile>; groups: TrayGroup[]; inventory: Inventory; camera: StudioCamera };
@@ -57,7 +58,7 @@ export type DisplayDetail = {
 };
 export type DisplayWithheld = { label: string; artifact: { path: string; sha256: string }; problems: string[] };
 export type DefinitionEntry = { name: string; kind: string; approximation: string; artifact: { path: string; sha256: string }; boundsM: { min: Vec3; max: Vec3 }; display?: DisplayDetail; displayWithheld?: DisplayWithheld };
-export type InstanceEntry = { definitionId: string; name: string; recordName: string; role: string; componentClass: string; group: string; variants: StudioVariant[] };
+export type InstanceEntry = { definitionId: string; name: string; recordName: string; role: string; disposition: string; supplyOrigin: string; componentClass: string; group: string; variants: StudioVariant[] };
 export type SchematicEntry = InstanceEntry & { representation: string };
 export type LightSpec = { id: string; azimuthDeg: number; elevationDeg: number; distanceM: number; sizeM: [number, number]; color: Vec3; runtimeIntensity: number };
 export type StudioManifest = {

@@ -9,24 +9,218 @@
     "assumption": "presentation choice; the real finish is not established"
   },
   "materials": {
-    "aluminium-bead-blasted": { "label": "Bead-blasted aluminium plate", "basis": "owner-photo", "baseColor": [0.578, 0.590, 0.604], "metallic": 1.0, "roughness": 0.46, "detail": { "kind": "bead-blast", "roughnessJitter": 0.07, "bumpStrength": 0.015, "scaleMm": 0.35, "renderers": ["blender"] } },
-    "nylon-black": { "label": "Black nylon", "basis": "v40-text", "note": "V40 step 1 names the standoffs nylon; screw and rivet finish are assumed to match", "baseColor": [0.011, 0.011, 0.012], "metallic": 0.0, "roughness": 0.52 },
-    "steel-zinc": { "label": "Zinc-plated steel", "basis": "assumption", "baseColor": [0.515, 0.527, 0.552], "metallic": 1.0, "roughness": 0.30 },
-    "pcb-green": { "label": "Green solder mask", "basis": "v40-illustration", "baseColor": [0.007, 0.107, 0.032], "metallic": 0.0, "roughness": 0.58 },
-    "pcb-blue": { "label": "Blue solder mask", "basis": "v40-illustration", "baseColor": [0.010, 0.061, 0.262], "metallic": 0.0, "roughness": 0.58 },
-    "header-black": { "label": "Black connector plastic", "basis": "assumption", "baseColor": [0.008, 0.008, 0.009], "metallic": 0.0, "roughness": 0.45 },
-    "port-nickel": { "label": "Nickel port shield", "basis": "assumption", "baseColor": [0.610, 0.617, 0.630], "metallic": 1.0, "roughness": 0.26 },
-    "connector-cream": { "label": "Cream connector plastic", "basis": "assumption", "note": "the owner photo shows a cream JST housing on the ultrasonic module; HAT housings are assumed to match", "baseColor": [0.838, 0.776, 0.610], "metallic": 0.0, "roughness": 0.55 },
-    "speaker-dark": { "label": "Dark speaker body", "basis": "assumption", "baseColor": [0.021, 0.021, 0.023], "metallic": 0.0, "roughness": 0.5 },
-    "motor-gearbox-yellow": { "label": "Yellow gearbox plastic", "basis": "owner-photo", "baseColor": [0.913, 0.611, 0.013], "metallic": 0.0, "roughness": 0.45 },
-    "motor-can-silver": { "label": "Motor can", "basis": "owner-photo", "baseColor": [0.515, 0.527, 0.552], "metallic": 1.0, "roughness": 0.34 },
-    "motor-shaft-white": { "label": "White shaft plastic", "basis": "owner-photo", "baseColor": [0.871, 0.855, 0.807], "metallic": 0.0, "roughness": 0.5 },
-    "horn-frosted-white": { "label": "Frosted horn plastic", "basis": "owner-photo", "baseColor": [0.830, 0.855, 0.871], "metallic": 0.0, "roughness": 0.58 },
-    "battery-dark": { "label": "Battery pack housing", "basis": "assumption", "baseColor": [0.026, 0.026, 0.029], "metallic": 0.0, "roughness": 0.6 },
-    "usb-body-black": { "label": "Black USB body", "basis": "assumption", "baseColor": [0.010, 0.010, 0.011], "metallic": 0.0, "roughness": 0.3 },
-    "contact-gold": { "label": "Gold-plated contacts", "basis": "assumption", "note": "header pins and mounting pads; the plating is not measured", "baseColor": [0.944, 0.776, 0.373], "metallic": 1.0, "roughness": 0.28 },
-    "usb3-blue": { "label": "USB 3.0 tongue plastic", "basis": "assumption", "note": "USB 3.0 receptacles conventionally use blue tongues", "baseColor": [0.010, 0.120, 0.520], "metallic": 0.0, "roughness": 0.45 },
-    "proxy-satin-grey": { "label": "Fused proxy (single solid, several real finishes)", "basis": "assumption", "note": "the ultrasonic proxy fuses board and transducer cans into one solid, so one neutral finish is used rather than inventing a split", "baseColor": [0.305, 0.314, 0.332], "metallic": 0.0, "roughness": 0.45 }
+    "aluminium-bead-blasted": {
+      "label": "Bead-blasted aluminium plate",
+      "basis": "owner-photo",
+      "baseColor": [
+        0.578,
+        0.59,
+        0.604
+      ],
+      "metallic": 1,
+      "roughness": 0.46,
+      "detail": {
+        "kind": "bead-blast",
+        "roughnessJitter": 0.07,
+        "bumpStrength": 0.015,
+        "scaleMm": 0.35,
+        "renderers": [
+          "blender"
+        ]
+      }
+    },
+    "nylon-black": {
+      "label": "Black nylon",
+      "basis": "v40-text",
+      "note": "V40 step 1 names the standoffs nylon; screw and rivet finish are assumed to match",
+      "baseColor": [
+        0.011,
+        0.011,
+        0.012
+      ],
+      "metallic": 0,
+      "roughness": 0.52
+    },
+    "steel-zinc": {
+      "label": "Zinc-plated steel",
+      "basis": "assumption",
+      "baseColor": [
+        0.515,
+        0.527,
+        0.552
+      ],
+      "metallic": 1,
+      "roughness": 0.3
+    },
+    "pcb-green": {
+      "label": "Green solder mask",
+      "basis": "v40-illustration",
+      "baseColor": [
+        0.007,
+        0.107,
+        0.032
+      ],
+      "metallic": 0,
+      "roughness": 0.58
+    },
+    "pcb-blue": {
+      "label": "Blue solder mask",
+      "basis": "v40-illustration",
+      "baseColor": [
+        0.01,
+        0.061,
+        0.262
+      ],
+      "metallic": 0,
+      "roughness": 0.58
+    },
+    "header-black": {
+      "label": "Black connector plastic",
+      "basis": "assumption",
+      "baseColor": [
+        0.008,
+        0.008,
+        0.009
+      ],
+      "metallic": 0,
+      "roughness": 0.45
+    },
+    "port-nickel": {
+      "label": "Nickel port shield",
+      "basis": "assumption",
+      "baseColor": [
+        0.61,
+        0.617,
+        0.63
+      ],
+      "metallic": 1,
+      "roughness": 0.26
+    },
+    "connector-cream": {
+      "label": "Cream connector plastic",
+      "basis": "assumption",
+      "note": "the owner photo shows a cream JST housing on the ultrasonic module; HAT housings are assumed to match",
+      "baseColor": [
+        0.838,
+        0.776,
+        0.61
+      ],
+      "metallic": 0,
+      "roughness": 0.55
+    },
+    "speaker-dark": {
+      "label": "Dark speaker body",
+      "basis": "assumption",
+      "baseColor": [
+        0.021,
+        0.021,
+        0.023
+      ],
+      "metallic": 0,
+      "roughness": 0.5
+    },
+    "motor-gearbox-yellow": {
+      "label": "Yellow gearbox plastic",
+      "basis": "owner-photo",
+      "baseColor": [
+        0.913,
+        0.611,
+        0.013
+      ],
+      "metallic": 0,
+      "roughness": 0.45
+    },
+    "motor-can-silver": {
+      "label": "Motor can",
+      "basis": "owner-photo",
+      "baseColor": [
+        0.515,
+        0.527,
+        0.552
+      ],
+      "metallic": 1,
+      "roughness": 0.34
+    },
+    "motor-shaft-white": {
+      "label": "White shaft plastic",
+      "basis": "owner-photo",
+      "baseColor": [
+        0.871,
+        0.855,
+        0.807
+      ],
+      "metallic": 0,
+      "roughness": 0.5
+    },
+    "horn-frosted-white": {
+      "label": "Frosted horn plastic",
+      "basis": "owner-photo",
+      "baseColor": [
+        0.83,
+        0.855,
+        0.871
+      ],
+      "metallic": 0,
+      "roughness": 0.58
+    },
+    "battery-dark": {
+      "label": "Battery pack housing",
+      "basis": "assumption",
+      "baseColor": [
+        0.026,
+        0.026,
+        0.029
+      ],
+      "metallic": 0,
+      "roughness": 0.6
+    },
+    "usb-body-black": {
+      "label": "Black USB body",
+      "basis": "assumption",
+      "baseColor": [
+        0.01,
+        0.01,
+        0.011
+      ],
+      "metallic": 0,
+      "roughness": 0.3
+    },
+    "contact-gold": {
+      "label": "Gold-plated contacts",
+      "basis": "assumption",
+      "note": "header pins and mounting pads; the plating is not measured",
+      "baseColor": [
+        0.944,
+        0.776,
+        0.373
+      ],
+      "metallic": 1,
+      "roughness": 0.28
+    },
+    "usb3-blue": {
+      "label": "USB 3.0 tongue plastic",
+      "basis": "assumption",
+      "note": "USB 3.0 receptacles conventionally use blue tongues",
+      "baseColor": [
+        0.01,
+        0.12,
+        0.52
+      ],
+      "metallic": 0,
+      "roughness": 0.45
+    },
+    "proxy-satin-grey": {
+      "label": "Fused proxy (single solid, several real finishes)",
+      "basis": "assumption",
+      "note": "Neutral finish for fused instructional proxies, including camera, grayscale, servo and wheel models; actual finish is not established.",
+      "baseColor": [
+        0.305,
+        0.314,
+        0.332
+      ],
+      "metallic": 0,
+      "roughness": 0.45
+    }
   },
   "regions": {
     "rule": "A definition's solids take materials by solid index in BRep order. byDefinition wins over byKind; its list length must equal the definition's solid count.",
@@ -39,17 +233,65 @@
       "rivet": "nylon-black",
       "horn": "horn-frosted-white",
       "battery": "battery-dark",
-      "ultrasonic": "proxy-satin-grey"
+      "ultrasonic": "proxy-satin-grey",
+      "camera": "proxy-satin-grey",
+      "grayscale": "proxy-satin-grey",
+      "servo": "proxy-satin-grey",
+      "wheel": "proxy-satin-grey"
     },
     "byDefinition": {
-      "PX-V40-DEF-M25X6-SCREW": ["nylon-black"],
-      "PX-V40-DEF-PI5": ["pcb-green", "header-black", "port-nickel", "port-nickel", "port-nickel", "port-nickel", "header-black", "header-black"],
-      "PX-V40-DEF-ZERO2W": ["pcb-green", "header-black", "port-nickel", "port-nickel", "port-nickel", "header-black"],
-      "PX-V40-DEF-ROBOT-HAT": ["pcb-blue", "speaker-dark", "connector-cream", "connector-cream", "connector-cream", "connector-cream", "connector-cream", "connector-cream", "connector-cream", "connector-cream", "connector-cream"],
-      "PX-V40-DEF-MOTOR-LEFT": ["motor-gearbox-yellow", "motor-can-silver", "motor-shaft-white"],
-      "PX-V40-DEF-MOTOR-RIGHT": ["motor-gearbox-yellow", "motor-can-silver", "motor-shaft-white"],
-      "PX-V40-DEF-USB-MICROPHONE": ["usb-body-black", "port-nickel"],
-      "PX-V40-DEF-R3080-RIVET": ["nylon-black", "nylon-black"]
+      "PX-V40-DEF-M25X6-SCREW": [
+        "nylon-black"
+      ],
+      "PX-V40-DEF-PI5": [
+        "pcb-green",
+        "header-black",
+        "port-nickel",
+        "port-nickel",
+        "port-nickel",
+        "port-nickel",
+        "header-black",
+        "header-black"
+      ],
+      "PX-V40-DEF-ZERO2W": [
+        "pcb-green",
+        "header-black",
+        "port-nickel",
+        "port-nickel",
+        "port-nickel",
+        "header-black"
+      ],
+      "PX-V40-DEF-ROBOT-HAT": [
+        "pcb-blue",
+        "speaker-dark",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream",
+        "connector-cream"
+      ],
+      "PX-V40-DEF-MOTOR-LEFT": [
+        "motor-gearbox-yellow",
+        "motor-can-silver",
+        "motor-shaft-white"
+      ],
+      "PX-V40-DEF-MOTOR-RIGHT": [
+        "motor-gearbox-yellow",
+        "motor-can-silver",
+        "motor-shaft-white"
+      ],
+      "PX-V40-DEF-USB-MICROPHONE": [
+        "usb-body-black",
+        "port-nickel"
+      ],
+      "PX-V40-DEF-R3080-RIVET": [
+        "nylon-black",
+        "nylon-black"
+      ]
     }
   }
 }

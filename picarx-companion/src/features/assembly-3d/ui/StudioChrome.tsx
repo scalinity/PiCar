@@ -27,7 +27,8 @@ const PHASE_TEXT: Record<Phase, string> = {
   installed: 'Installed in this step’s pose', candidate: 'At its pose in the refused candidate (not accepted)', tray: 'In the parts tray (a layout, not an assembly state)',
   waiting: 'Waiting in the tray', 'bring-in': 'Being brought in from the tray (presentation travel)', approach: 'Staged approach from the M7 recipe (not a measured insertion path)',
 };
-const REQUIRED_TEXT = { introduced: 'introduced', used: 'used', tool: 'needed as a tool' } as const;
+const REQUIRED_TEXT = { introduced: 'introduced', used: 'used', tool: 'needed as a tool', stock: 'stock' } as const;
+const STOCK_STATE = { current: 'Used through Step 9', later: 'Later · no implemented placement', spare: 'Spare / backup', tool: 'Kit tool' } as const;
 
 // The matched subset of the maker's-model cross-check, stated as a subset, with every unmatched part named.
 function fidelityText(display: DisplayDetail): string {
@@ -68,7 +69,7 @@ function inventoryOf(v: VariantEntry, pack: LoadedPack, id: string) {
   const definitionId = entryOf(pack.manifest, id)!.definitionId;
   const group = v.tray.groups.find((g) => g.id === slot.group)!;
   const same = group.instanceIds.filter((x) => entryOf(pack.manifest, x)!.definitionId === definitionId);
-  return { group, ordinal: same.indexOf(id) + 1, quantity: same.length, firstStep: slot.firstStep, required: slot.required };
+  return { group, ordinal: same.indexOf(id) + 1, quantity: same.length, firstStep: slot.firstStep, required: slot.required, state: slot.state };
 }
 
 function Button({ label, onClick, children, pressed, disabled, wide, shortcut }: { label: string; onClick: () => void; children: ReactNode; pressed?: boolean; disabled?: boolean; wide?: boolean; shortcut?: string }) {
@@ -78,7 +79,7 @@ function Button({ label, onClick, children, pressed, disabled, wide, shortcut }:
   );
 }
 
-export function Header({ pack, variant, step, root }: { pack: LoadedPack; variant: StudioVariant; step: number; root: () => HTMLElement | null }) {
+export function Header({ pack, variant, step, root, boardHref }: { pack: LoadedPack; variant: StudioVariant; step: number; root: () => HTMLElement | null; boardHref?: (variant:StudioVariant)=>string }) {
   const full = useFullscreen();
   const fullscreenError = useFullscreenError();
   const drawerOpen = useStudio((s) => s.drawerOpen);
@@ -96,7 +97,7 @@ export function Header({ pack, variant, step, root }: { pack: LoadedPack; varian
       <div className="studio-header-tools">
         <div className="studio-boards" role="group" aria-label="Board">
           {(Object.keys(BOARD) as StudioVariant[]).map((v) => (
-            <a key={v} href={studioHref(v, step)} aria-current={v === variant ? 'true' : undefined} title={BOARD[v]}>{SHORT[v]}</a>
+            <a key={v} href={v === variant ? studioHref(v, step) : boardHref?.(v)??studioHref(v,step)} aria-current={v === variant ? 'true' : undefined} title={BOARD[v]}>{SHORT[v]}</a>
           ))}
         </div>
         <span className="studio-mode-chip" data-mode={entry?.mode ?? 'tray'}
@@ -123,8 +124,8 @@ function Inspector({ pack, variant, timeline }: { pack: LoadedPack; variant: Stu
   const step = timeline.step > 0 ? v.steps[timeline.step - 1] : undefined;
   const ident = (
     <>
-      <dt>Instance</dt><dd><code>{selection}</code>{where.quantity > 1 ? ` · ${where.ordinal} of ${where.quantity} identical pieces in steps 1–9` : ''}</dd>
-      <dt>Inventory</dt><dd>{where.group.label}, first {REQUIRED_TEXT[where.required]} in step {where.firstStep}</dd>
+      <dt>Instance</dt><dd><code>{selection}</code>{where.quantity > 1 ? ` · ${where.ordinal} of ${where.quantity} identical pieces in the full kit` : ''}</dd>
+      <dt>Inventory</dt><dd>{where.group.label} · {STOCK_STATE[where.state]}{where.firstStep !== null ? ` · first ${REQUIRED_TEXT[where.required]} in step ${where.firstStep}` : ' · no planned step'}</dd>
     </>
   );
   const schematic = pack.manifest.schematic[selection];
@@ -289,10 +290,14 @@ function Review({ pack, entry }: { pack: LoadedPack; entry: StepEntry }) {
 
 function TrayInventory({ pack, variant }: { pack: LoadedPack; variant: StudioVariant }) {
   const v = pack.manifest.variants[variant], inv = v.tray.inventory;
-  const note = (id: string): string => (v.tray.tiles[id] ? 'shown as a tile: no 3D shape' : `from step ${(v.tray.instances[id]).firstStep}`);
+  const note = (id: string): string => {
+    const slot = v.tray.instances[id] ?? v.tray.tiles[id];
+    return `${STOCK_STATE[slot.state]}${slot.firstStep !== null ? ` · step ${slot.firstStep}` : ''}${v.tray.tiles[id] ? ' · tile: no 3D shape' : ''}`;
+  };
   return (
     <section aria-label="Parts inventory">
-      <p className="studio-inventory" data-testid="tray-inventory"><b>{inv.required}</b> pieces · {inv.modeled} modelled · {inv.tiles} shown as tiles</p>
+      <p className="studio-inventory" data-testid="tray-inventory"><b>{inv.canonical}</b> canonical stock · {inv.modeled} modelled · {inv.tiles} tiles</p>
+      <p className="studio-source-line">{inv.required} used through Step 9 · {inv.later} later · {inv.spares} spares · {inv.tools} tools included</p>
       {v.tray.groups.map((g) => (
         <details key={g.id} className="studio-group">
           <summary><span>{g.label}</span><b>{g.instanceIds.length}</b>
@@ -301,12 +306,12 @@ function TrayInventory({ pack, variant }: { pack: LoadedPack; variant: StudioVar
           <PartRows pack={pack} list={rows(pack, g.instanceIds, note)} />
         </details>
       ))}
-      <p className="studio-source-line">The printed kit inventory lists {inv.canonical} pieces for this board; the {inv.notRequired} not shown are used after step 9, or are spares ({inv.spares}) and accessories.</p>
+      <p className="studio-source-line">All canonical stock is visible, including the selected user board. These are source claims, not a count of your loose kit. Later parts remain inspectable; only Steps 1–9 have Studio placement.</p>
     </section>
   );
 }
 
-export function Drawer({ pack, variant, step, requestedStep, timeline }: { pack: LoadedPack; variant: StudioVariant; step: number; requestedStep: number; timeline: Timeline }) {
+export function Drawer({ pack, variant, step, requestedStep, timeline, buildAlong }: { pack: LoadedPack; variant: StudioVariant; step: number; requestedStep: number; timeline: Timeline; buildAlong?: ReactNode }) {
   const open = useStudio((s) => s.drawerOpen);
   const v = pack.manifest.variants[variant];
   const entry: StepEntry | undefined = step > 0 ? v.steps[step - 1] : undefined;
@@ -318,9 +323,10 @@ export function Drawer({ pack, variant, step, requestedStep, timeline }: { pack:
         <p className="studio-notice" role="status">Step {requestedStep} is not available on this board. Showing step {step}.</p>
       )}
       <p className="studio-kicker">{entry ? `Step ${entry.printedNumber} of 29 · ${BOARD[variant]}` : `Parts tray · ${BOARD[variant]}`}</p>
-      <h2 className="studio-step-title">{entry ? entry.title : 'Everything for steps 1 to 9'}</h2>
+      <h2 className="studio-step-title">{entry ? entry.title : 'Full-kit parts tray'}</h2>
       {entry ? <p className={`studio-mode-line${entry.mode === 'review' ? ' studio-mode-review' : ''}`}>{modeText(entry)}</p>
         : <p className="studio-source-line">Laid out by kind beside the chassis: a layout for looking and counting, not a stage of the build.</p>}
+      {buildAlong}
       {entry?.mode === 'review' && <Review pack={pack} entry={entry} />}
       {entry?.dependencyWarnings.map((w) => (
         <p key={w.printedNumber} className="studio-dependency" role="note">Step {w.printedNumber} is {w.display === 'UNAVAILABLE' ? 'not available' : 'still under review'}. Previewing step {entry.printedNumber} does not certify step {w.printedNumber}.</p>
@@ -344,7 +350,7 @@ export function Drawer({ pack, variant, step, requestedStep, timeline }: { pack:
       <section className="studio-status" aria-label="Status">
         <dl className="studio-truths">
           <dt>Assembly check</dt><dd>Not accepted yet. M7 has accepted {coverage.complete} of {coverage.required} steps.</dd>
-          <dt>Your car</dt><dd>Not recorded here. Watching, replaying or scrubbing never marks a step done.</dd>
+          <dt>Your car</dt><dd>Only explicit owner confirmations record physical progress. Watching, replaying or scrubbing never marks a step done.</dd>
         </dl>
         {entry && displayNotes(pack, entry).map((t) => <p key={t} className="studio-source-line" role="note">{t}</p>)}
         {entry && entry.limitations.length > 0 && (
@@ -376,7 +382,7 @@ export function ManualOverlay({ variant, step }: { variant: StudioVariant; step:
 
 const fmt = (s: number): string => `${s.toFixed(1)} s`;
 
-export function Dock({ pack, variant, step, timeline }: { pack: LoadedPack; variant: StudioVariant; step: number; timeline: Timeline }) {
+export function Dock({ pack, variant, step, timeline, onStep }: { pack: LoadedPack; variant: StudioVariant; step: number; timeline: Timeline; onStep?: (step: number)=>void }) {
   const t = useStudio((s) => s.t);
   const playing = useStudio((s) => s.playing);
   const steps = pack.manifest.variants[variant].steps;
@@ -389,7 +395,7 @@ export function Dock({ pack, variant, step, timeline }: { pack: LoadedPack; vari
         {steps.map((s) => (
           <li key={s.printedNumber}>
             {s.mode !== 'closed' ? (
-              <a href={studioHref(variant, s.printedNumber)} aria-current={step === s.printedNumber ? 'step' : undefined} data-mode={s.mode}
+              <a href={studioHref(variant, s.printedNumber)} onClick={()=>{if(step!==s.printedNumber)onStep?.(s.printedNumber);}} aria-current={step === s.printedNumber ? 'step' : undefined} data-mode={s.mode}
                 title={`${s.title}. ${s.mode === 'review' ? 'Review only.' : 'Preview.'}`}>{s.printedNumber}</a>
             ) : (
               <span className="studio-rail-later" title={`${s.title}. Not available.`} aria-disabled="true">{s.printedNumber}</span>
@@ -484,7 +490,7 @@ export function PerfHud() {
 
 export const studioSummary = (pack: LoadedPack, variant: StudioVariant, step: number): string => {
   const v = pack.manifest.variants[variant];
-  if (step === 0) return `Parts tray: ${v.tray.inventory.required} pieces, ${v.tray.inventory.modeled} modelled, ${v.tray.inventory.tiles} shown as tiles`;
+  if (step === 0) return `Parts tray: ${v.tray.inventory.visible} pieces, ${v.tray.inventory.modeled} modelled, ${v.tray.inventory.tiles} shown as tiles`;
   const e = v.steps[step - 1];
   return `Step ${step}: ${e.title}. ${e.mode === 'review' ? 'Review only' : 'Preview'}`;
 };

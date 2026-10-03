@@ -3,24 +3,95 @@
   "track": "presentation-only",
   "note": "Display policy only: timing, framing, lighting and the parts-tray layout. Never assembly truth; final poses always come from the M7 closures.",
   "angles": "Azimuth and elevation are measured in the CAD frame around the subject: azimuth 0 looks at the robot from its front (+X), positive turns toward robot left (+Y); elevation is above the deck plane.",
-  "operableSteps": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "operableSteps": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
   "operableNote": "The states the Studio opens. A step plays as instruction (Preview) only when its closure is PREVIEW_SOURCE_REVALIDATED and passes the pack's preview checks; a blocked or refused step opens in Review and never plays.",
-  "timing": { "bringInS": 1.0, "approachS": 1.4, "staggerS": 0.2, "easing": "easeInOutCubic" },
+  "timing": {
+    "bringInS": 1,
+    "approachS": 1.4,
+    "staggerS": 0.2,
+    "easing": "easeInOutCubic"
+  },
   "camera": {
     "verticalFovDeg": 30,
     "subjects": "tray: the parts tray; everything: tray and every placed state; state: what is placed in this step; new: what this step places; parts: this step's parts where they are now (installed, in the tray or as a tile); placed-parts: those of them that are installed; tray-parts: those of them still in the tray or shown as tiles (tools aside); focus: the parts a review step names (the unresolved connection's ends, the refused conflicts)",
-    "default": { "subject": "state", "azimuthDeg": -36, "elevationDeg": 30, "fit": 0.9 },
+    "default": {
+      "subject": "state",
+      "azimuthDeg": -36,
+      "elevationDeg": 30,
+      "fit": 0.9
+    },
     "steps": {
-      "0": { "subject": "tray", "azimuthDeg": -90, "elevationDeg": 58, "fit": 0.74 },
-      "1": { "subject": "state", "azimuthDeg": -34, "elevationDeg": 34, "fit": 0.92 },
-      "2": { "subject": "state", "azimuthDeg": -38, "elevationDeg": 28, "fit": 0.86 },
-      "3": { "subject": "placed-parts", "azimuthDeg": -20, "elevationDeg": 40, "fit": 2.0 },
-      "4": { "subject": "new", "azimuthDeg": -36, "elevationDeg": 36, "fit": 1.6 },
-      "5": { "subject": "new", "azimuthDeg": -140, "elevationDeg": 16, "fit": 1.3 },
-      "6": { "subject": "tray-parts", "azimuthDeg": -60, "elevationDeg": 48, "fit": 1.15 },
-      "7": { "subject": "focus", "azimuthDeg": -35, "elevationDeg": 6, "fit": 1.25 },
-      "8": { "subject": "new", "azimuthDeg": -14, "elevationDeg": 34, "fit": 2.4 },
-      "9": { "subject": "new", "azimuthDeg": -20, "elevationDeg": 18, "fit": 1.7 }
+      "0": {
+        "subject": "tray",
+        "azimuthDeg": -90,
+        "elevationDeg": 58,
+        "fit": 1
+      },
+      "1": {
+        "subject": "state",
+        "azimuthDeg": -34,
+        "elevationDeg": 34,
+        "fit": 0.92
+      },
+      "2": {
+        "subject": "state",
+        "azimuthDeg": -38,
+        "elevationDeg": 28,
+        "fit": 0.86
+      },
+      "3": {
+        "subject": "placed-parts",
+        "azimuthDeg": -20,
+        "elevationDeg": 40,
+        "fit": 2
+      },
+      "4": {
+        "subject": "new",
+        "azimuthDeg": -36,
+        "elevationDeg": 36,
+        "fit": 1.6
+      },
+      "5": {
+        "subject": "new",
+        "azimuthDeg": -140,
+        "elevationDeg": 16,
+        "fit": 1.3
+      },
+      "6": {
+        "subject": "tray-parts",
+        "azimuthDeg": -60,
+        "elevationDeg": 48,
+        "fit": 1.15
+      },
+      "7": {
+        "subject": "focus",
+        "azimuthDeg": -35,
+        "elevationDeg": 6,
+        "fit": 1.25
+      },
+      "8": {
+        "subject": "new",
+        "azimuthDeg": -14,
+        "elevationDeg": 34,
+        "fit": 2.4
+      },
+      "9": {
+        "subject": "new",
+        "azimuthDeg": -20,
+        "elevationDeg": 18,
+        "fit": 1.7
+      }
     }
   },
   "displayNames": {
@@ -35,37 +106,236 @@
     "PX-V40-DEF-SCREWDRIVER-01": "Screwdriver 1",
     "PX-V40-DEF-SCREWDRIVER-02": "Screwdriver 2",
     "PX-V40-DEF-HOOK": "Hook tape",
-    "PX-V40-DEF-LOOP": "Loop tape"
+    "PX-V40-DEF-LOOP": "Loop tape",
+    "PX-V40-DEF-SERVO-PAN": "Pan servo",
+    "PX-V40-DEF-SERVO-TILT": "Tilt servo",
+    "PX-V40-DEF-SERVO-STEERING": "Steering servo",
+    "PX-V40-DEF-HORN-TILT": "Tilt servo horn",
+    "PX-V40-DEF-HORN-STEERING": "Steering servo horn"
   },
-  "hero": { "variant": "rpi5", "step": 2, "camera": "the manifest camera of that step, so the reference render and the app share one framing", "resolution": [2400, 1500], "samples": 512 },
+  "hero": {
+    "variant": "rpi5",
+    "step": 2,
+    "camera": "the manifest camera of that step, so the reference render and the app share one framing",
+    "resolution": [
+      2400,
+      1500
+    ],
+    "samples": 512
+  },
   "lighting": {
     "background": "#141311",
-    "backgroundSceneLinear": [0.0105, 0.0098, 0.0085],
-    "runtimeEnvironmentBase": [0.05, 0.047, 0.042],
-    "pool": { "note": "soft lighter pool behind the subject so its shadow can read on a dark background; position and size are fractions of the frame, y down", "centre": [0.5, 0.56], "size": [0.95, 0.8], "blurFraction": 0.18, "sceneLinear": [0.034, 0.0315, 0.0275], "css": "radial-gradient(ellipse 62% 55% at 50% 56%, #2a2723 0%, #1d1b18 45%, #141311 100%)" },
-    "floor": { "baseColor": [0.006, 0.0058, 0.0055], "roughness": 0.85, "gapMm": 0.5 },
+    "backgroundSceneLinear": [
+      0.0105,
+      0.0098,
+      0.0085
+    ],
+    "runtimeEnvironmentBase": [
+      0.05,
+      0.047,
+      0.042
+    ],
+    "pool": {
+      "note": "soft lighter pool behind the subject so its shadow can read on a dark background; position and size are fractions of the frame, y down",
+      "centre": [
+        0.5,
+        0.56
+      ],
+      "size": [
+        0.95,
+        0.8
+      ],
+      "blurFraction": 0.18,
+      "sceneLinear": [
+        0.034,
+        0.0315,
+        0.0275
+      ],
+      "css": "radial-gradient(ellipse 62% 55% at 50% 56%, #2a2723 0%, #1d1b18 45%, #141311 100%)"
+    },
+    "floor": {
+      "baseColor": [
+        0.006,
+        0.0058,
+        0.0055
+      ],
+      "roughness": 0.85,
+      "gapMm": 0.5
+    },
     "lights": [
-      { "id": "key", "azimuthDeg": 42, "elevationDeg": 46, "distanceM": 0.9, "sizeM": [0.9, 0.6], "spreadDeg": 70, "color": [1.0, 0.965, 0.92], "blenderPowerW": 7, "runtimeIntensity": 2.0 },
-      { "id": "fill", "azimuthDeg": -62, "elevationDeg": 16, "distanceM": 0.9, "sizeM": [0.7, 0.7], "spreadDeg": 80, "color": [0.92, 0.96, 1.0], "blenderPowerW": 1.2, "runtimeIntensity": 1.6 },
-      { "id": "rim", "azimuthDeg": 150, "elevationDeg": 30, "distanceM": 0.9, "sizeM": [1.4, 0.5], "spreadDeg": 90, "color": [1.0, 1.0, 1.0], "blenderPowerW": 7, "runtimeIntensity": 2.0 },
-      { "id": "top", "azimuthDeg": 0, "elevationDeg": 86, "distanceM": 1.0, "sizeM": [0.8, 0.8], "spreadDeg": 60, "color": [1.0, 0.99, 0.97], "blenderPowerW": 1.2, "runtimeIntensity": 0.7 }
+      {
+        "id": "key",
+        "azimuthDeg": 42,
+        "elevationDeg": 46,
+        "distanceM": 0.9,
+        "sizeM": [
+          0.9,
+          0.6
+        ],
+        "spreadDeg": 70,
+        "color": [
+          1,
+          0.965,
+          0.92
+        ],
+        "blenderPowerW": 7,
+        "runtimeIntensity": 2
+      },
+      {
+        "id": "fill",
+        "azimuthDeg": -62,
+        "elevationDeg": 16,
+        "distanceM": 0.9,
+        "sizeM": [
+          0.7,
+          0.7
+        ],
+        "spreadDeg": 80,
+        "color": [
+          0.92,
+          0.96,
+          1
+        ],
+        "blenderPowerW": 1.2,
+        "runtimeIntensity": 1.6
+      },
+      {
+        "id": "rim",
+        "azimuthDeg": 150,
+        "elevationDeg": 30,
+        "distanceM": 0.9,
+        "sizeM": [
+          1.4,
+          0.5
+        ],
+        "spreadDeg": 90,
+        "color": [
+          1,
+          1,
+          1
+        ],
+        "blenderPowerW": 7,
+        "runtimeIntensity": 2
+      },
+      {
+        "id": "top",
+        "azimuthDeg": 0,
+        "elevationDeg": 86,
+        "distanceM": 1,
+        "sizeM": [
+          0.8,
+          0.8
+        ],
+        "spreadDeg": 60,
+        "color": [
+          1,
+          0.99,
+          0.97
+        ],
+        "blenderPowerW": 1.2,
+        "runtimeIntensity": 0.7
+      }
     ]
   },
   "tray": {
-    "note": "A presentation layout beside the chassis on the robot's right, never an assembly state. Every instance printed steps 1-9 introduce or use, and the kit tools their tool requirements name, gets one slot: a solid at its own pose, or a flat tile when no trusted solid exists. Shelves run along the robot's length (rear to front) and step away from the chassis; fastener groups give each definition its own row so identical pieces can be counted. Each row also reserves occlusion x its tallest height, the band a tall row covers of the row behind it from the tray camera.",
-    "side": "right", "offsetMm": 60, "gapMm": 9, "minPitchMm": 10, "groupGapMm": 22, "labelBandMm": 16, "groupWidthMm": 200,
-    "tileMm": [52, 30], "occlusion": 0.7,
-    "groups": [
-      { "id": "plates", "label": "Plates", "classes": ["plate"] },
-      { "id": "electronics", "label": "Electronics", "classes": ["piBoard", "robotHat", "camera", "ultrasonic", "grayscale", "connector", "battery"] },
-      { "id": "actuators", "label": "Motors and servos", "classes": ["motor", "servo", "horn"] },
-      { "id": "wheels", "label": "Wheels", "classes": ["wheel"] },
-      { "id": "fasteners", "label": "Fasteners", "classes": ["standoff", "screw", "nut", "washer", "rivet"], "rowPerDefinition": true },
-      { "id": "cables", "label": "Cables", "classes": ["cable"] },
-      { "id": "supplies", "label": "Supplies", "classes": ["consumable"] },
-      { "id": "tools", "label": "Tools", "classes": ["tool"] }
+    "note": "Full canonical kit stock for the active board, including later-use parts, backups, accessories and tools. Presentation layout only; source assembly poses and accepted artifacts stay unchanged. Hardware is arranged in bounded rows by definition, with stable physical instance IDs.",
+    "side": "right",
+    "offsetMm": 60,
+    "gapMm": 9,
+    "minPitchMm": 10,
+    "groupGapMm": 22,
+    "labelBandMm": 16,
+    "groupWidthMm": 200,
+    "tileMm": [
+      52,
+      30
     ],
-    "shelves": [["plates", "electronics"], ["actuators", "wheels", "fasteners", "supplies"], ["cables", "tools"]],
+    "occlusion": 0.7,
+    "groups": [
+      {
+        "id": "plates",
+        "label": "Plates",
+        "classes": [
+          "plate"
+        ]
+      },
+      {
+        "id": "electronics",
+        "label": "Electronics",
+        "classes": [
+          "piBoard",
+          "robotHat",
+          "camera",
+          "ultrasonic",
+          "grayscale",
+          "connector",
+          "battery"
+        ]
+      },
+      {
+        "id": "actuators",
+        "label": "Motors and servos",
+        "classes": [
+          "motor",
+          "servo",
+          "horn"
+        ]
+      },
+      {
+        "id": "wheels",
+        "label": "Wheels",
+        "classes": [
+          "wheel"
+        ]
+      },
+      {
+        "id": "fasteners",
+        "label": "Fasteners",
+        "classes": [
+          "standoff",
+          "screw",
+          "nut",
+          "washer",
+          "rivet"
+        ],
+        "rowPerDefinition": true
+      },
+      {
+        "id": "cables",
+        "label": "Cables",
+        "classes": [
+          "cable"
+        ]
+      },
+      {
+        "id": "supplies",
+        "label": "Supplies",
+        "classes": [
+          "consumable"
+        ]
+      },
+      {
+        "id": "tools",
+        "label": "Tools",
+        "classes": [
+          "tool"
+        ]
+      }
+    ],
+    "shelves": [
+      [
+        "plates",
+        "electronics",
+        "actuators",
+        "wheels"
+      ],
+      [
+        "fasteners",
+        "cables",
+        "supplies",
+        "tools"
+      ]
+    ],
     "representations": {
       "cable": "No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile.",
       "consumable": "No defined shape: cut from tape stock, so it is shown as a tile.",

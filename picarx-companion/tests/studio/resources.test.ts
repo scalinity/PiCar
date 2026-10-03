@@ -4,6 +4,8 @@
 import { expect, it, vi } from 'vitest';
 import { BoxGeometry, BufferGeometry, Group, LineLoop, Mesh, MeshStandardMaterial, type Material } from 'three';
 import { createBoard, own, owned } from '../../src/features/assembly-3d/scene/resources';
+import manifest from '../../src/generated/studio/manifest.json';
+import { worldBox } from '../../src/features/assembly-3d/motion/inspect';
 import type { LoadedPack } from '../../src/features/assembly-3d/assets/pack';
 
 function tinyPack(): { pack: LoadedPack; geometry: BoxGeometry; source: MeshStandardMaterial } {
@@ -16,7 +18,7 @@ function tinyPack(): { pack: LoadedPack; geometry: BoxGeometry; source: MeshStan
     lighting: { lights: [{ id: 'key', azimuthDeg: 30, elevationDeg: 40, distanceM: 1, sizeM: [0.5, 0.5], color: [1, 1, 1], runtimeIntensity: 1 }] },
     definitions: { 'PX-DEF-A': { boundsM: { min: [-0.002, -0.002, -0.002], max: [0.002, 0.002, 0.002] } } }, // small: gets a pick target
     instances: { 'PX-A-001': { definitionId: 'PX-DEF-A' }, 'PX-A-002': { definitionId: 'PX-DEF-A' } },
-    variants: { rpi5: { floorYM: 0, centreM: [0, 0, 0], tray: { camera, instances: { 'PX-A-001': {}, 'PX-A-002': {} },
+    variants: { rpi5: { floorYM: 0, centreM: [0, 0, 0], steps: [], tray: { camera, groups: [{ boundsM: {min:[-0.01,0,-0.01],max:[0.11,0.01,0.03]} }], instances: { 'PX-A-001': { state: 'current' }, 'PX-A-002': { state: 'current' } },
       tiles: { 'PX-T-001': { centreM: [0.1, 0, 0], halfExtentsM: [0.01, 0.02] } } } } },
   };
   return { pack: { manifest, definitions: new Map([['PX-DEF-A', part]]) } as unknown as LoadedPack, geometry, source };
@@ -28,12 +30,35 @@ const boardGeometries = (board: ReturnType<typeof createBoard>, shared: BufferGe
   return [...out];
 };
 
+it('keeps both boards’ chassis and its floor shadow inside the light camera after full-kit framing', async () => {
+  const { Vector3 } = await import('three');
+  const pack = {manifest,definitions:new Map(Object.keys(manifest.definitions).map(id=>[id,new Group()]))} as unknown as LoadedPack;
+  for (const variant of ['rpi5','rpi-zero-2-w'] as const) {
+    const board=createBoard(pack,variant),v=pack.manifest.variants[variant],camera=board.keyLight.shadow.camera;
+    const lightDirection=board.keyLight.target.position.clone().sub(board.keyLight.position).normalize();
+    for (const step of v.steps) {
+      const pose=step.placements['PX-V40-INS-PLATE-A-001'];
+      if(!pose)continue;
+      const b=worldBox(pack.manifest.definitions['PX-V40-DEF-PLATE-A'],pose);
+      for(let k=0;k<8;k++) {
+        const p=new Vector3((k&1?b.max:b.min)[0],(k&2?b.max:b.min)[1],(k&4?b.max:b.min)[2]);
+        const shadow=p.clone().addScaledVector(lightDirection,(v.floorYM-p.y)/lightDirection.y);
+        for(const point of [p,shadow]) {
+          point.project(camera);
+          for(const component of point.toArray()) expect(Math.abs(component)).toBeLessThan(1);
+        }
+      }
+    }
+    board.release();
+  }
+});
+
 it('releases every board material, tile and pick target and the key light shadow, and never the pack-cached geometry or source material', () => {
   const { pack, geometry, source } = tinyPack();
   const board = createBoard(pack, 'rpi5');
   const materials = new Set<Material>(board.materials());
-  // normal, selected, review focus and ghost for the one material id; the pick target; tile face (normal, ghost) and edges (3)
-  expect(materials.size).toBe(4 + 1 + 2 + 3);
+  // normal, selected, review focus and ghost for each of three inventory states; the pick target; tile face (normal, ghost) and edges (3)
+  expect(materials.size).toBe(12 + 1 + 2 + 3);
   const geometries = boardGeometries(board, geometry);
   expect(geometries.length).toBe(1 + 2); // one pick box shared by both small instances, the tile face and edge
   const spies = [...materials, ...geometries].map((r) => vi.spyOn(r, 'dispose'));
