@@ -126,14 +126,21 @@ it('integrates the authored HAT in the actual native Studio with disposable SQLi
   const switched = await gpu(), disposals = await script(() => window.__studio35Disposals);
   assert(disposals.filter(r => r.type === 'boardMaterial').every(r => r.calls === 1)); assert(disposals.filter(r => r.type === 'packGeometry').every(r => r.calls === 0));
   assert.deepEqual(switched.owned, base.owned); assert.equal(switched.roots, 156); assert.equal(switched.textures, base.textures);
+  assert.deepEqual(await script(() => window.__picarM3Test.studio('backup')), ledgerBefore);
   for (let i = 0; i < 3; i++) { const url = (await browser.getUrl()).split('#')[0]; await browser.url(url + '#/reference'); await browser.pause(250); await open('rpi5', 4); await installed(); }
   const revisited = await gpu(); assert.deepEqual(revisited.owned, base.owned); assert.equal(revisited.textures, base.textures);
   record('native-resource-ownership', { base, switched, revisited, disposals, boardSwitches: 6, exitReentries: 3 });
+  const beforeResume = await script(() => window.__picarM3Test.studio('backup'));
+  // Leaving Studio for Reference intentionally persists Setup's route. Studio records remain exact.
+  assert.deepEqual(beforeResume.aggregates.filter(a => a.aggregate.id.startsWith('PX-STUDIO-')), ledgerBefore.aggregates);
+  assert.deepEqual(beforeResume.results.filter(r => r.acknowledgment.aggregateId.startsWith('PX-STUDIO-')), ledgerBefore.results);
+  assert.deepEqual(beforeResume.imports, ledgerBefore.imports);
+  assert.equal(beforeResume.aggregates.find(a => a.aggregate.id === 'PX-SETUP').aggregate.snapshot.lastRoute, '#/reference');
   await open('rpi5', 0); await $('.studio-build a').click(); assert.equal(await script(() => window.__studio.step), 4);
-  assert.deepEqual(await script(() => window.__picarM3Test.studio('backup')), ledgerBefore);
-  record('native-build-session-read', { ledgerUnchanged: 'PASS', partsReturnStep: 4, sessionId: 'PX-STUDIO-RPI5' });
+  assert.deepEqual(await script(() => window.__picarM3Test.studio('backup')), beforeResume);
+  record('native-build-session-read', { studioLedgerUnchangedAcrossAllInspectionAndNavigation: 'PASS', fullLedgerUnchangedAcrossPartsReturn: 'PASS', setupRoutePersistence: 'Reference route intentionally recorded during exit/reentry', partsReturnStep: 4, sessionId: 'PX-STUDIO-RPI5' });
   await selectHat(); await frameHat();
-  record('native-before-escape', { ledger: ledgerBefore, camera: await script(() => window.__studio.camera()) });
+  record('native-before-escape', { ledger: beforeResume, camera: await script(() => window.__studio.camera()) });
   await script(() => {
     const states = []; window.__studio35PhysicalStates = states;
     const timer = setInterval(() => {
@@ -148,6 +155,6 @@ it('integrates the authored HAT in the actual native Studio with disposable SQLi
   assert.deepEqual(physical.map(s => s.label), ['A', 'B', 'C', 'D']);
   record('native-physical-states', { physicalNativeKeyInjection: 'CUA Escape, three separate calls', states: physical });
   const after = await script(async () => ({ state: window.__studio.state(), ledger: await window.__picarM3Test.studio('backup'), fullscreen: document.querySelector('.studio').dataset.fullscreen }));
-  assert.equal(after.state.selection, null); assert.equal(after.state.manualOpen, false); assert.equal(after.fullscreen, 'false'); assert.deepEqual(after.ledger, ledgerBefore);
+  assert.equal(after.state.selection, null); assert.equal(after.state.manualOpen, false); assert.equal(after.fullscreen, 'false'); assert.deepEqual(after.ledger, beforeResume);
   record('native-run-result', { status: 'PASS', packId: manifest.packId, HAT: manifest.definitions['PX-V40-DEF-ROBOT-HAT'].display.artifact.sha256, physicalEscape: 'PASS', ownerDataUnopened: true });
 });
