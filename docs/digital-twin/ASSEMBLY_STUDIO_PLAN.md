@@ -65,6 +65,8 @@ Tests use disposable sessions and temporary storage; the owner's database is not
 
 Native Tauri build checks, offline start and restart, keyboard-only operation, reduced motion, screen reader labels for controls, adaptive quality on battery, measured frame budget on the owner's Mac, and an owner visual review against the reference renders.
 
+Current Studio 4 candidate: `studio/s4-native-release-polish`, based exactly on accepted Studio 3.5 `7a698e8145edd9578743aa648a5a37cac641b773`; runtime source `05eac8d7d0a30db53bf54940cdbccc84283631c4`. Two clean normal M3 arm64 release builds have equal file bytes. Keyboard/modal/native focus, OS reduced motion, read-only macOS power ceilings, bounded native performance/resource observations and release failure handling have additive evidence. **STUDIO 4 NOT READY FOR INDEPENDENT REVIEW:** actual network-unavailable cold launch and still-offline restart remain unverified; app-scoped network denial prevented macOS window startup, and a brief Wi-Fi disconnect awaits owner approval. No push is authorized while that mandatory gap remains. Physical battery performance is unmeasured; deterministic battery policy tests pass. Owner integrated-view acceptance and VoiceOver validation remain PENDING. See [Studio 4 handoff](../implementation/HANDOFF_STUDIO_4.md) and [owner review](../implementation/evidence/studio-4/OWNER_REVIEW.md). Pack/GLB/presentation/HAT identities and M7 BLOCKED 0/58 remain unchanged; M8 is NO.
+
 ## Mapping to the original milestones
 
 Studio work does not rewrite or satisfy any milestone report; it delivers early what the milestones assign, on the instructional track and labelled as such.

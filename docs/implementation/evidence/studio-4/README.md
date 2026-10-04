@@ -24,4 +24,6 @@ Attempt disposition:
 - `browser-delivery.txt`, `browser-legacy-delivery.txt`, `unit-delivery.txt`, `typecheck-delivery.txt`: final relevant validation. Subsequent source change was only clearer pack-error text; final full browser/native failures cover it. No runtime change after final build source05e.
 - Raw launch/Save/picker trees, source-identifying diagnostics, build bundles, private synthetic DB/photo/ZIP and original screenshots remain in private scratch. Public text aliases exact local path literals after original preservation; hashes/receipt in `log-sanitization.json`. No accepted historical evidence was altered.
 
+Raw command logs intentionally retain their output whitespace, including trailing spaces and blank lines; `git diff --check` reports those cosmetic log lines. Source and Markdown changes pass the whitespace check. Do not trim failed evidence and silently change its recorded bytes.
+
 Connector-only review of the Studio4 delta is unavailable until actual offline gates pass and an authorized normal branch push is verified. No extra binary transport is created while a remote candidate does not exist.
