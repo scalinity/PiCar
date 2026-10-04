@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "codeHead": "d2841424837fa229c2d612cef8163959cf528650",
+  "finalRun": "08",
+  "nativeTestSha256": "a848c7468cec81231d3e3147ef6f345a75351d505057bdf4da18fece442deb61",
+  "caseCount": 1,
+  "duration": "7m20.6s test / 7m21s runner",
+  "ownerDatabaseUnopened": true,
+  "freshGuardedDataContext": true,
+  "inRunWarningCount": 1,
+  "inRunWarnings": "One embedded WDIO focus-state evaluation timed out; it recovered and all final assertions passed. This is a driver warning, retained in the final transcript.",
+  "afterSessionWarning": "Mock cleanup after the session ended; retained, not relabelled as warning-free.",
+  "earlierRuns": "01-04 harness/argument/picking corrections; 05 capture checkpoint expiry; 06 stale failed-launch driver context (test build guard refused missing disposable data before SQLite); 07 full backup compared across legitimate Reference Setup route writes. All failures retained privately, never PASS.",
+  "performance": [
+    {
+      "path": "native-performance-A-full-tray.json",
+      "width": 1121,
+      "height": 704,
+      "dpr": 2,
+      "ratios": [
+        2
+      ],
+      "activeFrames": 120,
+      "activeFps": 59.99999999999999,
+      "activeMeanMs": 16.666666666666668,
+      "activeP95Ms": 17,
+      "calls": 619,
+      "triangles": 1271304,
+      "openToCanvasMs": 423,
+      "openToFirstRenderMs": 424,
+      "openToFirstFrameDrawnMs": 478,
+      "sampleMethod": "existing diagnostic continuous orbit"
+    },
+    {
+      "path": "native-performance-B-pi5-s04-guided.json",
+      "width": 1121,
+      "height": 704,
+      "dpr": 1.5,
+      "ratios": [
+        2,
+        1.5
+      ],
+      "activeFrames": 120,
+      "activeFps": 59.99999999999999,
+      "activeMeanMs": 16.666666666666668,
+      "activeP95Ms": 18,
+      "calls": 428,
+      "triangles": 1057048,
+      "openToCanvasMs": 423,
+      "openToFirstRenderMs": 424,
+      "openToFirstFrameDrawnMs": 478,
+      "sampleMethod": "fixed guided camera, controlled active redraws via existing controls start/end events"
+    },
+    {
+      "path": "native-performance-C-close-hat-orbit.json",
+      "width": 1121,
+      "height": 704,
+      "dpr": 2,
+      "ratios": [
+        2
+      ],
+      "activeFrames": 120,
+      "activeFps": 60.03001500750375,
+      "activeMeanMs": 16.658333333333335,
+      "activeP95Ms": 18,
+      "calls": 467,
+      "triangles": 1134442,
+      "openToCanvasMs": 423,
+      "openToFirstRenderMs": 424,
+      "openToFirstFrameDrawnMs": 478,
+      "sampleMethod": "existing diagnostic continuous orbit"
+    },
+    {
+      "path": "native-performance-D-isolated-hat.json",
+      "width": 1121,
+      "height": 704,
+      "dpr": 1,
+      "ratios": [
+        1
+      ],
+      "activeFrames": 120,
+      "activeFps": 59.99999999999999,
+      "activeMeanMs": 16.666666666666668,
+      "activeP95Ms": 18,
+      "calls": 65,
+      "triangles": 707082,
+      "openToCanvasMs": 423,
+      "openToFirstRenderMs": 424,
+      "openToFirstFrameDrawnMs": 478,
+      "sampleMethod": "existing diagnostic continuous orbit"
+    }
+  ],
+  "performanceDisposition": "Bounded usable final samples: 120 active frames each, about 60 fps and p95 18 ms; full tray 619 draws vs accepted 579, exact expected 40 additional draws from 20 extra HAT finish primitives across two render passes. Final sample B observed DPR 2 to 1.5, D stable at 1. The existing governor recovered C to 2, stays within its documented 1-2 range; no fidelity change, no steady active frame collapse or resource growth observed. Four short samples are not a long-duration thermal benchmark.",
+  "baseline": {
+    "width": 1121,
+    "height": 704,
+    "dpr": 2,
+    "activeFrames": 120,
+    "fps": 60,
+    "meanMs": 16.67,
+    "p95Ms": 17,
+    "calls": 579,
+    "triangles": 568576
+  },
+  "resources": {
+    "switches": 6,
+    "exitReentries": 3,
+    "boardMaterialDisposals": 378,
+    "everyBoardMaterialDisposedExactlyOnce": true,
+    "packGeometriesNotDisposed": true,
+    "textures": [
+      4,
+      4,
+      4
+    ],
+    "programs": [
+      3,
+      3,
+      3
+    ],
+    "geometries": [
+      180,
+      180,
+      174
+    ],
+    "geometryCountExplanation": "Six inspection-only geometry buffers disappear on fresh reentry; no accumulation. Owner ledger and pack-owned geometry preserved."
+  },
+  "inspectionReset": "All four user-facing inspection flags false; diagnostic clip/explode parameters retain normal defaults but are inactive.",
+  "physicalEscape": "Three separate CUA Escape calls, strict A/B/C/D semantic state observer plus four actual app-window captures and exact full-ledger equality. D observer saw hidden during the native fullscreen transition; subsequent CUA pixels show the restored window.",
+  "manualRasterLimit": "State A shows the complete existing source crop in this run; this receipt does not widen PDF source or quality semantics.",
+  "ownerIntegratedViewAcceptance": "PENDING"
+}

@@ -1,0 +1,62 @@
+{
+  "status": "RESOLVED",
+  "authorization": "Owner expressly authorized only deterministic manual-preview layout sizing on 2026-10-04.",
+  "runtimeChanges": [
+    "picarx-companion/src/features/assembly-3d/ui/ManualPanel.tsx",
+    "picarx-companion/src/lib/v40-pdf-identity.ts"
+  ],
+  "runtimeCommit": "efde60d75ab7a07f14ec938be1c49b9ecfb8bdda",
+  "sourceCropUnchanged": true,
+  "selectionImplementationUnchanged": true,
+  "pdfSha256": "2f4ea3ae3729bfb6bc92f8fdba30f31937f9df2c3a80e5774ef03fb076f386ce",
+  "pdfMediaBoxPoints": [
+    1122.52,
+    793.701
+  ],
+  "before": {
+    "integrated": {
+      "mode": "integrated",
+      "attempts": 30,
+      "failures": 2
+    },
+    "accepted": {
+      "mode": "accepted",
+      "attempts": 30,
+      "failures": 0
+    },
+    "heldRenderRegression": "Failed on both boards: part row moved 87.203125 / 89.78125 CSS pixels."
+  },
+  "after": {
+    "integrated": {
+      "mode": "integrated",
+      "attempts": 30,
+      "failures": 0
+    },
+    "accepted": {
+      "mode": "accepted",
+      "attempts": 30,
+      "failures": 0
+    },
+    "heldRenderRegression": {
+      "cases": 4,
+      "realPresses": 32,
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "boards": [
+        "rpi5",
+        "rpi-zero-2-w"
+      ],
+      "misses": 0,
+      "maxMovementCssPx": 0
+    },
+    "previouslyFailingFocusedWebkit": {
+      "passed": 30,
+      "failed": 0,
+      "seconds": 48.9
+    }
+  },
+  "productWorkarounds": [],
+  "limit": "This closes only the loading-to-rendered layout race. Full native and final browser readiness are checked separately."
+}

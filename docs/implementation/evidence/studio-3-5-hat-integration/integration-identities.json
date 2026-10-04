@@ -1,0 +1,207 @@
+{
+  "acceptedHead": "aa2713396d4869f9698f8b242640c3f55d205435",
+  "acceptedCandidate": "7309cbc",
+  "integrationBranch": "studio/s3-5-hat-integration",
+  "HATSourceBranch": "studio/s3-5-hat-fidelity",
+  "sourceHead": "eec0f190db777a98f6ac3085ce69f9e76f3843d0",
+  "cherryPicks": [
+    {
+      "source": "a4bac7c8b0c36ac538ddad2a51e8e013f5f10a44",
+      "integration": "ec8a2d9ac6a2990245acbfd4a9ed35688c22549f"
+    },
+    {
+      "source": "d435f8ecf2ab2088a5044d34c8549cd323f71388",
+      "integration": "50b453ee8a975abbb3de85381b70528dfc168f3f"
+    },
+    {
+      "source": "eec0f190db777a98f6ac3085ce69f9e76f3843d0",
+      "integration": "7aa69d368b20ccf1bb729c75d4014d4be117d3a3"
+    }
+  ],
+  "adoptedFiles": [
+    {
+      "path": ".gitignore",
+      "integratedSourceSha256": "0ede5f045a56ccaa893394c425e13473e990e1b28507e8710aa03928bca7b905",
+      "sourceSha256": "0ede5f045a56ccaa893394c425e13473e990e1b28507e8710aa03928bca7b905"
+    },
+    {
+      "path": "digital-twin/assemblies/v40/presentation/instructional/hat-detail-display-review-02.json",
+      "integratedSourceSha256": "06b2c9a62516575bb5b63c05e3b5018f6efee15a8b123c4f416d6239cd633898",
+      "sourceSha256": "06b2c9a62516575bb5b63c05e3b5018f6efee15a8b123c4f416d6239cd633898"
+    },
+    {
+      "path": "digital-twin/cad/tests/test_hat_display.py",
+      "integratedSourceSha256": "678faa377982fa96c5c0a44e0167dd0014dd999150abcedbe18cf6b00b27a771",
+      "sourceSha256": "678faa377982fa96c5c0a44e0167dd0014dd999150abcedbe18cf6b00b27a771"
+    },
+    {
+      "path": "digital-twin/cad/tests/test_studio_fidelity.py",
+      "integratedSourceSha256": "d41e135f95ec46523194c7c45f5039f6afd0eb22c9ddffd400166e5dd6b8573e",
+      "sourceSha256": "d41e135f95ec46523194c7c45f5039f6afd0eb22c9ddffd400166e5dd6b8573e"
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/fidelity/hat.py",
+      "integratedSourceSha256": "89faee6de152772e3b8a462f51a1af4ab210491d665ac00d939fbebfb15e7469",
+      "sourceSha256": "89faee6de152772e3b8a462f51a1af4ab210491d665ac00d939fbebfb15e7469"
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/fidelity/hat_board.py",
+      "integratedSourceSha256": "d2c7df4c406ef9b47846af8b168747beb28f0903976345ef7177684e2fbb6f2c",
+      "sourceSha256": "d2c7df4c406ef9b47846af8b168747beb28f0903976345ef7177684e2fbb6f2c"
+    },
+    {
+      "path": "digital-twin/cad/twin_cad/fidelity/hat_review.py",
+      "integratedSourceSha256": "951bd3617e2e8b0387ef894bbb71164415ebbacf37cd527e992373c52e8965c0",
+      "sourceSha256": "951bd3617e2e8b0387ef894bbb71164415ebbacf37cd527e992373c52e8965c0"
+    },
+    {
+      "path": "digital-twin/presentation/blender/hat_review_render.py",
+      "integratedSourceSha256": "ab7d1941b9b1c9ea6f893ee00d0878c6dc751e4f93334492fe2d02bc31b0954d",
+      "sourceSha256": "ab7d1941b9b1c9ea6f893ee00d0878c6dc751e4f93334492fe2d02bc31b0954d"
+    },
+    {
+      "path": "digital-twin/presentation/materials/studio-materials.json",
+      "integratedSourceSha256": "21bc4e6299287c8c87db631b69578ea683aa7a949099e4a78b2dd9299f218c0f",
+      "sourceSha256": "9f66e1c4e08ac56f7ba4e17ce6b0cdd8c43b9abb5eb21ebc3c249901f7ec2070"
+    },
+    {
+      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+      "integratedSourceSha256": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda",
+      "sourceSha256": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda"
+    },
+    {
+      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json",
+      "integratedSourceSha256": "e0697d915a3a856156eefca83cf23d16565ae57ef01e048952b33c869b880c42",
+      "sourceSha256": "e0697d915a3a856156eefca83cf23d16565ae57ef01e048952b33c869b880c42"
+    },
+    {
+      "path": "docs/digital-twin/ASSEMBLY_STUDIO_PIPELINE.md",
+      "integratedSourceSha256": "5c7925450b57ae5b09da55fa642737eecbbcd43d8ffd1fab01070c804496b65a",
+      "sourceSha256": "80137ee0ec5f784d0548c2e411444fdff58b1589e7447cd518ff6df047e539fe"
+    },
+    {
+      "path": "docs/implementation/HANDOFF_STUDIO_3_5_HAT_FIDELITY.md",
+      "integratedSourceSha256": "cb7e168b96fee883d3bd36877159ddf5c24a76471b9c06edfae96f803f62ede8",
+      "sourceSha256": "cb7e168b96fee883d3bd36877159ddf5c24a76471b9c06edfae96f803f62ede8"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/hat-evidence-manifest.json",
+      "integratedSourceSha256": "08a5081d06d400dc0d7fe29c94cb1d4dd0247b8fd7b7ba179e9abcca889a0d03",
+      "sourceSha256": "08a5081d06d400dc0d7fe29c94cb1d4dd0247b8fd7b7ba179e9abcca889a0d03"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/01-top-orthographic.png",
+      "integratedSourceSha256": "cc3e0859ee68606d1d0d228cd420b5f0eaf53cf82ed973fb097caf17601cab90",
+      "sourceSha256": "cc3e0859ee68606d1d0d228cd420b5f0eaf53cf82ed973fb097caf17601cab90"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/02-underside-orthographic.png",
+      "integratedSourceSha256": "be2a1264675b3e8c1585d7dec26adeb5414c705931d29fa619cf3bfdd6791d0f",
+      "sourceSha256": "be2a1264675b3e8c1585d7dec26adeb5414c705931d29fa619cf3bfdd6791d0f"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/03-top-front-three-quarter.png",
+      "integratedSourceSha256": "b2a74591674081499d9e9a0485e2f482656e17c521ee62a226759a90f4162906",
+      "sourceSha256": "b2a74591674081499d9e9a0485e2f482656e17c521ee62a226759a90f4162906"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/04-top-rear-three-quarter.png",
+      "integratedSourceSha256": "e306da9de3eb85120cfc62dce0e995df86888db3277d0eb4af34c22c1175e13c",
+      "sourceSha256": "e306da9de3eb85120cfc62dce0e995df86888db3277d0eb4af34c22c1175e13c"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/05-low-header-angle.png",
+      "integratedSourceSha256": "84873f8981cf716c9bd287d5dbe3b9933380874228dca3ab901b66248c0da818",
+      "sourceSha256": "84873f8981cf716c9bd287d5dbe3b9933380874228dca3ab901b66248c0da818"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/06-underside-three-quarter.png",
+      "integratedSourceSha256": "1bc3ab6086c33fde6cbd50b7f9034caaac88daee262946850cd96a7de3594683",
+      "sourceSha256": "1bc3ab6086c33fde6cbd50b7f9034caaac88daee262946850cd96a7de3594683"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/07-pin-header-close-up.png",
+      "integratedSourceSha256": "b5b1c33e0916359ef9167e6716bd116178e8835ca155ef765f762c38784c3d96",
+      "sourceSha256": "b5b1c33e0916359ef9167e6716bd116178e8835ca155ef765f762c38784c3d96"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/08-connector-bank-close-up.png",
+      "integratedSourceSha256": "1296ded6a6da34c9c92076e0e5b27ccb15f2b38ef7df80174f4688df06b4257a",
+      "sourceSha256": "1296ded6a6da34c9c92076e0e5b27ccb15f2b38ef7df80174f4688df06b4257a"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/09-speaker-and-motor-corner.png",
+      "integratedSourceSha256": "656e1d583a6c9a4dfca19cf1168a49e376c91e826750fb072f3178baa05a8264",
+      "sourceSha256": "656e1d583a6c9a4dfca19cf1168a49e376c91e826750fb072f3178baa05a8264"
+    },
+    {
+      "path": "docs/implementation/evidence/studio-3-5-hat/renders/10-spi-uart-i2c-headers.png",
+      "integratedSourceSha256": "be7d5cb84e37093ec657f27d7a0773dfd0b620204bbd294c3d39486662839e96",
+      "sourceSha256": "be7d5cb84e37093ec657f27d7a0773dfd0b620204bbd294c3d39486662839e96"
+    }
+  ],
+  "identities": {
+    "oldPack": "4a7a782926efcacc7eadd5f671ac86e26af89a83613ec1fea72156275a629415",
+    "newPack": "a022be99d39570a3805b4ad2cf1c72a14c3bc5b5ff2d9865679d1b01bff47db7",
+    "oldGlb": {
+      "path": "parts.glb",
+      "sha256": "2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8",
+      "bytes": 3261348
+    },
+    "newGlb": {
+      "path": "parts.glb",
+      "sha256": "ceff9949cf80575e87e56feb0682894c58391ea7e64e1700f6e82f1c3d06cac3",
+      "bytes": 15500064
+    },
+    "oldPresentation": "7baf0384e7678a136d830f0c9d8b34a79bd1beb4eb11f8113c1c632d8808bd1e",
+    "newPresentation": "a042411e9cc754079ab9c49b3b4bc9d99ab23b42b93e0fa4f81b1e7f401f39d8",
+    "oldBlend": {
+      "path": "digital-twin/presentation/blender/picar-studio.blend",
+      "sha256": "27d90975b29c36152fe206cd54929f02eecb8973e7b4a7200596a611a48225a7"
+    },
+    "newBlend": {
+      "path": "digital-twin/presentation/blender/picar-studio.blend",
+      "sha256": "59fe591f77f3a6b0f0a326a1d6aacc01060483a258635620390866c19d032404",
+      "byteLength": 11283362
+    },
+    "finalRender": {
+      "path": "digital-twin/presentation/blender/renders/a022be99d395-a042411e9cc7-rpi5-S02.png",
+      "preview": false,
+      "resolutionPercentage": 100,
+      "samples": 512,
+      "sha256": "5f84145c39fb721b81d2d1c3b30272cae7437cc81f9122c8612a103ca0579e78",
+      "byteLength": 3653673
+    },
+    "displayArtifact": {
+      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
+      "sha256": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda"
+    }
+  },
+  "materials": {
+    "acceptedDefinitionsPreserved": 18,
+    "authoredNewDefinitions": [
+      "connector-white",
+      "ferrite-grey",
+      "fr4-edge",
+      "header-red",
+      "header-yellow",
+      "mlcc-tan",
+      "pcb-white",
+      "shell-dark",
+      "silkscreen-black",
+      "solder-tin",
+      "speaker-felt",
+      "tact-tan",
+      "wire-black",
+      "wire-red"
+    ],
+    "actualNewDefinitionCount": 14,
+    "sourceHandoffClaimedNewCount": 15,
+    "hatUsedCount": 19,
+    "registryCount": 32,
+    "glbUsedCount": 31,
+    "disposition": "Exact source commit definitions adopted; no fifteenth definition invented."
+  },
+  "generatedChainLabel": "s35-01",
+  "generatedTessellationLabel": "s35-01"
+}

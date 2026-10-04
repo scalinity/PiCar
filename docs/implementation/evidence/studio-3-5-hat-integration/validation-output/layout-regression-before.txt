@@ -1,0 +1,74 @@
+[WebServer] (node:51383) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51393) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51399) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51402) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:51410) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [webkit] › tests/browser/studio35-manual-layout.spec.ts:5:3 › manual loading keeps the rpi5 part button stationary through real presses (1.9s)
+(node:51437) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [webkit] › tests/browser/studio35-manual-layout.spec.ts:5:3 › manual loading keeps the rpi-zero-2-w part button stationary through real presses (1.6s)
+
+
+  1) [webkit] › tests/browser/studio35-manual-layout.spec.ts:5:3 › manual loading keeps the rpi5 part button stationary through real presses 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+        "height": 51.234375,
+        "width": 318,
+        "x": 1089,
+    -   "y": 709.3125,
+    +   "y": 796.515625,
+      }
+
+      36 |         await expect(panel).toHaveAttribute('data-ready', 'true', { timeout: 15000 });
+      37 |         const after = await button.boundingBox();
+    > 38 |         expect(after).toEqual(before);
+         |                       ^
+      39 |         await page.mouse.up();
+      40 |         await expect.poll(() => page.evaluate(() => (window as any).__studio.state().selection)).toBe(id);
+      41 |         const observed = await page.evaluate(() => { const d = (window as any).__layout35; d.watching = false; return { samples: d.samples, events: d.events }; });
+        at <checkout>/picarx-companion/tests/browser/studio35-manual-layout.spec.ts:38:23
+
+    Error Context: test-results/studio35-manual-layout-man-4f3fe-ionary-through-real-presses-webkit/error-context.md
+
+  2) [webkit] › tests/browser/studio35-manual-layout.spec.ts:5:3 › manual loading keeps the rpi-zero-2-w part button stationary through real presses 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+        "height": 51.234375,
+        "width": 318,
+        "x": 1089,
+    -   "y": 726.703125,
+    +   "y": 816.484375,
+      }
+
+      36 |         await expect(panel).toHaveAttribute('data-ready', 'true', { timeout: 15000 });
+      37 |         const after = await button.boundingBox();
+    > 38 |         expect(after).toEqual(before);
+         |                       ^
+      39 |         await page.mouse.up();
+      40 |         await expect.poll(() => page.evaluate(() => (window as any).__studio.state().selection)).toBe(id);
+      41 |         const observed = await page.evaluate(() => { const d = (window as any).__layout35; d.watching = false; return { samples: d.samples, events: d.events }; });
+        at <checkout>/picarx-companion/tests/browser/studio35-manual-layout.spec.ts:38:23
+
+    Error Context: test-results/studio35-manual-layout-man-e775d-ionary-through-real-presses-webkit/error-context.md
+
+  2 failed
+    [webkit] › tests/browser/studio35-manual-layout.spec.ts:5:3 › manual loading keeps the rpi5 part button stationary through real presses 
+    [webkit] › tests/browser/studio35-manual-layout.spec.ts:5:3 › manual loading keeps the rpi-zero-2-w part button stationary through real presses 

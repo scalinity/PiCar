@@ -1,0 +1,554 @@
+{
+  "ledger": {
+    "aggregates": [
+      {
+        "aggregate": {
+          "graphHash": null,
+          "id": "PX-SETUP",
+          "modelHash": null,
+          "revision": 3,
+          "snapshot": {
+            "checks": {},
+            "lastRoute": "#/reference",
+            "legacyAssemblyReportedDone": false,
+            "pdfLastPage": 1,
+            "steps": {}
+          },
+          "snapshotHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4"
+        },
+        "events": [
+          {
+            "action": {
+              "kind": "setup",
+              "setup": {
+                "checks": {},
+                "lastRoute": "#/reference",
+                "legacyAssemblyReportedDone": false,
+                "pdfLastPage": 1,
+                "steps": {}
+              }
+            },
+            "commandId": "PX-SETUP-95638B43-3B79-4D7D-9FB7-ABCE954E9F22",
+            "nextHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4",
+            "previousHash": "7f6ab6185c7d57c2b6fbb54441e357a4bab5aa631087640427d68cccec089d88",
+            "proposal": {
+              "checks": {},
+              "lastRoute": "#/reference",
+              "legacyAssemblyReportedDone": false,
+              "pdfLastPage": 1,
+              "steps": {}
+            },
+            "sequence": 1
+          },
+          {
+            "action": {
+              "kind": "setup",
+              "setup": {
+                "checks": {},
+                "lastRoute": "#/reference",
+                "legacyAssemblyReportedDone": false,
+                "pdfLastPage": 1,
+                "steps": {}
+              }
+            },
+            "commandId": "PX-SETUP-FD3D8EBA-1D7D-41B7-B882-649E37944349",
+            "nextHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4",
+            "previousHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4",
+            "proposal": {
+              "checks": {},
+              "lastRoute": "#/reference",
+              "legacyAssemblyReportedDone": false,
+              "pdfLastPage": 1,
+              "steps": {}
+            },
+            "sequence": 2
+          },
+          {
+            "action": {
+              "kind": "setup",
+              "setup": {
+                "checks": {},
+                "lastRoute": "#/reference",
+                "legacyAssemblyReportedDone": false,
+                "pdfLastPage": 1,
+                "steps": {}
+              }
+            },
+            "commandId": "PX-SETUP-148645A2-DE9A-4D6E-887B-07C4DCD742BC",
+            "nextHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4",
+            "previousHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4",
+            "proposal": {
+              "checks": {},
+              "lastRoute": "#/reference",
+              "legacyAssemblyReportedDone": false,
+              "pdfLastPage": 1,
+              "steps": {}
+            },
+            "sequence": 3
+          }
+        ]
+      },
+      {
+        "aggregate": {
+          "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+          "id": "PX-STUDIO-RPI5",
+          "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+          "revision": 3,
+          "snapshot": {
+            "confirmationRecords": [],
+            "contractVersion": 2,
+            "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+            "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+            "id": "PX-STUDIO-RPI5",
+            "invalidationEventIds": [],
+            "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+            "observationIds": [
+              "PX-OBSERVATION-7D99CFCE-DD80-4C6B-985D-35828ED42262"
+            ],
+            "procedureAcknowledgments": [],
+            "projectId": "PX-V40-PROJECT",
+            "reviewStepId": "PX-V40-STEP-04",
+            "revision": 3,
+            "schemaVersion": 1,
+            "servoEpochs": [
+              {
+                "epoch": 0,
+                "servoInstanceId": "PX-V40-INS-SERVO-TILT-001"
+              },
+              {
+                "epoch": 0,
+                "servoInstanceId": "PX-V40-INS-SERVO-PAN-001"
+              },
+              {
+                "epoch": 0,
+                "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001"
+              }
+            ],
+            "setupProgressRef": "PX-SETUP",
+            "sourceAdoptionEventIds": [],
+            "variantId": "rpi5",
+            "zeroingAttestations": []
+          },
+          "snapshotHash": "f0e8e9fd623bf86fca6a0b86b34c4966cec3b183a58d9c7b2aab05b272605d06"
+        },
+        "events": [
+          {
+            "action": {
+              "forkOf": null,
+              "kind": "create",
+              "session": {
+                "confirmationRecords": [],
+                "contractVersion": 2,
+                "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+                "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+                "id": "PX-STUDIO-RPI5",
+                "invalidationEventIds": [],
+                "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+                "observationIds": [],
+                "procedureAcknowledgments": [],
+                "projectId": "PX-V40-PROJECT",
+                "reviewStepId": "PX-V40-STEP-01",
+                "revision": 0,
+                "schemaVersion": 1,
+                "servoEpochs": [
+                  {
+                    "epoch": 0,
+                    "servoInstanceId": "PX-V40-INS-SERVO-TILT-001"
+                  },
+                  {
+                    "epoch": 0,
+                    "servoInstanceId": "PX-V40-INS-SERVO-PAN-001"
+                  },
+                  {
+                    "epoch": 0,
+                    "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001"
+                  }
+                ],
+                "setupProgressRef": "PX-SETUP",
+                "sourceAdoptionEventIds": [],
+                "variantId": "rpi5",
+                "zeroingAttestations": []
+              }
+            },
+            "commandId": "PX-CREATE-ADE4EE6B-4E66-4040-B908-6F544B996F38",
+            "nextHash": "9a19ec8ad459cb8fae2e90fd3fd624f87fcf65f2d7cb47134b13b022b39a75f8",
+            "previousHash": "7f6ab6185c7d57c2b6fbb54441e357a4bab5aa631087640427d68cccec089d88",
+            "proposal": {
+              "confirmationRecords": [],
+              "contractVersion": 2,
+              "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+              "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+              "id": "PX-STUDIO-RPI5",
+              "invalidationEventIds": [],
+              "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+              "observationIds": [],
+              "procedureAcknowledgments": [],
+              "projectId": "PX-V40-PROJECT",
+              "reviewStepId": "PX-V40-STEP-01",
+              "revision": 1,
+              "schemaVersion": 1,
+              "servoEpochs": [
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-TILT-001"
+                },
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-PAN-001"
+                },
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001"
+                }
+              ],
+              "setupProgressRef": "PX-SETUP",
+              "sourceAdoptionEventIds": [],
+              "variantId": "rpi5",
+              "zeroingAttestations": []
+            },
+            "sequence": 1
+          },
+          {
+            "action": {
+              "kind": "bookmark",
+              "stepId": "PX-V40-STEP-04"
+            },
+            "commandId": "PX-COMMAND-004ACBF4-5861-4D84-B102-C56172CB6688",
+            "nextHash": "316868a3533feeb2d904e6d1fe339d838c91223ac020d1ad7a3d2f0b1351cdc0",
+            "previousHash": "9a19ec8ad459cb8fae2e90fd3fd624f87fcf65f2d7cb47134b13b022b39a75f8",
+            "proposal": {
+              "confirmationRecords": [],
+              "contractVersion": 2,
+              "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+              "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+              "id": "PX-STUDIO-RPI5",
+              "invalidationEventIds": [],
+              "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+              "observationIds": [],
+              "procedureAcknowledgments": [],
+              "projectId": "PX-V40-PROJECT",
+              "reviewStepId": "PX-V40-STEP-04",
+              "revision": 2,
+              "schemaVersion": 1,
+              "servoEpochs": [
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-TILT-001"
+                },
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-PAN-001"
+                },
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001"
+                }
+              ],
+              "setupProgressRef": "PX-SETUP",
+              "sourceAdoptionEventIds": [],
+              "variantId": "rpi5",
+              "zeroingAttestations": []
+            },
+            "sequence": 2
+          },
+          {
+            "action": {
+              "kind": "observation",
+              "record": {
+                "closureSha256": "1ee023710cfd224efcc0853389e9954fc0d63f1f6b80429504b986d8e5fe618b",
+                "contextInstances": [
+                  "PX-V40-INS-M25X18-STANDOFF-001",
+                  "PX-V40-INS-M25X18-STANDOFF-002",
+                  "PX-V40-INS-M25X18-STANDOFF-003",
+                  "PX-V40-INS-M25X18-STANDOFF-004",
+                  "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+                  "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+                  "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+                  "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+                  "PX-V40-INS-M25X6-SCREW-001",
+                  "PX-V40-INS-M25X6-SCREW-002",
+                  "PX-V40-INS-M25X6-SCREW-003",
+                  "PX-V40-INS-M25X6-SCREW-004",
+                  "PX-V40-INS-M25X6-SCREW-005",
+                  "PX-V40-INS-M25X6-SCREW-006",
+                  "PX-V40-INS-M25X6-SCREW-007",
+                  "PX-V40-INS-M25X6-SCREW-008",
+                  "PX-V40-INS-PI5-001",
+                  "PX-V40-INS-PLATE-A-001",
+                  "PX-V40-INS-ROBOT-HAT-001",
+                  "PX-V40-INS-SCREWDRIVER-01-001",
+                  "PX-V40-INS-SCREWDRIVER-02-001",
+                  "PX-V40-INS-USB-MICROPHONE-001"
+                ],
+                "contract": "picar-studio-observation/1",
+                "createdAt": "2026-10-04T06:15:38.023Z",
+                "file": {
+                  "byteLength": 68,
+                  "mediaType": "image/png",
+                  "sha256": "11a3106c0d4b6dc8c89b8a3e2cbfe43120c9154c5e03a473ed56c9975eb14d6c",
+                  "storageKey": "evidence/PX-STUDIO-RPI5/PX-OBSERVATION-7D99CFCE-DD80-4C6B-985D-35828ED42262"
+                },
+                "geometry": [
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18-STANDOFF-001",
+                    "instructionalSha256": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18-STANDOFF-002",
+                    "instructionalSha256": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18-STANDOFF-003",
+                    "instructionalSha256": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18-STANDOFF-004",
+                    "instructionalSha256": "cd7c3a98b9b5eaada338604680ff333aac3952c72a71fbb73b7eed93982606a2"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+                    "instructionalSha256": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+                    "instructionalSha256": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+                    "instructionalSha256": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+                    "instructionalSha256": "5d83a93cdf85e106ddde072bbcd8d1b3886d88225ae89630dff2e3bdf11d7645"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-001",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-002",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-003",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-004",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-005",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-006",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-007",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-M25X6-SCREW",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-M25X6-SCREW-008",
+                    "instructionalSha256": "2eb2a5ed34bf6f7d2a246a04061da14896258e8a2fdbfb660deedb96ee87f5b0"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-PI5",
+                    "displayedSha256": "afd18f9adcd74cd009f94caed5a2e44adbd4108dbf335efeed3dc5203f86ee8a",
+                    "instanceId": "PX-V40-INS-PI5-001",
+                    "instructionalSha256": "ff4f5415e69826ceeaf2ba39d29b3af493a95b7c73c9aa0189ed2c376d57768c"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-PLATE-A",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-PLATE-A-001",
+                    "instructionalSha256": "2348ebddc570041cbe42d3d0ea9ce4f3da279bb24fb1df3607116be1db01b495"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-ROBOT-HAT",
+                    "displayedSha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4",
+                    "instanceId": "PX-V40-INS-ROBOT-HAT-001",
+                    "instructionalSha256": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a"
+                  },
+                  {
+                    "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+                    "displayedSha256": null,
+                    "instanceId": "PX-V40-INS-USB-MICROPHONE-001",
+                    "instructionalSha256": "8fd263478941111924fa0ee96c6b0ca027c3fcc188d24f9a37c310ad45b7f51e"
+                  }
+                ],
+                "id": "PX-OBSERVATION-7D99CFCE-DD80-4C6B-985D-35828ED42262",
+                "packId": "4a7a782926efcacc7eadd5f671ac86e26af89a83613ec1fea72156275a629415",
+                "poseSha256": "30c722ae2c05d29b36b09dd3cabca4165f254de38817915062309de54cf35c23",
+                "sessionId": "PX-STUDIO-RPI5",
+                "sourceSha256": "5cfa61d1fbca021d46616dd830f868cc51a5fae8d407cca41e7269b50d442709",
+                "stepId": "PX-V40-STEP-04",
+                "variantId": "rpi5"
+              }
+            },
+            "commandId": "PX-COMMAND-E359B14F-A00B-4F63-A04B-8F1BACB0AFBA",
+            "nextHash": "f0e8e9fd623bf86fca6a0b86b34c4966cec3b183a58d9c7b2aab05b272605d06",
+            "previousHash": "316868a3533feeb2d904e6d1fe339d838c91223ac020d1ad7a3d2f0b1351cdc0",
+            "proposal": {
+              "confirmationRecords": [],
+              "contractVersion": 2,
+              "evidenceHash": "e00e7825f413a37edeb3c9ac47611fbf790480d6efb71337b5cd219bfd082d5c",
+              "graphHash": "97de264d98dcd9d525b26cac7f211279f446a59352bc822a1d3a68ca267d2665",
+              "id": "PX-STUDIO-RPI5",
+              "invalidationEventIds": [],
+              "modelHash": "01c29e99b8d6fa04689e4316628296bf3a3da422184e3563bf99f5bdce543bd2",
+              "observationIds": [
+                "PX-OBSERVATION-7D99CFCE-DD80-4C6B-985D-35828ED42262"
+              ],
+              "procedureAcknowledgments": [],
+              "projectId": "PX-V40-PROJECT",
+              "reviewStepId": "PX-V40-STEP-04",
+              "revision": 3,
+              "schemaVersion": 1,
+              "servoEpochs": [
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-TILT-001"
+                },
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-PAN-001"
+                },
+                {
+                  "epoch": 0,
+                  "servoInstanceId": "PX-V40-INS-SERVO-STEERING-001"
+                }
+              ],
+              "setupProgressRef": "PX-SETUP",
+              "sourceAdoptionEventIds": [],
+              "variantId": "rpi5",
+              "zeroingAttestations": []
+            },
+            "sequence": 3
+          }
+        ]
+      }
+    ],
+    "checksum": "f86b0a6f236e995472bf063ae165f46a458cd6246ea9367608085acfc9697e0a",
+    "format": "picar-sessions",
+    "imports": [],
+    "results": [
+      {
+        "acknowledgment": {
+          "acknowledgedRevision": 2,
+          "aggregateId": "PX-STUDIO-RPI5",
+          "commandId": "PX-COMMAND-004ACBF4-5861-4D84-B102-C56172CB6688",
+          "snapshotHash": "316868a3533feeb2d904e6d1fe339d838c91223ac020d1ad7a3d2f0b1351cdc0"
+        },
+        "commandId": "PX-COMMAND-004ACBF4-5861-4D84-B102-C56172CB6688",
+        "requestHash": "7dcdc719084d553dbdbb40e6ec9423a655e4e59f4f3e583606c78a1f05e0e63c"
+      },
+      {
+        "acknowledgment": {
+          "acknowledgedRevision": 3,
+          "aggregateId": "PX-STUDIO-RPI5",
+          "commandId": "PX-COMMAND-E359B14F-A00B-4F63-A04B-8F1BACB0AFBA",
+          "snapshotHash": "f0e8e9fd623bf86fca6a0b86b34c4966cec3b183a58d9c7b2aab05b272605d06"
+        },
+        "commandId": "PX-COMMAND-E359B14F-A00B-4F63-A04B-8F1BACB0AFBA",
+        "requestHash": "f2e9f5d930792c1daf7d3911d19c10a0de5ab8b5e8c6e7d2e8b7096ba3dc659d"
+      },
+      {
+        "acknowledgment": {
+          "acknowledgedRevision": 1,
+          "aggregateId": "PX-STUDIO-RPI5",
+          "commandId": "PX-CREATE-ADE4EE6B-4E66-4040-B908-6F544B996F38",
+          "snapshotHash": "9a19ec8ad459cb8fae2e90fd3fd624f87fcf65f2d7cb47134b13b022b39a75f8"
+        },
+        "commandId": "PX-CREATE-ADE4EE6B-4E66-4040-B908-6F544B996F38",
+        "requestHash": "356c302bbe6b66de0391c5b34bcc3306e4e9a38f8553678ec113d1ef3f39be4a"
+      },
+      {
+        "acknowledgment": {
+          "acknowledgedRevision": 3,
+          "aggregateId": "PX-SETUP",
+          "commandId": "PX-SETUP-148645A2-DE9A-4D6E-887B-07C4DCD742BC",
+          "snapshotHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4"
+        },
+        "commandId": "PX-SETUP-148645A2-DE9A-4D6E-887B-07C4DCD742BC",
+        "requestHash": "17b52e8cdde0b768e2feabf48523735a1efec9212e2c5a1d85a4b19e6d55d54f"
+      },
+      {
+        "acknowledgment": {
+          "acknowledgedRevision": 1,
+          "aggregateId": "PX-SETUP",
+          "commandId": "PX-SETUP-95638B43-3B79-4D7D-9FB7-ABCE954E9F22",
+          "snapshotHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4"
+        },
+        "commandId": "PX-SETUP-95638B43-3B79-4D7D-9FB7-ABCE954E9F22",
+        "requestHash": "c3d177f2a799db6b94cab2d6476ccc7c06dedbba6af48515fd7473657c87b354"
+      },
+      {
+        "acknowledgment": {
+          "acknowledgedRevision": 2,
+          "aggregateId": "PX-SETUP",
+          "commandId": "PX-SETUP-FD3D8EBA-1D7D-41B7-B882-649E37944349",
+          "snapshotHash": "6a1e468733955c5227e7eeb5c031e418d64b65999e5d755a171ef6b2ba2ee8d4"
+        },
+        "commandId": "PX-SETUP-FD3D8EBA-1D7D-41B7-B882-649E37944349",
+        "requestHash": "de4b83b52f6c4d9236deba0c6af4a4a2d0513e99b7b0fcf30ee17742c9aa906a"
+      }
+    ],
+    "schemaVersion": 1
+  },
+  "camera": {
+    "aspect": 1.25,
+    "position": [
+      -0.38528445330601213,
+      0.2807675360462305,
+      0.33157147043901203
+    ],
+    "target": [
+      -0.20657711891050984,
+      -0.001610313257856114,
+      0.31791721643434606
+    ],
+    "view": {
+      "enabled": true,
+      "fullHeight": 532,
+      "fullWidth": 665,
+      "height": 704,
+      "offsetX": -72,
+      "offsetY": -52,
+      "width": 1121
+    }
+  }
+}

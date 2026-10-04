@@ -1,0 +1,2222 @@
+{
+ "contract": "picar-studio-tray-audit/1",
+ "label": "s35-01",
+ "manifest": {
+  "path": "picarx-companion/src/generated/studio/manifest.json",
+  "packId": "a022be99d39570a3805b4ad2cf1c72a14c3bc5b5ff2d9865679d1b01bff47db7"
+ },
+ "scope": "Canonical counts are printed-stock claims (BOM_RECONCILIATION.md), not a count of the owner's actual loose kit.",
+ "view": {
+  "width": 1168,
+  "height": 729
+ },
+ "variants": {
+  "rpi5": {
+   "counts": {
+    "canonicalPhysicalCount": 156,
+    "s01ToS09RequiredCount": 50,
+    "laterUseCount": 69,
+    "spareCount": 37,
+    "toolCount": 3,
+    "packInstanceCount": 143,
+    "trayInstanceCount": 143,
+    "placedInstanceCount": 40,
+    "candidateOnlyInstanceCount": 4,
+    "rendered3DInstanceCount": 143,
+    "nonRenderableCount": 13,
+    "nonRenderableRepresentedCount": 13,
+    "missingCount": 0,
+    "duplicateUnexpectedCount": 0,
+    "coincidentTrayPairs": 0,
+    "definitionsDrawn": 47
+   },
+   "disagreements": [],
+   "invariant": "HOLDS",
+   "canonical": {
+    "byDisposition": {
+     "available": 111,
+     "backup": 37,
+     "accessory": 5,
+     "tool": 3
+    },
+    "byComponentClass": {
+     "screw": 36,
+     "washer": 16,
+     "nut": 6,
+     "standoff": 24,
+     "rivet": 34,
+     "plate": 8,
+     "motor": 2,
+     "servo": 3,
+     "horn": 3,
+     "wheel": 4,
+     "battery": 1,
+     "robotHat": 1,
+     "camera": 1,
+     "ultrasonic": 1,
+     "grayscale": 1,
+     "cable": 4,
+     "connector": 1,
+     "tool": 3,
+     "piBoard": 1,
+     "consumable": 6
+    },
+    "notRequiredForS01ToS09": 106
+   },
+   "required": [
+    {
+     "id": "PX-V40-INS-BATTERY-001",
+     "definitionId": "PX-V40-DEF-BATTERY",
+     "componentClass": "battery",
+     "firstStep": 6,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-HORN-PAN-001",
+     "definitionId": "PX-V40-DEF-HORN-PAN",
+     "componentClass": "horn",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-003",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-004",
+     "definitionId": "PX-V40-DEF-M25X18-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-001",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-002",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-003",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-004",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-005",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-006",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-007",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-008",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-001",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-002",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-003",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-004",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-001",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-002",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-003",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-004",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-LEFT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-LEFT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-RIGHT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-RIGHT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PI5-001",
+     "definitionId": "PX-V40-DEF-PI5",
+     "componentClass": "piBoard",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-A-001",
+     "definitionId": "PX-V40-DEF-PLATE-A",
+     "componentClass": "plate",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-H-001",
+     "definitionId": "PX-V40-DEF-PLATE-H",
+     "componentClass": "plate",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-001",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-002",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "componentClass": "cable",
+     "firstStep": 3,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ROBOT-HAT-001",
+     "definitionId": "PX-V40-DEF-ROBOT-HAT",
+     "componentClass": "robotHat",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ULTRASONIC-001",
+     "definitionId": "PX-V40-DEF-ULTRASONIC",
+     "componentClass": "ultrasonic",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-USB-MICROPHONE-001",
+     "definitionId": "PX-V40-DEF-USB-MICROPHONE",
+     "componentClass": "connector",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "componentClass": "tool",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH"
+    }
+   ],
+   "crossCheck": {
+    "plannedUsesS01ToS09": 34,
+    "plannedNotRequired": [],
+    "plannedStepMismatch": []
+   },
+   "candidateOnly": [
+    "PX-V40-INS-ULTRASONIC-001",
+    "PX-V40-INS-PLATE-H-001",
+    "PX-V40-INS-R3080-RIVET-001",
+    "PX-V40-INS-R3080-RIVET-002"
+   ],
+   "notRendered": [],
+   "renderFindings": [
+    {
+     "id": "PX-V40-INS-HORN-PAN-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-HORN-STEERING-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-HORN-TILT-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 2
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 2
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-007",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-008",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-009",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-010",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-011",
+     "kind": "too-small-to-count",
+     "pixels": 2
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.4
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-005",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.9
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.7
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.6
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 3.5
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 3.5
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 3.4
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 3.4
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 3.3
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 3.3
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-007",
+     "kind": "too-small-to-count",
+     "pixels": 3.3
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-008",
+     "kind": "too-small-to-count",
+     "pixels": 3.2
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-009",
+     "kind": "too-small-to-count",
+     "pixels": 3.2
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-010",
+     "kind": "too-small-to-count",
+     "pixels": 3.1
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-002",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-003",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-004",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-005",
+     "kind": "too-small-to-count",
+     "pixels": 3.6
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-006",
+     "kind": "too-small-to-count",
+     "pixels": 3.6
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-M3X26-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.8
+    },
+    {
+     "id": "PX-V40-INS-M3X26-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.7
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.1
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.1
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 4
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.4
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-007",
+     "kind": "too-small-to-count",
+     "pixels": 4.4
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-008",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.6
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.5
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.4
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-005",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-006",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-007",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-008",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-SERVO-RETAINER-PAN-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.5
+    },
+    {
+     "id": "PX-V40-INS-SERVO-RETAINER-STEERING-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.5
+    },
+    {
+     "id": "PX-V40-INS-SERVO-RETAINER-TILT-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.5
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-005",
+     "kind": "too-small-to-count",
+     "pixels": 3.8
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-006",
+     "kind": "too-small-to-count",
+     "pixels": 3.8
+    },
+    {
+     "id": "PX-V40-INS-WASHER-A-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-WASHER-A-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-005",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-006",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-007",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-008",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    }
+   ],
+   "coincident": [],
+   "nonRenderable": [
+    {
+     "id": "PX-V40-INS-CABLE-4PIN-001",
+     "definitionId": "PX-V40-DEF-CABLE-4PIN",
+     "firstStep": 28,
+     "how": "introduced",
+     "state": "later",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-CABLE-5PIN-001",
+     "definitionId": "PX-V40-DEF-CABLE-5PIN",
+     "firstStep": 28,
+     "how": "introduced",
+     "state": "later",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-CABLE-WRAP-001",
+     "definitionId": "PX-V40-DEF-CABLE-WRAP",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-ELECTRICAL-TAPE-001",
+     "definitionId": "PX-V40-DEF-ELECTRICAL-TAPE",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-HOOK-001",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "state": "current",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-LOOP-001",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "state": "current",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "firstStep": 3,
+     "how": "introduced",
+     "state": "current",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "state": "tool",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "state": "tool",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-USB-CABLE-001",
+     "definitionId": "PX-V40-DEF-USB-CABLE",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH",
+     "state": "tool",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    }
+   ],
+   "missing": [],
+   "unexpected": []
+  },
+  "rpi-zero-2-w": {
+   "counts": {
+    "canonicalPhysicalCount": 156,
+    "s01ToS09RequiredCount": 47,
+    "laterUseCount": 72,
+    "spareCount": 37,
+    "toolCount": 3,
+    "packInstanceCount": 143,
+    "trayInstanceCount": 143,
+    "placedInstanceCount": 37,
+    "candidateOnlyInstanceCount": 4,
+    "rendered3DInstanceCount": 143,
+    "nonRenderableCount": 13,
+    "nonRenderableRepresentedCount": 13,
+    "missingCount": 0,
+    "duplicateUnexpectedCount": 0,
+    "coincidentTrayPairs": 0,
+    "definitionsDrawn": 47
+   },
+   "disagreements": [],
+   "invariant": "HOLDS",
+   "canonical": {
+    "byDisposition": {
+     "available": 111,
+     "backup": 37,
+     "accessory": 5,
+     "tool": 3
+    },
+    "byComponentClass": {
+     "screw": 36,
+     "washer": 16,
+     "nut": 6,
+     "standoff": 24,
+     "rivet": 34,
+     "plate": 8,
+     "motor": 2,
+     "servo": 3,
+     "horn": 3,
+     "wheel": 4,
+     "battery": 1,
+     "robotHat": 1,
+     "camera": 1,
+     "ultrasonic": 1,
+     "grayscale": 1,
+     "cable": 4,
+     "connector": 1,
+     "tool": 3,
+     "piBoard": 1,
+     "consumable": 6
+    },
+    "notRequiredForS01ToS09": 109
+   },
+   "required": [
+    {
+     "id": "PX-V40-INS-BATTERY-001",
+     "definitionId": "PX-V40-DEF-BATTERY",
+     "componentClass": "battery",
+     "firstStep": 6,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-HORN-PAN-001",
+     "definitionId": "PX-V40-DEF-HORN-PAN",
+     "componentClass": "horn",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "componentClass": "consumable",
+     "firstStep": 6,
+     "how": "used-not-introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "definitionId": "PX-V40-DEF-M15X3-SCREW",
+     "componentClass": "screw",
+     "firstStep": 8,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X11-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X18PLUS6-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 2,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-001",
+     "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-002",
+     "definitionId": "PX-V40-DEF-M25X30-STANDOFF",
+     "componentClass": "standoff",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-001",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-002",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-003",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-004",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-005",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-006",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-007",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-008",
+     "definitionId": "PX-V40-DEF-M25X6-SCREW",
+     "componentClass": "screw",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-001",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-002",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-003",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-004",
+     "definitionId": "PX-V40-DEF-M3-NUT",
+     "componentClass": "nut",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-001",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-002",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-003",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-004",
+     "definitionId": "PX-V40-DEF-M3X25-SCREW",
+     "componentClass": "screw",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-LEFT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-LEFT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-MOTOR-RIGHT-001",
+     "definitionId": "PX-V40-DEF-MOTOR-RIGHT",
+     "componentClass": "motor",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-A-001",
+     "definitionId": "PX-V40-DEF-PLATE-A",
+     "componentClass": "plate",
+     "firstStep": 1,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-PLATE-H-001",
+     "definitionId": "PX-V40-DEF-PLATE-H",
+     "componentClass": "plate",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-001",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-002",
+     "definitionId": "PX-V40-DEF-R3080-RIVET",
+     "componentClass": "rivet",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "componentClass": "cable",
+     "firstStep": 3,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ROBOT-HAT-001",
+     "definitionId": "PX-V40-DEF-ROBOT-HAT",
+     "componentClass": "robotHat",
+     "firstStep": 4,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "componentClass": "tool",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "definitionId": "PX-V40-DEF-SPRING-WASHER",
+     "componentClass": "washer",
+     "firstStep": 5,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-ULTRASONIC-001",
+     "definitionId": "PX-V40-DEF-ULTRASONIC",
+     "componentClass": "ultrasonic",
+     "firstStep": 9,
+     "how": "introduced"
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "componentClass": "tool",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH"
+    },
+    {
+     "id": "PX-V40-INS-ZERO2W-001",
+     "definitionId": "PX-V40-DEF-ZERO2W",
+     "componentClass": "piBoard",
+     "firstStep": 2,
+     "how": "introduced"
+    }
+   ],
+   "crossCheck": {
+    "plannedUsesS01ToS09": 32,
+    "plannedNotRequired": [],
+    "plannedStepMismatch": []
+   },
+   "candidateOnly": [
+    "PX-V40-INS-ULTRASONIC-001",
+    "PX-V40-INS-PLATE-H-001",
+    "PX-V40-INS-R3080-RIVET-001",
+    "PX-V40-INS-R3080-RIVET-002"
+   ],
+   "notRendered": [],
+   "renderFindings": [
+    {
+     "id": "PX-V40-INS-HORN-PAN-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.1
+    },
+    {
+     "id": "PX-V40-INS-HORN-STEERING-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-HORN-TILT-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 2
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 2
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-007",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-008",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-009",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-010",
+     "kind": "too-small-to-count",
+     "pixels": 1.8
+    },
+    {
+     "id": "PX-V40-INS-M15X3-SCREW-011",
+     "kind": "too-small-to-count",
+     "pixels": 2
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M25X11-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-M25X18-STANDOFF-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.4
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-005",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-M25X18PLUS6-STANDOFF-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.9
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.7
+    },
+    {
+     "id": "PX-V40-INS-M25X30-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.6
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 3.5
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 3.5
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 3.4
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 3.4
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 3.3
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 3.3
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-007",
+     "kind": "too-small-to-count",
+     "pixels": 3.3
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-008",
+     "kind": "too-small-to-count",
+     "pixels": 3.2
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-009",
+     "kind": "too-small-to-count",
+     "pixels": 3.2
+    },
+    {
+     "id": "PX-V40-INS-M25X6-SCREW-010",
+     "kind": "too-small-to-count",
+     "pixels": 3.1
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-002",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-003",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-004",
+     "kind": "too-small-to-count",
+     "pixels": 2.9
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-005",
+     "kind": "too-small-to-count",
+     "pixels": 3.6
+    },
+    {
+     "id": "PX-V40-INS-M3-NUT-006",
+     "kind": "too-small-to-count",
+     "pixels": 3.6
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-M3X25-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-M3X26-STANDOFF-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.8
+    },
+    {
+     "id": "PX-V40-INS-M3X26-STANDOFF-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.7
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.1
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.1
+    },
+    {
+     "id": "PX-V40-INS-M3X6-SCREW-006",
+     "kind": "too-small-to-count",
+     "pixels": 4
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.4
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-R2048-RIVET-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.2
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-005",
+     "kind": "too-small-to-count",
+     "pixels": 4.6
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-006",
+     "kind": "too-small-to-count",
+     "pixels": 4.5
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-007",
+     "kind": "too-small-to-count",
+     "pixels": 4.4
+    },
+    {
+     "id": "PX-V40-INS-R2056-RIVET-008",
+     "kind": "too-small-to-count",
+     "pixels": 4.3
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.3
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R3055-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.6
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.5
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.4
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-005",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-006",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-007",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R3065-RIVET-008",
+     "kind": "too-small-to-count",
+     "pixels": 4.7
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.1
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-002",
+     "kind": "too-small-to-count",
+     "pixels": 5
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-003",
+     "kind": "too-small-to-count",
+     "pixels": 4.9
+    },
+    {
+     "id": "PX-V40-INS-R3080-RIVET-004",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-SERVO-RETAINER-PAN-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.5
+    },
+    {
+     "id": "PX-V40-INS-SERVO-RETAINER-STEERING-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.5
+    },
+    {
+     "id": "PX-V40-INS-SERVO-RETAINER-TILT-001",
+     "kind": "too-small-to-count",
+     "pixels": 2.5
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-001",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-002",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-003",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-004",
+     "kind": "too-small-to-count",
+     "pixels": 1.9
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-005",
+     "kind": "too-small-to-count",
+     "pixels": 3.8
+    },
+    {
+     "id": "PX-V40-INS-SPRING-WASHER-006",
+     "kind": "too-small-to-count",
+     "pixels": 3.8
+    },
+    {
+     "id": "PX-V40-INS-WASHER-A-001",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-WASHER-A-002",
+     "kind": "too-small-to-count",
+     "pixels": 4.8
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-001",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-002",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-003",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-004",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-005",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-006",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-007",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    },
+    {
+     "id": "PX-V40-INS-WASHER-B-008",
+     "kind": "too-small-to-count",
+     "pixels": 5.2
+    }
+   ],
+   "coincident": [],
+   "nonRenderable": [
+    {
+     "id": "PX-V40-INS-CABLE-4PIN-001",
+     "definitionId": "PX-V40-DEF-CABLE-4PIN",
+     "firstStep": 28,
+     "how": "introduced",
+     "state": "later",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-CABLE-5PIN-001",
+     "definitionId": "PX-V40-DEF-CABLE-5PIN",
+     "firstStep": 28,
+     "how": "introduced",
+     "state": "later",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-CABLE-WRAP-001",
+     "definitionId": "PX-V40-DEF-CABLE-WRAP",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-ELECTRICAL-TAPE-001",
+     "definitionId": "PX-V40-DEF-ELECTRICAL-TAPE",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-HOOK-001",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-HOOK-002",
+     "definitionId": "PX-V40-DEF-HOOK",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "state": "current",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-LOOP-001",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-LOOP-002",
+     "definitionId": "PX-V40-DEF-LOOP",
+     "firstStep": 6,
+     "how": "used-not-introduced",
+     "state": "current",
+     "reason": "abstract: consumable stock with no defined shape",
+     "represented": true,
+     "representation": "tray tile: No trusted 3D shape is available for this stock, so it is shown as a labeled tile."
+    },
+    {
+     "id": "PX-V40-INS-RIBBON-FPC-001",
+     "definitionId": "PX-V40-DEF-RIBBON-FPC",
+     "firstStep": 3,
+     "how": "introduced",
+     "state": "current",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-01-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-01",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "state": "tool",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-SCREWDRIVER-02-001",
+     "definitionId": "PX-V40-DEF-SCREWDRIVER-02",
+     "firstStep": 1,
+     "how": "tool for PX-V40-TOOL-SCREWDRIVER",
+     "state": "tool",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    },
+    {
+     "id": "PX-V40-INS-USB-CABLE-001",
+     "definitionId": "PX-V40-DEF-USB-CABLE",
+     "firstStep": null,
+     "how": "stock",
+     "state": "later",
+     "reason": "schematic: no trusted solid (cable or ribbon)",
+     "represented": true,
+     "representation": "tray tile: No trusted solid: cable and ribbon routing is not modelled, so it is shown as a tile."
+    },
+    {
+     "id": "PX-V40-INS-WRENCH-001",
+     "definitionId": "PX-V40-DEF-WRENCH",
+     "firstStep": 5,
+     "how": "tool for PX-V40-TOOL-WRENCH",
+     "state": "tool",
+     "reason": "tool: no instructional geometry authored",
+     "represented": true,
+     "representation": "tray tile: No instructional geometry: the kit tool is listed as a tile."
+    }
+   ],
+   "missing": [],
+   "unexpected": []
+  }
+ }
+}

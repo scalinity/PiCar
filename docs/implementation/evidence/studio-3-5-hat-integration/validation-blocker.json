@@ -1,0 +1,66 @@
+{
+  "status": "BLOCKED_PENDING_RUNTIME_SCOPE_AUTHORIZATION",
+  "fullBrowser": {
+    "passed": 125,
+    "failed": 4,
+    "skipped": 1,
+    "duration": "15.8m",
+    "acceptedLegacyPdfFailures": 2,
+    "additionalFailures": [
+      "WebKit early board selection: manual-preview layout moves the button during the click",
+      "New earlier-observation test used ephemeral WebKit photo context; test-only correction now uses accepted regular/disposable context"
+    ]
+  },
+  "repeatedFocusedBrowser": {
+    "passed": 29,
+    "failed": 1,
+    "duration": "55.9s",
+    "correctedEarlierObservationCasesPassed": 10,
+    "boardSelectionCases": 20,
+    "boardSelectionFailures": 1
+  },
+  "diagnosticIntegratedClicks": {
+    "mode": "integrated",
+    "attempts": 30,
+    "failures": 2
+  },
+  "physicalEventTrace": [
+    {
+      "type": "pointerdown",
+      "target": "SPAN",
+      "text": "Raspberry Pi 5moves down 30 mm into place",
+      "x": 1248,
+      "y": 734
+    },
+    {
+      "type": "pointerup",
+      "target": "SPAN",
+      "text": "M2.5x18 standoff\u00d74moves down 30 mm into place",
+      "x": 1248,
+      "y": 734
+    },
+    {
+      "type": "click",
+      "target": "UL",
+      "x": 1248,
+      "y": 734
+    }
+  ],
+  "selectionEvents": [],
+  "finding": "Pointer-down hit the Pi5 button at (1248,734), pointer-up hit the standoff button at the same coordinate, and click targeted UL. No selection action occurred. The asynchronous printed-manual canvas changes height and shifts the parts list during the press.",
+  "protectedRuntimeSourceUnmodified": true,
+  "sourceDirective": "If runtime changes unexpectedly appear necessary: STOP and explain why before implementing them.",
+  "proposedChange": "Reserve the printed-manual preview dimensions before its async render completes, keeping part buttons stationary; preserve all existing selection, persistence and geometry semantics.",
+  "remainingRequired": [
+    "final full browser rerun after authorized UI fix",
+    "final native journey, actual window pixels, performance and resource samples",
+    "final connector transport/restoration, privacy closure, handoff and normal integration-branch push"
+  ],
+  "ownerIntegratedViewAcceptance": "PENDING",
+  "readiness": "STUDIO 3.5 NOT READY FOR INDEPENDENT REVIEW",
+  "legacyBrowser": {
+    "passed": 10,
+    "failed": 0,
+    "duration": "8.4s"
+  }
+}

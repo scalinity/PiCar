@@ -1,0 +1,94 @@
+{
+  "codeHead": "d2841424837fa229c2d612cef8163959cf528650",
+  "status": "COMPLETE \u2014 RUN / FAIL \u2014 EXPLAINED for full aggregate; no new integration failure",
+  "cad": {
+    "passed": 32,
+    "failed": 0,
+    "seconds": 82.06
+  },
+  "typecheck": "PASS",
+  "unit": {
+    "passed": 304,
+    "failed": 0,
+    "files": 27,
+    "seconds": 14.08
+  },
+  "manualLayout": {
+    "passed": 4,
+    "failed": 0,
+    "realPresses": 32,
+    "movementCssPx": 0,
+    "misses": 0,
+    "seconds": 53
+  },
+  "repeatedFormerlyFailingFocus": {
+    "passed": 30,
+    "failed": 0,
+    "seconds": 48.9
+  },
+  "controlledSelectionDiagnostic": {
+    "passed": 2,
+    "failed": 0,
+    "acceptedMisses": 0,
+    "acceptedAttempts": 30,
+    "integratedMisses": 0,
+    "integratedAttempts": 30
+  },
+  "fullBrowser": {
+    "passed": 131,
+    "failed": 2,
+    "skipped": 1,
+    "duration": "16.2m",
+    "aggregate": "RUN / FAIL \u2014 EXPLAINED",
+    "failures": [
+      {
+        "engine": "chromium",
+        "test": "tests/browser/preservation.spec.ts:38",
+        "assertionLine": 42,
+        "expectedLegacyRawPdfPage": 1,
+        "actualPreservedLegacyRawPdfPage": 2,
+        "durableSetupPdfPage": 1,
+        "disposition": "Accepted legacy assertion failure; accepted Studio 3 P3 explanation retained, no test weakened"
+      },
+      {
+        "engine": "webkit",
+        "test": "tests/browser/preservation.spec.ts:38",
+        "assertionLine": 42,
+        "expectedLegacyRawPdfPage": 1,
+        "actualPreservedLegacyRawPdfPage": 2,
+        "durableSetupPdfPage": 1,
+        "disposition": "Accepted legacy assertion failure; accepted Studio 3 P3 explanation retained, no test weakened"
+      }
+    ],
+    "newIntegrationFailures": 0
+  },
+  "legacyBrowser": {
+    "passed": 10,
+    "failed": 0,
+    "seconds": 8.8
+  },
+  "native": {
+    "passed": 1,
+    "failed": 0,
+    "duration": "7m20.6s",
+    "inRunRecoveredDriverWarnings": 1,
+    "postSessionCleanupWarning": true,
+    "receipt": "native-closeout.json"
+  },
+  "transcripts": {
+    "browser-full-layout-final": {
+      "path": "docs/implementation/evidence/studio-3-5-hat-integration/validation-output/browser-full-layout-final.txt",
+      "sha256": "32131aa85cb2b8687e4e7b1623f34146191a4f03c8e87f3b131e2d5264f7ee0a",
+      "byteLength": 26364,
+      "exitCode": 1
+    },
+    "browser-legacy-layout-final": {
+      "path": "docs/implementation/evidence/studio-3-5-hat-integration/validation-output/browser-legacy-layout-final.txt",
+      "sha256": "c2f99cc19f132c99f81290fd5f629f0ca2b1810ee017b5d261ec417e0713089d",
+      "byteLength": 2571,
+      "exitCode": 0
+    }
+  },
+  "ownerIntegratedViewAcceptance": "PENDING",
+  "engineeringAdmission": false
+}
