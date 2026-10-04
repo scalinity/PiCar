@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { useCallback, type ReactNode } from 'react';
 import { studioHref, type StudioVariant } from '../../../lib/router';
 import { entryOf, type DisplayCheck, type DisplayDetail, type LoadedPack, type StepEntry, type Vec3, type VariantEntry } from '../assets/pack';
 import { vendorAgreement } from './fidelity';
@@ -76,7 +76,7 @@ function inventoryOf(v: VariantEntry, pack: LoadedPack, id: string) {
 
 function Button({ label, onClick, children, pressed, disabled, wide, shortcut }: { label: string; onClick: () => void; children: ReactNode; pressed?: boolean; disabled?: boolean; wide?: boolean; shortcut?: string }) {
   return (
-    <button type="button" className={`studio-button${wide ? ' studio-button-wide' : ''}`} aria-label={wide ? undefined : label} title={shortcut ? `${label} (${shortcut})` : label}
+    <button tabIndex={0} type="button" className={`studio-button${wide ? ' studio-button-wide' : ''}`} aria-label={wide ? undefined : label} title={shortcut ? `${label} (${shortcut})` : label}
       aria-pressed={pressed} disabled={disabled} onClick={onClick} aria-keyshortcuts={shortcut}>{children}</button>
   );
 }
@@ -90,16 +90,16 @@ export function Header({ pack, variant, step, root, boardHref }: { pack: LoadedP
   return (
     <header className="studio-header" data-tauri-drag-region>
       <nav className="studio-exits" aria-label="Leave the Studio">
-        <a className="studio-back" href="#/"><Back />Companion</a>
-        <a href="#/wizard/parts">Setup</a>
-        <a href="#/reference">Reference</a>
-        <a href="#/videos">Videos</a>
+        <a tabIndex={0} className="studio-back" href="#/"><Back />Companion</a>
+        <a tabIndex={0} href="#/wizard/parts">Setup</a>
+        <a tabIndex={0} href="#/reference">Reference</a>
+        <a tabIndex={0} href="#/videos">Videos</a>
       </nav>
       <h1 className="studio-title" data-tauri-drag-region>Assembly Studio</h1>
       <div className="studio-header-tools">
         <div className="studio-boards" role="group" aria-label="Board">
           {(Object.keys(BOARD) as StudioVariant[]).map((v) => (
-            <a key={v} href={v === variant ? studioHref(v, step) : boardHref?.(v)??studioHref(v,step)} aria-current={v === variant ? 'true' : undefined} title={BOARD[v]}>{SHORT[v]}</a>
+            <a tabIndex={0} key={v} href={v === variant ? studioHref(v, step) : boardHref?.(v)??studioHref(v,step)} aria-current={v === variant ? 'true' : undefined} title={BOARD[v]}>{SHORT[v]}</a>
           ))}
         </div>
         <span className="studio-mode-chip" data-mode={entry?.mode ?? 'tray'}
@@ -141,7 +141,7 @@ function Inspector({ pack, variant, timeline }: { pack: LoadedPack; variant: Stu
           <dt>Role</dt><dd>{schematic.role}</dd>
           <dt>Shown as</dt><dd>A tray tile. {schematic.representation}</dd>
         </dl>
-        <button type="button" className="studio-link-button" onClick={focusSelection}>Frame this tile</button>
+        <button tabIndex={0} type="button" className="studio-link-button" onClick={focusSelection}>Frame this tile</button>
       </section>
     );
   }
@@ -171,7 +171,7 @@ function Inspector({ pack, variant, timeline }: { pack: LoadedPack; variant: Stu
           ? <><code title={step.source.sha256}>{step.source.file.split('/').pop()}</code>{state?.phase === 'candidate' && step.source.candidateRecord ? <> (candidate from <code>{step.source.candidateRecord.split('/').pop()}</code>)</> : null}</>
           : `Tray layout${tray?.orientation === 'part-local' ? ', part-local orientation (no installed pose yet)' : ''}`}</dd>
       </dl>
-      <button type="button" className="studio-link-button" onClick={focusSelection}>Frame this part</button>
+      <button tabIndex={0} type="button" className="studio-link-button" onClick={focusSelection}>Frame this part</button>
     </section>
   );
 }
@@ -194,13 +194,13 @@ function PartRows({ pack, list }: { pack: LoadedPack; list: Row[] }) {
     <ul className="studio-parts">
       {list.map((r) => (
         <li key={`${r.definitionId}|${r.note}`}>
-          <button type="button" aria-pressed={r.ids.includes(selection ?? '')} onClick={() => select(r.ids[0])}>
+          <button tabIndex={0} type="button" aria-pressed={r.ids.includes(selection ?? '')} onClick={() => select(r.ids[0])}>
             <span className="studio-part-name">{name(pack, r.ids[0])}{r.ids.length > 1 && <b className="studio-qty">×{r.ids.length}</b>}</span>
             <span className="studio-part-note">{r.note}</span>
           </button>
           {r.ids.length > 1 && (
             <span className="studio-chips" role="group" aria-label={`Each ${name(pack, r.ids[0])}`}>
-              {r.ids.map((id) => <button key={id} type="button" aria-pressed={selection === id} title={id} onClick={() => select(id)}>{Number(id.slice(id.lastIndexOf('-') + 1))}</button>)}
+              {r.ids.map((id) => <button tabIndex={0} key={id} type="button" aria-label={`${name(pack, id)}, piece ${Number(id.slice(id.lastIndexOf('-') + 1))}`} aria-pressed={selection === id} title={id} onClick={() => select(id)}>{Number(id.slice(id.lastIndexOf('-') + 1))}</button>)}
             </span>
           )}
         </li>
@@ -252,7 +252,7 @@ function SourceIntent({ entry }: { entry: StepEntry }) {
         <dt>Orientation</dt><dd>{i.orientation}</dd>
       </dl>
       {entry.warnings.map((w) => <p key={w.id} className="studio-caution" role="note"><b>{w.severity === 'caution' ? 'Caution' : w.severity}</b> {w.text}</p>)}
-      <details className="studio-limits"><summary>Connection details</summary><p>{i.connection}</p><p className="studio-source-line"><code>{i.id}</code> in <code>{i.record}</code></p></details>
+      <details className="studio-limits"><summary tabIndex={0}>Connection details</summary><p>{i.connection}</p><p className="studio-source-line"><code>{i.id}</code> in <code>{i.record}</code></p></details>
     </section>
   );
 }
@@ -269,7 +269,7 @@ function Review({ pack, entry }: { pack: LoadedPack; entry: StepEntry }) {
         <ul className="studio-conflicts">
           {entry.conflicts.map((c, i) => (
             <li key={c.instances.join()}>
-              <button type="button" aria-pressed={conflict === i} onClick={() => selectConflict(conflict === i ? null : i)}>
+              <button tabIndex={0} type="button" aria-pressed={conflict === i} onClick={() => selectConflict(conflict === i ? null : i)}>
                 <span>{c.instances.map((id) => name(pack, id)).join(' × ')}</span>
                 <span className="studio-volume">{c.volumeMm3.toFixed(1)} mm³{c.reason ? ` · ${CONFLICT_REASON[c.reason] ?? c.reason}` : ''}</span>
               </button>
@@ -303,8 +303,8 @@ function TrayInventory({ pack, variant }: { pack: LoadedPack; variant: StudioVar
       <p className="studio-source-line">{inv.required} used through Step 9 · {inv.later} later · {inv.spares} spares · {inv.tools} tools included</p>
       {v.tray.groups.map((g) => (
         <details key={g.id} className="studio-group">
-          <summary><span>{g.label}</span><b>{g.instanceIds.length}</b>
-            <button type="button" className="studio-link-button" onClick={(e) => { e.preventDefault(); frameBounds(g.boundsM); }}>Frame</button>
+          <summary tabIndex={0}><span>{g.label}</span><b>{g.instanceIds.length}</b>
+            <button tabIndex={0} type="button" className="studio-link-button" aria-label={`Frame ${g.label}`} onClick={(e) => { e.preventDefault(); frameBounds(g.boundsM); }}>Frame</button>
           </summary>
           <PartRows pack={pack} list={rows(pack, g.instanceIds, note)} />
         </details>
@@ -339,7 +339,7 @@ export function Drawer({ pack, variant, step, requestedStep, timeline, buildAlon
         <section className="studio-manual" aria-label="Printed manual">
           <div className="studio-manual-head">
             <h3>Printed manual</h3>
-            {panel && <button type="button" className="studio-link-button" onClick={() => setManualOpen(true)}><Book />Enlarge</button>}
+            {panel && <button tabIndex={0} type="button" className="studio-link-button" onClick={() => setManualOpen(true)}><Book />Enlarge</button>}
           </div>
           <ManualPanel step={entry.printedNumber} variant={variant} width={318} />
           {panel && <p className="studio-source-line">{panel.photoPanel.replace(' / ', ' · ')} · page {panel.pdfPage} of the V40 booklet</p>}
@@ -358,7 +358,7 @@ export function Drawer({ pack, variant, step, requestedStep, timeline, buildAlon
         {entry && displayNotes(pack, entry).map((t) => <p key={t} className="studio-source-line" role="note">{t}</p>)}
         {entry && entry.limitations.length > 0 && (
           <details className="studio-limits">
-            <summary>Source limitations ({entry.limitations.length})</summary>
+            <summary tabIndex={0}>Source limitations ({entry.limitations.length})</summary>
             <ul>{entry.limitations.map((l) => <li key={l}>{l}</li>)}</ul>
           </details>
         )}
@@ -371,15 +371,26 @@ export function Drawer({ pack, variant, step, requestedStep, timeline, buildAlon
 // The enlarged manual panel, over the view; Escape or the close button dismisses it.
 export function ManualOverlay({ variant, step }: { variant: StudioVariant; step: number }) {
   const open = useStudio((s) => s.manualOpen);
+  const bindDialog = useCallback((dialog: HTMLDialogElement | null) => {
+    if (!dialog) return;
+    const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    dialog.showModal();
+    dialog.querySelector<HTMLButtonElement>('button')?.focus();
+    return () => {
+      dialog.close();
+      if (opener?.isConnected && !opener.closest('[inert]')) opener.focus();
+      else document.querySelector<HTMLElement>('.studio-boards a[aria-current]')?.focus();
+    };
+  }, []);
   if (!open || step === 0) return null;
   const width = Math.min(980, Math.round(window.innerWidth * 0.78)), maxHeight = window.innerHeight - 120;
   return (
-    <div className="studio-manual-overlay" role="dialog" aria-label={`Printed manual, step ${step}`} onClick={(e) => { if (e.target === e.currentTarget) setManualOpen(false); }}>
+    <dialog ref={bindDialog} className="studio-manual-overlay" aria-modal="true" aria-label={`Printed manual, step ${step}`} onCancel={(e) => e.preventDefault()} onClick={(e) => { if (e.target === e.currentTarget) setManualOpen(false); }}>
       <div className="studio-manual-sheet">
         <Button label="Close the manual" onClick={() => setManualOpen(false)}><Close /></Button>
         <ManualPanel step={step} variant={variant} width={width} maxHeight={maxHeight} />
       </div>
-    </div>
+    </dialog>
   );
 }
 
@@ -394,11 +405,11 @@ export function Dock({ pack, variant, step, timeline, onStep }: { pack: LoadedPa
   return (
     <div className="studio-dock" role="group" aria-label="Step controls">
       <ol className="studio-rail" aria-label="Steps">
-        <li><a href={studioHref(variant, 0)} aria-current={step === 0 ? 'step' : undefined} title="Parts tray">Parts</a></li>
+        <li><a tabIndex={0} href={studioHref(variant, 0)} aria-current={step === 0 ? 'step' : undefined} title="Parts tray">Parts</a></li>
         {steps.map((s) => (
           <li key={s.printedNumber}>
             {s.mode !== 'closed' ? (
-              <a href={studioHref(variant, s.printedNumber)} onClick={()=>{if(step!==s.printedNumber)onStep?.(s.printedNumber);}} aria-current={step === s.printedNumber ? 'step' : undefined} data-mode={s.mode}
+              <a tabIndex={0} href={studioHref(variant, s.printedNumber)} onClick={()=>{if(step!==s.printedNumber)onStep?.(s.printedNumber);}} aria-current={step === s.printedNumber ? 'step' : undefined} data-mode={s.mode}
                 title={`${s.title}. ${s.mode === 'review' ? 'Review only.' : 'Preview.'}`}>{s.printedNumber}</a>
             ) : (
               <span className="studio-rail-later" title={`${s.title}. Not available.`} aria-disabled="true">{s.printedNumber}</span>
@@ -419,7 +430,7 @@ export function Dock({ pack, variant, step, timeline, onStep }: { pack: LoadedPa
                 <span key={i} className={i % 2 ? 'studio-tick-approach' : 'studio-tick'} style={{ left: `${(x / d) * 100}%` }} />
               ))}
             </div>
-            <input type="range" min={0} max={d || 1} step={0.01} value={d ? t : 1} disabled={d === 0} aria-label="Step timeline"
+            <input tabIndex={0} type="range" min={0} max={d || 1} step={0.01} value={d ? t : 1} disabled={d === 0} aria-label="Step timeline"
               aria-valuetext={`${fmt(t)} of ${fmt(d)}`} onChange={(e) => seek(Number(e.currentTarget.value))} />
           </div>
           <span className="studio-time" aria-hidden="true">{d ? `${fmt(t)} / ${fmt(d)}` : step === 0 ? 'Tray' : 'Still: nothing moves'}</span>
@@ -452,25 +463,25 @@ export function ViewTools({ pack, variant, step }: { pack: LoadedPack; variant: 
     <>
       <div className="studio-rail-tools" role="group" aria-label={`Inspect${active.length ? `: ${active.join(', ')} on` : ''}`}>
         {TOOLS.map(({ tool, label, key, icon: Icon }) => (
-          <button key={tool} type="button" className="studio-button studio-tool" aria-pressed={s[tool]} aria-label={label} data-tip={`${label}  ${key}`}
+          <button tabIndex={0} key={tool} type="button" className="studio-button studio-tool" aria-pressed={s[tool]} aria-label={label} data-tip={`${label}  ${key}`}
             aria-keyshortcuts={key} onClick={() => toggleInspect(tool)} disabled={tool === 'explode' && !entry}><Icon /></button>
         ))}
         {active.length > 0 && (
-          <button type="button" className="studio-button studio-tool studio-reset" aria-label="Reset inspection" data-tip="Reset inspection" onClick={resetInspection}><Clear /></button>
+          <button tabIndex={0} type="button" className="studio-button studio-tool studio-reset" aria-label="Reset inspection" data-tip="Reset inspection" onClick={(e) => { e.currentTarget.parentElement?.querySelector<HTMLButtonElement>('button')?.focus(); resetInspection(); }}><Clear /></button>
         )}
         {range && (
           <label className="studio-clip">
             <span>Cut height</span>
-            <input type="range" min={range.min} max={range.max} step={0.0005} value={s.clipHeightM ?? range.deck} aria-label="Deck clip height"
+            <input tabIndex={0} type="range" min={range.min} max={range.max} step={0.0005} value={s.clipHeightM ?? range.deck} aria-label="Deck clip height"
               onChange={(e) => setClipHeight(Number(e.currentTarget.value))} />
           </label>
         )}
       </div>
       <div className="studio-camera" role="group" aria-label="View">
-        <button type="button" className="studio-button studio-button-wide" onClick={resetCamera} aria-pressed={s.cameraMode === 'guided'} title="Guided view (R)">
+        <button tabIndex={0} type="button" className="studio-button studio-button-wide" onClick={resetCamera} aria-pressed={s.cameraMode === 'guided'} title="Guided view (R)">
           <ResetView />{s.cameraMode === 'guided' ? 'Guided view' : 'Resume guided view'}
         </button>
-        <button type="button" className="studio-button studio-button-wide" onClick={focusSelection} disabled={!s.selection} title="Frame part (F)"><Focus />Frame part</button>
+        <button tabIndex={0} type="button" className="studio-button studio-button-wide" onClick={focusSelection} disabled={!s.selection} title="Frame part (F)"><Focus />Frame part</button>
       </div>
     </>
   );
@@ -487,13 +498,24 @@ export function PerfHud() {
       <div>{p.width}×{p.height} css px · dpr {p.dpr} · {p.calls} draws · {p.triangles.toLocaleString()} tris</div>
       <div>{p.load ? <>manifest {ms(p.load.manifestFetched - p.load.fetchStart)} · glb {ms(p.load.glbFetched - p.load.manifestFetched)} · verify {ms(p.load.verified - p.load.glbFetched)} · decode {ms(p.load.decoded - p.load.verified)} · build {ms(p.load.built - p.load.decoded)}</> : 'load —'}</div>
       <div>page start → canvas {ms(p.openToCanvasMs)} · first render {ms(p.openToFirstRenderMs)} · first frame drawn {ms(p.openToFirstFrameDrawnMs)}</div>
+      <div>Sustained {p.sustained.frames} frames · {p.sustained.fps.toFixed(1)} fps · mean {ms(p.sustained.meanMs)} · p50 {ms(p.sustained.p50Ms)} · p95 {ms(p.sustained.p95Ms)} · p99 {ms(p.sustained.p99Ms)} · worst {ms(p.sustained.worstMs)} · stalls &gt;50 / &gt;100 ms: {p.sustained.over50} / {p.sustained.over100}</div>
+      <div>Power {p.power.source} · low power {String(p.power.lowPower)} · thermal {p.power.thermal} · ceiling {p.quality.ceiling} · {p.quality.reason} · DPR {p.dprSequence.join(' → ')}</div>
+      <div>Resources: geometry {p.resources.geometries} · textures {p.resources.textures} · programs {p.resources.programs} · owned materials {p.resources.materials} · shadow {p.resources.shadow} · environment {p.resources.environment}</div>
     </div>
   );
 }
 
+// Changes only for semantic selections and modes, never playback time or individual frames.
+export function SelectionStatus({ pack }: { pack: LoadedPack }) {
+  const id = useStudio(s => s.selection), conflict = useStudio(s => s.conflict);
+  const isolate = useStudio(s => s.isolate), ghost = useStudio(s => s.ghost), explode = useStudio(s => s.explode), clip = useStudio(s => s.clip);
+  const modes = [isolate && 'Isolate', ghost && 'Ghost others', explode && 'Explode', clip && 'Deck clip'].filter(Boolean);
+  return <p className="studio-sr" role="status">{id ? `Selected ${name(pack, id)}. Details in Selected part.` : conflict !== null ? `Review pair ${conflict + 1} selected.` : 'No part selected.'} {modes.length ? `Inspection: ${modes.join(', ')}.` : 'Inspection reset.'}</p>;
+}
+
 export const studioSummary = (pack: LoadedPack, variant: StudioVariant, step: number): string => {
   const v = pack.manifest.variants[variant];
-  if (step === 0) return `Parts tray: ${v.tray.inventory.visible} pieces, ${v.tray.inventory.modeled} modelled, ${v.tray.inventory.tiles} shown as tiles`;
+  if (step === 0) return `${BOARD[variant]}. Parts tray: ${v.tray.inventory.visible} pieces, ${v.tray.inventory.modeled} modelled, ${v.tray.inventory.tiles} shown as tiles`;
   const e = v.steps[step - 1];
-  return `Step ${step}: ${e.title}. ${e.mode === 'review' ? 'Review only' : 'Preview'}`;
+  return `${BOARD[variant]}. Step ${step}: ${e.title}. ${e.mode === 'review' ? 'Review only' : 'Preview'}`;
 };

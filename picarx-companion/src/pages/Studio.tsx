@@ -15,10 +15,10 @@ import { markHidden, perf, perfSnapshot } from '../features/assembly-3d/state/pe
 import { setFullscreen, useFullscreen } from '../features/assembly-3d/state/fullscreen';
 import { escapePresses, subscribeNativeEscape } from '../features/assembly-3d/state/escape';
 import { isTauri } from '@tauri-apps/api/core';
-import { Dock, Drawer, Header, ManualOverlay, PerfHud, ViewTools, studioSummary } from '../features/assembly-3d/ui/StudioChrome';
+import { Dock, Drawer, Header, ManualOverlay, PerfHud, SelectionStatus, ViewTools, studioSummary } from '../features/assembly-3d/ui/StudioChrome';
 import '../styles/studio.css';
 
-const diagnostics = import.meta.env.DEV || /[?&]diagnostics\b/.test(location.hash);
+const diagnostics = import.meta.env.DEV || import.meta.env.VITE_M3_NATIVE_TEST === '1';
 
 export default function Studio({ variant = 'rpi5', step: requested }: { variant?: StudioVariant; step?: number }) {
   perf.openedAt ??= performance.now(); // the page's first render this session: its code is loaded, its pack not yet
@@ -42,9 +42,13 @@ export default function Studio({ variant = 'rpi5', step: requested }: { variant?
     // the route commit (which removes the manual) and enterStep in the frame loop.
     if (step === 0 && getStudioState().manualOpen) setManualOpen(false);
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement && e.target.type !== 'range') return;
+      const target = e.target instanceof HTMLElement ? e.target : null;
+      if (target?.closest('textarea, input:not([type="range"]), select, [contenteditable]:not([contenteditable="false"])')) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const s = getStudioState(), d = timeline.duration;
+      if (s.manualOpen || e.repeat) return;
+      // Space activates the focused control; arrows retain native slider/summary behavior.
+      if ((e.key === ' ' || e.key.startsWith('Arrow')) && target?.closest('button, a, input, summary')) return;
       const go = (n: number) => { if (opened.includes(n)) { bookmarkStudioStep(variant,n); navigate(studioHref(variant, n)); } };
       switch (e.key) {
         case ' ': e.preventDefault(); if (d > 0) (s.playing ? pause() : play(d)); break;
@@ -54,7 +58,9 @@ export default function Studio({ variant = 'rpi5', step: requested }: { variant?
         case '[': go(step - 1); break;
         case 'r': case 'R': resetCamera(); break;
         case 'f': case 'F': focusSelection(); break;
-        case 'i': case 'I': toggleDrawer(); break;
+        case 'i': case 'I':
+          if (s.drawerOpen && target?.closest('.studio-drawer')) el.querySelector<HTMLElement>('[aria-label="Hide instructions"]')?.focus();
+          toggleDrawer(); break;
         case 'p': case 'P': togglePerf(); break;
         case 'o': case 'O': toggleInspect('isolate'); break;
         case 'g': case 'G': toggleInspect('ghost'); break;
@@ -114,7 +120,12 @@ export default function Studio({ variant = 'rpi5', step: requested }: { variant?
         },
       };
     }
-    return () => { stopNativeEscape(); window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); document.removeEventListener('visibilitychange', markHidden); };
+    return () => {
+      if (diagnostics) delete (window as unknown as { __studio?: unknown }).__studio;
+      const restore = el.contains(document.activeElement) && document.activeElement !== document.body;
+      if (restore) requestAnimationFrame(() => { if (document.activeElement === document.body) document.querySelector<HTMLElement>('.studio-boards a[aria-current]')?.focus(); });
+      stopNativeEscape(); window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', escape.keydown); window.removeEventListener('keyup', escape.keyup); document.removeEventListener('visibilitychange', markHidden);
+    };
   };
 
   return (
@@ -129,6 +140,7 @@ export default function Studio({ variant = 'rpi5', step: requested }: { variant?
       <Drawer pack={pack} variant={variant} step={step} requestedStep={desired} timeline={timeline} buildAlong={<BuildAlong key={`${variant}/${step}`} pack={pack} variant={variant} step={step} />} />
       <Dock pack={pack} variant={variant} step={step} timeline={timeline} onStep={(n)=>bookmarkStudioStep(variant,n)} />
       <ManualOverlay variant={variant} step={step} />
+      <SelectionStatus pack={pack} />
       <p className="studio-sr" aria-live="polite">{studioSummary(pack, variant, step)}</p>
     </div>
   );

@@ -57,7 +57,7 @@ export default function App() {
         </span>
         <nav className="topbar-nav">
           {SECTIONS.filter(s => s.key !== 'assembly' || M3_ENABLED).map((s) => (
-            <a key={s.key} href={s.href} className={route.name === s.key ? 'active' : ''}>
+            <a tabIndex={0} key={s.key} href={s.href} className={route.name === s.key ? 'active' : ''}>
               {s.label}
             </a>
           ))}
