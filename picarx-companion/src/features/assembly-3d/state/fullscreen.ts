@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from 'react';
 import { invoke, isTauri } from '@tauri-apps/api/core';
 import { getCurrentWindow } from '@tauri-apps/api/window';
+import { getCurrentWebview } from '@tauri-apps/api/webview';
 import { dispatchNativeEscape } from './escape';
 
 export type FullscreenState = { on: boolean; error: string };
@@ -57,6 +58,17 @@ async function resync(owner: Lifetime): Promise<void> {
   } catch { /* unreadable: keep the last known state */ }
 }
 
+async function restoreNativeFocus(owner: Lifetime): Promise<void> {
+  // AppKit can return from fullscreen with the window, rather than its WebView,
+  // as first responder. Restore only an already focused window's live Studio.
+  if (!current(owner)) return;
+  try {
+    if (await getCurrentWindow().isFocused() && current(owner)) await getCurrentWebview().setFocus();
+  } catch {
+    if (current(owner)) set({ error: 'Studio keyboard focus could not be restored.' });
+  }
+}
+
 export function subscribeFullscreen(listener: () => void): () => void {
   const first = listeners.size === 0;
   if (first) lifetime = {};
@@ -69,7 +81,7 @@ export function subscribeFullscreen(listener: () => void): () => void {
   if (isTauri()) {
     if (first) void captureNativeEscape(true, owner).catch(() => { if (current(owner)) set({ error: 'Studio Escape capture is not available.' }); });
     void resync(owner);
-    void getCurrentWindow().onResized(() => { if (!closed) void resync(owner); })
+    void getCurrentWindow().onResized(() => { if (!closed) void resync(owner).then(() => restoreNativeFocus(owner)); })
       .then((u) => { if (closed || !current(owner)) u(); else unlisten = u; }).catch(() => {});
   }
   return () => {
@@ -109,7 +121,10 @@ async function apply(on: boolean, element: HTMLElement, owner: Lifetime | undefi
   } catch {
     if (current(owner)) set({ error: on ? 'Fullscreen is not available here.' : 'The Studio could not leave fullscreen.' });
   }
-  if (current(owner)) await resync(owner!);
+  if (current(owner)) {
+    await resync(owner!);
+    if (isTauri()) await restoreNativeFocus(owner!);
+  }
 }
 
 let queue: Promise<void> = Promise.resolve();

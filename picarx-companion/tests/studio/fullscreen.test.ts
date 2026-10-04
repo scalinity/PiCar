@@ -2,9 +2,10 @@
 // every request, including failed and overlapping ones, and a failure is reported for the header to show.
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 
-const native = vi.hoisted(() => ({ enabled: false, invoke: vi.fn(), setFullscreen: vi.fn(), isFullscreen: vi.fn(), onResized: vi.fn(), listen: vi.fn() }));
+const native = vi.hoisted(() => ({ enabled: false, invoke: vi.fn(), setFullscreen: vi.fn(), isFullscreen: vi.fn(), isFocused: vi.fn(), setFocus: vi.fn(), onResized: vi.fn(), listen: vi.fn() }));
 vi.mock('@tauri-apps/api/core', () => ({ isTauri: () => native.enabled, invoke: native.invoke }));
 vi.mock('@tauri-apps/api/window', () => ({ getCurrentWindow: () => native }));
+vi.mock('@tauri-apps/api/webview', () => ({ getCurrentWebview: () => native }));
 
 let fullscreenElement: object | null = null;
 const listeners = new Map<string, () => void>();
@@ -14,6 +15,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   native.invoke.mockResolvedValue(undefined);
   native.isFullscreen.mockResolvedValue(false);
+  native.isFocused.mockResolvedValue(true);
+  native.setFocus.mockResolvedValue(undefined);
   native.onResized.mockResolvedValue(() => {});
   native.listen.mockResolvedValue(() => {});
   fullscreenElement = null;
@@ -96,6 +99,26 @@ it('waits for native Escape capture before fullscreen and refuses entry if captu
   expect(native.setFullscreen).toHaveBeenCalledExactlyOnceWith(true);
   expect(fs.fullscreenState()).toEqual({ on: true, error: '' });
   stop();
+});
+
+it('restores the native WebView responder after fullscreen and resize, without activating a background or retired Studio', async () => {
+  native.enabled = true;
+  let resized!: () => void;
+  native.onResized.mockImplementation(async (callback) => { resized = callback; return () => {}; });
+  const fs = await import('../../src/features/assembly-3d/state/fullscreen');
+  const stop = fs.subscribeFullscreen(() => {});
+  await fs.setFullscreen(true, {} as HTMLElement);
+  expect(native.setFocus).toHaveBeenCalledTimes(1);
+  resized();
+  await vi.waitFor(() => expect(native.setFocus).toHaveBeenCalledTimes(2));
+  native.isFocused.mockResolvedValue(false);
+  await fs.setFullscreen(false, {} as HTMLElement);
+  expect(native.setFocus).toHaveBeenCalledTimes(2);
+  stop();
+  native.isFocused.mockResolvedValue(true);
+  resized();
+  await Promise.resolve();
+  expect(native.setFocus).toHaveBeenCalledTimes(2);
 });
 
 function deferred<T>() {
