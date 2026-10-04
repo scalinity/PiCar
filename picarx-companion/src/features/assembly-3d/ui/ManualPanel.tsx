@@ -1,6 +1,7 @@
 // Render only the rectangle in the verified source lock. Each replacement owns its render and error state.
 import { useCallback, useState } from 'react';
 import { loadV40Pdf } from '../../../lib/v40-pdf';
+import { V40_PDF_PAGE_SIZE } from '../../../lib/v40-pdf-identity';
 import { manualPanel } from './manual-map';
 import type { StudioVariant } from '../../../lib/router';
 
@@ -43,8 +44,12 @@ function Panel({ step, variant, width, maxHeight = Infinity }: Props) {
     return () => { cancelled = true; task?.cancel(); };
   }, [mapping, width, maxHeight, attempt]);
   if (!mapping) return <p className="studio-hint">The verified manual record has no panel for this step on this board, so none is shown.</p>;
+  // Reserve the final crop size before the asynchronous PDF render can move the parts list.
+  const [x0, y0, x1, y1] = mapping.normalizedRect;
+  const cropW = (x1 - x0) * V40_PDF_PAGE_SIZE[0], cropH = (y1 - y0) * V40_PDF_PAGE_SIZE[1];
+  const css = Math.min(width / cropW, maxHeight / cropH);
   return <>
     {failed && <div className="studio-hint" role="alert">The locked V40 booklet panel could not be rendered. <button type="button" onClick={() => setAttempt((n) => n + 1)}>Retry</button></div>}
-    <canvas hidden={failed} className="studio-manual-canvas" ref={draw} style={{ width }} data-page={mapping.pdfPage} aria-label={`${mapping.photoPanel}, page ${mapping.pdfPage} of the V40 booklet`} />
+    <canvas hidden={failed} className="studio-manual-canvas" ref={draw} style={{ width: cropW * css, height: cropH * css }} data-page={mapping.pdfPage} aria-label={`${mapping.photoPanel}, page ${mapping.pdfPage} of the V40 booklet`} />
   </>;
 }
