@@ -439,7 +439,7 @@ for (const variant of ['rpi5', 'rpi-zero-2-w'] as const) {
     // Every full-kit slot must draw. At this wider overview the smallest screws are only a few pixels;
     // the existing group Frame action must make every fastener inspectable at the previous >3 pixel threshold.
     for (const id of [...Object.keys(tray.instances), ...Object.keys(tray.tiles)]) expect(census[id], `${id} overview pixels`).toBeGreaterThan(0);
-    await page.locator('.studio-group').filter({hasText:'Fasteners'}).getByRole('button',{name:'Frame',exact:true}).click();
+    await page.locator('.studio-group').filter({hasText:'Fasteners'}).getByRole('button',{name:'Frame Fasteners',exact:true}).click();
     await page.waitForTimeout(600);
     const fastenerCensus: Record<string,number> = await page.evaluate(()=>(window as any).__studio.census());
     for(const id of tray.groups.find((g: {id:string})=>g.id==='fasteners')!.instanceIds)expect(fastenerCensus[id],`${id} framed pixels`).toBeGreaterThan(3);
@@ -709,7 +709,9 @@ test('manual open to tray navigation closes invisible modal state before Escape 
     // Drain the frame already queued before the override; the next 3D frame is now withheld.
     await new Promise<void>((done) => raf(() => raf(() => done())));
   });
-  await page.keyboard.press('[');
+  // A true modal now contains keyboard interaction. Exercise route replacement
+  // directly; background shortcuts must not navigate through the open manual.
+  await page.evaluate(() => { window.location.hash = '#/studio/rpi5/0'; });
   await expect(page.locator('.studio')).toHaveAttribute('data-step', '0');
   expect(await diag(page, (d) => d.state().key)).toBe('rpi5/1'); // no frame-loop enterStep has run
   expect(await diag(page, (d) => d.state().manualOpen)).toBe(false);
