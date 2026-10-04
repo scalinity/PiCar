@@ -7,8 +7,10 @@ import {runAdapterContract} from '../session/adapter-contract';
 import {browserControls} from '../session/browser-controls';
 import {canonical} from '../../src/features/assembly-session/hash';
 import fixtures from './fixtures.json';
+import {attachEarlierHatObservation} from '../studio/earlier-hat-observation';
 async function ready(){for(const v of ['rpi4','rpi5','rpi-zero-2-w'])await acceptedContext(v);}
 const api={
+ studio35EarlierPhoto:attachEarlierHatObservation,
  async studio(action:string){
   const store=await import('../../src/features/assembly-session/store');
   if(action==='backup')return store.exportData();
