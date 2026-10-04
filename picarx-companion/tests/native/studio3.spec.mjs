@@ -38,7 +38,7 @@ it('actual native Studio3 build progress and private photo persistence on dispos
  await script(()=>{const details=document.querySelector('.studio-build details');details.open=true;});await $('.studio-build details input').click();
  const beforeNativeUI=await script(async()=>({ledger:await window.__picarM3Test.studio('backup'),camera:window.__studio.camera()}));
  await script(()=>{const states=[];window.__studio3PhysicalStates=states;const capture=()=>{const s=window.__studio.state(),full=document.querySelector('.studio').dataset.fullscreen==='true';const index=states.length;const matches=[s.manualOpen&&!!s.selection&&full,!s.manualOpen&&!!s.selection&&full,!s.manualOpen&&!s.selection&&full,!s.manualOpen&&!s.selection&&!full];if(matches[index])states.push({label:'ABCD'[index],manualOpen:s.manualOpen,selection:s.selection,fullscreen:full,visibility:document.visibilityState,atPerformanceMs:performance.now()});if(states.length===4)clearInterval(timer);};const timer=setInterval(capture,25);});
- record('native-export-panel',{state:'AWAITING_NATIVE_UI_EXPORT_AND_DISPOSABLE_DESTINATION',privateSyntheticOnly:true});
+ record('native-export-panel',{state:'AWAITING_NATIVE_UI_EXPORT_AND_DISPOSABLE_DESTINATION',disposableRootBasename:path.basename(process.env.PICAR_M3_TEST_DATA_DIR),automatedSetupComplete:true,privateSyntheticOnly:true});
  // Do not poll the webview while its native modal is open: the driver focuses the main window before each command.
  const exported=path.join(process.env.PICAR_M3_TEST_DATA_DIR,'selected-private-evidence.zip');const deadline=Date.now()+240000;
  while(!fs.existsSync(exported)&&Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,500));
