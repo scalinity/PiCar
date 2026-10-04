@@ -1,0 +1,31 @@
+
+> picarx-companion@0.1.0 test:browser WORKSPACE/picarx-companion
+> playwright test tests/browser/studio4-polish.spec.ts
+
+[WebServer] (node:86312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:86345) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/studio4-polish.spec.ts:17:1 › keyboard workflow, native activation, logical focus, selected/pressed semantics (2.1s)
+  ✓   2 [chromium] › tests/browser/studio4-polish.spec.ts:43:1 › modal contains focus, blocks underlying shortcuts, restores opener, preserves Escape layers (799ms)
+  ✓   3 [chromium] › tests/browser/studio4-polish.spec.ts:62:1 › Space activates a focused checkbox and typing cannot trigger shortcuts (1.1s)
+  ✓   4 [chromium] › tests/browser/studio4-polish.spec.ts:80:1 › OS reduced motion snaps source endpoints, guided camera, explosion and transport (998ms)
+  ✓   5 [chromium] › tests/browser/studio4-polish.spec.ts:96:1 › every visible control has a name; semantic status remains stable through frames (968ms)
+(node:86426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [webkit] › tests/browser/studio4-polish.spec.ts:17:1 › keyboard workflow, native activation, logical focus, selected/pressed semantics (1.8s)
+  ✓   7 [webkit] › tests/browser/studio4-polish.spec.ts:43:1 › modal contains focus, blocks underlying shortcuts, restores opener, preserves Escape layers (827ms)
+  ✓   8 [webkit] › tests/browser/studio4-polish.spec.ts:62:1 › Space activates a focused checkbox and typing cannot trigger shortcuts (1.1s)
+  ✓   9 [webkit] › tests/browser/studio4-polish.spec.ts:80:1 › OS reduced motion snaps source endpoints, guided camera, explosion and transport (988ms)
+  ✓  10 [webkit] › tests/browser/studio4-polish.spec.ts:96:1 › every visible control has a name; semantic status remains stable through frames (1.0s)
+
+  10 passed (13.6s)

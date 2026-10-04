@@ -1,0 +1,34 @@
+{
+  "status": "UNVERIFIED / MANDATORY GAP",
+  "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "coldStart": "UNVERIFIED",
+  "restart": "UNVERIFIED",
+  "cause": "App-scoped sandbox network denial also prevents macOS LaunchServices/file-extension window startup; network probe denial alone is not a successful offline app journey.",
+  "failedAttempts": [
+    "deny all network profile: owned native host starts SQLite but no app window",
+    "remote-IP denial profile: same window startup limitation",
+    "curl localhost1420 denied confirms sandbox network gate, not app behavior"
+  ],
+  "networkSettingChanged": false,
+  "pendingOwnerApproval": "Brief Wi-Fi disconnect with automatic restoration after90 seconds requested; no answer received. Elapsed time is not approval.",
+  "staticAudit": {
+    "cspConnect": "'self' ipc: http://ipc.localhost",
+    "fonts": "'self'; no external font input",
+    "manifest": "embedded local asset",
+    "glb": "embedded local asset with accepted SHA",
+    "pdf": "bundled locked V40 PDF and bundled PDF worker",
+    "hat": "same verified GLB; no separate vendor fetch",
+    "environment": "procedural local Studio environment, no HDRI/CDN fetch",
+    "progress": "native SQLite/IPC",
+    "observations": "native app-data files/IPC",
+    "optionalNetwork": "Other companion video thumbnails/explicit video links allowed by accepted CSP; Studio does not require them."
+  },
+  "staticConclusion": "No required external Studio dependency found. This does not prove cold/restart offline behavior.",
+  "readiness": "NOT READY; do not push until actual offline cold start and still-offline restart gates pass.",
+  "nativeHostSocketSnapshot": {
+    "observedSockets": 0,
+    "method": "lsof task-owned native host, network available, Studio open",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qualification": "No attributed WebView/GPU process network capture; not full app/offline certification."
+  }
+}

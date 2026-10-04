@@ -1,0 +1,26 @@
+
+> picarx-companion@0.1.0 test:browser WORKSPACE/picarx-companion
+> playwright test tests/browser/studio4-polish.spec.ts
+
+[WebServer] (node:84452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:84471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:84489) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WORKSPACE/picarx-companion/tools/content-pipeline/publication.ts:67
+[WebServer]     if(exists(join(base,'writer.json')) || (kind==='writer'&&fs.readdirSync(join(base,'readers')).length))throw Error('BUSY: active or unresolved lease');
+[WebServer]                                                                                                                 ^
+[WebServer] 
+[WebServer] Error: BUSY: active or unresolved lease
+[WebServer]     at acquire (WORKSPACE/picarx-companion/tools/content-pipeline/publication.ts:67:113)
+[WebServer]     at <anonymous> (WORKSPACE/picarx-companion/tools/content-pipeline/entry.ts:43:23)
+[WebServer]     at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+[WebServer]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[WebServer]     at async node:internal/modules/esm/loader:650:26
+[WebServer]     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)
+[WebServer] 
+[WebServer] Node.js v26.10.0
+Error: Process from config.webServer was not able to start. Exit code: 1
+
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,68 @@
+{
+  "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "status": "PASS / QUALIFIED",
+  "configuration": {
+    "requestedLogical": [
+      1440,
+      900
+    ],
+    "minimumLogical": [
+      1100,
+      700
+    ],
+    "center": true,
+    "titleBar": "Overlay, hidden title",
+    "fit": "Accepted fit_main_window fits96% of monitor usable area and centers; unchanged"
+  },
+  "observed": {
+    "initialCss": [
+      1121,
+      704
+    ],
+    "fullscreenCss": [
+      1168,
+      729
+    ],
+    "nativeFillCss": [
+      1168,
+      734
+    ],
+    "fullscreenRestoredCss": [
+      1121,
+      704
+    ],
+    "actions": [
+      "App activation",
+      "Actual fullscreen and restore",
+      "Final Escape manual\u2192selection\u2192fullscreen",
+      "Tab focus after exit on named screw group",
+      "Native OS Window sharing Fill resize command",
+      "Command+Q and verified process exit/relaunch",
+      "Actual macOS NSSavePanel and file picker during synthetic evidence journey",
+      "Dark native appearance and no browser chrome"
+    ]
+  },
+  "qualification": "Freehand corner resize attempts did not alter viewport and are not claimed as evidence. OS Fill and fullscreen resizing are observed; minimum is configuration/source audit, not a measured lower-bound drag. Initial screenshot HUD during Fill was transient1149\u00d7722, settled1168\u00d7734. Titlebar/centering fit code preserved from accepted Studio2.",
+  "rawBindings": [
+    {
+      "label": "delivery-native-tab-after-fullscreen",
+      "rawAxSha256": "b148fc61b127072f54c74dd591aff12c3603824a66b3e4717eff37ca16dabbd8"
+    },
+    {
+      "label": "delivery-native-window-fill-settled",
+      "rawAxSha256": "0bf489d170da688e6cbfd6b93625d19d0897039ba8ed9fb347ecb7299b52f76a"
+    },
+    {
+      "label": "delivery-native-fullscreen-restored",
+      "rawAxSha256": "1113923da1e6e5c07d8911ab5318f4ec26ca7b2783f2923a1a670df5569b811f"
+    },
+    {
+      "label": "delivery-native-manual",
+      "rawAxSha256": "356981ba48ea9a8da070290905854cc68e34b2b393676b567ccae1a47b1130ba"
+    },
+    {
+      "label": "delivery-cold-launch-settled",
+      "rawAxSha256": "c78d484cc6d704dfce20c14ed095329c9d75f6789dd96f140edf6c8a96e1ec1e"
+    }
+  ]
+}

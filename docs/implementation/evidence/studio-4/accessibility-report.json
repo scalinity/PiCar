@@ -1,0 +1,20 @@
+{
+  "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "automatedAccessibility": "PASS focused10/10 Chromium/WebKit DOM semantic checks, plus retained full-suite semantics",
+  "nativeAXStructure": "PASS / QUALIFIED",
+  "voiceOverOwnerValidation": "PENDING",
+  "verified": [
+    "Named links/buttons/toggles, state on/off and disabled flags",
+    "Current board and step text/status",
+    "Preview/Review labels, S07 unresolved and S09 refusal explanations",
+    "0/29 physical completions,1 synthetic photo, explicit self-confirmation semantics",
+    "Selected part source/inventory/displayed versus checked shape",
+    "Inspection mode status",
+    "Save/retry/error text; no frame-loop live status updates",
+    "Manual real dialog aria-modal and focus containment",
+    "Semantic tray/step lists and inspector equivalent to WebGL content",
+    "Physical chip names include canonical piece ordinal; group Frame Fasteners distinguishes Frame part"
+  ],
+  "announcementDesign": "Semantic selection and inspection status updates on state changes only. Perf HUD is observational, not a live region; per-frame rendering does not write progress or semantic status.",
+  "notCertification": "DOM/AX inspection and automated role/state assertions do not establish full VoiceOver usability certification."
+}

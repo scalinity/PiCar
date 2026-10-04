@@ -1,0 +1,61 @@
+
+> picarx-companion@0.1.0 test:browser WORKSPACE/picarx-companion
+> playwright test
+
+[WebServer] (node:86425) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86443) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86449) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 144 tests using 1 worker
+
+(node:86470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/browser/m3-adapter.spec.ts:3:1 › real browser IndexedDB executes common native/browser fault contract (5.5s)
+  ✓    2 [chromium] › tests/browser/m3-fallback.spec.ts:3:1 › custom Hermes content and excluded source media remain accessible (733ms)
+  ✓    3 [chromium] › tests/browser/m3-fallback.spec.ts:7:1 › lazy assembly failure recovers through reference and retains durable export (772ms)
+  ✓    4 [chromium] › tests/browser/m3-fallback.spec.ts:10:1 › keyboard review focuses the heading and missing PDF keeps source text with no fallback (768ms)
+  ✓    5 [chromium] › tests/browser/m3-persistence.spec.ts:3:1 › real IndexedDB fault matrix with isolated databases (530ms)
+  ✓    6 [chromium] › tests/browser/m3-persistence.spec.ts:38:1 › reference-only journey creates empty session and URL review never confirms (25.8s)
+  ✓    7 [chromium] › tests/browser/m3-recovery.spec.ts:2:1 › a genuinely blocked IndexedDB upgrade aborts without resetting committed data (451ms)
+  ✓    8 [chromium] › tests/browser/m3-recovery.spec.ts:13:1 › explicit recovery import preserves a nonempty startup store and resumes separately (738ms)
+  ✓    9 [chromium] › tests/browser/m3-ui.spec.ts:6:1 › all29 source navigation for each variant, part context, search and offline review (3.2m)
+  ✘   10 [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation (1.2m)
+
+
+  1) [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation 
+
+    Test was interrupted.
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('alert')
+    Expected: 0
+    Received: undefined
+
+    Call log:
+      - Expect "toHaveCount" getByRole('alert') with timeout 5000ms
+      - waiting for getByRole('alert')
+      - Protocol error (Runtime.callFunctionOn): Internal server error, session closed.
+
+
+      13 | test('all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation',async({page})=>{
+      14 |  test.setTimeout(240000);const base=await start(page);
+    > 15 |  for(let n=1;n<=29;n++){await expect(page.locator('main h1')).toContainText(n+'.');while(await page.getByRole('button',{name:'Record my acknowledgment',exact:true}).count()){await expect(page.getByRole('alert')).toHaveCount(0);await page.getByRole('button',{name:'Record my acknowledgment',exact:true}).first().click();await expect(page.getByText('Local progress ready',{exact:true})).toBeVisible();}
+         |                                                                                                                                                                                                                     ^
+      16 |  for(const box of await page.locator('.assembly-check').filter({hasText:'PX-V40-RULE-'}).locator('input[type=checkbox]').all())await box.check();await page.getByLabel('My statement').fill('I checked this printed physical task.');await page.getByRole('button',{name:'Confirm physical work and save',exact:true}).click();await expect(page.locator('main')).toContainText(n+'/29 self-confirmed');}
+      17 |  await page.getByRole('button',{name:'Explicitly reconcile the setup assembly badge'}).click();await expect(page.getByText('Local progress ready',{exact:true})).toBeVisible();await page.goto(base+'step/18');await page.getByRole('checkbox',{name:'I understand this invalidates this step and downstream physical self-confirmations.'}).check();await page.getByRole('button',{name:'Invalidate this step and downstream confirmations',exact:true}).click();await expect(page.locator('main')).toContainText('17/29 self-confirmed');await page.reload();await expect(page.locator('main')).toContainText('17/29 self-confirmed');await page.getByLabel('Fork with zero inherited confirmations').selectOption('rpi5');await page.getByRole('button',{name:'Create separate variant session'}).click();await expect(page.locator('main')).toContainText('rpi5 · 0/29 self-confirmed');
+      18 | });
+        at WORKSPACE/picarx-companion/tests/browser/m3-ui.spec.ts:15:213
+
+    Error Context: test-results/m3-ui-all29-physical-UI-co-76b44-ndo-fork-and-reconciliation-chromium/error-context.md
+
+  1 interrupted
+    [chromium] › tests/browser/m3-ui.spec.ts:13:1 › all29 physical UI confirmations, procedures, zeroing, undo, fork and reconciliation 
+  134 did not run
+  9 passed (5.1m)
+ ELIFECYCLE  Command failed with exit code 130.

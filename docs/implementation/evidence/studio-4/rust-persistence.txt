@@ -1,0 +1,245 @@
+   Compiling objc2-exception-helper v0.1.1
+   Compiling libsqlite3-sys v0.30.1
+   Compiling picarx-companion v0.1.0 (WORKSPACE/picarx-companion/src-tauri)
+   Compiling objc2 v0.6.4
+   Compiling objc2-core-foundation v0.3.2
+   Compiling block2 v0.6.2
+   Compiling dispatch2 v0.3.1
+   Compiling objc2-foundation v0.3.2
+   Compiling rusqlite v0.32.1
+   Compiling objc2-app-kit v0.3.2
+   Compiling objc2-web-kit v0.3.2
+   Compiling tao v0.35.3
+   Compiling muda v0.19.3
+   Compiling window-vibrancy v0.6.0
+   Compiling tauri-runtime v2.11.3
+   Compiling wry v0.55.1
+   Compiling tauri-runtime-wry v2.11.4
+   Compiling tauri v2.11.5
+   Compiling tauri-plugin-opener v2.5.4
+error[E0597]: `database` does not live long enough
+  --> src/commands.rs:21:5
+   |
+20 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+   |           -------- binding `database` declared here
+21 |       database
+   |       -^^^^^^^
+   |       |
+   |  _____borrowed value does not live long enough
+   | |
+22 | |         .0
+23 | |         .lock()
+24 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+   | |______________________________________________- a temporary with access to the borrow is created here ...
+25 |           .load(&id)
+26 |   }
+   |   -
+   |   |
+   |   `database` dropped here while still borrowed
+   |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+   |
+   = note: the temporary is part of an expression at the end of a block;
+           consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+   |
+21 ~     let x = database
+22 |         .0
+23 |         .lock()
+24 |         .map_err(|_| "IO_FAILURE".to_owned())?
+25 ~         .load(&id); x
+   |
+
+error[E0597]: `database` does not live long enough
+  --> src/commands.rs:34:5
+   |
+33 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+   |           -------- binding `database` declared here
+34 |       database
+   |       -^^^^^^^
+   |       |
+   |  _____borrowed value does not live long enough
+   | |
+35 | |         .0
+36 | |         .lock()
+37 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+   | |______________________________________________- a temporary with access to the borrow is created here ...
+38 |           .list()
+39 |   }
+   |   -
+   |   |
+   |   `database` dropped here while still borrowed
+   |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+   |
+   = note: the temporary is part of an expression at the end of a block;
+           consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+   |
+34 ~     let x = database
+35 |         .0
+36 |         .lock()
+37 |         .map_err(|_| "IO_FAILURE".to_owned())?
+38 ~         .list(); x
+   |
+
+error[E0597]: `database` does not live long enough
+  --> src/commands.rs:47:5
+   |
+46 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+   |           -------- binding `database` declared here
+47 |       database
+   |       -^^^^^^^
+   |       |
+   |  _____borrowed value does not live long enough
+   | |
+48 | |         .0
+49 | |         .lock()
+50 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+   | |______________________________________________- a temporary with access to the borrow is created here ...
+51 |           .imports()
+52 |   }
+   |   -
+   |   |
+   |   `database` dropped here while still borrowed
+   |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+   |
+   = note: the temporary is part of an expression at the end of a block;
+           consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+   |
+47 ~     let x = database
+48 |         .0
+49 |         .lock()
+50 |         .map_err(|_| "IO_FAILURE".to_owned())?
+51 ~         .imports(); x
+   |
+
+error[E0597]: `database` does not live long enough
+  --> src/commands.rs:61:5
+   |
+60 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+   |           -------- binding `database` declared here
+61 |       database
+   |       -^^^^^^^
+   |       |
+   |  _____borrowed value does not live long enough
+   | |
+62 | |         .0
+63 | |         .lock()
+64 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+   | |______________________________________________- a temporary with access to the borrow is created here ...
+65 |           .commit(&raw)
+66 |   }
+   |   -
+   |   |
+   |   `database` dropped here while still borrowed
+   |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+   |
+   = note: the temporary is part of an expression at the end of a block;
+           consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+   |
+61 ~     let x = database
+62 |         .0
+63 |         .lock()
+64 |         .map_err(|_| "IO_FAILURE".to_owned())?
+65 ~         .commit(&raw); x
+   |
+
+error[E0597]: `database` does not live long enough
+  --> src/commands.rs:74:5
+   |
+73 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+   |           -------- binding `database` declared here
+74 |       database
+   |       -^^^^^^^
+   |       |
+   |  _____borrowed value does not live long enough
+   | |
+75 | |         .0
+76 | |         .lock()
+77 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+   | |______________________________________________- a temporary with access to the borrow is created here ...
+78 |           .export()
+79 |   }
+   |   -
+   |   |
+   |   `database` dropped here while still borrowed
+   |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+   |
+   = note: the temporary is part of an expression at the end of a block;
+           consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+   |
+74 ~     let x = database
+75 |         .0
+76 |         .lock()
+77 |         .map_err(|_| "IO_FAILURE".to_owned())?
+78 ~         .export(); x
+   |
+
+error[E0597]: `database` does not live long enough
+   --> src/commands.rs:125:5
+    |
+124 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    |           -------- binding `database` declared here
+125 |       database
+    |       -^^^^^^^
+    |       |
+    |  _____borrowed value does not live long enough
+    | |
+126 | |         .0
+127 | |         .lock()
+128 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+    | |______________________________________________- a temporary with access to the borrow is created here ...
+129 |           .quarantine(&raw)
+130 |   }
+    |   -
+    |   |
+    |   `database` dropped here while still borrowed
+    |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+    |
+    = note: the temporary is part of an expression at the end of a block;
+            consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+    |
+125 ~     let x = database
+126 |         .0
+127 |         .lock()
+128 |         .map_err(|_| "IO_FAILURE".to_owned())?
+129 ~         .quarantine(&raw); x
+    |
+
+error[E0597]: `database` does not live long enough
+   --> src/commands.rs:182:5
+    |
+181 |       let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    |           -------- binding `database` declared here
+182 |       database
+    |       -^^^^^^^
+    |       |
+    |  _____borrowed value does not live long enough
+    | |
+183 | |         .0
+184 | |         .lock()
+185 | |         .map_err(|_| "IO_FAILURE".to_owned())?
+    | |______________________________________________- a temporary with access to the borrow is created here ...
+186 |           .restore(&raw)
+187 |   }
+    |   -
+    |   |
+    |   `database` dropped here while still borrowed
+    |   ... and the borrow might be used here, when that temporary is dropped and runs the destructor for type `ControlFlow<std::result::Result<Infallible, std::string::String>, std::sync::MutexGuard<'_, persistence::Repository>>`
+    |
+    = note: the temporary is part of an expression at the end of a block;
+            consider forcing this temporary to be dropped sooner, before the block's local variables are dropped
+help: for example, you could save the expression's value in a new local variable `x` and then make `x` be the expression at the end of the block
+    |
+182 ~     let x = database
+183 |         .0
+184 |         .lock()
+185 |         .map_err(|_| "IO_FAILURE".to_owned())?
+186 ~         .restore(&raw); x
+    |
+
+For more information about this error, try `rustc --explain E0597`.
+error: could not compile `picarx-companion` (lib test) due to 7 previous errors

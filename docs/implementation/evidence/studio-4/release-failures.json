@@ -1,0 +1,42 @@
+{
+  "status": "PASS / QUALIFIED",
+  "cases": [
+    {
+      "case": "corrupt copied GLB",
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "result": "GLB_HASH_MISMATCH before scene mount. Explicit retry still refuses; Back to companion shows local progress ready. Verified app-copy recovery advice. Original GLB unchanged."
+    },
+    {
+      "case": "unavailable disposable repository",
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "result": "A directory at disposable sessions.sqlite3 makes normal startup fail storage open. Reference/Studio still open; Start disabled and STORAGE_UNAVAILABLE visible. Existing files not replaced; no reset advice or empty export-original action."
+    },
+    {
+      "case": "manual decode failure",
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "result": "Copied locked PDF replaced by synthetic bad bytes. Explicit Retry refuses again without retry loop or app crash; source status/HAT remain visible."
+    },
+    {
+      "case": "fullscreen refusal",
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "result": "Negative-copy capability omits setFullscreen; button reports Fullscreen is not available here and remains off. Ordinary copy retains permission."
+    },
+    {
+      "case": "photo copy permission denial",
+      "sourceHead": "d0d46864d39005d360486feaf0bc0d732ee61db6",
+      "result": "Disposable evidence directory changed 0700 to0500, restored0700. Native picker returns EVIDENCE_COPY Permission denied (os13); no new S04 observation; original S01 observation remains. Bookmarks changed between broader snapshots, so no whole-ledger-byte-equality claim."
+    },
+    {
+      "case": "export cancellation",
+      "sourceHead": "d12abceeee717f16905e6555d78dfe2d52c5712f",
+      "result": "Actual NSSavePanel Escape shows Export cancelled; restart retains photo/physical state."
+    },
+    {
+      "case": "export destination collision",
+      "sourceHead": "d0d46864d39005d360486feaf0bc0d732ee61db6",
+      "result": "Disposable pre-existing collision fixture, OS Replace warning accepted as test; Rust create_new refuses EXPORT_DESTINATION File exists (os17). Original synthetic destination bytes and SHA unchanged."
+    }
+  ],
+  "copyProvenance": "Private copied frontend and unique disposable identifiers. Same production m3-persistence feature, no native-test seam; faults copied assets/ACL only. Normal A3/B3 never overwritten.",
+  "nativeFilePickerRawTrees": "Private only; no source paths or owner files in review package"
+}

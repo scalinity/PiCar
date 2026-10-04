@@ -1,0 +1,80 @@
+{
+  "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "status": "PASS / QUALIFIED",
+  "map": [
+    {
+      "workflow": "Enter / leave Studio",
+      "keys": "Tab to links, Return",
+      "result": "PASS native"
+    },
+    {
+      "workflow": "Pi5 / Zero / Parts / S01\u2013S09",
+      "keys": "Tab links, Return; [ previous and ] next existing opened steps",
+      "result": "PASS native + Chromium/WebKit"
+    },
+    {
+      "workflow": "Drawer",
+      "keys": "Tab+Space or I",
+      "result": "PASS; hiding moves drawer focus to persistent toggle"
+    },
+    {
+      "workflow": "Enlarged manual",
+      "keys": "Tab Enlarge+Space; Tab/shift+Tab contained; Escape restores opener",
+      "result": "PASS native+browser"
+    },
+    {
+      "workflow": "Play/pause/replay/rewind",
+      "keys": "Native button Space; Space on canvas toggles play",
+      "result": "PASS native"
+    },
+    {
+      "workflow": "Timeline",
+      "keys": "Tab range; arrows and Home/End; canvas Left/Right seek0.25s",
+      "result": "PASS native+browser"
+    },
+    {
+      "workflow": "Semantic part selection",
+      "keys": "Tab inventory disclosure/part toggle; Space",
+      "result": "PASS; no keyboard raycast required"
+    },
+    {
+      "workflow": "Frame / isolate / ghost / explode / clip / reset / guided",
+      "keys": "Tab controls+Space; F/O/G/E/C/R where relevant",
+      "result": "PASS native+browser"
+    },
+    {
+      "workflow": "Fullscreen",
+      "keys": "Tab fullscreen+Space; Escape after modal and selection layers",
+      "result": "PASS settled native + lifetime tests"
+    },
+    {
+      "workflow": "Statement / checkbox / mark",
+      "keys": "Tab field type; checkbox Space; Mark Space after valid statement/verification",
+      "result": "PASS disposable native + regression"
+    },
+    {
+      "workflow": "Undo/reopen",
+      "keys": "Tab Reopen Space then Undo Space",
+      "result": "PASS disposable native"
+    },
+    {
+      "workflow": "Photo / observation / export",
+      "keys": "Tab file input Space; OS picker keyboard; disclosure/checkbox Space; export button Space; Save panel Escape",
+      "result": "PASS disposable native"
+    },
+    {
+      "workflow": "Text/native dialog shortcut isolation",
+      "keys": "Text/control/meta/ctrl/alt/repeat/modal guards; OS file/Save panel owns keys",
+      "result": "PASS; no presentation shortcuts while typing"
+    },
+    {
+      "workflow": "Optional performance HUD",
+      "keys": "P",
+      "result": "Observational, no bridge in production"
+    }
+  ],
+  "qualification": "Full durable journey at d12; focus correction validated in production d0; final05e recovery text + OS motion + review views verified. Runtime keyboard/persistence unchanged after those checks.",
+  "focus": "Explicit tabIndex0 for native WK default keyboard focus; visible focus rings. Disabled controls skipped. Real dialog showModal; focus to close button, restores live opener/current-board fallback. Root replacement restores current board. Fullscreen restores already-focused live native WebView first responder; never steals activation.",
+  "escape": "One physical press one layer: manual \u2192 semantic selection/review pair \u2192 fullscreen. Settled native fullscreen tested; immediate key during OS entering animation is not claimed as exit.",
+  "limitations": "No full VoiceOver manual walkthrough or arbitrary3D keyboard raycasting claim."
+}

@@ -1,0 +1,49 @@
+{
+  "runtimeHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "typecheck": {
+    "result": "PASS",
+    "log": "typecheck-delivery.txt"
+  },
+  "unit": {
+    "passed": 308,
+    "files": 28,
+    "result": "PASS",
+    "log": "unit-delivery.txt",
+    "sourceQualification": "Final unit run precedes one pack-error wording-only correction; full final browser/native corrupt-pack test covers final message."
+  },
+  "rustPersistence": {
+    "passed": 8,
+    "result": "PASS",
+    "log": "rust-persistence-final.txt"
+  },
+  "focusedPolish": {
+    "passed": 10,
+    "result": "PASS",
+    "log": "browser-polish-attempt4.txt"
+  },
+  "correctedFocused": {
+    "passed": 16,
+    "result": "PASS",
+    "log": "browser-corrected-focused.txt"
+  },
+  "fullBrowser": {
+    "passed": 141,
+    "failed": 2,
+    "skipped": 1,
+    "minutes": 17.9,
+    "result": "RUN / FAIL \u2014 EXPLAINED",
+    "log": "browser-delivery.txt",
+    "failures": "preservation.spec.ts:42 raw legacy PDF bookmark key expected1 received2, Chromium and WebKit, accepted baseline only; no new Studio4 failure"
+  },
+  "legacy": {
+    "passed": 10,
+    "seconds": 11.4,
+    "result": "PASS",
+    "log": "browser-legacy-delivery.txt"
+  },
+  "pack": "PASS / FRESH / CURRENT",
+  "tray": "HOLDS both156,143solid13tile,frontier50/47",
+  "blender": "exit0 problems[]",
+  "native": "PASS / QUALIFIED production features with disposable identifier; actual offline UNVERIFIED",
+  "readiness": "NOT READY"
+}

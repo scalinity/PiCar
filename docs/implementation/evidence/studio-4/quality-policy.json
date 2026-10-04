@@ -1,0 +1,20 @@
+{
+  "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "status": "PASS deterministic policy; physical battery UNMEASURED",
+  "nativeSource": "Read-only IOKit providing power source type plus NSProcessInfo lowPowerModeEnabled and thermalState; main window only capability. No battery history, levels, serials or telemetry.",
+  "policy": {
+    "AC": "min(2, max(1, backingScale))",
+    "battery": "min(1.5, max(1, backingScale))",
+    "unknownSource": "same conservative ceiling1.5",
+    "lowPowerOrSeriousCriticalThermal": "ceiling1",
+    "fairThermal": "normal source policy"
+  },
+  "evidenceBasis": "Existing accepted governor half-step floor1; accepted Studio3.5 detailed HAT observation at1.5. Resolution-only conservative ceilings, not measured battery-life or energy optimum.",
+  "governor": "Existing120-frame governor and600-calm-frame recovery retained; ceiling clamps immediately even before first frame sample; recovery cannot exceed ceiling.",
+  "polling": "Initial, focus activation, and30-second refresh while mounted; late results discarded on exit.",
+  "diagnostics": "Power source, low power, thermal, ceiling/reason and actual DPR sequence in optional P HUD, no production state-mutating seam.",
+  "geometry": "No geometry, recipe, pose, material, lighting, source hash or M7 change.",
+  "actualAC": "AC, lowPowerfalse, thermalnominal on owner Mac",
+  "actualBattery": "UNMEASURED; unplug choice requested, no answer; no forced battery condition or mocked physical performance.",
+  "automated": "release-polish.test.ts checks AC,battery,unknown,lowPower,thermal,backing ceiling and bounded recovery."
+}

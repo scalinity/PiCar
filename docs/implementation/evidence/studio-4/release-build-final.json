@@ -1,0 +1,220 @@
+{
+  "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "normalBuilds": [
+    {
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "command": [
+        "pnpm",
+        "tauri",
+        "build",
+        "--features",
+        "m3-persistence",
+        "--config",
+        "src-tauri/tauri.m3.json",
+        "--bundles",
+        "app",
+        "--",
+        "--locked"
+      ],
+      "features": [
+        "m3-persistence"
+      ],
+      "environment": {
+        "VITE_M3_ENABLED": "1",
+        "RUSTFLAGS": "--remap-path-prefix=WORKSPACE=PiCar --remap-path-prefix=CARGO_HOME=cargo-home --remap-path-prefix=PRIVATE_SCRATCH=studio4-build",
+        "CFLAGS": "-ffile-prefix-map=PRIVATE_SCRATCH=studio4-build -ffile-prefix-map=CARGO_HOME=cargo-home"
+      },
+      "cleanTarget": true,
+      "started": 1791119782.817406,
+      "exitCode": 0,
+      "finished": 1791119835.13862,
+      "appPath": "PRIVATE_SCRATCH/release-a3/release/bundle/macos/picarx-companion.app",
+      "inventory": [
+        {
+          "path": "Contents/Info.plist",
+          "bytes": 996,
+          "sha256": "8a932272618a128a109e6c3d08abe373fbabbe9d26cd0ae825ca902e0b96a7f7"
+        },
+        {
+          "path": "Contents/MacOS/picarx-companion",
+          "bytes": 54108720,
+          "sha256": "cba111a7d0133c3f2395512ce885c4678cd04b05d03a3f46288f0b2791818769"
+        },
+        {
+          "path": "Contents/Resources/icon.icns",
+          "bytes": 98451,
+          "sha256": "3dc10493b7de48a61de58f768f8a5708d3a44a068c148cedf0502b9b9b71ba5d"
+        }
+      ],
+      "headAfter": "05eac8d7d0a30db53bf54940cdbccc84283631c4"
+    },
+    {
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "command": [
+        "pnpm",
+        "tauri",
+        "build",
+        "--features",
+        "m3-persistence",
+        "--config",
+        "src-tauri/tauri.m3.json",
+        "--bundles",
+        "app",
+        "--",
+        "--locked"
+      ],
+      "features": [
+        "m3-persistence"
+      ],
+      "environment": {
+        "VITE_M3_ENABLED": "1",
+        "RUSTFLAGS": "--remap-path-prefix=WORKSPACE=PiCar --remap-path-prefix=CARGO_HOME=cargo-home --remap-path-prefix=PRIVATE_SCRATCH=studio4-build",
+        "CFLAGS": "-ffile-prefix-map=PRIVATE_SCRATCH=studio4-build -ffile-prefix-map=CARGO_HOME=cargo-home"
+      },
+      "cleanTarget": true,
+      "started": 1791119872.4423199,
+      "exitCode": 0,
+      "finished": 1791119924.986594,
+      "appPath": "PRIVATE_SCRATCH/release-b3/release/bundle/macos/picarx-companion.app",
+      "inventory": [
+        {
+          "path": "Contents/Info.plist",
+          "bytes": 996,
+          "sha256": "8a932272618a128a109e6c3d08abe373fbabbe9d26cd0ae825ca902e0b96a7f7"
+        },
+        {
+          "path": "Contents/MacOS/picarx-companion",
+          "bytes": 54108720,
+          "sha256": "cba111a7d0133c3f2395512ce885c4678cd04b05d03a3f46288f0b2791818769"
+        },
+        {
+          "path": "Contents/Resources/icon.icns",
+          "bytes": 98451,
+          "sha256": "3dc10493b7de48a61de58f768f8a5708d3a44a068c148cedf0502b9b9b71ba5d"
+        }
+      ],
+      "headAfter": "05eac8d7d0a30db53bf54940cdbccc84283631c4"
+    }
+  ],
+  "nativeJourneyBuild": {
+    "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+    "command": [
+      "pnpm",
+      "tauri",
+      "build",
+      "--features",
+      "m3-persistence",
+      "--config",
+      "src-tauri/tauri.m3.json",
+      "--config",
+      "PRIVATE_SCRATCH/native-disposable.json",
+      "--bundles",
+      "app",
+      "--",
+      "--locked"
+    ],
+    "features": [
+      "m3-persistence"
+    ],
+    "environment": {
+      "VITE_M3_ENABLED": "1",
+      "RUSTFLAGS": "--remap-path-prefix=WORKSPACE=PiCar --remap-path-prefix=CARGO_HOME=cargo-home --remap-path-prefix=PRIVATE_SCRATCH=studio4-build",
+      "CFLAGS": "-ffile-prefix-map=PRIVATE_SCRATCH=studio4-build -ffile-prefix-map=CARGO_HOME=cargo-home"
+    },
+    "cleanTarget": true,
+    "started": 1791120064.37556,
+    "exitCode": 0,
+    "finished": 1791120113.264429,
+    "appPath": "PRIVATE_SCRATCH/release-native3/release/bundle/macos/picarx-companion.app",
+    "inventory": [
+      {
+        "path": "Contents/Info.plist",
+        "bytes": 1015,
+        "sha256": "34e3c3eaa8011cde4acf92c61f1ad144217bc8df4fb1bd632d3f91105415569d"
+      },
+      {
+        "path": "Contents/MacOS/picarx-companion",
+        "bytes": 54108720,
+        "sha256": "60eb75b2f2a6a81a05c5eaccb29eac38e38212fc83bfe9bd82c4e8ea5c7a5ff8"
+      },
+      {
+        "path": "Contents/Resources/icon.icns",
+        "bytes": 98451,
+        "sha256": "3dc10493b7de48a61de58f768f8a5708d3a44a068c148cedf0502b9b9b71ba5d"
+      }
+    ],
+    "headAfter": "05eac8d7d0a30db53bf54940cdbccc84283631c4"
+  },
+  "normalIdentifier": "com.danny.picarx-companion",
+  "journeyIdentifier": "com.danny.picarx-companion.studio4-disposable",
+  "journeyException": "Identifier only isolates production M3 app data. beforeBuildCommand empty reuses the exact already-built normal frontend. Rust production features, window settings, frontend, and capability permissions unchanged; no test hooks or synthetic power injection. Normal owner-identifier bundle not launched to avoid touching owner storage.",
+  "normalVersion": "0.1.0",
+  "architecture": "Mach-O 64-bit executable arm64",
+  "normalBundleInventorySha256": "8355de1b23ec6eaa3785f4f7667faa4b58457b8fa5e7ba4cbfee08f47f4c977d",
+  "bundleHashMeaning": "SHA256 of canonical ordered path/length/content-sha256 JSON; not a DMG or archive metadata hash",
+  "reproducibility": {
+    "twoFreshCargoTargets": true,
+    "sameSource": true,
+    "sameConfig": true,
+    "fileBytesEqual": true,
+    "frontend150FilesEqual": true,
+    "claim": "All three regular bundle files and all 150 embedded frontend inputs are byte equal in these two local arm64 builds. No cross-machine, timestamp, future signature, notarization, filesystem metadata or universal reproducibility claim."
+  },
+  "signing": {
+    "kind": "linker ad hoc",
+    "flags": "0x20002(adhoc,linker-signed)",
+    "teamIdentifier": null,
+    "developerId": false,
+    "infoPlistBound": false,
+    "sealedResources": false,
+    "notarized": false,
+    "staplerExit": 65,
+    "scope": "Local use only; unsigned distribution, no Developer ID/notarization configured."
+  },
+  "releaseFeatures": [
+    "m3-persistence"
+  ],
+  "testFeaturesAbsent": [
+    "m3-native-test",
+    "tauri-plugin-wdio",
+    "tauri-plugin-wdio-webdriver"
+  ],
+  "envEnabled": {
+    "VITE_M3_ENABLED": "1",
+    "PICAR_ALLOW_PACKAGE_BUILD": "1"
+  },
+  "envRemoved": [
+    "VITE_M3_NATIVE_TEST",
+    "PICAR_M3_TEST_DATA_DIR",
+    "TAURI_CONFIG",
+    "TAURI_DEV_HOST"
+  ],
+  "capabilities": {
+    "default": [
+      "core:default",
+      "opener:default"
+    ],
+    "studio-window": [
+      "allow-studio-power-state",
+      "core:webview:allow-set-webview-focus",
+      "core:window:allow-set-fullscreen",
+      "core:window:allow-is-fullscreen"
+    ],
+    "m3-persistence": [
+      "allow-studio-escape-capture",
+      "allow-load-companion-state",
+      "allow-list-companion-aggregates",
+      "allow-list-progress-imports",
+      "allow-commit-session-command",
+      "allow-export-session",
+      "allow-import-session",
+      "allow-quarantine-legacy-raw",
+      "allow-recover-session",
+      "allow-studio-copy-photo",
+      "allow-studio-read-photo",
+      "allow-studio-export-evidence"
+    ]
+  },
+  "configuration": "tauri.conf.json + tauri.m3.json; publication-bound defaults unchanged",
+  "runtimeDiagnostics": "P toggles an observational HUD. Production URL cannot enable __studio; Vite DEV and explicit native-test builds are the only bridge gates. No native-test commands/capabilities enabled."
+}
