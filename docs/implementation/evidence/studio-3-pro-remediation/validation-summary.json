@@ -59,7 +59,7 @@
         ],
         "path": "picarx-companion/tests/browser/preservation.spec.ts:38",
         "assertionLine": 42,
-        "explanation": "Legacy test expects the M3-owned PDF page key to remain page 1; actual preserved M3 page is 2. Existing legacy-only run without M3 passes both engines. No assertion weakened or claimed passing."
+        "explanation": "Under M3, the PDF displays page 1 and M3's durable Setup bookmark records page 1. The preserved original legacy localStorage[\"picarx.v1\"] record still contains pdfLastPage = 2. The two failing legacy assertions expect that original raw legacy field to be rewritten from 2 to 1; accepted M3 intentionally preserves the original raw snapshot instead. The M3-specific PDF test passes, and the proper legacy-mode suite passes both engines. The full browser aggregate remains 125 passed, 2 failed, 1 skipped: RUN / FAIL — EXPLAINED, not PASS. No failing assertion is altered or claimed passing."
       }
     ],
     "skip": "WebKit browser physical Escape case; actual native physical presses cover ordering.",
