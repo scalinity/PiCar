@@ -98,7 +98,7 @@ async function load(): Promise<LoadedPack> {
   const glbBytes = await fetchBytes(partsUrl);
   const glbFetched = performance.now();
   const { manifest: checked, problems } = await validatePackBytes(manifestBytes, glbBytes);
-  if (!checked) throw Error(`The Studio pack failed its integrity check (${problems.join('; ')}). Rebuild it with studio.mjs pack.`);
+  if (!checked) throw Error(`The Studio pack failed its integrity check (${problems.join('; ')}). Restore a verified copy of the app. Your saved progress was not reset.`);
   const manifest = checked as StudioManifest;
   const verified = performance.now();
   const gltf = await new GLTFLoader().parseAsync(glbBytes.buffer.slice(glbBytes.byteOffset, glbBytes.byteOffset + glbBytes.byteLength) as ArrayBuffer, '');

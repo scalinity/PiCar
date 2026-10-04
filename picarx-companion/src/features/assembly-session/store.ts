@@ -57,7 +57,7 @@ export async function initializePersistence(): Promise<void> {
     }
    }
    publish({initialized:true,storageReady:true,sessions:(await repository.list()).filter(s=>s.graphHash!==null)});
-  }catch(e){publish({initialized:true,storageReady:false,error:e instanceof Error?e.message:String(e),recovery:'Storage could not initialize. Reference pages remain available; original progress can be exported.'});}
+  }catch(e){publish({initialized:true,storageReady:false,error:e instanceof Error?e.message:String(e),recovery:'Local progress could not open. Reference pages remain available. Existing files were not replaced. Check storage access and free disk space, then quit and reopen.'});}
  })();return initialization;
 }
 export async function resolveLegacy(choice:'keepNew'|'recovery'):Promise<void>{
