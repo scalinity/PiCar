@@ -1,0 +1,100 @@
+{
+  "applicationSourceHead": "d1f33f72ce89cf1f00764cffd8e29ea58827b75c",
+  "finalHarnessHead": "88fcf433c3d65b704dc77471f5094d7e45ef7665",
+  "typecheck": "PASS",
+  "unit": {
+    "files": 26,
+    "passed": 301,
+    "failed": 0,
+    "duration": "13.61s"
+  },
+  "producerValidation": {
+    "checks": 606,
+    "failed": 0,
+    "withheld": [],
+    "summary": [
+      "chain-record",
+      "tessellation-binding",
+      "revision-registry",
+      "closure-binding",
+      "refusal-listed",
+      "verified-closures-present",
+      "regions",
+      "display",
+      "display-binding",
+      "bounds",
+      "canonical-scope",
+      "tray-geometry",
+      "proper-rotations",
+      "preview-recipes",
+      "preview-holds",
+      "preview-represented",
+      "tray-complete",
+      "camera",
+      "recipe",
+      "basis-roundtrip",
+      "mount-feature",
+      "contract"
+    ]
+  },
+  "focusedBrowser": {
+    "passed": 22,
+    "failed": 0,
+    "duration": "1.3m",
+    "newProCases": 18,
+    "existingBuildAlongCases": 4,
+    "rawOriginalLogAvailability": "Earlier temporary focused stdout no longer available; all cases passed again in the final full run, with retained full stdout and individual receipts."
+  },
+  "fullBrowser": {
+    "status": "RUN / FAIL \u2014 EXPLAINED",
+    "passed": 125,
+    "failed": 2,
+    "skipped": 1,
+    "duration": "18.0m",
+    "failures": [
+      {
+        "engines": [
+          "chromium",
+          "webkit"
+        ],
+        "path": "picarx-companion/tests/browser/preservation.spec.ts:38",
+        "assertionLine": 42,
+        "explanation": "Legacy test expects the M3-owned PDF page key to remain page 1; actual preserved M3 page is 2. Existing legacy-only run without M3 passes both engines. No assertion weakened or claimed passing."
+      }
+    ],
+    "skip": "WebKit browser physical Escape case; actual native physical presses cover ordering.",
+    "diagnostic": "WebKit ephemeral/private context OPFS probe reports UnknownError; persistent disposable context directory/file/writer/write PASS. Diagnostic case passed and this storage limitation remains visible."
+  },
+  "legacyBrowser": {
+    "passed": 10,
+    "failed": 0,
+    "duration": "8.5s"
+  },
+  "finalTrayBrowser": {
+    "passed": 4,
+    "failed": 0,
+    "duration": "13.2s",
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "variants": [
+      "rpi5",
+      "rpi-zero-2-w"
+    ]
+  },
+  "native": {
+    "result": "PASS",
+    "cases": 1,
+    "duration": "1m 44.5s",
+    "inRunWarnings": 0,
+    "cleanupWarnings": 1,
+    "receipt": "native-run-result.json"
+  },
+  "producer": "PASS / FRESH / CURRENT",
+  "tray": "HOLDS both boards",
+  "blender": "PASS; zero receipt problems",
+  "sourceQualification": "Normal source-mode development producer; not engineering qualification",
+  "testFixtureRemediation": "Ignored pinned public upstream source fixtures were restored read-only for relocated clone unit tests; no fixture expectations or source lock changed. Initial missing-source attempts retained privately.",
+  "historicalEvidencePreserved": "Four tray census receipts accidentally written by old hardcoded test-output path were restored byte-for-byte. The test now respects the additive evidence directory; final four-case run writes only new evidence."
+}

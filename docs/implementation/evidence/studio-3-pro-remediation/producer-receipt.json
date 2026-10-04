@@ -1,0 +1,59 @@
+{
+  "starting": {
+    "pack": "ad00bd0f4ad2904c3c1ca12d05b2990da5cb8e0e0076eb4e928372e08d202f41",
+    "glb": "2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8",
+    "presentation": "6290433110f76a0724a1b05ba4b004b04bb103a7f45a5d621c5be72734fffc9e"
+  },
+  "final": {
+    "pack": "4a7a782926efcacc7eadd5f671ac86e26af89a83613ec1fea72156275a629415",
+    "glb": "2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8",
+    "presentation": "7baf0384e7678a136d830f0c9d8b34a79bd1beb4eb11f8113c1c632d8808bd1e",
+    "blend": {
+      "path": "digital-twin/presentation/blender/picar-studio.blend",
+      "sha256": "27d90975b29c36152fe206cd54929f02eecb8973e7b4a7200596a611a48225a7"
+    },
+    "render": {
+      "path": "digital-twin/presentation/blender/renders/4a7a782926ef-7baf0384e767-rpi5-S02.png",
+      "preview": false,
+      "resolutionPercentage": 100,
+      "samples": 512,
+      "sha256": "1a0ce8db64cdf1a7054e0b087d489cedec9c14fa58fda0f4b4eca7457b52177f"
+    }
+  },
+  "chain": {
+    "label": "s3pro-01",
+    "mode": "source-mode dev loop, not an M7 qualification",
+    "closureVerify": {
+      "status": "PASS",
+      "sha256": "849cd5c49a4ed6c8e73759d4c627091386efa3a222e3ce997c090d0cadb978a9"
+    },
+    "studioChain": {
+      "sha256": "b6e8508c397c0e953e8cd58c19651c25ef25cea4ae8b86c5ada93ba072b96c51"
+    }
+  },
+  "tessellation": {
+    "label": "s3pro-01",
+    "meshesSha256": "0fef3e3ea35dea3a8dfd537a3717063a7b34fc95ace567f2f3964bfdbeaecf33",
+    "binSha256": "180ee89e4da0acb3b3f7189c01492e03860387759fbd60e611ae471f9732f928",
+    "linearDeflectionMm": 0.02,
+    "angularDeflectionRad": 0.15
+  },
+  "geometryChanged": false,
+  "sourceGeometryAdopted": false,
+  "hat35Integrated": false,
+  "causes": {
+    "pack": "Neutral consumable wording and fresh source-chain/tessellation record identities.",
+    "glb": "Unchanged canonical geometry and mesh bytes; exact same GLB hash.",
+    "presentation": "New pack/stage binding and builder metadata cleanup; presentation objects retained."
+  },
+  "commands": [
+    "chain --python <frozen Python 3.12.14/CadQuery 2.8.0 environment> --label s3pro-01",
+    "tessellate --python <same frozen environment> --chain s3pro-01 --label s3pro-01",
+    "pack --chain s3pro-01 --tessellation s3pro-01",
+    "blender --render",
+    "blender --check",
+    "check",
+    "tray-audit"
+  ],
+  "qualification": "source-mode development loop, not M7 engineering qualification"
+}

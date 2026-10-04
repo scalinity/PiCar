@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "caseCount": 1,
+  "duration": "1m 44.5s",
+  "runnerDuration": "1m 45s",
+  "startedUTC": "2026-10-04T01:10:19.451Z",
+  "inRunWarnings": [],
+  "inRunCorrectnessFailures": [],
+  "cleanupWarnings": [
+    {
+      "atUTC": "2026-10-04T01:12:04.332Z",
+      "message": "Failed to clear mock store: A sessionId is required for this command",
+      "phase": "afterSession, after the passed test",
+      "source": "@wdio/tauri-service 1.4.0 dist/esm/index.js:4127 restoreAllMocks",
+      "investigation": "The driver restores mocks after the session has ended; its protocol request requires the sessionId already removed. This warning is caught in afterSession and does not alter the passed assertions."
+    }
+  ],
+  "earlierInRunFocusWarningInvestigation": {
+    "phase": "driver autonomous setup, before ready latch and physical UI actions",
+    "source": "@wdio/tauri-service 1.4.0 dist/esm/index.js:3052 getWindowStates; beforeCommand ensureActiveWindowFocus",
+    "mechanism": "Embedded focus/window state query timed out; catch logged and returned an empty state list, then the driver recovered. Prior failed attempts and timings are retained. Final attempt has zero such warning."
+  },
+  "ownerDatabaseOpened": false,
+  "syntheticOnly": true,
+  "identity": "native-identity.json",
+  "physicalStates": "native-physical-states.json",
+  "saveAndReopenedZip": "native-export.json",
+  "coverage": [
+    "both board sessions",
+    "physical complete and conservative undo",
+    "saved bookmark and Parts resume without mutation",
+    "board switching write-free",
+    "playback and inspection write-free",
+    "private synthetic photo copied/hash checked",
+    "reload and restart",
+    "physical Escape manual/selection/fullscreen sequence",
+    "actual macOS NSSavePanel export, exact ZIP byte comparison",
+    "unchanged ledger and camera target"
+  ]
+}

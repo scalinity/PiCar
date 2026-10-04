@@ -1,3 +1,67 @@
+# Studio 3 — Pro remediation and focused re-review
+
+Status: **STUDIO 3 READY FOR FOCUSED PRO RE-REVIEW**. S3-01–S3-05 and the required artifact/native reviewability gaps have author-side remediation evidence. Independent GPT-6 Pro acceptance is pending. The earlier verdict was **NOT ACCEPTED**; its five P2 findings and UNKNOWN binary/native inspection gaps remain historical facts. Studio 3.5, the waiting new HAT branch, Studio 4 and M8 remain outside this work.
+
+Review baseline: `e15ea228f5c5a77440a6cffb67f3ceae08df1ae9`. Approved Studio 2: `59e5ded78baccadf25b4b63bc2266d9210b4ee70`. All new evidence is additive in [studio-3-pro-remediation](evidence/studio-3-pro-remediation/README.md). Use the final published branch HEAD supplied in the execution response; this closure document cannot contain its own commit SHA.
+
+## Five remediations
+
+| Finding | Final behavior and evidence |
+|---|---|
+| S3-01 | Photo intent captures A's exact aggregate/revision, Context, variant, step, observation identity and pack provenance before real copy. `sessionActionBound` sends the resulting command through accepted M3 prepare/commit/CAS/ack/retry. Both engines prove one new copy, A one observation, B none, B stays selected. Repository failure and lost acknowledgment retry the identical command; genuine conflict retains the private copy and actionable error across reopening. The old global-selection submission is reproduced using a controlled old-submission seam at the real adapter boundary, not a whole baseline checkout run. |
+| S3-02 | Parts return navigates without a bookmark write: S04→S04, S10/S29→display S09 while durable S10/S29 survive exactly. Ordinary explicit rail navigation still bookmarks. Board switching stays write-free; final native Parts resume preserves the saved ledger. |
+| S3-03 | HOOK/LOOP-001 show “source lot identity, length unknown”; -002 show “preallocated S06 cut piece; amount unknown”. Identical-piece wording is restricted to actual discrete hardware. M2.5x6 control remains “1 of 10 identical pieces”. No canonical slot removed. |
+| S3-04 | Replaced “No defined shape: cut from tape stock, so it is shown as a tile.” with “No trusted 3D shape is available for this stock, so it is shown as a labeled tile.” Normal source-chain/tessellation/pack/Blender generation changed metadata identities; geometry and GLB bytes did not change. |
+| S3-05 | Only exact normalized `src/features/assembly-3d/build-along.tsx` receives the six-import persistence exception, using complete set equality. Only exact `src/pages/Studio.tsx` receives the route exception. Six synthetic negatives reject extra imports, nested adapters, other viewer imports and copied routes. No rogue production module or React useEffect added. |
+
+Exact persistence-sensitive imports: `../assembly-session/accepted`, `../assembly-session/commands`, `../assembly-session/store`, `../assembly-session/observation`, `../assembly-session/evidence-zip`, `../../platform/evidence`. See [remediation-results.json](evidence/studio-3-pro-remediation/remediation-results.json) and [acceptance-map.json](evidence/studio-3-pro-remediation/acceptance-map.json).
+
+## Final artifact identities
+
+| Artifact | Prior reviewed Studio 3 | Remediated final |
+|---|---|---|
+| Pack | `ad00bd0f4ad2904c3c1ca12d05b2990da5cb8e0e0076eb4e928372e08d202f41` | `4a7a782926efcacc7eadd5f671ac86e26af89a83613ec1fea72156275a629415` |
+| GLB SHA256 | `2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8` | `2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8` (unchanged; 3,261,348 bytes) |
+| Presentation | `6290433110f76a0724a1b05ba4b004b04bb103a7f45a5d621c5be72734fffc9e` | `7baf0384e7678a136d830f0c9d8b34a79bd1beb4eb11f8113c1c632d8808bd1e` |
+
+Blender SHA256 `27d90975b29c36152fe206cd54929f02eecb8973e7b4a7200596a611a48225a7`; render SHA256 `1a0ce8db64cdf1a7054e0b087d489cedec9c14fa58fda0f4b4eca7457b52177f`. Current `s3pro-01` tessellation: index `0fef3e3ea35dea3a8dfd537a3717063a7b34fc95ace567f2f3964bfdbeaecf33`, buffer `180ee89e4da0acb3b3f7189c01492e03860387759fbd60e611ae471f9732f928`. Producer receipt records the normal commands and source-mode qualification limit. Final checker and isolated restoration both give **PASS / FRESH / CURRENT**; tray audit **HOLDS** both boards. The normal pack producer recorded 606 checks, zero failures.
+
+Both boards retain 156 slots = 143 solids + 13 tiles. Pi5: 50 frontier, 69 later, 37 spare. Zero2W: 47 frontier, 72 later, 37 spare. Group counts remain Plates8/Electronics7/Actuators8/Wheels4/Fasteners116/Cables4/Supplies6/Tools3. Old selected HAT dependency is transported only as the unchanged current freshness input; the separate HAT branch `eec0f190db777a98f6ac3085ce69f9e76f3843d0` is not integrated.
+
+## Exact-byte and native reviewability
+
+[Connector review README](evidence/studio-3-pro-remediation/connector-review/README.md) explains reconstruction of **40 artifacts in 187 JSON/base64 parts**, each under 180,000 encoded bytes, totaling 20,551,657 raw bytes. It includes canonical GLB/.blend/render, current tessellation and required generated freshness inputs, plus exact critical native captures. Ordered offsets, raw/encoded hashes, whole size/hash and tracked Git blobs bind every byte. Restoring these into an isolated Git-archive source checkout gives PASS/FRESH/CURRENT with no owner files copied.
+
+Structured GLB audit: 48 nodes, 48 meshes, 158 primitives, 18 materials, no textures/images/external URIs/private paths or credentials. Blender successfully opens/checks the exact project: 1 scene, 4 collections, 212 objects, 2 built-in images, no external libraries/scripts/missing dependencies. The generic `/tmp/` render default is functional; saved File Browser directory is `//` and filename stamp is disabled.
+
+The final physical sequence is A(manual open, Plate A selected, native fullscreen), B(manual closed, selection/fullscreen retained), C(selection clear, fullscreen retained), D(fullscreen off). Three distinct CUA physical Escape calls, four exact frames, fresh AX states and monotonic numeric states are bound in the visual manifest. **State A's overlay paper/grid and close control are visible, but page-content raster is incomplete during fullscreen while document visibility is hidden. It proves overlay presence/dismissal, not a complete booklet raster.** B/C/D show rendered drawer thumbnails; passed browser cases cover normal booklet behavior. CUA supplies JPEG captures; exact originals are retained alongside their losslessly decoded PNGs and small JPEG proxies, with no cropping/retouching.
+
+Actual macOS NSSavePanel is captured with a guarded disposable destination. Independently reopened ZIP: SHA256 `626b865e9476645afa6d1a232ad1d9a49b779c28913a35de9f555e27086c3fbf`, 3447 bytes; selected manifest and exact synthetic photo hash are recorded in [native-export.json](evidence/studio-3-pro-remediation/native-export.json). No raw photo/ZIP bytes are published.
+
+## Final validation and warnings
+
+Typecheck PASS. Units **301/26 PASS** in13.61s. Focused browser **22 PASS** (18 new Pro cases, 4 existing build-along); all cases pass again in the retained final full run. Full Chromium/WebKit: **125 passed, 2 failed, 1 skipped,18.0m — RUN / FAIL — EXPLAINED**. Both failures are the preserved legacy PDF-key page1 expectation versus M3-owned saved page2; legacy-only browser run passes10/10. Final tray census4/4 passes both boards/engines. WebKit private/ephemeral OPFS refusal remains an observed platform limitation; its diagnostic passes and persistent disposable OPFS succeeds. No failing assertion is weakened or called PASS.
+
+Final rebuilt debug native case: **1 PASS,1m44.5s**; no in-run warning or correctness failure. It covers both sessions, physical complete/undo, bookmark/Parts resume/board switching, read-only controls, real synthetic private photo copy/reload, actual three Escapes, native Save panel and exact exported ZIP bytes. Binary/source/config/disposable-root identity is recorded; later commits affect only the external harness/evidence, with no bundled app source/config change. Owner DB unopened. One driver `afterSession` mock-store warning occurs after PASS at2026-10-04T01:12:04.332Z. Its source and lifecycle are investigated separately. Prior in-run focus timeouts and deadline/state-observer failures are retained in the attempt history, never called cleanup or hidden. See [native-run-result.json](evidence/studio-3-pro-remediation/native-run-result.json).
+
+Bounded final tray performance: 1121×704, DPR2,120 active frames,60fps,mean16.67ms,p9517ms,579 draw calls,568576 triangles; first drawn frame425ms. No unexpected regression observed; no speculative optimization.
+
+## Privacy, preservation and boundary
+
+The producer clears saved private File Browser UI paths and excludes filename-stamp metadata. A rejected unpublished render/commit containing a real producer path was preserved privately; the clean publication clone excludes that commit from its published ancestry, without rewriting reviewed history. New source/history and final evidence are scanned, including decompressed Blender and media metadata. Runtime caches, private owner media/DB/ZIPs, helpers and the twelve historical M2 files remain excluded. Protected Studio 2/Studio 3/M7 historical evidence and owner instructions are preserved; the old tray test now writes to the additive output directory, after original receipts were restored byte-for-byte.
+
+**M7 BLOCKED0/58; Pi5 0/29; Zero 0/29; S07 BLOCKED; S09 REFUSED; G-CAD BLOCKED; M8 NO; rpi4 PRESERVED_NON_TARGET.** Owner physical completion stays self-confirmed history, not engineering admission. Independent Pro acceptance remains pending; no new blocker/high/P2 application defect is known from these checks. The full-browser aggregate, native cleanup warning and State A raster limit remain explicit review disclosures.
+
+## Focused follow-up review
+
+Review only the delta from `e15ea228f5c5a77440a6cffb67f3ceae08df1ae9` to the final published `studio/s3-build-along` HEAD. Adjudicate S3-01–S3-05 and explicitly close or retain UNKNOWN for exact GLB/.blend/render/tessellation reconstruction, isolated PASS/FRESH/CURRENT, native physical Escapes and Save-panel/ZIP evidence. Inspect the disclosed State A raster limit and warning lifecycle; do not infer hidden pixels or classify earlier in-run warnings as cleanup. Preserve credit for previously passed Studio 3 areas; do not repeat the full audit. Return ACCEPTED / READY FOR STUDIO 3.5 INTEGRATION only if no blocker/high/P2 or required verification gap remains. Stop after review; do not integrate HAT, begin Studio 4/M8, alter M7, merge or publish changes.
+
+---
+
+## Historical Studio 3 handoff at reviewed baseline e15ea228
+
+The following historical document is preserved verbatim. Its opening readiness status and identities predate Pro's NOT ACCEPTED verdict and are superseded by the current opening above.
+
 # Studio 3 — full-kit tray and real-car build-along
 
 Status: **STUDIO 3 READY FOR INDEPENDENT REVIEW** for the authorized full-kit/build-along scope. Required application, native, pack, privacy and preservation checks pass. The full browser aggregate remains **RUN / FAIL — EXPLAINED**, with 107 passed, two legacy PDF assertions and one skipped physical WebKit Escape case. Actual native physical presses cover that Escape behavior. This is not independent acceptance or engineering admission. Studio 3.5, Studio 4 and M8 are not started.

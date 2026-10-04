@@ -1,0 +1,23 @@
+Window: "Save", App: picarx-companion.
+0 dialog Save, ID: save-panel, Secondary Actions: Raise
+	1 split group
+		2 splitter (disabled, settable, float) -1
+		3 text Value: Where:, ID: whereLabel
+		4 pop up button Where:, Value: picar-m3-native-pro-CMLs6f, ID: where popup
+		5 disclosure triangle Description: show more options, Value: 0
+		6 text Value: Save As:, ID: nameFieldLabel
+		7 text field (settable) Value: selected-private-evidence.zip, ID: saveAsNameTextField
+		8 text Value: Tags:, ID: tagsLabel
+		9 text field (settable) tag editor
+		10 button Cancel, ID: CancelButton
+		11 button Save, ID: OKButton
+	12 text Save
+13 menu bar
+	14 picarx-companion
+	15 File
+	16 Edit
+	17 View
+	18 Window
+	19 Help
+
+The focused UI element is 7 text field (settable) Value: selected-private-evidence.zip, ID: saveAsNameTextField

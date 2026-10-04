@@ -1,0 +1,65 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit": 1,
+      "result": "FAIL",
+      "stdoutSha256": "c3a745d942da110179d2307ba36a72447dcaa3a149bae07af95d902f0766b54b",
+      "stderrSha256": "c319e88d7f2fc92f5ebb34c540ba5bd823ab24a8c6fe51bf9cbb9ba461b43b73",
+      "explanation": "Disposable export deadline expired during continuation delay; no application correctness pass claimed.",
+      "inRunFocusWarnings": 0,
+      "retained": "original logs and receipts retained privately; never rewritten as passing"
+    },
+    {
+      "attempt": 2,
+      "exit": 1,
+      "result": "FAIL",
+      "stdoutSha256": "e5c74e655c740ef83353e14071493f760b2b3609c12d11ec9cafe43694e6d1b7",
+      "stderrSha256": "bbd88a01b9c5bd0e533cde4a4e5c0c5de3811035f1e4c631deef17bbc4ea6766",
+      "explanation": "Animation-frame-only observer suspended when native fullscreen moved into a hidden macOS Space; exact export bytes passed but state assertion failed.",
+      "inRunFocusWarnings": 0,
+      "retained": "original logs and receipts retained privately; never rewritten as passing"
+    },
+    {
+      "attempt": 3,
+      "exit": 0,
+      "result": "PASS",
+      "stdoutSha256": "9abf84fa082f41021b999447fa3c7cd609c619aac057022ccf389fea77822ff7",
+      "stderrSha256": "abf30c3a5014e9282fd818acbd9c9f166a888040be42fe47f4afa921fd7af57e",
+      "explanation": "Passed; State A booklet raster incomplete.",
+      "inRunFocusWarnings": 0,
+      "retained": "original logs and receipts retained privately; never rewritten as passing"
+    },
+    {
+      "attempt": 4,
+      "exit": 0,
+      "result": "PASS",
+      "stdoutSha256": "9d64e5298d0b00a5bfccc5b6ea326982599c4556a5fc3dba8c3ae8a0ec953af0",
+      "stderrSha256": "b90b688fd76fba241f96a0c9f3eb453c6b158757c4d73befd328d0a2fbfd093e",
+      "explanation": "Passed without in-run warnings; State A booklet raster incomplete.",
+      "inRunFocusWarnings": 0,
+      "retained": "original logs and receipts retained privately; never rewritten as passing"
+    },
+    {
+      "attempt": 5,
+      "exit": 0,
+      "result": "PASS",
+      "stdoutSha256": "a63f52b7e9470b4d6ab76d8c8f4f06a7c790c4abcd4c01530817f3e3eac40327",
+      "stderrSha256": "a41f25abb020482e14db5b5c7c1a876f8db6bde8815be1a4c43bcab5294748cf",
+      "explanation": "Passed; one in-run driver window focus-query timeout before physical verification, followed by recovery.",
+      "inRunFocusWarnings": 1,
+      "retained": "original logs and receipts retained privately; never rewritten as passing"
+    },
+    {
+      "attempt": 6,
+      "exit": 1,
+      "result": "FAIL",
+      "stdoutSha256": "1c5e81a61d8a37b19d94eb031b051f518e33e3cb47fb20b7d388e628b335a7ff",
+      "stderrSha256": "1babaf76a47c797d6808d4ce49a9e283bfb5823c0fabdaf4e581d37482d0ed8d",
+      "explanation": "Disposable export deadline expired while conversation context was compacted. In-run driver focus-query warning occurred during autonomous setup before CUA actions; no application correctness pass claimed.",
+      "inRunFocusWarnings": 1,
+      "retained": "original logs and receipts retained privately; never rewritten as passing"
+    }
+  ],
+  "finalAttempt": 7
+}

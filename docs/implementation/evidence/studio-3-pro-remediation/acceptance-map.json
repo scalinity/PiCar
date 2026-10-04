@@ -1,0 +1,162 @@
+{
+  "status": "STUDIO 3 READY FOR FOCUSED PRO RE-REVIEW",
+  "assessment": "Author remediation/readiness checks, not independent acceptance or engineering admission",
+  "criteria": [
+    {
+      "id": "A",
+      "claim": "Photo intent bound before copy",
+      "status": "PASS",
+      "evidence": "photo-binding-success-chromium.json"
+    },
+    {
+      "id": "B",
+      "claim": "A observation survives selection of B",
+      "status": "PASS",
+      "evidence": "photo-binding-success-webkit.json"
+    },
+    {
+      "id": "C",
+      "claim": "B receives no A observation",
+      "status": "PASS",
+      "evidence": "photo-binding-success-chromium.json"
+    },
+    {
+      "id": "D",
+      "claim": "B stays globally selected",
+      "status": "PASS",
+      "evidence": "photo-binding-success-webkit.json"
+    },
+    {
+      "id": "E",
+      "claim": "Retry, conflict and retained orphan are truthful",
+      "status": "PASS",
+      "evidence": "remediation-results.json"
+    },
+    {
+      "id": "F",
+      "claim": "Parts return is navigation-only",
+      "status": "PASS",
+      "evidence": "validation-output/browser-full-final.txt"
+    },
+    {
+      "id": "G",
+      "claim": "S10 and S29 retained",
+      "status": "PASS",
+      "evidence": "remediation-results.json"
+    },
+    {
+      "id": "H",
+      "claim": "Hook/Loop lot/allocation distinction visible",
+      "status": "PASS",
+      "evidence": "validation-output/browser-full-final.txt"
+    },
+    {
+      "id": "I",
+      "claim": "Consumables excluded from identical-piece wording",
+      "status": "PASS",
+      "evidence": "remediation-results.json"
+    },
+    {
+      "id": "J",
+      "claim": "Cable wrap has source-safe explanation",
+      "status": "PASS",
+      "evidence": "producer-receipt.json"
+    },
+    {
+      "id": "K",
+      "claim": "Both boards retain 156 slots",
+      "status": "PASS",
+      "evidence": "validation-output/tray-final.txt"
+    },
+    {
+      "id": "L",
+      "claim": "Complete exact persistence import set",
+      "status": "PASS",
+      "evidence": "validation-output/unit-final-complete.txt"
+    },
+    {
+      "id": "M",
+      "claim": "Nested adapter receives no exception",
+      "status": "PASS",
+      "evidence": "picarx-companion/tests/studio/isolation.test.ts"
+    },
+    {
+      "id": "N",
+      "claim": "Exact canonical route exception",
+      "status": "PASS",
+      "evidence": "picarx-companion/tests/studio/isolation.test.ts"
+    },
+    {
+      "id": "O",
+      "claim": "PASS/FRESH/CURRENT",
+      "status": "PASS",
+      "evidence": "connector-review/isolated-recomputation.json"
+    },
+    {
+      "id": "P",
+      "claim": "Both tray audits HOLDS",
+      "status": "PASS",
+      "evidence": "validation-output/tray-final.txt"
+    },
+    {
+      "id": "Q",
+      "claim": "Exact final GLB reconstructable",
+      "status": "PASS",
+      "evidence": "connector-review/binary-transport-manifest.json"
+    },
+    {
+      "id": "R",
+      "claim": "Exact final Blender project reconstructable",
+      "status": "PASS",
+      "evidence": "connector-review/binary-transport-manifest.json"
+    },
+    {
+      "id": "S",
+      "claim": "Exact current freshness inputs reconstructable",
+      "status": "PASS",
+      "evidence": "connector-review/isolated-recomputation.json"
+    },
+    {
+      "id": "T",
+      "claim": "Critical native visuals readable and exact-byte bound",
+      "status": "PASS",
+      "evidence": "connector-review/visual-evidence-manifest.json"
+    },
+    {
+      "id": "U",
+      "claim": "Three physical Escapes independently inspectable",
+      "status": "PASS",
+      "evidence": "native-physical-states.json"
+    },
+    {
+      "id": "V",
+      "claim": "Native Save panel and reopened ZIP inspectable",
+      "status": "PASS",
+      "evidence": "native-export.json"
+    },
+    {
+      "id": "W",
+      "claim": "Final native case passes with no in-run warnings/failures",
+      "status": "PASS",
+      "evidence": "native-run-result.json"
+    },
+    {
+      "id": "X",
+      "claim": "No new known blocker/high/P2 application defect",
+      "status": "PASS",
+      "evidence": "validation-summary.json"
+    },
+    {
+      "id": "Y",
+      "claim": "M7 status and protected evidence unchanged",
+      "status": "PASS",
+      "evidence": "preservation.json"
+    }
+  ],
+  "limitations": [
+    "Full browser aggregate remains RUN / FAIL \u2014 EXPLAINED: two unchanged legacy PDF-key expectations, one WebKit physical Escape skip covered by actual native presses.",
+    "State A shows the enlarged manual overlay and close control; booklet page-content raster is incomplete during native fullscreen. No full-page-render claim is derived from it. AX/numeric sequence and B/C/D thumbnails are retained.",
+    "Final native test has zero in-run warnings. One afterSession cleanup warning remains classified with source/timing. Earlier setup warnings and failed attempts are retained separately.",
+    "Independent Pro adjudication is pending. Studio 3.5/4/M8 and new HAT integration are not started."
+  ]
+}

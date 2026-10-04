@@ -1,0 +1,90 @@
+{
+  "S3-01": {
+    "priorReview": "P2; NOT ACCEPTED",
+    "oldReproduction": "Controlled restoration of the old global-selected submission at the actual adapter boundary, not a full baseline checkout run. Both engines reproduce one copied file, no observation, OBSERVATION_BINDING and no retry.",
+    "binding": "Aggregate snapshot/revision, accepted Context, variant/step, observation ID/time and pack provenance captured before copy; pre-copy checks; sessionActionBound uses existing prepareCommand/commit/CAS/ack/retry machinery.",
+    "success": "Both engines: exactly one new copied file, A gets one bound observation, B gets zero, B remains selected.",
+    "failures": "Exact-command retry passes after repository failure and lost acknowledgment. Genuine A conflict attaches to neither aggregate; copied file and actionable error persist when Studio reopens.",
+    "evidence": [
+      "old-photo-reproduction-chromium.json",
+      "old-photo-reproduction-webkit.json",
+      "photo-binding-success-chromium.json",
+      "photo-binding-success-webkit.json",
+      "photo-binding-failure-chromium.json",
+      "photo-binding-failure-webkit.json",
+      "photo-binding-lost-ack-chromium.json",
+      "photo-binding-lost-ack-webkit.json",
+      "photo-binding-conflict-chromium.json",
+      "photo-binding-conflict-webkit.json",
+      "photo-provenance-audit.json"
+    ]
+  },
+  "S3-02": {
+    "priorReview": "P2; NOT ACCEPTED",
+    "results": [
+      {
+        "saved": "S04",
+        "display": "S04",
+        "durable": "S04",
+        "ledgerUnchanged": true
+      },
+      {
+        "saved": "S10",
+        "display": "S09",
+        "durable": "S10",
+        "ledgerUnchanged": true
+      },
+      {
+        "saved": "S29",
+        "display": "S09",
+        "durable": "S29",
+        "ledgerUnchanged": true
+      }
+    ],
+    "ordinaryRailBookmark": "Explicit Step 2 rail click still persists S02. Board switching remains write-free; explicit resume behavior retained.",
+    "evidence": "validation-output/browser-full-final.txt; tests/browser/studio-pro-remediation.spec.ts; native-parts-resume.json"
+  },
+  "S3-03": {
+    "priorReview": "P2; NOT ACCEPTED",
+    "roles": {
+      "HOOK-001": "source lot identity, length unknown",
+      "HOOK-002": "preallocated S06 cut piece; amount unknown",
+      "LOOP-001": "source lot identity, length unknown",
+      "LOOP-002": "preallocated S06 cut piece; amount unknown"
+    },
+    "identicalWording": "Restricted to discrete standoffs, screws, nuts, washers and rivets; consumables excluded.",
+    "positiveControl": "M2.5x6 screw: 1 of 10 identical pieces",
+    "canonicalSlots": 156,
+    "evidence": "Both-engine consumable-role tests in validation-output/browser-full-final.txt; tests/studio/full-kit.test.ts"
+  },
+  "S3-04": {
+    "priorReview": "P2; NOT ACCEPTED",
+    "old": "No defined shape: cut from tape stock, so it is shown as a tile.",
+    "new": "No trusted 3D shape is available for this stock, so it is shown as a labeled tile.",
+    "producer": "Normal chain/tessellation/pack/Blender generation; no manual identity edits; geometry unchanged.",
+    "evidence": "producer-receipt.json; connector-review/isolated-recomputation.json; validation-output/tray-final.txt"
+  },
+  "S3-05": {
+    "priorReview": "P2; NOT ACCEPTED",
+    "canonicalAdapter": "src/features/assembly-3d/build-along.tsx",
+    "exactImportSet": [
+      "../assembly-session/accepted",
+      "../assembly-session/commands",
+      "../assembly-session/store",
+      "../assembly-session/observation",
+      "../assembly-session/evidence-zip",
+      "../../platform/evidence"
+    ],
+    "canonicalRoute": "src/pages/Studio.tsx",
+    "negativeCases": [
+      "canonical adapter adds platform/repository",
+      "canonical adapter adds assembly-session/rogue",
+      "nested extra/build-along.tsx imports session store",
+      "other Studio module imports build-along",
+      "other Studio module imports persistence",
+      "noncanonical route-like file requests route exception"
+    ],
+    "positive": "Actual adapter import set passes complete set equality",
+    "evidence": "picarx-companion/tests/studio/isolation.test.ts; validation-output/unit-final-complete.txt"
+  }
+}
