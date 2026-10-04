@@ -34,7 +34,7 @@ tauri-plugin-wdio-webdriver = { version = "=1.4.0", optional = true }
 objc2 = "=0.6.4"
 objc2-app-kit = { version = "=0.3.2", default-features = false, features = ["std", "NSEvent", "NSWindow", "NSSavePanel", "NSPanel", "NSApplication", "block2"] }
 block2 = "=0.6.2"
-objc2-foundation = { version = "=0.3.2", default-features = false, features = ["std", "NSString", "NSURL"] }
+objc2-foundation = { version = "=0.3.2", default-features = false, features = ["std", "NSString", "NSURL", "NSProcessInfo"] }
 
 [features]
 m3-persistence = []

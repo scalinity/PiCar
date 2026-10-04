@@ -8,6 +8,7 @@ mod strict_json;
 mod evidence;
 #[cfg(target_os = "macos")]
 mod studio_escape;
+mod studio_power;
 use tauri::{Manager, PhysicalPosition, PhysicalSize};
 
 #[tauri::command]
@@ -68,6 +69,7 @@ pub fn run() {
     let builder = builder.setup(|app| {
         fit_main_window(app);
         setup_studio_escape(app)?;
+        let storage = (|| -> Result<persistence::Repository, Box<dyn std::error::Error>> {
         #[cfg(not(feature = "m3-native-test"))]
         let dir = app.path().app_data_dir()?;
         #[cfg(feature = "m3-native-test")]
@@ -104,11 +106,21 @@ pub fn run() {
             dir.join("sessions.sqlite3")
         };
         let repository = persistence::Repository::open(&active).map_err(std::io::Error::other)?;
-        app.manage(commands::Database(std::sync::Mutex::new(repository)));
+        Ok(repository)
+
+        })();
+        #[cfg(feature = "m3-native-test")]
+        app.manage(commands::Database(std::sync::Mutex::new(storage?)));
+        #[cfg(not(feature = "m3-native-test"))]
+        match storage {
+            Ok(repository) => { app.manage(commands::Database(std::sync::Mutex::new(repository))); }
+            Err(_) => eprintln!("Local progress store unavailable; existing files preserved."),
+        }
         Ok(())
     });
     #[cfg(all(feature = "m3-persistence", not(feature = "m3-native-test")))]
     let builder = builder.invoke_handler(tauri::generate_handler![
+        studio_power::studio_power_state,
         studio_escape_capture,
         commands::load_companion_state,
         commands::list_companion_aggregates,
@@ -122,6 +134,7 @@ pub fn run() {
     ]);
     #[cfg(feature = "m3-native-test")]
     let builder = builder.invoke_handler(tauri::generate_handler![
+        studio_power::studio_power_state,
         studio_escape_capture,
         commands::load_companion_state,
         commands::list_companion_aggregates,
@@ -136,7 +149,7 @@ pub fn run() {
         commands::m3_test_fault
     ]);
     #[cfg(not(feature = "m3-persistence"))]
-    let builder = builder.invoke_handler(tauri::generate_handler![studio_escape_capture]);
+    let builder = builder.invoke_handler(tauri::generate_handler![studio_escape_capture, studio_power::studio_power_state]);
     builder.build(tauri::generate_context!())
         .expect("error while building tauri application")
         .run(|_app, event| {

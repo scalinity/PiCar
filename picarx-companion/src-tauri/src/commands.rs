@@ -1,7 +1,7 @@
 use crate::persistence::Repository;
 use serde_json::Value;
 use std::sync::Mutex;
-use tauri::State;
+use tauri::Manager;
 pub struct Database(pub Mutex<Repository>);
 fn main_window(window: &tauri::WebviewWindow) -> Result<(), String> {
     if window.label() == "main" {
@@ -13,72 +13,83 @@ fn main_window(window: &tauri::WebviewWindow) -> Result<(), String> {
 #[tauri::command]
 pub fn load_companion_state(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
     id: String,
 ) -> Result<Value, String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .load(&id)
+        .load(&id);
+    result
 }
 #[tauri::command]
 pub fn list_companion_aggregates(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
 ) -> Result<Value, String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .list()
+        .list();
+    result
 }
 #[tauri::command]
 pub fn list_progress_imports(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
 ) -> Result<Value, String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .imports()
+        .imports();
+    result
 }
 #[tauri::command]
 pub fn commit_session_command(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
     raw: String,
 ) -> Result<Value, String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .commit(&raw)
+        .commit(&raw);
+    result
 }
 #[tauri::command]
 pub fn export_session(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
 ) -> Result<Value, String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .export()
+        .export();
+    result
 }
 #[tauri::command]
 pub fn recover_session(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
     raw: String,
 ) -> Result<(), String> {
     main_window(&window)?;
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
     let mut current = database.0.lock().map_err(|_| "IO_FAILURE".to_owned())?;
     let dir = current.path.parent().ok_or("IO_FAILURE")?;
     let name = format!(
@@ -111,23 +122,26 @@ pub fn recover_session(
 #[tauri::command]
 pub fn quarantine_legacy_raw(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
     raw: String,
 ) -> Result<(), String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .quarantine(&raw)
+        .quarantine(&raw);
+    result
 }
 #[cfg(feature = "m3-native-test")]
 #[tauri::command]
 pub fn m3_test_fresh(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
 ) -> Result<(), String> {
     main_window(&window)?;
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
     let mut current = database.0.lock().map_err(|_| "IO_FAILURE".to_owned())?;
     let dir = current.path.parent().ok_or("IO_FAILURE")?;
     let name = format!(
@@ -144,10 +158,11 @@ pub fn m3_test_fresh(
 #[tauri::command]
 pub fn m3_test_fault(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
     fault: String,
 ) -> Result<(), String> {
     main_window(&window)?;
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
     let mut current = database.0.lock().map_err(|_| "IO_FAILURE".to_owned())?;
     match fault.as_str(){
  "restart"=>{*current=Repository::open(&current.path.clone())?;return Ok(());},
@@ -165,26 +180,30 @@ pub fn m3_test_fault(
 #[tauri::command]
 pub fn import_session(
     window: tauri::WebviewWindow,
-    database: State<Database>,
+    app: tauri::AppHandle,
     raw: String,
 ) -> Result<(), String> {
     main_window(&window)?;
-    database
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;
+    let result = database
         .0
         .lock()
         .map_err(|_| "IO_FAILURE".to_owned())?
-        .restore(&raw)
+        .restore(&raw);
+    result
 }
 
 #[tauri::command]
-pub fn studio_copy_photo(window:tauri::WebviewWindow,database:State<Database>,session_id:String,observation_id:String,bytes:Vec<u8>)->Result<Value,String>{
- main_window(&window)?;let db=database.0.lock().map_err(|_|"IO_FAILURE")?;
+pub fn studio_copy_photo(window:tauri::WebviewWindow,app:tauri::AppHandle,session_id:String,observation_id:String,bytes:Vec<u8>)->Result<Value,String>{
+ main_window(&window)?;
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;let db=database.0.lock().map_err(|_|"IO_FAILURE")?;
  let stored=db.load(&session_id)?;if !stored["aggregate"]["snapshot"]["variantId"].as_str().is_some_and(|v|["rpi5","rpi-zero-2-w"].contains(&v)){return Err("UNKNOWN_SESSION".into());}
  crate::evidence::copy(db.path.parent().ok_or("EVIDENCE_PATH")?,&session_id,&observation_id,&bytes)
 }
 #[tauri::command]
-pub fn studio_read_photo(window:tauri::WebviewWindow,database:State<Database>,session_id:String,observation_id:String)->Result<Vec<u8>,String>{
- main_window(&window)?;let db=database.0.lock().map_err(|_|"IO_FAILURE")?;let stored=db.load(&session_id)?;
+pub fn studio_read_photo(window:tauri::WebviewWindow,app:tauri::AppHandle,session_id:String,observation_id:String)->Result<Vec<u8>,String>{
+ main_window(&window)?;
+    let database = app.try_state::<Database>().ok_or("STORAGE_UNAVAILABLE")?;let db=database.0.lock().map_err(|_|"IO_FAILURE")?;let stored=db.load(&session_id)?;
  let record=stored["events"].as_array().ok_or("UNKNOWN_SESSION")?.iter().find(|e|e["action"]["kind"]=="observation"&&e["action"]["record"]["id"]==observation_id).ok_or("UNKNOWN_OBSERVATION")?;
  crate::evidence::verify(db.path.parent().ok_or("EVIDENCE_PATH")?,&record["action"]["record"])
 }

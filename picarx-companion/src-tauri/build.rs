@@ -8,6 +8,7 @@ fn main() {
     }
     #[cfg(feature = "m3-native-test")]
     const COMMANDS: &[&str] = &[
+        "studio_power_state",
         "studio_escape_capture",
         "load_companion_state",
         "list_companion_aggregates",
@@ -23,6 +24,7 @@ fn main() {
     ];
     #[cfg(all(feature = "m3-persistence", not(feature = "m3-native-test")))]
     const COMMANDS: &[&str] = &[
+        "studio_power_state",
         "studio_escape_capture",
         "load_companion_state",
         "list_companion_aggregates",
@@ -42,7 +44,7 @@ fn main() {
     );
     #[cfg(not(feature = "m3-persistence"))]
     let attributes = tauri_build::Attributes::new().app_manifest(
-        tauri_build::AppManifest::new().permissions_path_pattern("permissions/normal/*.toml"),
+        tauri_build::AppManifest::new().commands(&["studio_power_state"]).permissions_path_pattern("permissions/normal/*.toml"),
     );
     tauri_build::try_build(attributes).expect("Tauri build configuration");
 }
