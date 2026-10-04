@@ -411,7 +411,7 @@ test('the companion pages remain reachable from the Studio', async ({ page }) =>
 });
 
 // ==== Studio 2: the complete tray, every step on both boards, review states, inspection and the manual panel.
-const EVIDENCE = "../docs/implementation/evidence/studio-3";
+const EVIDENCE = process.env.PICAR_BROWSER_EVIDENCE_DIR ?? "../docs/implementation/evidence/studio-3";
 const placedPositions = (page: Page, ids: string[]) => page.evaluate((list) => Object.fromEntries(list.map((id) => [id, (window as any).__studio.instance(id).position])), ids);
 const styleOf = (page: Page, id: string) => page.evaluate((x) => (window as any).__studio.style(x), id);
 
