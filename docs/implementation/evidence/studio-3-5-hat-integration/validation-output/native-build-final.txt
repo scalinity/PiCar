@@ -12,22 +12,22 @@ vite v7.3.6 building client environment for production...
 transforming...
 ✓ 234 modules transformed.
 rendering chunks...
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <checkout>/picarx-companion/src/platform/tauri/repository.ts is dynamically imported by <checkout>/picarx-companion/src/features/assembly-session/store.ts, <checkout>/picarx-companion/src/features/assembly-session/store.ts but also statically imported by <checkout>/picarx-companion/tests/native/bootstrap.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <checkout>/picarx-companion/src/platform/evidence.ts is dynamically imported by <checkout>/picarx-companion/tests/native/bootstrap.ts but also statically imported by <checkout>/picarx-companion/src/features/assembly-3d/build-along.tsx, <checkout>/picarx-companion/src/platform/browser/indexed-db.ts, <checkout>/picarx-companion/tests/studio/earlier-hat-observation.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <checkout>/picarx-companion/src/platform/browser/indexed-db.ts is dynamically imported by <checkout>/picarx-companion/src/features/assembly-session/store.ts, <checkout>/picarx-companion/src/features/assembly-session/store.ts but also statically imported by <checkout>/picarx-companion/tests/session/browser-controls.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <checkout>/picarx-companion/src/features/assembly-session/store.ts is dynamically imported by <checkout>/picarx-companion/tests/native/bootstrap.ts but also statically imported by <checkout>/picarx-companion/src/App.tsx, <checkout>/picarx-companion/src/components/PdfViewer.tsx, <checkout>/picarx-companion/src/components/SearchBox.tsx, <checkout>/picarx-companion/src/features/assembly-3d/build-along.tsx, <checkout>/picarx-companion/src/features/assembly-session/SaveStatus.tsx, <checkout>/picarx-companion/src/lib/progress-store.ts, <checkout>/picarx-companion/src/main.tsx, <checkout>/picarx-companion/src/pages/Assembly.tsx, <checkout>/picarx-companion/src/pages/WizardStep.tsx, <checkout>/picarx-companion/tests/studio/earlier-hat-observation.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <checkout>/picarx-companion/src/features/assembly-session/evidence-zip.ts is dynamically imported by <checkout>/picarx-companion/tests/native/bootstrap.ts but also statically imported by <checkout>/picarx-companion/src/features/assembly-3d/build-along.tsx, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <checkout>/picarx-companion/src/features/assembly-3d/build-along.tsx is dynamically imported by <checkout>/picarx-companion/tests/native/bootstrap.ts but also statically imported by <checkout>/picarx-companion/src/pages/Studio.tsx, <checkout>/picarx-companion/tests/studio/earlier-hat-observation.ts, dynamic import will not move module into another chunk.
 
 computing gzip size...
@@ -66,4 +66,3 @@ Safe mirror/dist exclusions and static bytes verified
     Bundling picarx-companion.app (<checkout>/picarx-companion/src-tauri/target/debug/bundle/macos/picarx-companion.app)
     Finished 1 bundle at:
         <checkout>/picarx-companion/src-tauri/target/debug/bundle/macos/picarx-companion.app
-

@@ -1,0 +1,99 @@
+{
+  "status": "STUDIO 3.5 READY FOR INDEPENDENT REVIEW",
+  "codeHead": "d2841424837fa229c2d612cef8163959cf528650",
+  "trackedRestorationSourceHead": "b803715c628f1a7be2ee052d440082789ed4e161",
+  "gates": [
+    {
+      "gate": "exact HAT cherry-picks and source preservation",
+      "status": "PASS",
+      "evidence": "integration-identities.json"
+    },
+    {
+      "gate": "deterministic HAT BREP, fifty overlaps, frame/bores/transforms unchanged",
+      "status": "PASS",
+      "evidence": "preservation.json"
+    },
+    {
+      "gate": "CAD fidelity and 75 final tessellated pins",
+      "status": "PASS",
+      "evidence": "validation-final.json"
+    },
+    {
+      "gate": "Pi5/Zero native S04 detail, distinct orientation, low pins and underside",
+      "status": "PASS",
+      "evidence": "visual-correspondence.json"
+    },
+    {
+      "gate": "one semantic HAT and five physical region picks",
+      "status": "PASS",
+      "evidence": "native-hat-picking.json"
+    },
+    {
+      "gate": "inspector truth and overlap wording",
+      "status": "PASS",
+      "evidence": "native-hat-inspector.json"
+    },
+    {
+      "gate": "156 full-kit slots per board and tray audit HOLDS",
+      "status": "PASS",
+      "evidence": "tray-audit-s35-01.json"
+    },
+    {
+      "gate": "pack integrity PASS, sources FRESH, presentation CURRENT",
+      "status": "PASS",
+      "evidence": "pack-check.json"
+    },
+    {
+      "gate": "exact tracked-source restore and deeper Blender fingerprint",
+      "status": "PASS",
+      "evidence": "connector-review/isolated-recomputation.json"
+    },
+    {
+      "gate": "Studio build-along and persistence ledger preservation",
+      "status": "PASS",
+      "evidence": "native-closeout.json"
+    },
+    {
+      "gate": "earlier-revision observation identities after reload/export",
+      "status": "PASS",
+      "evidence": "native-earlier-observation.json"
+    },
+    {
+      "gate": "manual source crop preserved; no-movement repeated real presses",
+      "status": "PASS",
+      "evidence": "manual-layout-resolution.json"
+    },
+    {
+      "gate": "physical Escape priority and strict persistence equality",
+      "status": "PASS",
+      "evidence": "native-physical-states.json"
+    },
+    {
+      "gate": "four bounded honest performance samples, DPR and resources",
+      "status": "PASS",
+      "evidence": "native-closeout.json"
+    },
+    {
+      "gate": "all new Studio browser/unit/native cases resolved",
+      "status": "PASS",
+      "evidence": "validation-final.json"
+    },
+    {
+      "gate": "privacy and all new reachable blob versions/media/decoded transport",
+      "status": "PASS",
+      "evidence": "privacy-source-history.json"
+    },
+    {
+      "gate": "M7 0/58/S07/S09/G-CAD/rpi4/M8 boundaries preserved",
+      "status": "PASS",
+      "evidence": "preservation.json"
+    }
+  ],
+  "fullBrowserAggregate": "RUN / FAIL \u2014 EXPLAINED: 131 passed, 2 accepted legacy PDF assertion failures, 1 skipped; no new integration failure",
+  "nativeWarningsDisclosed": true,
+  "ownerIntegratedViewAcceptance": "PENDING",
+  "knownBlockerHighP2IntegrationDefects": [],
+  "engineeringAdmission": false,
+  "authorizedPublication": "normal push only of studio/s3-5-hat-integration",
+  "finalHeadBinding": "The final commit is supplied in the owner-facing report and verified against origin and ls-remote; later closeout commits only update evidence/documentation."
+}

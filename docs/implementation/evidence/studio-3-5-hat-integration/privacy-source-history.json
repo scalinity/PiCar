@@ -1,8 +1,9 @@
 {
   "baseline": "aa2713396d4869f9698f8b242640c3f55d205435",
-  "sourceHeadAudited": "d2841424837fa229c2d612cef8163959cf528650",
+  "sourceHeadAudited": "b803715c628f1a7be2ee052d440082789ed4e161",
   "scope": "Every new reachable commit and each changed blob version, plus all final review files and raw reconstructed transport artifacts; compressed Blender bytes and PNG metadata decoded. Previously published reviewed ancestry retained.",
   "commits": [
+    "b803715c628f1a7be2ee052d440082789ed4e161",
     "d2841424837fa229c2d612cef8163959cf528650",
     "51f782f8a19c90b90457f627a3fc66b90942704c",
     "efde60d75ab7a07f14ec938be1c49b9ecfb8bdda",
@@ -11,8 +12,8 @@
     "50b453ee8a975abbb3de85381b70528dfc168f3f",
     "ec8a2d9ac6a2990245acbfd4a9ed35688c22549f"
   ],
-  "changedBlobVersions": 41,
-  "workingReviewFiles": 764,
+  "changedBlobVersions": 802,
+  "workingReviewFiles": 769,
   "exactRawTransportArtifacts": 42,
   "decompressedBlenderScans": 2,
   "jpegMetadataScans": [
@@ -204,9 +205,39 @@
       "otherMetadataKeys": []
     }
   ],
-  "pngMetadataChunksScanned": 87,
+  "pngMetadataChunksScanned": 102,
   "privatePathOrCredentialHits": [],
   "classifiedEncodingCoincidences": [
+    {
+      "source": "b803715c628f1a7be2ee052d440082789ed4e161:docs/implementation/evidence/studio-3-5-hat-integration/connector-review/parts/A000-P0018.json",
+      "literalSha256": "9f7814afd1edc225586c96de2248116939e3183908b1a823702ae6a9428b182d",
+      "classification": "code-generated base64 geometry encoding coincidence, not an AWS credential; exact decoded raw bytes scanned separately",
+      "redacted": false
+    },
+    {
+      "source": "b803715c628f1a7be2ee052d440082789ed4e161:docs/implementation/evidence/studio-3-5-hat-integration/connector-review/parts/A000-P0099.json",
+      "literalSha256": "01d81f341bf31d05378c2a38a19d75d3a0ea7b4fc55d7b7b2a96f22d01b73d95",
+      "classification": "code-generated base64 geometry encoding coincidence, not an AWS credential; exact decoded raw bytes scanned separately",
+      "redacted": false
+    },
+    {
+      "source": "b803715c628f1a7be2ee052d440082789ed4e161:docs/implementation/evidence/studio-3-5-hat-integration/connector-review/parts/A000-P0114.json",
+      "literalSha256": "9f7814afd1edc225586c96de2248116939e3183908b1a823702ae6a9428b182d",
+      "classification": "code-generated base64 geometry encoding coincidence, not an AWS credential; exact decoded raw bytes scanned separately",
+      "redacted": false
+    },
+    {
+      "source": "b803715c628f1a7be2ee052d440082789ed4e161:docs/implementation/evidence/studio-3-5-hat-integration/connector-review/parts/A028-P0014.json",
+      "literalSha256": "e3470ad072aeed8539a6b2b36b87258cccddfc1f9a3132bdec0e6dee35e8b1b9",
+      "classification": "code-generated base64 geometry encoding coincidence, not an AWS credential; exact decoded raw bytes scanned separately",
+      "redacted": false
+    },
+    {
+      "source": "b803715c628f1a7be2ee052d440082789ed4e161:docs/implementation/evidence/studio-3-5-hat-integration/connector-review/parts/A028-P0014.json",
+      "literalSha256": "e3470ad072aeed8539a6b2b36b87258cccddfc1f9a3132bdec0e6dee35e8b1b9",
+      "classification": "code-generated base64 geometry encoding coincidence, not an AWS credential; exact decoded raw bytes scanned separately",
+      "redacted": false
+    },
     {
       "source": "docs/implementation/evidence/studio-3-5-hat-integration/connector-review/parts/A000-P0114.json",
       "literalSha256": "9f7814afd1edc225586c96de2248116939e3183908b1a823702ae6a9428b182d",
@@ -253,5 +284,33 @@
   "ownerImagesOrZIPBytesPublished": false,
   "runtimeStatePublished": false,
   "fullLiteralDiagnosticRedaction": "Original build/test logs retained privately; only classified full literal real checkout paths replaced in additive public validation transcripts.",
-  "status": "PASS"
+  "status": "PASS",
+  "urlClassifications": [
+    {
+      "literal": "http://localhost:1420",
+      "classification": "functional development-server origin",
+      "redacted": false
+    },
+    {
+      "literal": "http://localhost:1420/#/studio",
+      "classification": "functional local Studio test navigation",
+      "redacted": false
+    },
+    {
+      "literal": "http://localhost:1420/#/studio/${variant}/2?diagnostics`",
+      "classification": "code constructing local regression navigation",
+      "redacted": false
+    },
+    {
+      "literal": "https://playwright.dev/docs/test-parallel",
+      "classification": "public test-runner documentation emitted in transcript",
+      "redacted": false
+    },
+    {
+      "literal": "https://rollupjs.org/configuration-options/#output-manualchunks",
+      "classification": "public bundler documentation emitted in native build transcript",
+      "redacted": false
+    }
+  ],
+  "closeoutCommitCoverage": "The audited committed history ends at the tracked evidence commit; the next documentation-only closeout versions were also scanned as final working review files. A read-only postcommit scan verifies the final commit before the authorized push."
 }
