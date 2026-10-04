@@ -1,5 +1,5 @@
 {
- "packId": "4a7a782926efcacc7eadd5f671ac86e26af89a83613ec1fea72156275a629415",
+ "packId": "a022be99d39570a3805b4ad2cf1c72a14c3bc5b5ff2d9865679d1b01bff47db7",
  "contract": "picar-studio-pack/4",
  "classification": {
   "capability": "provisionalReview",
@@ -41,24 +41,24 @@
  },
  "source": {
   "repository": {
-   "head": "3d784cb38469066f1c894afe918bfdcbd6c3f0ca",
-   "branch": "studio/s3-build-along"
+   "head": "7aa69d368b20ccf1bb729c75d4014d4be117d3a3",
+   "branch": "studio/s3-5-hat-integration"
   },
   "chain": {
-   "label": "s3pro-01",
+   "label": "s35-01",
    "mode": "source-mode dev loop, not an M7 qualification",
    "closureVerify": {
     "status": "PASS",
     "sha256": "849cd5c49a4ed6c8e73759d4c627091386efa3a222e3ce997c090d0cadb978a9"
    },
    "studioChain": {
-    "sha256": "b6e8508c397c0e953e8cd58c19651c25ef25cea4ae8b86c5ada93ba072b96c51"
+    "sha256": "26197c07cbbd0439bf8838e19980bc9a2c30afd39a31931a6cbdcde2a2da6d5b"
    }
   },
   "tessellation": {
-   "label": "s3pro-01",
-   "meshesSha256": "0fef3e3ea35dea3a8dfd537a3717063a7b34fc95ace567f2f3964bfdbeaecf33",
-   "binSha256": "180ee89e4da0acb3b3f7189c01492e03860387759fbd60e611ae471f9732f928",
+   "label": "s35-01",
+   "meshesSha256": "408ecac4c3639255687e3dff332a73e00c1e054ed57887147392a09e0f8022c3",
+   "binSha256": "834baa28912a560fc10f87e0d7d47719309b1266d72d6d4a8818dcaf538ac397",
    "linearDeflectionMm": 0.02,
    "angularDeflectionRad": 0.15
   },
@@ -68,7 +68,7 @@
   },
   "inputs": {
    "digital-twin/assemblies/v40/presentation/studio/stage.json": "97eeca204286d5747487b06688b410753b99aaeda8cf2abeef06c77fcf7f9091",
-   "digital-twin/presentation/materials/studio-materials.json": "0b70ce46c4556856b754318bd4db6a9536fd16b4ca6c41a2992410269a2754c3",
+   "digital-twin/presentation/materials/studio-materials.json": "21bc4e6299287c8c87db631b69578ea683aa7a949099e4a78b2dd9299f218c0f",
    "docs/implementation/M7_G_INSTRUCTIONAL_ASSEMBLY_REPORT.json": "4a26bc817c98b0d45244c82579692507edebff053ea0d0ff6f65e667ed309d7d",
    "digital-twin/assemblies/v40/presentation/instructional/product-scope.json": "dafa4956bb8928e60ae6096612456c3c9d80eec752a5760d61c23e7ee083f38e",
    "digital-twin/validation/expected/m5/instructional-parameters.json": "9b37c3f37007a34149c62f2e46c404bee1c4588830f4d41922629e6b2b9501db",
@@ -79,11 +79,12 @@
    "digital-twin/assemblies/v40/steps/source-intents.json": "4a499e80ee93c616637785ded22d4b28fc811a657ca6350b23f9deed64a6de7f",
    "digital-twin/assemblies/v40/connections/cables.json": "df846346c918cd2ad5fbeafa30b4743ff9e3e549e402640c6cb45f47cf24100f",
    "digital-twin/validation/m2/runtime-registry.json": "231b5df34360f923428db992afa2595185c610f0862353c715955e8fbdd05214",
-   "digital-twin/assemblies/v40/presentation/instructional/hat-outline-display-review-01.json": "0e963834f6f6f7f8845ee88676f25236989cda4cdc3f721e34245adb80aec96e",
+   "digital-twin/assemblies/v40/presentation/instructional/hat-detail-display-review-02.json": "06b2c9a62516575bb5b63c05e3b5018f6efee15a8b123c4f416d6239cd633898",
    "digital-twin/assemblies/v40/presentation/instructional/step04-hat-review-04.json": "eda1f9ea9df6a166995da8f9aa761bd4b8891c6841d6bc3a1dc6696a55753db0",
-   "digital-twin/cad/twin_cad/fidelity/hat.py": "d96e1daf54db46df4c9cd42ae8250d1bbc8a730934bb81dad1a4e6ceb44b6bbd",
+   "digital-twin/cad/twin_cad/fidelity/hat.py": "89faee6de152772e3b8a462f51a1af4ab210491d665ac00d939fbebfb15e7469",
+   "digital-twin/cad/twin_cad/fidelity/hat_board.py": "d2c7df4c406ef9b47846af8b168747beb28f0903976345ef7177684e2fbb6f2c",
    "digital-twin/cad/twin_cad/fidelity/pi5.py": "f8661d2616c5d806694d373c53d58fe5a6881ee93742c45c33a73a0ebf019c62",
-   "digital-twin/generated/studio/chain/s2pro-01/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
+   "digital-twin/generated/studio/chain/s35-01/engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de",
    "digital-twin/validation/m2/rpi5/compiled-graph.json": "832c7b4cda68a069574f5555a6ad5969224ab35565dab79c91125bf8fd5eb82b",
    "digital-twin/validation/m2/rpi-zero-2-w/compiled-graph.json": "257e045b191fdff4ec7b04565c17d73231af3efc1f1cf47e837b9b928584f91e"
   },
@@ -113,8 +114,8 @@
  "assets": {
   "parts": {
    "path": "parts.glb",
-   "sha256": "2d626edd870e7276626a4e04fcaccae6db2b81607643b3835668cde9711234e8",
-   "bytes": 3261348
+   "sha256": "ceff9949cf80575e87e56feb0682894c58391ea7e64e1700f6e82f1c3d06cac3",
+   "bytes": 15500064
   }
  },
  "materials": {
@@ -161,6 +162,18 @@
    "metallic": 0,
    "roughness": 0.55
   },
+  "connector-white": {
+   "label": "White connector plastic",
+   "basis": "owner-photo",
+   "note": "JST XH housings, switch bases, LED bodies and the speaker plug; a warm off-white, set by eye because the housing tops sit in shade in the photographs",
+   "baseColor": [
+    0.72,
+    0.7,
+    0.65
+   ],
+   "metallic": 0,
+   "roughness": 0.55
+  },
   "contact-gold": {
    "label": "Gold-plated contacts",
    "basis": "assumption",
@@ -173,6 +186,30 @@
    "metallic": 1,
    "roughness": 0.28
   },
+  "ferrite-grey": {
+   "label": "Shielded inductor body",
+   "basis": "owner-photo",
+   "note": "albedo from the owner's top photograph against the white mask at 0.80",
+   "baseColor": [
+    0.173,
+    0.154,
+    0.127
+   ],
+   "metallic": 0.2,
+   "roughness": 0.5
+  },
+  "fr4-edge": {
+   "label": "FR4 board edge",
+   "basis": "owner-photo",
+   "note": "the tan glass-epoxy core shows at the HAT's edges and bores",
+   "baseColor": [
+    0.52,
+    0.42,
+    0.2
+   ],
+   "metallic": 0,
+   "roughness": 0.6
+  },
   "header-black": {
    "label": "Black connector plastic",
    "basis": "assumption",
@@ -180,6 +217,30 @@
     0.008,
     0.008,
     0.009
+   ],
+   "metallic": 0,
+   "roughness": 0.45
+  },
+  "header-red": {
+   "label": "Red header plastic",
+   "basis": "owner-photo",
+   "note": "servo 5V row; albedo from the owner's top photograph against the white mask at 0.80",
+   "baseColor": [
+    0.365,
+    0.058,
+    0.04
+   ],
+   "metallic": 0,
+   "roughness": 0.45
+  },
+  "header-yellow": {
+   "label": "Yellow header plastic",
+   "basis": "owner-photo",
+   "note": "servo signal row; albedo from the owner's top photograph against the white mask at 0.80",
+   "baseColor": [
+    0.576,
+    0.472,
+    0.108
    ],
    "metallic": 0,
    "roughness": 0.45
@@ -194,6 +255,18 @@
    ],
    "metallic": 0,
    "roughness": 0.58
+  },
+  "mlcc-tan": {
+   "label": "Ceramic capacitor body",
+   "basis": "owner-photo",
+   "note": "albedo from the owner's top photograph against the white mask at 0.80",
+   "baseColor": [
+    0.109,
+    0.081,
+    0.063
+   ],
+   "metallic": 0,
+   "roughness": 0.5
   },
   "motor-can-silver": {
    "label": "Motor can",
@@ -240,17 +313,6 @@
    "metallic": 0,
    "roughness": 0.52
   },
-  "pcb-blue": {
-   "label": "Blue solder mask",
-   "basis": "v40-illustration",
-   "baseColor": [
-    0.01,
-    0.061,
-    0.262
-   ],
-   "metallic": 0,
-   "roughness": 0.58
-  },
   "pcb-green": {
    "label": "Green solder mask",
    "basis": "v40-illustration",
@@ -261,6 +323,18 @@
    ],
    "metallic": 0,
    "roughness": 0.58
+  },
+  "pcb-white": {
+   "label": "White solder mask",
+   "basis": "owner-photo",
+   "note": "the owner's Robot HAT V4 is white on both faces",
+   "baseColor": [
+    0.8,
+    0.808,
+    0.8
+   ],
+   "metallic": 0,
+   "roughness": 0.34
   },
   "port-nickel": {
    "label": "Nickel port shield",
@@ -285,6 +359,40 @@
    "metallic": 0,
    "roughness": 0.45
   },
+  "shell-dark": {
+   "label": "Dark USB-C shell",
+   "basis": "owner-photo",
+   "note": "the owner's charging receptacle reads as dark metal in every frame; a neutral dark metal, since the photographed colour is a reflection of the room",
+   "baseColor": [
+    0.06,
+    0.058,
+    0.058
+   ],
+   "metallic": 1,
+   "roughness": 0.3
+  },
+  "silkscreen-black": {
+   "label": "Black silkscreen ink",
+   "basis": "owner-photo",
+   "baseColor": [
+    0.012,
+    0.012,
+    0.013
+   ],
+   "metallic": 0,
+   "roughness": 0.75
+  },
+  "solder-tin": {
+   "label": "Tin solder and pads",
+   "basis": "owner-photo",
+   "baseColor": [
+    0.72,
+    0.73,
+    0.75
+   ],
+   "metallic": 1,
+   "roughness": 0.22
+  },
   "speaker-dark": {
    "label": "Dark speaker body",
    "basis": "assumption",
@@ -296,6 +404,18 @@
    "metallic": 0,
    "roughness": 0.5
   },
+  "speaker-felt": {
+   "label": "Speaker diaphragm felt",
+   "basis": "owner-photo",
+   "note": "albedo from the owner's top photograph against the white mask at 0.80",
+   "baseColor": [
+    0.04,
+    0.041,
+    0.042
+   ],
+   "metallic": 0,
+   "roughness": 0.95
+  },
   "steel-zinc": {
    "label": "Zinc-plated steel",
    "basis": "assumption",
@@ -306,6 +426,18 @@
    ],
    "metallic": 1,
    "roughness": 0.3
+  },
+  "tact-tan": {
+   "label": "Beige button actuator",
+   "basis": "owner-photo",
+   "note": "albedo from the owner's top photograph against the white mask at 0.80",
+   "baseColor": [
+    0.704,
+    0.57,
+    0.349
+   ],
+   "metallic": 0,
+   "roughness": 0.6
   },
   "usb-body-black": {
    "label": "Black USB body",
@@ -329,6 +461,28 @@
    ],
    "metallic": 0,
    "roughness": 0.45
+  },
+  "wire-black": {
+   "label": "Black lead insulation",
+   "basis": "owner-photo",
+   "baseColor": [
+    0.015,
+    0.015,
+    0.016
+   ],
+   "metallic": 0,
+   "roughness": 0.35
+  },
+  "wire-red": {
+   "label": "Red lead insulation",
+   "basis": "owner-photo",
+   "baseColor": [
+    0.45,
+    0.03,
+    0.02
+   ],
+   "metallic": 0,
+   "roughness": 0.35
   }
  },
  "lighting": {
@@ -2805,113 +2959,253 @@
    "approximation": "M5 instructional proxy: simplified presentation shape, non-engineering",
    "boundsM": {
     "min": [
-     0,
-     -0.01,
-     0
+     -0.0021000000000000003,
+     -0.0155,
+     -0.001
     ],
     "max": [
-     0.056,
-     0.0066,
-     0.085
+     0.057070547695940846,
+     0.0101,
+     0.0859
     ]
    },
    "solids": [
     {
      "index": 0,
-     "materialId": "pcb-blue",
-     "triangles": 1708,
-     "volumeMm3": 7564.230795965062,
-     "name": "PCB outline (approximate)"
+     "materialId": "fr4-edge",
+     "triangles": 2076,
+     "volumeMm3": 7104.175898177368,
+     "name": "PCB core (FR4)"
     },
     {
      "index": 1,
-     "materialId": "speaker-dark",
-     "triangles": 332,
-     "volumeMm3": 1256.637061435918,
-     "name": "Schematic speaker"
+     "materialId": "pcb-white",
+     "triangles": 4764,
+     "volumeMm3": 186.71072300466136,
+     "name": "Top solder mask"
     },
     {
      "index": 2,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.79999999999995,
-     "name": "Schematic connector 1"
+     "materialId": "pcb-white",
+     "triangles": 4764,
+     "volumeMm3": 186.71072300466136,
+     "name": "Underside solder mask"
     },
     {
      "index": 3,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 2"
+     "materialId": "silkscreen-black",
+     "triangles": 132584,
+     "volumeMm3": 455.66315052569246,
+     "name": "Silkscreen and part markings"
     },
     {
      "index": 4,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 3"
+     "materialId": "solder-tin",
+     "triangles": 100120,
+     "volumeMm3": 602.9908332073619,
+     "name": "Solder joints, pads, SMD terminals and leads"
     },
     {
      "index": 5,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 4"
+     "materialId": "contact-gold",
+     "triangles": 5720,
+     "volumeMm3": 560.0946778175407,
+     "name": "Header pins (individual, gold finish)"
     },
     {
      "index": 6,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 5"
+     "materialId": "header-red",
+     "triangles": 3200,
+     "volumeMm3": 522.8383505448221,
+     "name": "5V header housings"
     },
     {
      "index": 7,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 6"
+     "materialId": "header-yellow",
+     "triangles": 3200,
+     "volumeMm3": 522.8143505448226,
+     "name": "Signal header housings"
     },
     {
      "index": 8,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.8,
-     "name": "Schematic connector 7"
+     "materialId": "connector-white",
+     "triangles": 4496,
+     "volumeMm3": 844.6823162661514,
+     "name": "White connector housings, switch bases and LED bodies"
     },
     {
      "index": 9,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 8"
+     "materialId": "mlcc-tan",
+     "triangles": 3112,
+     "volumeMm3": 286.17067781754935,
+     "name": "Ceramic capacitor bodies"
     },
     {
      "index": 10,
-     "materialId": "connector-cream",
-     "triangles": 12,
-     "volumeMm3": 163.80000000000004,
-     "name": "Schematic connector 9"
+     "materialId": "header-black",
+     "triangles": 8200,
+     "volumeMm3": 1149.8495805580549,
+     "name": "IC packages, resistor bodies and black housings"
     },
     {
      "index": 11,
      "materialId": "header-black",
-     "triangles": 28,
-     "volumeMm3": 1373.9999999999998,
-     "name": "Underside socket (schematic)"
+     "triangles": 652,
+     "volumeMm3": 3759.9920000000075,
+     "name": "GPIO socket, 2 x 20 female (underside)"
+    },
+    {
+     "index": 12,
+     "materialId": "connector-cream",
+     "triangles": 108,
+     "volumeMm3": 63.777499999999996,
+     "name": "I2C connector, JST SH 4-pin"
+    },
+    {
+     "index": 13,
+     "materialId": "connector-cream",
+     "triangles": 12,
+     "volumeMm3": 60.47999999999991,
+     "name": "Speaker connector J20"
+    },
+    {
+     "index": 14,
+     "materialId": "shell-dark",
+     "triangles": 828,
+     "volumeMm3": 121.97451521590261,
+     "name": "USB-C charging receptacle"
+    },
+    {
+     "index": 15,
+     "materialId": "port-nickel",
+     "triangles": 168,
+     "volumeMm3": 169.57071999999997,
+     "name": "Power switch (slide, ON shown)"
+    },
+    {
+     "index": 16,
+     "materialId": "tact-tan",
+     "triangles": 340,
+     "volumeMm3": 4.43275863287832,
+     "name": "SW1 USR button actuator"
+    },
+    {
+     "index": 17,
+     "materialId": "tact-tan",
+     "triangles": 340,
+     "volumeMm3": 4.432758632878317,
+     "name": "SW2 RST button actuator"
+    },
+    {
+     "index": 18,
+     "materialId": "tact-tan",
+     "triangles": 340,
+     "volumeMm3": 4.432758632878319,
+     "name": "SW3 ZERO button actuator"
+    },
+    {
+     "index": 19,
+     "materialId": "port-nickel",
+     "triangles": 348,
+     "volumeMm3": 6.357079632679496,
+     "name": "Crystal Y1, 8 MHz"
+    },
+    {
+     "index": 20,
+     "materialId": "ferrite-grey",
+     "triangles": 408,
+     "volumeMm3": 328.6684535529231,
+     "name": "Inductor L2 (150)"
+    },
+    {
+     "index": 21,
+     "materialId": "ferrite-grey",
+     "triangles": 408,
+     "volumeMm3": 75.00005072376007,
+     "name": "Inductor L1 (2R2)"
+    },
+    {
+     "index": 22,
+     "materialId": "speaker-dark",
+     "triangles": 1052,
+     "volumeMm3": 3615.8682218224176,
+     "name": "Speaker body"
+    },
+    {
+     "index": 23,
+     "materialId": "speaker-felt",
+     "triangles": 348,
+     "volumeMm3": 31.52822104446688,
+     "name": "Speaker diaphragm (felt)"
+    },
+    {
+     "index": 24,
+     "materialId": "wire-red",
+     "triangles": 14228,
+     "volumeMm3": 24.74048113335409,
+     "name": "Speaker lead, underside run 1 (red)"
+    },
+    {
+     "index": 25,
+     "materialId": "wire-black",
+     "triangles": 14214,
+     "volumeMm3": 24.740481135171578,
+     "name": "Speaker lead, underside run 1 (black)"
+    },
+    {
+     "index": 26,
+     "materialId": "wire-red",
+     "triangles": 14228,
+     "volumeMm3": 24.72816396469584,
+     "name": "Speaker lead, underside run 2 (red)"
+    },
+    {
+     "index": 27,
+     "materialId": "wire-black",
+     "triangles": 14214,
+     "volumeMm3": 24.728163963451955,
+     "name": "Speaker lead, underside run 2 (black)"
+    },
+    {
+     "index": 28,
+     "materialId": "wire-red",
+     "triangles": 1668,
+     "volumeMm3": 2.043511297978908,
+     "name": "Speaker lead at the cable slot (red)"
+    },
+    {
+     "index": 29,
+     "materialId": "wire-black",
+     "triangles": 1668,
+     "volumeMm3": 2.0435114265565826,
+     "name": "Speaker lead at the cable slot (black)"
+    },
+    {
+     "index": 30,
+     "materialId": "wire-black",
+     "triangles": 7866,
+     "volumeMm3": 8.412037445951363,
+     "name": "Speaker lead, plug to speaker (black)"
+    },
+    {
+     "index": 31,
+     "materialId": "wire-red",
+     "triangles": 7866,
+     "volumeMm3": 8.412037425664694,
+     "name": "Speaker lead, plug to speaker (red)"
     }
    ],
    "display": {
     "label": "Detailed presentation model; assembly checks use the instructional artifact",
-    "source": "Locked V40 S04 source-supported approximate PCB outline; 85 x 56 mm visual envelope, not measured stock. Top features remain schematic.",
+    "source": "Robot HAT V4 reconstructed from the owner's 609 photographs and two Object Capture scans, registered on the adopted bores; every dimension labelled datum, scan, photo, standard or approximate in the display review. Not measured stock.",
     "artifact": {
      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.brep",
-     "sha256": "f8fb85863e604924f0d003a5dad3d737f682ee05483897679f659fa8d8bdf9b4"
+     "sha256": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda"
     },
-    "meshSha256": "4b0acd002ce68c745747609560e8669d4cd977eed4a330f9dc2a0f20febb73eb",
+    "meshSha256": "5306d9a4293c9ad52fe455ca462b265431a0752b3cbc6942b3337f22e0955aa5",
     "record": {
      "path": "digital-twin/validation/expected/m7/fidelity/display/PX-V40-DEF-ROBOT-HAT.display.json",
-     "sha256": "04fcd076e84f5d2eafd448c3e3962a7403ca9c687f8d32fd47532194e64893ce",
+     "sha256": "b8bca8287e6492b0e0a9400c65dfdbb1493b7f04d34dddffc9c48799b7c3b78b",
      "schema": "picar-studio-display-check/1"
     },
     "relation": {
@@ -2948,7 +3242,6 @@
        ]
       ],
       "instructional": [],
-      "maxCentreDeviationMm": null,
       "adoptedReference": [
        [
         3.5,
@@ -2967,14 +3260,30 @@
         52.5
        ]
       ],
-      "method": "Preserve adopted HAT bores; original checked M5 proxy has no bores"
+      "maxCentreDeviationMm": 0,
+      "method": "vertical cylinder features measured on the display PCB core and on the adopted HAT; the original checked M5 proxy has no bores"
+     },
+     "gpio": {
+      "padCentreMm": [
+       32.5,
+       52.5
+      ],
+      "socketBoxMm": [
+       7.1,
+       49.96,
+       -15.5,
+       57.9,
+       55.04,
+       0
+      ],
+      "note": "display pads and socket follow the photographs; the instructional schematic socket is unchanged"
      },
      "adoptedPredecessor": {
       "path": "chain:engagement/PX-V40-DEF-ROBOT-HAT-INSTRUCTIONAL-02.brep",
       "sha256": "8396a46772b2a41481472155d36a18f8100b0e8f153a70e15cf66f3bc5c529de"
      }
     },
-    "overlapsChain": "s2pro-01"
+    "overlapsChain": "s35-01"
    }
   },
   "PX-V40-DEF-SERVO-PAN": {
@@ -5682,7 +5991,7 @@
    "floorYM": -0.027549999999999998,
    "centreM": [
     -0.5101688925540163,
-    0.009575000000000004,
+    0.011325000000000003,
     0.361036750483559
    ],
    "tray": {
@@ -5888,7 +6197,7 @@
      },
      "PX-V40-INS-PI5-001": {
       "translationM": [
-       -0.1827342239942673,
+       -0.18836949784223772,
        -0.02575,
        0.2783198155291493
       ],
@@ -5906,9 +6215,9 @@
      },
      "PX-V40-INS-ROBOT-HAT-001": {
       "translationM": [
-       -0.1822342239942673,
-       -0.01705,
-       0.37231981552914933
+       -0.18838422399426727,
+       -0.011549999999999998,
+       0.3732198155291493
       ],
       "rotationXYZW": [
        0,
@@ -5924,7 +6233,7 @@
      },
      "PX-V40-INS-ULTRASONIC-001": {
       "translationM": [
-       -0.28841422399426736,
+       -0.2951347716902082,
        -0.02005,
        0.19031981552914928
       ],
@@ -5942,7 +6251,7 @@
      },
      "PX-V40-INS-USB-MICROPHONE-001": {
       "translationM": [
-       -0.28156422399426734,
+       -0.28828477169020816,
        -0.027049999999999998,
        0.2455198155291493
       ],
@@ -5962,7 +6271,7 @@
       "translationM": [
        -0.13766422399426728,
        -0.027049999999999998,
-       0.3981698155291493
+       0.40006981552914933
       ],
       "rotationXYZW": [
        0,
@@ -5980,7 +6289,7 @@
       "translationM": [
        -0.13766422399426728,
        -0.027049999999999998,
-       0.41506981552914934
+       0.4169698155291493
       ],
       "rotationXYZW": [
        0,
@@ -5998,7 +6307,7 @@
       "translationM": [
        -0.13766422399426728,
        -0.027049999999999998,
-       0.4576198155291493
+       0.45951981552914933
       ],
       "rotationXYZW": [
        0,
@@ -6016,7 +6325,7 @@
       "translationM": [
        -0.15216422399426727,
        -0.008049999999999998,
-       0.5396198155291493
+       0.5415198155291494
       ],
       "rotationXYZW": [
        1,
@@ -6034,7 +6343,7 @@
       "translationM": [
        -0.20466422399426729,
        -0.008049999999999998,
-       0.4503198155291493
+       0.4522198155291493
       ],
       "rotationXYZW": [
        1,
@@ -6052,7 +6361,7 @@
       "translationM": [
        -0.2051642239942673,
        -0.027049999999999998,
-       0.4638198155291493
+       0.4657198155291493
       ],
       "rotationXYZW": [
        0,
@@ -6070,7 +6379,7 @@
       "translationM": [
        -0.2051642239942673,
        -0.027049999999999998,
-       0.5048198155291493
+       0.5067198155291492
       ],
       "rotationXYZW": [
        0,
@@ -6088,7 +6397,7 @@
       "translationM": [
        -0.2051642239942673,
        -0.027049999999999998,
-       0.5458198155291493
+       0.5477198155291493
       ],
       "rotationXYZW": [
        0,
@@ -6106,7 +6415,7 @@
       "translationM": [
        -0.1543642239942673,
        -0.027049999999999998,
-       0.6283198155291493
+       0.6302198155291493
       ],
       "rotationXYZW": [
        0,
@@ -6124,7 +6433,7 @@
       "translationM": [
        -0.1543642239942673,
        -0.027049999999999998,
-       0.7033198155291494
+       0.7052198155291493
       ],
       "rotationXYZW": [
        0,
@@ -6142,7 +6451,7 @@
       "translationM": [
        -0.2433642239942673,
        -0.027049999999999998,
-       0.6283198155291493
+       0.6302198155291493
       ],
       "rotationXYZW": [
        0,
@@ -6160,7 +6469,7 @@
       "translationM": [
        -0.2433642239942673,
        -0.027049999999999998,
-       0.7033198155291494
+       0.7052198155291493
       ],
       "rotationXYZW": [
        0,
@@ -8506,18 +8815,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.28841422399426736,
+        -0.2951347716902082,
         -0.027049999999999998,
         0.19031981552914928
        ],
        "max": [
         -0.1213642239942673,
-        -0.005649999999999997,
-        0.37231981552914933
+        -0.0014499999999999975,
+        0.3742198155291493
        ]
       },
       "labelM": [
-       -0.29641422399426726,
+       -0.30313477169020814,
        -0.027049999999999998,
        0.19031981552914928
       ]
@@ -8539,18 +8848,18 @@
        "min": [
         -0.21366422399426727,
         -0.027049999999999998,
-        0.3943198155291493
+        0.3962198155291493
        ],
        "max": [
         -0.12066422399426728,
         0.002950000000000003,
-        0.5733198155291493
+        0.5752198155291492
        ]
       },
       "labelM": [
        -0.22166422399426727,
        -0.027049999999999998,
-       0.3943198155291493
+       0.3962198155291493
       ]
      },
      {
@@ -8566,18 +8875,18 @@
        "min": [
         -0.27636422399426724,
         -0.027049999999999998,
-        0.5953198155291494
+        0.5972198155291493
        ],
        "max": [
         -0.1213642239942673,
         -0.007049999999999997,
-        0.7363198155291494
+        0.7382198155291493
        ]
       },
       "labelM": [
        -0.28436422399426725,
        -0.027049999999999998,
-       0.5953198155291494
+       0.5972198155291493
       ]
      },
      {
@@ -10737,6 +11046,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-PI5-001",
+         "volumeMm3": 348.106
         }
        ]
       }
@@ -10952,14 +11265,14 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       -0.0011605415860734994,
-       0.0379,
-       0.03303675048355899
+       -0.0006458154340439215,
+       0.03690000000000001,
+       0.03308675048355899
       ],
       "positionM": [
-       -0.15275058712817907,
-       0.22527560100233143,
-       0.24168254849111492
+       -0.1596885146097282,
+       0.2334875875061955,
+       0.2519902462119064
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -11625,6 +11938,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-PI5-001",
+         "volumeMm3": 348.106
         }
        ]
       }
@@ -12698,6 +13015,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-PI5-001",
+         "volumeMm3": 348.106
         }
        ]
       }
@@ -13352,6 +13673,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-PI5-001",
+         "volumeMm3": 348.106
         }
        ]
       }
@@ -13467,14 +13792,14 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       -0.0011605415860734994,
-       0.013100000000000002,
-       0.055768375241779494
+       -0.0006458154340439215,
+       0.014850000000000002,
+       0.055318375241779495
       ],
       "positionM": [
-       -0.21694429727803255,
-       0.052641001316306175,
-       0.3639395158205782
+       -0.22111162862279649,
+       0.05524895858491549,
+       0.3701761869020759
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -14150,6 +14475,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 2.5844
+        },
+        {
+         "instanceId": "PX-V40-INS-PI5-001",
+         "volumeMm3": 348.106
         }
        ]
       }
@@ -15359,7 +15688,7 @@
    "floorYM": -0.027549999999999998,
    "centreM": [
     -0.5101688925540163,
-    0.006075000000000003,
+    0.007825000000000004,
     0.3795
    ],
    "tray": {
@@ -15565,9 +15894,9 @@
      },
      "PX-V40-INS-ROBOT-HAT-001": {
       "translationM": [
-       -0.23934422399426727,
-       -0.01705,
-       0.2087830650455903
+       -0.24335477169020814,
+       -0.011549999999999998,
+       0.2097830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15583,9 +15912,9 @@
      },
      "PX-V40-INS-ULTRASONIC-001": {
       "translationM": [
-       -0.22419422399426728,
+       -0.22871949784223772,
        -0.02005,
-       0.3027830650455903
+       0.3046830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15601,9 +15930,9 @@
      },
      "PX-V40-INS-USB-MICROPHONE-001": {
       "translationM": [
-       -0.21734422399426728,
+       -0.22186949784223772,
        -0.027049999999999998,
-       0.3579830650455903
+       0.3598830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15619,7 +15948,7 @@
      },
      "PX-V40-INS-ZERO2W-001": {
       "translationM": [
-       -0.28506422399426734,
+       -0.29117477169020817,
        -0.027049999999999998,
        0.2087830650455903
       ],
@@ -15639,7 +15968,7 @@
       "translationM": [
        -0.13766422399426728,
        -0.027049999999999998,
-       0.40783306504559036
+       0.4097330650455903
       ],
       "rotationXYZW": [
        0,
@@ -15657,7 +15986,7 @@
       "translationM": [
        -0.13766422399426728,
        -0.027049999999999998,
-       0.42473306504559033
+       0.4266330650455903
       ],
       "rotationXYZW": [
        0,
@@ -15675,7 +16004,7 @@
       "translationM": [
        -0.13766422399426728,
        -0.027049999999999998,
-       0.4672830650455903
+       0.4691830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15693,7 +16022,7 @@
       "translationM": [
        -0.15216422399426727,
        -0.008049999999999998,
-       0.5492830650455903
+       0.5511830650455903
       ],
       "rotationXYZW": [
        1,
@@ -15711,7 +16040,7 @@
       "translationM": [
        -0.20466422399426729,
        -0.008049999999999998,
-       0.45998306504559033
+       0.4618830650455903
       ],
       "rotationXYZW": [
        1,
@@ -15729,7 +16058,7 @@
       "translationM": [
        -0.2051642239942673,
        -0.027049999999999998,
-       0.47348306504559035
+       0.4753830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15747,7 +16076,7 @@
       "translationM": [
        -0.2051642239942673,
        -0.027049999999999998,
-       0.5144830650455904
+       0.5163830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15765,7 +16094,7 @@
       "translationM": [
        -0.2051642239942673,
        -0.027049999999999998,
-       0.5554830650455904
+       0.5573830650455902
       ],
       "rotationXYZW": [
        0,
@@ -15783,7 +16112,7 @@
       "translationM": [
        -0.1543642239942673,
        -0.027049999999999998,
-       0.6379830650455903
+       0.6398830650455902
       ],
       "rotationXYZW": [
        0,
@@ -15801,7 +16130,7 @@
       "translationM": [
        -0.1543642239942673,
        -0.027049999999999998,
-       0.7129830650455904
+       0.7148830650455903
       ],
       "rotationXYZW": [
        0,
@@ -15819,7 +16148,7 @@
       "translationM": [
        -0.2433642239942673,
        -0.027049999999999998,
-       0.6379830650455903
+       0.6398830650455902
       ],
       "rotationXYZW": [
        0,
@@ -15837,7 +16166,7 @@
       "translationM": [
        -0.2433642239942673,
        -0.027049999999999998,
-       0.7129830650455904
+       0.7148830650455903
       ],
       "rotationXYZW": [
        0,
@@ -18183,18 +18512,18 @@
       ],
       "boundsM": {
        "min": [
-        -0.28506422399426734,
+        -0.29117477169020817,
         -0.027049999999999998,
         0.2087830650455903
        ],
        "max": [
         -0.1213642239942673,
-        -0.005649999999999997,
-        0.3819830650455903
+        -0.0014499999999999975,
+        0.3838830650455903
        ]
       },
       "labelM": [
-       -0.2930642239942673,
+       -0.2991747716902082,
        -0.027049999999999998,
        0.2087830650455903
       ]
@@ -18216,18 +18545,18 @@
        "min": [
         -0.21366422399426727,
         -0.027049999999999998,
-        0.40398306504559034
+        0.4058830650455903
        ],
        "max": [
         -0.12066422399426728,
         0.002950000000000003,
-        0.5829830650455904
+        0.5848830650455903
        ]
       },
       "labelM": [
        -0.22166422399426727,
        -0.027049999999999998,
-       0.40398306504559034
+       0.4058830650455903
       ]
      },
      {
@@ -18243,18 +18572,18 @@
        "min": [
         -0.27636422399426724,
         -0.027049999999999998,
-        0.6049830650455904
+        0.6068830650455902
        ],
        "max": [
         -0.1213642239942673,
         -0.007049999999999997,
-        0.7459830650455904
+        0.7478830650455902
        ]
       },
       "labelM": [
        -0.28436422399426725,
        -0.027049999999999998,
-       0.6049830650455904
+       0.6068830650455902
       ]
      },
      {
@@ -20089,6 +20418,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-ZERO2W-001",
+         "volumeMm3": 524.023
         }
        ]
       }
@@ -20301,14 +20634,14 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       -0.0011605415860734994,
-       0.030900000000000004,
-       0.05303675048355899
+       -0.0016752677381030772,
+       0.029900000000000003,
+       0.05298675048355899
       ],
       "positionM": [
-       -0.15275058712817907,
-       0.21827560100233143,
-       0.26168254849111494
+       -0.16071796691378734,
+       0.2264875875061955,
+       0.2718902462119064
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -20908,6 +21241,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-ZERO2W-001",
+         "volumeMm3": 524.023
         }
        ]
       }
@@ -21912,6 +22249,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-ZERO2W-001",
+         "volumeMm3": 524.023
         }
        ]
       }
@@ -22497,6 +22838,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-ZERO2W-001",
+         "volumeMm3": 524.023
         }
        ]
       }
@@ -22609,14 +22954,14 @@
      "dependencyWarnings": [],
      "camera": {
       "targetM": [
-       -0.0011605415860734994,
-       0.009600000000000001,
-       0.0657683752417795
+       -0.0016752677381030772,
+       0.011350000000000002,
+       0.0652683752417795
       ],
       "positionM": [
-       -0.19024759961787477,
-       0.04424900120287659,
-       0.33581268027062705
+       -0.1957820829333968,
+       0.046918839788374835,
+       0.34248163645799823
       ],
       "verticalFovDeg": 30,
       "spec": {
@@ -23226,6 +23571,10 @@
         {
          "instanceId": "PX-V40-INS-M25X6-SCREW-008",
          "volumeMm3": 1.0447
+        },
+        {
+         "instanceId": "PX-V40-INS-ZERO2W-001",
+         "volumeMm3": 524.023
         }
        ]
       }
