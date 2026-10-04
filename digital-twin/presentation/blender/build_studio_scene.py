@@ -336,6 +336,8 @@ def background_composite(scene):
 
 
 def render_settings():
+    # Blender writes the producer's absolute project filename into PNG text metadata even without a visible stamp.
+    bpy.context.scene.render.use_stamp_filename = False
     scene = bpy.context.scene
     background_composite(scene)
     scene.render.engine = 'CYCLES'
