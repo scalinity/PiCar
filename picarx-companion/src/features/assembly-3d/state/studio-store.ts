@@ -2,6 +2,7 @@
 // playback, rewind, scrubbing and selection change only what is drawn.
 import { useSyncExternalStore } from 'react';
 import type { StudioVariant } from '../../../lib/router';
+import { resetPerfSample } from './perf';
 
 export type CameraMode = 'guided' | 'manual';
 export type Bounds = { min: [number, number, number]; max: [number, number, number] };
@@ -66,10 +67,10 @@ export const advance = (dt: number, duration: number): void => {
   const t = Math.min(duration, Math.max(0, state.t + dt * state.direction));
   set({ t, playing: t > 0 && t < duration });
 };
-export const play = (duration: number): void => set({ playing: duration > 0, direction: 1, t: state.t >= duration ? 0 : state.t });
-export const rewind = (): void => set({ playing: state.t > 0, direction: -1 });
+export const play = (duration: number): void => set({ playing: duration > 0 && !reducedMotion(), direction: 1, t: reducedMotion() ? duration : state.t >= duration ? 0 : state.t });
+export const rewind = (): void => set({ playing: state.t > 0 && !reducedMotion(), direction: -1, t: reducedMotion() ? 0 : state.t });
 export const pause = (): void => set({ playing: false });
-export const replay = (duration: number): void => set({ t: 0, playing: duration > 0, direction: 1 });
+export const replay = (duration: number): void => set({ t: reducedMotion() ? duration : 0, playing: duration > 0 && !reducedMotion(), direction: 1 });
 export const seek = (t: number): void => set({ t, playing: false });
 export const select = (selection: string | null): void => set({ selection });
 // One Escape press clears what is singled out: the selection and a chosen conflict pair together.
@@ -82,7 +83,7 @@ export const focusSelection = (): void => { if (state.selection) set({ cameraMod
 export const frameBounds = (bounds: Bounds): void => set({ cameraMode: 'manual', frameRequest: state.frameRequest + 1, frameBounds: bounds });
 export const toggleDrawer = (): void => set({ drawerOpen: !state.drawerOpen });
 export const setManualOpen = (manualOpen: boolean): void => set({ manualOpen });
-export const togglePerf = (): void => set({ perfOpen: !state.perfOpen });
+export const togglePerf = (): void => { if (!state.perfOpen) resetPerfSample(); set({ perfOpen: !state.perfOpen }); };
 export type InspectTool = 'isolate' | 'ghost' | 'explode' | 'clip';
 export const toggleInspect = (tool: InspectTool): void => set({ [tool]: !state[tool] } as Partial<StudioState>);
 export const setClipHeight = (clipHeightM: number): void => set({ clipHeightM });

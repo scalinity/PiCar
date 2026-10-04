@@ -12,6 +12,7 @@
 //   display period                   estimated from the fastest steady active frames, where vsync-bound frames cluster.
 import { useSyncExternalStore } from 'react';
 import type { LoadTimings } from '../assets/pack';
+import { powerState, qualityPolicy } from './power';
 
 const WINDOW = 120;
 const mean = (xs: number[]): number => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
@@ -45,6 +46,7 @@ export function createDprGovernor({ calmFrames = 600, backoffMs = 10_000, maxBac
   let refresh = 1000 / 60; // assumed until faster steady frames show a faster display
   let calm = 0, blockedUntil = 0, backoff = backoffMs;
   return (dpr, ceiling, intervals, now) => {
+    if (dpr > ceiling) { calm = 0; return ceiling; }
     if (intervals.length < WINDOW) return dpr;
     const m = mean(intervals), fast = quantile(intervals, 0.1);
     if (fast < refresh * 0.9) refresh = fast;
@@ -64,6 +66,8 @@ export function createDprGovernor({ calmFrames = 600, backoffMs = 10_000, maxBac
 }
 
 const frames = createFrameLog();
+const sustained = createFrameLog(600);
+export const resetPerfSample = (): void => { sustained.clear(); perf.dprChanges.length = 0; };
 const governor = createDprGovernor();
 export const perf = {
   openedAt: undefined as number | undefined, // the Studio page's first render in this app session
@@ -74,11 +78,13 @@ export const perf = {
   hiddenAt: -Infinity, // the last time the page became hidden
   lastFrameAt: -Infinity,
   calls: 0, triangles: 0, dpr: 1, width: 0, height: 0,
+  resources: { geometries: 0, textures: 0, programs: 0, materials: 0, shadow: 0, environment: 0 },
   dprChanges: [] as { at: number; from: number; to: number; meanMs: number }[],
 };
 
 export function recordFrame(now: number, continued: boolean): void {
   frames.frame(now, continued, perf.hiddenAt < perf.lastFrameAt);
+  sustained.frame(now, continued, perf.hiddenAt < perf.lastFrameAt);
   perf.lastFrameAt = now;
   if (perf.firstRenderAt === undefined) {
     perf.firstRenderAt = now;
@@ -93,7 +99,7 @@ export function setRendererInfo(calls: number, triangles: number, dpr: number, w
 }
 
 export function governDpr(dpr: number): number {
-  const ceiling = Math.min(2, typeof devicePixelRatio === 'number' ? devicePixelRatio : 1);
+  const ceiling = qualityPolicy(powerState(), typeof devicePixelRatio === 'number' ? devicePixelRatio : 1).ceiling;
   const next = governor(dpr, ceiling, frames.intervals(), performance.now());
   if (next !== dpr) {
     perf.dprChanges.push({ at: performance.now(), from: dpr, to: next, meanMs: mean(frames.intervals()) });
@@ -106,14 +112,20 @@ export type PerfSnapshot = {
   activeFps: number; activeMeanMs: number; activeP95Ms: number; activeFrames: number; displayPeriodMs: number;
   calls: number; triangles: number; dpr: number; width: number; height: number;
   openToCanvasMs?: number; openToFirstRenderMs?: number; openToFirstFrameDrawnMs?: number; load?: LoadTimings;
+  sustained: { frames: number; fps: number; meanMs: number; p50Ms: number; p95Ms: number; p99Ms: number; worstMs: number; over50: number; over100: number };
+  power: ReturnType<typeof powerState>; quality: ReturnType<typeof qualityPolicy>;
+  resources: typeof perf.resources; dprSequence: number[];
 };
 export function perfSnapshot(): PerfSnapshot {
-  const xs = frames.intervals(), m = mean(xs);
+  const xs = frames.intervals(), m = mean(xs), long = sustained.intervals(), lm = mean(long);
   const since = (t?: number): number | undefined => (t !== undefined && perf.openedAt !== undefined ? t - perf.openedAt : undefined);
   return {
     activeFps: m ? 1000 / m : 0, activeMeanMs: m, activeP95Ms: quantile(xs, 0.95), activeFrames: xs.length, displayPeriodMs: quantile(xs, 0.1),
     calls: perf.calls, triangles: perf.triangles, dpr: perf.dpr, width: perf.width, height: perf.height,
     openToCanvasMs: since(perf.canvasAt), openToFirstRenderMs: since(perf.firstRenderAt), openToFirstFrameDrawnMs: since(perf.firstFrameDrawnAt), load: perf.load,
+    sustained: { frames: long.length, fps: lm ? 1000 / lm : 0, meanMs: lm, p50Ms: quantile(long, .5), p95Ms: quantile(long, .95), p99Ms: quantile(long, .99), worstMs: Math.max(0, ...long), over50: long.filter(x => x > 50).length, over100: long.filter(x => x > 100).length },
+    power: powerState(), quality: qualityPolicy(powerState(), typeof devicePixelRatio === 'number' ? devicePixelRatio : 1), resources: { ...perf.resources },
+    dprSequence: perf.dprChanges.length ? [perf.dprChanges[0].from, ...perf.dprChanges.map(x => x.to)] : [perf.dpr],
   };
 }
 

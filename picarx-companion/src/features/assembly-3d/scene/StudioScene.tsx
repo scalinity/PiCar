@@ -8,8 +8,9 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { entryOf, type LoadedPack, type StudioCamera } from '../assets/pack';
 import { statesAt, timelineFor, type Timeline } from '../motion/evaluate';
 import { clipRange, explodeOffsets, explodeWeight, focusIds, keptIds, styleOf } from '../motion/inspect';
-import { advance, clearSelection, enterStep, getStudioState, select, studioKey, subscribeStudio, yieldCamera, type Bounds } from '../state/studio-store';
+import { advance, clearSelection, enterStep, getStudioState, select, seek, studioKey, subscribeStudio, yieldCamera, type Bounds } from '../state/studio-store';
 import { governDpr, perf, recordFrame, setRendererInfo } from '../state/perf';
+import { subscribePower } from '../state/power';
 import { createBoard, createEnvironment, own, type Board, type Owner } from './resources';
 import type { Scene, WebGLRenderer } from 'three';
 import type { StudioVariant } from '../../../lib/router';
@@ -73,6 +74,7 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
     recordFrame(now, memory.requestedNext || memory.interacting || memory.diagnosing);
     let again = false; // this frame asks for the next one
     setRendererInfo(gl.info.render.calls, gl.info.render.triangles, state.viewport.dpr, state.size.width, state.size.height);
+    Object.assign(perf.resources, { geometries: gl.info.memory.geometries, textures: gl.info.memory.textures, programs: gl.info.programs?.length ?? 0, shadow: board.keyLight.shadow.map ? 1 : 0, environment: scene.environment ? 1 : 0 });
     const dpr = governDpr(state.viewport.dpr);
     if (dpr !== state.viewport.dpr) setDpr(dpr);
     // A rebuilt board (a board switch) is in the scene now; the one it replaced is not, so its resources are released,
@@ -81,11 +83,13 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
       memory.boardOwner?.dispose();
       memory.boardOwner = own(`board ${board.variant}`, board.release);
       memory.adopted = board;
+      perf.resources.materials = board.materials().length;
       memory.styleKey = '';
       memory.clip = null;
     }
     const key = studioKey(variant, step);
     enterStep(key, timeline.duration, board.ids);
+    if (reducedMotion() && getStudioState().playing) seek(timeline.duration);
     advance(Math.min(dt, 0.1), timeline.duration);
     const s = getStudioState();
 
@@ -143,7 +147,7 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
         if (b) memory.tween = frameTween(camera, controls, new Box3(new Vector3(...b.min), new Vector3(...b.max)), now, 1.15);
       }
       if (memory.tween) {
-        const k = memory.tween.seconds === 0 ? 1 : Math.min(1, (now - memory.tween.start) / (memory.tween.seconds * 1000));
+        const k = reducedMotion() || memory.tween.seconds === 0 ? 1 : Math.min(1, (now - memory.tween.start) / (memory.tween.seconds * 1000));
         camera.position.lerpVectors(memory.tween.from[0], memory.tween.to[0], ease(k));
         controls.target.lerpVectors(memory.tween.from[1], memory.tween.to[1], ease(k));
         if (k >= 1) memory.tween = null;
@@ -209,7 +213,7 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
     if (!controls) return;
     clearTimeout(memory.closing); // React re-binds within one commit (StrictMode); a closing viewport never does
     memory.controls = controls;
-    controls.enableDamping = true;
+    controls.enableDamping = !reducedMotion();
     controls.dampingFactor = 0.12;
     controls.screenSpacePanning = true;
     controls.minDistance = 0.05;
@@ -223,12 +227,19 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
       invalidate();
     };
     // Damping decays by (1 - dampingFactor) per update: 120 updates leave 0.88^120 (about 2e-7) of the release motion.
-    const onEnd = () => { memory.interacting = false; memory.settleFrames = 120; invalidate(); };
+    const onEnd = () => { memory.interacting = false; memory.settleFrames = reducedMotion() ? 0 : 120; invalidate(); };
     controls.addEventListener('start', onStart);
     controls.addEventListener('change', onChange);
     controls.addEventListener('end', onEnd);
     // The demand frame loop draws only when asked: any presentation change (scrub, step, selection) asks once.
     const unsubscribe = subscribeStudio(invalidate);
+    const stopPower = subscribePower(invalidate);
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const onMotion = () => {
+      controls.enableDamping = !motion.matches;
+      invalidate();
+    };
+    motion.addEventListener('change', onMotion);
     viewport = {
       controls, camera, scene, gl, invalidate, setDpr,
       board: () => memory.adopted,
@@ -257,6 +268,8 @@ function Driver({ pack, variant, step, board, timeline, guided, labels }: { pack
       controls.removeEventListener('change', onChange);
       controls.removeEventListener('end', onEnd);
       unsubscribe();
+      stopPower();
+      motion.removeEventListener('change', onMotion);
       viewport = null;
       memory.controls = null;
       // The viewport is closing: release the board and the environment it owns once React has finished re-binding.
