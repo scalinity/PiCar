@@ -1,12 +1,13 @@
-# Studio 4 evidence — final local candidate
+# Studio 4 evidence — READY FOR INDEPENDENT REVIEW
 
-Runtime/build source `05eac8d7d0a30db53bf54940cdbccc84283631c4`, exact accepted base `7a698e8145edd9578743aa648a5a37cac641b773`. Current status **NOT READY**: actual offline cold launch and still-offline restart remain UNVERIFIED. No push. Owner visual acceptance and VoiceOver validation PENDING. M7 BLOCKED 0/58, M8 NO.
+Runtime/build source `05eac8d7d0a30db53bf54940cdbccc84283631c4`, exact accepted base `7a698e8145edd9578743aa648a5a37cac641b773`. Current status **STUDIO 4 READY FOR INDEPENDENT REVIEW**: actual network-unavailable native cold start, committed bookmark and still-offline restart PASS. Only the normal Studio4 branch push is authorized; exact verified remote tip is supplied in the delivery report. Owner visual acceptance and VoiceOver validation PENDING. M7 BLOCKED 0/58, M8 NO.
 
 Review these small entrypoints first:
 
 - [Handoff](../../HANDOFF_STUDIO_4.md): complete scope, limitations, protected identities and focused Pro prompt.
 - [Final release audit](release-build-final.json) and [bundle/input inventory](release-bundle-inventory.json): normal A3/B3 byte equality, features, capabilities, environment and native disposable-identifier qualification.
-- [Offline receipt](offline-test.json): mandatory gap, failed app-scoped denial attempts, static dependency coverage and pending approval.
+- [Offline receipt](offline-test.json): actual Wi-Fi-off native cold start/restart PASS, acknowledged Step2 restoration, network restoration and explicit timing limits; historical failed sandbox and immediate restoration probes retained.
+- [Offline actual pixels](offline-visual-manifest.json):14 app-window-only proxies with private-original hashes/timestamps; [closeout sanity](offline-closeout-sanity.json) checks preservation, privacy and documentation scope.
 - [Native journey](native-journey.json), [failures](release-failures.json), [window](native-window.json), [raw evidence bindings](native-evidence-bindings.json): production native behavior with disposable storage; private originals are not published.
 - [Keyboard](keyboard-coverage.json), [accessibility](accessibility-report.json), [OS motion](reduced-motion.json), [power policy](quality-policy.json).
 - [Final performance](native-performance-final.json), [CSV](native-performance-final.csv), [resources](native-resources.json). Final-source native600-frame measurements follow completed browser/legacy work; pre-focus observations retain their own source and qualifications.
@@ -26,4 +27,4 @@ Attempt disposition:
 
 Raw command logs intentionally retain their output whitespace, including trailing spaces and blank lines; `git diff --check` reports those cosmetic log lines. Source and Markdown changes pass the whitespace check. Do not trim failed evidence and silently change its recorded bytes.
 
-Connector-only review of the Studio4 delta is unavailable until actual offline gates pass and an authorized normal branch push is verified. No extra binary transport is created while a remote candidate does not exist.
+The mandatory offline gate is closed. Connector review should use the exact normal-pushed Studio4 tip reported with local/origin/ls-remote equality in the delivery response. No extra app/GLB transport or accepted Studio3.5 redo is needed. Wi-Fi was Off26.83seconds; immediate recovery probes failed, and later HTTP connectivity passed. Exact Internet recovery time is unknown, so no <=90second Internet-outage claim is made.

@@ -31,7 +31,7 @@
     "failed": 2,
     "skipped": 1,
     "minutes": 17.9,
-    "result": "RUN / FAIL \u2014 EXPLAINED",
+    "result": "RUN / FAIL — EXPLAINED",
     "log": "browser-delivery.txt",
     "failures": "preservation.spec.ts:42 raw legacy PDF bookmark key expected1 received2, Chromium and WebKit, accepted baseline only; no new Studio4 failure"
   },
@@ -44,6 +44,14 @@
   "pack": "PASS / FRESH / CURRENT",
   "tray": "HOLDS both156,143solid13tile,frontier50/47",
   "blender": "exit0 problems[]",
-  "native": "PASS / QUALIFIED production features with disposable identifier; actual offline UNVERIFIED",
-  "readiness": "NOT READY"
+  "native": "PASS / QUALIFIED production features with disposable identifier; actual offline cold start and still-offline restart PASS",
+  "readiness": "STUDIO 4 READY FOR INDEPENDENT REVIEW",
+  "offlineCloseout": {
+    "result": "PASS",
+    "receipt": "offline-test.json",
+    "sanity": "offline-closeout-sanity.json",
+    "sourceChange": false,
+    "unaffectedSuitesRerun": false,
+    "restorationTiming": "Wi-Fi Off26.8seconds; ordinary connectivity restored, exact Internet-recovery time unmeasured."
+  }
 }

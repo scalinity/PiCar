@@ -1,0 +1,85 @@
+{
+  "checkedUtc": "2026-10-05T02:45:18.350196+00:00",
+  "base": "7a698e8145edd9578743aa648a5a37cac641b773",
+  "preCloseoutHead": "f0af195e11c6c046c8c1184af0c26eaf97ea041b",
+  "runtimeSource": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+  "result": "PASS",
+  "scope": "Documentation/evidence-only offline gate closeout; no source modification or build; no unaffected expensive suite rerun.",
+  "baselineAncestor": true,
+  "protectedTreeChangedPaths": [],
+  "publicationInputsEqual": {
+    "picarx-companion/package.json": true,
+    "picarx-companion/vite.config.ts": true,
+    "picarx-companion/src-tauri/tauri.conf.json": true,
+    "picarx-companion/src-tauri/capabilities/default.json": true
+  },
+  "identities": {
+    "pack": "a022be99d39570a3805b4ad2cf1c72a14c3bc5b5ff2d9865679d1b01bff47db7",
+    "glb": "ceff9949cf80575e87e56feb0682894c58391ea7e64e1700f6e82f1c3d06cac3",
+    "presentation": "a042411e9cc754079ab9c49b3b4bc9d99ab23b42b93e0fa4f81b1e7f401f39d8",
+    "blender": "59fe591f77f3a6b0f0a326a1d6aacc01060483a258635620390866c19d032404",
+    "hatDisplay": "825e2f068d41fac21ca1a32ebeae410f7c5aef4eb5d717b20c22b0c75777abda",
+    "instructionalHat": "bbdbbeb758d724c52450902c427c872b6eb78eff59a89b698d76a54d86d8461a"
+  },
+  "freshReadOnlyPackCheck": {
+    "command": "node digital-twin/tools/studio/studio.mjs check",
+    "exit": 0,
+    "result": {
+      "packId": "a022be99d39570a3805b4ad2cf1c72a14c3bc5b5ff2d9865679d1b01bff47db7",
+      "integrity": {
+        "status": "PASS",
+        "problems": [],
+        "notes": []
+      },
+      "freshness": {
+        "status": "FRESH",
+        "problems": []
+      },
+      "presentation": {
+        "status": "CURRENT",
+        "presentationId": "a042411e9cc754079ab9c49b3b4bc9d99ab23b42b93e0fa4f81b1e7f401f39d8",
+        "problems": []
+      }
+    }
+  },
+  "normalExecutableSha256": "cba111a7d0133c3f2395512ce885c4678cd04b05d03a3f46288f0b2791818769",
+  "testedExecutableSha256": "60eb75b2f2a6a81a05c5eaccb29eac38e38212fc83bfe9bd82c4e8ea5c7a5ff8",
+  "frontendInputsBytePreserved": 150,
+  "privateReferenceFilesUnchanged": 125,
+  "historicalUntrackedFilesUnchanged": 13,
+  "ownerSqliteStatCountBefore": 0,
+  "ownerSqliteStatCountAfter": 0,
+  "ownerSqliteOpenedOrRead": false,
+  "nativeAppAndGuardProcessesStopped": true,
+  "wifiFinal": "On",
+  "ordinaryConnectivityExit": 0,
+  "ordinaryConnectivityHttp": "HTTP/2 200 ",
+  "closeoutPublishableFilesScanned": 23,
+  "privacyHits": [],
+  "classifications": {
+    "1.1.1.1:443": "Public bounded connectivity probe endpoint; functional, not owner network data.",
+    "https://www.apple.com": "Public bounded connectivity probe endpoint.",
+    "disposableIdentifierAndSyntheticCommandObservationIds": "Functional isolated test architecture / existing synthetic fixture; not owner session.",
+    "sha256AndPids": "Evidence integrity and task-owned process provenance; not credentials.",
+    "privateRawData": "Unpublished; only hashes included in receipt.",
+    "pixels": "14 actual app-window-only JPEGs, EXIF stripped, visually inspected contact sheet; no owner media, desktop or dialogs."
+  },
+  "readiness": "STUDIO 4 READY FOR INDEPENDENT REVIEW",
+  "newApplicationBlockerHighP2": false,
+  "qualifications": {
+    "internetRecoveryTime": "Unmeasured; immediate failed DNS probes retained; Wi-Fi Off26.83seconds, later ordinary connectivity verified.",
+    "physicalBatteryPerformance": "UNMEASURED / QUALIFIED",
+    "voiceOverOwnerValidation": "PENDING",
+    "ownerIntegratedViewAcceptance": "PENDING"
+  },
+  "protectedMilestones": {
+    "M7": "BLOCKED 0/58",
+    "Pi5": "0/29",
+    "Zero": "0/29",
+    "S07": "BLOCKED",
+    "S09": "REFUSED",
+    "G-CAD": "BLOCKED",
+    "M8": "NO",
+    "rpi4": "PRESERVED_NON_TARGET"
+  }
+}

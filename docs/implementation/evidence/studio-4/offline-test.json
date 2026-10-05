@@ -1,16 +1,16 @@
 {
-  "status": "UNVERIFIED / MANDATORY GAP",
+  "status": "PASS",
   "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
-  "coldStart": "UNVERIFIED",
-  "restart": "UNVERIFIED",
-  "cause": "App-scoped sandbox network denial also prevents macOS LaunchServices/file-extension window startup; network probe denial alone is not a successful offline app journey.",
+  "coldStart": "PASS",
+  "restart": "PASS",
+  "cause": null,
   "failedAttempts": [
     "deny all network profile: owned native host starts SQLite but no app window",
     "remote-IP denial profile: same window startup limitation",
     "curl localhost1420 denied confirms sandbox network gate, not app behavior"
   ],
-  "networkSettingChanged": false,
-  "pendingOwnerApproval": "Brief Wi-Fi disconnect with automatic restoration after90 seconds requested; no answer received. Elapsed time is not approval.",
+  "networkSettingChanged": true,
+  "pendingOwnerApproval": null,
   "staticAudit": {
     "cspConnect": "'self' ipc: http://ipc.localhost",
     "fonts": "'self'; no external font input",
@@ -24,11 +24,295 @@
     "optionalNetwork": "Other companion video thumbnails/explicit video links allowed by accepted CSP; Studio does not require them."
   },
   "staticConclusion": "No required external Studio dependency found. This does not prove cold/restart offline behavior.",
-  "readiness": "NOT READY; do not push until actual offline cold start and still-offline restart gates pass.",
+  "readiness": "STUDIO 4 READY FOR INDEPENDENT REVIEW",
   "nativeHostSocketSnapshot": {
     "observedSockets": 0,
     "method": "lsof task-owned native host, network available, Studio open",
     "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "qualification": "No attributed WebView/GPU process network capture; not full app/offline certification."
+  },
+  "historicalDisposition": {
+    "status": "UNVERIFIED / MANDATORY GAP",
+    "coldStart": "UNVERIFIED",
+    "restart": "UNVERIFIED",
+    "cause": "App-scoped sandbox network denial also prevents macOS LaunchServices/file-extension window startup; network probe denial alone is not a successful offline app journey.",
+    "failedAttempts": [
+      "deny all network profile: owned native host starts SQLite but no app window",
+      "remote-IP denial profile: same window startup limitation",
+      "curl localhost1420 denied confirms sandbox network gate, not app behavior"
+    ],
+    "networkSettingChanged": false,
+    "pendingOwnerApproval": "Brief Wi-Fi disconnect with automatic restoration after90 seconds requested; no answer received. Elapsed time is not approval.",
+    "readiness": "NOT READY; do not push until actual offline cold start and still-offline restart gates pass."
+  },
+  "actualOfflineSession": {
+    "localDate": "2026-10-04 America/New_York",
+    "utcDate": "2026-10-05",
+    "authorization": "Explicit owner instruction to close only the offline gate; only Wi-Fi en0 power OFF/ON authorized, including independent automatic restoration.",
+    "networkPreflight": {
+      "service": "Wi-Fi",
+      "device": "en0",
+      "initialPower": "On",
+      "ordinaryDefaultRoute": "en0",
+      "ipv4PublicRoute": "en0",
+      "ipv6OrdinaryEgress": "No usable global IPv6 route / no IPv6 reachable state",
+      "otherPhysicalEgress": false,
+      "inactivePhysicalInterfaces": [
+        "en1",
+        "en2",
+        "en3",
+        "en4",
+        "en5",
+        "en6",
+        "en7 service listed, no active interface"
+      ],
+      "peerLink": "AWDL link-local; not ordinary Internet egress",
+      "virtualInterfaces": "Tailscale utun4 and VPN/link-local utun0..3 present and untouched; ordinary egress depended on en0.",
+      "initialConnectivity": "Direct ordinary HTTPS probe succeeded before disconnect; curl exit0.",
+      "privateNetworkDetails": "Preserved privately; raw hashes below. No address, MAC, SSID or tunnel peer published."
+    },
+    "restoreGuard": {
+      "mechanism": "Independent Python child in its own OS session, separate from app and UI harness. Verified PID alive before OFF. On trigger, deadline80seconds; set Wi-Fi en0 On on timeout or termination.",
+      "pid": 2939,
+      "sessionId": 2939,
+      "armedUtc": "2026-10-05T02:29:14.269Z",
+      "timeoutSeconds": 80,
+      "aliveVerifiedBeforeOff": true,
+      "mainControllerLimitSeconds": 65,
+      "uiBudgetSeconds": 50,
+      "fallbackInvoked": true,
+      "fallbackUtc": "2026-10-05T02:32:46.583Z",
+      "fallbackExit": 0,
+      "fallbackDisposition": "Controller had already turned Wi-Fi On at26.8seconds. Immediate connectivity checks failed; guard remained armed and independently repeated On at its80second deadline, then exited.",
+      "cleanup": "Both guard and controller processes absent after verified connectivity; cancellation marker written, no pending process."
+    },
+    "networkOff": {
+      "commandStartedUtc": "2026-10-05T02:31:26.587Z",
+      "confirmedUtc": "2026-10-05T02:31:28.741Z",
+      "powerCommandExit": 0,
+      "wifiPower": "Off",
+      "routeObservation": "Initial post-OFF snapshot temporarily retained en0 default-route/reachability state; not treated as proof of connectivity.",
+      "independentDirectIpProbe": {
+        "destination": "1.1.1.1:443",
+        "timeoutSeconds": 2,
+        "connected": false,
+        "errorType": "TimeoutError",
+        "elapsedSeconds": 2.0045218467712402
+      },
+      "ordinaryHttpsProbe": {
+        "url": "https://www.apple.com",
+        "bypassProxy": true,
+        "connectTimeoutSeconds": 2,
+        "totalTimeoutSeconds": 3,
+        "exit": 6,
+        "result": "Could not resolve host"
+      },
+      "internetUnavailable": true,
+      "nativeProcessesAtOff": [],
+      "wifiOffCheckpointCount": 13,
+      "allCheckpointsOff": true
+    },
+    "release": {
+      "sourceHead": "05eac8d7d0a30db53bf54940cdbccc84283631c4",
+      "normalExecutableSha256": "cba111a7d0133c3f2395512ce885c4678cd04b05d03a3f46288f0b2791818769",
+      "testedExecutableSha256": "60eb75b2f2a6a81a05c5eaccb29eac38e38212fc83bfe9bd82c4e8ea5c7a5ff8",
+      "newBuildRequired": false,
+      "buildRelationshipReceipt": "release-build-final.json",
+      "configuration": "src-tauri/tauri.m3.json",
+      "rustFeatures": [
+        "m3-persistence"
+      ],
+      "environment": {
+        "VITE_M3_ENABLED": "1",
+        "PICAR_ALLOW_PACKAGE_BUILD": "1"
+      },
+      "normalIdentifier": "com.danny.picarx-companion",
+      "testedIdentifier": "com.danny.picarx-companion.studio4-disposable",
+      "exception": "Previously validated identifier-only storage isolation; empty beforeBuildCommand reuses exact production frontend. Same Rust features, production persistence, window and capabilities; no test feature or bridge.",
+      "packId": "a022be99d39570a3805b4ad2cf1c72a14c3bc5b5ff2d9865679d1b01bff47db7",
+      "assets": "Bundled shell, GLB, locked PDF and worker, local fonts, procedural environment; frontend inventory in release-bundle-inventory.json.",
+      "preOfflineAppStopped": true,
+      "preOfflineStudioPreloaded": false,
+      "sourceModified": false
+    },
+    "disposableStorage": {
+      "identifier": "com.danny.picarx-companion.studio4-disposable",
+      "initialAggregate": "PX-STUDIO-RPI5",
+      "initialRevision": 29,
+      "initialReviewStepId": "PX-V40-STEP-04",
+      "initialPhysicalCompletion": "0/29",
+      "initialObservationCount": 1,
+      "observationId": "PX-OBSERVATION-CEB8F160-DABC-4CFA-B7C4-8F9A0554E99B",
+      "syntheticObservationSha256": "a39ffdeaff4d6b49de425bd79e1ea6450ab7333f7ba2f9112ae9e19dfd5735b4",
+      "syntheticObservationBytes": 177,
+      "ownerSqliteOpenedOrRead": false,
+      "normalIdentifierAppLaunched": false,
+      "testFeaturesEnabled": false
+    },
+    "coldStart": {
+      "result": "PASS",
+      "method": "Native CUA launches the actual stopped release bundle only after independent OFF/connectivity confirmation; normal UI navigation, AX observations and actual window pixels.",
+      "nativeWindow": "PASS",
+      "shell": "PASS",
+      "studio": "PASS",
+      "parts": "PASS — 156 canonical /143 modelled /13 tiles;619 renderer draws",
+      "pi5S04": "PASS — detailed Robot HAT rendered, unchanged source identity and endpoint",
+      "zeroS04": "PASS — detailed HAT rendered in preserved Zero orientation",
+      "lockedManual": "PASS — actual enlarged printed S04 panels for both variants",
+      "localMetadata": "PASS — 0/29 physical progress, initial saved Step4 and one existing synthetic observation hash available",
+      "requiredNetworkWait": "None observed; all required pages rendered within bounded journey."
+    },
+    "offlineCommittedAction": {
+      "result": "PASS",
+      "normalUiAction": "Navigate Pi5 to Step2; normal production bookmark commit",
+      "acknowledgedUtc": "2026-10-05T02:31:41.765Z",
+      "wifiAtAcknowledgment": "Off",
+      "aggregateId": "PX-STUDIO-RPI5",
+      "commandId": "PX-COMMAND-332CB0AA-5521-4116-8A71-6B0B74F29C36",
+      "action": {
+        "kind": "bookmark",
+        "stepId": "PX-V40-STEP-02"
+      },
+      "acknowledgedRevision": 30,
+      "snapshotHash": "27b9263a9645040a11957331e461a9feb8d8a24e7b6d96cc6cba4610f75d1ac2",
+      "expectedRestoredReviewStepId": "PX-V40-STEP-02",
+      "ackEvidence": "Normal UI stopped showing pending save; read-only query of disposable SQLite confirmed native command acknowledgment and matching durable snapshot. No direct storage write by harness."
+    },
+    "stillOfflineRestart": {
+      "result": "PASS",
+      "quit": "Normal Command+Q",
+      "processExitedUtc": "2026-10-05T02:31:42.012Z",
+      "processActuallyExited": true,
+      "wifiAtExit": "Off",
+      "relaunch": "Same exact native3 release bundle; Wi-Fi remained Off through relaunch and every required view.",
+      "shell": "PASS",
+      "studio": "PASS",
+      "restoredBookmark": "PASS — Step2 initially reopened; Parts Return to saved Step2",
+      "restoredPhysicalProgress": "0/29",
+      "restoredObservationMetadata": "PASS — one synthetic observation; exact hash restored in normal UI",
+      "parts": "PASS —156/143/13 and619 renderer draws",
+      "pi5S04": "PASS",
+      "zeroS04": "PASS — preserved orientation",
+      "lockedManual": "PASS — both enlarged printed S04 panels",
+      "detailedHat": "PASS — both variants, unchanged displayed source hash",
+      "postProofNavigation": "After saved Step2 restoration was captured, required S04 checks normally updated the viewed-step bookmark back to4. That later state does not replace the Step2 restoration boundary."
+    },
+    "restoration": {
+      "result": "PASS / TIMING QUALIFIED",
+      "restoreReason": "required UI journey completed",
+      "powerOnCommandUtc": "2026-10-05T02:31:53.356Z",
+      "powerOnCommandExit": 0,
+      "firstObservedOnUtc": "2026-10-05T02:31:53.419Z",
+      "wifiPowerOffToOnCommandSeconds": 26.768792152404785,
+      "wifiPowerOffToObservedOnSeconds": 26.83245015144348,
+      "wifiOffWindowUnder90Seconds": true,
+      "immediateConnectivityResult": "Six probes during the first1.2seconds after On returned curl6 DNS-resolution failure; preserved as failed probes.",
+      "immediateConnectivityVerified": false,
+      "finalWifiPower": "On",
+      "finalConnectivity": "curl exit0 / HTTP2 200",
+      "firstSuccessfulFollowupProbeUtc": "2026-10-05T02:36:39.094328Z",
+      "repeatSuccessfulProbeUtc": "2026-10-05T02:37:12.813605+00:00",
+      "ordinaryInternetOutageDuration": "Not continuously measured. Exact re-association/DNS recovery time unknown.",
+      "ordinaryInternetVerificationUpperBoundSeconds": 312.50701093673706,
+      "timingQualification": "26.8seconds describes Wi-Fi power-off duration, not a proven26.8second Internet outage. Internet restoration was verified later after a verification gap; no <=90second Internet-recovery claim. No extra network setting was changed and Wi-Fi was not kept Off to collect evidence."
+    },
+    "timeline": [
+      {
+        "label": "offline-cold-shell",
+        "at": "2026-10-05T02:31:29.567Z",
+        "elapsedMs": 3055
+      },
+      {
+        "label": "offline-cold-parts-metadata",
+        "at": "2026-10-05T02:31:32.737Z",
+        "elapsedMs": 6225
+      },
+      {
+        "label": "offline-cold-pi5-s04",
+        "at": "2026-10-05T02:31:35.364Z",
+        "elapsedMs": 8852
+      },
+      {
+        "label": "offline-cold-pi5-manual",
+        "at": "2026-10-05T02:31:35.942Z",
+        "elapsedMs": 9430
+      },
+      {
+        "label": "offline-cold-zero-s04",
+        "at": "2026-10-05T02:31:39.355Z",
+        "elapsedMs": 12843
+      },
+      {
+        "label": "offline-cold-zero-manual",
+        "at": "2026-10-05T02:31:39.937Z",
+        "elapsedMs": 13425
+      },
+      {
+        "label": "offline-committed-step2",
+        "at": "2026-10-05T02:31:41.915Z",
+        "elapsedMs": 15403
+      },
+      {
+        "label": "offline-restart-shell",
+        "at": "2026-10-05T02:31:42.761Z",
+        "elapsedMs": 16249
+      },
+      {
+        "label": "offline-restart-restored-step2",
+        "at": "2026-10-05T02:31:44.456Z",
+        "elapsedMs": 17944
+      },
+      {
+        "label": "offline-restart-parts-metadata",
+        "at": "2026-10-05T02:31:45.840Z",
+        "elapsedMs": 19328
+      },
+      {
+        "label": "offline-restart-pi5-s04",
+        "at": "2026-10-05T02:31:48.550Z",
+        "elapsedMs": 22038
+      },
+      {
+        "label": "offline-restart-pi5-manual",
+        "at": "2026-10-05T02:31:49.171Z",
+        "elapsedMs": 22659
+      },
+      {
+        "label": "offline-restart-zero-s04",
+        "at": "2026-10-05T02:31:52.321Z",
+        "elapsedMs": 25809
+      },
+      {
+        "label": "offline-restart-zero-manual",
+        "at": "2026-10-05T02:31:52.898Z",
+        "elapsedMs": 26386
+      }
+    ],
+    "uiDurationMs": 26795,
+    "pixelManifest": "offline-visual-manifest.json",
+    "privateRawSha256": {
+      "network-preflight-raw.json": "baaae793854bb3e2816a3b2a3fcb251dd509d0fb3dd9ab0366c1fc5f1fa2ad22",
+      "guard-armed.json": "9bec51d291ec04096578c0c0071ddb40d47f1d9bc349103f54b0af74c6252918",
+      "controller-ready.json": "a0dbb801b99bcee6eefbcf339eaf6055125db7f29a64fa146655d830ecad47bd",
+      "trigger.json": "9391743c0cf0a0e45baad15d33eff09fbf0786629e1243ff9747094935da0cca",
+      "guard-deadline.json": "5e886e49922cb50eea1dcc0f6ad5e5a28d641dcab3b681ef3c7b401e5525d510",
+      "off-command-started.json": "0320eddd5cacf2ebad26a45100d1f94275cfb3e03e1ccc4f8993ebdcc86a78b4",
+      "network-off-confirmed.json": "be80320a456a54c3fc24aa3439c1389804eaee46f3319ff8e42e7ed6dbcd28a7",
+      "offline-state-checkpoints.json": "6da0f07f2d6bdeb49997d2806d966b3f35b21f5569a6ea08c8a0799ef486c429",
+      "commit-acknowledged.json": "ce4628fedf44cc22a029498848e5a006390dee21734979dd7393d0a7d49bfb35",
+      "process-exit-confirmed.json": "2f5423690fcfd291f7d53485b081a89d5df17dfc12276eb12daf8bcfe03dcac4",
+      "finish.json": "0734c3f3ea9ec966cf694dc287d763d26b49a8a2a47ee78969b1e78a98f18557",
+      "restoration.json": "bea1ef38758b092f8be3f1baeaa2e99b9eaa007aa390f3358d3c128a4162a014",
+      "fallback-restored.json": "d43ca156e2d18a33de6e419838d5988f78dbe72a41c28ea8952006e4b2b4c73c",
+      "restoration-confirmed.json": "f00742f692287a2ce7fefd5173f9e131035379486641507d30b19ba7d6ac3d71",
+      "disposable-initial-raw.json": "4a8eb7073bf60ed36e3eff97e7f82cb9fcadc597748d9384aeb20168edef706b",
+      "disposable-final-raw.json": "10c69d42292f69f0dbce2cc111f354697e54aff77dc50c18ce0b00abb156ca1b",
+      "guard-process.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controller-process.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "guard-script": "7ff45daccb8063e7dc1b736c5845d7c4d18fdfc349f941beb2fcf069a3d073d4",
+      "controller-script": "8d934bd849d40f3d19312ff24ccb0442296addc831daea4e7b0d8c5fa8bfd46a"
+    },
+    "preservationReceipt": "offline-closeout-sanity.json",
+    "conclusion": "All required offline cold-start, normal UI committed action, still-offline restart and eventual restored-connectivity criteria observed. No new application blocker/high/P2 discovered. Historical sandbox failures and restoration-probe failures retained, with timing qualifications."
   }
 }

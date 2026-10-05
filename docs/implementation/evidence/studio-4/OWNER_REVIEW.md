@@ -21,4 +21,4 @@ Technical comparison: checked against accepted Studio3.5 native Pi5 guided pixel
 - Try keyboard navigation, fullscreen, manual and OS Reduce Motion in a disposable session.
 - Give explicit integrated-view acceptance or name a concrete visual concern. VoiceOver validation is a separate owner decision.
 
-No approval is inferred from preparing this package. Studio4 currently remains NOT READY because actual offline cold/restart verification is missing. M7 remains BLOCKED0/58; this checklist cannot accept engineering fit.
+No approval is inferred from preparing this package. Studio4 is READY FOR INDEPENDENT REVIEW after actual offline cold-start/restart PASS; [offline pixels](offline-visual-manifest.json) supplement this package. Owner integrated-view acceptance and VoiceOver validation remain PENDING. Physical battery performance remains UNMEASURED / QUALIFIED. M7 remains BLOCKED0/58; this checklist cannot accept engineering fit.
